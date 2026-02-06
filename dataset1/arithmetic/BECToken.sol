@@ -248,7 +248,7 @@ contract Pausable is Ownable {
 contract PausableToken is StandardToken, Pausable {
   using SafeMath for uint256;
 
-  function transfer(address _to, uint256 _value) public override whenNotPaused returns (bool) {
+  function transfer(address _to, uint256 _value) public override(BasicToken, ERC20Basic) whenNotPaused returns (bool) {
     return super.transfer(_to, _value);
   }
 

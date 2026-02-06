@@ -30,6 +30,6 @@ contract TokenSaleChallenge {
 
         balanceOf[msg.sender] -= numTokens;
         // <yes> <report> ARITHMETIC
-        msg.sender.transfer(numTokens * PRICE_PER_TOKEN);
+        payable(msg.sender).transfer(numTokens * PRICE_PER_TOKEN);
     }
 }

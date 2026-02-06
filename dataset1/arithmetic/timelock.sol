@@ -27,6 +27,6 @@
          require(block.timestamp  > lockTime[msg.sender]);
          uint transferValue = balances[msg.sender];
          balances[msg.sender] = 0;
-         msg.sender.transfer(transferValue);
+         payable(msg.sender).transfer(transferValue);
      }
  }
