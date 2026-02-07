@@ -37,14 +37,7 @@ function withdrawLeftOver_unchk33() public {
   payable(msg.sender).send(address(this).balance);
     }
   event OracleSet(address oracle);
-  function bug_unchk27(address payable addr) public
-      {addr.send (42 ether); }
   event FinalPriceSet(uint256 finalPrice);
-  function bug_unchk31() public{
-address payable addr_unchk31;
-if (!addr_unchk31.send (10 ether) || 1==1)
-	{revert();}
-}
   event PlayerBet(address player, uint guess);
     
   bool public payedOut_unchk45 = false;
@@ -258,33 +251,12 @@ function unhandledsend_unchk14(address payable callee) public {
             emit OwnerWins(owner);
         }
     }
-function bug_unchk30() public{
-uint receivers_unchk30;
-address payable addr_unchk30;
-if (!addr_unchk30.send(42 ether))
-	{receivers_unchk30 +=1;}
-else
-	{revert();}
-}
-    
-bool public payedOut_unchk8 = false;
-address payable public winner_unchk8;
-uint public winAmount_unchk8;
-
-function sendToWinner_unchk8() public {
-        require(!payedOut_unchk8);
-        winner_unchk8.send(winAmount_unchk8);
-        payedOut_unchk8 = true;
-    }
-    
     function collectPlayerWinnings() public byPlayer inState(State.PLAYERS_WIN){
         if(guesses[result].players[msg.sender] == PaidStatus.NOT_PAID){
             guesses[result].players[msg.sender] = PaidStatus.PAID;
           payable(msg.sender).transfer(splitJackpot);
         } else revert();
     }
-function bug_unchk39(address payable addr) public
-      {addr.send (4 ether); }
 
     function getBalance() private view returns (uint256){
         return address(this).balance;

@@ -9,9 +9,6 @@ contract Owned {
     return block.timestamp >= 1546300800;
   }
   address public owner;
-  function bug_tmstmp25() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   address public newOwner;
 
   uint256 bugv_tmstmp2 = block.timestamp;
@@ -33,12 +30,8 @@ function play_tmstmp23(uint startTime) public {
 uint256 bugv_tmstmp1 = block.timestamp;
 
     function transferOwnership(address _newOwner) public onlyOwner {
-        newOwner = _newOwner;
+      newOwner = _newOwner;
     }
-address winner_tmstmp14;
-function play_tmstmp14(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp14 = msg.sender;}}
 }
 
 library SafeMath {
@@ -75,76 +68,27 @@ library SafeMath {
 }
 
 abstract contract Token{
-    function balanceOf(address who) external view virtual returns (uint256);
-address winner_tmstmp30;
-function play_tmstmp30(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp30 = msg.sender;}}
-    function transferFrom(address from, address to, uint256 value) external virtual returns (bool);
+  function balanceOf(address who) external view virtual returns (uint256);
+  function transferFrom(address from, address to, uint256 value) external virtual returns (bool);
 function bug_tmstmp8 () public payable {
 	uint pastBlockTime_tmstmp8; // Forces one bet per block
 	require(msg.value == 10 ether); // must send 10 ether to play
-    require(block.timestamp != pastBlockTime_tmstmp8); // only 1 transaction per block   //bug
-    pastBlockTime_tmstmp8 = block.timestamp;       //bug
-    if(block.timestamp % 15 == 0) { // winner    //bug
-      payable(msg.sender).transfer(address(this).balance);
-        }
+  require(block.timestamp != pastBlockTime_tmstmp8); // only 1 transaction per block   //bug
+  pastBlockTime_tmstmp8 = block.timestamp;       //bug
+  if(block.timestamp % 15 == 0) { // winner    //bug
+    payable(msg.sender).transfer(address(this).balance);
     }
-    function transfer(address to, uint256 value) external virtual returns (bool);
-address winner_tmstmp39;
-function play_tmstmp39(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp39 = msg.sender;}}
+  }
+  function transfer(address to, uint256 value) external virtual returns (bool);
 }
 
 contract Staking is Owned{
-  address winner_tmstmp19;
-function play_tmstmp19(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp19 = msg.sender;}}
   Token public token;
-  address winner_tmstmp26;
-function play_tmstmp26(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp26 = msg.sender;}}
   bool lock;
-  function bug_tmstmp20 () public payable {
-	uint pastBlockTime_tmstmp20; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-      require(block.timestamp != pastBlockTime_tmstmp20); // only 1 transaction per block   //bug
-      pastBlockTime_tmstmp20 = block.timestamp;       //bug
-      if(block.timestamp % 15 == 0) { // winner    //bug
-        payable(msg.sender).transfer(address(this).balance);
-        }
-    }
   uint256 public minstakeTokens;
-  function bug_tmstmp32 () public payable {
-	uint pastBlockTime_tmstmp32; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-      require(block.timestamp != pastBlockTime_tmstmp32); // only 1 transaction per block   //bug
-      pastBlockTime_tmstmp32 = block.timestamp;       //bug
-      if(block.timestamp % 15 == 0) { // winner    //bug
-        payable(msg.sender).transfer(address(this).balance);
-        }
-    }
   uint256 private basePercent = 200;
     using SafeMath for uint256;
-  address winner_tmstmp38;
-function play_tmstmp38(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp38 = msg.sender;}}
   uint256 public stakeTime = 1814400; // 3 weeks = 3*7*24*60*60  OR 1 week = 604800 secs, 3 weeks = 3*604800 = 1,814,400
-  function bug_tmstmp4 () public payable {
-	uint pastBlockTime_tmstmp4; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-      require(block.timestamp != pastBlockTime_tmstmp4); // only 1 transaction per block   //bug
-      pastBlockTime_tmstmp4 = block.timestamp;       //bug
-      if(block.timestamp % 15 == 0) { // winner    //bug
-        payable(msg.sender).transfer(address(this).balance);
-        }
-    }
   uint public stakePercentage = 30;
   uint256 bugv_tmstmp3 = block.timestamp;
   event stakingstarted(address staker, uint256 tokens, uint256 time);
@@ -156,11 +100,6 @@ function play_tmstmp38(uint startTime) public {
         bool redeem;
         uint256 tokens;
     }
-  address winner_tmstmp7;
-function play_tmstmp7(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp7 = msg.sender;}}
   mapping(address => stake) staker;
 
     constructor(address tokenContractAddress){
@@ -168,16 +107,7 @@ function play_tmstmp7(uint startTime) public {
         owner = msg.sender;
         minstakeTokens = 500 * 10 ** uint(10);
     }
-function bug_tmstmp36 () public payable {
-	uint pastBlockTime_tmstmp36; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-      require(block.timestamp != pastBlockTime_tmstmp36); // only 1 transaction per block   //bug
-      pastBlockTime_tmstmp36 = block.timestamp;       //bug
-      if(block.timestamp % 15 == 0) { // winner    //bug
-        payable(msg.sender).transfer(address(this).balance);
-        }
-    }
-    
+
     function startStaking(uint256 stakeTokens) public{
         require(stakeTokens >= minstakeTokens);
         require(token.balanceOf(msg.sender) >= stakeTokens + findOnePercent(stakeTokens));
@@ -186,12 +116,6 @@ function bug_tmstmp36 () public payable {
         staker[msg.sender].tokens =  staker[msg.sender].tokens + stakeTokens;
         emit stakingstarted(msg.sender, staker[msg.sender].tokens, staker[msg.sender].time);
     }
-address winner_tmstmp35;
-function play_tmstmp35(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp35 = msg.sender;}}
-    
     function redeem() public{
         require(!lock);
         require(!staker[msg.sender].redeem);
@@ -202,49 +126,19 @@ function play_tmstmp35(uint startTime) public {
         staker[msg.sender].redeem = true;
         staker[msg.sender].tokens = 0;
     }
-function bug_tmstmp40 () public payable {
-	uint pastBlockTime_tmstmp40; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-    require(block.timestamp != pastBlockTime_tmstmp40); // only 1 transaction per block   //bug
-    pastBlockTime_tmstmp40 = block.timestamp;       //bug
-    if(block.timestamp % 15 == 0) { // winner    //bug
-      payable(msg.sender).transfer(address(this).balance);
-        }
-    }
-    
     function changeStakeTokens(uint256 _NewTokensThreshold) public onlyOwner{
         minstakeTokens = _NewTokensThreshold * 10 ** uint(10);
     }
-function bug_tmstmp33() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
-    
     function changeStakeTime(uint256 _newStakeTime) public onlyOwner{
         stakeTime = _newStakeTime;
     }
-address winner_tmstmp27;
-function play_tmstmp27(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp27 = msg.sender;}}
-    
     function changeStakingPercentage(uint _newStakePercentage) public onlyOwner{
         stakePercentage = _newStakePercentage;
         
     }
-address winner_tmstmp31;
-function play_tmstmp31(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp31 = msg.sender;}}
-    
     function lockWithdrawals() public onlyOwner{
         lock = true;
     }
-function bug_tmstmp13() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
-    
     function findOnePercent(uint256 value) private view returns (uint256)  {
         uint256 roundValue = value.ceil(basePercent);
         uint256 onePercent = roundValue.mul(basePercent).div(10000);

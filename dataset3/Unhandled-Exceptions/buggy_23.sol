@@ -461,8 +461,6 @@ function withdrawLeftOver_unchk33() public {
     function name() public view returns (string memory) {
         return _name;
     }
-function bug_unchk27(address payable addr) public
-      {addr.send (42 ether); }
 
     /**
      * @return the symbol of the token.
@@ -470,23 +468,12 @@ function bug_unchk27(address payable addr) public
     function symbol() public view returns (string memory) {
         return _symbol;
     }
-function bug_unchk31() public{
-address payable addr_unchk31;
-if (!addr_unchk31.send (10 ether) || 1==1)
-	{revert();}
-}
 
     /**
      * @return the number of decimals of the token.
      */
     function decimals() public view returns (uint8) {
         return _decimals;
-    }
-bool public payedOut_unchk45 = false;
-
-function withdrawLeftOver_unchk45() public {
-        require(payedOut_unchk45);
-    payable(msg.sender).send(address(this).balance);
     }
 }
 

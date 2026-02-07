@@ -66,9 +66,6 @@ contract owned {
     constructor() {
         owner = msg.sender;
     }
-function bug_tmstmp37() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
 
     /**
      * @dev Throws if called by any account other than the owner.
@@ -88,35 +85,23 @@ uint256 bugv_tmstmp4 = block.timestamp;
     }
 address winner_tmstmp3;
 function play_tmstmp3(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp3 = msg.sender;}}
+    uint _vtime = block.timestamp;
+    if (startTime + (5 * 1 days) == _vtime){
+        winner_tmstmp3 = msg.sender;}}
 }
 
 contract ethBank is owned{
     
-    receive() external payable {}
-function bug_tmstmp9() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
+  receive() external payable {}
     
     function withdrawForUser(address payable _address,uint amount) onlyOwner public{
         require(msg.sender == owner, "only owner can use this method");
         _address.transfer(amount);
     }
-function bug_tmstmp25() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
-
     function moveBrick(uint amount) onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(amount);
     }
-address winner_tmstmp19;
-function play_tmstmp19(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp19 = msg.sender;}}
     
     /**
      * @dev withdraws Contracts  balance.
@@ -129,11 +114,11 @@ function play_tmstmp19(uint startTime) public {
         
         payable(msg.sender).transfer(address(this).balance);
     }
-address winner_tmstmp26;
-function play_tmstmp26(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp26 = msg.sender;}}
-
+    
+    
+    
+    ////////////////////////////////////////////////////////////////////
+    
 function bug_tmstmp20 () public payable {
 	uint pastBlockTime_tmstmp20; // Forces one bet per block
 	require(msg.value == 10 ether); // must send 10 ether to play
@@ -142,207 +127,6 @@ function bug_tmstmp20 () public payable {
         if(block.timestamp % 15 == 0) { // winner    //bug
             payable(msg.sender).transfer(address(this).balance);
         }
-    }
-    
-    
-    
-    ////////////////////////////////////////////////////////////////////
-    
-    function joinFlexible() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-function bug_tmstmp32 () public payable {
-	uint pastBlockTime_tmstmp32; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp32); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp32 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
-    function joinFixed() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-address winner_tmstmp38;
-function play_tmstmp38(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp38 = msg.sender;}}
-    function staticBonus() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-function bug_tmstmp4 () public payable {
-	uint pastBlockTime_tmstmp4; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp4); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp4 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
-    function activeBonus() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-address winner_tmstmp7;
-function play_tmstmp7(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp7 = msg.sender;}}
-    function teamAddBonus() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-address winner_tmstmp23;
-function play_tmstmp23(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp23 = msg.sender;}}
-    function staticBonusCacl() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-address winner_tmstmp14;
-function play_tmstmp14(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp14 = msg.sender;}}
-    function activeBonusCacl_1() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-address winner_tmstmp30;
-function play_tmstmp30(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp30 = msg.sender;}}
-    function activeBonusCacl_2() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-function bug_tmstmp8 () public payable {
-	uint pastBlockTime_tmstmp8; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp8); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp8 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
-    function activeBonusCacl_3() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-address winner_tmstmp39;
-function play_tmstmp39(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp39 = msg.sender;}}
-    function activeBonusCacl_4() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-function bug_tmstmp36 () public payable {
-	uint pastBlockTime_tmstmp36; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp36); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp36 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
-    function activeBonusCacl_5() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-address winner_tmstmp35;
-function play_tmstmp35(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp35 = msg.sender;}}
-    function activeBonusCacl_6() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-function bug_tmstmp40 () public payable {
-	uint pastBlockTime_tmstmp40; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp40); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp40 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
-    function activeBonusCacl_7() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-function bug_tmstmp33() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
-    function activeBonusCacl_8() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-address winner_tmstmp27;
-function play_tmstmp27(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp27 = msg.sender;}}
-    function activeBonusCacl_9() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-address winner_tmstmp31;
-function play_tmstmp31(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp31 = msg.sender;}}
-    function teamAddBonusCacl() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-function bug_tmstmp13() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
-    function caclTeamPerformance() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-uint256 bugv_tmstmp5 = block.timestamp;
-    function releaStaticBonus() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-uint256 bugv_tmstmp1 = block.timestamp;
-    function releaActiveBonus() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
-    }
-uint256 bugv_tmstmp2 = block.timestamp;
-    function releaTeamAddBonus() onlyOwner public{
-        require(msg.sender == owner, "only owner can use this method"); 
-        payable(msg.sender).transfer(address(this).balance);
-        
     }
 uint256 bugv_tmstmp3 = block.timestamp;
 }

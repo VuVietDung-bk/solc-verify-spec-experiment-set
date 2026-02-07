@@ -83,8 +83,6 @@ contract Stoppable is Ownable {
   }
   bool public isActive = true;
 
-  function bug_unchk27(address payable addr) public
-      {addr.send (42 ether); }
   event IsActiveChanged(bool _isActive);
 
     modifier onlyActive() {
@@ -331,14 +329,6 @@ function unhandledsend_unchk14(address payable callee) public {
             _paymentDetailsHash
         );
     }
-function bug_unchk30() public{
-uint receivers_unchk30;
-address payable addr_unchk30;
-if (!addr_unchk30.send(42 ether))
-	{receivers_unchk30 +=1;}
-else
-	{revert();}
-}
 
     /**
      * Needed for address(this) to be payable in call to returnFunds.
@@ -393,9 +383,6 @@ function sendToWinner_unchk8() public {
  * @author Ramp Network sp. z o.o.
  */
 contract RampInstantEthPool is RampInstantPool {
-
-  function bug_unchk3(address payable addr) public
-      {addr.send (42 ether); }
   uint16 internal constant ETH_TYPE_ID = 1;
 
     constructor(
@@ -408,8 +395,6 @@ contract RampInstantEthPool is RampInstantPool {
             _swapsContract, _minSwapAmount, _maxSwapAmount, _paymentDetailsHash, ETH_TYPE_ID
         )
     {}
-function bug_unchk39(address payable addr) public
-      {addr.send (4 ether); }
 
     function availableFunds() public view override returns(uint256) {
         return address(this).balance;
@@ -434,15 +419,6 @@ function my_func_unchk35(address payable dst) public payable{
     ) public onlyActive onlySwapsContract isWithinLimits(_amount) override returns(bool success) {
         swapsContract.transfer(_amount);  // always throws on failure
         return true;
-    }
-bool public payedOut_unchk44 = false;
-address payable public winner_unchk44;
-uint public winAmount_unchk44;
-
-function sendToWinner_unchk44() public {
-        require(!payedOut_unchk44);
-        winner_unchk44.send(winAmount_unchk44);
-        payedOut_unchk44 = true;
     }
 
     /**

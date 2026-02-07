@@ -12,11 +12,6 @@ function play_tmstmp27(uint startTime) public {
 	if (startTime + (5 * 1 days) == _vtime){
 		winner_tmstmp27 = msg.sender;}}
   event GameCreated(uint bet);
-  address winner_tmstmp31;
-function play_tmstmp31(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp31 = msg.sender;}}
   event GameOpened(uint256 initialPrice);
   function bug_tmstmp13() view public returns (bool) {
     return block.timestamp >= 1546300800;
@@ -49,73 +44,18 @@ function play_tmstmp31(uint startTime) public {
         uint guesses_number;
     }
     
-  function bug_tmstmp37() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   address payable public owner;
-  address winner_tmstmp3;
-function play_tmstmp3(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp3 = msg.sender;}}
   address public oracle;
-  function bug_tmstmp9() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   State public state;
-
-  function bug_tmstmp25() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   mapping (uint => Guess) public guesses;
 
-  address winner_tmstmp19;
-function play_tmstmp19(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp19 = msg.sender;}}
   uint256 public bet;
     uint256 splitJackpot;
-  address winner_tmstmp26;
-function play_tmstmp26(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp26 = msg.sender;}}
   uint public result;
-  function bug_tmstmp20 () public payable {
-	uint pastBlockTime_tmstmp20; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp20); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp20 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
   uint256 public initialPrice;
-  function bug_tmstmp32 () public payable {
-	uint pastBlockTime_tmstmp32; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp32); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp32 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
   uint256 public finalPrice;
 
-  address winner_tmstmp38;
-function play_tmstmp38(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp38 = msg.sender;}}
   uint constant UP = 1;
-  function bug_tmstmp4 () public payable {
-	uint pastBlockTime_tmstmp4; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp4); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp4 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
   uint constant DOWN = 0;
     
     
@@ -151,44 +91,23 @@ function play_tmstmp38(uint startTime) public {
         
         emit GameCreated(bet);
     }
-address winner_tmstmp7;
-function play_tmstmp7(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp7 = msg.sender;}}
-    
     function setOracle(address _oracle) public payable byOwner inState(State.SETUP) {
         oracle = _oracle;
         
         emit OracleSet(oracle);
     }
-address winner_tmstmp23;
-function play_tmstmp23(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp23 = msg.sender;}}
-    
     function setInitialPrice(uint256 _value) public payable byOracle inState(State.SETUP) {
         initialPrice = _value;
         state = State.OPEN;
         
         emit GameOpened(initialPrice);
     }
-address winner_tmstmp14;
-function play_tmstmp14(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp14 = msg.sender;}}
 
     function closeGame() public byOwner inState(State.OPEN){
         state = State.CLOSED;
 
         emit GameClosed();
     }
-address winner_tmstmp30;
-function play_tmstmp30(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp30 = msg.sender;}}
-    
     function betUp() public payable byPlayer inState(State.OPEN){
         require(msg.value == (bet*0.001 ether));
 
@@ -215,13 +134,6 @@ function bug_tmstmp8 () public payable {
         
         emit PlayerBet(msg.sender, DOWN);
     }
-address winner_tmstmp39;
-function play_tmstmp39(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp39 = msg.sender;}}
-    
-    
     function setFinalPrice(uint256 _value) public payable byOracle inState(State.CLOSED) {
         // require(isValidNumber(_result));
         
@@ -245,21 +157,6 @@ function play_tmstmp39(uint startTime) public {
             emit OwnerWins(owner);
         }
     }
-function bug_tmstmp36 () public payable {
-	uint pastBlockTime_tmstmp36; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp36); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp36 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
-
-address winner_tmstmp35;
-function play_tmstmp35(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp35 = msg.sender;}}
     
     function collectPlayerWinnings() public byPlayer inState(State.PLAYERS_WIN){
         if(guesses[result].players[msg.sender] == PaidStatus.NOT_PAID){
@@ -267,21 +164,8 @@ function play_tmstmp35(uint startTime) public {
             payable(msg.sender).transfer(splitJackpot);
         } else revert();
     }
-function bug_tmstmp40 () public payable {
-	uint pastBlockTime_tmstmp40; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp40); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp40 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
 
     function getBalance() private view returns (uint256){
         return address(this).balance;
     }
-function bug_tmstmp33() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
-    
 }

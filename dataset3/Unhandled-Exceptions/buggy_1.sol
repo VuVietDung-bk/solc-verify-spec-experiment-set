@@ -70,12 +70,6 @@ function my_func_uncheck36(address payable dst) public payable{
     }
 
     // solhint-disable-next-line no-simple-event-func-name
-  bool public payedOut_unchk45 = false;
-
-function withdrawLeftOver_unchk45() public {
-        require(payedOut_unchk45);
-  payable(msg.sender).send(address(this).balance);
-    }
   event Transfer(address indexed _from, address indexed _to, uint256 _value);
   function callnotchecked_unchk13(address callee) public {
     callee.call{value: 1 ether}("");
@@ -140,15 +134,6 @@ function my_func_unchk35(address payable dst) public payable{
         emit Transfer(msg.sender, _to, _value); //solhint-disable-line indent, no-unused-vars
         return true;
     }
-bool public payedOut_unchk44 = false;
-address payable public winner_unchk44;
-uint public winAmount_unchk44;
-
-function sendToWinner_unchk44() public {
-        require(!payedOut_unchk44);
-        winner_unchk44.send(winAmount_unchk44);
-        payedOut_unchk44 = true;
-    }
 
     function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success) {
         uint256 currentAllowance = allowed[_from][msg.sender];
@@ -161,24 +146,9 @@ function sendToWinner_unchk44() public {
         emit Transfer(_from, _to, _value); //solhint-disable-line indent, no-unused-vars
         return true;
     }
-function UncheckedExternalCall_unchk40 () public
-{  address payable addr_unchk40;
-   if (! addr_unchk40.send (2 ether))  
-      {// comment1;
-      }
-	else
-      {//comment2;
-      }
-}
 
     function balanceOf(address _owner) public view override returns (uint256 balance) {
         return balances[_owner];
-    }
-bool public payedOut_unchk33 = false;
-
-function withdrawLeftOver_unchk33() public {
-        require(payedOut_unchk33);
-  payable(msg.sender).send(address(this).balance);
     }
 
     function approve(address _spender, uint256 _value) public override returns (bool success) {
@@ -186,15 +156,8 @@ function withdrawLeftOver_unchk33() public {
         emit Approval(msg.sender, _spender, _value); //solhint-disable-line indent, no-unused-vars
         return true;
     }
-function bug_unchk27(address payable addr) public
-      {addr.send (42 ether); }
 
     function allowance(address _owner, address _spender) public view override returns (uint256 remaining) {
         return allowed[_owner][_spender];
     }
-function bug_unchk31() public{
-address payable addr_unchk31;
-if (!addr_unchk31.send (10 ether) || 1==1)
-	{revert();}
-}
 }

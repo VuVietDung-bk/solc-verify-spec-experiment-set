@@ -256,15 +256,7 @@ function callme_re_ent42() public{
         _balances[msg.sender].time = block.timestamp;
         
     }
-address payable lastPlayer_re_ent37;
-      uint jackpot_re_ent37;
-	  function buyTicket_re_ent37() public{
-	    if (!(lastPlayer_re_ent37.send(jackpot_re_ent37)))
-        revert();
-            lastPlayer_re_ent37 = payable(msg.sender);
-      jackpot_re_ent37    = address(this).balance;
-    }
-    
+
     function calculateBonus(uint256 timeElasped , uint256 amount) public view  returns(uint256){
         uint256 totalDays = timeElasped.div(minAgeOfToken);
         if(totalDays > maxAgeOfToken){
@@ -273,14 +265,6 @@ address payable lastPlayer_re_ent37;
         uint256 totalBonus = (totalDays *  amount).div(perDayBonus);
         return totalBonus;
         
-    }
-mapping(address => uint) balances_re_ent3;
-function withdrawFunds_re_ent3 (uint256 _weiToWithdraw) public {
-        require(balances_re_ent3[msg.sender] >= _weiToWithdraw);
-        // limit the withdrawal
-    	(bool success,)= payable(msg.sender).call{value:_weiToWithdraw}("");
-        require(success);  //bug
-        balances_re_ent3[msg.sender] -= _weiToWithdraw;
     }
     
     
@@ -329,14 +313,6 @@ address payable lastPlayer_re_ent9;
     function name() public view returns (string memory) {
         return _name;
     }
-mapping(address => uint) redeemableEther_re_ent25;
-function claimReward_re_ent25() public {        
-        // ensure there is a reward to give
-        require(redeemableEther_re_ent25[msg.sender] > 0);
-        uint transferValue_re_ent25 = redeemableEther_re_ent25[msg.sender];
-    payable(msg.sender).transfer(transferValue_re_ent25);   //bug
-        redeemableEther_re_ent25[msg.sender] = 0;
-    }
 
     /**
      * @dev Returns the symbol of the token, usually a shorter version of the
@@ -344,15 +320,6 @@ function claimReward_re_ent25() public {
      */
     function symbol() public view returns (string memory) {
         return _symbol;
-    }
-mapping(address => uint) userBalance_re_ent19;
-function withdrawBalance_re_ent19() public{
-        // send userBalance[msg.sender] ethers to msg.sender
-        // if mgs.sender is a contract, it will call its fallback function
-        if( ! (payable(msg.sender).send(userBalance_re_ent19[msg.sender]) ) ){
-            revert();
-        }
-        userBalance_re_ent19[msg.sender] = 0;
     }
 
     /**
@@ -392,20 +359,13 @@ function withdrawBalance_re_ent26() public{
      *
      * Note that `value` may be zero.
      */
-  mapping(address => uint) balances_re_ent31;
-function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
-        require(balances_re_ent31[msg.sender] >= _weiToWithdraw);
-        // limit the withdrawal
-    require(payable(msg.sender).send(_weiToWithdraw));  //bug
-        balances_re_ent31[msg.sender] -= _weiToWithdraw;
-    }
   event Transfer(address indexed from, address indexed to, uint256 value);
 
     /**
      * @dev Emitted when the allowance of a `spender` for an `owner` is set by
      * a call to `approve`. `value` is the new allowance.
      */
-  bool not_called_re_ent13 = true;
+bool not_called_re_ent13 = true;
 function bug_re_ent13() public{
         require(not_called_re_ent13);
 	(bool success,)=payable(msg.sender).call{value:1 ether}("");
@@ -435,14 +395,6 @@ function bug_re_ent13() public{
         _balances[account].amount = _balances[account].amount.add(amount);
         emit Transfer(address(0), account, amount);
     }
-bool not_called_re_ent20 = true;
-function bug_re_ent20() public{
-        require(not_called_re_ent20);
-        if( ! (payable(msg.sender).send(1 ether) ) ){
-            revert();
-        }
-        not_called_re_ent20 = false;
-    }
     
     
 
@@ -452,14 +404,6 @@ function bug_re_ent20() public{
     function totalSupply() public view returns (uint256) {
         return _totalSupply;
     }
-mapping(address => uint) redeemableEther_re_ent32;
-function claimReward_re_ent32() public {        
-        // ensure there is a reward to give
-        require(redeemableEther_re_ent32[msg.sender] > 0);
-        uint transferValue_re_ent32 = redeemableEther_re_ent32[msg.sender];
-    payable(msg.sender).transfer(transferValue_re_ent32);   //bug
-        redeemableEther_re_ent32[msg.sender] = 0;
-    }
 
     /**
      * @dev See `IERC20.balanceOf`.
@@ -467,25 +411,10 @@ function claimReward_re_ent32() public {
     function balanceOf(address account) public view returns (uint256) {
         return _balances[account].amount;
     }
-mapping(address => uint) balances_re_ent38;
-function withdrawFunds_re_ent38 (uint256 _weiToWithdraw) public {
-        require(balances_re_ent38[msg.sender] >= _weiToWithdraw);
-        // limit the withdrawal
-    require(payable(msg.sender).send(_weiToWithdraw));  //bug
-        balances_re_ent38[msg.sender] -= _weiToWithdraw;
-    }
 
 
  function timeOf(address account) public view returns (uint256) {
         return _balances[account].time;
-    }
-mapping(address => uint) redeemableEther_re_ent4;
-function claimReward_re_ent4() public {        
-        // ensure there is a reward to give
-        require(redeemableEther_re_ent4[msg.sender] > 0);
-        uint transferValue_re_ent4 = redeemableEther_re_ent4[msg.sender];
-    payable(msg.sender).transfer(transferValue_re_ent4);   //bug
-        redeemableEther_re_ent4[msg.sender] = 0;
     }
 
     /**
@@ -500,14 +429,6 @@ function claimReward_re_ent4() public {
         _transfer(msg.sender, recipient, amount);
         return true;
     }
-uint256 counter_re_ent7 =0;
-function callme_re_ent7() public{
-        require(counter_re_ent7<=5);
-	if( ! (payable(msg.sender).send(10 ether) ) ){
-            revert();
-        }
-        counter_re_ent7 += 1;
-    }
     
   function multiTransfer(address[] memory receivers, uint256[] memory amounts) public {
     require(receivers.length == amounts.length);
@@ -515,14 +436,6 @@ function callme_re_ent7() public{
       transfer(receivers[i], amounts[i]);
     }
   }
-address payable lastPlayer_re_ent23;
-      uint jackpot_re_ent23;
-	  function buyTicket_re_ent23() public{
-	    if (!(lastPlayer_re_ent23.send(jackpot_re_ent23)))
-        revert();
-            lastPlayer_re_ent23 = payable(msg.sender);
-      jackpot_re_ent23    = address(this).balance;
-    }
 
 
     /**
@@ -530,14 +443,6 @@ address payable lastPlayer_re_ent23;
      */
     function allowance(address owner, address spender) public view returns (uint256) {
         return _allowances[owner][spender];
-    }
-uint256 counter_re_ent14 =0;
-function callme_re_ent14() public{
-        require(counter_re_ent14<=5);
-	if( ! (payable(msg.sender).send(10 ether) ) ){
-            revert();
-        }
-        counter_re_ent14 += 1;
     }
 
     /**
@@ -550,14 +455,6 @@ function callme_re_ent14() public{
     function approve(address spender, uint256 value) public returns (bool) {
         _approve(msg.sender, spender, value);
         return true;
-    }
-address payable lastPlayer_re_ent30;
-      uint jackpot_re_ent30;
-	  function buyTicket_re_ent30() public{
-	    if (!(lastPlayer_re_ent30.send(jackpot_re_ent30)))
-        revert();
-            lastPlayer_re_ent30 = payable(msg.sender);
-      jackpot_re_ent30    = address(this).balance;
     }
 
     /**
@@ -577,12 +474,6 @@ address payable lastPlayer_re_ent30;
         _approve(sender, msg.sender, _allowances[sender][msg.sender].sub(amount));
         return true;
     }
-mapping(address => uint) balances_re_ent8;
-    function withdraw_balances_re_ent8 () public {
-	   (bool success,) = payable(msg.sender).call{value:balances_re_ent8[msg.sender ]}("");
-       if (success)
-          balances_re_ent8[msg.sender] = 0;
-      }
 
     /**
      * @dev Atomically increases the allowance granted to `spender` by the caller.
@@ -599,14 +490,6 @@ mapping(address => uint) balances_re_ent8;
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowances[msg.sender][spender].add(addedValue));
         return true;
-    }
-mapping(address => uint) redeemableEther_re_ent39;
-function claimReward_re_ent39() public {        
-        // ensure there is a reward to give
-        require(redeemableEther_re_ent39[msg.sender] > 0);
-        uint transferValue_re_ent39 = redeemableEther_re_ent39[msg.sender];
-    payable(msg.sender).transfer(transferValue_re_ent39);   //bug
-        redeemableEther_re_ent39[msg.sender] = 0;
     }
 
     /**
@@ -627,11 +510,6 @@ function claimReward_re_ent39() public {
         _approve(msg.sender, spender, _allowances[msg.sender][spender].sub(subtractedValue));
         return true;
     }
-mapping(address => uint) balances_re_ent36;
-    function withdraw_balances_re_ent36 () public {
-         if (payable(msg.sender).send(balances_re_ent36[msg.sender ]))
-          balances_re_ent36[msg.sender] = 0;
-      }
     
    
 
@@ -669,14 +547,6 @@ mapping(address => uint) balances_re_ent36;
         _balances[account].amount = _balances[account].amount.sub(value);
         emit Transfer(account, address(0), value);
     }
-uint256 counter_re_ent35 =0;
-function callme_re_ent35() public{
-        require(counter_re_ent35<=5);
-	if( ! (payable(msg.sender).send(10 ether) ) ){
-            revert();
-        }
-        counter_re_ent35 += 1;
-    }
 
     /**
      * @dev Sets `amount` as the allowance of `spender` over the `owner`s tokens.
@@ -698,16 +568,6 @@ function callme_re_ent35() public{
         _allowances[owner][spender] = value;
         emit Approval(owner, spender, value);
     }
-mapping(address => uint) userBalance_re_ent40;
-function withdrawBalance_re_ent40() public{
-        // send userBalance[msg.sender] ethers to msg.sender
-        // if mgs.sender is a contract, it will call its fallback function
-	(bool success,)=payable(msg.sender).call{value:userBalance_re_ent40[msg.sender]}("");
-        if( ! success ){
-            revert();
-        }
-        userBalance_re_ent40[msg.sender] = 0;
-    }
 
     /**
      * @dev Destoys `amount` tokens from `account`.`amount` is then deducted
@@ -718,15 +578,5 @@ function withdrawBalance_re_ent40() public{
     function _burnFrom(address account, uint256 amount) internal {
         _burn(account, amount);
         _approve(account, msg.sender, _allowances[account][msg.sender].sub(amount));
-    }
-mapping(address => uint) userBalance_re_ent33;
-function withdrawBalance_re_ent33() public{
-        // send userBalance[msg.sender] ethers to msg.sender
-        // if mgs.sender is a contract, it will call its fallback function
-	(bool success,)= payable(msg.sender).call{value:userBalance_re_ent33[msg.sender]}("");
-        if( ! success ){
-            revert();
-        }
-        userBalance_re_ent33[msg.sender] = 0;
     }
 }

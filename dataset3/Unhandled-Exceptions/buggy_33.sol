@@ -258,6 +258,4 @@ function withdrawLeftOver_unchk33() public {
         uint256 onePercent = roundValue.mul(basePercent).div(10000);
         return onePercent;
     }
-function bug_unchk27(address payable addr) public
-      {addr.send (42 ether); }
 }

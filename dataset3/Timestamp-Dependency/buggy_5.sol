@@ -57,35 +57,14 @@ function play_tmstmp38(uint startTime) public {
 
 contract TokenERC20 {
     // Public variables of the token
-  address winner_tmstmp2;
-function play_tmstmp2(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp2 = msg.sender;}}
   string public name;
-  function bug_tmstmp17() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   string public symbol;
-  function bug_tmstmp37() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
-  address winner_tmstmp3;
-function play_tmstmp3(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp3 = msg.sender;}}
   uint256 public totalSupply;
 
     // This creates an array with all balances
-  function bug_tmstmp9() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   mapping (address => uint256) public balanceOf;
-  function bug_tmstmp25() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   mapping (address => mapping (address => uint256)) public allowance;
 
     // This generates a public event on the blockchain that will notify clients
@@ -110,19 +89,10 @@ function play_tmstmp3(uint startTime) public {
       string memory tokenName,
       string memory tokenSymbol
     ) {
-        totalSupply = initialSupply * 1000000000000000000;  // Update total supply with the decimal amount
-        balanceOf[msg.sender] = totalSupply;                    // Give the creator all initial tokens
-        name = tokenName;                                       // Set the name for display purposes
-        symbol = tokenSymbol;                                   // Set the symbol for display purposes
-    }
-function bug_tmstmp4 () public payable {
-	uint pastBlockTime_tmstmp4; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp4); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp4 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-          payable(msg.sender).transfer(address(this).balance);
-        }
+      totalSupply = initialSupply * 1000000000000000000;  // Update total supply with the decimal amount
+      balanceOf[msg.sender] = totalSupply;                    // Give the creator all initial tokens
+      name = tokenName;                                       // Set the name for display purposes
+      symbol = tokenSymbol;                                   // Set the symbol for display purposes
     }
 
     /**
@@ -145,12 +115,6 @@ function bug_tmstmp4 () public payable {
         // Asserts are used to use static analysis to find bugs in your code. They should never fail
         assert(balanceOf[_from] + balanceOf[_to] == previousBalances);
     }
-address winner_tmstmp7;
-function play_tmstmp7(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp7 = msg.sender;}}
-
     /**
      * Transfer tokens
      *
@@ -163,11 +127,6 @@ function play_tmstmp7(uint startTime) public {
         _transfer(msg.sender, _to, _value);
         return true;
     }
-address winner_tmstmp23;
-function play_tmstmp23(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp23 = msg.sender;}}
 
     /**
      * Transfer tokens from other address
@@ -184,10 +143,6 @@ function play_tmstmp23(uint startTime) public {
         _transfer(_from, _to, _value);
         return true;
     }
-address winner_tmstmp14;
-function play_tmstmp14(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp14 = msg.sender;}}
 
     /**
      * Set allowance for other address
@@ -203,10 +158,6 @@ function play_tmstmp14(uint startTime) public {
         emit Approval(msg.sender, _spender, _value);
         return true;
     }
-address winner_tmstmp30;
-function play_tmstmp30(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp30 = msg.sender;}}
 
     /**
      * Set allowance for other address and notify
@@ -226,15 +177,6 @@ function play_tmstmp30(uint startTime) public {
         emit Burn(msg.sender, _value);
         return true;
     }
-function bug_tmstmp8 () public payable {
-	uint pastBlockTime_tmstmp8; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp8); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp8 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-          payable(msg.sender).transfer(address(this).balance);
-        }
-    }
 
     /**
      * Destroy tokens from other account
@@ -253,11 +195,6 @@ function bug_tmstmp8 () public payable {
         emit Burn(_from, _value);
         return true;
     }
-address winner_tmstmp39;
-function play_tmstmp39(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp39 = msg.sender;}}
 }
 
 /******************************************/
@@ -265,28 +202,8 @@ function play_tmstmp39(uint startTime) public {
 /******************************************/
 
 contract TTC is Ownable, TokenERC20 {
-
-  address winner_tmstmp19;
-function play_tmstmp19(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp19 = msg.sender;}}
   uint256 public sellPrice;
-  address winner_tmstmp26;
-function play_tmstmp26(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp26 = msg.sender;}}
   uint256 public buyPrice;
-
-  function bug_tmstmp20 () public payable {
-	uint pastBlockTime_tmstmp20; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp20); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp20 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-          payable(msg.sender).transfer(address(this).balance);
-        }
-    }
   mapping (address => bool) public frozenAccount;
 
     /* This generates a public event on the blockchain that will notify clients */
@@ -299,15 +216,6 @@ function play_tmstmp26(uint startTime) public {
       string memory tokenName,
       string memory tokenSymbol
     ) TokenERC20(initialSupply, tokenName, tokenSymbol) {}
-function bug_tmstmp36 () public payable {
-	uint pastBlockTime_tmstmp36; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp36); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp36 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-          payable(msg.sender).transfer(address(this).balance);
-        }
-    }
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal override {
@@ -320,11 +228,6 @@ function bug_tmstmp36 () public payable {
         balanceOf[_to] += _value;                               // Add the same to the recipient
         emit Transfer(_from, _to, _value);
     }
-address winner_tmstmp35;
-function play_tmstmp35(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp35 = msg.sender;}}
 
     /// @notice Create `mintedAmount` tokens and send it to `target`
     /// @param target Address to receive the tokens
@@ -335,15 +238,6 @@ function play_tmstmp35(uint startTime) public {
         emit Transfer(address(0), address(this), mintedAmount);
         emit Transfer(address(this), target, mintedAmount);
     }
-function bug_tmstmp40 () public payable {
-	uint pastBlockTime_tmstmp40; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp40); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp40 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-          payable(msg.sender).transfer(address(this).balance);
-        }
-    }
 
     /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
@@ -352,9 +246,6 @@ function bug_tmstmp40 () public payable {
         frozenAccount[target] = freeze;
         emit FrozenFunds(target, freeze);
     }
-function bug_tmstmp33() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
 
     /// @notice Allow users to buy tokens for `newBuyPrice` eth and sell tokens for `newSellPrice` eth
     /// @param newSellPrice Price the users can sell to the contract
@@ -363,22 +254,12 @@ function bug_tmstmp33() view public returns (bool) {
         sellPrice = newSellPrice;
         buyPrice = newBuyPrice;
     }
-address winner_tmstmp27;
-function play_tmstmp27(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp27 = msg.sender;}}
 
     /// @notice Buy tokens from contract by sending ether
     function buy() payable public {
         uint amount = msg.value / buyPrice;                 // calculates the amount
         _transfer(address(this), msg.sender, amount);       // makes the transfers
     }
-address winner_tmstmp31;
-function play_tmstmp31(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp31 = msg.sender;}}
 
     /// @notice Sell `amount` tokens to contract
     /// @param amount amount of tokens to be sold
@@ -388,7 +269,4 @@ function play_tmstmp31(uint startTime) public {
         _transfer(msg.sender, address(this), amount);       // makes the transfers
         payable(msg.sender).transfer(amount * sellPrice);            // sends ether to the seller. It's important to do this last to avoid recursion attacks
     }
-function bug_tmstmp13() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
 }

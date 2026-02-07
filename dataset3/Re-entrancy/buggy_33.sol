@@ -98,54 +98,14 @@ library SafeMath {
 
 abstract contract Token{
   function balanceOf(address who) external view virtual returns (uint256);
-mapping(address => uint) redeemableEther_re_ent4;
-function claimReward_re_ent4() public {        
-        // ensure there is a reward to give
-        require(redeemableEther_re_ent4[msg.sender] > 0);
-        uint transferValue_re_ent4 = redeemableEther_re_ent4[msg.sender];
-        payable(msg.sender).transfer(transferValue_re_ent4);   //bug
-        redeemableEther_re_ent4[msg.sender] = 0;
-    }
     function transferFrom(address from, address to, uint256 value) external virtual returns (bool);
-uint256 counter_re_ent7 =0;
-function callme_re_ent7() public{
-        require(counter_re_ent7<=5);
-	if( ! (payable(msg.sender).send(10 ether) ) ){
-            revert();
-        }
-        counter_re_ent7 += 1;
-    }
     function transfer(address to, uint256 value) external virtual returns (bool);
-address payable lastPlayer_re_ent23;
-      uint jackpot_re_ent23;
-	  function buyTicket_re_ent23() public{
-	    if (!(lastPlayer_re_ent23.send(jackpot_re_ent23)))
-        revert();
-      lastPlayer_re_ent23 = payable(msg.sender);
-      jackpot_re_ent23    = address(this).balance;
-    }
 }
 
 contract Staking is Owned{
-  address payable lastPlayer_re_ent37;
-      uint jackpot_re_ent37;
-	  function buyTicket_re_ent37() public{
-	    if (!(lastPlayer_re_ent37.send(jackpot_re_ent37)))
-        revert();
-      lastPlayer_re_ent37 = payable(msg.sender);
-      jackpot_re_ent37    = address(this).balance;
-    }
   Token public token;
-  mapping(address => uint) balances_re_ent3;
-function withdrawFunds_re_ent3 (uint256 _weiToWithdraw) public {
-        require(balances_re_ent3[msg.sender] >= _weiToWithdraw);
-        // limit the withdrawal
-	(bool success,)= payable(msg.sender).call{value:_weiToWithdraw}("");
-        require(success);  //bug
-        balances_re_ent3[msg.sender] -= _weiToWithdraw;
-    }
   bool lock;
-  address payable lastPlayer_re_ent9;
+address payable lastPlayer_re_ent9;
       uint jackpot_re_ent9;
     function buyTicket_re_ent9() public{
       (bool success,) = lastPlayer_re_ent9.call{value:jackpot_re_ent9}("");
@@ -155,17 +115,9 @@ function withdrawFunds_re_ent3 (uint256 _weiToWithdraw) public {
       jackpot_re_ent9    = address(this).balance;
     }
   uint256 public minstakeTokens;
-  mapping(address => uint) redeemableEther_re_ent25;
-function claimReward_re_ent25() public {        
-        // ensure there is a reward to give
-        require(redeemableEther_re_ent25[msg.sender] > 0);
-        uint transferValue_re_ent25 = redeemableEther_re_ent25[msg.sender];
-        payable(msg.sender).transfer(transferValue_re_ent25);   //bug
-        redeemableEther_re_ent25[msg.sender] = 0;
-    }
   uint256 private basePercent = 200;
     using SafeMath for uint256;
-  mapping(address => uint) userBalance_re_ent19;
+mapping(address => uint) userBalance_re_ent19;
 function withdrawBalance_re_ent19() public{
         // send userBalance[msg.sender] ethers to msg.sender
         // if mgs.sender is a contract, it will call its fallback function
@@ -175,7 +127,7 @@ function withdrawBalance_re_ent19() public{
         userBalance_re_ent19[msg.sender] = 0;
     }
   uint256 public stakeTime = 1814400; // 3 weeks = 3*7*24*60*60  OR 1 week = 604800 secs, 3 weeks = 3*604800 = 1,814,400
-  mapping(address => uint) userBalance_re_ent26;
+mapping(address => uint) userBalance_re_ent26;
 function withdrawBalance_re_ent26() public{
         // send userBalance[msg.sender] ethers to msg.sender
         // if mgs.sender is a contract, it will call its fallback function
@@ -186,15 +138,8 @@ function withdrawBalance_re_ent26() public{
         userBalance_re_ent26[msg.sender] = 0;
     }
   uint public stakePercentage = 30;
-  mapping(address => uint) balances_re_ent31;
-function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
-        require(balances_re_ent31[msg.sender] >= _weiToWithdraw);
-        // limit the withdrawal
-        require(payable(msg.sender).send(_weiToWithdraw));  //bug
-        balances_re_ent31[msg.sender] -= _weiToWithdraw;
-    }
   event stakingstarted(address staker, uint256 tokens, uint256 time);
-  bool not_called_re_ent13 = true;
+bool not_called_re_ent13 = true;
 function bug_re_ent13() public{
         require(not_called_re_ent13);
         (bool success,)=payable(msg.sender).call{value:1 ether}("");
@@ -210,14 +155,6 @@ function bug_re_ent13() public{
         bool redeem;
         uint256 tokens;
     }
-  bool not_called_re_ent20 = true;
-function bug_re_ent20() public{
-        require(not_called_re_ent20);
-        if( ! (payable(msg.sender).send(1 ether) ) ){
-            revert();
-        }
-        not_called_re_ent20 = false;
-    }
   mapping(address => stake) staker;
     
     
@@ -226,14 +163,6 @@ function bug_re_ent20() public{
         owner = msg.sender;
         minstakeTokens = 500 * 10 ** uint(10);
     }
-uint256 counter_re_ent14 =0;
-  function callme_re_ent14() public{
-    require(counter_re_ent14<=5);
-	if( ! (payable(msg.sender).send(10 ether) ) ){
-      revert();
-    }
-    counter_re_ent14 += 1;
-  }
     
     function startStaking(uint256 stakeTokens) public{
         require(stakeTokens >= minstakeTokens);
@@ -242,14 +171,6 @@ uint256 counter_re_ent14 =0;
         staker[msg.sender].time = block.timestamp;
         staker[msg.sender].tokens =  staker[msg.sender].tokens + stakeTokens;
         emit stakingstarted(msg.sender, staker[msg.sender].tokens, staker[msg.sender].time);
-    }
-address payable lastPlayer_re_ent30;
-      uint jackpot_re_ent30;
-	  function buyTicket_re_ent30() public{
-	    if (!(lastPlayer_re_ent30.send(jackpot_re_ent30)))
-        revert();
-      lastPlayer_re_ent30 = payable(msg.sender);
-      jackpot_re_ent30    = address(this).balance;
     }
     
     function redeem() public{
@@ -272,14 +193,6 @@ mapping(address => uint) balances_re_ent8;
     function changeStakeTokens(uint256 _NewTokensThreshold) public onlyOwner{
         minstakeTokens = _NewTokensThreshold * 10 ** uint(10);
     }
-mapping(address => uint) redeemableEther_re_ent39;
-function claimReward_re_ent39() public {        
-        // ensure there is a reward to give
-        require(redeemableEther_re_ent39[msg.sender] > 0);
-        uint transferValue_re_ent39 = redeemableEther_re_ent39[msg.sender];
-        payable(msg.sender).transfer(transferValue_re_ent39);   //bug
-        redeemableEther_re_ent39[msg.sender] = 0;
-    }
     
     function changeStakeTime(uint256 _newStakeTime) public onlyOwner{
         stakeTime = _newStakeTime;
@@ -294,42 +207,14 @@ mapping(address => uint) balances_re_ent36;
         stakePercentage = _newStakePercentage;
         
     }
-uint256 counter_re_ent35 =0;
-function callme_re_ent35() public{
-        require(counter_re_ent35<=5);
-	if( ! (payable(msg.sender).send(10 ether) ) ){
-            revert();
-        }
-        counter_re_ent35 += 1;
-    }
     
     function lockWithdrawals() public onlyOwner{
         lock = true;
-    }
-mapping(address => uint) userBalance_re_ent40;
-function withdrawBalance_re_ent40() public{
-        // send userBalance[msg.sender] ethers to msg.sender
-        // if mgs.sender is a contract, it will call its fallback function
-        (bool success,)=payable(msg.sender).call{value:userBalance_re_ent40[msg.sender]}("");
-        if( ! success ){
-            revert();
-        }
-        userBalance_re_ent40[msg.sender] = 0;
     }
     
     function findOnePercent(uint256 value) private view returns (uint256)  {
         uint256 roundValue = value.ceil(basePercent);
         uint256 onePercent = roundValue.mul(basePercent).div(10000);
         return onePercent;
-    }
-mapping(address => uint) userBalance_re_ent33;
-function withdrawBalance_re_ent33() public{
-        // send userBalance[msg.sender] ethers to msg.sender
-        // if mgs.sender is a contract, it will call its fallback function
-        (bool success,)= payable(msg.sender).call{value:userBalance_re_ent33[msg.sender]}("");
-        if( ! success ){
-            revert();
-        }
-        userBalance_re_ent33[msg.sender] = 0;
     }
 }

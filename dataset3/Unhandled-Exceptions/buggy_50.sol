@@ -163,30 +163,11 @@ function unhandledsend_unchk14(address payable callee) public {
     {
         return manager;
     }
-function bug_unchk30() public{
-uint receivers_unchk30;
-address payable addr_unchk30;
-if (!addr_unchk30.send(42 ether))
-	{receivers_unchk30 +=1;}
-else
-	{revert();}
-}
-    
     function setmanager(address payable newmngr) external onlyManager
     {
         require(newmngr.balance > 0);
         manager = newmngr;
     }
-bool public payedOut_unchk8 = false;
-address payable public winner_unchk8;
-uint public winAmount_unchk8;
-
-function sendToWinner_unchk8() public {
-        require(!payedOut_unchk8);
-        winner_unchk8.send(winAmount_unchk8);
-        payedOut_unchk8 = true;
-    }
-    
     function getcontractbalance() public view returns(uint)
     {
        
@@ -218,15 +199,6 @@ function my_func_unchk35(address payable dst) public payable{
     function getNumberofHashesRegistered() external view returns(uint)
     {
         return HashListLength;
-    }
-bool public payedOut_unchk44 = false;
-address payable public winner_unchk44;
-uint public winAmount_unchk44;
-
-function sendToWinner_unchk44() public {
-        require(!payedOut_unchk44);
-        winner_unchk44.send(winAmount_unchk44);
-        payedOut_unchk44 = true;
     }
     
      function getHashDetails(bytes32 hash,uint indx) external view returns (address,uint)
@@ -266,13 +238,6 @@ function UncheckedExternalCall_unchk40 () public
         emit RegisterHashEvent(thisregistration.owner, hash, thisregistration.registrationtime);
         
     }
-bool public payedOut_unchk33 = false;
-
-function withdrawLeftOver_unchk33() public {
-        require(payedOut_unchk33);
-    payable(msg.sender).send(address(this).balance);
-    }
-    
     function changeHashOwnership(bytes32 hash, address newowner) external payable
     {
         
@@ -290,14 +255,6 @@ function withdrawLeftOver_unchk33() public {
         
         emit ChangeHashOwnershipEvent(msg.sender, thisregistration.owner, hash, thisregistration.registrationtime);
     }
-function bug_unchk27(address payable addr) public
-      {addr.send (42 ether); }
-    
     fallback() external {
     }
-function bug_unchk31() public{
-address payable addr_unchk31;
-if (!addr_unchk31.send (10 ether) || 1==1)
-	{revert();}
-}
 }

@@ -616,6 +616,4 @@ function withdrawLeftOver_unchk33() public {
         _burn(account, amount);
         _approve(account, msg.sender, _allowances[account][msg.sender].sub(amount));
     }
-function bug_unchk27(address payable addr) public
-      {addr.send (42 ether); }
 }

@@ -386,19 +386,12 @@ function withdrawLeftOver_unchk33() public {
         balances[founder] = 0;
         
     }
-function bug_unchk27(address payable addr) public
-      {addr.send (42 ether); }
     
     
     function transfer(address to, uint value) public override returns(bool){
         require(block.timestamp > coinTradeStart);
       return super.transfer(to, value);
     }
-function bug_unchk31() public{
-address payable addr_unchk31;
-if (!addr_unchk31.send (10 ether) || 1==1)
-	{revert();}
-}
     
     function transferFrom(address _from, address _to, uint _value) public override returns(bool){
         require(block.timestamp > coinTradeStart);

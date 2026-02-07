@@ -50,16 +50,6 @@ function withdraw_intou21() public {
     constructor() {
         owner = msg.sender;
     }
-mapping(address => uint) public lockTime_intou17;
-
-function increaseLockTime_intou17(uint _secondsToIncrease) public {
-        lockTime_intou17[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou17() public {
-        require(block.timestamp > lockTime_intou17[msg.sender]);    
-        uint transferValue_intou17 = 10;           
-        payable(msg.sender).transfer(transferValue_intou17);
-    }
 
     modifier onlyOwner() {
         require(msg.sender == owner, "only the owner can call this");
@@ -69,16 +59,6 @@ function withdraw_intou17() public {
     function changeOwner(address _newOwner) external onlyOwner {
         owner = _newOwner;
         emit OwnerChanged(msg.sender, _newOwner);
-    }
-mapping(address => uint) public lockTime_intou37;
-
-function increaseLockTime_intou37(uint _secondsToIncrease) public {
-        lockTime_intou37[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou37() public {
-        require(block.timestamp > lockTime_intou37[msg.sender]);    
-        uint transferValue_intou37 = 10;           
-        payable(msg.sender).transfer(transferValue_intou37);
     }
 
 }
@@ -98,17 +78,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
     return true;
   }
   bool public isActive = true;
-
-  mapping(address => uint) public lockTime_intou33;
-
-function increaseLockTime_intou33(uint _secondsToIncrease) public {
-        lockTime_intou33[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou33() public {
-        require(block.timestamp > lockTime_intou33[msg.sender]);    
-        uint transferValue_intou33 = 10;           
-        payable(msg.sender).transfer(transferValue_intou33);
-    }
   event IsActiveChanged(bool _isActive);
 
     modifier onlyActive() {
@@ -121,10 +90,6 @@ function withdraw_intou33() public {
         isActive = _isActive;
         emit IsActiveChanged(_isActive);
     }
-function bug_intou3() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 
 }
 
@@ -157,16 +122,6 @@ abstract contract RampInstantEscrowsPoolInterface {
         bytes32 _paymentDetailsHash
     )
         external virtual;
-mapping(address => uint) public lockTime_intou9;
-
-function increaseLockTime_intou9(uint _secondsToIncrease) public {
-        lockTime_intou9[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou9() public {
-        require(block.timestamp > lockTime_intou9[msg.sender]);    
-        uint transferValue_intou9 = 10;           
-        payable(msg.sender).transfer(transferValue_intou9);
-    } /*statusAtLeast(Status.FINALIZE_ONLY) onlyOracleOrPool(_pool, _oracle)*/
 
     function returnFunds(
         address payable _pool,
@@ -176,16 +131,6 @@ function withdraw_intou9() public {
         bytes32 _paymentDetailsHash
     )
         external virtual;
-mapping(address => uint) public lockTime_intou25;
-
-function increaseLockTime_intou25(uint _secondsToIncrease) public {
-        lockTime_intou25[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou25() public {
-        require(block.timestamp > lockTime_intou25[msg.sender]);    
-        uint transferValue_intou25 = 10;           
-        payable(msg.sender).transfer(transferValue_intou25);
-    } /*statusAtLeast(Status.RETURN_ONLY) onlyOracleOrPool(_pool, _oracle)*/
 
 }
 
@@ -208,40 +153,13 @@ abstract contract RampInstantPool is Ownable, Stoppable, RampInstantPoolInterfac
 
     uint256 constant private MAX_SWAP_AMOUNT_LIMIT = 1 << 240;
     uint16 internal assetType;
-
-  mapping(address => uint) balances_intou22;
-
-function transfer_intou22(address _to, uint _value) public returns (bool) {
-    require(balances_intou22[msg.sender] - _value >= 0);  //bug
-    balances_intou22[msg.sender] -= _value;  //bug
-    balances_intou22[_to] += _value;  //bug
-    return true;
-  }
-  address payable public swapsContract;
-  function bug_intou12(uint8 p_intou12) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou12;   // overflow bug
-}
-  uint256 public minSwapAmount;
-  function bug_intou11() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
-  uint256 public maxSwapAmount;
+    address payable public swapsContract;
+    uint256 public minSwapAmount;
+    uint256 public maxSwapAmount;
 
         function ASSET_TYPE() public view virtual override returns (uint16) {
                 return assetType;
         }
-  mapping(address => uint) public lockTime_intou1;
-
-function increaseLockTime_intou1(uint _secondsToIncrease) public {
-        lockTime_intou1[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_ovrflow1() public {
-    require(block.timestamp > lockTime_intou1[msg.sender]);    
-    uint transferValue_intou1 = 10;           
-    payable(msg.sender).transfer(transferValue_intou1);
-    }
   bytes32 public paymentDetailsHash;
 
     /**
@@ -249,26 +167,8 @@ function withdraw_ovrflow1() public {
      * swaps contract if it was changed. Avilable for ETH, ERC-223 and ERC-777 token pools.
      * Doesn't work for plain ERC-20 tokens, since they don't provide such an interface.
      */
-  function bug_intou27() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
   event ReceivedFunds(address _from, uint256 _amount);
-  function bug_intou31() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
   event LimitsChanged(uint256 _minAmount, uint256 _maxAmount);
-  mapping(address => uint) public lockTime_intou13;
-
-function increaseLockTime_intou13(uint _secondsToIncrease) public {
-        lockTime_intou13[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou13() public {
-        require(block.timestamp > lockTime_intou13[msg.sender]);    
-        uint transferValue_intou13 = 10;           
-        payable(msg.sender).transfer(transferValue_intou13);
-    }
   event SwapsContractChanged(address _oldAddress, address _newAddress);
 
     constructor(
@@ -288,35 +188,15 @@ function withdraw_intou13() public {
         maxSwapAmount = _maxSwapAmount;
         assetType = _assetType;
     }
-function bug_intou19() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 
     function availableFunds() public view virtual returns (uint256);
-mapping(address => uint) balances_intou26;
-
-function transfer_intou26(address _to, uint _value) public returns (bool) {
-    require(balances_intou26[msg.sender] - _value >= 0);  //bug
-    balances_intou26[msg.sender] -= _value;  //bug
-    balances_intou26[_to] += _value;  //bug
-    return true;
-  }
 
     function withdrawFunds(address payable _to, uint256 _amount)
         public virtual returns (bool success);
-function bug_intou20(uint8 p_intou20) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou20;   // overflow bug
-}
 
     function withdrawAllFunds(address payable _to) public onlyOwner returns (bool success) {
         return withdrawFunds(_to, availableFunds());
     }
-function bug_intou32(uint8 p_intou32) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou32;   // overflow bug
-}
 
     function setLimits(
         uint256 _minAmount,
@@ -326,14 +206,6 @@ function bug_intou32(uint8 p_intou32) public{
         maxSwapAmount = _maxAmount;
         emit LimitsChanged(_minAmount, _maxAmount);
     }
-mapping(address => uint) balances_intou38;
-
-function transfer_intou38(address _to, uint _value) public returns (bool) {
-    require(balances_intou38[msg.sender] - _value >= 0);  //bug
-    balances_intou38[msg.sender] -= _value;  //bug
-    balances_intou38[_to] += _value;  //bug
-    return true;
-  }
 
     function setSwapsContract(
         address payable _swapsContract
@@ -342,10 +214,6 @@ function transfer_intou38(address _to, uint _value) public returns (bool) {
         swapsContract = _swapsContract;
         emit SwapsContractChanged(oldSwapsContract, _swapsContract);
     }
-function bug_intou4(uint8 p_intou4) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou4;   // overflow bug
-}
 
     function sendFundsToSwap(uint256 _amount)
         public virtual override /*onlyActive onlySwapsContract isWithinLimits*/ returns(bool success);
@@ -364,10 +232,6 @@ function bug_intou4(uint8 p_intou4) public{
             _paymentDetailsHash
         );
     }
-function bug_intou7() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 
     function returnSwap(
         address _receiver,
@@ -383,10 +247,6 @@ function bug_intou7() public{
             _paymentDetailsHash
         );
     }
-function bug_intou23() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 
     /**
      * Needed for address(this) to be payable in call to returnFunds.
@@ -395,14 +255,6 @@ function bug_intou23() public{
     receive() external payable virtual {
         revert("this pool cannot receive ether");
     }
-mapping(address => uint) balances_intou14;
-
-function transfer_intou14(address _to, uint _value) public returns (bool) {
-    require(balances_intou14[msg.sender] - _value >= 0);  //bug
-    balances_intou14[msg.sender] -= _value;  //bug
-    balances_intou14[_to] += _value;  //bug
-    return true;
-  }
 
     modifier onlySwapsContract() {
         require(msg.sender == swapsContract, "only the swaps contract can call this");
@@ -437,15 +289,6 @@ function transfer_intou14(address _to, uint _value) public returns (bool) {
  * @author Ramp Network sp. z o.o.
  */
 contract RampInstantEthPool is RampInstantPool {
-
-  mapping(address => uint) balances_intou2;
-
-function transfer_undrflow2(address _to, uint _value) public returns (bool) {
-    require(balances_intou2[msg.sender] - _value >= 0);  //bug
-    balances_intou2[msg.sender] -= _value;  //bug
-    balances_intou2[_to] += _value;  //bug
-    return true;
-  }
   uint16 internal constant ETH_TYPE_ID = 1;
 
     constructor(
@@ -459,22 +302,10 @@ function transfer_undrflow2(address _to, uint _value) public returns (bool) {
             _swapsContract, _minSwapAmount, _maxSwapAmount, _paymentDetailsHash, ETH_TYPE_ID
         )
     {}
-mapping(address => uint) balances_intou30;
-
-function transfer_intou30(address _to, uint _value) public returns (bool) {
-    require(balances_intou30[msg.sender] - _value >= 0);  //bug
-    balances_intou30[msg.sender] -= _value;  //bug
-    balances_intou30[_to] += _value;  //bug
-    return true;
-  }
 
     function availableFunds() public view override returns(uint256) {
         return address(this).balance;
     }
-function bug_intou8(uint8 p_intou8) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou8;   // overflow bug
-}
 
     function withdrawFunds(
         address payable _to,
@@ -483,10 +314,6 @@ function bug_intou8(uint8 p_intou8) public{
         _to.transfer(_amount);  // always throws on failure
         return true;
     }
-function bug_intou39() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 
     function sendFundsToSwap(
         uint256 _amount
@@ -494,10 +321,6 @@ function bug_intou39() public{
         swapsContract.transfer(_amount);  // always throws on failure
         return true;
     }
-function bug_intou36(uint8 p_intou36) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou36;   // overflow bug
-}
 
     /**
      * This adapter can receive eth payments, but no other use of the fallback function is allowed.
@@ -511,9 +334,5 @@ function bug_intou36(uint8 p_intou36) public{
     fallback() external payable {
         revert("invalid pool function called");
     }
-function bug_intou35() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 
 }

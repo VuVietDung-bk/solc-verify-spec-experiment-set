@@ -132,17 +132,6 @@ function transfer_undrflow2(address _to, uint _value) public returns (bool) {
     return true;
   }
   mapping (address => mapping (address => uint256)) private _allowed;
-
-  mapping(address => uint) public lockTime_intou17;
-
-function increaseLockTime_intou17(uint _secondsToIncrease) public {
-        lockTime_intou17[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou17() public {
-    require(block.timestamp > lockTime_intou17[msg.sender]);    
-        uint transferValue_intou17 = 10;           
-    payable(msg.sender).transfer(transferValue_intou17);
-    }
   uint256 private _totalSupply;
 
     /**
@@ -150,16 +139,6 @@ function withdraw_intou17() public {
      */
     function totalSupply() public view override returns (uint256) {
         return _totalSupply;
-    }
-mapping(address => uint) public lockTime_intou25;
-
-function increaseLockTime_intou25(uint _secondsToIncrease) public {
-        lockTime_intou25[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou25() public {
-    require(block.timestamp > lockTime_intou25[msg.sender]);    
-        uint transferValue_intou25 = 10;           
-    payable(msg.sender).transfer(transferValue_intou25);
     }
 
     /**
@@ -184,14 +163,6 @@ function bug_intou19() public{
     function allowance(address owner, address spender) public view override returns (uint256) {
         return _allowed[owner][spender];
     }
-mapping(address => uint) balances_intou26;
-
-function transfer_intou26(address _to, uint _value) public returns (bool) {
-    require(balances_intou26[msg.sender] - _value >= 0);  //bug
-    balances_intou26[msg.sender] -= _value;  //bug
-    balances_intou26[_to] += _value;  //bug
-    return true;
-  }
 
     /**
      * @dev Transfer token to a specified address.
@@ -202,10 +173,6 @@ function transfer_intou26(address _to, uint _value) public returns (bool) {
         _transfer(msg.sender, to, value);
         return true;
     }
-function bug_intou20(uint8 p_intou20) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou20;   // overflow bug
-}
 
     /**
      * @dev Approve the passed address to spend the specified amount of tokens on behalf of msg.sender.
@@ -220,10 +187,6 @@ function bug_intou20(uint8 p_intou20) public{
         _approve(msg.sender, spender, value);
         return true;
     }
-function bug_intou32(uint8 p_intou32) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou32;   // overflow bug
-}
 
     /**
      * @dev Transfer tokens from one address to another.
@@ -238,14 +201,6 @@ function bug_intou32(uint8 p_intou32) public{
         _approve(from, msg.sender, _allowed[from][msg.sender].sub(value));
         return true;
     }
-mapping(address => uint) balances_intou38;
-
-function transfer_intou38(address _to, uint _value) public returns (bool) {
-    require(balances_intou38[msg.sender] - _value >= 0);  //bug
-    balances_intou38[msg.sender] -= _value;  //bug
-    balances_intou38[_to] += _value;  //bug
-    return true;
-  }
 
     /**
      * @dev Increase the amount of tokens that an owner allowed to a spender.
@@ -261,10 +216,6 @@ function transfer_intou38(address _to, uint _value) public returns (bool) {
         _approve(msg.sender, spender, _allowed[msg.sender][spender].add(addedValue));
         return true;
     }
-function bug_intou4(uint8 p_intou4) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou4;   // overflow bug
-}
 
     /**
      * @dev Decrease the amount of tokens that an owner allowed to a spender.
@@ -280,10 +231,6 @@ function bug_intou4(uint8 p_intou4) public{
         _approve(msg.sender, spender, _allowed[msg.sender][spender].sub(subtractedValue));
         return true;
     }
-function bug_intou7() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 
     /**
      * @dev Transfer token for a specified addresses.
@@ -298,10 +245,6 @@ function bug_intou7() public{
         _balances[to] = _balances[to].add(value);
         emit Transfer(from, to, value);
     }
-function bug_intou23() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 
     /**
      * @dev Internal function that mints an amount of the token and assigns it to
@@ -319,13 +262,6 @@ function bug_intou23() public{
     }
 mapping(address => uint) balances_intou14;
 
-function transfer_intou14(address _to, uint _value) public returns (bool) {
-    require(balances_intou14[msg.sender] - _value >= 0);  //bug
-    balances_intou14[msg.sender] -= _value;  //bug
-    balances_intou14[_to] += _value;  //bug
-    return true;
-  }
-
     /**
      * @dev Internal function that burns an amount of the token of a given
      * account.
@@ -341,13 +277,6 @@ function transfer_intou14(address _to, uint _value) public returns (bool) {
     }
 mapping(address => uint) balances_intou30;
 
-function transfer_intou30(address _to, uint _value) public returns (bool) {
-    require(balances_intou30[msg.sender] - _value >= 0);  //bug
-    balances_intou30[msg.sender] -= _value;  //bug
-    balances_intou30[_to] += _value;  //bug
-    return true;
-  }
-
     /**
      * @dev Approve an address to spend another addresses' tokens.
      * @param owner The address that owns the tokens.
@@ -361,10 +290,6 @@ function transfer_intou30(address _to, uint _value) public returns (bool) {
         _allowed[owner][spender] = value;
         emit Approval(owner, spender, value);
     }
-function bug_intou8(uint8 p_intou8) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou8;   // overflow bug
-}
 
     /**
      * @dev Internal function that burns an amount of the token of a given
@@ -378,10 +303,6 @@ function bug_intou8(uint8 p_intou8) public{
         _burn(account, value);
         _approve(account, msg.sender, _allowed[account][msg.sender].sub(value));
     }
-function bug_intou39() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 }
 
 // File: contracts/token/ERC20/ERC20Burnable.sol
@@ -398,10 +319,6 @@ contract ERC20Burnable is ERC20 {
     function burn(uint256 value) public {
         _burn(msg.sender, value);
     }
-function bug_intou36(uint8 p_intou36) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou36;   // overflow bug
-}
 
     /**
      * @dev Burns a specific amount of tokens from the target address and decrements allowance.
@@ -411,10 +328,6 @@ function bug_intou36(uint8 p_intou36) public{
     function burnFrom(address from, uint256 value) public {
         _burnFrom(from, value);
     }
-function bug_intou35() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 }
 
 // File: contracts/token/ERC20/ERC20Detailed.sol
@@ -426,32 +339,8 @@ function bug_intou35() public{
  * just as on Ethereum all the operations are done in wei.
  */
 abstract contract ERC20Detailed is IERC20 {
-  mapping(address => uint) public lockTime_intou37;
-
-function increaseLockTime_intou37(uint _secondsToIncrease) public {
-        lockTime_intou37[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou37() public {
-    require(block.timestamp > lockTime_intou37[msg.sender]);    
-        uint transferValue_intou37 = 10;           
-    payable(msg.sender).transfer(transferValue_intou37);
-    }
   string private _name;
-  function bug_intou3() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
   string private _symbol;
-  mapping(address => uint) public lockTime_intou9;
-
-function increaseLockTime_intou9(uint _secondsToIncrease) public {
-        lockTime_intou9[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou9() public {
-    require(block.timestamp > lockTime_intou9[msg.sender]);    
-        uint transferValue_intou9 = 10;           
-    payable(msg.sender).transfer(transferValue_intou9);
-    }
   uint8 private _decimals;
 
     constructor (string memory name, string memory symbol, uint8 decimals) {
@@ -459,26 +348,12 @@ function withdraw_intou9() public {
         _symbol = symbol;
         _decimals = decimals;
     }
-function bug_intou40(uint8 p_intou40) public{
-    uint8 vundflw1=0;
-    vundflw1 = vundflw1 + p_intou40;   // overflow bug
-}
 
     /**
      * @return the name of the token.
      */
     function name() public view returns (string memory) {
         return _name;
-    }
-mapping(address => uint) public lockTime_intou33;
-
-function increaseLockTime_intou33(uint _secondsToIncrease) public {
-        lockTime_intou33[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou33() public {
-    require(block.timestamp > lockTime_intou33[msg.sender]);    
-        uint transferValue_intou33 = 10;           
-    payable(msg.sender).transfer(transferValue_intou33);
     }
 
     /**
@@ -487,10 +362,6 @@ function withdraw_intou33() public {
     function symbol() public view returns (string memory) {
         return _symbol;
     }
-function bug_intou27() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 
     /**
      * @return the number of decimals of the token.
@@ -498,10 +369,6 @@ function bug_intou27() public{
     function decimals() public view returns (uint8) {
         return _decimals;
     }
-function bug_intou31() public{
-    uint8 vundflw =0;
-    vundflw = vundflw -10;   // underflow bug
-}
 }
 
 // File: contracts/token/AGR.sol
@@ -510,14 +377,4 @@ contract AGR is ERC20, ERC20Detailed, ERC20Burnable {
   constructor(string memory _name, string memory _symbol) ERC20Detailed(_name, _symbol, 4) {
         super._mint(msg.sender, 30000000000000);
   }
-mapping(address => uint) public lockTime_intou13;
-
-function increaseLockTime_intou13(uint _secondsToIncrease) public {
-        lockTime_intou13[msg.sender] += _secondsToIncrease;  //overflow
-    }
-function withdraw_intou13() public {
-    require(block.timestamp > lockTime_intou13[msg.sender]);    
-        uint transferValue_intou13 = 10;           
-    payable(msg.sender).transfer(transferValue_intou13);
-    }
 }

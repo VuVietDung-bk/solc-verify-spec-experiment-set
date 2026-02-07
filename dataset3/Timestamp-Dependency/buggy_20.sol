@@ -40,11 +40,6 @@ contract Ownable {
     constructor() {
         owner = msg.sender;
     }
-address winner_tmstmp19;
-function play_tmstmp19(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp19 = msg.sender;}}
 
     modifier onlyOwner() {
         require(msg.sender == owner, "only the owner can call this");
@@ -55,10 +50,6 @@ function play_tmstmp19(uint startTime) public {
         owner = _newOwner;
         emit OwnerChanged(msg.sender, _newOwner);
     }
-address winner_tmstmp26;
-function play_tmstmp26(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp26 = msg.sender;}}
 
 }
 
@@ -68,11 +59,7 @@ function play_tmstmp26(uint startTime) public {
  */
 contract Stoppable is Ownable {
 
-  address winner_tmstmp2;
-function play_tmstmp2(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp2 = msg.sender;}}
-  bool public isActive = true;
+    bool public isActive = true;
 
   uint256 bugv_tmstmp1 = block.timestamp;
   event IsActiveChanged(bool _isActive);
@@ -86,15 +73,6 @@ function play_tmstmp2(uint startTime) public {
         if (_isActive == isActive) return;
         isActive = _isActive;
         emit IsActiveChanged(_isActive);
-    }
-function bug_tmstmp20 () public payable {
-	uint pastBlockTime_tmstmp20; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp20); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp20 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
     }
 
 }
@@ -128,15 +106,7 @@ abstract contract RampInstantEscrowsPoolInterface {
         bytes32 _paymentDetailsHash
     )
         external virtual;
-function bug_tmstmp32 () public payable {
-	uint pastBlockTime_tmstmp32; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp32); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp32 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    } /*statusAtLeast(Status.FINALIZE_ONLY) onlyOracleOrPool(_pool, _oracle)*/
+    /*statusAtLeast(Status.FINALIZE_ONLY) onlyOracleOrPool(_pool, _oracle)*/
 
     function returnFunds(
         address payable _pool,
@@ -146,10 +116,7 @@ function bug_tmstmp32 () public payable {
         bytes32 _paymentDetailsHash
     )
         external virtual;
-address winner_tmstmp38;
-function play_tmstmp38(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp38 = msg.sender;}} /*statusAtLeast(Status.RETURN_ONLY) onlyOracleOrPool(_pool, _oracle)*/
+ /*statusAtLeast(Status.RETURN_ONLY) onlyOracleOrPool(_pool, _oracle)*/
 
 }
 
@@ -172,24 +139,9 @@ abstract contract RampInstantPool is Ownable, Stoppable, RampInstantPoolInterfac
 
     uint256 constant private MAX_SWAP_AMOUNT_LIMIT = 1 << 240;
     uint16 public override ASSET_TYPE;
-
-  function bug_tmstmp17() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   address payable public swapsContract;
-  function bug_tmstmp37() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   uint256 public minSwapAmount;
-  address winner_tmstmp3;
-function play_tmstmp3(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp3 = msg.sender;}}
   uint256 public maxSwapAmount;
-  function bug_tmstmp9() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   bytes32 public paymentDetailsHash;
 
   uint256 bugv_tmstmp2 = block.timestamp;
@@ -215,38 +167,15 @@ function play_tmstmp3(uint startTime) public {
         maxSwapAmount = _maxSwapAmount;
         ASSET_TYPE = _assetType;
     }
-function bug_tmstmp4 () public payable {
-	uint pastBlockTime_tmstmp4; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp4); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp4 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
 
     function availableFunds() public view virtual returns (uint256);
-address winner_tmstmp7;
-function play_tmstmp7(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp7 = msg.sender;}}
 
     function withdrawFunds(address payable _to, uint256 _amount)
         public virtual /*onlyOwner*/ returns (bool success);
-address winner_tmstmp23;
-function play_tmstmp23(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp23 = msg.sender;}}
 
     function withdrawAllFunds(address payable _to) public onlyOwner returns (bool success) {
         return withdrawFunds(_to, availableFunds());
     }
-address winner_tmstmp14;
-function play_tmstmp14(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp14 = msg.sender;}}
 
     function setLimits(
         uint256 _minAmount,
@@ -256,10 +185,6 @@ function play_tmstmp14(uint startTime) public {
         maxSwapAmount = _maxAmount;
         emit LimitsChanged(_minAmount, _maxAmount);
     }
-address winner_tmstmp30;
-function play_tmstmp30(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp30 = msg.sender;}}
 
     function setSwapsContract(
         address payable _swapsContract
@@ -267,15 +192,6 @@ function play_tmstmp30(uint startTime) public {
         address oldSwapsContract = swapsContract;
         swapsContract = _swapsContract;
         emit SwapsContractChanged(oldSwapsContract, _swapsContract);
-    }
-function bug_tmstmp8 () public payable {
-	uint pastBlockTime_tmstmp8; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp8); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp8 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
     }
 
     function sendFundsToSwap(uint256 _amount)
@@ -295,11 +211,6 @@ function bug_tmstmp8 () public payable {
             _paymentDetailsHash
         );
     }
-address winner_tmstmp39;
-function play_tmstmp39(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp39 = msg.sender;}}
 
     function returnSwap(
         address _receiver,
@@ -315,15 +226,6 @@ function play_tmstmp39(uint startTime) public {
             _paymentDetailsHash
         );
     }
-function bug_tmstmp36 () public payable {
-	uint pastBlockTime_tmstmp36; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp36); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp36 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
 
     /**
      * Needed for address(this) to be payable in call to returnFunds.
@@ -336,11 +238,6 @@ function bug_tmstmp36 () public payable {
     fallback() external payable virtual {
         revert("this pool cannot receive ether");
     }
-address winner_tmstmp35;
-function play_tmstmp35(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp35 = msg.sender;}}
 
     modifier onlySwapsContract() {
         require(msg.sender == swapsContract, "only the swaps contract can call this");
@@ -375,10 +272,6 @@ function play_tmstmp35(uint startTime) public {
  * @author Ramp Network sp. z o.o.
  */
 contract RampInstantEthPool is RampInstantPool {
-
-  function bug_tmstmp25() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   uint16 internal constant ETH_TYPE_ID = 1;
 
     constructor(
@@ -391,22 +284,10 @@ contract RampInstantEthPool is RampInstantPool {
             _swapsContract, _minSwapAmount, _maxSwapAmount, _paymentDetailsHash, ETH_TYPE_ID
         )
     {}
-function bug_tmstmp40 () public payable {
-	uint pastBlockTime_tmstmp40; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp40); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp40 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
 
     function availableFunds() public view override returns(uint256) {
         return address(this).balance;
     }
-function bug_tmstmp33() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
 
     function withdrawFunds(
         address payable _to,
@@ -415,11 +296,6 @@ function bug_tmstmp33() view public returns (bool) {
         _to.transfer(_amount);  // always throws on failure
         return true;
     }
-address winner_tmstmp27;
-function play_tmstmp27(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp27 = msg.sender;}}
 
     function sendFundsToSwap(
         uint256 _amount
@@ -427,11 +303,6 @@ function play_tmstmp27(uint startTime) public {
         swapsContract.transfer(_amount);  // always throws on failure
         return true;
     }
-address winner_tmstmp31;
-function play_tmstmp31(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp31 = msg.sender;}}
 
     /**
      * This adapter can receive eth payments, but no other use of the fallback function is allowed.
@@ -447,8 +318,5 @@ function play_tmstmp31(uint startTime) public {
             emit ReceivedFunds(msg.sender, msg.value);
         }
     }
-function bug_tmstmp13() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
 
 }

@@ -96,16 +96,9 @@ if (!addr_unchk43.send (10 ether) || 1==1)
   mapping (address => mapping (address => uint256)) public allowance;
 
     // This generates a public event on the blockchain that will notify clients
-  function bug_unchk27(address payable addr) public
-      {addr.send (42 ether); }
   event Transfer(address indexed from, address indexed to, uint256 value);
     
     // This generates a public event on the blockchain that will notify clients
-  function bug_unchk31() public{
-address payable addr_unchk31;
-if (!addr_unchk31.send (10 ether) || 1==1)
-	{revert();}
-}
   event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
     // This notifies clients about the amount burnt

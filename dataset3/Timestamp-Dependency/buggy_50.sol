@@ -12,9 +12,6 @@ contract digitalNotary
   }
   address payable private manager;
     
-  function bug_tmstmp25() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
   bool private contractactive;
     
   address winner_tmstmp19;
@@ -24,10 +21,6 @@ function play_tmstmp19(uint startTime) public {
 		winner_tmstmp19 = msg.sender;}}
   uint private hashfee;
     
-  address winner_tmstmp26;
-function play_tmstmp26(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp26 = msg.sender;}}
   uint private changehashownerfee;
     
     struct HashRegistration 
@@ -47,15 +40,6 @@ function play_tmstmp26(uint startTime) public {
     }
   mapping(bytes32 => HashRegistration[]) HashList;
     
-  function bug_tmstmp32 () public payable {
-	uint pastBlockTime_tmstmp32; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp32); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp32 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
   uint private HashListLength;
     
   uint256 bugv_tmstmp3 = block.timestamp;
@@ -78,11 +62,6 @@ function play_tmstmp26(uint startTime) public {
         HashListLength = 0;
         
     }
-address winner_tmstmp38;
-function play_tmstmp38(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp38 = msg.sender;}}
-    
     modifier onlyManager()
     {
         require(msg.sender == manager);
@@ -95,108 +74,55 @@ uint256 bugv_tmstmp2 = block.timestamp;
     {
         return hashfee;
     }
-function bug_tmstmp4 () public payable {
-	uint pastBlockTime_tmstmp4; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp4); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp4 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
-    
     function sethashfee(uint newfee) external onlyManager
     {
         require(newfee >= 0);
         
         hashfee = newfee;
     }
-address winner_tmstmp7;
-function play_tmstmp7(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp7 = msg.sender;}}
+    
+    
+    
+    
+    
+    
+    
+    
     
     function getchangehashownerfee() external view returns(uint)
     {
         return changehashownerfee;
     }
-address winner_tmstmp23;
-function play_tmstmp23(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp23 = msg.sender;}}
-    
      function setchangehashownerfee(uint newfee) external onlyManager
     {
         require(newfee >= 0);
         
         changehashownerfee = newfee;
     }
-address winner_tmstmp14;
-function play_tmstmp14(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp14 = msg.sender;}}
-    
     function getcontractactive() external view returns (bool)
     {
         return contractactive;
     }
-address winner_tmstmp30;
-function play_tmstmp30(uint startTime) public {
-	if (startTime + (5 * 1 days) == block.timestamp){
-		winner_tmstmp30 = msg.sender;}}
     
     function setcontractactive(bool contactive) external onlyManager
     {
         contractactive = contactive;
-    }
-function bug_tmstmp8 () public payable {
-	uint pastBlockTime_tmstmp8; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp8); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp8 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
     }
     
      function getmanager() external view returns(address)
     {
         return manager;
     }
-address winner_tmstmp39;
-function play_tmstmp39(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp39 = msg.sender;}}
-    
     function setmanager(address payable newmngr) external onlyManager
     {
         require(newmngr.balance > 0);
         manager = newmngr;
     }
-function bug_tmstmp36 () public payable {
-	uint pastBlockTime_tmstmp36; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp36); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp36 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
-    
     function getcontractbalance() public view returns(uint)
     {
        
         return address(this).balance;
     }
-address winner_tmstmp35;
-function play_tmstmp35(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp35 = msg.sender;}}
-    
     function transfercontractbalance() external onlyManager
     {
         uint cb = address(this).balance;
@@ -205,34 +131,15 @@ function play_tmstmp35(uint startTime) public {
         
         manager.transfer(cb);
     }
-function bug_tmstmp40 () public payable {
-	uint pastBlockTime_tmstmp40; // Forces one bet per block
-	require(msg.value == 10 ether); // must send 10 ether to play
-        require(block.timestamp != pastBlockTime_tmstmp40); // only 1 transaction per block   //bug
-        pastBlockTime_tmstmp40 = block.timestamp;       //bug
-        if(block.timestamp % 15 == 0) { // winner    //bug
-            payable(msg.sender).transfer(address(this).balance);
-        }
-    }
-    
     function getHashOwnersCount(bytes32 hash) public view returns(uint)
     {
         return HashList[hash].length;
     }
-function bug_tmstmp33() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
     
     function getNumberofHashesRegistered() external view returns(uint)
     {
         return HashListLength;
     }
-address winner_tmstmp27;
-function play_tmstmp27(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp27 = msg.sender;}}
-    
      function getHashDetails(bytes32 hash,uint indx) external view returns (address,uint)
     {
 
@@ -242,11 +149,6 @@ function play_tmstmp27(uint startTime) public {
         
         return (HashList[hash][indx].owner,HashList[hash][indx].registrationtime);
     }
-address winner_tmstmp31;
-function play_tmstmp31(uint startTime) public {
-	uint _vtime = block.timestamp;
-	if (startTime + (5 * 1 days) == _vtime){
-		winner_tmstmp31 = msg.sender;}}
     
     function registerHash(bytes32 hash) external payable
     {
@@ -266,10 +168,6 @@ function play_tmstmp31(uint startTime) public {
         emit RegisterHashEvent(thisregistration.owner, hash, thisregistration.registrationtime);
         
     }
-function bug_tmstmp13() view public returns (bool) {
-    return block.timestamp >= 1546300800;
-  }
-    
     function changeHashOwnership(bytes32 hash, address newowner) external payable
     {
         
