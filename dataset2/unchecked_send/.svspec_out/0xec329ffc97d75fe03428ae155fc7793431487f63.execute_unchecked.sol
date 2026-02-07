@@ -27,7 +27,10 @@ contract Owned {
     // _dst is the contract being called making this like a 1/1 multisig
     /// @notice precondition _value >= 0
     /// @notice precondition msg.sender == owner
-    /// @notice postcondition true
+    /// @notice precondition _dst != address(0)
+    /// @notice precondition _value <= address(this).balance
+    /// @notice postcondition address(this).balance == __verifier_old_uint(address(this).balance) - _value
+    /// @notice postcondition _dst.balance == __verifier_old_uint(_dst.balance) + _value
     function execute(address _dst, uint _value, bytes memory _data) public onlyOwner {
         // <yes> <report> UNCHECKED_LL_CALLS
         _dst.call{value:_value}(_data);
