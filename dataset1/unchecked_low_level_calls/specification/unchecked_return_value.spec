@@ -1,4 +1,6 @@
-rule callnotchecked_may_fail(address callee) {
+rule callnotchecked_should_revert_on_failure() {
+    // Call back into this contract with empty calldata: no fallback, so the low-level call returns false.
+    address callee;
     callnotchecked(callee);
-    assert true;
+    assert_revert;
 }

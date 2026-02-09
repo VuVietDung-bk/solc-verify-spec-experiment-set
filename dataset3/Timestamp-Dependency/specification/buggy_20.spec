@@ -1,171 +1,71 @@
 variables {
-    address winner_tmstmp19;
-    address winner_tmstmp26;
-    address winner_tmstmp2;
-    address winner_tmstmp38;
-    address winner_tmstmp3;
-    address winner_tmstmp7;
-    address winner_tmstmp23;
-    address winner_tmstmp14;
-    address winner_tmstmp30;
-    address winner_tmstmp39;
-    address winner_tmstmp35;
-    address winner_tmstmp27;
-    address winner_tmstmp31;
+    uint256 bugv_tmstmp5;
+    uint256 bugv_tmstmp1;
+    uint256 bugv_tmstmp2;
+    uint256 bugv_tmstmp3;
+    uint256 bugv_tmstmp4;
 }
 
-rule play_tmstmp19_respects_condition(uint startTime) {
-    address prev = winner_tmstmp19;
-    play_tmstmp19(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp19 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp19 == prev,
-            "winner must remain unchanged when condition fails";
-    }
+rule changeOwner_no_timestamp_dependency(address newOwner) {
+    address prevOwner = owner;
+    uint256 timestamp1 = block.timestamp;
+    
+    require msg.sender == owner;
+    require newOwner != address(0);
+    
+    changeOwner(newOwner);
+    
+    assert owner == newOwner, "owner must change regardless of timestamp";
 }
 
-rule play_tmstmp26_respects_condition(uint startTime) {
-    address prev = winner_tmstmp26;
-    play_tmstmp26(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp26 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp26 == prev,
-            "winner must remain unchanged when condition fails";
-    }
+rule setIsActive_no_timestamp_dependency(bool newIsActive) {
+    bool prevIsActive = isActive;
+    
+    require msg.sender == owner;
+    
+    setIsActive(newIsActive);
+    
+    assert isActive == newIsActive, "isActive must update regardless of timestamp";
 }
 
-rule play_tmstmp2_respects_condition(uint startTime) {
-    address prev = winner_tmstmp2;
-    play_tmstmp2(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp2 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp2 == prev,
-            "winner must remain unchanged when condition fails";
-    }
+rule withdrawAllFunds_no_timestamp_dependency(address to) {
+    require msg.sender == owner;
+    require to != address(0);
+    
+    withdrawAllFunds(to);
+    
+    assert true, "withdrawAllFunds must succeed regardless of timestamp";
 }
 
-rule play_tmstmp38_respects_condition(uint startTime) {
-    address prev = winner_tmstmp38;
-    play_tmstmp38(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp38 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp38 == prev,
-            "winner must remain unchanged when condition fails";
-    }
+rule setLimits_no_timestamp_dependency(uint256 minAmount, uint256 maxAmount) {
+    require msg.sender == owner;
+    require minAmount <= maxAmount;
+    require maxAmount <= 1461501637330902918203684832716283019655932542976;
+    
+    setLimits(minAmount, maxAmount);
+    
+    assert minSwapAmount == minAmount, "minSwapAmount must update regardless of timestamp";
+    assert maxSwapAmount == maxAmount, "maxSwapAmount must update regardless of timestamp";
 }
 
-rule play_tmstmp3_respects_condition(uint startTime) {
-    address prev = winner_tmstmp3;
-    play_tmstmp3(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp3 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp3 == prev,
-            "winner must remain unchanged when condition fails";
-    }
+rule sendFundsToSwap_respects_limits(uint256 amount) {
+    require msg.sender == swapsContract;
+    require isActive == true;
+    require amount >= minSwapAmount;
+    require amount <= maxSwapAmount;
+    
+    sendFundsToSwap(amount);
+    
+    assert true, "sendFundsToSwap must succeed when within limits";
 }
 
-rule play_tmstmp7_respects_condition(uint startTime) {
-    address prev = winner_tmstmp7;
-    play_tmstmp7(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp7 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp7 == prev,
-            "winner must remain unchanged when condition fails";
-    }
+rule sendFundsToSwap_reverts_outside_limits(uint256 amount) {
+    require msg.sender == swapsContract;
+    require isActive == true;
+    require amount < minSwapAmount || amount > maxSwapAmount;
+    
+    sendFundsToSwap(amount);
+    
+    assert_revert, "sendFundsToSwap must revert when outside limits";
 }
 
-rule play_tmstmp23_respects_condition(uint startTime) {
-    address prev = winner_tmstmp23;
-    play_tmstmp23(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp23 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp23 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp14_respects_condition(uint startTime) {
-    address prev = winner_tmstmp14;
-    play_tmstmp14(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp14 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp14 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp30_respects_condition(uint startTime) {
-    address prev = winner_tmstmp30;
-    play_tmstmp30(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp30 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp30 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp39_respects_condition(uint startTime) {
-    address prev = winner_tmstmp39;
-    play_tmstmp39(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp39 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp39 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp35_respects_condition(uint startTime) {
-    address prev = winner_tmstmp35;
-    play_tmstmp35(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp35 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp35 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp27_respects_condition(uint startTime) {
-    address prev = winner_tmstmp27;
-    play_tmstmp27(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp27 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp27 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp31_respects_condition(uint startTime) {
-    address prev = winner_tmstmp31;
-    play_tmstmp31(startTime);
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp31 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp31 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}

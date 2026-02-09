@@ -1,9 +1,10 @@
-variables
-{
-    uint pastBlockTime;
-}
+rule fallback_should_not_payout_on_timestamp() {
+    require msg.value > 0;
 
-rule fallback_single_bet() {
+    uint balBefore = contract.balance;
     fallback();
-    assert true;
+    uint balAfter = contract.balance;
+
+    // Winning depends on block.timestamp; expect house balance to increase by the bet.
+    assert balAfter == balBefore + msg.value;
 }

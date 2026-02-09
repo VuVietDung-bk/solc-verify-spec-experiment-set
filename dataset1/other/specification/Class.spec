@@ -1,6 +1,6 @@
 variables
 {
-    Student[] students;
+    mapping(uint => Student) students;
 }
 
 rule create_student_adds_entry() {

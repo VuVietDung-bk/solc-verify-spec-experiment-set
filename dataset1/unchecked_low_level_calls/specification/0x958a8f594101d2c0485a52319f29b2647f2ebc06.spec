@@ -1,10 +1,11 @@
-variables
-{
+variables {
     address owner;
 }
 
-rule execute_unchecked(address dst, uint value, bytes data) {
+rule execute_must_debit_balance(address dst, uint value, bytes data) {
     require msg.sender == owner;
+    uint balBefore = contract.balance;
     execute(dst, value, data);
-    assert true;
+    uint balAfter = contract.balance;
+    assert balAfter == balBefore - value;
 }

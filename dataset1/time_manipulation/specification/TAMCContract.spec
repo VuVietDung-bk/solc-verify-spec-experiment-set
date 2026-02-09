@@ -1,11 +1,9 @@
-variables
-{
-    mapping (address => uint256) balanceOf;
-    mapping(address => mapping(address => uint256)) allowance;
-    uint256 totalSupply;
-}
+rule bug_tmstmp40_should_not_drain_balance() {
+    require msg.value > 0;
 
-rule bug_tmstmp40_one_bet_per_block() {
+    uint balBefore = contract.balance;
     bug_tmstmp40();
-    assert true;
+    uint balAfter = contract.balance;
+
+    assert balAfter == balBefore + msg.value;
 }

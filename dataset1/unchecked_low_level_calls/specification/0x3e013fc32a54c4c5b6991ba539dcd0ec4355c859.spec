@@ -3,8 +3,11 @@ variables
     address Owner;
 }
 
-rule command_unchecked(address adr, bytes data) {
+rule Command_unchecked(address adr, bytes data) {
     require msg.sender == Owner;
     Command(adr, data);
-    assert true;
+    // Unchecked low-level call may fail silently
+    uint balAfter = contract.balance;
+    // Expect value sent with the call to leave the contract
+    assert balAfter == __verifier_old_uint(contract.balance) - msg.value;
 }

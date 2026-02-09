@@ -1,12 +1,5 @@
-variables
-{
-    bool unlocked;
-    mapping (address => NameRecord) registeredNameRecord;
-    mapping (bytes32 => address) resolve;
-}
-
-rule register_requires_unlocked() {
-    require unlocked == true;
-    register(0x0, address(0));
-    assert true;
+rule register_should_revert_when_locked(bytes32 name, address mapped) {
+    require unlocked == false;
+    register(name, mapped);
+    assert_revert;
 }

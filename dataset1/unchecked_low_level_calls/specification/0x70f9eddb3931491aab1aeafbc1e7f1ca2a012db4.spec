@@ -1,10 +1,11 @@
-variables
-{
+variables {
     address Owner;
 }
 
-rule command_unchecked(address adr, bytes data) {
+rule Command_must_debit(address adr, bytes data) {
     require msg.sender == Owner;
+    uint balBefore = contract.balance;
     Command(adr, data);
-    assert true;
+    uint balAfter = contract.balance;
+    assert balAfter == balBefore - msg.value;
 }

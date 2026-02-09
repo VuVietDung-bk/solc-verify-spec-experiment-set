@@ -1,10 +1,11 @@
-variables
-{
+variables {
     address owner;
 }
 
-rule fundPuppets_unchecked() {
+rule fundPuppets_must_spend_value() {
     require msg.sender == owner;
+    uint balBefore = contract.balance;
     fundPuppets();
-    assert true;
+    uint balAfter = contract.balance;
+    assert balAfter == balBefore - msg.value;
 }

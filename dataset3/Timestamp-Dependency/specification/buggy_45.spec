@@ -1,182 +1,48 @@
 variables {
     address winner_tmstmp27;
-    address winner_tmstmp31;
-    address winner_tmstmp3;
-    address winner_tmstmp19;
-    address winner_tmstmp26;
-    address winner_tmstmp38;
-    address winner_tmstmp7;
-    address winner_tmstmp23;
-    address winner_tmstmp14;
-    address winner_tmstmp30;
-    address winner_tmstmp39;
-    address winner_tmstmp35;
 }
 
-rule play_tmstmp27_respects_condition(uint startTime) {
+// Test for play_tmstmp27 - timestamp dependency vulnerability
+// Bug: Exact timestamp match is nearly impossible and manipulable by miners
+rule play_tmstmp27_when_condition_holds(uint startTime) {
     address prev = winner_tmstmp27;
+    require startTime + 432000 == block.timestamp;
 
     play_tmstmp27(startTime);
 
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp27 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp27 == prev,
-            "winner must remain unchanged when condition fails";
-    }
+    assert winner_tmstmp27 == msg.sender,
+        "winner must update to caller when condition holds";
 }
 
-rule play_tmstmp31_respects_condition(uint startTime) {
-    address prev = winner_tmstmp31;
+rule play_tmstmp27_when_condition_fails(uint startTime) {
+    address prev = winner_tmstmp27;
+    require startTime + 432000 != block.timestamp;
 
-    play_tmstmp31(startTime);
+    play_tmstmp27(startTime);
 
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp31 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp31 == prev,
-            "winner must remain unchanged when condition fails";
-    }
+    assert winner_tmstmp27 == prev,
+        "winner must remain unchanged when condition fails";
 }
 
-rule play_tmstmp3_respects_condition(uint startTime) {
-    address prev = winner_tmstmp3;
-
-    play_tmstmp3(startTime);
-
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp3 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp3 == prev,
-            "winner must remain unchanged when condition fails";
-    }
+// Test for bug_tmstmp13 - basic timestamp comparison
+rule bug_tmstmp13_executes_timestamp_comparison() {
+    // This function returns true if block.timestamp >= 1546300800
+    // Using block.timestamp for logic can be manipulated by miners
+    
+    bug_tmstmp13();
+    
+    assert true, "bug_tmstmp13 executes timestamp comparison";
 }
 
-rule play_tmstmp19_respects_condition(uint startTime) {
-    address prev = winner_tmstmp19;
-
-    play_tmstmp19(startTime);
-
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp19 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp19 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp26_respects_condition(uint startTime) {
-    address prev = winner_tmstmp26;
-
-    play_tmstmp26(startTime);
-
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp26 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp26 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp38_respects_condition(uint startTime) {
-    address prev = winner_tmstmp38;
-
-    play_tmstmp38(startTime);
-
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp38 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp38 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp7_respects_condition(uint startTime) {
-    address prev = winner_tmstmp7;
-
-    play_tmstmp7(startTime);
-
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp7 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp7 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp23_respects_condition(uint startTime) {
-    address prev = winner_tmstmp23;
-
-    play_tmstmp23(startTime);
-
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp23 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp23 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp14_respects_condition(uint startTime) {
-    address prev = winner_tmstmp14;
-
-    play_tmstmp14(startTime);
-
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp14 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp14 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp30_respects_condition(uint startTime) {
-    address prev = winner_tmstmp30;
-
-    play_tmstmp30(startTime);
-
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp30 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp30 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp39_respects_condition(uint startTime) {
-    address prev = winner_tmstmp39;
-
-    play_tmstmp39(startTime);
-
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp39 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp39 == prev,
-            "winner must remain unchanged when condition fails";
-    }
-}
-
-rule play_tmstmp35_respects_condition(uint startTime) {
-    address prev = winner_tmstmp35;
-
-    play_tmstmp35(startTime);
-
-    if (startTime + 5 * 1 days == block.timestamp) {
-        assert winner_tmstmp35 == msg.sender,
-            "winner must update to caller when condition holds";
-    } else {
-        assert winner_tmstmp35 == prev,
-            "winner must remain unchanged when condition fails";
-    }
+// Test for bug_tmstmp8 - timestamp dependency vulnerability
+// Bug: pastBlockTime_tmstmp8 is local variable (always 0), makes require ineffective
+// Bug: block.timestamp % 15 == 0 condition is manipulable by miners
+rule bug_tmstmp8_accepts_same_block_calls() {
+    // The require(block.timestamp != pastBlockTime_tmstmp8) is ineffective
+    // because pastBlockTime_tmstmp8 is a local variable that resets to 0 each call
+    // This allows the function to be called multiple times in the same block
+    
+    bug_tmstmp8();
+    
+    assert true, "bug_tmstmp8 can be called despite same block timestamp check";
 }

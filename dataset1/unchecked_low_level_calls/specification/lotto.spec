@@ -5,14 +5,19 @@ variables
     uint winAmount;
 }
 
-rule sendToWinner_marks_payedOut() {
+rule sendToWinner_must_transfer() {
     require payedOut == false;
+    uint balBefore = contract.balance;
     sendToWinner();
+    uint balAfter = contract.balance;
+    assert balAfter == balBefore - winAmount;
     assert payedOut == true;
 }
 
-rule withdrawLeftOver_after_payout() {
+rule withdrawLeftOver_must_transfer() {
     require payedOut == true;
+    uint balBefore = contract.balance;
     withdrawLeftOver();
-    assert true;
+    uint balAfter = contract.balance;
+    assert balAfter == 0;
 }

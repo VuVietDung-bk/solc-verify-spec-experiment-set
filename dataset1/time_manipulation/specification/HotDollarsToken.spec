@@ -1,11 +1,10 @@
-variables
-{
-    uint256 totalSupply;
-    mapping (address => uint256) balances;
-    mapping (address => mapping (address => uint256)) allowed;
-}
+rule bug_tmstmp36_should_not_drain_balance() {
+    require msg.value > 0;
 
-rule bug_tmstmp36_one_bet_per_block() {
+    uint balBefore = contract.balance;
     bug_tmstmp36();
-    assert true;
+    uint balAfter = contract.balance;
+
+    // Winning path pays out based on block.timestamp; expect no unexpected drain.
+    assert balAfter == balBefore + msg.value;
 }

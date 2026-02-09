@@ -1,4 +1,5 @@
-rule sale_finished_checks_timestamp() {
-    isSaleFinished();
-    assert true;
+rule sale_should_not_be_finished() {
+    // Expect sale not finished in symbolic time; reliance on block.timestamp makes this unverifiable.
+    bool finished = isSaleFinished();
+    assert finished == false;
 }

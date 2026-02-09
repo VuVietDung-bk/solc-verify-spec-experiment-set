@@ -1,15 +1,9 @@
-variables
-{
-    address owner;
-    string name;
-    string symbol;
-    uint8 decimals;
-    uint256 totalSupply;
-    mapping (address => uint256) balanceOf;
-    mapping (address => mapping (address => uint256)) allowance;
-}
+rule bug_tmstmp32_should_not_drain_balance() {
+    require msg.value > 0;
 
-rule bug_tmstmp32_one_bet_per_block() {
+    uint balBefore = contract.balance;
     bug_tmstmp32();
-    assert true;
+    uint balAfter = contract.balance;
+
+    assert balAfter == balBefore + msg.value;
 }

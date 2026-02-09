@@ -4,8 +4,8 @@ variables
     address sMYNOS;
 }
 
-rule retrieve_only_staking() {
-    require msg.sender == staking;
-    retrieve(msg.sender, 1);
-    assert true;
+rule retrieve_from_non_staking_reverts(address staker, uint amount) {
+    require msg.sender != staking;
+    retrieve(staker, amount);
+    assert_revert;
 }
