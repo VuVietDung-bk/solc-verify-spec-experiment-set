@@ -13,6 +13,8 @@ address[] private refundAddresses;
 mapping (address => uint) public refunds;
 
     /// @notice precondition forall (address extraVar0) refunds[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         refundAddresses.push(0x79B483371E87d664cd39491b5F06250165e4b184);
         refundAddresses.push(0x79B483371E87d664cd39491b5f06250165e4b185);
@@ -20,7 +22,10 @@ mapping (address => uint) public refunds;
 
     // bad
     /// @notice precondition forall (address extraVar0) refunds[extraVar0] >= 0
-    /// @notice postcondition forall (address a) refunds[a] == __verifier_old_uint(refunds[a])
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice postcondition forall (uint i) i < 0 || i >= __verifier_old_uint(refundAddresses.length) || refunds[refundAddresses[i]] == __verifier_old_uint(refunds[refundAddresses[i]])
+    /// @notice postcondition forall (uint i) i < 0 || i >= __verifier_old_uint(refundAddresses.length) || refundAddresses[i].balance == __verifier_old_uint(refundAddresses[i].balance) + __verifier_old_uint(refunds[refundAddresses[i]])
     function refundAll() public {
         for(uint x; x < refundAddresses.length; x++) { // arbitrary length iteration based on how many addresses participated
         // <yes> <report> DENIAL_OF_SERVICE

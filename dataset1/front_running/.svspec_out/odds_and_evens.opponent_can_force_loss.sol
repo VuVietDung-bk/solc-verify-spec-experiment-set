@@ -27,10 +27,13 @@ contract OddsAndEvens{
     /// @notice precondition tot >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     /// @notice precondition number >= 0
-    /// @notice precondition tot < 2
-    /// @notice precondition number == 1
-    /// @notice postcondition tot > 0
+    /// @notice precondition tot == 1
+    /// @notice precondition msg.value == 1000000000000000000
+    /// @notice precondition msg.sender != players[0].addr
+    /// @notice precondition players[0].number + number % 2 == 0
+    /// @notice postcondition msg.sender.balance == __verifier_old_uint(msg.sender.balance) - 1000000000000000000
   function play(uint number) public payable {
     if (msg.value != 1 ether) revert();
     // <yes> <report> FRONT_RUNNING

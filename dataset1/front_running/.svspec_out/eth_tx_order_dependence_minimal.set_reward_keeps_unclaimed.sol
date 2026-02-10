@@ -19,6 +19,7 @@ contract EthTxOrderDependenceMinimal {
     /// @notice precondition reward >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     /// @notice precondition claimed == false
     /// @notice precondition msg.sender == owner
     /// @notice postcondition claimed == false

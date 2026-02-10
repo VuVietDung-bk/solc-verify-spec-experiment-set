@@ -11,9 +11,10 @@ contract DosGas {
     address[] creditorAddresses;
     bool win = false;
 
+    /// @notice precondition !win
     /// @notice precondition creditorAddresses.length > 1500
     /// @notice postcondition creditorAddresses.length == 0
-    /// @notice postcondition win == true
+    /// @notice postcondition win
     function emptyCreditors() public {
         // <yes> <report> DENIAL_OF_SERVICE
         if(creditorAddresses.length>1500) {

@@ -19,8 +19,8 @@ contract DosGas {
         }
     }
 
-    /// @notice precondition creditorAddresses.length < 1500
-    /// @notice postcondition creditorAddresses.length > __verifier_old_uint(__verifier_old_address(creditorAddresses).length)
+    /// @notice precondition creditorAddresses.length == 0
+    /// @notice postcondition creditorAddresses.length == 350
     function addCreditors() public returns (bool) {
         for(uint i=0;i<350;i++) {
           creditorAddresses.push(msg.sender);

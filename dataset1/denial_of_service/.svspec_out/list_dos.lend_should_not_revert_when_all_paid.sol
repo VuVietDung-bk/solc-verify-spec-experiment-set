@@ -7,12 +7,6 @@
 //added pragma version
 pragma solidity >=0.7.0;
 
-/// @notice invariant creditorAddresses.length == creditorAmounts.length
-/// @notice invariant profitFromCrash >= 0
-/// @notice invariant lastTimeOfNewCredit >= 0
-/// @notice invariant lastCreditorPayedOut >= 0
-/// @notice invariant forall (address a) buddies[a] >= 0
-/// @notice invariant forall (uint i) creditorAmounts[i] >= 0
 contract Government {
 
      // Global Variables
@@ -33,8 +27,11 @@ contract Government {
     /// @notice precondition forall (address extraVar0) buddies[extraVar0] >= 0
     /// @notice precondition TWELVE_HOURS >= 0
     /// @notice precondition round >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
      constructor() payable {
          // The corrupt elite establishes a new government
          // this is the commitment of the corrupt Elite - everything that can not be saved from a crash
@@ -50,8 +47,11 @@ contract Government {
     /// @notice precondition forall (address extraVar0) buddies[extraVar0] >= 0
     /// @notice precondition TWELVE_HOURS >= 0
     /// @notice precondition round >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
      function lendGovernmentMoney(address buddy) public payable returns (bool) {
          uint amount = msg.value;
          // check if the system already broke down. If for 12h no new creditor gives new credit to the system it will brake down.
@@ -110,11 +110,38 @@ contract Government {
      }
 
      // fallback function
+    /// @notice precondition lastCreditorPayedOut >= 0
+    /// @notice precondition lastTimeOfNewCredit >= 0
+    /// @notice precondition profitFromCrash >= 0
+    /// @notice precondition property(creditorAmounts) (extraIndex0) creditorAmounts[extraIndex0] >= 0
+    /// @notice precondition forall (address extraVar0) buddies[extraVar0] >= 0
+    /// @notice precondition TWELVE_HOURS >= 0
+    /// @notice precondition round >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
+    /// @notice precondition lastCreditorPayedOut == creditorAmounts.length
+    /// @notice precondition lastTimeOfNewCredit + 43200 >= block.timestamp
+    /// @notice postcondition creditorAmounts.length > lastCreditorPayedOut
      fallback() external payable {
          lendGovernmentMoney(address(0));
      }
 
      // fallback function
+    /// @notice precondition lastCreditorPayedOut >= 0
+    /// @notice precondition lastTimeOfNewCredit >= 0
+    /// @notice precondition profitFromCrash >= 0
+    /// @notice precondition property(creditorAmounts) (extraIndex0) creditorAmounts[extraIndex0] >= 0
+    /// @notice precondition forall (address extraVar0) buddies[extraVar0] >= 0
+    /// @notice precondition TWELVE_HOURS >= 0
+    /// @notice precondition round >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
      receive() external payable {
         
      }
@@ -126,6 +153,8 @@ contract Government {
     /// @notice precondition forall (address extraVar0) buddies[extraVar0] >= 0
     /// @notice precondition TWELVE_HOURS >= 0
     /// @notice precondition round >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      function totalDebt() public returns (uint debt) {
          for(uint i=lastCreditorPayedOut; i<creditorAmounts.length; i++){
              debt += creditorAmounts[i];
@@ -139,6 +168,8 @@ contract Government {
     /// @notice precondition forall (address extraVar0) buddies[extraVar0] >= 0
     /// @notice precondition TWELVE_HOURS >= 0
     /// @notice precondition round >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      function totalPayedOut() public returns (uint payout) {
          for(uint i=0; i<lastCreditorPayedOut; i++){
              payout += creditorAmounts[i];
@@ -153,8 +184,11 @@ contract Government {
     /// @notice precondition forall (address extraVar0) buddies[extraVar0] >= 0
     /// @notice precondition TWELVE_HOURS >= 0
     /// @notice precondition round >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
      function investInTheSystem() public payable {
          profitFromCrash += msg.value;
      }
@@ -167,6 +201,8 @@ contract Government {
     /// @notice precondition forall (address extraVar0) buddies[extraVar0] >= 0
     /// @notice precondition TWELVE_HOURS >= 0
     /// @notice precondition round >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      function inheritToNextGeneration(address nextGeneration) public {
          if (msg.sender == corruptElite) {
              corruptElite = nextGeneration;
@@ -180,6 +216,8 @@ contract Government {
     /// @notice precondition forall (address extraVar0) buddies[extraVar0] >= 0
     /// @notice precondition TWELVE_HOURS >= 0
     /// @notice precondition round >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      function getCreditorAddresses() public returns (address[] memory) {
          return creditorAddresses;
      }
@@ -191,6 +229,8 @@ contract Government {
     /// @notice precondition forall (address extraVar0) buddies[extraVar0] >= 0
     /// @notice precondition TWELVE_HOURS >= 0
     /// @notice precondition round >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      function getCreditorAmounts() public returns (uint[] memory) {
          return creditorAmounts;
      }

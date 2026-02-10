@@ -94,8 +94,6 @@ contract ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
-    /// @notice precondition owner == address(0)
-    /// @notice postcondition true
   function balanceOf(address owner) public view returns (uint256) {
     return _balances[owner];
   }
@@ -127,6 +125,8 @@ contract ERC20 {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition value >= 0
+    /// @notice precondition spender == msg.sender
+    /// @notice postcondition _allowed[msg.sender][msg.sender] == value
   function approve(address spender, uint256 value) public returns (bool) {
     require(spender != address(0));
      // <yes> <report> FRONT_RUNNING

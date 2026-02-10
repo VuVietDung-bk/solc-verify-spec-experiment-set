@@ -16,6 +16,12 @@ contract DosAuction {
     /// @notice precondition currentBid >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
+    /// @notice precondition msg.value > currentBid
+    /// @notice precondition msg.sender != currentFrontrunner
+    /// @notice precondition currentFrontrunner != address(0)
+    /// @notice postcondition currentBid == msg.value
+    /// @notice postcondition currentFrontrunner == msg.sender
   function bid() public payable {
     require(msg.value > currentBid);
 

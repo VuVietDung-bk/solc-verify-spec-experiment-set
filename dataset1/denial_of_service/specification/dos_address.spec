@@ -11,8 +11,9 @@ rule add_increases_by_350() {
 }
 
 rule empty_resets_when_large() {
+    require !win;
     require creditorAddresses.length > 1500;
     emptyCreditors();
     assert creditorAddresses.length == 0;
-    assert win == true;
+    assert win;
 }
