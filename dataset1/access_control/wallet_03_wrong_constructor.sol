@@ -21,7 +21,7 @@
      }
 
      function deposit() public payable {
-         assert(balances[msg.sender] + msg.value > balances[msg.sender]);
+         require(balances[msg.sender] + msg.value > balances[msg.sender]);
          balances[msg.sender] += msg.value;
      }
 

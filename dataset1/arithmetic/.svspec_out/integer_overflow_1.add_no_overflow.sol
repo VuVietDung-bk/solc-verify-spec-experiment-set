@@ -10,6 +10,8 @@ pragma solidity >=0.7.0;
      uint private sellerBalance=0;
 
     /// @notice precondition sellerBalance >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
     /// @notice postcondition sellerBalance == __verifier_old_uint(sellerBalance) + value
      function add(uint value) public returns (bool){

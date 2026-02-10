@@ -12,6 +12,8 @@ contract IntegerOverflowMappingSym1 {
     mapping(uint256 => uint256) map;
 
     /// @notice precondition forall (uint256 extraVar0) map[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition k >= 0
     /// @notice precondition v >= 0
     /// @notice precondition v > map[k]

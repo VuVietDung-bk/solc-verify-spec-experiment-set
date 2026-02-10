@@ -15,6 +15,8 @@ contract IntegerOverflowMultiTxOneFuncFeasible {
 
     /// @notice precondition initialized >= 0
     /// @notice precondition count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition input >= 0
     /// @notice precondition initialized == 1
     /// @notice postcondition count == __verifier_old_uint(count) - input

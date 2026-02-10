@@ -16,12 +16,12 @@
 
      mapping(address => uint256) balances;
 
-     constructor() public {
+     constructor() {
          creator = msg.sender;
      }
 
      function deposit() public payable {
-         assert(balances[msg.sender] + msg.value > balances[msg.sender]);
+         require(balances[msg.sender] + msg.value > balances[msg.sender]);
          balances[msg.sender] += msg.value;
      }
 

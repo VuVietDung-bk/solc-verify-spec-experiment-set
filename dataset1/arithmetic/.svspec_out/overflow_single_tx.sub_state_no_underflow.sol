@@ -14,6 +14,8 @@ contract IntegerOverflowSingleTransaction {
 
     // ADD overflow with result stored in state variable.
     /// @notice precondition count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition input >= 0
     function overflowaddtostate(uint256 input) public {
         // <yes> <report> ARITHMETIC
@@ -22,6 +24,8 @@ contract IntegerOverflowSingleTransaction {
 
     // MUL overflow with result stored in state variable.
     /// @notice precondition count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition input >= 0
     function overflowmultostate(uint256 input) public {
         // <yes> <report> ARITHMETIC
@@ -30,6 +34,8 @@ contract IntegerOverflowSingleTransaction {
 
     // Underflow with result stored in state variable.
     /// @notice precondition count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition input >= 0
     /// @notice precondition input <= count
     /// @notice postcondition count == __verifier_old_uint(count) - input
@@ -40,6 +46,8 @@ contract IntegerOverflowSingleTransaction {
 
     // ADD Overflow, no effect on state.
     /// @notice precondition count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition input >= 0
     function overflowlocalonly(uint256 input) public {
         // <yes> <report> ARITHMETIC
@@ -48,6 +56,8 @@ contract IntegerOverflowSingleTransaction {
 
     // MUL Overflow, no effect on state.
     /// @notice precondition count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition input >= 0
     function overflowmulocalonly(uint256 input) public {
         // <yes> <report> ARITHMETIC
@@ -56,6 +66,8 @@ contract IntegerOverflowSingleTransaction {
 
     // Underflow, no effect on state.
     /// @notice precondition count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition input >= 0
     function underflowlocalonly(uint256 input) public {
         // <yes> <report> ARITHMETIC

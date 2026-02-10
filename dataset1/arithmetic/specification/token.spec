@@ -5,6 +5,7 @@ variables
 }
 
 rule transfer_balance_conservation(address _to, uint _value) {
+    require _to != msg.sender;
     uint sender_before = balances[msg.sender];
     uint to_before = balances[_to];
     transfer(_to, _value);

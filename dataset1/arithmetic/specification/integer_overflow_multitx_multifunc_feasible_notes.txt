@@ -1,1 +1,0 @@
-Specs added in specification/*.spec and verified with svspec --no-run earlier.

@@ -1,0 +1,10 @@
+Saving last configuration file to .certora_internal/26_02_11_02_25_43_6216090f73/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['incorrect_constructor_name1.sol:Missing'], 'package_version_for_build_cache': 'certora-cli 8.8.0', 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /root/solc-verify-spec/experiments/dataset1/access_control/.certora_internal/26_02_11_02_25_43_6216090f73/.certora_config
+In /root/solc-verify-spec/experiments/dataset1/access_control/certora_specification/incorrect_constructor_name1.cvl, found the imports: []
+copying spec file /root/solc-verify-spec/experiments/dataset1/access_control/certora_specification/incorrect_constructor_name1.cvl to /root/solc-verify-spec/experiments/dataset1/access_control/.certora_internal/26_02_11_02_25_43_6216090f73/.certora_sources/.0_incorrect_constructor_name1.cvl.spec
+writing /root/solc-verify-spec/experiments/dataset1/access_control/.certora_internal/26_02_11_02_25_43_6216090f73/.certora_verify.json
+Installed Java version is too old to check CVL specification files locally. Java version should be at least 19 to allow local java-based type checking
+The recommended LTS version is 21.
+build failed

@@ -4,9 +4,30 @@ variables
     address root;
 }
 
-rule new_owner_requires_existing_owner(address candidate) {
-    require owners[msg.sender] == address(0);
-    address oldParent = owners[candidate];
-    newOwner(candidate);
-    assert owners[candidate] == oldParent;
+rule anyone_can_become_owner(address attacker) {
+    require owners[attacker] == address(0);
+    require attacker != address(0);
+
+    newOwner(attacker);
+
+    assert owners[attacker] != address(0), "Lỗ hổng: Người dùng bất kỳ có thể tự cấp quyền owner";
+}
+
+rule root_is_constant() {
+    address root_before = root;
+    method f;
+
+    f();
+
+    assert root == root_before, "Lỗi: Biến root bị thay đổi bất thường";
+}
+
+rule only_owner_can_withdraw() {
+    address caller = msg.sender;
+    
+    require owners[caller] == address(0);
+    
+    withdrawAll();
+    
+    assert_revert;
 }

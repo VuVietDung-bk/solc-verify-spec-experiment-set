@@ -1,0 +1,15 @@
+Saving last configuration file to .certora_internal/26_02_11_02_27_40_135140d761/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['incorrect_constructor_name1.sol:Missing'], 'package_version_for_build_cache': 'certora-cli 8.8.0', 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /root/solc-verify-spec/experiments/dataset1/access_control/.certora_internal/26_02_11_02_27_40_135140d761/.certora_config
+In /root/solc-verify-spec/experiments/dataset1/access_control/certora_specification/incorrect_constructor_name1.cvl, found the imports: []
+copying spec file /root/solc-verify-spec/experiments/dataset1/access_control/certora_specification/incorrect_constructor_name1.cvl to /root/solc-verify-spec/experiments/dataset1/access_control/.certora_internal/26_02_11_02_27_40_135140d761/.certora_sources/.0_incorrect_constructor_name1.cvl.spec
+writing /root/solc-verify-spec/experiments/dataset1/access_control/.certora_internal/26_02_11_02_27_40_135140d761/.certora_verify.json
+Failed to run Certora Prover typechecker locally.
+Please check the errors below for problems in the specifications (.spec files) or the prover_args defined in the .conf file.
+[main] ERROR ALWAYS - Found errors in certora_specification/incorrect_constructor_name1.cvl:
+[main] ERROR ALWAYS - Error in spec file (incorrect_constructor_name1.cvl:6:30): Since CVL 2, methods block entries must end with `;`
+[main] ERROR ALWAYS - Error in spec file (incorrect_constructor_name1.cvl:6:36): Syntax error: unexpected token near `returns`
+[main] ERROR ALWAYS - Error in spec file (incorrect_constructor_name1.cvl:17:5): Syntax error: unexpected token near `require`
+[main] ERROR ALWAYS - Error in spec file (incorrect_constructor_name1.cvl:20:5): Syntax error: unexpected token near `assert`
+build failed

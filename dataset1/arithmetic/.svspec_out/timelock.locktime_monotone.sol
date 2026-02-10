@@ -14,8 +14,11 @@ pragma solidity >=0.7.0;
 
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) lockTime[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
      function deposit() public payable {
          balances[msg.sender] += msg.value;
          lockTime[msg.sender] = block.timestamp + 1 weeks;
@@ -23,6 +26,8 @@ pragma solidity >=0.7.0;
 
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) lockTime[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _secondsToIncrease >= 0
     /// @notice postcondition lockTime[msg.sender] == __verifier_old_uint(lockTime[msg.sender]) + _secondsToIncrease
      function increaseLockTime(uint _secondsToIncrease) public {
@@ -32,6 +37,8 @@ pragma solidity >=0.7.0;
 
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) lockTime[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      function withdraw() public {
          require(balances[msg.sender] > 0);
          require(block.timestamp  > lockTime[msg.sender]);

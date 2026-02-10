@@ -1,0 +1,21 @@
+{
+    "topics": [
+        {
+            "name": "type_check",
+            "messages": [
+                {
+                    "message": "Error in spec file (incorrect_constructor_name1.cvl:13:10): Syntax error: unexpected token near `.`",
+                    "location": []
+                },
+                {
+                    "message": "Error in spec file (incorrect_constructor_name1.cvl:16:10): Syntax error: unexpected token near `.`",
+                    "location": []
+                },
+                {
+                    "message": "Error in spec file (incorrect_constructor_name1.cvl:36:10): Syntax error: unexpected token near `.`",
+                    "location": []
+                }
+            ]
+        }
+    ]
+}

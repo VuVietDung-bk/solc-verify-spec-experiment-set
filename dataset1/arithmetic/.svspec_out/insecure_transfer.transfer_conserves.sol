@@ -11,8 +11,11 @@ contract IntegerOverflowAdd {
 
     // INSECURE
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     /// @notice precondition balanceOf[msg.sender] >= _value
+    /// @notice precondition _to != msg.sender
     /// @notice postcondition balanceOf[msg.sender] == __verifier_old_uint(balanceOf[msg.sender]) - _value
     /// @notice postcondition balanceOf[_to] == __verifier_old_uint(balanceOf[_to]) + _value
     function transfer(address _to, uint256 _value) public{

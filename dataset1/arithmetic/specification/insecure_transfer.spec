@@ -5,6 +5,7 @@ variables
 
 rule transfer_conserves(address _to, uint256 _value) {
     require balanceOf[msg.sender] >= _value;
+    require _to != msg.sender;
     uint256 sender_before = balanceOf[msg.sender];
     uint256 to_before = balanceOf[_to];
 

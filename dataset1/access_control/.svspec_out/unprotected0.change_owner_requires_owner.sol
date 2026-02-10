@@ -14,6 +14,8 @@ pragma solidity >=0.7.0;
          _;
      }
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      constructor()
      {
          owner = msg.sender;
@@ -21,7 +23,9 @@ pragma solidity >=0.7.0;
 
      // This function should be protected
      // <yes> <report> ACCESS_CONTROL
-    /// @notice precondition msg.sender != owner
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition owner != address(0)
     /// @notice postcondition owner == __verifier_old_address(owner)
      function changeOwner(address _newOwner)
          public
