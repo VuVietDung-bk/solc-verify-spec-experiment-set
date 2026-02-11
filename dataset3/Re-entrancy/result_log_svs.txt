@@ -1,0 +1,211 @@
+==============================================================================
+  SVSPEC RESULT LOG - dataset3/Re-entrancy
+  Flag: (none)
+  Date: 2025
+==============================================================================
+
+Spec files: 10
+Total rules: 53
+Total rule verification time: ~316.39s
+Total end-to-end time: ~362.50s
+
+==============================================================================
+SUMMARY TABLE
+==============================================================================
+  # | Spec File       | Contract           | Rules | Result
+----+-----------------+--------------------+-------+---------------------------
+  1 | buggy_1.spec    | HotDollarsToken    |   7   | FAIL (1/7 rules fail)
+  2 | buggy_5.spec    | TTC                |  12   | FAIL (3/12 rules fail)
+  3 | buggy_19.spec   | ethBank            |  12   | FAIL (5/12 rules fail)
+  4 | buggy_20.spec   | Ownable+Stoppable+RampInstantEscrowsPoolInterface+RampInstantPool (split) | 4 | FAIL (2 postcondition errors, 2 PASS)
+  5 | buggy_23.spec   | AGR                |   2   | ANNOTATION ERROR (decimals shadowing)
+  6 | buggy_33.spec   | Staking            |   3   | PASS (all OK)
+  7 | buggy_34.spec   | LollypopToken      |   3   | FAIL (precondition errors)
+  8 | buggy_45.spec   | StockBet           |   5   | FAIL (3/5 rules fail)
+  9 | buggy_47.spec   | AcunarIEO          |   2   | ANNOTATION ERROR (undeclared 'tokens')
+ 10 | buggy_50.spec   | digitalNotary      |   3   | FAIL (2/3 rules fail)
+
+==============================================================================
+DETAILED RESULTS
+==============================================================================
+
+--- [1] buggy_1.spec (HotDollarsToken) ---
+Command: svspec buggy_1.sol:HotDollarsToken specification/buggy_1.spec
+Rules: 7
+  1) callme_re_ent7_nonreentrant -> OK
+  2) buyTicket_re_ent23_nonreentrant -> OK
+  3) withdraw_balances_re_ent8_nonreentrant -> OK
+  4) withdrawFunds_re_ent31_nonreentrant -> OK
+  5) bug_re_ent13_nonreentrant -> OK
+  6) withdrawBalance_re_ent26_nonreentrant -> FAIL
+     - HotDollarsToken::withdrawBalance_re_ent26: postcondition about balance
+       decrease bounded by userBalance_re_ent26 might not hold
+  7) claimReward_re_ent32_nonreentrant -> OK
+Rule time: 28.87s | End-to-end: 30.16s
+
+--- [2] buggy_5.spec (TTC) ---
+Command: svspec buggy_5.sol:TTC specification/buggy_5.spec
+Rules: 12
+  1) withdraw_balances_re_ent21_nonreentrant -> OK
+  2) withdrawBalance_re_ent40_nonreentrant -> OK
+  3) buyTicket_re_ent9_nonreentrant -> OK
+  4) claimReward_re_ent25_nonreentrant -> OK
+  5) withdrawBalance_re_ent12_nonreentrant -> OK
+  6) bug_re_ent41_nonreentrant -> OK
+  7) callme_re_ent42_nonreentrant -> OK
+  8) buyTicket_re_ent2_nonreentrant -> OK
+  9) withdrawFunds_re_ent31_nonreentrant -> OK
+ 10) withdrawFunds_re_ent17_nonreentrant -> FAIL
+     - TTC::withdrawFunds_re_ent17: postcondition about balance decrease
+       and balances_re_ent17 update might not hold
+ 11) bug_re_ent13_nonreentrant -> FAIL
+     - TTC::bug_re_ent13: postcondition about balance decrease bounded
+       by 1 might not hold
+ 12) withdraw_balances_re_ent36_nonreentrant -> FAIL
+     - TTC::withdraw_balances_re_ent36: postcondition
+       'balances_re_ent36[msg.sender] == 0' might not hold
+Rule time: 78.48s | End-to-end: 80.37s
+
+--- [3] buggy_19.spec (ethBank) ---
+Command: svspec buggy_19.sol:ethBank specification/buggy_19.spec
+Rules: 12
+  1) withdraw_balances_re_ent1_nonreentrant -> OK
+  2) bug_re_ent41_nonreentrant -> OK
+  3) callme_re_ent42_nonreentrant -> OK
+  4) buyTicket_re_ent2_nonreentrant -> OK
+  5) withdrawFunds_re_ent17_nonreentrant -> OK
+  6) withdrawFunds_re_ent3_nonreentrant -> FAIL
+     - ethBank::withdrawFunds_re_ent3: postcondition about balance
+       decrease and balances_re_ent3 update might not hold
+  7) buyTicket_re_ent9_nonreentrant -> FAIL
+     - ethBank::buyTicket_re_ent9: postcondition about lastPlayer
+       or balance decrease might not hold
+  8) claimReward_re_ent25_nonreentrant -> OK
+  9) withdrawBalance_re_ent19_nonreentrant -> OK
+ 10) withdrawBalance_re_ent26_nonreentrant -> FAIL
+     - ethBank::withdrawBalance_re_ent26: postcondition about balance
+       decrease bounded by userBalance_re_ent26 might not hold
+ 11) withdraw_balances_re_ent36_nonreentrant -> FAIL
+     - ethBank::withdraw_balances_re_ent36: postcondition
+       'balances_re_ent36[msg.sender] == 0' might not hold
+ 12) bug_re_ent13_nonreentrant -> FAIL
+     - ethBank::bug_re_ent13: postcondition about balance decrease
+       bounded by 1 might not hold
+Rule time: 111.42s | End-to-end: 113.39s
+
+--- [4] buggy_20.spec (Ownable+Stoppable+RampInstantEscrowsPoolInterface+RampInstantPool, split) ---
+Commands: svspec buggy_20.sol:Ownable specification/buggy_20_ent17.spec
+          svspec buggy_20.sol:Stoppable specification/buggy_20_ent3.spec
+          svspec buggy_20.sol:RampInstantEscrowsPoolInterface specification/buggy_20_ent25.spec
+          svspec buggy_20.sol:RampInstantPool specification/buggy_20_ent11.spec
+Rules: 4
+  1) withdrawFunds_re_ent17_nonreentrant (Ownable) -> FAIL
+     - Ownable::withdrawFunds_re_ent17: postcondition 'balance should not decrease more than requested' might not hold
+     - Ownable::withdrawFunds_re_ent17: postcondition 'caller balance should drop exactly by amount' might not hold
+  2) withdrawFunds_re_ent3_nonreentrant (Stoppable) -> FAIL
+     - Stoppable::withdrawFunds_re_ent3: postcondition 'balance should not decrease more than requested' might not hold
+     - Stoppable::withdrawFunds_re_ent3: postcondition 'caller balance should drop exactly by amount' might not hold
+  3) claimReward_re_ent25_nonreentrant (RampInstantEscrowsPoolInterface) -> PASS
+     - All functions OK
+  4) claimReward_re_ent11_nonreentrant (RampInstantPool) -> PASS
+     - All functions OK
+Rule time: 30.0s | End-to-end: 36.5s
+
+--- [5] buggy_23.spec (AGR) ---
+Command: svspec buggy_23.sol:AGR specification/buggy_23.spec
+Rules: 2
+  1) withdrawFunds_re_ent17_nonreentrant -> ANNOTATION ERROR
+     - 'decimals' resolves to function type, not uint8 value
+       (shadowing: constructor param vs function)
+  2) claimReward_re_ent25_nonreentrant -> ANNOTATION ERROR
+     - Same decimals shadowing issue
+Rule time: 1.66s | End-to-end: 3.64s
+Note: The 'decimals >= 0' precondition conflicts with ERC20Detailed function name.
+
+--- [6] buggy_33.spec (Staking) ---
+Command: svspec buggy_33.sol:Staking specification/buggy_33.spec
+Rules: 3
+  1) withdrawFunds_re_ent17_nonreentrant -> OK
+  2) withdrawFunds_re_ent38_nonreentrant -> OK
+  3) claimReward_re_ent32_nonreentrant -> OK
+Rule time: 18.90s | End-to-end: 20.54s
+Result: ALL PASS - no reentrancy issues detected by these rules.
+
+--- [7] buggy_34.spec (LollypopToken) ---
+Command: svspec buggy_34.sol:LollypopToken specification/buggy_34.spec
+Rules: 3
+  1) withdrawFunds_re_ent17_nonreentrant -> FAIL (precondition errors)
+     - LollypopToken::transfer: precondition 'amount >= 0' might not hold
+     - LollypopToken::multiTransfer: precondition errors
+     - LollypopToken::transferFrom: precondition 'amount >= 0' might not hold
+  2) withdrawFunds_re_ent10_nonreentrant -> FAIL (same precondition errors)
+  3) claimReward_re_ent11_nonreentrant -> FAIL (same precondition errors)
+Rule time: 30.68s | End-to-end: 32.81s
+Note: Re-entrancy rule functions themselves are OK, but other functions have
+precondition issues (int vs uint comparison in 'amount >= 0' annotation).
+
+--- [8] buggy_45.spec (StockBet) ---
+Command: svspec buggy_45.sol:StockBet specification/buggy_45.spec
+Rules: 5
+  1) claimReward_re_ent39_nonreentrant -> OK
+  2) withdrawFunds_re_ent31_nonreentrant -> FAIL
+     - StockBet::withdrawFunds_re_ent31: postcondition about balance
+       decrease and balances_re_ent31 update might not hold
+  3) withdrawFunds_re_ent17_nonreentrant -> FAIL
+     - StockBet::withdrawFunds_re_ent17: postcondition about balance
+       decrease and balances_re_ent17 update might not hold
+  4) withdrawFunds_re_ent3_nonreentrant -> FAIL
+     - StockBet::withdrawFunds_re_ent3: postcondition about balance
+       decrease and balances_re_ent3 update might not hold
+  5) claimReward_re_ent25_nonreentrant -> OK
+Rule time: 28.93s | End-to-end: 30.61s
+
+--- [9] buggy_47.spec (AcunarIEO) ---
+Command: svspec buggy_47.sol:AcunarIEO specification/buggy_47.spec
+Rules: 2
+  1) withdrawFunds_re_ent17_nonreentrant -> ANNOTATION ERROR
+     - Undeclared identifier 'tokens' in transfer/transferFrom annotations
+  2) withdrawFunds_re_ent24_nonreentrant -> ANNOTATION ERROR
+     - Same undeclared 'tokens' issue
+Rule time: 1.96s | End-to-end: 3.70s
+Note: The 'tokens' parameter is not accessible in annotation context.
+
+--- [10] buggy_50.spec (digitalNotary) ---
+Command: svspec buggy_50.sol:digitalNotary specification/buggy_50.spec
+Rules: 3
+  1) withdrawFunds_re_ent17_nonreentrant -> FAIL
+     - digitalNotary::withdrawFunds_re_ent17: postcondition about balance
+       decrease and balances_re_ent17 update might not hold
+  2) withdrawFunds_re_ent31_nonreentrant -> FAIL
+     - digitalNotary::withdrawFunds_re_ent31: postcondition about balance
+       decrease and balances_re_ent31 update might not hold
+  3) claimReward_re_ent25_nonreentrant -> OK
+Rule time: 17.75s | End-to-end: 19.36s
+
+==============================================================================
+OVERALL STATISTICS
+==============================================================================
+  Rule-level: 53 rules total
+    - OK:               35 rules (66%)
+    - FAIL:             16 rules (30%) - reentrancy postcondition violations
+    - ANNOTATION ERROR:  2 rules (4%)  - undeclared identifier issues
+
+  Spec-level: 10 specs total
+    - FAIL (bugs found):     7/10 (70%)
+    - ANNOTATION ERROR:      2/10 (20%)
+    - PASS (all rules OK):   1/10 (10%)
+
+  Contracts with detected reentrancy bugs:
+    - buggy_1 (HotDollarsToken): withdrawBalance_re_ent26
+    - buggy_5 (TTC): withdrawFunds_re_ent17, bug_re_ent13, withdraw_balances_re_ent36
+    - buggy_19 (ethBank): withdrawFunds_re_ent3, buyTicket_re_ent9, 
+      withdrawBalance_re_ent26, withdraw_balances_re_ent36, bug_re_ent13
+    - buggy_20 (RampInstantEthPool): withdrawFunds_re_ent17 (Ownable), withdrawFunds_re_ent3 (Stoppable)
+    - buggy_34 (LollypopToken): precondition errors in transfer functions
+    - buggy_45 (StockBet): withdrawFunds_re_ent31, _re_ent17, _re_ent3
+    - buggy_50 (digitalNotary): withdrawFunds_re_ent17, _re_ent31
+
+  Typical failure pattern: postcondition about contract balance decrease
+  being bounded by user's withdrawal amount fails, indicating potential
+  reentrancy where ETH is sent before state updates.
+==============================================================================

@@ -10,6 +10,8 @@ contract Roulette {
     uint public pastBlockTime; // Forces one bet per block
 
     /// @notice precondition pastBlockTime >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -17,6 +19,8 @@ contract Roulette {
 
     // fallback function used to make a bet
     /// @notice precondition pastBlockTime >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -34,6 +38,8 @@ contract Roulette {
     }
 
     /// @notice precondition pastBlockTime >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0

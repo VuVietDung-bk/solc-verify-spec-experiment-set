@@ -165,6 +165,8 @@ uint256 bugv_tmstmp3 = block.timestamp;
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor(address payable _deposit){
         deposit = _deposit;
         admin = msg.sender;
@@ -189,6 +191,8 @@ uint256 bugv_tmstmp3 = block.timestamp;
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function halt() public onlyAdmin{
         ieoState = State.halted;
     }
@@ -211,6 +215,8 @@ uint256 bugv_tmstmp3 = block.timestamp;
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function unhalt() public onlyAdmin{
         ieoState = State.running;
     }
@@ -235,6 +241,8 @@ uint256 bugv_tmstmp3 = block.timestamp;
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function changeDepositAddress(address payable newDeposit) public onlyAdmin{
         deposit = newDeposit;
     }
@@ -256,6 +264,8 @@ uint256 bugv_tmstmp3 = block.timestamp;
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getCurrentState() public view returns(State){
         if(ieoState == State.halted){
             return State.halted;
@@ -286,8 +296,11 @@ uint256 bugv_tmstmp3 = block.timestamp;
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function invest() payable public returns(bool){
         //invest only in running
         ieoState = getCurrentState();
@@ -317,6 +330,28 @@ uint256 bugv_tmstmp3 = block.timestamp;
     }
     
     //the payable function must be declared external in solidity versions > 0.5.0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition tokenPrice >= 0
+    /// @notice precondition hardCap >= 0
+    /// @notice precondition raisedAmount >= 0
+    /// @notice precondition saleStart >= 0
+    /// @notice precondition saleEnd >= 0
+    /// @notice precondition coinTradeStart >= 0
+    /// @notice precondition maxInvestment >= 0
+    /// @notice precondition minInvestment >= 0
+    /// @notice precondition bugv_tmstmp3 >= 0
+    /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     receive() external payable{
       invest();
     }
@@ -338,6 +373,8 @@ uint256 bugv_tmstmp3 = block.timestamp;
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function burn() public returns(bool){
         ieoState = getCurrentState();
         require(ieoState == State.afterEnd);
@@ -364,6 +401,8 @@ uint256 bugv_tmstmp5 = block.timestamp;
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition tokens >= 0
     /// @notice precondition value >= 0
     function transfer(address to, uint value) public override returns(bool){
@@ -389,6 +428,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition tokens >= 0
     /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint _value) public override returns(bool){

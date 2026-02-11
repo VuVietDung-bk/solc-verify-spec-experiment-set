@@ -20,11 +20,15 @@ contract OddsAndEvens{
   address owner;
 
     /// @notice precondition tot >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   constructor() {
     owner = msg.sender;
   }
 // <yes> <report> FRONT_RUNNING
     /// @notice precondition tot >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -60,6 +64,8 @@ contract OddsAndEvens{
   }
 
     /// @notice precondition tot >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function getProfit() public {
     if(msg.sender!=owner) revert();
     bool res = payable(msg.sender).send(address(this).balance);

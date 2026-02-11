@@ -11,6 +11,8 @@ contract DosGas {
     address[] creditorAddresses;
     bool win = false;
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition !win
     /// @notice precondition creditorAddresses.length > 1500
     /// @notice postcondition creditorAddresses.length == 0
@@ -23,6 +25,8 @@ contract DosGas {
         }
     }
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function addCreditors() public returns (bool) {
         for(uint i=0;i<350;i++) {
           creditorAddresses.push(msg.sender);
@@ -30,10 +34,14 @@ contract DosGas {
         return true;
     }
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function iWin() public view returns (bool) {
         return win;
     }
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function numberCreditors() public view returns (uint) {
         return creditorAddresses.length;
     }

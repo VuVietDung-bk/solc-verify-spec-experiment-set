@@ -32,6 +32,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _decimals >= 0
     /// @notice precondition _initialSupply >= 0
     constructor(string memory _name, string memory _symbol, uint8 _decimals, uint256 _initialSupply) {
@@ -47,6 +49,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function totalSupply() public view override returns (uint256) {
         return _totalSupply;
     }
@@ -55,6 +59,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function balanceOf(address account) public view override returns (uint256) {
         return _balances[account];
     }
@@ -63,6 +69,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     /// @notice postcondition recipient == msg.sender || _balances[msg.sender] == __verifier_old_uint(_balances[msg.sender]) - amount
     /// @notice postcondition recipient == msg.sender || _balances[recipient] == __verifier_old_uint(_balances[recipient]) + amount
@@ -78,6 +86,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function allowance(address owner, address spender) public view override returns (uint256) {
         return _allowances[owner][spender];
     }
@@ -86,6 +96,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function approve(address spender, uint256 amount) public override returns (bool) {
         _approve(msg.sender, spender, amount);
@@ -96,6 +108,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function transferFrom(address sender, address recipient, uint256 amount) public override returns (bool) {
         _transfer(sender, recipient, amount);
@@ -107,6 +121,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition addedValue >= 0
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowances[msg.sender][spender] + addedValue);
@@ -117,6 +133,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition subtractedValue >= 0
     function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowances[msg.sender][spender] - subtractedValue);

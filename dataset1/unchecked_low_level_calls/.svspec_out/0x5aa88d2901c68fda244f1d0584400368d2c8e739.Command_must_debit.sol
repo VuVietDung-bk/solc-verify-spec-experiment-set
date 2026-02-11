@@ -10,6 +10,8 @@ contract MultiplicatorX3
 {
     address public Owner = msg.sender;
    
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -21,6 +23,8 @@ contract MultiplicatorX3
         payable(Owner).transfer(address(this).balance);
     }
     
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -35,6 +39,8 @@ contract MultiplicatorX3
         adr.call{value: msg.value}(data);
     }
     
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0

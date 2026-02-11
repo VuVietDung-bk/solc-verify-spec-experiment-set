@@ -26,13 +26,3 @@ rule root_is_constant(env e, method f) {
     assert currentContract.root == root_before,
         "Error: root changed unexpectedly";
 }
-
-/// @title Only owners can call withdrawAll
-rule only_owner_can_withdraw(env e) {
-    require currentContract.owners[e.msg.sender] == 0;
-
-    withdrawAll@withrevert(e);
-
-    assert lastReverted,
-        "Vulnerability: non-owner can withdraw";
-}

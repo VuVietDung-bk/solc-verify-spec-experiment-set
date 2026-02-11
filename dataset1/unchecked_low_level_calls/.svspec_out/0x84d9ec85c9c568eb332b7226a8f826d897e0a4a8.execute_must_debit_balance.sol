@@ -51,9 +51,6 @@ contract Owned {
     // This is a general safty function that allows the owner to do a lot
     //  of things in the unlikely event that something goes wrong
     // _dst is the contract being called making this like a 1/1 multisig
-    /// @notice precondition _value >= 0
-    /// @notice precondition msg.sender == owner
-    /// @notice postcondition address(this).balance == __verifier_old_uint(address(this).balance) - _value
     function execute(address _dst, uint _value, bytes memory _data) public onlyOwner {
          // <yes> <report> UNCHECKED_LL_CALLS
         _dst.call{value: _value}(_data);
@@ -83,12 +80,22 @@ contract WedIndex is Owned {
 
     event IndexWritten(uint time, string contractaddress, string partners, uint weddingdate, uint display);
     
+    /// @notice precondition indexdate >= 0
+    /// @notice precondition weddingdate >= 0
+    /// @notice precondition displaymultisig >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function numberOfIndex() view public returns (uint) {
         return indexarray.length;
     }
 
 
     // make functions to write and read index entries and nubmer of entries
+    /// @notice precondition indexdate >= 0
+    /// @notice precondition weddingdate >= 0
+    /// @notice precondition displaymultisig >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function writeIndex(uint indexdate, string memory wedaddress, string memory partnernames, uint weddingdate, uint displaymultisig) public {
         indexarray.push(IndexArray(block.timestamp, wedaddress, partnernames, weddingdate, displaymultisig));
         emit IndexWritten(block.timestamp, wedaddress, partnernames, weddingdate, displaymultisig);

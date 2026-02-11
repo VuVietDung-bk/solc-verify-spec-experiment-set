@@ -1,0 +1,52 @@
+SOLC-VERIFY-SPEC Results Log
+Benchmark: dataset1/front_running
+Date: 2026-02-11
+Total spec files: 3
+
+========================================
+Spec: specification/ERC20.spec
+Contract: ERC20.sol:ERC20
+Rules: 1
+  PASS:
+    Rule balance_query_safe: ALL OK
+  FAIL: (none)
+Timing:
+  [TIME] ERC20.balance_query_safe.sol: 2.71s
+  [TIME] Total rule verification time: 2.71s
+  [TIME] End-to-end time: 3.72s
+
+========================================
+Spec: specification/eth_tx_order_dependence_minimal.spec
+Contract: eth_tx_order_dependence_minimal.sol:EthTxOrderDependenceMinimal
+Rules: 2
+  PASS:
+    Rule set_reward_keeps_unclaimed: ALL OK
+    Rule claim_marks_claimed: ALL OK
+  FAIL: (none)
+Timing:
+  [TIME] set_reward_keeps_unclaimed.sol: 1.55s
+  [TIME] claim_marks_claimed.sol: 1.48s
+  [TIME] Total rule verification time: 3.03s
+  [TIME] End-to-end time: 3.93s
+
+========================================
+Spec: specification/odds_and_evens.spec
+Contract: odds_and_evens.sol:OddsAndEvens
+Rules: 3
+  PASS:
+    Rule play_increments_tot: ALL OK
+  FAIL:
+    Rule attacker_guaranteed_win: OddsAndEvens::play: ERROR
+      - Postcondition 'msg.sender.balance == old(msg.sender.balance) - 1e18 + 1800' might not hold
+    Rule opponent_can_force_loss: OddsAndEvens::play: ERROR
+      - Postcondition 'msg.sender.balance == old(msg.sender.balance) - 1e18' might not hold
+Timing:
+  [TIME] play_increments_tot.sol: 1.72s
+  [TIME] attacker_guaranteed_win.sol: 1.83s
+  [TIME] opponent_can_force_loss.sol: 1.88s
+  [TIME] Total rule verification time: 5.43s
+  [TIME] End-to-end time: 6.60s
+
+========================================
+SUMMARY: 3 spec files, 6 rules total
+  Total end-to-end time: ~14.25s

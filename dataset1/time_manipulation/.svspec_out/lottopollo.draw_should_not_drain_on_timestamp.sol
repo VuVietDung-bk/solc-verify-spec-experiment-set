@@ -23,11 +23,15 @@ contract lottopollo {
     }
   }
     /// @notice precondition timestamp >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function randomGen() public returns (uint randomNumber) {
       // <yes> <report> TIME MANIPULATION
       return block.timestamp;   
     }
     /// @notice precondition timestamp >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition seed >= 0
     /// @notice postcondition address(this).balance >= 0
   function draw(uint seed) public {

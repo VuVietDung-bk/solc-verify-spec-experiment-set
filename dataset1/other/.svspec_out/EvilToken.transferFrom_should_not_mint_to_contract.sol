@@ -87,6 +87,8 @@ contract EvilERC20Token is iERC20 {
     /// @notice precondition totalSupply >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         balanceOf[msg.sender] = totalSupply;
         name = "Token";
@@ -99,6 +101,8 @@ contract EvilERC20Token is iERC20 {
     /// @notice precondition totalSupply >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
     function transfer(address to, uint256 value) public override returns (bool success) {
         _transfer(msg.sender, to, value);
@@ -110,6 +114,8 @@ contract EvilERC20Token is iERC20 {
     /// @notice precondition totalSupply >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
     function approve(address spender, uint256 value) public override returns (bool success) {
         allowance[msg.sender][spender] = value;
@@ -122,6 +128,8 @@ contract EvilERC20Token is iERC20 {
     /// @notice precondition totalSupply >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
     /// @notice postcondition balanceOf[msg.sender] + balanceOf[address(this)] == __verifier_old_uint(balanceOf[msg.sender]) + __verifier_old_uint(balanceOf[address(this)])
     function transferFrom(address from, address to, uint256 value) public override returns (bool success) {
@@ -152,6 +160,8 @@ contract EvilERC20Token is iERC20 {
     /// @notice precondition totalSupply >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function burn(uint256 amount) public virtual {
         _burn(msg.sender, amount);

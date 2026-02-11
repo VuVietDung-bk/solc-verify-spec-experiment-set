@@ -7,6 +7,8 @@ contract Forwarder {
     address internal owner;
 
     /// @notice set contract deployer as owner
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
       owner = msg.sender;
     }
@@ -17,6 +19,8 @@ contract Forwarder {
     /// @param data arbitrary data of any length
     /// @return success low level call failed or succeeded
     /// @return message any data returned by the call (not necessarily anything will be returned even on success)
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0

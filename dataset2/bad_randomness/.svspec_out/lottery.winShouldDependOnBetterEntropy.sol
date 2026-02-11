@@ -21,10 +21,14 @@ pragma solidity >=0.7.0;
      Bet[] private bets;
 
      // Create a new lottery with numOfBets supported bets.
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      constructor() {
          organizer = msg.sender;
      }
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -33,6 +37,8 @@ pragma solidity >=0.7.0;
      }
 
      // Fallback function returns ether
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -41,6 +47,8 @@ pragma solidity >=0.7.0;
      }
 
      // Make a bet
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -64,6 +72,8 @@ pragma solidity >=0.7.0;
      }
 
      // Get all bets that have been made
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      function getBets() public {
          require(msg.sender == organizer, "not organizer");
 

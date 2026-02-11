@@ -23,6 +23,8 @@ contract CareerOneToken {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         balanceOf[msg.sender] = totalSupply;
     }
@@ -31,6 +33,8 @@ contract CareerOneToken {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function transfer(address _to, uint256 _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value);
@@ -44,6 +48,8 @@ contract CareerOneToken {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     /// @notice postcondition allowance[msg.sender][_spender] == _value
     function approve(address _spender, uint256 _value) public returns (bool success) {
@@ -56,6 +62,8 @@ contract CareerOneToken {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(_value <= balanceOf[_from]);

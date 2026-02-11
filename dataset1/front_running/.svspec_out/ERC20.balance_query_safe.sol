@@ -86,6 +86,8 @@ contract ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition totalSupply >= 0
   constructor(uint totalSupply){
     _balances[msg.sender] = totalSupply;
@@ -94,6 +96,8 @@ contract ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function balanceOf(address owner) public view returns (uint256) {
     return _balances[owner];
   }
@@ -102,6 +106,8 @@ contract ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function allowance(address owner, address spender) public view returns (uint256)
   {
     return _allowed[owner][spender];
@@ -110,6 +116,8 @@ contract ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
   function transfer(address to, uint256 value) public returns (bool) {
     require(value <= _balances[msg.sender]);
@@ -124,6 +132,8 @@ contract ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
     /// @notice precondition spender == msg.sender
     /// @notice postcondition _allowed[msg.sender][msg.sender] == value
@@ -138,6 +148,8 @@ contract ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
   function transferFrom(address from, address to, uint256 value) public returns (bool) {
     require(value <= _balances[from]);

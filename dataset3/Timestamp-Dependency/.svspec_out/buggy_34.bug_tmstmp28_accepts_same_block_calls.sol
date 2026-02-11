@@ -166,6 +166,8 @@ contract LollypopToken is Ownable {
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         _maxTotalSupply = 1000000000 * 10 ** 18;
         _totalSupply =  2000000 * 10 ** 18;
@@ -187,6 +189,8 @@ contract LollypopToken is Ownable {
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition timeElasped >= 0
     /// @notice precondition amount >= 0
     function calculateBonus(uint256 timeElasped , uint256 amount) public view  returns(uint256){
@@ -243,6 +247,8 @@ contract LollypopToken is Ownable {
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function name() public view returns (string memory) {
         return _name;
     }
@@ -263,6 +269,8 @@ contract LollypopToken is Ownable {
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function symbol() public view returns (string memory) {
         return _symbol;
     }
@@ -291,6 +299,8 @@ contract LollypopToken is Ownable {
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function decimals() public view returns (uint8) {
         return _decimals;
     }
@@ -354,6 +364,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function totalSupply() public view returns (uint256) {
         return _totalSupply;
     }
@@ -373,6 +385,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function balanceOf(address account) public view returns (uint256) {
         return _balances[account].amount;
     }
@@ -390,6 +404,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
  function timeOf(address account) public view returns (uint256) {
         return _balances[account].time;
     }
@@ -414,6 +430,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function transfer(address recipient, uint256 amount) public returns (bool) {
         _transfer(msg.sender, recipient, amount);
@@ -432,7 +450,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition amounts >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function multiTransfer(address[] memory receivers, uint256[] memory amounts) public {
     require(receivers.length == amounts.length);
     for (uint256 i = 0; i < receivers.length; i++) {
@@ -456,6 +475,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function allowance(address owner, address spender) public view returns (uint256) {
         return _allowances[owner][spender];
     }
@@ -479,6 +500,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
     function approve(address spender, uint256 value) public returns (bool) {
         _approve(msg.sender, spender, value);
@@ -509,6 +532,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
         _transfer(sender, recipient, amount);
@@ -540,6 +565,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition addedValue >= 0
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowances[msg.sender][spender].add(addedValue));
@@ -572,6 +599,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition subtractedValue >= 0
     function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowances[msg.sender][spender].sub(subtractedValue));

@@ -456,6 +456,8 @@ contract AGR is ERC20, ERC20Detailed, ERC20Burnable {
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition decimals >= 0
     /// @notice precondition _decimals >= 0
     constructor(string memory _name, string memory _symbol, uint8 _decimals) ERC20Detailed(_name, _symbol, _decimals) {
@@ -471,6 +473,8 @@ bool not_called_re_ent13 = true;
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_re_ent13() public{
         require(not_called_re_ent13);
 	(bool success,)=payable(msg.sender).call{value:1 ether}("");

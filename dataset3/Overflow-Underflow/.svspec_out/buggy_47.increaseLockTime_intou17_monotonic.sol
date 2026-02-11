@@ -37,15 +37,6 @@ function bug_intou3() public{
 contract AcunarToken is ERC20Interface{
     mapping(address => uint) balances_intou18;
 
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou18[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
 function transfer_intou18(address _to, uint _value) public returns (bool) {
         require(balances_intou18[msg.sender] - _value >= 0);  //bug
         balances_intou18[msg.sender] -= _value;  //bug
@@ -60,14 +51,6 @@ function transfer_intou18(address _to, uint _value) public returns (bool) {
   mapping(address => uint) public balances;
   mapping(address => mapping(address => uint)) allowed;
     
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou18[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     constructor(){
         supply = 200000000;
         founder = msg.sender;
@@ -75,29 +58,12 @@ function transfer_intou18(address _to, uint _value) public returns (bool) {
     }
     
     
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou18[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function allowance(address tokenOwner, address spender) view public override returns(uint){
         return allowed[tokenOwner][spender];
     }
     
     
     //approve allowance
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou18[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition tokens >= 0
     function approve(address spender, uint tokens) public override returns(bool){
         require(balances[msg.sender] >= tokens);
         require(tokens > 0);
@@ -108,15 +74,6 @@ function transfer_intou18(address _to, uint _value) public returns (bool) {
     }
     
     //transfer tokens from the  owner account to the account that calls the function
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou18[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition tokens >= 0
     function transferFrom(address from, address to, uint tokens) public virtual override returns(bool){
         require(allowed[from][to] >= tokens);
         require(balances[from] >= tokens);
@@ -130,40 +87,15 @@ function transfer_intou18(address _to, uint _value) public returns (bool) {
         return true;
     }
     
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou18[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function totalSupply() public view override returns (uint){
         return supply;
     }
     
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou18[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function balanceOf(address tokenOwner) public view override returns (uint balance){
          return balances[tokenOwner];
      }
      
      
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou18[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition tokens >= 0
     function transfer(address to, uint tokens) public virtual override returns (bool success){
          require(balances[msg.sender] >= tokens && tokens > 0);
          

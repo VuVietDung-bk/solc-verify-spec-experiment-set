@@ -283,6 +283,8 @@ contract RampInstantEthPool is RampInstantPool {
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _minSwapAmount >= 0
     /// @notice precondition _maxSwapAmount >= 0
     constructor(
@@ -305,6 +307,8 @@ contract RampInstantEthPool is RampInstantPool {
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function availableFunds() public view override returns(uint256) {
         return address(this).balance;
     }
@@ -318,6 +322,8 @@ contract RampInstantEthPool is RampInstantPool {
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _amount >= 0
     function withdrawFunds(
         address payable _to,
@@ -336,6 +342,8 @@ contract RampInstantEthPool is RampInstantPool {
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _amount >= 0
     /// @notice precondition msg.sender == swapsContract
     /// @notice precondition isActive == true
@@ -352,12 +360,40 @@ contract RampInstantEthPool is RampInstantPool {
     /**
      * This adapter can receive eth payments, but no other use of the fallback function is allowed.
      */
+    /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition ASSET_TYPE >= 0
+    /// @notice precondition minSwapAmount >= 0
+    /// @notice precondition maxSwapAmount >= 0
+    /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition bugv_tmstmp3 >= 0
+    /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     receive() external payable override {
         if (msg.sender != swapsContract) {
             emit ReceivedFunds(msg.sender, msg.value);
         }
     }
 
+    /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition ASSET_TYPE >= 0
+    /// @notice precondition minSwapAmount >= 0
+    /// @notice precondition maxSwapAmount >= 0
+    /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition bugv_tmstmp3 >= 0
+    /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     fallback() external payable override {
         if (msg.sender != swapsContract) {
             emit ReceivedFunds(msg.sender, msg.value);

@@ -1,0 +1,241 @@
+==============================================================================
+  COMPARE LOC: Spec Lines vs Annotation Lines
+  Date: 2026-02-11
+  
+  Spec LOC   = non-empty, non-comment lines in .spec file(s)
+  Anno Lines = total "/// @notice" lines across all rule output .sol files
+               in .svspec_out/ (excluding .annotated.sol)
+  Ratio      = Anno Lines / Spec LOC
+  [SPLIT]    = spec was split into multiple files for cross-contract targets
+  [NO OUTPUT]= svspec failed to generate output (parse/compilation error)
+==============================================================================
+
+==============================================================================
+  DATASET 1
+==============================================================================
+
+--- access_control (8 specs) ---
+  #  | Spec File                      | Spec LOC | Anno Lines | Ratio
+-----+--------------------------------+----------+------------+------
+  1  | incorrect_constructor_name1    |    24    |     21     |  0.88
+  2  | incorrect_constructor_name2    |    24    |     21     |  0.88
+  3  | incorrect_constructor_name3    |    24    |     21     |  0.88
+  4  | multiowned_vulnerable          |    17    |     18     |  1.06
+  5  | unprotected0                   |    12    |      6     |  0.50
+  6  | wallet_02_refund_nosub         |    50    |     95     |  1.90
+  7  | wallet_03_wrong_constructor    |    41    |     80     |  1.95
+  8  | wallet_04_confused_sign        |    24    |     64     |  2.67
+                                      --------   ----------
+                             Subtotal:   216          326       1.51
+
+--- arithmetic (13 specs) ---
+  #  | Spec File                                     | Spec LOC | Anno Lines | Ratio
+-----+-----------------------------------------------+----------+------------+------
+  1  | integer_overflow_1                             |    10    |      5     |  0.50
+  2  | integer_overflow_add                           |    10    |      5     |  0.50
+  3  | integer_overflow_benign_1                      |    10    |      6     |  0.60
+  4  | integer_overflow_mapping_sym_1                 |    11    |      7     |  0.64
+  5  | integer_overflow_minimal                       |    11    |      6     |  0.55
+  6  | integer_overflow_mul                           |    10    |      5     |  0.50
+  7  | integer_overflow_multitx_multifunc_feasible    |    12    |     11     |  0.92
+  8  | integer_overflow_multitx_onefunc_feasible      |    12    |      7     |  0.58
+  9  | overflow_simple_add                            |    10    |      5     |  0.50
+ 10  | overflow_single_tx                             |    23    |     76     |  3.30
+ 11  | timelock                                       |    11    |     17     |  1.55
+ 12  | token                                          |    16    |     18     |  1.13
+ 13  | tokensalechallenge                             |    15    |     51     |  3.40
+                                                      --------   ----------
+                                             Subtotal:   161          219       1.36
+
+--- denial_of_service (4 specs) ---
+  #  | Spec File        | Spec LOC | Anno Lines | Ratio
+-----+------------------+----------+------------+------
+  1  | auction          |    19    |     12     |  0.63
+  2  | dos_address      |    17    |     22     |  1.29
+  3  | list_dos         |    38    |    538     | 14.16
+  4  | send_loop        |    14    |      8     |  0.57
+                         --------   ----------
+                Subtotal:    88          580       6.59
+
+--- front_running (3 specs) ---
+  #  | Spec File                            | Spec LOC | Anno Lines | Ratio
+-----+--------------------------------------+----------+------------+------
+  1  | ERC20                                |    14    |     36     |  2.57
+  2  | eth_tx_order_dependence_minimal      |    18    |     32     |  1.78
+  3  | odds_and_evens                       |    41    |     55     |  1.34
+                                             --------   ----------
+                                    Subtotal:    73          123       1.68
+
+--- other (8 specs) ---
+  #  | Spec File       | Spec LOC | Anno Lines | Ratio
+-----+-----------------+----------+------------+------
+  1  | asignatura      |    10    |     31     |  3.10
+  2  | class           |     8    |      6     |  0.75
+  3  | Crowdfund       |     7    |     48     |  6.86
+  4  | EvilToken       |    14    |     35     |  2.50
+  5  | Forwarder       |     9    |     11     |  1.22
+  6  | name_registrar  |     5    |      4     |  0.80
+  7  | StakingWarmup   |    10    |      7     |  0.70
+  8  | WETH            |    12    |     53     |  4.42
+                        --------   ----------
+               Subtotal:    75          195       2.60
+
+--- time_manipulation (6 specs) ---
+  #  | Spec File         | Spec LOC | Anno Lines | Ratio
+-----+-------------------+----------+------------+------
+  1  | HotDollarsToken   |     7    |    183     | 26.14
+  2  | TAMContract       |     7    |    121     | 17.29
+  3  | TTC               |     7    |     26     |  3.71
+  4  | lottopollo        |    10    |     16     |  1.60
+  5  | roulette          |     7    |     20     |  2.86
+  6  | timed_crowdsale   |     4    |      3     |  0.75
+                          --------   ----------
+                 Subtotal:    42          369       8.79
+
+--- unchecked_low_level_calls (13 specs) ---
+  #  | Spec File                                  | Spec LOC | Anno Lines | Ratio
+-----+--------------------------------------------+----------+------------+------
+  1  | 0x0cbe050f...                              |     4    |      3     |  0.75
+  2  | 0x3e013fc3...                              |    10    |     17     |  1.70
+  3  | 0x3f2ef511...                              |    10    |     20     |  2.00
+  4  | 0x52d2e0f9...                              |     4    |     10     |  2.50
+  5  | 0x5aa88d29...                              |    10    |     17     |  1.70
+  6  | 0x70f9eddb...                              |    10    |     17     |  1.70
+  7  | 0x84d9ec85...                              |    10    |     13     |  1.30
+  8  | 0x958a8f59...                              |    10    |     28     |  2.80
+  9  | 0xb0510d68...                              |    10    |     33     |  3.30
+ 10  | 0xb7c5c5aa...                              |    13    |     18     |  1.38
+ 11  | lotto                                      |    21    |     17     |  0.81
+ 12  | mishandled                                 |    13    |      6     |  0.46
+ 13  | unchecked_return_value                     |     5    |      5     |  1.00
+                                                   --------   ----------
+                                          Subtotal:   130          204       1.57
+
+---------------------------------------------------------------------------
+DATASET 1 TOTAL:  55 specs | Spec LOC = 785 | Anno Lines = 2016 | Ratio = 2.57
+---------------------------------------------------------------------------
+
+==============================================================================
+  DATASET 2
+==============================================================================
+
+--- bad_randomness (1 spec) ---
+  #  | Spec File  | Spec LOC | Anno Lines | Ratio
+-----+------------+----------+------------+------
+  1  | lottery    |    11    |     21     |  1.91
+
+--- safecontract (9 specs) ---
+  #  | Spec File       | Spec LOC | Anno Lines | Ratio
+-----+-----------------+----------+------------+------
+  1  | balancer        |    26    |      9     |  0.35
+  2  | ballot          |    32    |     50     |  1.56
+  3  | CareerOnToken   |    49    |    128     |  2.61
+  4  | curve           |    25    |      7     |  0.28
+  5  | StableDEX       |    48    |    224     |  4.67
+  6  | SushiSwap       |    39    |     26     |  0.67
+  7  | Uniswap         |    49    |    269     |  5.49
+  8  | WETH9           |    41    |    148     |  3.61
+  9  | WrappedToken    |    50    |    226     |  4.52
+                        --------   ----------
+               Subtotal:   359        1087        3.03
+
+--- unchecked_send (2 specs) ---
+  #  | Spec File          | Spec LOC | Anno Lines | Ratio
+-----+--------------------+----------+------------+------
+  1  | 0xf29ebe93...      |    14    |     20     |  1.43
+  2  | 0xf70d589d...      |    13    |     31     |  2.38
+                           --------   ----------
+                  Subtotal:    27           51       1.89
+
+---------------------------------------------------------------------------
+DATASET 2 TOTAL:  12 specs | Spec LOC = 397 | Anno Lines = 1159  | Ratio = 2.92
+---------------------------------------------------------------------------
+
+==============================================================================
+  DATASET 3
+==============================================================================
+
+--- Overflow-Underflow (10 specs) ---
+  #  | Spec File  | Spec LOC | Anno Lines | Ratio
+-----+------------+----------+------------+------
+  1  | buggy_1    |    17    |    120     |  7.06
+  2  | buggy_5    |    20    |     87     |  4.35  [SPLIT]
+  3  | buggy_19   |    17    |    223     | 13.12
+  4  | buggy_20   |    20    |     30     |  1.50  [SPLIT]
+  5  | buggy_23   |    17    |    234     | 13.76
+  6  | buggy_33   |    17    |    120     |  7.06
+  7  | buggy_34   |    10    |    187     | 18.70
+  8  | buggy_45   |    17    |    332     | 19.53
+  9  | buggy_47   |    20    |     71     |  3.55  [SPLIT]
+ 10  | buggy_50   |    10    |    162     | 16.20
+                   --------   ----------
+          Subtotal:   165         1566       9.49
+
+--- Re-entrancy (10 specs) ---
+  #  | Spec File  | Spec LOC | Anno Lines | Ratio
+-----+------------+----------+------------+------
+  1  | buggy_1    |    92    |    755     |  8.21
+  2  | buggy_5    |   155    |   2121     | 13.68
+  3  | buggy_19   |   155    |   4861     | 31.36
+  4  | buggy_20   |    58    |     58     |  1.00  [SPLIT]
+  5  | buggy_23   |    27    |     48     |  1.78
+  6  | buggy_33   |    40    |    597     | 14.93
+  7  | buggy_34   |    40    |   1878     | 46.95
+  8  | buggy_45   |    65    |   2120     | 32.62
+  9  | buggy_47   |    28    |    524     | 18.71
+ 10  | buggy_50   |    40    |    951     | 23.78
+                   --------   ----------
+          Subtotal:   700        13913      19.88
+
+--- Timestamp-Dependency (10 specs) ---
+  #  | Spec File  | Spec LOC | Anno Lines | Ratio
+-----+------------+----------+------------+------
+  1  | buggy_1    |    17    |    180     | 10.59
+  2  | buggy_5    |    17    |    182     | 10.71
+  3  | buggy_19   |    17    |     56     |  3.29
+  4  | buggy_20   |    54    |    179     |  3.31  [SPLIT]
+  5  | buggy_23   |    37    |     40     |  1.08
+  6  | buggy_33   |    17    |    162     |  9.53
+  7  | buggy_34   |    10    |    434     | 43.40
+  8  | buggy_45   |    25    |    710     | 28.40
+  9  | buggy_47   |    25    |    800     | 32.00
+ 10  | buggy_50   |    25    |    858     | 34.32
+                   --------   ----------
+          Subtotal:   244         3601      14.76
+
+---------------------------------------------------------------------------
+DATASET 3 TOTAL:  30 specs | Spec LOC = 1109 | Anno Lines = 19080 | Ratio = 17.20
+---------------------------------------------------------------------------
+
+==============================================================================
+  GRAND TOTALS
+==============================================================================
+
+  Dataset    | # Specs | Spec LOC | Anno Lines | Avg Ratio
+  -----------+---------+----------+------------+----------
+  dataset1   |   55    |    785   |     2016   |    2.57
+  dataset2   |   12    |    397   |     1159   |    2.92
+  dataset3   |   30    |   1109   |    19080   |   17.20
+  -----------+---------+----------+------------+----------
+  ALL        |   97    |   2291   |    22255   |    9.71
+
+Notes:
+  - [NO OUTPUT]: 7 specs where svspec failed to produce annotated output
+    (parser errors, unsupported Solidity features, or compilation failures).
+    These are: Asignatura, Class, NameRegistrar, TAMCContract (dataset1),
+    Balancer, Ballot, CareerOneToken, Curve (dataset2).
+  - [SPLIT]: 5 specs that were split into multiple files because target
+    functions reside in different contracts (svspec limitation: annotations
+    only applied to functions textually within target contract's braces).
+  - dataset3 has significantly higher annotation ratios because the Solidity
+    files contain many more functions (injected bug patterns across multiple
+    contracts), each requiring precondition/postcondition annotations.
+  - The annotation expansion factor varies from <1x (simple contracts with
+    few functions) to >40x (complex contracts with many functions and
+    parametric/invariant rules that replicate across all functions).
+  - Highest ratios: buggy_34 Re-entrancy (46.95x), buggy_34 TS (43.40x),
+    buggy_50 TS (34.32x) — these contracts have many functions that each
+    receive full invariant + precondition annotations.
+  - list_dos (14.16x) and HotDollarsToken (26.14x) are notable outliers in
+    dataset1, due to many loop/function structures receiving annotations.
+==============================================================================

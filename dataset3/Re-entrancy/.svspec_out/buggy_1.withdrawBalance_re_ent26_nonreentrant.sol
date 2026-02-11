@@ -81,9 +81,11 @@ contract HotDollarsToken is EIP20Interface {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent32[extraVar0] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition userBalance_re_ent26[msg.sender] > 0
     /// @notice postcondition userBalance_re_ent26[msg.sender] == 0
-    /// @notice postcondition __verifier_old_uint(contract.balance) >= contract.balance && __verifier_old_uint(contract.balance) - contract.balance <= __verifier_old_uint(userBalance_re_ent26[msg.sender])
+    /// @notice postcondition __verifier_old_uint(address(this).balance) >= address(this).balance && __verifier_old_uint(address(this).balance) - address(this).balance <= __verifier_old_uint(userBalance_re_ent26[msg.sender])
 function withdrawBalance_re_ent26() public{
         // send userBalance[msg.sender] ethers to msg.sender
         // if mgs.sender is a contract, it will call its fallback function
@@ -113,6 +115,8 @@ function withdrawBalance_re_ent26() public{
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent32[extraVar0] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function claimReward_re_ent32() public {        
         // ensure there is a reward to give
         require(redeemableEther_re_ent32[msg.sender] > 0);
@@ -135,6 +139,8 @@ function claimReward_re_ent32() public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent32[extraVar0] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         totalSupply = 3 * 1e28;                        
         name = "HotDollars Token";                          
@@ -154,6 +160,8 @@ function claimReward_re_ent32() public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent32[extraVar0] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function transfer(address _to, uint256 _value) public override returns (bool success) {
         require(balances[msg.sender] >= _value);
@@ -174,6 +182,8 @@ function claimReward_re_ent32() public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent32[extraVar0] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success) {
         uint256 allowedAmount = allowed[_from][msg.sender];
@@ -198,6 +208,8 @@ function claimReward_re_ent32() public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent32[extraVar0] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function balanceOf(address _owner) public view override returns (uint256 balance) {
         return balances[_owner];
     }
@@ -213,6 +225,8 @@ function claimReward_re_ent32() public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent32[extraVar0] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function approve(address _spender, uint256 _value) public override returns (bool success) {
         allowed[msg.sender][_spender] = _value;
@@ -231,6 +245,8 @@ function claimReward_re_ent32() public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent32[extraVar0] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function allowance(address _owner, address _spender) public view override returns (uint256 remaining) {
         return allowed[_owner][_spender];
     }

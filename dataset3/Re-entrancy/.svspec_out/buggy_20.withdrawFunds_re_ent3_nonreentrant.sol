@@ -96,12 +96,30 @@ contract Stoppable is Ownable {
         _;
     }
 
+    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent37 >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent3[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function setIsActive(bool _isActive) external onlyOwner {
         if (_isActive == isActive) return;
         isActive = _isActive;
         emit IsActiveChanged(_isActive);
     }
 mapping(address => uint) balances_re_ent3;
+    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent37 >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent3[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _weiToWithdraw >= 0
+    /// @notice precondition balances_re_ent3[msg.sender] >= _weiToWithdraw
+    /// @notice postcondition balances_re_ent3[msg.sender] == __verifier_old_uint(balances_re_ent3[msg.sender]) - _weiToWithdraw
+    /// @notice postcondition __verifier_old_uint(address(this).balance) >= address(this).balance && __verifier_old_uint(address(this).balance) - address(this).balance <= _weiToWithdraw
 function withdrawFunds_re_ent3 (uint256 _weiToWithdraw) public {
         require(balances_re_ent3[msg.sender] >= _weiToWithdraw);
         // limit the withdrawal
@@ -362,19 +380,6 @@ contract RampInstantEthPool is RampInstantPool {
 
   address payable lastPlayer_re_ent2;
       uint jackpot_re_ent2;
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent37 >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent3[extraVar0] >= 0
-    /// @notice precondition ASSET_TYPE >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent11[extraVar0] >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
 	  function buyTicket_re_ent2() public{
 	    if (!(lastPlayer_re_ent2.send(jackpot_re_ent2)))
         revert();
@@ -383,21 +388,6 @@ contract RampInstantEthPool is RampInstantPool {
     }
   uint16 internal constant ETH_TYPE_ID = 1;
 
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent37 >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent3[extraVar0] >= 0
-    /// @notice precondition ASSET_TYPE >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent11[extraVar0] >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition _minSwapAmount >= 0
-    /// @notice precondition _maxSwapAmount >= 0
     constructor(
         address payable _swapsContract,
         uint256 _minSwapAmount,
@@ -410,37 +400,10 @@ contract RampInstantEthPool is RampInstantPool {
         )
     {}
 
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent37 >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent3[extraVar0] >= 0
-    /// @notice precondition ASSET_TYPE >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent11[extraVar0] >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
     function availableFunds() public view override returns(uint256) {
         return address(this).balance;
     }
 
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent37 >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent3[extraVar0] >= 0
-    /// @notice precondition ASSET_TYPE >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent11[extraVar0] >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition _amount >= 0
     function withdrawFunds(
         address payable _to,
         uint256 _amount
@@ -449,20 +412,6 @@ contract RampInstantEthPool is RampInstantPool {
         return true;
     }
 
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent37 >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent3[extraVar0] >= 0
-    /// @notice precondition ASSET_TYPE >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent11[extraVar0] >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition _amount >= 0
     function sendFundsToSwap(
         uint256 _amount
     ) public override onlyActive onlySwapsContract isWithinLimits(_amount) returns(bool success) {

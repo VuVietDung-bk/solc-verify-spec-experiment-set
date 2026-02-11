@@ -79,6 +79,8 @@ contract StakingWarmup {
     address public immutable staking;
     address public immutable sMYNOS;
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor ( address _staking, address _sMYNOS ) {
         require( _staking != address(0) );
         staking = _staking;
@@ -86,6 +88,8 @@ contract StakingWarmup {
         sMYNOS = _sMYNOS;
     }
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _amount >= 0
     /// @notice precondition msg.sender != staking
     /// @notice postcondition false

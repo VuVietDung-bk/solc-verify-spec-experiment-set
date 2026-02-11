@@ -19,6 +19,8 @@ contract StockBet {
     /// @notice precondition finalPrice >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition startTime >= 0
 function play_tmstmp27(uint startTime) public {
 	uint _vtime = block.timestamp;
@@ -38,6 +40,8 @@ function play_tmstmp27(uint startTime) public {
     /// @notice precondition finalPrice >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice postcondition true
   function bug_tmstmp13() view public returns (bool) {
     return block.timestamp >= 1546300800;
@@ -120,6 +124,8 @@ function play_tmstmp27(uint startTime) public {
     /// @notice precondition finalPrice >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _bet >= 0
     constructor(uint256 _bet) {
         require(_bet > 0);
@@ -142,8 +148,11 @@ function play_tmstmp27(uint startTime) public {
     /// @notice precondition finalPrice >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function setOracle(address _oracle) public payable byOwner inState(State.SETUP) {
         oracle = _oracle;
         
@@ -161,8 +170,11 @@ function play_tmstmp27(uint startTime) public {
     /// @notice precondition finalPrice >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     /// @notice precondition _value >= 0
     function setInitialPrice(uint256 _value) public payable byOracle inState(State.SETUP) {
         initialPrice = _value;
@@ -183,6 +195,8 @@ function play_tmstmp27(uint startTime) public {
     /// @notice precondition finalPrice >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function closeGame() public byOwner inState(State.OPEN){
         state = State.CLOSED;
 
@@ -200,8 +214,11 @@ function play_tmstmp27(uint startTime) public {
     /// @notice precondition finalPrice >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function betUp() public payable byPlayer inState(State.OPEN){
         require(msg.value == (bet*0.001 ether));
 
@@ -222,8 +239,11 @@ function play_tmstmp27(uint startTime) public {
     /// @notice precondition finalPrice >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function bug_tmstmp8 () public payable {
 	uint pastBlockTime_tmstmp8; // Forces one bet per block
 	require(msg.value == 10 ether); // must send 10 ether to play
@@ -246,8 +266,11 @@ function bug_tmstmp8 () public payable {
     /// @notice precondition finalPrice >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function betDown() public payable byPlayer inState(State.OPEN){
         require(msg.value == (bet*0.001 ether));
 
@@ -268,8 +291,11 @@ function bug_tmstmp8 () public payable {
     /// @notice precondition finalPrice >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     /// @notice precondition _value >= 0
     function setFinalPrice(uint256 _value) public payable byOracle inState(State.CLOSED) {
         // require(isValidNumber(_result));
@@ -307,6 +333,8 @@ function bug_tmstmp8 () public payable {
     /// @notice precondition finalPrice >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function collectPlayerWinnings() public byPlayer inState(State.PLAYERS_WIN){
         if(guesses[result].players[msg.sender] == PaidStatus.NOT_PAID){
             guesses[result].players[msg.sender] = PaidStatus.PAID;

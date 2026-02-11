@@ -1,0 +1,207 @@
+==============================================================================
+  SVSPEC RESULT LOG - dataset3/Overflow-Underflow
+  Flag: --arithmetic mod-overflow
+  Date: 2025
+==============================================================================
+
+Spec files: 10
+Total rules: 18
+Total rule verification time: ~239.68s
+Total end-to-end time: ~253.72s
+
+==============================================================================
+SUMMARY TABLE
+==============================================================================
+  # | Spec File       | Contract           | Rules | Result
+----+-----------------+--------------------+-------+---------------------------
+  1 | buggy_1.spec    | HotDollarsToken    |   2   | FAIL (overflow errors)
+  2 | buggy_5.spec    | TokenERC20+Ownable |   2   | FAIL (overflow + postcondition errors)
+  3 | buggy_19.spec   | ethBank            |   2   | FAIL (overflow errors)
+  4 | buggy_20.spec   | Stoppable+Ownable  |   2   | FAIL (overflow + postcondition errors)
+  5 | buggy_23.spec   | ERC20              |   2   | FAIL (overflow + postcondition errors)
+  6 | buggy_33.spec   | Staking            |   2   | FAIL (overflow + INCONCLUSIVE)
+  7 | buggy_34.spec   | LollypopToken      |   1   | FAIL (overflow + INCONCLUSIVE)
+  8 | buggy_45.spec   | StockBet           |   2   | FAIL (overflow errors)
+  9 | buggy_47.spec   | AcunarToken+ERC20Interface | 2 | FAIL (overflow + precondition errors)
+ 10 | buggy_50.spec   | digitalNotary      |   1   | FAIL (overflow errors)
+
+==============================================================================
+DETAILED RESULTS
+==============================================================================
+
+--- [1] buggy_1.spec (HotDollarsToken) ---
+Command: svspec buggy_1.sol:HotDollarsToken specification/buggy_1.spec --arithmetic mod-overflow
+Rules: 2
+  1) transfer_intou14_should_not_underflow -> FAIL
+     - EIP20Interface::transfer_intou14: overflow
+     - EIP20Interface::bug_intou35: overflow
+     - HotDollarsToken::constructor: overflow
+     - HotDollarsToken::transfer: overflow
+     - HotDollarsToken::transferFrom: overflow
+  2) increaseLockTime_intou13_should_not_overflow -> FAIL
+     - EIP20Interface::transfer_intou14: overflow
+     - EIP20Interface::bug_intou35: overflow  
+     - HotDollarsToken::constructor: overflow
+     - HotDollarsToken::transfer: overflow
+     - HotDollarsToken::transferFrom: overflow
+Rule time: 24.65s | End-to-end: 25.72s
+
+--- [2] buggy_5.spec (TokenERC20 + Ownable, split) ---
+Command: svspec buggy_5.sol:TokenERC20 specification/buggy_5_transfer.spec --arithmetic mod-overflow
+        svspec buggy_5.sol:Ownable specification/buggy_5_locktime.spec --arithmetic mod-overflow
+Rules: 2
+  1) transfer_intou10_should_not_underflow (TokenERC20) -> FAIL
+     - Ownable::increaseLockTime_intou21: overflow
+     - TokenERC20::transfer_intou10: overflow
+     - TokenERC20::constructor: overflow
+     - TokenERC20::transfer: overflow
+     - TokenERC20::transferFrom: overflow
+     - TokenERC20::burn: overflow
+     - TokenERC20::burnFrom: overflow
+     - TTC::constructor: overflow
+     - TTC::mintToken: overflow
+     - TTC::bug_intou39: overflow
+     - TTC::sell: overflow
+  2) increaseLockTime_intou21_monotonic (Ownable) -> FAIL
+     - Ownable::increaseLockTime_intou21: postcondition 'lockTime_intou21[msg.sender] > old' might not hold + overflow
+     - TokenERC20::transfer_intou10: overflow
+     - TokenERC20::constructor: overflow
+     - TokenERC20::transfer: overflow
+     - TokenERC20::transferFrom: overflow
+     - TokenERC20::burn: overflow
+     - TokenERC20::burnFrom: overflow
+     - TTC::constructor: overflow
+     - TTC::mintToken: overflow
+     - TTC::bug_intou39: overflow
+     - TTC::sell: overflow
+Rule time: 23.05s | End-to-end: 25.72s
+
+--- [3] buggy_19.spec (ethBank) ---
+Command: svspec buggy_19.sol:ethBank specification/buggy_19.spec --arithmetic mod-overflow
+Rules: 2
+  1) transfer_undrflow2_should_not_underflow -> FAIL
+     - owned::increaseLockTime_intou1: overflow
+     - ethBank::transfer_undrflow2: overflow
+  2) increaseLockTime_intou1_monotonic -> FAIL
+     - owned::increaseLockTime_intou1: overflow
+     - ethBank::transfer_undrflow2: overflow
+Rule time: 45.31s | End-to-end: 46.57s
+
+--- [4] buggy_20.spec (Stoppable + Ownable, split) ---
+Command: svspec buggy_20.sol:Stoppable specification/buggy_20_transfer.spec --arithmetic mod-overflow
+        svspec buggy_20.sol:Ownable specification/buggy_20_locktime.spec --arithmetic mod-overflow
+Rules: 2
+  1) transfer_intou10_should_not_underflow (Stoppable) -> FAIL
+     - Ownable::increaseLockTime_intou21: overflow
+     - Stoppable::transfer_intou10: overflow
+  2) increaseLockTime_intou21_monotonic (Ownable) -> FAIL
+     - Ownable::increaseLockTime_intou21: postcondition 'lockTime_intou21[msg.sender] > old' might not hold + overflow
+     - Stoppable::transfer_intou10: overflow
+Rule time: 20.32s | End-to-end: 23.15s
+
+--- [5] buggy_23.spec (ERC20) ---
+Command: svspec buggy_23.sol:ERC20 specification/buggy_23.spec --arithmetic mod-overflow
+Rules: 2
+  1) transfer_undrflow2_should_not_underflow -> FAIL
+     - ERC20::increaseLockTime_intou1: overflow
+     - ERC20::transfer_undrflow2: overflow
+     - ERC20::bug_intou19: overflow
+  2) increaseLockTime_intou1_monotonic -> FAIL
+     - ERC20::increaseLockTime_intou1: postcondition 'lockTime_intou1[msg.sender] > old' might not hold + overflow
+     - ERC20::transfer_undrflow2: overflow
+     - ERC20::bug_intou19: overflow
+     - SafeMath::mod: SKIPPED
+Rule time: 30.26s | End-to-end: 31.87s
+
+--- [6] buggy_33.spec (Staking) ---
+Command: svspec buggy_33.sol:Staking specification/buggy_33.spec --arithmetic mod-overflow
+Rules: 2
+  1) transfer_undrflow2_should_not_underflow -> FAIL
+     - Owned::increaseLockTime_intou17: overflow
+     - Owned::bug_intou27: overflow
+     - Owned::transfer_intou38: overflow
+     - Staking::startStaking: INCONCLUSIVE
+     - Staking::redeem: overflow (before calling function)
+     - Staking::changeStakeTokens: overflow
+  2) increaseLockTime_intou33_monotonic -> FAIL
+     - Same errors as above
+Rule time: 27.36s | End-to-end: 28.72s
+
+--- [7] buggy_34.spec (LollypopToken) ---
+Command: svspec buggy_34.sol:LollypopToken specification/buggy_34.spec --arithmetic mod-overflow
+Rules: 1
+  1) transfer_intou34_should_not_underflow -> FAIL
+     - Ownable::increaseLockTime_intou17: overflow
+     - LollypopToken::transfer_intou34: overflow
+     - LollypopToken::calculateBonus: INCONCLUSIVE
+     - LollypopToken::transfer: overflow + precondition errors
+     - LollypopToken::multiTransfer: precondition errors
+     - LollypopToken::transferFrom: overflow + precondition errors
+     - SafeMath::mod: SKIPPED
+Rule time: 16.54s | End-to-end: 18.24s
+
+--- [8] buggy_45.spec (StockBet) ---
+Command: svspec buggy_45.sol:StockBet specification/buggy_45.spec --arithmetic mod-overflow
+Rules: 2
+  1) increaseLockTime_intou17_monotonic -> FAIL
+     - StockBet::bug_intou39: overflow
+     - StockBet::increaseLockTime_intou33: postcondition fail + overflow
+     - StockBet::transfer_undrflow2: overflow
+     - StockBet::betUp: overflow
+     - StockBet::betDown: overflow
+  2) transfer_intou26_should_not_underflow -> FAIL
+     - StockBet::bug_intou39: overflow
+     - StockBet::increaseLockTime_intou33: overflow
+     - StockBet::transfer_undrflow2: overflow
+     - StockBet::betUp: overflow
+     - StockBet::betDown: overflow
+Rule time: 26.88s | End-to-end: 28.17s
+
+--- [9] buggy_47.spec (AcunarToken + ERC20Interface, split) ---
+Command: svspec buggy_47.sol:AcunarToken specification/buggy_47_transfer.spec --arithmetic mod-overflow
+        svspec buggy_47.sol:ERC20Interface specification/buggy_47_locktime.spec --arithmetic mod-overflow
+Rules: 2
+  1) transfer_intou18_should_not_underflow (AcunarToken) -> FAIL
+     - ERC20Interface::increaseLockTime_intou17: overflow
+     - ERC20Interface::bug_intou3: overflow
+     - AcunarToken::transfer_intou18: overflow
+     - AcunarToken::transferFrom: overflow
+     - AcunarToken::transfer: overflow
+     - AcunarIEO::constructor: overflow
+     - AcunarIEO::invest: overflow
+     - AcunarIEO::transfer: precondition errors
+     - AcunarIEO::transferFrom: precondition errors
+  2) increaseLockTime_intou17_monotonic (ERC20Interface) -> FAIL
+     - ERC20Interface::increaseLockTime_intou17: overflow
+     - ERC20Interface::bug_intou3: overflow
+     - AcunarToken::transfer_intou18: overflow
+     - AcunarToken::transferFrom: overflow
+     - AcunarToken::transfer: overflow
+     - AcunarIEO::constructor: overflow
+     - AcunarIEO::invest: overflow
+Rule time: 19.83s | End-to-end: 22.26s
+
+--- [10] buggy_50.spec (digitalNotary) ---
+Command: svspec buggy_50.sol:digitalNotary specification/buggy_50.spec --arithmetic mod-overflow
+Rules: 1
+  1) increaseLockTime_intou17_monotonic -> FAIL
+     - digitalNotary::increaseLockTime_intou17: postcondition fail + overflow
+     - digitalNotary::bug_intou3: overflow
+     - digitalNotary::transfer_intou26: overflow
+     - digitalNotary::registerHash: overflow
+Rule time: 17.18s | End-to-end: 18.50s
+
+==============================================================================
+OVERALL STATISTICS
+==============================================================================
+  FAIL:             9/10 (90%) - overflow/underflow bugs detected
+  ANNOTATION ERROR: 0/10 (0%)
+  INCONCLUSIVE:     partial (buggy_33: startStaking, buggy_34: calculateBonus)
+  PASS:             0/10 (0%)
+
+All 10 contracts contain injected overflow/underflow bugs.
+svspec with --arithmetic mod-overflow successfully detected overflow errors
+in 9/10 contracts (buggy_47 previously had annotation errors, now fixed
+by splitting spec and targeting correct contracts).
+All detected results are consistent with the expected buggy behavior.
+==============================================================================

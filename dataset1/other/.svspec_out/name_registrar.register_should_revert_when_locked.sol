@@ -17,6 +17,8 @@ contract NameRegistrar {
     mapping(address => NameRecord) public registeredNameRecord; // records who registered names
     mapping(bytes32 => address) public resolve; // resolves hashes to addresses
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition unlocked == false
     /// @notice postcondition false
     function register(bytes32 _name, address _mappedAddress) public {

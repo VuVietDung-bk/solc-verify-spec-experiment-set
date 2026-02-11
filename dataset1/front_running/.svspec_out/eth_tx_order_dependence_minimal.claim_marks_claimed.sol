@@ -12,11 +12,15 @@ contract EthTxOrderDependenceMinimal {
     uint public reward;
 
     /// @notice precondition reward >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         owner = msg.sender;
     }
 
     /// @notice precondition reward >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -30,6 +34,8 @@ contract EthTxOrderDependenceMinimal {
     }
 
     /// @notice precondition reward >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition submission >= 0
     /// @notice precondition claimed == false
     /// @notice precondition submission < 10

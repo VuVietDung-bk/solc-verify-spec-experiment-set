@@ -69,7 +69,7 @@ library SafeMath {
       return 0;
     }
     uint256 c = a * b;
-    assert(c / a == b);
+    require(c / a == b);
     return c;
   }
 
@@ -79,13 +79,13 @@ library SafeMath {
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b <= a);
+    require(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c >= a);
+    require(c >= a);
     return c;
   }
 
@@ -120,6 +120,8 @@ address payable lastPlayer_re_ent9;
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function buyTicket_re_ent9() public{
       (bool success,) = lastPlayer_re_ent9.call{value:jackpot_re_ent9}("");
 	    if (!success)
@@ -144,6 +146,8 @@ mapping(address => uint) userBalance_re_ent19;
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdrawBalance_re_ent19() public{
         // send userBalance[msg.sender] ethers to msg.sender
         // if mgs.sender is a contract, it will call its fallback function
@@ -167,6 +171,8 @@ mapping(address => uint) userBalance_re_ent26;
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdrawBalance_re_ent26() public{
         // send userBalance[msg.sender] ethers to msg.sender
         // if mgs.sender is a contract, it will call its fallback function
@@ -192,6 +198,8 @@ bool not_called_re_ent13 = true;
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_re_ent13() public{
         require(not_called_re_ent13);
         (bool success,)=payable(msg.sender).call{value:1 ether}("");
@@ -223,6 +231,8 @@ function bug_re_ent13() public{
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor(address tokenContractAddress){
         token = Token(tokenContractAddress);
         owner = msg.sender;
@@ -242,6 +252,8 @@ function bug_re_ent13() public{
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition stakeTokens >= 0
     function startStaking(uint256 stakeTokens) public{
         require(stakeTokens >= minstakeTokens);
@@ -265,6 +277,8 @@ function bug_re_ent13() public{
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function redeem() public{
         require(!lock);
         require(!staker[msg.sender].redeem);
@@ -289,6 +303,8 @@ mapping(address => uint) balances_re_ent8;
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function withdraw_balances_re_ent8 () public {
       (bool success,) = payable(msg.sender).call{value:balances_re_ent8[msg.sender ]}("");
        if (success)
@@ -308,6 +324,8 @@ mapping(address => uint) balances_re_ent8;
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _NewTokensThreshold >= 0
     function changeStakeTokens(uint256 _NewTokensThreshold) public onlyOwner{
         minstakeTokens = _NewTokensThreshold * 10 ** uint(10);
@@ -326,6 +344,8 @@ mapping(address => uint) balances_re_ent8;
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _newStakeTime >= 0
     function changeStakeTime(uint256 _newStakeTime) public onlyOwner{
         stakeTime = _newStakeTime;
@@ -344,6 +364,8 @@ mapping(address => uint) balances_re_ent36;
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function withdraw_balances_re_ent36 () public {
          if (payable(msg.sender).send(balances_re_ent36[msg.sender ]))
           balances_re_ent36[msg.sender] = 0;
@@ -362,6 +384,8 @@ mapping(address => uint) balances_re_ent36;
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _newStakePercentage >= 0
     function changeStakingPercentage(uint _newStakePercentage) public onlyOwner{
         stakePercentage = _newStakePercentage;
@@ -381,6 +405,8 @@ mapping(address => uint) balances_re_ent36;
     /// @notice precondition stakePercentage >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function lockWithdrawals() public onlyOwner{
         lock = true;
     }

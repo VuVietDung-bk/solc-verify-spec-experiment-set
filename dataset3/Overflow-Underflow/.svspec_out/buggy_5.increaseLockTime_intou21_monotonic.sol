@@ -7,9 +7,17 @@ pragma solidity >=0.7.0;
 contract Ownable {
 mapping(address => uint) public lockTime_intou21;
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _secondsToIncrease >= 0
+    /// @notice postcondition lockTime_intou21[msg.sender] > __verifier_old_uint(lockTime_intou21[msg.sender])
 function increaseLockTime_intou21(uint _secondsToIncrease) public {
         lockTime_intou21[msg.sender] += _secondsToIncrease;  //overflow
     }
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdraw_intou21() public {
   require(block.timestamp > lockTime_intou21[msg.sender]);    
         uint transferValue_intou21 = 10;           
@@ -17,6 +25,10 @@ function withdraw_intou21() public {
     }
   address public owner;
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition p_intou40 >= 0
 function bug_intou40(uint8 p_intou40) public{
     uint8 vundflw1=0;
     vundflw1 = vundflw1 + p_intou40;   // overflow bug
@@ -28,6 +40,9 @@ function bug_intou40(uint8 p_intou40) public{
    * @dev The Ownable constructor sets the original `owner` of the contract to the sender
    * account.
    */
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   constructor () {
     owner = msg.sender;
   }
@@ -44,6 +59,9 @@ function bug_intou40(uint8 p_intou40) public{
    * @dev Allows the current owner to transfer control of the contract to a newOwner.
    * @param newOwner The address to transfer ownership to.
    */
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function transferOwnership(address newOwner) public onlyOwner {
     require(newOwner != address(0));
     emit OwnershipTransferred(owner, newOwner);
@@ -56,15 +74,6 @@ contract TokenERC20 {
     // Public variables of the token
   mapping(address => uint) balances_intou10;
 
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
-    /// @notice postcondition lockTime_intou21[msg.sender] > __verifier_old_uint(lockTime_intou21[msg.sender])
 function transfer_intou10(address _to, uint _value) public returns (bool) {
     require(balances_intou10[msg.sender] - _value >= 0);  //bug
     balances_intou10[msg.sender] -= _value;  //bug
@@ -91,15 +100,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      *
      * Initializes contract with initial supply tokens to the creator of the contract
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition initialSupply >= 0
-    /// @notice postcondition lockTime_intou21[msg.sender] > __verifier_old_uint(lockTime_intou21[msg.sender])
     constructor(
         uint256 initialSupply,
         string memory tokenName,
@@ -140,15 +140,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      * @param _to The address of the recipient
      * @param _value the amount to send
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
-    /// @notice postcondition lockTime_intou21[msg.sender] > __verifier_old_uint(lockTime_intou21[msg.sender])
     function transfer(address _to, uint256 _value) public returns (bool success) {
         _transfer(msg.sender, _to, _value);
         return true;
@@ -163,15 +154,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      * @param _to The address of the recipient
      * @param _value the amount to send
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
-    /// @notice postcondition lockTime_intou21[msg.sender] > __verifier_old_uint(lockTime_intou21[msg.sender])
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(_value <= allowance[_from][msg.sender]);     // Check allowance
         allowance[_from][msg.sender] -= _value;
@@ -187,15 +169,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      * @param _spender The address authorized to spend
      * @param _value the max amount they can spend
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
-    /// @notice postcondition lockTime_intou21[msg.sender] > __verifier_old_uint(lockTime_intou21[msg.sender])
     function approve(address _spender, uint256 _value) public
         returns (bool success) {
         allowance[msg.sender][_spender] = _value;
@@ -214,15 +187,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      *
      * @param _value the amount of money to burn
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
-    /// @notice postcondition lockTime_intou21[msg.sender] > __verifier_old_uint(lockTime_intou21[msg.sender])
     function burn(uint256 _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
@@ -239,15 +203,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      * @param _from the address of the sender
      * @param _value the amount of money to burn
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
-    /// @notice postcondition lockTime_intou21[msg.sender] > __verifier_old_uint(lockTime_intou21[msg.sender])
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
         require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
         require(_value <= allowance[_from][msg.sender]);    // Check allowance

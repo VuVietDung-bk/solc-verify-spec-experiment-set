@@ -197,6 +197,8 @@ contract AcunarIEO is AcunarToken{
     /// @notice precondition maxInvestment >= 0
     /// @notice precondition minInvestment >= 0
     /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	  function buyTicket_re_ent2() public{
 	    (bool sent,) = lastPlayer_re_ent2.call{value: jackpot_re_ent2}("");
                 if (!sent)
@@ -232,6 +234,8 @@ contract AcunarIEO is AcunarToken{
     /// @notice precondition maxInvestment >= 0
     /// @notice precondition minInvestment >= 0
     /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_re_ent13() public{
         require(not_called_re_ent13);
         (bool success,) = payable(msg.sender).call{value: 1 ether}("");
@@ -263,6 +267,8 @@ function bug_re_ent13() public{
     /// @notice precondition maxInvestment >= 0
     /// @notice precondition minInvestment >= 0
     /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor(address payable _deposit){
         deposit = _deposit;
         admin = msg.sender;
@@ -289,6 +295,8 @@ function bug_re_ent13() public{
     /// @notice precondition maxInvestment >= 0
     /// @notice precondition minInvestment >= 0
     /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function halt() public onlyAdmin{
         ieoState = State.halted;
     }
@@ -313,6 +321,8 @@ function bug_re_ent13() public{
     /// @notice precondition maxInvestment >= 0
     /// @notice precondition minInvestment >= 0
     /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function unhalt() public onlyAdmin{
         ieoState = State.running;
     }
@@ -339,6 +349,8 @@ function bug_re_ent13() public{
     /// @notice precondition maxInvestment >= 0
     /// @notice precondition minInvestment >= 0
     /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function changeDepositAddress(address payable newDeposit) public onlyAdmin{
         deposit = newDeposit;
     }
@@ -364,6 +376,8 @@ function bug_re_ent13() public{
     /// @notice precondition maxInvestment >= 0
     /// @notice precondition minInvestment >= 0
     /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getCurrentState() public view returns(State){
         if(ieoState == State.halted){
             return State.halted;
@@ -396,8 +410,11 @@ function bug_re_ent13() public{
     /// @notice precondition maxInvestment >= 0
     /// @notice precondition minInvestment >= 0
     /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function invest() payable public returns(bool){
         //invest only in running
         ieoState = getCurrentState();
@@ -427,6 +444,30 @@ function bug_re_ent13() public{
     }
     
     //the payable function must be declared external in solidity versions > 0.5.0
+    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent37 >= 0
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent24[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent15[extraVar0] >= 0
+    /// @notice precondition counter_re_ent28 >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition tokenPrice >= 0
+    /// @notice precondition hardCap >= 0
+    /// @notice precondition raisedAmount >= 0
+    /// @notice precondition saleStart >= 0
+    /// @notice precondition saleEnd >= 0
+    /// @notice precondition coinTradeStart >= 0
+    /// @notice precondition maxInvestment >= 0
+    /// @notice precondition minInvestment >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     receive() external payable {
         invest();
     }
@@ -452,6 +493,8 @@ function bug_re_ent13() public{
     /// @notice precondition maxInvestment >= 0
     /// @notice precondition minInvestment >= 0
     /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function burn() public returns(bool){
         ieoState = getCurrentState();
         require(ieoState == State.afterEnd);
@@ -479,6 +522,8 @@ function bug_re_ent13() public{
     /// @notice precondition maxInvestment >= 0
     /// @notice precondition minInvestment >= 0
     /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition tokens >= 0
     /// @notice precondition value >= 0
     function transfer(address to, uint value) public override returns(bool){
@@ -505,6 +550,8 @@ function bug_re_ent13() public{
     /// @notice precondition maxInvestment >= 0
     /// @notice precondition minInvestment >= 0
     /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition tokens >= 0
     /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint _value) public override returns(bool){

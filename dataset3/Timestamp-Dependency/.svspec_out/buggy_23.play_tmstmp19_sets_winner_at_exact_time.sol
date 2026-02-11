@@ -384,6 +384,8 @@ contract AGR is ERC20Burnable, ERC20Detailed {
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _decimals >= 0
     constructor(string memory _name, string memory _symbol, uint8 _decimals) ERC20Detailed(_name, _symbol, _decimals) {
         super._mint(msg.sender, 30000000000000);

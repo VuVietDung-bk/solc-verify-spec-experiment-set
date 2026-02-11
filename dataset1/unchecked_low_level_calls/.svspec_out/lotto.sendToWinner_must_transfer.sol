@@ -15,6 +15,8 @@ pragma solidity >=0.7.0;
      // ... extra functionality here
 
     /// @notice precondition winAmount >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition payedOut == false
     /// @notice postcondition address(this).balance == __verifier_old_uint(address(this).balance) - winAmount
     /// @notice postcondition payedOut == true
@@ -26,6 +28,8 @@ pragma solidity >=0.7.0;
      }
 
     /// @notice precondition winAmount >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      function withdrawLeftOver() public {
          require(payedOut);
          // <yes> <report> UNCHECKED_LL_CALLS

@@ -40,7 +40,7 @@ library SafeMath {
       return 0;
     }
     uint256 c = a * b;
-    assert(c / a == b);
+    require(c / a == b);
     return c;
   }
 
@@ -50,13 +50,13 @@ library SafeMath {
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b <= a);
+    require(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c >= a);
+    require(c >= a);
     return c;
   }
 
@@ -111,6 +111,8 @@ contract Staking is Owned{
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor(address tokenContractAddress){
         token = Token(tokenContractAddress);
         owner = msg.sender;
@@ -126,6 +128,8 @@ contract Staking is Owned{
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition stakeTokens >= 0
     function startStaking(uint256 stakeTokens) public{
         require(stakeTokens >= minstakeTokens);
@@ -144,6 +148,8 @@ contract Staking is Owned{
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function redeem() public{
         require(!lock);
         require(!staker[msg.sender].redeem);
@@ -163,6 +169,8 @@ contract Staking is Owned{
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _NewTokensThreshold >= 0
     function changeStakeTokens(uint256 _NewTokensThreshold) public onlyOwner{
         minstakeTokens = _NewTokensThreshold * 10 ** uint(10);
@@ -176,6 +184,8 @@ contract Staking is Owned{
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _newStakeTime >= 0
     function changeStakeTime(uint256 _newStakeTime) public onlyOwner{
         stakeTime = _newStakeTime;
@@ -189,6 +199,8 @@ contract Staking is Owned{
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _newStakePercentage >= 0
     function changeStakingPercentage(uint _newStakePercentage) public onlyOwner{
         stakePercentage = _newStakePercentage;
@@ -203,6 +215,8 @@ contract Staking is Owned{
     /// @notice precondition bugv_tmstmp3 >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function lockWithdrawals() public onlyOwner{
         lock = true;
     }

@@ -23,6 +23,8 @@ contract CareerOneToken {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice postcondition true && true && true || totalSupply == __verifier_old_uint(totalSupply)
     constructor() {
         balanceOf[msg.sender] = totalSupply;
@@ -32,6 +34,8 @@ contract CareerOneToken {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     /// @notice postcondition false && true && true || totalSupply == __verifier_old_uint(totalSupply)
     function transfer(address _to, uint256 _value) public returns (bool success) {
@@ -46,6 +50,8 @@ contract CareerOneToken {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     /// @notice postcondition true && true && false || totalSupply == __verifier_old_uint(totalSupply)
     function approve(address _spender, uint256 _value) public returns (bool success) {
@@ -58,6 +64,8 @@ contract CareerOneToken {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     /// @notice postcondition true && false && true || totalSupply == __verifier_old_uint(totalSupply)
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {

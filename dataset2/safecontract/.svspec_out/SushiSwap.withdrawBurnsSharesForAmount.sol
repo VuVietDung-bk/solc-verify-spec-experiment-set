@@ -25,6 +25,8 @@ contract SushiSwap {
 
     mapping(address => Pool) public pools;
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function deposit(address token, uint256 amount) public {
         require(pools[token].totalBalance > 0, "Invalid pool");
@@ -39,6 +41,8 @@ contract SushiSwap {
         IERC20(token).transferFrom(msg.sender, address(this), amount);
     }
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition shares >= 0
     /// @notice precondition shares > 0
     /// @notice precondition pools[token].totalBalance > 0

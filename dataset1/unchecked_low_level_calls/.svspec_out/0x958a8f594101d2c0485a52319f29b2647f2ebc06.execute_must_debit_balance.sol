@@ -50,9 +50,6 @@ contract Owned {
     // This is a general safty function that allows the owner to do a lot
     //  of things in the unlikely event that something goes wrong
     // _dst is the contract being called making this like a 1/1 multisig
-    /// @notice precondition _value >= 0
-    /// @notice precondition msg.sender == owner
-    /// @notice postcondition address(this).balance == __verifier_old_uint(address(this).balance) - _value
     function execute(address _dst, uint _value, bytes memory _data) public onlyOwner {
          // <yes> <report> UNCHECKED_LL_CALLS
         (bool success, ) = _dst.call{value: _value}(_data);
@@ -97,19 +94,31 @@ contract Marriage is Owned
     }
 
     //Set Owner
+    /// @notice precondition marriageDate >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor(address _owner) {
         owner = _owner;
     }
 
+    /// @notice precondition marriageDate >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function numberOfMajorEvents() public view returns (uint) {
         return majorEvents.length;
     }
 
+    /// @notice precondition marriageDate >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function numberOfMessages() public view returns (uint) {
         return messages.length;
     }
 
     // Create initial marriage contract
+    /// @notice precondition marriageDate >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function createMarriage(
         string memory _partner1,
         string memory _partner2,
@@ -127,6 +136,9 @@ contract Marriage is Owned
     }
 
     // Set the marriage status if it changes
+    /// @notice precondition marriageDate >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function setStatus(MarriageStatusEnum status, string memory url) public onlyOwner
     {
         marriageStatus = status;
@@ -134,12 +146,21 @@ contract Marriage is Owned
     }
 
     // Set the IPFS hash of the image of the couple
+    /// @notice precondition marriageDate >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function setMajorEvent(string memory name, string memory description, string memory url) public onlyOwner areMarried
     {
         majorEvents.push(Event(block.timestamp, name, description, url));
         emit MajorEvent(name, description, url);
     }
 
+    /// @notice precondition marriageDate >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function sendMessage(string memory nameFrom, string memory text, string memory url) public payable areMarried {
         if (msg.value > 0) {
             (bool success, ) = owner.call{value: address(this).balance}("");

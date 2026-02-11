@@ -8,6 +8,8 @@ pragma solidity >=0.7.0;
 
 contract TimedCrowdsale {
   // Sale should finish exactly at January 1, 2019
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice postcondition finish == false
   function isSaleFinished() view public returns (bool finish) {
     // <yes> <report> TIME_MANIPULATION

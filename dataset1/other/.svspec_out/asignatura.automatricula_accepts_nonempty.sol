@@ -26,6 +26,8 @@ contract Asignatura {
 		uint calificacion;
 	}
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	constructor(string memory _nombre, string memory _curso) public {
 		profesor = msg.sender; //el profesor despliega el contrato
 		nombre = _nombre;
@@ -34,28 +36,40 @@ contract Asignatura {
 
 	/*-----------------------------GETTERS------------------------------*/
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	function getNombre() public view returns(string memory) {
 		return nombre;
 	}
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	function getCurso() public view returns(string memory) {
 		return curso;
 	}
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	function getDireccionProfesor() public view returns(address) {
 		return profesor;
 	}
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	function evaluacionesLength() public view returns (uint) {
 		return evaluaciones.length;
 	}
 	
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	function matriculasLength() public view returns(uint) {
 		return matriculas.length;
 	}
 
 	/*-----------------------------MÉTODOS------------------------------*/
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -66,6 +80,8 @@ contract Asignatura {
 		return evaluaciones.length-1;
 	}
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice postcondition matriculas.length == __verifier_old_uint(matriculas.length) + 1
 	function automatricula(string memory _nombre, string memory _email) noMatriculados noVacio public {
 		Alumno memory alumno = Alumno(_nombre, _email);
@@ -73,6 +89,8 @@ contract Asignatura {
 		matriculas.push(msg.sender);
 	}
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	function quienSoy() soloMatriculados public view returns (string memory _nombre, string memory _email) {
 		Alumno memory alumno = datosAlumno[msg.sender];
 		_nombre = alumno.nombre;
@@ -83,6 +101,8 @@ contract Asignatura {
 
 	mapping (address => mapping (uint => Nota)) public calificaciones;
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition evaluacion >= 0
     /// @notice precondition calificacion >= 0
 	function califica(address alumno, uint evaluacion, TipoNota tipo, uint calificacion) soloProfesor public {
@@ -90,6 +110,8 @@ contract Asignatura {
 		calificaciones[alumno][evaluacion] = nota;
 	}
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition evaluacion >= 0
 	function miNota(uint evaluacion) soloMatriculados public view returns (TipoNota _tipo, uint _calificacion) {
 		Nota memory nota = calificaciones[msg.sender][evaluacion];

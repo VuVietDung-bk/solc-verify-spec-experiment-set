@@ -17,6 +17,8 @@ contract keepMyEther {
     mapping(address => uint256) public balances;
     
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -25,6 +27,8 @@ contract keepMyEther {
     }
 
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -33,6 +37,8 @@ contract keepMyEther {
     }
     
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition balances[msg.sender] > 0
     /// @notice postcondition balances[msg.sender] == 0
     /// @notice postcondition address(this).balance == __verifier_old_uint(address(this).balance) - __verifier_old_uint(balances[msg.sender])

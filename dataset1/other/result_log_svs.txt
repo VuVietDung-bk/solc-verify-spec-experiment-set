@@ -1,0 +1,125 @@
+SOLC-VERIFY-SPEC Results Log
+Benchmark: dataset1/other
+Date: 2026-02-11
+Total spec files: 8
+
+========================================
+Spec: specification/Asignatura.spec
+Contract: asignatura.sol:Asignatura
+Rules: 1
+  PASS:
+    Rule automatricula_accepts_nonempty: ALL OK
+  FAIL: (none)
+Timing:
+  [TIME] asignatura.automatricula_accepts_nonempty.sol: 2.62s
+  [TIME] Total rule verification time: 2.62s
+  [TIME] End-to-end time: 3.64s
+
+========================================
+Spec: specification/Class.spec
+Contract: class.sol:Class
+Rules: 1
+  PASS:
+    Rule create_student_adds_entry: ALL OK
+  FAIL: (none)
+Timing:
+  [TIME] class.create_student_adds_entry.sol: 1.44s
+  [TIME] Total rule verification time: 1.44s
+  [TIME] End-to-end time: 2.37s
+
+========================================
+Spec: specification/Crowdfund.spec
+Contract: Crowdfund.sol:Crowdfund
+Rules: 1
+  FAIL:
+    Rule stake_should_not_overflow: Crowdfund::stake: ERROR
+      - Postcondition 'stakes[msg.sender] > stakes[msg.sender]' might not hold
+  PASS:
+    Crowdfund::[constructor]: OK
+    Crowdfund::closeFund: OK
+    Crowdfund::withdraw: OK
+    Crowdfund::getTotalStake: OK
+    Crowdfund::checkIntegerFinney: OK
+Timing:
+  [TIME] Crowdfund.stake_should_not_overflow.sol: 2.07s
+  [TIME] Total rule verification time: 2.07s
+  [TIME] End-to-end time: 3.12s
+
+========================================
+Spec: specification/EvilToken.spec
+Contract: EvilToken.sol:EvilERC20Token
+Rules: 1
+  FAIL:
+    Rule transferFrom_should_not_mint_to_contract: EvilERC20Token::transferFrom: ERROR
+      - Postcondition 'balanceOf[msg.sender] + balanceOf[address(this)] == old(balanceOf[msg.sender]) + old(balanceOf[address(this)])' might not hold
+  PASS:
+    EvilERC20Token::[constructor]: OK
+    EvilERC20Token::transfer: OK
+    EvilERC20Token::approve: OK
+    EvilERC20Token::burn: OK
+Timing:
+  [TIME] EvilToken.transferFrom_should_not_mint_to_contract.sol: 7.11s
+  [TIME] Total rule verification time: 7.11s
+  [TIME] End-to-end time: 8.28s
+
+========================================
+Spec: specification/Forwarder.spec
+Contract: Forwarder.sol:Forwarder
+Rules: 1
+  PASS:
+    Rule non_owner_forward_reverts: ALL OK
+  FAIL: (none)
+Timing:
+  [TIME] Forwarder.non_owner_forward_reverts.sol: 1.66s
+  [TIME] Total rule verification time: 1.66s
+  [TIME] End-to-end time: 2.60s
+
+========================================
+Spec: specification/NameRegistrar.spec
+Contract: name_registrar.sol:NameRegistrar
+Rules: 1
+  PASS:
+    Rule register_should_revert_when_locked: ALL OK
+  FAIL: (none)
+Timing:
+  [TIME] name_registrar.register_should_revert_when_locked.sol: 1.57s
+  [TIME] Total rule verification time: 1.57s
+  [TIME] End-to-end time: 2.55s
+
+========================================
+Spec: specification/StakingWarmup.spec
+Contract: StakingWarmup.sol:StakingWarmup
+Rules: 1
+  PASS:
+    Rule retrieve_from_non_staking_reverts: ALL OK
+  FAIL: (none)
+Timing:
+  [TIME] StakingWarmup.retrieve_from_non_staking_reverts.sol: 2.29s
+  [TIME] Total rule verification time: 2.29s
+  [TIME] End-to-end time: 3.21s
+
+========================================
+Spec: specification/WETH.spec
+Contract: WETH.sol:WETH
+Rules: 1
+  FAIL:
+    Rule withdrawTo_cannot_exceed_balance: WETH::withdrawTo: ERROR
+      - Postcondition involving balanceOf[msg.sender] subtraction might not hold
+  PASS:
+    WETH::[receive]: OK
+    WETH::deposit: OK
+    WETH::withdraw: OK
+    WETH::totalSupply: OK
+    WETH::approve: OK
+    WETH::transfer: OK
+    WETH::transferFrom: OK
+Timing:
+  [TIME] WETH.withdrawTo_cannot_exceed_balance.sol: 2.88s
+  [TIME] Total rule verification time: 2.88s
+  [TIME] End-to-end time: 3.86s
+
+========================================
+SUMMARY: 8 spec files, 8 rules total
+  5/8 specs passed all rules
+  3/8 specs had errors (Crowdfund, EvilToken, WETH)
+  Total end-to-end time: ~29.63s

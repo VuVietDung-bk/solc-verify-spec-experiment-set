@@ -87,6 +87,8 @@ contract HotDollarsToken is EIP20Interface {
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         totalSupply = 3 * 1e28;                        
         name = "HotDollars Token";                          
@@ -104,6 +106,8 @@ contract HotDollarsToken is EIP20Interface {
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function transfer(address _to, uint256 _value) public override returns (bool success) {
         require(balances[msg.sender] >= _value);
@@ -123,6 +127,8 @@ contract HotDollarsToken is EIP20Interface {
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success) {
         uint256 allowance = allowed[_from][msg.sender];
@@ -145,6 +151,8 @@ contract HotDollarsToken is EIP20Interface {
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_tmstmp13() view public returns (bool) {
     return block.timestamp >= 1546300800;
   }
@@ -159,6 +167,8 @@ function bug_tmstmp13() view public returns (bool) {
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function balanceOf(address _owner) public view override returns (uint256 balance) {
         return balances[_owner];
     }
@@ -174,6 +184,8 @@ uint256 bugv_tmstmp5 = block.timestamp;
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function approve(address _spender, uint256 _value) public override returns (bool success) {
         allowed[msg.sender][_spender] = _value;
@@ -192,6 +204,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function allowance(address _owner, address _spender) public view override returns (uint256 remaining) {
         return allowed[_owner][_spender];
     }

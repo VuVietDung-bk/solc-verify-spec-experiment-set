@@ -171,6 +171,8 @@ contract LollypopToken is Ownable {
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function callme_re_ent28() public{
         require(counter_re_ent28<=5);
 	if( ! (payable(msg.sender).send(10 ether) ) ){
@@ -201,6 +203,8 @@ function callme_re_ent28() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_re_ent34() public{
         require(not_called_re_ent34);
         if( ! (payable(msg.sender).send(1 ether) ) ){
@@ -231,6 +235,8 @@ function bug_re_ent34() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function callme_re_ent21() public{
         require(counter_re_ent21<=5);
 	if( ! (payable(msg.sender).send(10 ether) ) ){
@@ -260,10 +266,12 @@ function callme_re_ent21() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _weiToWithdraw >= 0
     /// @notice precondition balances_re_ent10[msg.sender] >= _weiToWithdraw
     /// @notice postcondition balances_re_ent10[msg.sender] == __verifier_old_uint(balances_re_ent10[msg.sender]) - _weiToWithdraw
-    /// @notice postcondition __verifier_old_uint(contract.balance) >= contract.balance && __verifier_old_uint(contract.balance) - contract.balance <= _weiToWithdraw
+    /// @notice postcondition __verifier_old_uint(address(this).balance) >= address(this).balance && __verifier_old_uint(address(this).balance) - address(this).balance <= _weiToWithdraw
 function withdrawFunds_re_ent10 (uint256 _weiToWithdraw) public {
         require(balances_re_ent10[msg.sender] >= _weiToWithdraw);
         // limit the withdrawal
@@ -294,6 +302,8 @@ function withdrawFunds_re_ent10 (uint256 _weiToWithdraw) public {
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function withdraw_balances_re_ent21 () public {
          (bool success,)= payable(msg.sender).call{value:balances_re_ent21[msg.sender ]}("");
        if (success)
@@ -321,6 +331,8 @@ function withdrawFunds_re_ent10 (uint256 _weiToWithdraw) public {
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdrawBalance_re_ent12() public{
         // send userBalance[msg.sender] ethers to msg.sender
         // if mgs.sender is a contract, it will call its fallback function
@@ -351,6 +363,8 @@ function withdrawBalance_re_ent12() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function claimReward_re_ent11() public {        
         // ensure there is a reward to give
         require(redeemableEther_re_ent11[msg.sender] > 0);
@@ -381,6 +395,8 @@ function claimReward_re_ent11() public {
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function withdraw_balances_re_ent1 () public {
     (bool success,) =payable(msg.sender).call{value:balances_re_ent1[msg.sender ]}("");
        if (success)
@@ -408,6 +424,8 @@ function claimReward_re_ent11() public {
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_re_ent41() public{
         require(not_called_re_ent41);
         if( ! (payable(msg.sender).send(1 ether) ) ){
@@ -437,6 +455,8 @@ function bug_re_ent41() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function callme_re_ent42() public{
         require(counter_re_ent42<=5);
 	if( ! (payable(msg.sender).send(10 ether) ) ){
@@ -472,6 +492,8 @@ function callme_re_ent42() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         _maxTotalSupply = 1000000000 * 10 ** 18;
         _totalSupply =  2000000 * 10 ** 18;
@@ -501,6 +523,8 @@ function callme_re_ent42() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition timeElasped >= 0
     /// @notice precondition amount >= 0
     function calculateBonus(uint256 timeElasped , uint256 amount) public view  returns(uint256){
@@ -564,6 +588,8 @@ address payable lastPlayer_re_ent9;
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	  function buyTicket_re_ent9() public{
         (bool success,) = lastPlayer_re_ent9.call{value:jackpot_re_ent9}("");
 	    if (!success)
@@ -596,6 +622,8 @@ address payable lastPlayer_re_ent9;
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function name() public view returns (string memory) {
         return _name;
     }
@@ -624,6 +652,8 @@ address payable lastPlayer_re_ent9;
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function symbol() public view returns (string memory) {
         return _symbol;
     }
@@ -660,6 +690,8 @@ address payable lastPlayer_re_ent9;
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function decimals() public view returns (uint8) {
         return _decimals;
     }
@@ -684,6 +716,8 @@ mapping(address => uint) userBalance_re_ent26;
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdrawBalance_re_ent26() public{
         // send userBalance[msg.sender] ethers to msg.sender
         // if mgs.sender is a contract, it will call its fallback function
@@ -732,6 +766,8 @@ bool not_called_re_ent13 = true;
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_re_ent13() public{
         require(not_called_re_ent13);
 	(bool success,)=payable(msg.sender).call{value:1 ether}("");
@@ -787,6 +823,8 @@ function bug_re_ent13() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function totalSupply() public view returns (uint256) {
         return _totalSupply;
     }
@@ -814,6 +852,8 @@ function bug_re_ent13() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function balanceOf(address account) public view returns (uint256) {
         return _balances[account].amount;
     }
@@ -839,6 +879,8 @@ function bug_re_ent13() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
  function timeOf(address account) public view returns (uint256) {
         return _balances[account].time;
     }
@@ -871,6 +913,8 @@ function bug_re_ent13() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function transfer(address recipient, uint256 amount) public returns (bool) {
         _transfer(msg.sender, recipient, amount);
@@ -897,7 +941,8 @@ function bug_re_ent13() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
-    /// @notice precondition amounts >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function multiTransfer(address[] memory receivers, uint256[] memory amounts) public {
     require(receivers.length == amounts.length);
     for (uint256 i = 0; i < receivers.length; i++) {
@@ -929,6 +974,8 @@ function bug_re_ent13() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function allowance(address owner, address spender) public view returns (uint256) {
         return _allowances[owner][spender];
     }
@@ -960,6 +1007,8 @@ function bug_re_ent13() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
     function approve(address spender, uint256 value) public returns (bool) {
         _approve(msg.sender, spender, value);
@@ -998,6 +1047,8 @@ function bug_re_ent13() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
         _transfer(sender, recipient, amount);
@@ -1037,6 +1088,8 @@ function bug_re_ent13() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition addedValue >= 0
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowances[msg.sender][spender].add(addedValue));
@@ -1077,6 +1130,8 @@ function bug_re_ent13() public{
     /// @notice precondition perDayBonus >= 0
     /// @notice precondition jackpot_re_ent9 >= 0
     /// @notice precondition forall (address extraVar0) userBalance_re_ent26[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition subtractedValue >= 0
     function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowances[msg.sender][spender].sub(subtractedValue));

@@ -21,6 +21,8 @@ contract Ballot{
     Proposal[] public proposals;
     mapping(address => Voter) voters;
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _numberProposals >= 0
     constructor(uint8 _numberProposals) {
         chairperson = msg.sender;
@@ -29,6 +31,8 @@ contract Ballot{
             proposals.push(Proposal(0));
         }
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition voters[voter].voted == false
     /// @notice precondition voters[voter].weight == 0
     /// @notice postcondition voters[voter].weight == 1
@@ -39,6 +43,8 @@ contract Ballot{
         require(voters[voter].weight == 0);
         voters[voter].weight = 1;
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function delegate(address to) public {
         Voter storage sender = voters[msg.sender];
         require(!sender.voted);
@@ -58,6 +64,8 @@ contract Ballot{
         }
     }
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition proposal >= 0
     function vote(uint proposal) public {
         Voter storage sender = voters[msg.sender];
@@ -66,6 +74,8 @@ contract Ballot{
         sender.vote = proposal;
         proposals[proposal].voteCount += sender.weight;
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function winningProposal() public view returns(uint _winningProposal){
         uint winningCount = 0;
         for(uint prop = 0; prop < proposals.length; prop++){

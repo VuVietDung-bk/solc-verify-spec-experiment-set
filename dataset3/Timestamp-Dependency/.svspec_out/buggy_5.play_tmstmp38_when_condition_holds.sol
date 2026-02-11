@@ -222,6 +222,8 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition initialSupply >= 0
     constructor(
       uint256 initialSupply,
@@ -255,6 +257,8 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition mintedAmount >= 0
     function mintToken(address target, uint256 mintedAmount) onlyOwner public {
         balanceOf[target] += mintedAmount;
@@ -277,6 +281,8 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function freezeAccount(address target, bool freeze) onlyOwner public {
         frozenAccount[target] = freeze;
         emit FrozenFunds(target, freeze);
@@ -296,6 +302,8 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition newSellPrice >= 0
     /// @notice precondition newBuyPrice >= 0
     function setPrices(uint256 newSellPrice, uint256 newBuyPrice) onlyOwner public {
@@ -315,8 +323,11 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function buy() payable public {
         uint amount = msg.value / buyPrice;                 // calculates the amount
         _transfer(address(this), msg.sender, amount);       // makes the transfers
@@ -335,6 +346,8 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function sell(uint256 amount) public {
         address myAddress = address(this);

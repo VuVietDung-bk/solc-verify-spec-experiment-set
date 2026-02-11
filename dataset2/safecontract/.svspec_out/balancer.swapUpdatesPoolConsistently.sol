@@ -22,6 +22,8 @@ contract Balancer {
 
     mapping(address => Pool) public pools;
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amountIn >= 0
     /// @notice precondition minAmountOut >= 0
     /// @notice postcondition amountIn * 1000 - pools[tokenIn].swapFee * pools[tokenOut].totalBalance * pools[tokenOut].totalWeight / pools[tokenIn].totalBalance * pools[tokenIn].totalWeight * 1000 + amountIn * 1000 - pools[tokenIn].swapFee * pools[tokenIn].totalWeight >= minAmountOut

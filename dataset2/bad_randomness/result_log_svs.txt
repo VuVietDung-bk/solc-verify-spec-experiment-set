@@ -1,0 +1,26 @@
+SOLC-VERIFY-SPEC Results Log
+Benchmark: dataset2/bad_randomness
+Date: 2026-02-11
+Total spec files: 1
+
+========================================
+Spec: specification/lottery.spec
+Contract: lottery.sol:Lottery
+Rules: 1
+  FAIL:
+    Rule winShouldDependOnBetterEntropy: Lottery::makeBet: ERROR
+      - Postcondition involving timestamp-based win condition might not hold
+  PASS:
+    Lottery::[constructor]: OK
+    Lottery::[receive]: OK
+    Lottery::[fallback]: OK
+    Lottery::getBets: OK
+Timing:
+  [TIME] lottery.winShouldDependOnBetterEntropy.sol: 2.20s
+  [TIME] Total rule verification time: 2.20s
+  [TIME] End-to-end time: 3.16s
+
+========================================
+SUMMARY: 1 spec file, 1 rule total
+  0/1 specs passed all rules
+  Total end-to-end time: ~3.16s

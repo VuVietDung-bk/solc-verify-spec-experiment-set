@@ -10,24 +10,24 @@ library SafeMath {
     
   function safeMul(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a * b;
-    assert(a == 0 || c / a == b);
+    require(a == 0 || c / a == b);
     return c;
   }
 
   function safeDiv(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b > 0);
+    require(b > 0);
     uint256 c = a / b;
     return c;
   }
 
   function safeSub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b <= a);
+    require(b <= a);
     return a - b;
   }
 
   function safeAdd(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c >= a && c >= b);
+    require(c >= a && c >= b);
     return c;
   }
   
@@ -119,6 +119,8 @@ contract Core is Owned {
     /// @notice precondition forall (address extraVar0) userBalances[extraVar0] >= 0
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) userAllowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
 
         userBalances[msg.sender] = _totalSupply;
@@ -141,6 +143,8 @@ contract Core is Owned {
     /// @notice precondition forall (address extraVar0) userBalances[extraVar0] >= 0
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) userAllowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _amount >= 0
     /// @notice postcondition _receiver == msg.sender || userBalances[msg.sender] == __verifier_old_uint(userBalances[msg.sender]) - _amount
     /// @notice postcondition _receiver == msg.sender || userBalances[_receiver] == __verifier_old_uint(userBalances[_receiver]) + _amount
@@ -163,6 +167,8 @@ contract Core is Owned {
     /// @notice precondition forall (address extraVar0) userBalances[extraVar0] >= 0
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) userAllowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _amount >= 0
     function transferFrom(address _owner, address _receiver, uint256 _amount) public returns (bool status) {
 
@@ -182,6 +188,8 @@ contract Core is Owned {
     /// @notice precondition forall (address extraVar0) userBalances[extraVar0] >= 0
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) userAllowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function multiTransfer(address[] memory _destinations, uint256[] memory _values) public returns (uint256) {
 
         uint256 max = 0;
@@ -209,6 +217,8 @@ contract Core is Owned {
     /// @notice precondition forall (address extraVar0) userBalances[extraVar0] >= 0
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) userAllowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _amount >= 0
     function approve(address _spender, uint256 _amount) public returns (bool approved) {
 
@@ -225,6 +235,8 @@ contract Core is Owned {
     /// @notice precondition forall (address extraVar0) userBalances[extraVar0] >= 0
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) userAllowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function balanceOf(address _address) public view returns (uint256 balance) {
 
         return userBalances[_address];
@@ -235,6 +247,8 @@ contract Core is Owned {
     /// @notice precondition forall (address extraVar0) userBalances[extraVar0] >= 0
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) userAllowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function allowance(address _owner, address _spender) public view returns (uint256 allowed) {
 
         return userAllowances[_owner][_spender];
@@ -245,6 +259,8 @@ contract Core is Owned {
     /// @notice precondition forall (address extraVar0) userBalances[extraVar0] >= 0
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) userAllowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function totalSupply() public view returns (uint256 supply) {
 
         return _totalSupply;

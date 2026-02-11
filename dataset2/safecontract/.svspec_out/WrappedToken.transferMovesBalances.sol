@@ -43,6 +43,8 @@ contract WrappedToken is ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _decimals >= 0
     constructor(string memory _name, string memory _symbol, uint8 _decimals, address _underlyingAsset) {
         name = _name;
@@ -55,6 +57,8 @@ contract WrappedToken is ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function totalSupply() public view override returns (uint256) {
         return _totalSupply;
     }
@@ -63,6 +67,8 @@ contract WrappedToken is ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function balanceOf(address account) public view override returns (uint256) {
         return _balances[account];
     }
@@ -71,6 +77,8 @@ contract WrappedToken is ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     /// @notice postcondition recipient == msg.sender || _balances[msg.sender] == __verifier_old_uint(_balances[msg.sender]) - amount
     /// @notice postcondition recipient == msg.sender || _balances[recipient] == __verifier_old_uint(_balances[recipient]) + amount
@@ -86,6 +94,8 @@ contract WrappedToken is ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function allowance(address owner, address spender) public view override returns (uint256) {
         return _allowances[owner][spender];
     }
@@ -94,6 +104,8 @@ contract WrappedToken is ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function approve(address spender, uint256 amount) public override returns (bool) {
         _approve(msg.sender, spender, amount);
@@ -104,6 +116,8 @@ contract WrappedToken is ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function transferFrom(address sender, address recipient, uint256 amount) public override returns (bool) {
         _transfer(sender, recipient, amount);
@@ -132,6 +146,8 @@ contract WrappedToken is ERC20 {
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
     /// @notice precondition _totalSupply >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function wrap(uint256 amount) external {
         require(IERC20(underlyingAsset).transferFrom(msg.sender, address(this), amount), "transferFrom failed");

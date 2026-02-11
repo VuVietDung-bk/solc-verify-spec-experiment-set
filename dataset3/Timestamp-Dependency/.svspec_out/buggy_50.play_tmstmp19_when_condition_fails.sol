@@ -15,6 +15,8 @@ contract digitalNotary
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function bug_tmstmp9() view public returns (bool) {
     return block.timestamp >= 1546300800;
   }
@@ -31,6 +33,8 @@ contract digitalNotary
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition startTime >= 0
     /// @notice precondition startTime + 432000 != block.timestamp
     /// @notice postcondition winner_tmstmp19 == __verifier_old_address(winner_tmstmp19)
@@ -56,8 +60,11 @@ function play_tmstmp19(uint startTime) public {
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
   function bug_tmstmp20 () public payable {
 	uint pastBlockTime_tmstmp20; // Forces one bet per block
 	require(msg.value == 10 ether); // must send 10 ether to play
@@ -85,6 +92,8 @@ function play_tmstmp19(uint startTime) public {
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor()
     {
 
@@ -115,6 +124,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function gethashfee() external view returns(uint)
     {
         return hashfee;
@@ -127,6 +138,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition newfee >= 0
     function sethashfee(uint newfee) external onlyManager
     {
@@ -151,6 +164,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getchangehashownerfee() external view returns(uint)
     {
         return changehashownerfee;
@@ -163,6 +178,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition newfee >= 0
      function setchangehashownerfee(uint newfee) external onlyManager
     {
@@ -178,6 +195,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getcontractactive() external view returns (bool)
     {
         return contractactive;
@@ -191,6 +210,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function setcontractactive(bool contactive) external onlyManager
     {
         contractactive = contactive;
@@ -204,6 +225,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      function getmanager() external view returns(address)
     {
         return manager;
@@ -216,6 +239,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function setmanager(address payable newmngr) external onlyManager
     {
         require(newmngr.balance > 0);
@@ -229,6 +254,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getcontractbalance() public view returns(uint)
     {
        
@@ -242,6 +269,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function transfercontractbalance() external onlyManager
     {
         uint cb = address(this).balance;
@@ -258,6 +287,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getHashOwnersCount(bytes32 hash) public view returns(uint)
     {
         return HashList[hash].length;
@@ -271,6 +302,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getNumberofHashesRegistered() external view returns(uint)
     {
         return HashListLength;
@@ -283,6 +316,8 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition indx >= 0
      function getHashDetails(bytes32 hash,uint indx) external view returns (address,uint)
     {
@@ -302,8 +337,11 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function registerHash(bytes32 hash) external payable
     {
       
@@ -330,8 +368,11 @@ uint256 bugv_tmstmp2 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition bugv_tmstmp5 >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function changeHashOwnership(bytes32 hash, address newowner) external payable
     {
         
@@ -351,6 +392,16 @@ uint256 bugv_tmstmp2 = block.timestamp;
     }
 uint256 bugv_tmstmp5 = block.timestamp;
     
+    /// @notice precondition hashfee >= 0
+    /// @notice precondition changehashownerfee >= 0
+    /// @notice precondition HashListLength >= 0
+    /// @notice precondition bugv_tmstmp3 >= 0
+    /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition bugv_tmstmp1 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     fallback() external {
     }
 uint256 bugv_tmstmp1 = block.timestamp;

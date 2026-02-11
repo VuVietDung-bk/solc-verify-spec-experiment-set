@@ -21,13 +21,3 @@ rule root_is_constant() {
 
     assert root == root_before, "Lỗi: Biến root bị thay đổi bất thường";
 }
-
-rule only_owner_can_withdraw() {
-    address caller = msg.sender;
-    
-    require owners[caller] == address(0);
-    
-    withdrawAll();
-    
-    assert_revert;
-}

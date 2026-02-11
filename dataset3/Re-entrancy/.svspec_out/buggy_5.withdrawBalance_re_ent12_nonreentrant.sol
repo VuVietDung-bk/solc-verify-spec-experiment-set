@@ -274,6 +274,8 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _weiToWithdraw >= 0
 function withdrawFunds_re_ent17 (uint256 _weiToWithdraw) public {
         require(balances_re_ent17[msg.sender] >= _weiToWithdraw);
@@ -305,6 +307,8 @@ function withdrawFunds_re_ent17 (uint256 _weiToWithdraw) public {
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_re_ent13() public{
         require(not_called_re_ent13);
         (bool success,)=payable(msg.sender).call{value: 1 ether}("");
@@ -332,6 +336,8 @@ function bug_re_ent13() public{
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition initialSupply >= 0
     constructor(
         uint256 initialSupply,
@@ -370,6 +376,8 @@ function bug_re_ent13() public{
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition mintedAmount >= 0
     function mintToken(address target, uint256 mintedAmount) onlyOwner public {
         balanceOf[target] += mintedAmount;
@@ -397,6 +405,8 @@ function bug_re_ent13() public{
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function freezeAccount(address target, bool freeze) onlyOwner public {
         frozenAccount[target] = freeze;
         emit FrozenFunds(target, freeze);
@@ -421,6 +431,8 @@ function bug_re_ent13() public{
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition newSellPrice >= 0
     /// @notice precondition newBuyPrice >= 0
     function setPrices(uint256 newSellPrice, uint256 newBuyPrice) onlyOwner public {
@@ -445,8 +457,11 @@ function bug_re_ent13() public{
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function buy() payable public {
         uint amount = msg.value / buyPrice;                 // calculates the amount
         _transfer(address(this), msg.sender, amount);       // makes the transfers
@@ -468,6 +483,8 @@ mapping(address => uint) balances_re_ent36;
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function withdraw_balances_re_ent36 () public {
       if (payable(msg.sender).send(balances_re_ent36[msg.sender ]))
           balances_re_ent36[msg.sender] = 0;
@@ -491,6 +508,8 @@ mapping(address => uint) balances_re_ent36;
     /// @notice precondition sellPrice >= 0
     /// @notice precondition buyPrice >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function sell(uint256 amount) public {
         address myAddress = address(this);

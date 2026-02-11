@@ -1,0 +1,162 @@
+SOLC-VERIFY-SPEC Results Log
+Benchmark: dataset1/unchecked_low_level_calls
+Date: 2026-02-11
+Total spec files: 13
+
+========================================
+Spec: specification/0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.spec
+Contract: 0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.sol:Caller
+Rules: 1
+  FAIL:
+    Rule callAddress_should_succeed: Caller::callAddress: ERROR
+      - Postcondition 'false' might not hold
+Timing:
+  [TIME] callAddress_should_succeed.sol: 1.54s
+  [TIME] End-to-end time: 2.43s
+
+========================================
+Spec: specification/0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.spec
+Contract: 0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.sol:MultiplicatorX4
+Rules: 1
+  FAIL:
+    Rule Command_unchecked: MultiplicatorX4::Command: ERROR
+      - Postcondition 'address(this).balance == old(address(this).balance) - msg.value' might not hold
+Timing:
+  [TIME] Command_unchecked.sol: 1.86s
+  [TIME] End-to-end time: 2.78s
+
+========================================
+Spec: specification/0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.spec
+Contract: 0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.sol:WhaleGiveaway2
+Rules: 1
+  FAIL:
+    Rule Command_must_debit: WhaleGiveaway2::Command: ERROR
+      - Postcondition 'address(this).balance == old(address(this).balance) - msg.value' might not hold
+Timing:
+  [TIME] Command_must_debit.sol: 1.79s
+  [TIME] End-to-end time: 2.72s
+
+========================================
+Spec: specification/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.spec
+Contract: 0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.sol:EtherGet
+Rules: 1
+  FAIL:
+    Rule getTokens_should_succeed: EtherGet::getTokens: ERROR
+      - Postcondition 'false' might not hold
+Timing:
+  [TIME] getTokens_should_succeed.sol: 1.98s
+  [TIME] End-to-end time: 2.87s
+
+========================================
+Spec: specification/0x5aa88d2901c68fda244f1d0584400368d2c8e739.spec
+Contract: 0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3
+Rules: 1
+  FAIL:
+    Rule Command_must_debit: MultiplicatorX3::Command: ERROR
+      - Postcondition 'address(this).balance == old(address(this).balance) - msg.value' might not hold
+Timing:
+  [TIME] Command_must_debit.sol: 1.78s
+  [TIME] End-to-end time: 2.66s
+
+========================================
+Spec: specification/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.spec
+Contract: 0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol:HomeyJar
+Rules: 1
+  FAIL:
+    Rule Command_must_debit: HomeyJar::Command: ERROR
+      - Postcondition 'address(this).balance == old(address(this).balance) - msg.value' might not hold
+Timing:
+  [TIME] Command_must_debit.sol: 1.78s
+  [TIME] End-to-end time: 2.67s
+
+========================================
+Spec: specification/0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.spec
+Contract: 0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.sol:WedIndex
+Rules: 1
+  PASS:
+    Rule execute_must_debit_balance: ALL OK
+  FAIL: (none)
+Timing:
+  [TIME] execute_must_debit_balance.sol: 2.06s
+  [TIME] End-to-end time: 2.98s
+
+========================================
+Spec: specification/0x958a8f594101d2c0485a52319f29b2647f2ebc06.spec
+Contract: 0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol:Marriage
+Rules: 1
+  PASS:
+    Rule execute_must_debit_balance: ALL OK
+  FAIL: (none)
+Timing:
+  [TIME] execute_must_debit_balance.sol: 3.00s
+  [TIME] End-to-end time: 4.11s
+
+========================================
+Spec: specification/0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.spec
+Contract: 0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.sol:Splitter
+Rules: 1
+  PASS: (none)
+  FAIL:
+    Rule fundPuppets_must_spend_value: Splitter::fundPuppets: ERROR
+      - Postcondition 'address(this).balance == __verifier_old_uint(address(this).balance) - msg.value' might not hold at end of function.
+Timing:
+  [TIME] fundPuppets_must_spend_value.sol: 2.94s
+  [TIME] Total rule verification time: 2.94s
+  [TIME] End-to-end time: 4.07s
+
+========================================
+Spec: specification/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.spec
+Contract: 0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.sol:keepMyEther
+Rules: 1
+  FAIL:
+    Rule withdraw_resets_balance: keepMyEther::withdraw: ERROR
+      - Postcondition 'address(this).balance == old(address(this).balance) - old(balances[msg.sender])' might not hold
+Timing:
+  [TIME] withdraw_resets_balance.sol: 1.65s
+  [TIME] End-to-end time: 2.60s
+
+========================================
+Spec: specification/lotto.spec
+Contract: lotto.sol:Lotto
+Rules: 2
+  FAIL:
+    Rule sendToWinner_must_transfer: Lotto::sendToWinner: ERROR
+      - Postcondition 'address(this).balance == old(address(this).balance) - winAmount' might not hold
+    Rule withdrawLeftOver_must_transfer: Lotto::withdrawLeftOver: ERROR
+      - Postcondition 'address(this).balance == 0' might not hold
+Timing:
+  [TIME] sendToWinner_must_transfer.sol: 1.55s
+  [TIME] withdrawLeftOver_must_transfer.sol: 1.70s
+  [TIME] Total rule verification time: 3.25s
+  [TIME] End-to-end time: 4.16s
+
+========================================
+Spec: specification/mishandled.spec
+Contract: mishandled.sol:SendBack
+Rules: 1
+  FAIL:
+    Rule withdrawBalance_must_transfer: SendBack::withdrawBalance: ERROR
+      - Postcondition 'address(this).balance == old(address(this).balance) - old(userBalances[msg.sender])' might not hold
+Timing:
+  [TIME] withdrawBalance_must_transfer.sol: 1.57s
+  [TIME] End-to-end time: 2.64s
+
+========================================
+Spec: specification/unchecked_return_value.spec
+Contract: unchecked_return_value.sol:ReturnValue
+Rules: 1
+  FAIL:
+    Rule callnotchecked_should_revert_on_failure: ReturnValue::callnotchecked: ERROR
+      - Postcondition 'false' might not hold
+  PASS:
+    ReturnValue::callchecked: OK
+Timing:
+  [TIME] callnotchecked_should_revert_on_failure.sol: 1.74s
+  [TIME] End-to-end time: 2.65s
+
+========================================
+SUMMARY: 13 spec files, 14 rules total
+  2/13 specs passed all rules (WedIndex, Marriage)
+  10/13 specs had verification errors
+  1/13 specs had compilation/annotation errors (Puppet - undeclared 'owner')
+  Total end-to-end time: ~37.27s

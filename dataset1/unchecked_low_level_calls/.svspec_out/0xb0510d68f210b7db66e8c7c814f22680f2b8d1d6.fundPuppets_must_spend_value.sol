@@ -20,6 +20,8 @@ contract Splitter{
 
     /// @notice precondition _share >= 0
     /// @notice precondition _count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -39,6 +41,8 @@ contract Splitter{
 	
     /// @notice precondition _share >= 0
     /// @notice precondition _count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	function withdraw() public{
 		require(msg.sender == owner);
 		payable(owner).transfer(address(this).balance);
@@ -48,6 +52,8 @@ contract Splitter{
 
     /// @notice precondition _share >= 0
     /// @notice precondition _count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	function getPuppetCount() public view returns(uint256 puppetCount){
     	return puppets.length;
   	}
@@ -56,6 +62,8 @@ contract Splitter{
 
     /// @notice precondition _share >= 0
     /// @notice precondition _count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	function newPuppet() public returns(address newPuppet){
 	    require(msg.sender == owner);
     	Puppet p = new Puppet();
@@ -67,6 +75,8 @@ contract Splitter{
 
     /// @notice precondition _share >= 0
     /// @notice precondition _count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _id >= 0
     function setExtra(uint256 _id, address _newExtra) public {
         require(_newExtra != address(0));
@@ -78,6 +88,8 @@ contract Splitter{
 
     /// @notice precondition _share >= 0
     /// @notice precondition _count >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0

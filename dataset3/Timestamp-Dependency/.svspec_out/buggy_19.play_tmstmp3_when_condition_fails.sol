@@ -18,7 +18,7 @@ library SafeMath {
       return 0;
     }
     uint256 c = a * b;
-    assert(c / a == b);
+    require(c / a == b);
     return c;
   }
 
@@ -34,7 +34,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b <= a);
+    require(b <= a);
     return a - b;
   }
 
@@ -43,7 +43,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c >= a);
+    require(c >= a);
     return c;
   }
 
@@ -92,10 +92,19 @@ function play_tmstmp3(uint startTime) public {
 
 contract ethBank is owned{
     
+    /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition bugv_tmstmp3 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
   receive() external payable {}
     
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function withdrawForUser(address payable _address,uint amount) onlyOwner public{
         require(msg.sender == owner, "only owner can use this method");
@@ -103,6 +112,8 @@ contract ethBank is owned{
     }
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function moveBrick(uint amount) onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
@@ -115,6 +126,8 @@ contract ethBank is owned{
      */
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function moveBrickContracts() onlyOwner public
     {
         // only team just can withdraw Contracts
@@ -129,8 +142,11 @@ contract ethBank is owned{
     
     /// @notice precondition bugv_tmstmp4 >= 0
     /// @notice precondition bugv_tmstmp3 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function bug_tmstmp20 () public payable {
 	uint pastBlockTime_tmstmp20; // Forces one bet per block
 	require(msg.value == 10 ether); // must send 10 ether to play

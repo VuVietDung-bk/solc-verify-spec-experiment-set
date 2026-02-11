@@ -21,6 +21,8 @@ contract Crowdfund {
     /// @notice precondition MIN_ADMISSIBLE_STAKE_INCREASE >= 0
     /// @notice precondition forall (address extraVar0) stakes[extraVar0] >= 0
     /// @notice precondition maxStake >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         stakes[msg.sender]=1; // Las inversiones deben de ser mayores que 2 finney, de forma que sólo el owner cumplirá 'stakes[msg.sender] == 1'
         maxStake = 1;         // Abrimos el crowdfunding
@@ -39,6 +41,8 @@ contract Crowdfund {
     /// @notice precondition MIN_ADMISSIBLE_STAKE_INCREASE >= 0
     /// @notice precondition forall (address extraVar0) stakes[extraVar0] >= 0
     /// @notice precondition maxStake >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -76,6 +80,8 @@ contract Crowdfund {
     /// @notice precondition MIN_ADMISSIBLE_STAKE_INCREASE >= 0
     /// @notice precondition forall (address extraVar0) stakes[extraVar0] >= 0
     /// @notice precondition maxStake >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function closeFund() public {
         require(stakes[msg.sender] == 1, unicode"Tú no eres el owner");
         require(maxStake > 0,unicode"El crowdfunding no está abierto");
@@ -94,6 +100,8 @@ contract Crowdfund {
     /// @notice precondition MIN_ADMISSIBLE_STAKE_INCREASE >= 0
     /// @notice precondition forall (address extraVar0) stakes[extraVar0] >= 0
     /// @notice precondition maxStake >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function withdraw() public {
         require(maxStake == 0,unicode"El crowdfunding no está cerrado");
         require(msg.sender == leadInvestor, unicode"Tú no eres el inversor mayoritario");
@@ -108,6 +116,8 @@ contract Crowdfund {
     /// @notice precondition MIN_ADMISSIBLE_STAKE_INCREASE >= 0
     /// @notice precondition forall (address extraVar0) stakes[extraVar0] >= 0
     /// @notice precondition maxStake >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getTotalStake() public view returns (uint256) {
         return address(this).balance;
     }
@@ -121,6 +131,8 @@ contract Crowdfund {
     /// @notice precondition MIN_ADMISSIBLE_STAKE_INCREASE >= 0
     /// @notice precondition forall (address extraVar0) stakes[extraVar0] >= 0
     /// @notice precondition maxStake >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     function checkIntegerFinney(uint amount) public pure returns (bool) {
         return (amount % 10**15 == 0);

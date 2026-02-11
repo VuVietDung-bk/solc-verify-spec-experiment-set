@@ -18,6 +18,8 @@ contract WETH {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -28,6 +30,8 @@ contract WETH {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -39,6 +43,8 @@ contract WETH {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition wad >= 0
     function withdraw(uint256 wad) public {
         require(balanceOf[msg.sender] >= wad);
@@ -50,6 +56,8 @@ contract WETH {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition wad >= 0
     /// @notice postcondition forall (uint wad) wad <= 0 || balanceOf[msg.sender] == __verifier_old_uint(balanceOf[msg.sender]) - wad
     /// @notice postcondition forall (uint wad) __verifier_old_uint(balanceOf[msg.sender]) < wad || balanceOf[msg.sender] == __verifier_old_uint(balanceOf[msg.sender]) - wad
@@ -63,6 +71,8 @@ contract WETH {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function totalSupply() public view returns (uint256) {
         return address(this).balance;
     }
@@ -70,6 +80,8 @@ contract WETH {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition wad >= 0
     function approve(address guy, uint256 wad) public returns (bool) {
         allowance[msg.sender][guy] = wad;
@@ -80,6 +92,8 @@ contract WETH {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition wad >= 0
     function transfer(address dst, uint256 wad) public returns (bool) {
         return transferFrom(msg.sender, dst, wad);
@@ -88,6 +102,8 @@ contract WETH {
     /// @notice precondition decimals >= 0
     /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition wad >= 0
     function transferFrom(
         address src,

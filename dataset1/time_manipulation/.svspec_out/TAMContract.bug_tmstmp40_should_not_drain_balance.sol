@@ -18,6 +18,8 @@ contract TAMCContract {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition startTime >= 0
 function play_tmstmp35(uint startTime) public {
 	uint _vtime = block.timestamp;
@@ -35,6 +37,8 @@ function play_tmstmp35(uint startTime) public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
@@ -60,6 +64,8 @@ function play_tmstmp35(uint startTime) public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function bug_tmstmp33() view public returns (bool) {
     return block.timestamp >= 1546300800;
   }
@@ -74,6 +80,8 @@ function play_tmstmp35(uint startTime) public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition startTime >= 0
 function play_tmstmp27(uint startTime) public {
 	uint _vtime = block.timestamp;
@@ -95,6 +103,8 @@ function play_tmstmp27(uint startTime) public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         balanceOf[msg.sender] = totalSupply;
         emit Transfer(address(0), msg.sender, totalSupply);
@@ -108,6 +118,8 @@ function play_tmstmp27(uint startTime) public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_tmstmp13() view public returns (bool) {
     return block.timestamp >= 1546300800;
   }
@@ -121,6 +133,8 @@ function bug_tmstmp13() view public returns (bool) {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
     function transfer(address to, uint256 value) public returns (bool success) {
         require(balanceOf[msg.sender] >= value);
@@ -144,6 +158,8 @@ uint256 bugv_tmstmp5 = block.timestamp;
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition startTime >= 0
 function play_tmstmp31(uint startTime) public {
 	uint _vtime = block.timestamp;
@@ -161,6 +177,8 @@ function play_tmstmp31(uint startTime) public {
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
     function approve(address spender, uint256 value)
         public
@@ -181,6 +199,8 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
     /// @notice precondition bugv_tmstmp1 >= 0
     /// @notice precondition bugv_tmstmp2 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition value >= 0
     function transferFrom(address from, address to, uint256 value)
         public

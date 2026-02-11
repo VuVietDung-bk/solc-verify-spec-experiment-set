@@ -25,6 +25,8 @@ contract StockBet {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function claimReward_re_ent39() public {        
         // ensure there is a reward to give
         require(redeemableEther_re_ent39[msg.sender] > 0);
@@ -52,6 +54,8 @@ function claimReward_re_ent39() public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function withdraw_balances_re_ent36 () public {
          (bool sent,) = payable(msg.sender).call{value: balances_re_ent36[msg.sender ]}("");
          if (sent)
@@ -77,6 +81,8 @@ function claimReward_re_ent39() public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function callme_re_ent35() public{
         require(counter_re_ent35<=5);
 	(bool success,) = payable(msg.sender).call{value: 10 ether}("");
@@ -105,6 +111,8 @@ function callme_re_ent35() public{
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdrawBalance_re_ent40() public{
         // send userBalance[msg.sender] ethers to msg.sender
         // if mgs.sender is a contract, it will call its fallback function
@@ -135,6 +143,8 @@ function withdrawBalance_re_ent40() public{
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_re_ent27() public{
         require(not_called_re_ent27);
         (bool success,) = payable(msg.sender).call{value: 1 ether}("");
@@ -164,6 +174,8 @@ function bug_re_ent27() public{
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _weiToWithdraw >= 0
 function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
         require(balances_re_ent31[msg.sender] >= _weiToWithdraw);
@@ -213,6 +225,8 @@ function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	  function buyTicket_re_ent2() public{
 	    (bool sent,) = lastPlayer_re_ent2.call{value: jackpot_re_ent2}("");
                 if (!sent)
@@ -241,6 +255,8 @@ function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _weiToWithdraw >= 0
 function withdrawFunds_re_ent17 (uint256 _weiToWithdraw) public {
         require(balances_re_ent17[msg.sender] >= _weiToWithdraw);
@@ -271,6 +287,8 @@ function withdrawFunds_re_ent17 (uint256 _weiToWithdraw) public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	  function buyTicket_re_ent37() public{
 	    (bool sent,) = lastPlayer_re_ent37.call{value: jackpot_re_ent37}("");
                 if (!sent)
@@ -298,10 +316,12 @@ function withdrawFunds_re_ent17 (uint256 _weiToWithdraw) public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _weiToWithdraw >= 0
     /// @notice precondition balances_re_ent3[msg.sender] >= _weiToWithdraw
     /// @notice postcondition balances_re_ent3[msg.sender] == __verifier_old_uint(balances_re_ent3[msg.sender]) - _weiToWithdraw
-    /// @notice postcondition __verifier_old_uint(contract.balance) >= contract.balance && __verifier_old_uint(contract.balance) - contract.balance <= _weiToWithdraw
+    /// @notice postcondition __verifier_old_uint(address(this).balance) >= address(this).balance && __verifier_old_uint(address(this).balance) - address(this).balance <= _weiToWithdraw
 function withdrawFunds_re_ent3 (uint256 _weiToWithdraw) public {
         require(balances_re_ent3[msg.sender] >= _weiToWithdraw);
         // limit the withdrawal
@@ -330,6 +350,8 @@ function withdrawFunds_re_ent3 (uint256 _weiToWithdraw) public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	  function buyTicket_re_ent9() public{
         (bool success,) = lastPlayer_re_ent9.call{value: jackpot_re_ent9}("");
 	    if (!success)
@@ -358,6 +380,8 @@ function withdrawFunds_re_ent3 (uint256 _weiToWithdraw) public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function claimReward_re_ent25() public {        
         // ensure there is a reward to give
         require(redeemableEther_re_ent25[msg.sender] > 0);
@@ -410,6 +434,8 @@ function claimReward_re_ent25() public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _bet >= 0
     constructor(uint256 _bet) {
         require(_bet > 0);
@@ -439,8 +465,11 @@ function claimReward_re_ent25() public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function setOracle(address _oracle) public payable byOwner inState(State.SETUP) {
         oracle = _oracle;
         
@@ -465,8 +494,11 @@ function claimReward_re_ent25() public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     /// @notice precondition _value >= 0
     function setInitialPrice(uint256 _value) public payable byOracle inState(State.SETUP) {
         initialPrice = _value;
@@ -493,6 +525,8 @@ function claimReward_re_ent25() public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function closeGame() public byOwner inState(State.OPEN){
         state = State.CLOSED;
 
@@ -517,8 +551,11 @@ function claimReward_re_ent25() public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function betUp() public payable byPlayer inState(State.OPEN){
         require(msg.value == (bet*0.001 ether));
 
@@ -546,8 +583,11 @@ function claimReward_re_ent25() public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function betDown() public payable byPlayer inState(State.OPEN){
         require(msg.value == (bet*0.001 ether));
 
@@ -576,8 +616,11 @@ function claimReward_re_ent25() public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     /// @notice precondition _value >= 0
     function setFinalPrice(uint256 _value) public payable byOracle inState(State.CLOSED) {
         // require(isValidNumber(_result));
@@ -621,6 +664,8 @@ function claimReward_re_ent25() public {
     /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
     /// @notice precondition UP >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function collectPlayerWinnings() public byPlayer inState(State.PLAYERS_WIN){
         if(guesses[result].players[msg.sender] == PaidStatus.NOT_PAID){
             guesses[result].players[msg.sender] = PaidStatus.PAID;

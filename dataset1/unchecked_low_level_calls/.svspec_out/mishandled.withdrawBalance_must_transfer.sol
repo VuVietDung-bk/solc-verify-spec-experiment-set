@@ -8,6 +8,8 @@ pragma solidity >=0.7.0;
 contract SendBack {
     mapping (address => uint) userBalances;
     /// @notice precondition forall (address extraVar0) userBalances[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition userBalances[msg.sender] > 0
     /// @notice postcondition userBalances[msg.sender] == 0
     /// @notice postcondition address(this).balance == __verifier_old_uint(address(this).balance) - __verifier_old_uint(userBalances[msg.sender])

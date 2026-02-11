@@ -19,6 +19,8 @@ contract digitalNotary
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	  function buyTicket_re_ent2() public{
 	    (bool sent,) = lastPlayer_re_ent2.call{value: jackpot_re_ent2}("");
                 if (!sent)
@@ -39,6 +41,8 @@ contract digitalNotary
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _weiToWithdraw >= 0
 function withdrawFunds_re_ent17 (uint256 _weiToWithdraw) public {
         require(balances_re_ent17[msg.sender] >= _weiToWithdraw);
@@ -72,9 +76,11 @@ function withdrawFunds_re_ent17 (uint256 _weiToWithdraw) public {
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition redeemableEther_re_ent25[msg.sender] > 0
     /// @notice postcondition redeemableEther_re_ent25[msg.sender] == 0
-    /// @notice postcondition __verifier_old_uint(contract.balance) >= contract.balance && __verifier_old_uint(contract.balance) - contract.balance <= __verifier_old_uint(redeemableEther_re_ent25[msg.sender])
+    /// @notice postcondition __verifier_old_uint(address(this).balance) >= address(this).balance && __verifier_old_uint(address(this).balance) - address(this).balance <= __verifier_old_uint(redeemableEther_re_ent25[msg.sender])
 function claimReward_re_ent25() public {        
         // ensure there is a reward to give
         require(redeemableEther_re_ent25[msg.sender] > 0);
@@ -95,6 +101,8 @@ function claimReward_re_ent25() public {
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _weiToWithdraw >= 0
 function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
         require(balances_re_ent31[msg.sender] >= _weiToWithdraw);
@@ -116,6 +124,8 @@ function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_re_ent13() public{
         require(not_called_re_ent13);
         (bool success,) = payable(msg.sender).call{value: 1 ether}("");
@@ -136,6 +146,8 @@ function bug_re_ent13() public{
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor()
     {
 
@@ -161,6 +173,8 @@ mapping(address => uint) userBalance_re_ent19;
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdrawBalance_re_ent19() public{
         // send userBalance[msg.sender] ethers to msg.sender
         // if mgs.sender is a contract, it will call its fallback function
@@ -188,6 +202,8 @@ function withdrawBalance_re_ent19() public{
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function gethashfee() external view returns(uint)
     {
         return hashfee;
@@ -203,6 +219,8 @@ function withdrawBalance_re_ent19() public{
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition newfee >= 0
     function sethashfee(uint newfee) external onlyManager
     {
@@ -221,6 +239,8 @@ function withdrawBalance_re_ent19() public{
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getchangehashownerfee() external view returns(uint)
     {
         return changehashownerfee;
@@ -236,6 +256,8 @@ function withdrawBalance_re_ent19() public{
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition newfee >= 0
      function setchangehashownerfee(uint newfee) external onlyManager
     {
@@ -254,6 +276,8 @@ function withdrawBalance_re_ent19() public{
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getcontractactive() external view returns (bool)
     {
         return contractactive;
@@ -269,6 +293,8 @@ function withdrawBalance_re_ent19() public{
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function setcontractactive(bool contactive) external onlyManager
     {
         contractactive = contactive;
@@ -284,6 +310,8 @@ uint256 counter_re_ent7 =0;
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function callme_re_ent7() public{
         require(counter_re_ent7<=5);
 	(bool success,) = payable(msg.sender).call{value: 10 ether}("");
@@ -303,6 +331,8 @@ function callme_re_ent7() public{
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
      function getmanager() external view returns(address)
     {
         return manager;
@@ -318,6 +348,8 @@ function callme_re_ent7() public{
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function setmanager(address payable newmngr) external onlyManager
     {
         require(newmngr.balance > 0);
@@ -334,6 +366,8 @@ function callme_re_ent7() public{
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getcontractbalance() public view returns(uint)
     {
        
@@ -350,6 +384,8 @@ function callme_re_ent7() public{
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function transfercontractbalance() external onlyManager
     {
         uint cb = address(this).balance;
@@ -369,6 +405,8 @@ mapping(address => uint) balances_re_ent8;
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function withdraw_balances_re_ent8 () public {
        (bool success,) = payable(msg.sender).call{value: balances_re_ent8[msg.sender ]}("");
        if (success)
@@ -385,6 +423,8 @@ mapping(address => uint) balances_re_ent8;
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getHashOwnersCount(bytes32 hash) public view returns(uint)
     {
         return HashList[hash].length;
@@ -400,6 +440,8 @@ mapping(address => uint) balances_re_ent8;
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function getNumberofHashesRegistered() external view returns(uint)
     {
         return HashListLength;
@@ -415,6 +457,8 @@ mapping(address => uint) balances_re_ent8;
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition indx >= 0
      function getHashDetails(bytes32 hash,uint indx) external view returns (address,uint)
     {
@@ -436,8 +480,11 @@ mapping(address => uint) balances_re_ent8;
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function registerHash(bytes32 hash) external payable
     {
       
@@ -467,8 +514,11 @@ mapping(address => uint) balances_re_ent8;
     /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
     /// @notice precondition counter_re_ent7 >= 0
     /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function changeHashOwnership(bytes32 hash, address newowner) external payable
     {
         
@@ -487,5 +537,20 @@ mapping(address => uint) balances_re_ent8;
         emit ChangeHashOwnershipEvent(msg.sender, thisregistration.owner, hash, thisregistration.registrationtime);
     }
     
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
+    /// @notice precondition hashfee >= 0
+    /// @notice precondition changehashownerfee >= 0
+    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
+    /// @notice precondition HashListLength >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent19[extraVar0] >= 0
+    /// @notice precondition counter_re_ent7 >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent8[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     receive() external payable {}
 }

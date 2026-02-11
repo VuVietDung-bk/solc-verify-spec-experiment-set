@@ -7,6 +7,8 @@
 pragma solidity >=0.7.0;
 
 contract Caller {
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice postcondition false
     function callAddress(address a) public {
         // <yes> <report> UNCHECKED_LL_CALLS

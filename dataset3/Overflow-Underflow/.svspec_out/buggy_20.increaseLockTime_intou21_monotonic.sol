@@ -31,9 +31,17 @@ contract Ownable {
 
   mapping(address => uint) public lockTime_intou21;
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _secondsToIncrease >= 0
+    /// @notice postcondition lockTime_intou21[msg.sender] > __verifier_old_uint(lockTime_intou21[msg.sender])
 function increaseLockTime_intou21(uint _secondsToIncrease) public {
         lockTime_intou21[msg.sender] += _secondsToIncrease;  //overflow
     }
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdraw_intou21() public {
         require(block.timestamp > lockTime_intou21[msg.sender]);    
         uint transferValue_intou21 = 10;           
@@ -41,12 +49,19 @@ function withdraw_intou21() public {
     }
   address public owner;
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition p_intou40 >= 0
   function bug_intou40(uint8 p_intou40) public{
     uint8 vundflw1=0;
     vundflw1 = vundflw1 + p_intou40;   // overflow bug
 }
   event OwnerChanged(address oldOwner, address newOwner);
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         owner = msg.sender;
     }
@@ -56,6 +71,9 @@ function withdraw_intou21() public {
         _;
     }
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function changeOwner(address _newOwner) external onlyOwner {
         owner = _newOwner;
         emit OwnerChanged(msg.sender, _newOwner);
@@ -71,11 +89,6 @@ contract Stoppable is Ownable {
 
   mapping(address => uint) balances_intou10;
 
-    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
 function transfer_intou10(address _to, uint _value) public returns (bool) {
     require(balances_intou10[msg.sender] - _value >= 0);  //bug
     balances_intou10[msg.sender] -= _value;  //bug
@@ -90,10 +103,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
         _;
     }
 
-    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function setIsActive(bool _isActive) external onlyOwner {
         if (_isActive == isActive) return;
         isActive = _isActive;

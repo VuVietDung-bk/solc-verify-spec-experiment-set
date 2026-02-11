@@ -32,6 +32,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _decimals >= 0
     /// @notice precondition _initialSupply >= 0
     /// @notice postcondition _totalSupply == __verifier_old_uint(_totalSupply)
@@ -48,6 +50,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice postcondition _totalSupply == __verifier_old_uint(_totalSupply)
     function totalSupply() public view override returns (uint256) {
         return _totalSupply;
@@ -57,6 +61,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice postcondition _totalSupply == __verifier_old_uint(_totalSupply)
     function balanceOf(address account) public view override returns (uint256) {
         return _balances[account];
@@ -66,6 +72,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     /// @notice postcondition _totalSupply == __verifier_old_uint(_totalSupply)
     function transfer(address recipient, uint256 amount) public override returns (bool) {
@@ -77,6 +85,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice postcondition _totalSupply == __verifier_old_uint(_totalSupply)
     function allowance(address owner, address spender) public view override returns (uint256) {
         return _allowances[owner][spender];
@@ -86,6 +96,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     /// @notice postcondition _totalSupply == __verifier_old_uint(_totalSupply)
     function approve(address spender, uint256 amount) public override returns (bool) {
@@ -97,6 +109,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition amount >= 0
     /// @notice postcondition _totalSupply == __verifier_old_uint(_totalSupply)
     function transferFrom(address sender, address recipient, uint256 amount) public override returns (bool) {
@@ -109,6 +123,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition addedValue >= 0
     /// @notice postcondition _totalSupply == __verifier_old_uint(_totalSupply)
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
@@ -120,6 +136,8 @@ contract UniswapToken is IERC20 {
     /// @notice precondition _totalSupply >= 0
     /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition subtractedValue >= 0
     /// @notice postcondition _totalSupply == __verifier_old_uint(_totalSupply)
     function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {

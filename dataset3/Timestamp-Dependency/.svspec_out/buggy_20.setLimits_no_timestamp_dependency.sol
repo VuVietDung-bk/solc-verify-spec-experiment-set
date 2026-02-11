@@ -274,17 +274,6 @@ abstract contract RampInstantPool is Ownable, Stoppable, RampInstantPoolInterfac
 contract RampInstantEthPool is RampInstantPool {
   uint16 internal constant ETH_TYPE_ID = 1;
 
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition ASSET_TYPE >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition _minSwapAmount >= 0
-    /// @notice precondition _maxSwapAmount >= 0
     constructor(
         address payable _swapsContract,
         uint256 _minSwapAmount,
@@ -296,29 +285,10 @@ contract RampInstantEthPool is RampInstantPool {
         )
     {}
 
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition ASSET_TYPE >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
     function availableFunds() public view override returns(uint256) {
         return address(this).balance;
     }
 
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition ASSET_TYPE >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition _amount >= 0
     function withdrawFunds(
         address payable _to,
         uint256 _amount
@@ -327,16 +297,6 @@ contract RampInstantEthPool is RampInstantPool {
         return true;
     }
 
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition ASSET_TYPE >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition _amount >= 0
     function sendFundsToSwap(
         uint256 _amount
     ) public override onlyActive onlySwapsContract isWithinLimits(_amount) returns(bool success) {

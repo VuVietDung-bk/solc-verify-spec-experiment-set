@@ -1,0 +1,149 @@
+==============================================================================
+  SVSPEC RESULT LOG - dataset3/Timestamp-Dependency
+  Flag: (none)
+  Date: 2025
+==============================================================================
+
+Spec files: 10
+Total rules: 32
+Total rule verification time: ~152.40s
+Total end-to-end time: ~166.61s
+
+==============================================================================
+SUMMARY TABLE
+==============================================================================
+  # | Spec File       | Contract           | Rules | Result
+----+-----------------+--------------------+-------+---------------------------
+  1 | buggy_1.spec    | HotDollarsToken    |   2   | PASS (all OK)
+  2 | buggy_5.spec    | TTC                |   2   | PASS (all OK)
+  3 | buggy_19.spec   | ethBank            |   2   | PASS (all OK)
+  4 | buggy_20.spec   | Ownable+Stoppable+RampInstantPool+RampInstantEthPool (split) | 6 | PASS (all OK)
+  5 | buggy_23.spec   | AGR                |   5   | PASS (all OK)
+  6 | buggy_33.spec   | Staking            |   2   | PASS (all OK)
+  7 | buggy_34.spec   | LollypopToken      |   2   | FAIL (precondition errors)
+  8 | buggy_45.spec   | StockBet           |   4   | PASS (all OK)
+  9 | buggy_47.spec   | AcunarIEO          |   4   | ANNOTATION ERROR (undeclared 'tokens')
+ 10 | buggy_50.spec   | digitalNotary      |   4   | PASS (all OK)
+
+==============================================================================
+DETAILED RESULTS
+==============================================================================
+
+--- [1] buggy_1.spec (HotDollarsToken) ---
+Command: svspec buggy_1.sol:HotDollarsToken specification/buggy_1.spec
+Rules: 2
+  1) play_tmstmp39_when_condition_holds -> OK
+  2) play_tmstmp39_when_condition_fails -> OK
+Rule time: 7.33s | End-to-end: 8.50s
+
+--- [2] buggy_5.spec (TTC) ---
+Command: svspec buggy_5.sol:TTC specification/buggy_5.spec
+Rules: 2
+  1) play_tmstmp38_when_condition_holds -> OK
+  2) play_tmstmp38_when_condition_fails -> OK
+Rule time: 9.55s | End-to-end: 10.96s
+
+--- [3] buggy_19.spec (ethBank) ---
+Command: svspec buggy_19.sol:ethBank specification/buggy_19.spec
+Rules: 2
+  1) play_tmstmp3_when_condition_holds -> OK
+  2) play_tmstmp3_when_condition_fails -> OK
+Rule time: 6.40s | End-to-end: 7.53s
+
+--- [4] buggy_20.spec (Ownable+Stoppable+RampInstantPool+RampInstantEthPool, split) ---
+Commands: svspec buggy_20.sol:Ownable specification/buggy_20_ownable.spec
+          svspec buggy_20.sol:Stoppable specification/buggy_20_stoppable.spec
+          svspec buggy_20.sol:RampInstantPool specification/buggy_20_pool.spec
+          svspec buggy_20.sol:RampInstantEthPool specification/buggy_20_ethpool.spec
+Rules: 6
+  1) changeOwner_no_timestamp_dependency (Ownable) -> OK
+  2) setIsActive_no_timestamp_dependency (Stoppable) -> OK
+  3) withdrawAllFunds_no_timestamp_dependency (RampInstantPool) -> OK
+  4) setLimits_no_timestamp_dependency (RampInstantPool) -> OK
+  5) sendFundsToSwap_respects_limits (RampInstantEthPool) -> OK
+  6) sendFundsToSwap_reverts_outside_limits (RampInstantEthPool) -> OK
+Rule time: 40.1s | End-to-end: 40.1s
+
+--- [5] buggy_23.spec (AGR) ---
+Command: svspec buggy_23.sol:AGR specification/buggy_23.spec
+Rules: 5
+  1) play_tmstmp19_sets_winner_at_exact_time -> OK
+  2) play_tmstmp19_no_change_when_time_mismatch -> OK
+  3) transfer_no_timestamp_dependency -> OK
+  4) approve_no_timestamp_dependency -> OK
+  5) burn_no_timestamp_dependency -> OK
+Rule time: 32.48s | End-to-end: 34.10s
+
+--- [6] buggy_33.spec (Staking) ---
+Command: svspec buggy_33.sol:Staking specification/buggy_33.spec
+Rules: 2
+  1) play_tmstmp23_when_condition_holds -> OK
+  2) play_tmstmp23_when_condition_fails -> OK
+Rule time: 9.36s | End-to-end: 10.70s
+
+--- [7] buggy_34.spec (LollypopToken) ---
+Command: svspec buggy_34.sol:LollypopToken specification/buggy_34.spec
+Rules: 2
+  1) bug_tmstmp28_accepts_same_block_calls -> FAIL
+     - LollypopToken::transfer: precondition 'amount >= 0' might not hold
+     - LollypopToken::multiTransfer: precondition errors
+     - LollypopToken::transferFrom: precondition 'amount >= 0' might not hold
+  2) bug_tmstmp9_executes_timestamp_comparison -> FAIL
+     - Same precondition errors on transfer/multiTransfer/transferFrom
+Rule time: 13.39s | End-to-end: 14.99s
+Note: Timestamp rules themselves (bug_tmstmp28, bug_tmstmp9) are OK.
+The failures are in unrelated transfer function precondition annotations.
+
+--- [8] buggy_45.spec (StockBet) ---
+Command: svspec buggy_45.sol:StockBet specification/buggy_45.spec
+Rules: 4
+  1) play_tmstmp27_when_condition_holds -> OK
+  2) play_tmstmp27_when_condition_fails -> OK
+  3) bug_tmstmp13_executes_timestamp_comparison -> OK
+  4) bug_tmstmp8_accepts_same_block_calls -> OK
+Rule time: 15.41s | End-to-end: 16.74s
+
+--- [9] buggy_47.spec (AcunarIEO) ---
+Command: svspec buggy_47.sol:AcunarIEO specification/buggy_47.spec
+Rules: 4
+  1) play_tmstmp19_when_condition_holds -> ANNOTATION ERROR
+     - Undeclared identifier 'tokens' in transfer/transferFrom annotations
+  2) play_tmstmp19_when_condition_fails -> ANNOTATION ERROR
+     - Same undeclared 'tokens' issue
+  3) bug_tmstmp25_executes_timestamp_comparison -> ANNOTATION ERROR
+     - Same issue
+  4) bug_tmstmp20_accepts_same_block_calls -> ANNOTATION ERROR
+     - Same issue
+Rule time: 3.23s | End-to-end: 4.77s
+Note: The 'tokens' parameter is not accessible in annotation context.
+
+--- [10] buggy_50.spec (digitalNotary) ---
+Command: svspec buggy_50.sol:digitalNotary specification/buggy_50.spec
+Rules: 4
+  1) play_tmstmp19_when_condition_holds -> OK
+  2) play_tmstmp19_when_condition_fails -> OK
+  3) bug_tmstmp9_executes_timestamp_comparison -> OK
+  4) bug_tmstmp20_accepts_same_block_calls -> OK
+Rule time: 19.94s | End-to-end: 21.54s
+
+==============================================================================
+OVERALL STATISTICS
+==============================================================================
+  Rule-level: 32 rules total (not counting annotation error rules)
+    - OK:               26 rules (81%)
+    - FAIL:              2 rules (6%)  - precondition errors in LollypopToken
+    - ANNOTATION ERROR:  4 rules (13%) - AcunarIEO undeclared 'tokens'
+
+  Spec-level: 10 specs total
+    - PASS (all rules OK):    8/10 (80%)
+    - FAIL:                   1/10 (10%) - buggy_34 (LollypopToken preconditions)
+    - ANNOTATION ERROR:       1/10 (10%) - buggy_47 (AcunarIEO)
+
+  Observation: Timestamp-dependency bugs are difficult to detect with
+  solc-verify's annotation-based approach. The play_tmstmp and bug_tmstmp
+  functions pass verification because the timestamp manipulation patterns
+  don't violate the specified postconditions (which primarily check for
+  winner assignment and condition evaluation). The tool successfully verifies
+  the functional correctness of the timestamp-using code but does not flag
+  the use of block.timestamp as inherently dangerous.
+==============================================================================
