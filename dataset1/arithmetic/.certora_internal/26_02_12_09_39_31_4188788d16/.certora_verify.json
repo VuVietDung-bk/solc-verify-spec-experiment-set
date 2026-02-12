@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "IntegerOverflowMappingSym1",
+    "specfile": "certora_specification/integer_overflow_mapping_sym_1.cvl",
+    "specfileOrigRelpath": "certora_specification/integer_overflow_mapping_sym_1.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

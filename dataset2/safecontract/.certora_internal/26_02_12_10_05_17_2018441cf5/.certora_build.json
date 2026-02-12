@@ -1,0 +1,1205 @@
+{
+    "WETH9_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 623,
+                            "size": 65
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [
+                            "guy",
+                            "wad"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 1209,
+                            "size": 177
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 552,
+                            "size": 65
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 266,
+                            "size": 27
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "deposit",
+                        "notpayable": false,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d0e30db0",
+                        "sourceBytes": {
+                            "begin": 754,
+                            "size": 130
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 183,
+                            "size": 40
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 229,
+                            "size": 31
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 1108,
+                            "size": 95
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [
+                            "dst",
+                            "wad"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 1392,
+                            "size": 121
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [
+                            "src",
+                            "dst",
+                            "wad"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 1519,
+                            "size": 530
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "withdraw",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [
+                            "wad"
+                        ],
+                        "returns": [],
+                        "sighash": "2e1a7d4d",
+                        "sourceBytes": {
+                            "begin": 890,
+                            "size": 212
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "6080604052600436106100a05760003560e01c8063313ce56711610064578063313ce567146102ac57806370a08231146102da57806395d89b411461033f578063a9059cbb146103cf578063d0e30db014610440578063dd62ed3e1461044a576100af565b806306fdde03146100b4578063095ea7b31461014457806318160ddd146101b557806323b872dd146101e05780632e1a7d4d14610271576100af565b366100af576100ad6104cf565b005b600080fd5b3480156100c057600080fd5b506100c96105dc565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101095780820151818401526020810190506100ee565b50505050905090810190601f1680156101365780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561015057600080fd5b5061019d6004803603604081101561016757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061067a565b60405180821515815260200191505060405180910390f35b3480156101c157600080fd5b506101ca6107ff565b6040518082815260200191505060405180910390f35b3480156101ec57600080fd5b506102596004803603606081101561020357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610877565b60405180821515815260200191505060405180910390f35b34801561027d57600080fd5b506102aa6004803603602081101561029457600080fd5b8101908080359060200190929190505050610c53565b005b3480156102b857600080fd5b506102c1610e17565b604051808260ff16815260200191505060405180910390f35b3480156102e657600080fd5b50610329600480360360208110156102fd57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610e2a565b6040518082815260200191505060405180910390f35b34801561034b57600080fd5b50610354610e42565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610394578082015181840152602081019050610379565b50505050905090810190601f1680156103c15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156103db57600080fd5b50610428600480360360408110156103f257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610ee0565b60405180821515815260200191505060405180910390f35b6104486104cf565b005b34801561045657600080fd5b506104b96004803603604081101561046d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610f88565b6040518082815260200191505060405180910390f35b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000045234600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055503373ffffffffffffffffffffffffffffffffffffffff167fe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c346040518082815260200191505060405180910390a2565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106725780601f1061064757610100808354040283529160200191610672565b820191906000526020600020905b81548152906001019060200180831161065557829003601f168201915b505050505081565b600064f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000260015281600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b600064f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100045247905090565b600064f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000560025281600360008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054101561095857600080fd5b3373ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff1614158015610a3057507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff600460008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205414155b15610b495781600460008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610abe57600080fd5b81600460008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055505b81600360008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190509392505050565b64f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000460005280600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610d3257600080fd5b80600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055503373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610dc5573d6000803e3d6000fd5b503373ffffffffffffffffffffffffffffffffffffffff167f7fcf532c15f0a6db0bd6d0e038bea71d30d808c7d98cb3bf7268a95bf5081b65826040518082815260200191505060405180910390a250565b600260009054906101000a900460ff1681565b60036020528060005260406000206000915090505481565b60018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610ed85780601f10610ead57610100808354040283529160200191610ed8565b820191906000526020600020905b815481529060010190602001808311610ebb57829003601f168201915b505050505081565b600064f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003600152610f80338484610877565b905092915050565b600460205281600052604060002060205280600052604060002060009150915050548156fea2646970667358221220303378c83f9779abaf0f2cf9e1f720d294ac2baf0f8857ca5f25599a480d469764736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "60806040526040518060400160405280600d81526020017f57726170706564204574686572000000000000000000000000000000000000008152506000908051906020019062000051929190620000d0565b506040518060400160405280600481526020017f5745544800000000000000000000000000000000000000000000000000000000815250600190805190602001906200009f929190620000d0565b506012600260006101000a81548160ff021916908360ff160217905550348015620000c957600080fd5b5062000186565b828054600181600116156101000203166002900490600052602060002090601f01602090048101928262000108576000855562000154565b82601f106200012357805160ff191683800117855562000154565b8280016001018555821562000154579182015b828111156200015357825182559160200191906001019062000136565b5b50905062000163919062000167565b5090565b5b808211156200018257600081600090555060010162000168565b5090565b610fe380620001966000396000f3fe6080604052600436106100a05760003560e01c8063313ce56711610064578063313ce567146102ac57806370a08231146102da57806395d89b411461033f578063a9059cbb146103cf578063d0e30db014610440578063dd62ed3e1461044a576100af565b806306fdde03146100b4578063095ea7b31461014457806318160ddd146101b557806323b872dd146101e05780632e1a7d4d14610271576100af565b366100af576100ad6104cf565b005b600080fd5b3480156100c057600080fd5b506100c96105dc565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101095780820151818401526020810190506100ee565b50505050905090810190601f1680156101365780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561015057600080fd5b5061019d6004803603604081101561016757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061067a565b60405180821515815260200191505060405180910390f35b3480156101c157600080fd5b506101ca6107ff565b6040518082815260200191505060405180910390f35b3480156101ec57600080fd5b506102596004803603606081101561020357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610877565b60405180821515815260200191505060405180910390f35b34801561027d57600080fd5b506102aa6004803603602081101561029457600080fd5b8101908080359060200190929190505050610c53565b005b3480156102b857600080fd5b506102c1610e17565b604051808260ff16815260200191505060405180910390f35b3480156102e657600080fd5b50610329600480360360208110156102fd57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610e2a565b6040518082815260200191505060405180910390f35b34801561034b57600080fd5b50610354610e42565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610394578082015181840152602081019050610379565b50505050905090810190601f1680156103c15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156103db57600080fd5b50610428600480360360408110156103f257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610ee0565b60405180821515815260200191505060405180910390f35b6104486104cf565b005b34801561045657600080fd5b506104b96004803603604081101561046d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610f88565b6040518082815260200191505060405180910390f35b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000045234600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055503373ffffffffffffffffffffffffffffffffffffffff167fe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c346040518082815260200191505060405180910390a2565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106725780601f1061064757610100808354040283529160200191610672565b820191906000526020600020905b81548152906001019060200180831161065557829003601f168201915b505050505081565b600064f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000260015281600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b600064f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100045247905090565b600064f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000560025281600360008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054101561095857600080fd5b3373ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff1614158015610a3057507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff600460008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205414155b15610b495781600460008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610abe57600080fd5b81600460008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055505b81600360008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190509392505050565b64f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000460005280600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610d3257600080fd5b80600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055503373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610dc5573d6000803e3d6000fd5b503373ffffffffffffffffffffffffffffffffffffffff167f7fcf532c15f0a6db0bd6d0e038bea71d30d808c7d98cb3bf7268a95bf5081b65826040518082815260200191505060405180910390a250565b600260009054906101000a900460ff1681565b60036020528060005260406000206000915090505481565b60018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610ed85780601f10610ead57610100808354040283529160200191610ed8565b820191906000526020600020905b815481529060010190602001808311610ebb57829003601f168201915b505050505081565b600064f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003600152610f80338484610877565b905092915050565b600460205281600052604060002060205280600052604060002060009150915050548156fea2646970667358221220303378c83f9779abaf0f2cf9e1f720d294ac2baf0f8857ca5f25599a480d469764736f6c63430007060033",
+                "constructorSrcmap": "162:3758:0:-:0;;;183:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;229:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;291:2;266:27;;;;;;;;;;;;;;;;;;;;162:3758;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+                "extensionContracts": [],
+                "file": "WETH9.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "WETH9.sol|WETH9",
+                        "declaringContract": "WETH9",
+                        "method": {
+                            "contractName": "WETH9",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "deposit",
+                            "notpayable": false,
+                            "originalFile": "WETH9.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "d0e30db0",
+                            "sourceBytes": {
+                                "begin": 754,
+                                "size": 130
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "WETH9.sol|WETH9",
+                        "declaringContract": "WETH9",
+                        "method": {
+                            "contractName": "WETH9",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "totalSupply",
+                            "notpayable": true,
+                            "originalFile": "WETH9.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "18160ddd",
+                            "sourceBytes": {
+                                "begin": 1108,
+                                "size": 95
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "WETH9.sol|WETH9",
+                        "declaringContract": "WETH9",
+                        "method": {
+                            "contractName": "WETH9",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "approve",
+                            "notpayable": true,
+                            "originalFile": "WETH9.sol",
+                            "paramNames": [
+                                "guy",
+                                "wad"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "095ea7b3",
+                            "sourceBytes": {
+                                "begin": 1209,
+                                "size": 177
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50003": {
+                        "canonicalId": "WETH9.sol|WETH9",
+                        "declaringContract": "WETH9",
+                        "method": {
+                            "contractName": "WETH9",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transfer",
+                            "notpayable": true,
+                            "originalFile": "WETH9.sol",
+                            "paramNames": [
+                                "dst",
+                                "wad"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "a9059cbb",
+                            "sourceBytes": {
+                                "begin": 1392,
+                                "size": 121
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50004": {
+                        "canonicalId": "WETH9.sol|WETH9",
+                        "declaringContract": "WETH9",
+                        "method": {
+                            "contractName": "WETH9",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "withdraw",
+                            "notpayable": true,
+                            "originalFile": "WETH9.sol",
+                            "paramNames": [
+                                "wad"
+                            ],
+                            "returns": [],
+                            "sighash": "2e1a7d4d",
+                            "sourceBytes": {
+                                "begin": 890,
+                                "size": 212
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50005": {
+                        "canonicalId": "WETH9.sol|WETH9",
+                        "declaringContract": "WETH9",
+                        "method": {
+                            "contractName": "WETH9",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transferFrom",
+                            "notpayable": true,
+                            "originalFile": "WETH9.sol",
+                            "paramNames": [
+                                "src",
+                                "dst",
+                                "wad"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "23b872dd",
+                            "sourceBytes": {
+                                "begin": 1519,
+                                "size": 530
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {},
+                "methods": [
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 229,
+                            "size": 31
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 183,
+                            "size": 40
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 266,
+                            "size": 27
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [
+                            "src",
+                            "dst",
+                            "wad"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 1519,
+                            "size": 530
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "withdraw",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [
+                            "wad"
+                        ],
+                        "returns": [],
+                        "sighash": "2e1a7d4d",
+                        "sourceBytes": {
+                            "begin": 890,
+                            "size": 212
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "deposit",
+                        "notpayable": false,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d0e30db0",
+                        "sourceBytes": {
+                            "begin": 754,
+                            "size": 130
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 552,
+                            "size": 65
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [
+                            "guy",
+                            "wad"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 1209,
+                            "size": 177
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [
+                            "dst",
+                            "wad"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 1392,
+                            "size": 121
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 1108,
+                            "size": 95
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WETH9",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "WETH9.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 623,
+                            "size": 65
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "WETH9",
+                "original_file": "WETH9.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 162,
+                    "size": 1889
+                },
+                "srcmap": "162:3758:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;732:9;:7;:9::i;:::-;162:3758;;;;;183:40;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2063:515;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;1704:353;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;3049:869;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;1148:550;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;266:27;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;552:65;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;229:31;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2584:459;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;754:388;;;:::i;:::-;;623:65;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;754:388;875:13;807:66;800:89;965:1;897:66;890:77;1043:1;975:66;968:77;1081:9;1056;:21;1066:10;1056:21;;;;;;;;;;;;;;;;:34;;;;;;;;;;;1113:10;1105:30;;;1125:9;1105:30;;;;;;;;;;;;;;;;;;754:388::o;183:40::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;2063:515::-;2119:4;2212:13;2144:66;2137:89;2302:1;2234:66;2227:77;2380:1;2312:66;2305:77;2458:3;2390:66;2383:79;2502:3;2473:9;:21;2483:10;2473:21;;;;;;;;;;;;;;;:26;2495:3;2473:26;;;;;;;;;;;;;;;:32;;;;2541:3;2520:30;;2529:10;2520:30;;;2546:3;2520:30;;;;;;;;;;;;;;;;;;2567:4;2560:11;;2063:515;;;;:::o;1704:353::-;1748:4;1841:13;1773:66;1766:89;1931:1;1863:66;1856:77;2009:1;1941:66;1934:77;2029:21;2022:28;;1704:353;:::o;3049:869::-;3139:4;3236:13;3168:66;3161:89;3326:1;3258:66;3251:77;3404:2;3336:66;3329:78;3483:3;3415:66;3408:79;3524:3;3506:9;:14;3516:3;3506:14;;;;;;;;;;;;;;;;:21;;3498:30;;;;;;3550:10;3543:17;;:3;:17;;;;:129;;;;;3594:78;3564:9;:14;3574:3;3564:14;;;;;;;;;;;;;;;:26;3579:10;3564:26;;;;;;;;;;;;;;;;:108;;3543:129;3539:249;;;3726:3;3696:9;:14;3706:3;3696:14;;;;;;;;;;;;;;;:26;3711:10;3696:26;;;;;;;;;;;;;;;;:33;;3688:42;;;;;;3774:3;3744:9;:14;3754:3;3744:14;;;;;;;;;;;;;;;:26;3759:10;3744:26;;;;;;;;;;;;;;;;:33;;;;;;;;;;;3539:249;3816:3;3798:9;:14;3808:3;3798:14;;;;;;;;;;;;;;;;:21;;;;;;;;;;;3847:3;3829:9;:14;3839:3;3829:14;;;;;;;;;;;;;;;;:21;;;;;;;;;;;3880:3;3866:23;;3875:3;3866:23;;;3885:3;3866:23;;;;;;;;;;;;;;;;;;3907:4;3900:11;;3049:869;;;;;:::o;1148:550::-;1270:13;1202:66;1195:89;1360:1;1292:66;1285:77;1438:1;1370:66;1363:77;1516:3;1448:66;1441:79;1564:3;1539:9;:21;1549:10;1539:21;;;;;;;;;;;;;;;;:28;;1531:37;;;;;;1603:3;1578:9;:21;1588:10;1578:21;;;;;;;;;;;;;;;;:28;;;;;;;;;;;1624:10;1616:28;;:33;1645:3;1616:33;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1675:10;1664:27;;;1687:3;1664:27;;;;;;;;;;;;;;;;;;1148:550;:::o;266:27::-;;;;;;;;;;;;;:::o;552:65::-;;;;;;;;;;;;;;;;;:::o;229:31::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;2584:459::-;2641:4;2734:13;2666:66;2659:89;2824:1;2756:66;2749:77;2902:1;2834:66;2827:77;2980:3;2912:66;2905:79;3002:34;3015:10;3027:3;3032;3002:12;:34::i;:::-;2995:41;;2584:459;;;;:::o;623:65::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 4,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_17_2018441cf5/.certora_sources/WETH9.sol:WETH9",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "name",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_string_storage"
+                        },
+                        {
+                            "astId": 7,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_17_2018441cf5/.certora_sources/WETH9.sol:WETH9",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "symbol",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_string_storage"
+                        },
+                        {
+                            "astId": 10,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_17_2018441cf5/.certora_sources/WETH9.sol:WETH9",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "1",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint8",
+                                "type": "Primitive"
+                            },
+                            "label": "decimals",
+                            "offset": 0,
+                            "slot": "2",
+                            "type": "t_uint8"
+                        },
+                        {
+                            "astId": 42,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_17_2018441cf5/.certora_sources/WETH9.sol:WETH9",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "balanceOf",
+                            "offset": 0,
+                            "slot": "3",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 48,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_17_2018441cf5/.certora_sources/WETH9.sol:WETH9",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "mappingKeyType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "20",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    },
+                                    "mappingValueType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "32",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    },
+                                    "type": "Mapping"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "allowance",
+                            "offset": 0,
+                            "slot": "4",
+                            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => mapping(address => uint256))",
+                            "numberOfBytes": "32",
+                            "value": "t_mapping(t_address,t_uint256)"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_string_storage": {
+                            "encoding": "bytes",
+                            "label": "string",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint8": {
+                            "encoding": "inplace",
+                            "label": "uint8",
+                            "numberOfBytes": "1"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "WETH9",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "WETH9.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "WETH9.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

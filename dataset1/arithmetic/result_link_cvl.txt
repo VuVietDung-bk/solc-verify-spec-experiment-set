@@ -1,0 +1,55 @@
+# result_link_cvl.txt
+# Generated: 2026-02-12
+
+[1] CMD: certoraRun insecure_transfer.sol:IntegerOverflowAdd --verify IntegerOverflowAdd:certora_specification/insecure_transfer.cvl
+[1] LINK: https://prover.certora.com/output/1696952/941a834dc27d45979544c34ffe6587a5
+
+[2] CMD: certoraRun integer_overflow_1.sol:Overflow --verify Overflow:certora_specification/integer_overflow_1.cvl
+[2] ERROR
+
+[3] CMD: certoraRun integer_overflow_add.sol:IntegerOverflowAdd --verify IntegerOverflowAdd:certora_specification/integer_overflow_add.cvl
+[3] LINK: https://prover.certora.com/output/1696952/565d0592014c434e90abecc37ea5e352
+
+[4] CMD: certoraRun integer_overflow_benign_1.sol:IntegerOverflowBenign1 --verify IntegerOverflowBenign1:certora_specification/integer_overflow_benign_1.cvl
+[4] LINK: https://prover.certora.com/output/1696952/13f7059224d84b12bb27ae526c851027
+
+[5] CMD: certoraRun integer_overflow_mapping_sym_1.sol:IntegerOverflowMappingSym1 --verify IntegerOverflowMappingSym1:certora_specification/integer_overflow_mapping_sym_1.cvl
+[5] LINK: https://prover.certora.com/output/1696952/348992cc96ba4e579e54918eed44a3cb
+
+[6] CMD: certoraRun integer_overflow_minimal.sol:IntegerOverflowMinimal --verify IntegerOverflowMinimal:certora_specification/integer_overflow_minimal.cvl
+[6] LINK: https://prover.certora.com/output/1696952/2fc29956012840c9b00c75dbe4986e2e
+
+[7] CMD: certoraRun integer_overflow_mul.sol:IntegerOverflowMul --verify IntegerOverflowMul:certora_specification/integer_overflow_mul.cvl
+[7] LINK: https://prover.certora.com/output/1696952/e966855f5b8546eabe3bcab886f0b8e4
+
+[8] CMD: certoraRun integer_overflow_multitx_multifunc_feasible.sol:IntegerOverflowMultiTxMultiFuncFeasible --verify IntegerOverflowMultiTxMultiFuncFeasible:certora_specification/integer_overflow_multitx_multifunc_feasible.cvl
+[8] LINK: https://prover.certora.com/output/1696952/e7ffa7ff9187471ba74a5044cfce8ff3
+
+[9] CMD: certoraRun integer_overflow_multitx_onefunc_feasible.sol:IntegerOverflowMultiTxOneFuncFeasible --verify IntegerOverflowMultiTxOneFuncFeasible:certora_specification/integer_overflow_multitx_onefunc_feasible.cvl
+[9] LINK: https://prover.certora.com/output/1696952/0d19b76f1fc74a4e9115515783831f7c
+
+[10] CMD: certoraRun overflow_simple_add.sol:Overflow_Add --verify Overflow_Add:certora_specification/overflow_simple_add.cvl
+[10] LINK: https://prover.certora.com/output/1696952/b573a7e1d32e43c8aa3a76a476442234
+
+[11] CMD: certoraRun overflow_single_tx.sol:IntegerOverflowSingleTransaction --verify IntegerOverflowSingleTransaction:certora_specification/overflow_single_tx.cvl
+[11] LINK: https://prover.certora.com/output/1696952/c0e6d7c7244a49ccb69d69f0312d1b22
+
+[12] CMD: certoraRun timelock.sol:TimeLock --verify TimeLock:certora_specification/timelock.cvl
+[12] LINK: https://prover.certora.com/output/1696952/a60d672be24e43f7860533da82be6f96
+
+[13] CMD: certoraRun token.sol:Token --verify Token:certora_specification/token.cvl
+[13] LINK: https://prover.certora.com/output/1696952/6d648e6cdad647f7a4f88a375b7bba6f
+
+[14] CMD: certoraRun tokensalechallenge.sol:TokenSaleChallenge --verify TokenSaleChallenge:certora_specification/tokensalechallenge.cvl
+[14] LINK: https://prover.certora.com/output/1696952/56a8f517a22c4184ba15054ec03271e8
+
+
+
+
+
+
+
+
+
+
+

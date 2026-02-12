@@ -1,0 +1,227 @@
+{
+    "IntegerOverflowAdd_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "IntegerOverflowAdd",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "count",
+                        "notpayable": true,
+                        "originalFile": "integer_overflow_add.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "06661abd",
+                        "sourceBytes": {
+                            "begin": 332,
+                            "size": 21
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "IntegerOverflowAdd",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "run",
+                        "notpayable": true,
+                        "originalFile": "integer_overflow_add.sol",
+                        "paramNames": [
+                            "input"
+                        ],
+                        "returns": [],
+                        "sighash": "a444f5e9",
+                        "sourceBytes": {
+                            "begin": 360,
+                            "size": 103
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561001057600080fd5b50600436106100365760003560e01c806306661abd1461003b578063a444f5e914610059575b600080fd5b610043610087565b6040518082815260200191505060405180910390f35b6100856004803603602081101561006f57600080fd5b810190808035906020019092919050505061008d565b005b60005481565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00006000528060008082825401925050819055505056fea2646970667358221220d0e2c5ff44704a154009b780f570a6f01c6f99a6ebb7400e1f68987b0922bfb764736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "6080604052600160005534801561001557600080fd5b50610168806100256000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806306661abd1461003b578063a444f5e914610059575b600080fd5b610043610087565b6040518082815260200191505060405180910390f35b6100856004803603602081101561006f57600080fd5b810190808035906020019092919050505061008d565b005b60005481565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00006000528060008082825401925050819055505056fea2646970667358221220d0e2c5ff44704a154009b780f570a6f01c6f99a6ebb7400e1f68987b0922bfb764736f6c63430007060033",
+                "constructorSrcmap": "298:507:0:-:0;;;352:1;332:21;;298:507;;;;;;;;;;;;;;;;",
+                "extensionContracts": [],
+                "file": "integer_overflow_add.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "integer_overflow_add.sol|IntegerOverflowAdd",
+                        "declaringContract": "IntegerOverflowAdd",
+                        "method": {
+                            "contractName": "IntegerOverflowAdd",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "run",
+                            "notpayable": true,
+                            "originalFile": "integer_overflow_add.sol",
+                            "paramNames": [
+                                "input"
+                            ],
+                            "returns": [],
+                            "sighash": "a444f5e9",
+                            "sourceBytes": {
+                                "begin": 360,
+                                "size": 103
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {},
+                "methods": [
+                    {
+                        "contractName": "IntegerOverflowAdd",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "run",
+                        "notpayable": true,
+                        "originalFile": "integer_overflow_add.sol",
+                        "paramNames": [
+                            "input"
+                        ],
+                        "returns": [],
+                        "sighash": "a444f5e9",
+                        "sourceBytes": {
+                            "begin": 360,
+                            "size": 103
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "IntegerOverflowAdd",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "count",
+                        "notpayable": true,
+                        "originalFile": "integer_overflow_add.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "06661abd",
+                        "sourceBytes": {
+                            "begin": 332,
+                            "size": 21
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "IntegerOverflowAdd",
+                "original_file": "integer_overflow_add.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 298,
+                    "size": 167
+                },
+                "srcmap": "298:507:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;332:21;;;:::i;:::-;;;;;;;;;;;;;;;;;;;360:443;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;332:21;;;;:::o;360:443::-;482:13;414:66;407:89;572:1;504:66;497:77;650:1;582:66;575:77;728:5;660:66;653:81;791:5;782;;:14;;;;;;;;;;;360:443;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 4,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/arithmetic/.certora_internal/26_02_12_09_37_35_0207387a5f/.certora_sources/integer_overflow_add.sol:IntegerOverflowAdd",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "count",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_uint256"
+                        }
+                    ],
+                    "types": {
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "IntegerOverflowAdd",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "integer_overflow_add.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "integer_overflow_add.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

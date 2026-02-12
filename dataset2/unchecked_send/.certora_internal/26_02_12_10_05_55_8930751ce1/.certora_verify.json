@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "B",
+    "specfile": "certora_specification/0xf29ebe930a539a60279ace72c707cba851a57707.cvl",
+    "specfileOrigRelpath": "certora_specification/0xf29ebe930a539a60279ace72c707cba851a57707.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

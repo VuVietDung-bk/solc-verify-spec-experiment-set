@@ -1,0 +1,69 @@
+Saving last configuration file to .certora_internal/26_02_12_10_04_13_004912858a/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['curve.sol:Curve'], 'package_version_for_build_cache': 'certora-cli 8.8.0', 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_config
+In /root/solc-verify-spec/experiments/dataset2/safecontract/certora_specification/Curve.cvl, found the imports: []
+copying spec file /root/solc-verify-spec/experiments/dataset2/safecontract/certora_specification/Curve.cvl to /root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/.0_Curve.cvl.spec
+writing /root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_verify.json
+
+building file curve.sol
+Running cmd solc --version
+stdout, stderr = .certora_internal/26_02_12_10_04_13_004912858a/.certora_config/version_check_solc.stdout, .certora_internal/26_02_12_10_04_13_004912858a/.certora_config/version_check_solc.stderr
+Exitcode 0
+Solc run solc --version time: 0.1075
+Running cmd solc -o ".certora_internal/26_02_12_10_04_13_004912858a/.certora_config/curve.sol_0/" --overwrite --allow-paths ".",. --standard-json
+stdout, stderr = .certora_internal/26_02_12_10_04_13_004912858a/.certora_config/curve.sol_0.standard.stdout.json, .certora_internal/26_02_12_10_04_13_004912858a/.certora_config/curve.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_12_10_04_13_004912858a/.certora_config/curve.sol_0/" --overwrite --allow-paths ".",. --standard-json time: 0.1105
+reading standard json data from .certora_internal/26_02_12_10_04_13_004912858a/.certora_config/curve.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset2/safecontract/curve.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset2/safecontract/curve.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset2/safecontract/curve.sol'])
+Contracts in curve.sol_0 (file curve.sol): ['Curve', 'IERC20']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset2/safecontract/curve.sol:Curve'), (274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset2/safecontract/curve.sol:IERC20')]
+Report source list={0: 'curve.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset2/safecontract/curve.sol relative to /root/solc-verify-spec/experiments/dataset2/safecontract
+Working on contract Curve
+Working on contract Curve
+Working on contract IERC20
+Working on contract IERC20
+For contracts of primary Curve
+finding primary contract address of /root/solc-verify-spec/experiments/dataset2/safecontract/curve.sol:Curve in [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset2/safecontract/curve.sol:Curve'), (274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset2/safecontract/curve.sol:IERC20')]
+Contracts in SDC curve.sol_0: ['Curve', 'IERC20']
+Building source tree
+Copying /root/solc-verify-spec/experiments/dataset2/safecontract/certora_specification/Curve.cvl to .certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/certora_specification/Curve.cvl
+Copying /root/solc-verify-spec/experiments/dataset2/safecontract/curve.sol to .certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/curve.sol
+Report source list={0: 'curve.sol'}
+Backing up current .certora_sources to .certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/.pre_autofinders.0
+Running cmd solc -o ".certora_internal/26_02_12_10_04_13_004912858a/.certora_config/curve.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources",. --standard-json
+stdout, stderr = .certora_internal/26_02_12_10_04_13_004912858a/.certora_config/curve.sol_0.standard.stdout.json, .certora_internal/26_02_12_10_04_13_004912858a/.certora_config/curve.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_12_10_04_13_004912858a/.certora_config/curve.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources",. --standard-json time: 0.1153
+reading standard json data from .certora_internal/26_02_12_10_04_13_004912858a/.certora_config/curve.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/curve.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/curve.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/curve.sol'])
+Contracts in curve.sol_0 (file .certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/curve.sol): ['Curve', 'IERC20']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587202, '/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/curve.sol:Curve'), (274184521717934524641157099916833587203, '/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/curve.sol:IERC20')]
+Report source list={0: 'curve.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/curve.sol relative to .certora_internal/26_02_12_10_04_13_004912858a/.certora_sources
+Working on contract Curve
+Working on contract Curve
+Working on contract IERC20
+Working on contract IERC20
+For contracts of primary Curve
+finding primary contract address of /root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/curve.sol:Curve in [(274184521717934524641157099916833587202, '/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/curve.sol:Curve'), (274184521717934524641157099916833587203, '/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/curve.sol:IERC20')]
+Contracts in SDC curve.sol_0: ['Curve', 'IERC20']
+Backing up instrumented .certora_sources to .certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/.post_autofinders.0
+Rolling back .certora_sources to .certora_internal/26_02_12_10_04_13_004912858a/.certora_sources/.pre_autofinders.0 version
+Libraries to add = []
+writing file /root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_build.json
+writing file /root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_build_output_props.json
+writing /root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_04_13_004912858a/.certora_verify.json
+Failed to run Certora Prover typechecker locally.
+Please check the errors below for problems in the specifications (.spec files) or the prover_args defined in the .conf file.
+[main] ERROR ALWAYS - Found errors in certora_specification/Curve.cvl:
+[main] ERROR ALWAYS - Error in spec file (Curve.cvl:15:5): assigning 'amountIn * (1000 - fee)' (of type mathint) to type uint256 may cause overflow. Consider declaring [amountInWithFee] with type mathint
+[main] ERROR ALWAYS - Error in spec file (Curve.cvl:16:5): assigning 'amountInWithFee * outPoolBefore * outWeight' (of type mathint) to type uint256 may cause overflow. Consider declaring [expectedOutNumerator] with type mathint
+[main] ERROR ALWAYS - Error in spec file (Curve.cvl:17:5): assigning 'inPoolBefore * inWeight * 1000 + amountInWithFee * inWeight' (of type mathint) to type uint256 may cause overflow. Consider declaring [expectedOutDenominator] with type mathint
+[main] ERROR ALWAYS - Error in spec file (Curve.cvl:18:5): assigning 'expectedOutNumerator / expectedOutDenominator' (of type mathint) to type uint256 may cause overflow. Consider declaring [expectedOut] with type mathint

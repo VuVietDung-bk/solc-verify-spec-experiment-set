@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "DosGas",
+    "specfile": "certora_specification/dos_address.cvl",
+    "specfileOrigRelpath": "certora_specification/dos_address.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

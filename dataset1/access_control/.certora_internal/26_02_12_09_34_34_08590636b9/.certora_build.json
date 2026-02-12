@@ -1,0 +1,428 @@
+{
+    "Wallet_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "Wallet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "deposit",
+                        "notpayable": false,
+                        "originalFile": "wallet_03_wrong_constructor.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d0e30db0",
+                        "sourceBytes": {
+                            "begin": 540,
+                            "size": 161
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Wallet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "initWallet",
+                        "notpayable": true,
+                        "originalFile": "wallet_03_wrong_constructor.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "3e326048",
+                        "sourceBytes": {
+                            "begin": 465,
+                            "size": 68
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Wallet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "migrateTo",
+                        "notpayable": true,
+                        "originalFile": "wallet_03_wrong_constructor.sol",
+                        "paramNames": [
+                            "to"
+                        ],
+                        "returns": [],
+                        "sighash": "4ddaf8f2",
+                        "sourceBytes": {
+                            "begin": 983,
+                            "size": 141
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Wallet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "withdraw",
+                        "notpayable": true,
+                        "originalFile": "wallet_03_wrong_constructor.sol",
+                        "paramNames": [
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "2e1a7d4d",
+                        "sourceBytes": {
+                            "begin": 708,
+                            "size": 187
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "60806040526004361061003f5760003560e01c80632e1a7d4d146100445780633e3260481461007f5780634ddaf8f214610096578063d0e30db0146100e7575b600080fd5b34801561005057600080fd5b5061007d6004803603602081101561006757600080fd5b81019080803590602001909291905050506100f1565b005b34801561008b57600080fd5b50610094610267565b005b3480156100a257600080fd5b506100e5600480360360208110156100b957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610319565b005b6100ef61044e565b005b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002600052600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020548111156101d057600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610216573d6000803e3d6000fd5b5080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555050565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000452336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00016000523373ffffffffffffffffffffffffffffffffffffffff1660008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461040457600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f1935050505015801561044a573d6000803e3d6000fd5b5050565b64f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000452600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205434600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054011161054a57600080fd5b34600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555056fea2646970667358221220e0a368fc164f01b462741f506bf1baa36b8e8a2174b4e65f8908b036ecd8fb6f64736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "608060405234801561001057600080fd5b506105cf806100206000396000f3fe60806040526004361061003f5760003560e01c80632e1a7d4d146100445780633e3260481461007f5780634ddaf8f214610096578063d0e30db0146100e7575b600080fd5b34801561005057600080fd5b5061007d6004803603602081101561006757600080fd5b81019080803590602001909291905050506100f1565b005b34801561008b57600080fd5b50610094610267565b005b3480156100a257600080fd5b506100e5600480360360208110156100b957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610319565b005b6100ef61044e565b005b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002600052600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020548111156101d057600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610216573d6000803e3d6000fd5b5080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555050565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000452336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00016000523373ffffffffffffffffffffffffffffffffffffffff1660008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461040457600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f1935050505015801561044a573d6000803e3d6000fd5b5050565b64f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000452600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205434600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054011161054a57600080fd5b34600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555056fea2646970667358221220e0a368fc164f01b462741f506bf1baa36b8e8a2174b4e65f8908b036ecd8fb6f64736f6c63430007060033",
+                "constructorSrcmap": "332:1990:0:-:0;;;;;;;;;;;;;;;;;;;",
+                "extensionContracts": [],
+                "file": "wallet_03_wrong_constructor.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "wallet_03_wrong_constructor.sol|Wallet",
+                        "declaringContract": "Wallet",
+                        "method": {
+                            "contractName": "Wallet",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "initWallet",
+                            "notpayable": true,
+                            "originalFile": "wallet_03_wrong_constructor.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "3e326048",
+                            "sourceBytes": {
+                                "begin": 465,
+                                "size": 68
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "wallet_03_wrong_constructor.sol|Wallet",
+                        "declaringContract": "Wallet",
+                        "method": {
+                            "contractName": "Wallet",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "migrateTo",
+                            "notpayable": true,
+                            "originalFile": "wallet_03_wrong_constructor.sol",
+                            "paramNames": [
+                                "to"
+                            ],
+                            "returns": [],
+                            "sighash": "4ddaf8f2",
+                            "sourceBytes": {
+                                "begin": 983,
+                                "size": 141
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "wallet_03_wrong_constructor.sol|Wallet",
+                        "declaringContract": "Wallet",
+                        "method": {
+                            "contractName": "Wallet",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "withdraw",
+                            "notpayable": true,
+                            "originalFile": "wallet_03_wrong_constructor.sol",
+                            "paramNames": [
+                                "amount"
+                            ],
+                            "returns": [],
+                            "sighash": "2e1a7d4d",
+                            "sourceBytes": {
+                                "begin": 708,
+                                "size": 187
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50003": {
+                        "canonicalId": "wallet_03_wrong_constructor.sol|Wallet",
+                        "declaringContract": "Wallet",
+                        "method": {
+                            "contractName": "Wallet",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "deposit",
+                            "notpayable": false,
+                            "originalFile": "wallet_03_wrong_constructor.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "d0e30db0",
+                            "sourceBytes": {
+                                "begin": 540,
+                                "size": 161
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {},
+                "methods": [
+                    {
+                        "contractName": "Wallet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "initWallet",
+                        "notpayable": true,
+                        "originalFile": "wallet_03_wrong_constructor.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "3e326048",
+                        "sourceBytes": {
+                            "begin": 465,
+                            "size": 68
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Wallet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "migrateTo",
+                        "notpayable": true,
+                        "originalFile": "wallet_03_wrong_constructor.sol",
+                        "paramNames": [
+                            "to"
+                        ],
+                        "returns": [],
+                        "sighash": "4ddaf8f2",
+                        "sourceBytes": {
+                            "begin": 983,
+                            "size": 141
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Wallet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "withdraw",
+                        "notpayable": true,
+                        "originalFile": "wallet_03_wrong_constructor.sol",
+                        "paramNames": [
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "2e1a7d4d",
+                        "sourceBytes": {
+                            "begin": 708,
+                            "size": 187
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Wallet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "deposit",
+                        "notpayable": false,
+                        "originalFile": "wallet_03_wrong_constructor.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d0e30db0",
+                        "sourceBytes": {
+                            "begin": 540,
+                            "size": 161
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "Wallet",
+                "original_file": "wallet_03_wrong_constructor.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 332,
+                    "size": 796
+                },
+                "srcmap": "332:1990:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1224:528;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;465:326;;;;;;;;;;;;;:::i;:::-;;1840:478;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;798:419;;;:::i;:::-;;1224:528;1352:13;1284:66;1277:89;1442:1;1374:66;1367:77;1520:1;1452:66;1445:77;1598:6;1530:66;1523:82;1635:8;:20;1644:10;1635:20;;;;;;;;;;;;;;;;1625:6;:30;;1617:39;;;;;;1675:10;1667:28;;:36;1696:6;1667:36;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1738:6;1714:8;:20;1723:10;1714:20;;;;;;;;;;;;;;;;:30;;;;;;;;;;;1224:528;:::o;465:326::-;581:13;513:66;506:89;671:1;603:66;596:77;749:1;681:66;674:77;773:10;763:7;;:20;;;;;;;;;;;;;;;;;;465:326::o;1840:478::-;1965:13;1897:66;1890:89;2055:1;1987:66;1980:77;2133:1;2065:66;2058:77;2211:2;2143:66;2136:78;2245:10;2234:21;;:7;;;;;;;;;;:21;;;2226:30;;;;;;2275:2;2267:20;;:43;2288:21;2267:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1840:478;:::o;798:419::-;919:13;851:66;844:89;1009:1;941:66;934:77;1087:1;1019:66;1012:77;1144:8;:20;1153:10;1144:20;;;;;;;;;;;;;;;;1132:9;1109:8;:20;1118:10;1109:20;;;;;;;;;;;;;;;;:32;:55;1101:64;;;;;;1200:9;1176:8;:20;1185:10;1176:20;;;;;;;;;;;;;;;;:33;;;;;;;;;;;798:419::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 3,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/access_control/.certora_internal/26_02_12_09_34_34_08590636b9/.certora_sources/wallet_03_wrong_constructor.sol:Wallet",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "creator",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_address"
+                        },
+                        {
+                            "astId": 7,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/access_control/.certora_internal/26_02_12_09_34_34_08590636b9/.certora_sources/wallet_03_wrong_constructor.sol:Wallet",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "balances",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "Wallet",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "wallet_03_wrong_constructor.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "wallet_03_wrong_constructor.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

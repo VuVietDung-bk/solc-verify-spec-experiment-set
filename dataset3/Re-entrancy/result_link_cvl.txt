@@ -1,0 +1,32 @@
+# result_link_cvl.txt
+# Generated: 2026-02-12
+
+[1] CMD: certoraRun buggy_1.sol:HotDollarsToken --verify HotDollarsToken:certora_specification/buggy_1.cvl
+[1] LINK: https://prover.certora.com/output/1696952/4c0433cd816240d0a5a2c8d7678ddb28
+
+[2] CMD: certoraRun buggy_5.sol:TTC --verify TTC:certora_specification/buggy_5.cvl
+[2] LINK: https://prover.certora.com/output/1696952/d6777c3083d74f1eb533af0e5420bd88
+
+[3] CMD: certoraRun buggy_19.sol:ethBank --verify ethBank:certora_specification/buggy_19.cvl
+[3] LINK: https://prover.certora.com/output/1696952/ac087ad9b7c74605b286fc3b0226433e
+
+[4] CMD: certoraRun buggy_20.sol:RampInstantEthPool --verify RampInstantEthPool:certora_specification/buggy_20.cvl
+[4] ERROR: CVL typecheck failed - internal function and storage variable not accessible
+
+[5] CMD: certoraRun buggy_23.sol:AGR --verify AGR:certora_specification/buggy_23.cvl
+[5] LINK: https://prover.certora.com/output/1696952/98ed19879ab54095b4b4d73b4fcfc929
+
+[6] CMD: certoraRun buggy_33.sol:Staking --verify Staking:certora_specification/buggy_33.cvl
+[6] LINK: https://prover.certora.com/output/1696952/6446f24f9ce64278b71d50939050788b
+
+[7] CMD: certoraRun buggy_34.sol:LollypopToken --verify LollypopToken:certora_specification/buggy_34.cvl
+[7] LINK: https://prover.certora.com/output/1696952/16833162a7e44b94ba77dfd9c5ab670f
+
+[8] CMD: certoraRun buggy_45.sol:StockBet --verify StockBet:certora_specification/buggy_45.cvl
+[8] LINK: https://prover.certora.com/output/1696952/026fd6c964ab4b07a1cc43716601fdd6
+
+[9] CMD: certoraRun buggy_47.sol:AcunarIEO --verify AcunarIEO:certora_specification/buggy_47.cvl
+[9] ERROR: Compiler warning - unnamed return variable
+
+[10] CMD: certoraRun buggy_50.sol:digitalNotary --verify digitalNotary:certora_specification/buggy_50.cvl
+[10] LINK: https://prover.certora.com/output/1696952/1a4ff03515a94ad88514ad25e94dec99

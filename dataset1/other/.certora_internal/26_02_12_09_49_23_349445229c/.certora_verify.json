@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "StakingWarmup",
+    "specfile": "certora_specification/StakingWarmup.cvl",
+    "specfileOrigRelpath": "certora_specification/StakingWarmup.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

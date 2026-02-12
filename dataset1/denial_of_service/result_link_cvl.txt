@@ -1,0 +1,18 @@
+# result_link_cvl.txt
+# Generated: 2026-02-12
+
+[1] CMD: certoraRun auction.sol:DosAuction --verify DosAuction:certora_specification/auction.cvl
+[1] LINK: https://prover.certora.com/output/1696952/c522dfb42d064828aba2d1d369bb683d
+
+[2] CMD: certoraRun dos_address.sol:DosGas --verify DosGas:certora_specification/dos_address.cvl
+[2] LINK: https://prover.certora.com/output/1696952/8c7c3861e516481584e329f06a1ad70c
+
+[3] CMD: certoraRun list_dos.sol:Government --verify Government:certora_specification/list_dos.cvl
+[3] LINK: https://prover.certora.com/output/1696952/6a90f8397ddf47c397e885df6505757f
+
+[4] CMD: certoraRun send_loop.sol:Refunder --verify Refunder:certora_specification/send_loop.cvl
+[4] LINK: https://prover.certora.com/output/1696952/0ff3fd235d1640d7a4acb36dce4858b2
+
+
+
+

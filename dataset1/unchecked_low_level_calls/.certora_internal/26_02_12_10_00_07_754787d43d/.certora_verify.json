@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Marriage",
+    "specfile": "certora_specification/0x958a8f594101d2c0485a52319f29b2647f2ebc06.cvl",
+    "specfileOrigRelpath": "certora_specification/0x958a8f594101d2c0485a52319f29b2647f2ebc06.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

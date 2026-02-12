@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Unprotected",
+    "specfile": "certora_specification/unprotected0.cvl",
+    "specfileOrigRelpath": "certora_specification/unprotected0.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

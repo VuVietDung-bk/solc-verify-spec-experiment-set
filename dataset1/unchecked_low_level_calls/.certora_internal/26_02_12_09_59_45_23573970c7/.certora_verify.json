@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "WedIndex",
+    "specfile": "certora_specification/0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.cvl",
+    "specfileOrigRelpath": "certora_specification/0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

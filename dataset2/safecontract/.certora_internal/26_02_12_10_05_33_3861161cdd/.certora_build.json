@@ -1,0 +1,1768 @@
+{
+    "WrappedToken_00000000ce4604a0000000000000000000000005": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000005",
+                "allMethods": [
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "_approve",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [
+                            "owner",
+                            "spender",
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "nonpayable",
+                        "visibility": "private",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "_mint",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [
+                            "account",
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "nonpayable",
+                        "visibility": "private",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "_transfer",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [
+                            "sender",
+                            "recipient",
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "nonpayable",
+                        "visibility": "private",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "owner",
+                            "spender"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 2456,
+                            "size": 141
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "spender",
+                            "amount"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 2603,
+                            "size": 156
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "account"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 2165,
+                            "size": 117
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            },
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "_name",
+                            "_symbol",
+                            "_decimals",
+                            "_underlyingAsset"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 1827,
+                            "size": 228
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 1605,
+                            "size": 21
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 1555,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 1579,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 2061,
+                            "size": 98
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "recipient",
+                            "amount"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 2288,
+                            "size": 162
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "sender",
+                            "recipient",
+                            "amount"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 2765,
+                            "size": 258
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "underlyingAsset",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "7158da7c",
+                        "sourceBytes": {
+                            "begin": 1632,
+                            "size": 30
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "wrap",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "ea598cb0",
+                        "sourceBytes": {
+                            "begin": 3746,
+                            "size": 194
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561001057600080fd5b50600436106100a95760003560e01c806370a082311161007157806370a08231146102585780637158da7c146102b057806395d89b41146102e4578063a9059cbb14610367578063dd62ed3e146103cb578063ea598cb014610443576100a9565b806306fdde03146100ae578063095ea7b31461013157806318160ddd1461019557806323b872dd146101b3578063313ce56714610237575b600080fd5b6100b6610471565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f65780820151818401526020810190506100db565b50505050905090810190601f1680156101235780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61017d6004803603604081101561014757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061050f565b60405180821515815260200191505060405180910390f35b61019d6105b9565b6040518082815260200191505060405180910390f35b61021f600480360360608110156101c957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610633565b60405180821515815260200191505060405180910390f35b61023f610767565b604051808260ff16815260200191505060405180910390f35b61029a6004803603602081101561026e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061077a565b6040518082815260200191505060405180910390f35b6102b8610856565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102ec61087c565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561032c578082015181840152602081019050610311565b50505050905090810190601f1680156103595780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6103b36004803603604081101561037d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061091a565b60405180821515815260200191505060405180910390f35b61042d600480360360408110156103e157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506109c4565b6040518082815260200191505060405180910390f35b61046f6004803603602081101561045957600080fd5b8101908080359060200190929190505050610ade565b005b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105075780601f106104dc57610100808354040283529160200191610507565b820191906000526020600020905b8154815290600101906020018083116104ea57829003601f168201915b505050505081565b600064f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00056001526105af338484610c49565b6001905092915050565b600064f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000452600554905090565b600064f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00076002526106d3848484610ed3565b61075c843384600460008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205403610c49565b600190509392505050565b600260009054906101000a900460ff1681565b600064f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004600052600360008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b600260019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156109125780601f106108e757610100808354040283529160200191610912565b820191906000526020600020905b8154815290600101906020018083116108f557829003601f168201915b505050505081565b600064f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00066001526109ba338484610ed3565b6001905092915050565b600064f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008600152600460008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905092915050565b600260019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166323b872dd3330846040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050602060405180830381600087803b158015610b8f57600080fd5b505af1158015610ba3573d6000803e3d6000fd5b505050506040513d6020811015610bb957600080fd5b8101908080519060200190929190505050610c3c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f7472616e7366657246726f6d206661696c65640000000000000000000000000081525060200191505060405180910390fd5b610c463382611176565b50565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001600252600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415610d62576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806113de6024913960400191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415610de8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001806113976022913960400191505060405180910390fd5b80600460008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925836040518082815260200191505060405180910390a3505050565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600252600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415610fec576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260258152602001806113b96025913960400191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611072576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260238152602001806113746023913960400191505060405180910390fd5b80600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555080600360008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a3505050565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002600152600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614156112ac576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601f8152602001807f45524332303a206d696e7420746f20746865207a65726f20616464726573730081525060200191505060405180910390fd5b8060056000828254019250508190555080600360008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508173ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a3505056fe45524332303a207472616e7366657220746f20746865207a65726f206164647265737345524332303a20617070726f766520746f20746865207a65726f206164647265737345524332303a207472616e736665722066726f6d20746865207a65726f206164647265737345524332303a20617070726f76652066726f6d20746865207a65726f2061646472657373a2646970667358221220b040a79e3afde2a9867b9d5228881a65d690508f3910e8ab7b006391a5b8831164736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "60806040523480156200001157600080fd5b506040516200176138038062001761833981810160405260808110156200003757600080fd5b81019080805160405193929190846401000000008211156200005857600080fd5b838201915060208201858111156200006f57600080fd5b82518660018202830111640100000000821117156200008d57600080fd5b8083526020830192505050908051906020019080838360005b83811015620000c3578082015181840152602081019050620000a6565b50505050905090810190601f168015620000f15780820380516001836020036101000a031916815260200191505b50604052602001805160405193929190846401000000008211156200011557600080fd5b838201915060208201858111156200012c57600080fd5b82518660018202830111640100000000821117156200014a57600080fd5b8083526020830192505050908051906020019080838360005b838110156200018057808201518184015260208101905062000163565b50505050905090810190601f168015620001ae5780820380516001836020036101000a031916815260200191505b5060405260200180519060200190929190805190602001909291905050508360009080519060200190620001e492919062000264565b508260019080519060200190620001fd92919062000264565b5081600260006101000a81548160ff021916908360ff16021790555080600260016101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050506200031a565b828054600181600116156101000203166002900490600052602060002090601f0160209004810192826200029c5760008555620002e8565b82601f10620002b757805160ff1916838001178555620002e8565b82800160010185558215620002e8579182015b82811115620002e7578251825591602001919060010190620002ca565b5b509050620002f79190620002fb565b5090565b5b8082111562000316576000816000905550600101620002fc565b5090565b611437806200032a6000396000f3fe608060405234801561001057600080fd5b50600436106100a95760003560e01c806370a082311161007157806370a08231146102585780637158da7c146102b057806395d89b41146102e4578063a9059cbb14610367578063dd62ed3e146103cb578063ea598cb014610443576100a9565b806306fdde03146100ae578063095ea7b31461013157806318160ddd1461019557806323b872dd146101b3578063313ce56714610237575b600080fd5b6100b6610471565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f65780820151818401526020810190506100db565b50505050905090810190601f1680156101235780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61017d6004803603604081101561014757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061050f565b60405180821515815260200191505060405180910390f35b61019d6105b9565b6040518082815260200191505060405180910390f35b61021f600480360360608110156101c957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610633565b60405180821515815260200191505060405180910390f35b61023f610767565b604051808260ff16815260200191505060405180910390f35b61029a6004803603602081101561026e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061077a565b6040518082815260200191505060405180910390f35b6102b8610856565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102ec61087c565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561032c578082015181840152602081019050610311565b50505050905090810190601f1680156103595780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6103b36004803603604081101561037d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061091a565b60405180821515815260200191505060405180910390f35b61042d600480360360408110156103e157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506109c4565b6040518082815260200191505060405180910390f35b61046f6004803603602081101561045957600080fd5b8101908080359060200190929190505050610ade565b005b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105075780601f106104dc57610100808354040283529160200191610507565b820191906000526020600020905b8154815290600101906020018083116104ea57829003601f168201915b505050505081565b600064f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00056001526105af338484610c49565b6001905092915050565b600064f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000452600554905090565b600064f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00076002526106d3848484610ed3565b61075c843384600460008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205403610c49565b600190509392505050565b600260009054906101000a900460ff1681565b600064f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004600052600360008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b600260019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156109125780601f106108e757610100808354040283529160200191610912565b820191906000526020600020905b8154815290600101906020018083116108f557829003601f168201915b505050505081565b600064f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00066001526109ba338484610ed3565b6001905092915050565b600064f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008600152600460008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905092915050565b600260019054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166323b872dd3330846040518463ffffffff1660e01b8152600401808473ffffffffffffffffffffffffffffffffffffffff1681526020018373ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019350505050602060405180830381600087803b158015610b8f57600080fd5b505af1158015610ba3573d6000803e3d6000fd5b505050506040513d6020811015610bb957600080fd5b8101908080519060200190929190505050610c3c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f7472616e7366657246726f6d206661696c65640000000000000000000000000081525060200191505060405180910390fd5b610c463382611176565b50565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001600252600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415610d62576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806113de6024913960400191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415610de8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001806113976022913960400191505060405180910390fd5b80600460008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925836040518082815260200191505060405180910390a3505050565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600252600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415610fec576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260258152602001806113b96025913960400191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611072576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260238152602001806113746023913960400191505060405180910390fd5b80600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555080600360008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a3505050565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002600152600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614156112ac576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601f8152602001807f45524332303a206d696e7420746f20746865207a65726f20616464726573730081525060200191505060405180910390fd5b8060056000828254019250508190555080600360008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508173ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a3505056fe45524332303a207472616e7366657220746f20746865207a65726f206164647265737345524332303a20617070726f766520746f20746865207a65726f206164647265737345524332303a207472616e736665722066726f6d20746865207a65726f206164647265737345524332303a20617070726f76652066726f6d20746865207a65726f2061646472657373a2646970667358221220b040a79e3afde2a9867b9d5228881a65d690508f3910e8ab7b006391a5b8831164736f6c63430007060033",
+                "constructorSrcmap": "1518:5681:0:-:0;;;1827:228;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1943:5;1936:4;:12;;;;;;;;;;;;:::i;:::-;;1967:7;1958:6;:16;;;;;;;;;;;;:::i;:::-;;1995:9;1984:8;;:20;;;;;;;;;;;;;;;;;;2032:16;2014:15;;:34;;;;;;;;;;;;;;;;;;1827:228;;;;1518:5681;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+                "extensionContracts": [],
+                "file": "WrappedToken.sol",
+                "immutables": [],
+                "internalFuncs": [
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "_transfer",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [
+                            "sender",
+                            "recipient",
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "nonpayable",
+                        "visibility": "private",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "_approve",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [
+                            "owner",
+                            "spender",
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "nonpayable",
+                        "visibility": "private",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "_mint",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [
+                            "account",
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "nonpayable",
+                        "visibility": "private",
+                        "vyper_metadata": null
+                    }
+                ],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "WrappedToken.sol|WrappedToken",
+                        "declaringContract": "WrappedToken",
+                        "method": {
+                            "contractName": "WrappedToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_transfer",
+                            "notpayable": true,
+                            "originalFile": "WrappedToken.sol",
+                            "paramNames": [
+                                "sender",
+                                "recipient",
+                                "amount"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 3029,
+                                "size": 374
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "private",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "WrappedToken.sol|WrappedToken",
+                        "declaringContract": "WrappedToken",
+                        "method": {
+                            "contractName": "WrappedToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_approve",
+                            "notpayable": true,
+                            "originalFile": "WrappedToken.sol",
+                            "paramNames": [
+                                "owner",
+                                "spender",
+                                "amount"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 3409,
+                                "size": 331
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "private",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "WrappedToken.sol|WrappedToken",
+                        "declaringContract": "WrappedToken",
+                        "method": {
+                            "contractName": "WrappedToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_mint",
+                            "notpayable": true,
+                            "originalFile": "WrappedToken.sol",
+                            "paramNames": [
+                                "account",
+                                "amount"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 3945,
+                                "size": 261
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "private",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50003": {
+                        "canonicalId": "WrappedToken.sol|WrappedToken",
+                        "declaringContract": "WrappedToken",
+                        "method": {
+                            "contractName": "WrappedToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "totalSupply",
+                            "notpayable": true,
+                            "originalFile": "WrappedToken.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "18160ddd",
+                            "sourceBytes": {
+                                "begin": 2061,
+                                "size": 98
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50004": {
+                        "canonicalId": "WrappedToken.sol|WrappedToken",
+                        "declaringContract": "WrappedToken",
+                        "method": {
+                            "contractName": "WrappedToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "balanceOf",
+                            "notpayable": true,
+                            "originalFile": "WrappedToken.sol",
+                            "paramNames": [
+                                "account"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "70a08231",
+                            "sourceBytes": {
+                                "begin": 2165,
+                                "size": 117
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50005": {
+                        "canonicalId": "WrappedToken.sol|WrappedToken",
+                        "declaringContract": "WrappedToken",
+                        "method": {
+                            "contractName": "WrappedToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "approve",
+                            "notpayable": true,
+                            "originalFile": "WrappedToken.sol",
+                            "paramNames": [
+                                "spender",
+                                "amount"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "095ea7b3",
+                            "sourceBytes": {
+                                "begin": 2603,
+                                "size": 156
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50006": {
+                        "canonicalId": "WrappedToken.sol|WrappedToken",
+                        "declaringContract": "WrappedToken",
+                        "method": {
+                            "contractName": "WrappedToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transfer",
+                            "notpayable": true,
+                            "originalFile": "WrappedToken.sol",
+                            "paramNames": [
+                                "recipient",
+                                "amount"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "a9059cbb",
+                            "sourceBytes": {
+                                "begin": 2288,
+                                "size": 162
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50007": {
+                        "canonicalId": "WrappedToken.sol|WrappedToken",
+                        "declaringContract": "WrappedToken",
+                        "method": {
+                            "contractName": "WrappedToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transferFrom",
+                            "notpayable": true,
+                            "originalFile": "WrappedToken.sol",
+                            "paramNames": [
+                                "sender",
+                                "recipient",
+                                "amount"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "23b872dd",
+                            "sourceBytes": {
+                                "begin": 2765,
+                                "size": 258
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50008": {
+                        "canonicalId": "WrappedToken.sol|WrappedToken",
+                        "declaringContract": "WrappedToken",
+                        "method": {
+                            "contractName": "WrappedToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "allowance",
+                            "notpayable": true,
+                            "originalFile": "WrappedToken.sol",
+                            "paramNames": [
+                                "owner",
+                                "spender"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "dd62ed3e",
+                            "sourceBytes": {
+                                "begin": 2456,
+                                "size": 141
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {},
+                "methods": [
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            },
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "_name",
+                            "_symbol",
+                            "_decimals",
+                            "_underlyingAsset"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 1827,
+                            "size": 228
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 1579,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 1555,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 1605,
+                            "size": 21
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "sender",
+                            "recipient",
+                            "amount"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 2765,
+                            "size": 258
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "wrap",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "ea598cb0",
+                        "sourceBytes": {
+                            "begin": 3746,
+                            "size": 194
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "account"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 2165,
+                            "size": 117
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "spender",
+                            "amount"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 2603,
+                            "size": 156
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "recipient",
+                            "amount"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 2288,
+                            "size": 162
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "underlyingAsset",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "7158da7c",
+                        "sourceBytes": {
+                            "begin": 1632,
+                            "size": 30
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 2061,
+                            "size": 98
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WrappedToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "WrappedToken.sol",
+                        "paramNames": [
+                            "owner",
+                            "spender"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 2456,
+                            "size": 141
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "WrappedToken",
+                "original_file": "WrappedToken.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 1518,
+                    "size": 2690
+                },
+                "srcmap": "1518:5681:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1555:18;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3886:497;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;2061:356;;;:::i;:::-;;;;;;;;;;;;;;;;;;;4389:600;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;1605:21;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;2423:459;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1632:30;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;1579:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2888:503;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;3397:483;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;6396:194;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1555:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;3886:497::-;3961:4;4054:13;3986:66;3979:89;4144:1;4076:66;4069:77;4222:1;4154:66;4147:77;4300:6;4232:66;4225:82;4318:37;4327:10;4339:7;4348:6;4318:8;:37::i;:::-;4372:4;4365:11;;3886:497;;;;:::o;2061:356::-;2114:7;2210:13;2142:66;2135:89;2300:1;2232:66;2225:77;2378:1;2310:66;2303:77;2398:12;;2391:19;;2061:356;:::o;4389:600::-;4487:4;4580:13;4512:66;4505:89;4670:1;4602:66;4595:77;4748:2;4680:66;4673:78;4827:6;4759:66;4752:82;4845:36;4855:6;4863:9;4874:6;4845:9;:36::i;:::-;4891:70;4900:6;4908:10;4954:6;4920:11;:19;4932:6;4920:19;;;;;;;;;;;;;;;:31;4940:10;4920:31;;;;;;;;;;;;;;;;:40;4891:8;:70::i;:::-;4978:4;4971:11;;4389:600;;;;;:::o;1605:21::-;;;;;;;;;;;;;:::o;2423:459::-;2489:7;2585:13;2517:66;2510:89;2675:1;2607:66;2600:77;2753:1;2685:66;2678:77;2831:7;2763:66;2756:83;2857:9;:18;2867:7;2857:18;;;;;;;;;;;;;;;;2850:25;;2423:459;;;:::o;1632:30::-;;;;;;;;;;;;;:::o;1579:20::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;2888:503::-;2966:4;3059:13;2991:66;2984:89;3149:1;3081:66;3074:77;3227:1;3159:66;3152:77;3305:6;3237:66;3230:82;3323:40;3333:10;3345:9;3356:6;3323:9;:40::i;:::-;3380:4;3373:11;;2888:503;;;;:::o;3397:483::-;3478:7;3574:13;3506:66;3499:89;3664:1;3596:66;3589:77;3742:1;3674:66;3667:77;3820:7;3752:66;3745:83;3846:11;:18;3858:5;3846:18;;;;;;;;;;;;;;;:27;3865:7;3846:27;;;;;;;;;;;;;;;;3839:34;;3397:483;;;;:::o;6396:194::-;6460:15;;;;;;;;;;;6453:36;;;6490:10;6510:4;6517:6;6453:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6445:103;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6558:25;6564:10;6576:6;6558:5;:25::i;:::-;6396:194;:::o;5717:673::-;5878:13;5810:66;5803:89;5968:1;5900:66;5893:77;6046:2;5978:66;5971:78;6125:6;6057:66;6050:82;6168:1;6151:19;;:5;:19;;;;6143:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6248:1;6229:21;;:7;:21;;;;6221:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6330:6;6300:11;:18;6312:5;6300:18;;;;;;;;;;;;;;;:27;6319:7;6300:27;;;;;;;;;;;;;;;:36;;;;6367:7;6351:32;;6360:5;6351:32;;;6376:6;6351:32;;;;;;;;;;;;;;;;;;5717:673;;;:::o;4995:716::-;5160:13;5092:66;5085:89;5250:1;5182:66;5175:77;5328:2;5260:66;5253:78;5407:6;5339:66;5332:82;5451:1;5433:20;;:6;:20;;;;5425:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5534:1;5513:23;;:9;:23;;;;5505:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5608:6;5587:9;:17;5597:6;5587:17;;;;;;;;;;;;;;;;:27;;;;;;;;;;;5648:6;5624:9;:20;5634:9;5624:20;;;;;;;;;;;;;;;;:30;;;;;;;;;;;5686:9;5669:35;;5678:6;5669:35;;;5697:6;5669:35;;;;;;;;;;;;;;;;;;4995:716;;;:::o;6595:602::-;6738:13;6670:66;6663:89;6828:1;6760:66;6753:77;6906:1;6838:66;6831:77;6984:6;6916:66;6909:82;7029:1;7010:21;;:7;:21;;;;7002:65;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7094:6;7078:12;;:22;;;;;;;;;;;7132:6;7110:9;:18;7120:7;7110:18;;;;;;;;;;;;;;;;:28;;;;;;;;;;;7174:7;7153:37;;7170:1;7153:37;;;7183:6;7153:37;;;;;;;;;;;;;;;;;;6595:602;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 139,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_33_3861161cdd/.certora_sources/WrappedToken.sol:WrappedToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "name",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_string_storage"
+                        },
+                        {
+                            "astId": 141,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_33_3861161cdd/.certora_sources/WrappedToken.sol:WrappedToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "symbol",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_string_storage"
+                        },
+                        {
+                            "astId": 143,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_33_3861161cdd/.certora_sources/WrappedToken.sol:WrappedToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "1",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint8",
+                                "type": "Primitive"
+                            },
+                            "label": "decimals",
+                            "offset": 0,
+                            "slot": "2",
+                            "type": "t_uint8"
+                        },
+                        {
+                            "astId": 145,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_33_3861161cdd/.certora_sources/WrappedToken.sol:WrappedToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "underlyingAsset",
+                            "offset": 1,
+                            "slot": "2",
+                            "type": "t_address"
+                        },
+                        {
+                            "astId": 149,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_33_3861161cdd/.certora_sources/WrappedToken.sol:WrappedToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "_balances",
+                            "offset": 0,
+                            "slot": "3",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 155,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_33_3861161cdd/.certora_sources/WrappedToken.sol:WrappedToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "mappingKeyType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "20",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    },
+                                    "mappingValueType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "32",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    },
+                                    "type": "Mapping"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "_allowances",
+                            "offset": 0,
+                            "slot": "4",
+                            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+                        },
+                        {
+                            "astId": 157,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/safecontract/.certora_internal/26_02_12_10_05_33_3861161cdd/.certora_sources/WrappedToken.sol:WrappedToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "_totalSupply",
+                            "offset": 0,
+                            "slot": "5",
+                            "type": "t_uint256"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => mapping(address => uint256))",
+                            "numberOfBytes": "32",
+                            "value": "t_mapping(t_address,t_uint256)"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_string_storage": {
+                            "encoding": "bytes",
+                            "label": "string",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint8": {
+                            "encoding": "inplace",
+                            "label": "uint8",
+                            "numberOfBytes": "1"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "WrappedToken",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000005",
+        "prototypeFor": [],
+        "sdc_name": "WrappedToken.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "WrappedToken.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

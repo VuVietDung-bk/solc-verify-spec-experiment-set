@@ -1,0 +1,1754 @@
+{
+    "TAMCContract_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 5214,
+                            "size": 64
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "spender",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 2654,
+                            "size": 233
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 922,
+                            "size": 45
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_tmstmp13",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "56e2ca30",
+                        "sourceBytes": {
+                            "begin": 1794,
+                            "size": 100
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_tmstmp33",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8c5ac894",
+                        "sourceBytes": {
+                            "begin": 1072,
+                            "size": 100
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_tmstmp40",
+                        "notpayable": false,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "17c6abfa",
+                        "sourceBytes": {
+                            "begin": 541,
+                            "size": 495
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 1663,
+                            "size": 129
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 3039,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 1947,
+                            "size": 27
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "play_tmstmp27",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "startTime"
+                        ],
+                        "returns": [],
+                        "sighash": "8d356d07",
+                        "sourceBytes": {
+                            "begin": 1236,
+                            "size": 199
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "play_tmstmp31",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "startTime"
+                        ],
+                        "returns": [],
+                        "sighash": "99d8cc4d",
+                        "sourceBytes": {
+                            "begin": 2378,
+                            "size": 199
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "play_tmstmp35",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "startTime"
+                        ],
+                        "returns": [],
+                        "sighash": "88d5cb7c",
+                        "sourceBytes": {
+                            "begin": 284,
+                            "size": 199
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 2341,
+                            "size": 29
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 3072,
+                            "size": 61
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "to",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 1902,
+                            "size": 276
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "from",
+                            "to",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 2936,
+                            "size": 404
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "6080604052600436106100e85760003560e01c806370a082311161008a57806395d89b411161005957806395d89b411461041757806399d8cc4d146104a7578063a9059cbb146104e2578063dd62ed3e14610553576100e8565b806370a082311461030f57806388d5cb7c146103745780638c5ac894146103af5780638d356d07146103dc576100e8565b806318160ddd116100c657806318160ddd146101f857806323b872dd14610223578063313ce567146102b457806356e2ca30146102e2576100e8565b806306fdde03146100ed578063095ea7b31461017d57806317c6abfa146101ee575b600080fd5b3480156100f957600080fd5b506101026105d8565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610142578082015181840152602081019050610127565b50505050905090810190601f16801561016f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561018957600080fd5b506101d6600480360360408110156101a057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610676565b60405180821515815260200191505060405180910390f35b6101f66107fb565b005b34801561020457600080fd5b5061020d610935565b6040518082815260200191505060405180910390f35b34801561022f57600080fd5b5061029c6004803603606081101561024657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061093b565b60405180821515815260200191505060405180910390f35b3480156102c057600080fd5b506102c9610c39565b604051808260ff16815260200191505060405180910390f35b3480156102ee57600080fd5b506102f7610c4c565b60405180821515815260200191505060405180910390f35b34801561031b57600080fd5b5061035e6004803603602081101561033257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610ccb565b6040518082815260200191505060405180910390f35b34801561038057600080fd5b506103ad6004803603602081101561039757600080fd5b8101908080359060200190929190505050610ce3565b005b3480156103bb57600080fd5b506103c4610df0565b60405180821515815260200191505060405180910390f35b3480156103e857600080fd5b50610415600480360360208110156103ff57600080fd5b8101908080359060200190929190505050610e6f565b005b34801561042357600080fd5b5061042c610f7d565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561046c578082015181840152602081019050610451565b50505050905090810190601f1680156104995780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156104b357600080fd5b506104e0600480360360208110156104ca57600080fd5b810190808035906020019092919050505061101b565b005b3480156104ee57600080fd5b5061053b6004803603604081101561050557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611129565b60405180821515815260200191505060405180910390f35b34801561055f57600080fd5b506105c26004803603604081101561057657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611313565b6040518082815260200191505060405180910390f35b60028054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561066e5780601f106106435761010080835404028352916020019161066e565b820191906000526020600020905b81548152906001019060200180831161065157829003601f168201915b505050505081565b600064f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000360015281600a60003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b64f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00050004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000252678ac7230489e8000034146108a457600080fd5b804214156108b157600080fd5b429050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000005526000600f42816108e357fe5b061415610932573373ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f19350505050158015610930573d6000803e3d6000fd5b505b50565b60055481565b600064f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008600252600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054821115610a1c57600080fd5b600a60008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054821115610aa557600080fd5b81600160008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555081600a60008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055508273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190509392505050565b600460149054906101000a900460ff1681565b600064f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000452635c2aad80421015905090565b60016020528060005260406000206000915090505481565b64f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00076000526000429050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000152806206978083011415610dec57336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5050565b600064f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000452635c2aad80421015905090565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00006000526000429050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000352806206978083011415610f795733600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5050565b60038054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156110135780601f10610fe857610100808354040283529160200191611013565b820191906000526020600020905b815481529060010190602001808311610ff657829003601f168201915b505050505081565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00016000526000429050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000004528062069780830114156111255733600960006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5050565b600064f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000660015281600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054101561120a57600080fd5b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a36001905092915050565b600a60205281600052604060002060205280600052604060002060009150915050548156fea2646970667358221220a158fac5f94c204c8fee1b732d41eff49d33db37fafb99e915596efac4afd5ec64736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "60806040526040518060400160405280600481526020017f54414d43000000000000000000000000000000000000000000000000000000008152506002908051906020019062000051929190620001a2565b506040518060400160405280600481526020017f54414d4300000000000000000000000000000000000000000000000000000000815250600390805190602001906200009f929190620001a2565b506012600460146101000a81548160ff021916908360ff1602179055506b033b2e3c9fd0803ce800000060055542600655426007554260085542600b5542600c55348015620000ed57600080fd5b50600554600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055503373ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef6005546040518082815260200191505060405180910390a362000258565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282620001da576000855562000226565b82601f10620001f557805160ff191683800117855562000226565b8280016001018555821562000226579182015b828111156200022557825182559160200191906001019062000208565b5b50905062000235919062000239565b5090565b5b80821115620002545760008160009055506001016200023a565b5090565b61136e80620002686000396000f3fe6080604052600436106100e85760003560e01c806370a082311161008a57806395d89b411161005957806395d89b411461041757806399d8cc4d146104a7578063a9059cbb146104e2578063dd62ed3e14610553576100e8565b806370a082311461030f57806388d5cb7c146103745780638c5ac894146103af5780638d356d07146103dc576100e8565b806318160ddd116100c657806318160ddd146101f857806323b872dd14610223578063313ce567146102b457806356e2ca30146102e2576100e8565b806306fdde03146100ed578063095ea7b31461017d57806317c6abfa146101ee575b600080fd5b3480156100f957600080fd5b506101026105d8565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610142578082015181840152602081019050610127565b50505050905090810190601f16801561016f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561018957600080fd5b506101d6600480360360408110156101a057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610676565b60405180821515815260200191505060405180910390f35b6101f66107fb565b005b34801561020457600080fd5b5061020d610935565b6040518082815260200191505060405180910390f35b34801561022f57600080fd5b5061029c6004803603606081101561024657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061093b565b60405180821515815260200191505060405180910390f35b3480156102c057600080fd5b506102c9610c39565b604051808260ff16815260200191505060405180910390f35b3480156102ee57600080fd5b506102f7610c4c565b60405180821515815260200191505060405180910390f35b34801561031b57600080fd5b5061035e6004803603602081101561033257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610ccb565b6040518082815260200191505060405180910390f35b34801561038057600080fd5b506103ad6004803603602081101561039757600080fd5b8101908080359060200190929190505050610ce3565b005b3480156103bb57600080fd5b506103c4610df0565b60405180821515815260200191505060405180910390f35b3480156103e857600080fd5b50610415600480360360208110156103ff57600080fd5b8101908080359060200190929190505050610e6f565b005b34801561042357600080fd5b5061042c610f7d565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561046c578082015181840152602081019050610451565b50505050905090810190601f1680156104995780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156104b357600080fd5b506104e0600480360360208110156104ca57600080fd5b810190808035906020019092919050505061101b565b005b3480156104ee57600080fd5b5061053b6004803603604081101561050557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611129565b60405180821515815260200191505060405180910390f35b34801561055f57600080fd5b506105c26004803603604081101561057657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611313565b6040518082815260200191505060405180910390f35b60028054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561066e5780601f106106435761010080835404028352916020019161066e565b820191906000526020600020905b81548152906001019060200180831161065157829003601f168201915b505050505081565b600064f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000360015281600a60003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b64f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00050004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000252678ac7230489e8000034146108a457600080fd5b804214156108b157600080fd5b429050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000005526000600f42816108e357fe5b061415610932573373ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f19350505050158015610930573d6000803e3d6000fd5b505b50565b60055481565b600064f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008600252600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054821115610a1c57600080fd5b600a60008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054821115610aa557600080fd5b81600160008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555081600a60008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055508273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190509392505050565b600460149054906101000a900460ff1681565b600064f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000452635c2aad80421015905090565b60016020528060005260406000206000915090505481565b64f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00076000526000429050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000152806206978083011415610dec57336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5050565b600064f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000452635c2aad80421015905090565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00006000526000429050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000352806206978083011415610f795733600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5050565b60038054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156110135780601f10610fe857610100808354040283529160200191611013565b820191906000526020600020905b815481529060010190602001808311610ff657829003601f168201915b505050505081565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00016000526000429050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000004528062069780830114156111255733600960006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5050565b600064f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000660015281600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054101561120a57600080fd5b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a36001905092915050565b600a60205281600052604060002060205280600052604060002060009150915050548156fea2646970667358221220a158fac5f94c204c8fee1b732d41eff49d33db37fafb99e915596efac4afd5ec64736f6c63430007060033",
+                "constructorSrcmap": "231:6467:0:-:0;;;1947:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;2341:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;3063:2;3039:26;;;;;;;;;;;;;;;;;;;;3101:32;3072:61;;3163:15;3140:38;;4401:15;4378:38;;4446:15;4423:38;;5885:15;5862:38;;6679:15;6656:38;;3263:129;;;;;;;;;;3312:11;;3288:9;:21;3298:10;3288:21;;;;;;;;;;;;;;;:35;;;;3360:10;3339:45;;3356:1;3339:45;;;3372:11;;3339:45;;;;;;;;;;;;;;;;;;231:6467;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+                "extensionContracts": [],
+                "file": "TAMContract.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "TAMContract.sol|TAMCContract",
+                        "declaringContract": "TAMCContract",
+                        "method": {
+                            "contractName": "TAMCContract",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "play_tmstmp27",
+                            "notpayable": true,
+                            "originalFile": "TAMContract.sol",
+                            "paramNames": [
+                                "startTime"
+                            ],
+                            "returns": [],
+                            "sighash": "8d356d07",
+                            "sourceBytes": {
+                                "begin": 1236,
+                                "size": 199
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "TAMContract.sol|TAMCContract",
+                        "declaringContract": "TAMCContract",
+                        "method": {
+                            "contractName": "TAMCContract",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "play_tmstmp31",
+                            "notpayable": true,
+                            "originalFile": "TAMContract.sol",
+                            "paramNames": [
+                                "startTime"
+                            ],
+                            "returns": [],
+                            "sighash": "99d8cc4d",
+                            "sourceBytes": {
+                                "begin": 2378,
+                                "size": 199
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "TAMContract.sol|TAMCContract",
+                        "declaringContract": "TAMCContract",
+                        "method": {
+                            "contractName": "TAMCContract",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_tmstmp13",
+                            "notpayable": true,
+                            "originalFile": "TAMContract.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "56e2ca30",
+                            "sourceBytes": {
+                                "begin": 1794,
+                                "size": 100
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50003": {
+                        "canonicalId": "TAMContract.sol|TAMCContract",
+                        "declaringContract": "TAMCContract",
+                        "method": {
+                            "contractName": "TAMCContract",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "approve",
+                            "notpayable": true,
+                            "originalFile": "TAMContract.sol",
+                            "paramNames": [
+                                "spender",
+                                "value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "095ea7b3",
+                            "sourceBytes": {
+                                "begin": 2654,
+                                "size": 233
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50004": {
+                        "canonicalId": "TAMContract.sol|TAMCContract",
+                        "declaringContract": "TAMCContract",
+                        "method": {
+                            "contractName": "TAMCContract",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_tmstmp33",
+                            "notpayable": true,
+                            "originalFile": "TAMContract.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "8c5ac894",
+                            "sourceBytes": {
+                                "begin": 1072,
+                                "size": 100
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50005": {
+                        "canonicalId": "TAMContract.sol|TAMCContract",
+                        "declaringContract": "TAMCContract",
+                        "method": {
+                            "contractName": "TAMCContract",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_tmstmp40",
+                            "notpayable": false,
+                            "originalFile": "TAMContract.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "17c6abfa",
+                            "sourceBytes": {
+                                "begin": 541,
+                                "size": 495
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50006": {
+                        "canonicalId": "TAMContract.sol|TAMCContract",
+                        "declaringContract": "TAMCContract",
+                        "method": {
+                            "contractName": "TAMCContract",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transfer",
+                            "notpayable": true,
+                            "originalFile": "TAMContract.sol",
+                            "paramNames": [
+                                "to",
+                                "value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "a9059cbb",
+                            "sourceBytes": {
+                                "begin": 1902,
+                                "size": 276
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50007": {
+                        "canonicalId": "TAMContract.sol|TAMCContract",
+                        "declaringContract": "TAMCContract",
+                        "method": {
+                            "contractName": "TAMCContract",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "play_tmstmp35",
+                            "notpayable": true,
+                            "originalFile": "TAMContract.sol",
+                            "paramNames": [
+                                "startTime"
+                            ],
+                            "returns": [],
+                            "sighash": "88d5cb7c",
+                            "sourceBytes": {
+                                "begin": 284,
+                                "size": 199
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50008": {
+                        "canonicalId": "TAMContract.sol|TAMCContract",
+                        "declaringContract": "TAMCContract",
+                        "method": {
+                            "contractName": "TAMCContract",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transferFrom",
+                            "notpayable": true,
+                            "originalFile": "TAMContract.sol",
+                            "paramNames": [
+                                "from",
+                                "to",
+                                "value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "23b872dd",
+                            "sourceBytes": {
+                                "begin": 2936,
+                                "size": 404
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "_vtime",
+                        "sourceLoc": {
+                            "begin": "334",
+                            "len": "29",
+                            "source": "0"
+                        }
+                    },
+                    "2": {
+                        "lhs": "pastBlockTime_tmstmp40",
+                        "sourceLoc": {
+                            "begin": "585",
+                            "len": "27",
+                            "source": "0"
+                        }
+                    },
+                    "3": {
+                        "lhs": "_vtime",
+                        "sourceLoc": {
+                            "begin": "1286",
+                            "len": "29",
+                            "source": "0"
+                        }
+                    },
+                    "4": {
+                        "lhs": "_vtime",
+                        "sourceLoc": {
+                            "begin": "2428",
+                            "len": "29",
+                            "source": "0"
+                        }
+                    },
+                    "5": {
+                        "lhs": "pastBlockTime_tmstmp40",
+                        "sourceLoc": {
+                            "begin": "849",
+                            "len": "40",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 1663,
+                            "size": 129
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 2341,
+                            "size": 29
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 3072,
+                            "size": 61
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 1947,
+                            "size": 27
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "play_tmstmp27",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "startTime"
+                        ],
+                        "returns": [],
+                        "sighash": "8d356d07",
+                        "sourceBytes": {
+                            "begin": 1236,
+                            "size": 199
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 3039,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "play_tmstmp31",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "startTime"
+                        ],
+                        "returns": [],
+                        "sighash": "99d8cc4d",
+                        "sourceBytes": {
+                            "begin": 2378,
+                            "size": 199
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_tmstmp13",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "56e2ca30",
+                        "sourceBytes": {
+                            "begin": 1794,
+                            "size": 100
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 922,
+                            "size": 45
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "spender",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 2654,
+                            "size": 233
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_tmstmp33",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8c5ac894",
+                        "sourceBytes": {
+                            "begin": 1072,
+                            "size": 100
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_tmstmp40",
+                        "notpayable": false,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "17c6abfa",
+                        "sourceBytes": {
+                            "begin": 541,
+                            "size": 495
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "to",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 1902,
+                            "size": 276
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "play_tmstmp35",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "startTime"
+                        ],
+                        "returns": [],
+                        "sighash": "88d5cb7c",
+                        "sourceBytes": {
+                            "begin": 284,
+                            "size": 199
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [
+                            "from",
+                            "to",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 2936,
+                            "size": 404
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TAMCContract",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "TAMContract.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 5214,
+                            "size": 64
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "TAMCContract",
+                "original_file": "TAMContract.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 231,
+                    "size": 3153
+                },
+                "srcmap": "231:6467:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1947:27;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5287:573;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;976:967;;;:::i;:::-;;3072:61;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;5909:745;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;3039:26;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;3394:358;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;922:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;284:634;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1979:358;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;2401:634;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;2341:29;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4576:634;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;3760:616;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;5214:64;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1947:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;5287:573::-;5370:12;5476:13;5408:66;5401:89;5566:1;5498:66;5491:77;5644:1;5576:66;5569:77;5722:5;5654:66;5647:81;5773:5;5740:9;:21;5750:10;5740:21;;;;;;;;;;;;;;;:30;5762:7;5740:30;;;;;;;;;;;;;;;:38;;;;5815:7;5794:36;;5803:10;5794:36;;;5824:5;5794:36;;;;;;;;;;;;;;;;;;5848:4;5841:11;;5287:573;;;;:::o;976:967::-;1103:13;1035:66;1028:89;1193:1;1125:66;1118:77;1271:1;1203:66;1196:77;1278:27;1389:22;1322:66;1315:97;1465:8;1452:9;:21;1444:30;;;;;;1579:22;1560:15;:41;;1552:50;;;;;;1674:15;1649:40;;1773:22;1706:66;1699:97;1842:1;1836:2;1818:15;:20;;;;;;:25;1815:121;;;1881:10;1873:28;;:51;1902:21;1873:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1815:121;976:967;:::o;3072:61::-;;;;:::o;5909:745::-;6006:12;6112:13;6044:66;6037:89;6202:1;6134:66;6127:77;6280:2;6212:66;6205:78;6359:5;6291:66;6284:81;6394:9;:15;6404:4;6394:15;;;;;;;;;;;;;;;;6385:5;:24;;6377:33;;;;;;6438:9;:15;6448:4;6438:15;;;;;;;;;;;;;;;:27;6454:10;6438:27;;;;;;;;;;;;;;;;6429:5;:36;;6421:45;;;;;;6498:5;6479:9;:15;6489:4;6479:15;;;;;;;;;;;;;;;;:24;;;;;;;;;;;6531:5;6514:9;:13;6524:2;6514:13;;;;;;;;;;;;;;;;:22;;;;;;;;;;;6578:5;6547:9;:15;6557:4;6547:15;;;;;;;;;;;;;;;:27;6563:10;6547:27;;;;;;;;;;;;;;;;:36;;;;;;;;;;;6614:2;6599:25;;6608:4;6599:25;;;6618:5;6599:25;;;;;;;;;;;;;;;;;;6642:4;6635:11;;5909:745;;;;;:::o;3039:26::-;;;;;;;;;;;;;:::o;3394:358::-;3439:4;3532:13;3464:66;3457:89;3622:1;3554:66;3547:77;3700:1;3632:66;3625:77;3736:10;3717:15;:29;;3710:36;;3394:358;:::o;922:45::-;;;;;;;;;;;;;;;;;:::o;284:634::-;417:13;349:66;342:89;507:1;439:66;432:77;585:1;517:66;510:77;663:9;595:66;588:85;678:11;692:15;678:29;;791:6;724:66;717:81;875:6;860:10;847:9;:24;:34;843:74;;;905:10;887:15;;:28;;;;;;;;;;;;;;;;;;843:74;284:634;;:::o;1979:358::-;2024:4;2117:13;2049:66;2042:89;2207:1;2139:66;2132:77;2285:1;2217:66;2210:77;2321:10;2302:15;:29;;2295:36;;1979:358;:::o;2401:634::-;2534:13;2466:66;2459:89;2624:1;2556:66;2549:77;2702:1;2634:66;2627:77;2780:9;2712:66;2705:85;2795:11;2809:15;2795:29;;2908:6;2841:66;2834:81;2992:6;2977:10;2964:9;:24;:34;2960:74;;;3022:10;3004:15;;:28;;;;;;;;;;;;;;;;;;2960:74;2401:634;;:::o;2341:29::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;4576:634::-;4709:13;4641:66;4634:89;4799:1;4731:66;4724:77;4877:1;4809:66;4802:77;4955:9;4887:66;4880:85;4970:11;4984:15;4970:29;;5083:6;5016:66;5009:81;5167:6;5152:10;5139:9;:24;:34;5135:74;;;5197:10;5179:15;;:28;;;;;;;;;;;;;;;;;;5135:74;4576:634;;:::o;3760:616::-;3821:12;3922:13;3854:66;3847:89;4012:1;3944:66;3937:77;4090:1;4022:66;4015:77;4168:5;4100:66;4093:81;4219:5;4194:9;:21;4204:10;4194:21;;;;;;;;;;;;;;;;:30;;4186:39;;;;;;4261:5;4236:9;:21;4246:10;4236:21;;;;;;;;;;;;;;;;:30;;;;;;;;;;;4294:5;4277:9;:13;4287:2;4277:13;;;;;;;;;;;;;;;;:22;;;;;;;;;;;4336:2;4315:31;;4324:10;4315:31;;;4340:5;4315:31;;;;;;;;;;;;;;;;;;4364:4;4357:11;;3760:616;;;;:::o;5214:64::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 3,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "winner_tmstmp35",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_address"
+                        },
+                        {
+                            "astId": 35,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "balanceOf",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 88,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "name",
+                            "offset": 0,
+                            "slot": "2",
+                            "type": "t_string_storage"
+                        },
+                        {
+                            "astId": 103,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "symbol",
+                            "offset": 0,
+                            "slot": "3",
+                            "type": "t_string_storage"
+                        },
+                        {
+                            "astId": 105,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "winner_tmstmp27",
+                            "offset": 0,
+                            "slot": "4",
+                            "type": "t_address"
+                        },
+                        {
+                            "astId": 136,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "1",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint8",
+                                "type": "Primitive"
+                            },
+                            "label": "decimals",
+                            "offset": 20,
+                            "slot": "4",
+                            "type": "t_uint8"
+                        },
+                        {
+                            "astId": 141,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "totalSupply",
+                            "offset": 0,
+                            "slot": "5",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 145,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "bugv_tmstmp3",
+                            "offset": 0,
+                            "slot": "6",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 232,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "bugv_tmstmp5",
+                            "offset": 0,
+                            "slot": "7",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 236,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "bugv_tmstmp4",
+                            "offset": 0,
+                            "slot": "8",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 246,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "winner_tmstmp31",
+                            "offset": 0,
+                            "slot": "9",
+                            "type": "t_address"
+                        },
+                        {
+                            "astId": 280,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "mappingKeyType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "20",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    },
+                                    "mappingValueType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "32",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    },
+                                    "type": "Mapping"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "allowance",
+                            "offset": 0,
+                            "slot": "10",
+                            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+                        },
+                        {
+                            "astId": 313,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "bugv_tmstmp1",
+                            "offset": 0,
+                            "slot": "11",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 378,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_37_780287b690/.certora_sources/TAMContract.sol:TAMCContract",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "bugv_tmstmp2",
+                            "offset": 0,
+                            "slot": "12",
+                            "type": "t_uint256"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => mapping(address => uint256))",
+                            "numberOfBytes": "32",
+                            "value": "t_mapping(t_address,t_uint256)"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_string_storage": {
+                            "encoding": "bytes",
+                            "label": "string",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint8": {
+                            "encoding": "inplace",
+                            "label": "uint8",
+                            "numberOfBytes": "1"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "TAMCContract",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "TAMContract.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "TAMContract.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

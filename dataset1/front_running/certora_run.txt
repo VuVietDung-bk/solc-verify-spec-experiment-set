@@ -1,0 +1,3 @@
+certoraRun ERC20.sol:ERC20 --verify ERC20:certora_specification/ERC20.cvl
+certoraRun eth_tx_order_dependence_minimal.sol:EthTxOrderDependenceMinimal --verify EthTxOrderDependenceMinimal:certora_specification/eth_tx_order_dependence_minimal.cvl
+certoraRun odds_and_evens.sol:OddsAndEvens --verify OddsAndEvens:certora_specification/odds_and_evens.cvl

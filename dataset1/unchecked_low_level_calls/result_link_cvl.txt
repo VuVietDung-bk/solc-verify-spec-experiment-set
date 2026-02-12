@@ -1,0 +1,41 @@
+# result_link_cvl.txt
+# Generated: 2026-02-12
+
+[1] CMD: certoraRun 0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.sol:Caller --verify Caller:certora_specification/0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.cvl
+[1] LINK: https://prover.certora.com/output/1696952/92bdaff7451f4132ba4a9c0515aafa23
+
+[2] CMD: certoraRun 0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.sol:MultiplicatorX4 --verify MultiplicatorX4:certora_specification/0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.cvl
+[2] LINK: https://prover.certora.com/output/1696952/2f1274eff3b045a4a80c82e0790bd63f
+
+[3] CMD: certoraRun 0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.sol:WhaleGiveaway2 --verify WhaleGiveaway2:certora_specification/0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.cvl
+[3] LINK: https://prover.certora.com/output/1696952/e58bc1d2baba49a8bcf53b1301bbcca5
+
+[4] CMD: certoraRun 0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.sol:EtherGet --verify EtherGet:certora_specification/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.cvl
+[4] LINK: https://prover.certora.com/output/1696952/4fb389c709bb45cb928866395923b629
+
+[5] CMD: certoraRun 0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3 --verify MultiplicatorX3:certora_specification/0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl
+[5] LINK: https://prover.certora.com/output/1696952/1475a27a4fa54ef5825aa19c680d7b81
+
+[6] CMD: certoraRun 0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol:HomeyJar --verify HomeyJar:certora_specification/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.cvl
+[6] LINK: https://prover.certora.com/output/1696952/8fecc953d4574bc1a612103b27f3a474
+
+[7] CMD: certoraRun 0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.sol:WedIndex --verify WedIndex:certora_specification/0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.cvl
+[7] LINK: https://prover.certora.com/output/1696952/d18114bc80c643869bf67cf70ae4b400
+
+[8] CMD: certoraRun 0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol:Marriage --verify Marriage:certora_specification/0x958a8f594101d2c0485a52319f29b2647f2ebc06.cvl
+[8] LINK: https://prover.certora.com/output/1696952/e28413b3fbe44c7e8c46e43e368f6375
+
+[9] CMD: certoraRun 0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.sol:Splitter --verify Splitter:certora_specification/0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.cvl
+[9] LINK: https://prover.certora.com/output/1696952/96dc286be69441a9b516358e6f8b0dd8
+
+[10] CMD: certoraRun 0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.sol:keepMyEther --verify keepMyEther:certora_specification/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.cvl
+[10] LINK: https://prover.certora.com/output/1696952/9a9829ce2bd44154b8b47e8654f81c5a
+
+[11] CMD: certoraRun lotto.sol:Lotto --verify Lotto:certora_specification/lotto.cvl
+[11] LINK: https://prover.certora.com/output/1696952/59a25aca3bc64b1aace5ba7ec2000bb3
+
+[12] CMD: certoraRun mishandled.sol:SendBack --verify SendBack:certora_specification/mishandled.cvl
+[12] LINK: https://prover.certora.com/output/1696952/5f902041dc6543e285253f29d435e00b
+
+[13] CMD: certoraRun unchecked_return_value.sol:ReturnValue --verify ReturnValue:certora_specification/unchecked_return_value.cvl
+[13] LINK: https://prover.certora.com/output/1696952/70e19a6effc9405fbe9eaa9d46c321fe

@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "IntegerOverflowMul",
+    "specfile": "certora_specification/integer_overflow_mul.cvl",
+    "specfileOrigRelpath": "certora_specification/integer_overflow_mul.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

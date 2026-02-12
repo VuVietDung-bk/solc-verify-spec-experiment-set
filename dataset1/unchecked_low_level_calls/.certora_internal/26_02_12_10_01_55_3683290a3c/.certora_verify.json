@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "ReturnValue",
+    "specfile": "certora_specification/unchecked_return_value.cvl",
+    "specfileOrigRelpath": "certora_specification/unchecked_return_value.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

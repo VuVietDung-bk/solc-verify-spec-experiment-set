@@ -1,0 +1,4 @@
+certoraRun auction.sol:DosAuction --verify DosAuction:certora_specification/auction.cvl
+certoraRun dos_address.sol:DosGas --verify DosGas:certora_specification/dos_address.cvl
+certoraRun list_dos.sol:Government --verify Government:certora_specification/list_dos.cvl
+certoraRun send_loop.sol:Refunder --verify Refunder:certora_specification/send_loop.cvl

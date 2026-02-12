@@ -1,0 +1,19 @@
+Saving last configuration file to .certora_internal/26_02_12_09_37_18_580475577e/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['integer_overflow_1.sol:Overflow'], 'package_version_for_build_cache': 'certora-cli 8.8.0', 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /root/solc-verify-spec/experiments/dataset1/arithmetic/.certora_internal/26_02_12_09_37_18_580475577e/.certora_config
+In /root/solc-verify-spec/experiments/dataset1/arithmetic/certora_specification/integer_overflow_1.cvl, found the imports: []
+copying spec file /root/solc-verify-spec/experiments/dataset1/arithmetic/certora_specification/integer_overflow_1.cvl to /root/solc-verify-spec/experiments/dataset1/arithmetic/.certora_internal/26_02_12_09_37_18_580475577e/.certora_sources/.0_integer_overflow_1.cvl.spec
+writing /root/solc-verify-spec/experiments/dataset1/arithmetic/.certora_internal/26_02_12_09_37_18_580475577e/.certora_verify.json
+
+building file integer_overflow_1.sol
+Running cmd solc --version
+stdout, stderr = .certora_internal/26_02_12_09_37_18_580475577e/.certora_config/version_check_solc.stdout, .certora_internal/26_02_12_09_37_18_580475577e/.certora_config/version_check_solc.stderr
+Exitcode 0
+Solc run solc --version time: 0.1276
+Running cmd solc -o ".certora_internal/26_02_12_09_37_18_580475577e/.certora_config/integer_overflow_1.sol_0/" --overwrite --allow-paths ".",. --standard-json
+stdout, stderr = .certora_internal/26_02_12_09_37_18_580475577e/.certora_config/integer_overflow_1.sol_0.standard.stdout.json, .certora_internal/26_02_12_09_37_18_580475577e/.certora_config/integer_overflow_1.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_12_09_37_18_580475577e/.certora_config/integer_overflow_1.sol_0/" --overwrite --allow-paths ".",. --standard-json time: 0.1153
+reading standard json data from .certora_internal/26_02_12_09_37_18_580475577e/.certora_config/integer_overflow_1.sol_0.standard.stdout.json
+build failed

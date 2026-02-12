@@ -1,0 +1,67 @@
+Saving last configuration file to .certora_internal/26_02_12_09_55_57_893121e82e/run.conf
+contract name TTC is the same as the file name and can be omitted from TTC.sol:TTC
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['TTC.sol:TTC'], 'package_version_for_build_cache': 'certora-cli 8.8.0', 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_config
+In /root/solc-verify-spec/experiments/dataset1/time_manipulation/certora_specification/TTC.cvl, found the imports: []
+copying spec file /root/solc-verify-spec/experiments/dataset1/time_manipulation/certora_specification/TTC.cvl to /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/.0_TTC.cvl.spec
+writing /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_verify.json
+
+building file TTC.sol
+Running cmd solc --version
+stdout, stderr = .certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/version_check_solc.stdout, .certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/version_check_solc.stderr
+Exitcode 0
+Solc run solc --version time: 0.1001
+Running cmd solc -o ".certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/TTC.sol_0/" --overwrite --allow-paths ".",. --standard-json
+stdout, stderr = .certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/TTC.sol_0.standard.stdout.json, .certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/TTC.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/TTC.sol_0/" --overwrite --allow-paths ".",. --standard-json time: 0.1517
+reading standard json data from .certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/TTC.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol'])
+Contracts in TTC.sol_0 (file TTC.sol): ['Ownable', 'TTC', 'TokenERC20']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol:Ownable'), (274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol:TTC'), (274184521717934524641157099916833587202, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol:TokenERC20')]
+Report source list={0: 'TTC.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol relative to /root/solc-verify-spec/experiments/dataset1/time_manipulation
+Working on contract Ownable
+Working on contract Ownable
+Working on contract TTC
+Working on contract TTC
+Working on contract TokenERC20
+Working on contract TokenERC20
+For contracts of primary TTC
+finding primary contract address of /root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol:TTC in [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol:Ownable'), (274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol:TTC'), (274184521717934524641157099916833587202, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol:TokenERC20')]
+Contracts in SDC TTC.sol_0: ['Ownable', 'TTC', 'TokenERC20']
+Building source tree
+Copying /root/solc-verify-spec/experiments/dataset1/time_manipulation/certora_specification/TTC.cvl to .certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/certora_specification/TTC.cvl
+Copying /root/solc-verify-spec/experiments/dataset1/time_manipulation/TTC.sol to .certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol
+Report source list={0: 'TTC.sol'}
+Backing up current .certora_sources to .certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/.pre_autofinders.0
+Running cmd solc -o ".certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/TTC.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources",. --standard-json
+stdout, stderr = .certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/TTC.sol_0.standard.stdout.json, .certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/TTC.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/TTC.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources",. --standard-json time: 0.1671
+reading standard json data from .certora_internal/26_02_12_09_55_57_893121e82e/.certora_config/TTC.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol'])
+Contracts in TTC.sol_0 (file .certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol): ['Ownable', 'TTC', 'TokenERC20']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587203, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol:Ownable'), (274184521717934524641157099916833587204, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol:TTC'), (274184521717934524641157099916833587205, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol:TokenERC20')]
+Report source list={0: 'TTC.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol relative to .certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources
+Working on contract Ownable
+Working on contract Ownable
+Working on contract TTC
+Working on contract TTC
+Working on contract TokenERC20
+Working on contract TokenERC20
+For contracts of primary TTC
+finding primary contract address of /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol:TTC in [(274184521717934524641157099916833587203, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol:Ownable'), (274184521717934524641157099916833587204, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol:TTC'), (274184521717934524641157099916833587205, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/TTC.sol:TokenERC20')]
+Contracts in SDC TTC.sol_0: ['Ownable', 'TTC', 'TokenERC20']
+Backing up instrumented .certora_sources to .certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/.post_autofinders.0
+Rolling back .certora_sources to .certora_internal/26_02_12_09_55_57_893121e82e/.certora_sources/.pre_autofinders.0 version
+Libraries to add = []
+writing file /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_build.json
+writing file /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_build_output_props.json
+writing /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_55_57_893121e82e/.certora_verify.json

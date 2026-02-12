@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "MultiplicatorX3",
+    "specfile": "certora_specification/0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl",
+    "specfileOrigRelpath": "certora_specification/0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

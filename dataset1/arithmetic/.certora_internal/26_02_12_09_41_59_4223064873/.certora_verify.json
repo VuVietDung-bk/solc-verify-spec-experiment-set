@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Token",
+    "specfile": "certora_specification/token.cvl",
+    "specfileOrigRelpath": "certora_specification/token.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

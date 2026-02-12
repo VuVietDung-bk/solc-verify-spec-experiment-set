@@ -1,0 +1,236 @@
+{
+    "IntegerOverflowBenign1_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "IntegerOverflowBenign1",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "count",
+                        "notpayable": true,
+                        "originalFile": "integer_overflow_benign_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "06661abd",
+                        "sourceBytes": {
+                            "begin": 354,
+                            "size": 21
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "IntegerOverflowBenign1",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "run",
+                        "notpayable": true,
+                        "originalFile": "integer_overflow_benign_1.sol",
+                        "paramNames": [
+                            "input"
+                        ],
+                        "returns": [],
+                        "sighash": "a444f5e9",
+                        "sourceBytes": {
+                            "begin": 382,
+                            "size": 113
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561001057600080fd5b50600436106100365760003560e01c806306661abd1461003b578063a444f5e914610059575b600080fd5b610043610087565b6040518082815260200191505060405180910390f35b6100856004803603602081101561006f57600080fd5b810190808035906020019092919050505061008d565b005b60005481565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600052600081600054039050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000152505056fea26469706673582212200e36a2a9c545ac2940bdc8b9c5b40b3d927b6f7bdeaa8d74ddfd257501838ede64736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "6080604052600160005534801561001557600080fd5b50610186806100256000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806306661abd1461003b578063a444f5e914610059575b600080fd5b610043610087565b6040518082815260200191505060405180910390f35b6100856004803603602081101561006f57600080fd5b810190808035906020019092919050505061008d565b005b60005481565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600052600081600054039050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000152505056fea26469706673582212200e36a2a9c545ac2940bdc8b9c5b40b3d927b6f7bdeaa8d74ddfd257501838ede64736f6c63430007060033",
+                "constructorSrcmap": "316:609:0:-:0;;;374:1;354:21;;316:609;;;;;;;;;;;;;;;;",
+                "extensionContracts": [],
+                "file": "integer_overflow_benign_1.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "integer_overflow_benign_1.sol|IntegerOverflowBenign1",
+                        "declaringContract": "IntegerOverflowBenign1",
+                        "method": {
+                            "contractName": "IntegerOverflowBenign1",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "run",
+                            "notpayable": true,
+                            "originalFile": "integer_overflow_benign_1.sol",
+                            "paramNames": [
+                                "input"
+                            ],
+                            "returns": [],
+                            "sighash": "a444f5e9",
+                            "sourceBytes": {
+                                "begin": 382,
+                                "size": 113
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "res",
+                        "sourceLoc": {
+                            "begin": "464",
+                            "len": "24",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "IntegerOverflowBenign1",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "run",
+                        "notpayable": true,
+                        "originalFile": "integer_overflow_benign_1.sol",
+                        "paramNames": [
+                            "input"
+                        ],
+                        "returns": [],
+                        "sighash": "a444f5e9",
+                        "sourceBytes": {
+                            "begin": 382,
+                            "size": 113
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "IntegerOverflowBenign1",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "count",
+                        "notpayable": true,
+                        "originalFile": "integer_overflow_benign_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "06661abd",
+                        "sourceBytes": {
+                            "begin": 354,
+                            "size": 21
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "IntegerOverflowBenign1",
+                "original_file": "integer_overflow_benign_1.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 316,
+                    "size": 181
+                },
+                "srcmap": "316:609:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;354:21;;;:::i;:::-;;;;;;;;;;;;;;;;;;;382:541;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;354:21;;;;:::o;382:541::-;504:13;436:66;429:89;594:1;526:66;519:77;672:1;604:66;597:77;750:5;682:66;675:81;804:8;823:5;815;;:13;804:24;;912:3;845:66;838:78;837:80;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 4,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/arithmetic/.certora_internal/26_02_12_09_37_52_05385766a9/.certora_sources/integer_overflow_benign_1.sol:IntegerOverflowBenign1",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "count",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_uint256"
+                        }
+                    ],
+                    "types": {
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "IntegerOverflowBenign1",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "integer_overflow_benign_1.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "integer_overflow_benign_1.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

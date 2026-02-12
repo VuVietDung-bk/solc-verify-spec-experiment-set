@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Staking",
+    "specfile": "certora_specification/buggy_33.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_33.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

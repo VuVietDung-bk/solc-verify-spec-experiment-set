@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "SendBack",
+    "specfile": "certora_specification/mishandled.cvl",
+    "specfileOrigRelpath": "certora_specification/mishandled.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

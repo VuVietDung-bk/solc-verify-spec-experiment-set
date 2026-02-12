@@ -1,0 +1,34 @@
+# result_link_cvl.txt
+# Generated: 2026-02-12
+
+[1] CMD: certoraRun asignatura.sol:Asignatura --verify Asignatura:certora_specification/Asignatura.cvl
+[1] LINK: https://prover.certora.com/output/1696952/21aede2251b24422b21c60e2843a8d27
+
+[2] CMD: certoraRun class.sol:Class --verify Class:certora_specification/Class.cvl
+[2] LINK: https://prover.certora.com/output/1696952/069710698db9489abf5f4a6dd8acf58a
+
+[3] CMD: certoraRun Crowdfund.sol:Crowdfund --verify Crowdfund:certora_specification/Crowdfund.cvl
+[3] LINK: https://prover.certora.com/output/1696952/bf8516fb9bfa4aca85fe5baf80dc8a98
+
+[4] CMD: certoraRun EvilToken.sol:EvilERC20Token --verify EvilERC20Token:certora_specification/EvilToken.cvl
+[4] ERROR
+
+[5] CMD: certoraRun Forwarder.sol:Forwarder --verify Forwarder:certora_specification/Forwarder.cvl
+[5] LINK: https://prover.certora.com/output/1696952/c1eda6a84cea479ab14cf6dc580e0a8c
+
+[6] CMD: certoraRun name_registrar.sol:NameRegistrar --verify NameRegistrar:certora_specification/NameRegistrar.cvl
+[6] LINK: https://prover.certora.com/output/1696952/0d75946f63f04d74b3130a11954988b8
+
+[7] CMD: certoraRun StakingWarmup.sol:StakingWarmup --verify StakingWarmup:certora_specification/StakingWarmup.cvl
+[7] LINK: https://prover.certora.com/output/1696952/2ffa061d0025481393b9338bce03f6ba
+
+[8] CMD: certoraRun WETH.sol:WETH --verify WETH:certora_specification/WETH.cvl
+[8] LINK: https://prover.certora.com/output/1696952/67670659a2b04ef58a864afa72d9cb7f
+
+
+
+
+
+
+
+

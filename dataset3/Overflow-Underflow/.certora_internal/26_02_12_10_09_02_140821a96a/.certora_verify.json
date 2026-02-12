@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "StockBet",
+    "specfile": "certora_specification/buggy_45.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_45.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

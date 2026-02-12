@@ -1,0 +1,32 @@
+# result_link_cvl.txt
+# Generated: 2026-02-12
+
+[1] CMD: certoraRun buggy_1.sol:HotDollarsToken --verify HotDollarsToken:certora_specification/buggy_1.cvl
+[1] LINK: https://prover.certora.com/output/1696952/86b3a8f682174d168a46d50cdf9e141c
+
+[2] CMD: certoraRun buggy_5.sol:TTC --verify TTC:certora_specification/buggy_5.cvl
+[2] LINK: https://prover.certora.com/output/1696952/8f8f9143175b4b39aed3407e05c6a21b
+
+[3] CMD: certoraRun buggy_19.sol:ethBank --verify ethBank:certora_specification/buggy_19.cvl
+[3] LINK: https://prover.certora.com/output/1696952/da3ccb2442ae46abad72d881a4304452
+
+[4] CMD: certoraRun buggy_20.sol:RampInstantEthPool --verify RampInstantEthPool:certora_specification/buggy_20.cvl
+[4] LINK: https://prover.certora.com/output/1696952/4a8c3723bac046f0b590a07336c9d919
+
+[5] CMD: certoraRun buggy_23.sol:AGR --verify AGR:certora_specification/buggy_23.cvl
+[5] LINK: https://prover.certora.com/output/1696952/d21e048d60bf4e5a93a56bad3dc2983e
+
+[6] CMD: certoraRun buggy_33.sol:Staking --verify Staking:certora_specification/buggy_33.cvl
+[6] LINK: https://prover.certora.com/output/1696952/1abe44fa337941b1994d1e6506e0cf4b
+
+[7] CMD: certoraRun buggy_34.sol:LollypopToken --verify LollypopToken:certora_specification/buggy_34.cvl
+[7] LINK: https://prover.certora.com/output/1696952/5286be07c0714973a3e99ba36c753664
+
+[8] CMD: certoraRun buggy_45.sol:StockBet --verify StockBet:certora_specification/buggy_45.cvl
+[8] LINK: https://prover.certora.com/output/1696952/9aa3c0405e33427a9de6befaae810f11
+
+[9] CMD: certoraRun buggy_47.sol:AcunarIEO --verify AcunarIEO:certora_specification/buggy_47.cvl
+[9] ERROR: Compiler warning - unnamed return variable
+
+[10] CMD: certoraRun buggy_50.sol:digitalNotary --verify digitalNotary:certora_specification/buggy_50.cvl
+[10] LINK: https://prover.certora.com/output/1696952/5209de55dcc647d3b3fa5284a835c7a1

@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Caller",
+    "specfile": "certora_specification/0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.cvl",
+    "specfileOrigRelpath": "certora_specification/0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

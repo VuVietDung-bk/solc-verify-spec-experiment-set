@@ -1,0 +1,372 @@
+{
+    "lottopollo_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "lottopollo",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "draw",
+                        "notpayable": true,
+                        "originalFile": "lottopollo.sol",
+                        "paramNames": [
+                            "seed"
+                        ],
+                        "returns": [],
+                        "sighash": "3b304147",
+                        "sourceBytes": {
+                            "begin": 791,
+                            "size": 99
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "lottopollo",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "payOut",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [
+                            "rand"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "nonpayable",
+                        "visibility": "internal",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "lottopollo",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "randomGen",
+                        "notpayable": true,
+                        "originalFile": "lottopollo.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "81cbba82",
+                        "sourceBytes": {
+                            "begin": 650,
+                            "size": 138
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561001057600080fd5b50600436106100365760003560e01c80633b3041471461003b57806381cbba8214610069575b600080fd5b6100676004803603602081101561005157600080fd5b8101908080359060200190929190505050610087565b005b610071610156565b6040518082815260200191505060405180910390f35b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00026000526000610124610156565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000152610152816101ce565b5050565b600064f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100045242905090565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600052600081118015610275575062015180814203115b15610337573373ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156102c0573d6000803e3d6000fd5b5060004711156103325760008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f19350505050158015610330573d6000803e3d6000fd5b505b61038f565b670de0b6b3a7640000341061038e57336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550806001819055505b5b5056fea2646970667358221220fa2e763ddb73071ec0abe12145105d46d73841b442c54ef5b25c26e432b35cc864736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "608060405234801561001057600080fd5b506103c8806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80633b3041471461003b57806381cbba8214610069575b600080fd5b6100676004803603602081101561005157600080fd5b8101908080359060200190929190505050610087565b005b610071610156565b6040518082815260200191505060405180910390f35b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00026000526000610124610156565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000152610152816101ce565b5050565b600064f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100045242905090565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600052600081118015610275575062015180814203115b15610337573373ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050501580156102c0573d6000803e3d6000fd5b5060004711156103325760008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f19350505050158015610330573d6000803e3d6000fd5b505b61038f565b670de0b6b3a7640000341061038e57336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550806001819055505b5b5056fea2646970667358221220fa2e763ddb73071ec0abe12145105d46d73841b442c54ef5b25c26e432b35cc864736f6c63430007060033",
+                "constructorSrcmap": "188:1737:0:-:0;;;;;;;;;;;;;;;;;;;",
+                "extensionContracts": [],
+                "file": "lottopollo.sol",
+                "immutables": [],
+                "internalFuncs": [
+                    {
+                        "contractName": "lottopollo",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "payOut",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [
+                            "rand"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "nonpayable",
+                        "visibility": "internal",
+                        "vyper_metadata": null
+                    }
+                ],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "lottopollo.sol|lottopollo",
+                        "declaringContract": "lottopollo",
+                        "method": {
+                            "contractName": "lottopollo",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "payOut",
+                            "notpayable": true,
+                            "originalFile": "lottopollo.sol",
+                            "paramNames": [
+                                "rand"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 251,
+                                "size": 396
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "lottopollo.sol|lottopollo",
+                        "declaringContract": "lottopollo",
+                        "method": {
+                            "contractName": "lottopollo",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "randomGen",
+                            "notpayable": true,
+                            "originalFile": "lottopollo.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "81cbba82",
+                            "sourceBytes": {
+                                "begin": 650,
+                                "size": 138
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "lottopollo.sol|lottopollo",
+                        "declaringContract": "lottopollo",
+                        "method": {
+                            "contractName": "lottopollo",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "draw",
+                            "notpayable": true,
+                            "originalFile": "lottopollo.sol",
+                            "paramNames": [
+                                "seed"
+                            ],
+                            "returns": [],
+                            "sighash": "3b304147",
+                            "sourceBytes": {
+                                "begin": 791,
+                                "size": 99
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "randomNumber",
+                        "sourceLoc": {
+                            "begin": "829",
+                            "len": "29",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "lottopollo",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "randomGen",
+                        "notpayable": true,
+                        "originalFile": "lottopollo.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "81cbba82",
+                        "sourceBytes": {
+                            "begin": 650,
+                            "size": 138
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "lottopollo",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "draw",
+                        "notpayable": true,
+                        "originalFile": "lottopollo.sol",
+                        "paramNames": [
+                            "seed"
+                        ],
+                        "returns": [],
+                        "sighash": "3b304147",
+                        "sourceBytes": {
+                            "begin": 791,
+                            "size": 99
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "lottopollo",
+                "original_file": "lottopollo.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 188,
+                    "size": 704
+                },
+                "srcmap": "188:1737:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1388:535;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;989:396;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1388:535;1507:13;1439:66;1432:89;1597:1;1529:66;1522:77;1675:1;1607:66;1600:77;1753:4;1685:66;1678:80;1765:17;1783:11;:9;:11::i;:::-;1765:29;;1878:12;1811:66;1804:87;1898:20;1905:12;1898:6;:20::i;:::-;1388:535;;:::o;989:396::-;1026:17;1132:13;1064:66;1057:89;1222:1;1154:66;1147:77;1300:1;1232:66;1225:77;1360:15;1353:22;;989:396;:::o;251:735::-;374:13;306:66;299:89;464:1;396:66;389:77;542:1;474:66;467:77;620:4;552:66;545:80;683:1;677:4;:7;:44;;;;;713:8;706:4;688:15;:22;:33;677:44;672:310;;;740:10;732:28;;:40;761:9;732:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;809:1;785:21;:25;781:99;;;831:6;;;;;;;;;;823:24;;:48;848:21;823:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;781:99;672:310;;;914:7;901:9;:20;896:86;;941:10;932:6;;:19;;;;;;;;;;;;;;;;;;971:4;959:9;:16;;;;896:86;672:310;251:735;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 3,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_56_15_9784630158/.certora_sources/lottopollo.sol:lottopollo",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "leader",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_address"
+                        },
+                        {
+                            "astId": 5,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_56_15_9784630158/.certora_sources/lottopollo.sol:lottopollo",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "timestamp",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_uint256"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "lottopollo",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "lottopollo.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "lottopollo.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

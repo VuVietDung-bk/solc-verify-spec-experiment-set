@@ -1,0 +1,2872 @@
+{
+    "AGR_00000000ce4604a0000000000000000000000006": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000006",
+                "allMethods": [
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "owner",
+                            "spender"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 5213,
+                            "size": 138
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "spender",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 6301,
+                            "size": 154
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "owner"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 4668,
+                            "size": 113
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_intou19",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "72f4f633",
+                        "sourceBytes": {
+                            "begin": 4782,
+                            "size": 100
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "burn",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "value"
+                        ],
+                        "returns": [],
+                        "sighash": "42966c68",
+                        "sourceBytes": {
+                            "begin": 11633,
+                            "size": 77
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "burnFrom",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "from",
+                            "value"
+                        ],
+                        "returns": [],
+                        "sighash": "79cc6790",
+                        "sourceBytes": {
+                            "begin": 11958,
+                            "size": 93
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            },
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "_name",
+                            "_symbol"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 13157,
+                            "size": 143
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 12982,
+                            "size": 81
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "decreaseAllowance",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "spender",
+                            "subtractedValue"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a457c2d7",
+                        "sourceBytes": {
+                            "begin": 8384,
+                            "size": 210
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "increaseAllowance",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "spender",
+                            "addedValue"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "39509351",
+                        "sourceBytes": {
+                            "begin": 7665,
+                            "size": 200
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "increaseLockTime_intou1",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "_secondsToIncrease"
+                        ],
+                        "returns": [],
+                        "sighash": "1d3fb2a7",
+                        "sourceBytes": {
+                            "begin": 3476,
+                            "size": 143
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "lockTime_intou1",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "22e1ded3",
+                        "sourceBytes": {
+                            "begin": 5450,
+                            "size": 47
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 12680,
+                            "size": 81
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 12823,
+                            "size": 85
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 4358,
+                            "size": 98
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "to",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 5519,
+                            "size": 146
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "from",
+                            "to",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 6918,
+                            "size": 233
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer_undrflow2",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "37ae6b73",
+                        "sourceBytes": {
+                            "begin": 3931,
+                            "size": 254
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdraw_ovrflow1",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "76be3cd1",
+                        "sourceBytes": {
+                            "begin": 3620,
+                            "size": 214
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561001057600080fd5b50600436106101165760003560e01c806342966c68116100a257806379cc67901161007157806379cc6790146104ad57806395d89b41146104fb578063a457c2d71461057e578063a9059cbb146105e2578063dd62ed3e1461064657610116565b806342966c681461041357806370a082311461044157806372f4f6331461049957806376be3cd1146104a357610116565b806322e1ded3116100e957806322e1ded31461024e57806323b872dd146102a6578063313ce5671461032a57806337ae6b731461034b57806339509351146103af57610116565b806306fdde031461011b578063095ea7b31461019e57806318160ddd146102025780631d3fb2a714610220575b600080fd5b6101236106be565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610163578082015181840152602081019050610148565b50505050905090810190601f1680156101905780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101ea600480360360408110156101b457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506107d0565b60405180821515815260200191505060405180910390f35b61020a61087a565b6040518082815260200191505060405180910390f35b61024c6004803603602081101561023657600080fd5b81019080803590602001909291905050506108f4565b005b6102906004803603602081101561026457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506109d6565b6040518082815260200191505060405180910390f35b610312600480360360608110156102bc57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506109ee565b60405180821515815260200191505060405180910390f35b610332610b32565b604051808260ff16815260200191505060405180910390f35b6103976004803603604081101561036157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610bb9565b60405180821515815260200191505060405180910390f35b6103fb600480360360408110156103c557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610d41565b60405180821515815260200191505060405180910390f35b61043f6004803603602081101561042957600080fd5b8101908080359060200190929190505050610e79565b005b6104836004803603602081101561045757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610f19565b6040518082815260200191505060405180910390f35b6104a1610ff5565b005b6104ab6110b6565b005b6104f9600480360360408110156104c357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506111e3565b005b610503611284565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610543578082015181840152602081019050610528565b50505050905090810190601f1680156105705780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6105ca6004803603604081101561059457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611396565b60405180821515815260200191505060405180910390f35b61062e600480360360408110156105f857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506114ce565b60405180821515815260200191505060405180910390f35b6106a86004803603604081101561065c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611578565b6040518082815260200191505060405180910390f35b606064f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100045260078054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107c65780601f1061079b576101008083540402835291602001916107c6565b820191906000526020600020905b8154815290600101906020018083116107a957829003601f168201915b5050505050905090565b600064f196e5000e7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e60015261087033848461194f565b6001905092915050565b600064f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000452600454905090565b64f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008600052806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555050565b60006020528060005260406000206000915090505481565b600064f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006600252610a8e848484611b41565b610b278433610b2285600360008a73ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054611da290919063ffffffff16565b61194f565b600190509392505050565b600064f196e500097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0009000452600960009054906101000a900460ff16905090565b600064f196e5000c7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c600152600082600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054031015610c9d57600080fd5b81600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600260008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055506001905092915050565b600064f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004600152610e6f3384610e6a85600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205461187990919063ffffffff16565b61194f565b6001905092915050565b64f196e5000a7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a600052610f163382611e78565b50565b600064f196e5000b7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b600052600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b64f196e5000d7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d0004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000652600a81039050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000075250565b64f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00030004526000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054421161117057600080fd5b6000600a9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000005523373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f193505050501580156111df573d6000803e3d6000fd5b5050565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002600152611280828261205f565b5050565b606064f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000045260088054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561138c5780601f106113615761010080835404028352916020019161138c565b820191906000526020600020905b81548152906001019060200180831161136f57829003601f168201915b5050505050905090565b600064f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00056001526114c433846114bf85600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054611da290919063ffffffff16565b61194f565b6001905092915050565b600064f196e5000f7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f60015261156e338484611b41565b6001905092915050565b600064f196e500107fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001000005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001000015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0010000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0010600152600360008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905092915050565b64f196e500127fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001200005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001200015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0012000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0012600152600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141561175f57600080fd5b6117748160045461187990919063ffffffff16565b6004819055506117cc81600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205461187990919063ffffffff16565b600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a35050565b600064f196e5001a7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a60015260008284019050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000004528381101561194557600080fd5b8091505092915050565b64f196e500157fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001500005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001500015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0015000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0015600252600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611a1c57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415611a5657600080fd5b80600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925836040518082815260200191505060405180910390a3505050565b64f196e500117fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001100005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001100015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0011000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0011600252600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611c0e57600080fd5b611c6081600160008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054611da290919063ffffffff16565b600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550611cf581600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205461187990919063ffffffff16565b600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a3505050565b600064f196e500197fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001900005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001900015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0019000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001960015282821115611e4457600080fd5b60008284039050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000003528091505092915050565b64f196e500147fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001400005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001400015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0014000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0014600152600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611f4557600080fd5b611f5a81600454611da290919063ffffffff16565b600481905550611fb281600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054611da290919063ffffffff16565b600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a35050565b64f196e500137fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001300005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001300015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0013000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00136001526120fc8282611e78565b612195823361219084600360008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054611da290919063ffffffff16565b61194f565b505056fea2646970667358221220f1f30c79f88bde8e3d2689544c9d75289d2d07d262e1ce9fc70e0fb335082a7364736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "60806040523480156200001157600080fd5b506040516200279038038062002790833981810160405260408110156200003757600080fd5b81019080805160405193929190846401000000008211156200005857600080fd5b838201915060208201858111156200006f57600080fd5b82518660018202830111640100000000821117156200008d57600080fd5b8083526020830192505050908051906020019080838360005b83811015620000c3578082015181840152602081019050620000a6565b50505050905090810190601f168015620000f15780820380516001836020036101000a031916815260200191505b50604052602001805160405193929190846401000000008211156200011557600080fd5b838201915060208201858111156200012c57600080fd5b82518660018202830111640100000000821117156200014a57600080fd5b8083526020830192505050908051906020019080838360005b838110156200018057808201518184015260208101905062000163565b50505050905090810190601f168015620001ae5780820380516001836020036101000a031916815260200191505b50604052505050818160048260079080519060200190620001d1929190620004fb565b508160089080519060200190620001ea929190620004fb565b5080600960006101000a81548160ff021916908360ff1602179055505050506200022633651b48eb57e0006200022e60201b620016921760201c565b5050620005b1565b64f196e500127fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001200005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001200015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0012000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0012600152600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415620002fc57600080fd5b62000318816004546200042460201b620018791790919060201c565b6004819055506200037781600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546200042460201b620018791790919060201c565b600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a35050565b600064f196e5001a7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a60015260008284019050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000045283811015620004f157600080fd5b8091505092915050565b828054600181600116156101000203166002900490600052602060002090601f0160209004810192826200053357600085556200057f565b82601f106200054e57805160ff19168380011785556200057f565b828001600101855582156200057f579182015b828111156200057e57825182559160200191906001019062000561565b5b5090506200058e919062000592565b5090565b5b80821115620005ad57600081600090555060010162000593565b5090565b6121cf80620005c16000396000f3fe608060405234801561001057600080fd5b50600436106101165760003560e01c806342966c68116100a257806379cc67901161007157806379cc6790146104ad57806395d89b41146104fb578063a457c2d71461057e578063a9059cbb146105e2578063dd62ed3e1461064657610116565b806342966c681461041357806370a082311461044157806372f4f6331461049957806376be3cd1146104a357610116565b806322e1ded3116100e957806322e1ded31461024e57806323b872dd146102a6578063313ce5671461032a57806337ae6b731461034b57806339509351146103af57610116565b806306fdde031461011b578063095ea7b31461019e57806318160ddd146102025780631d3fb2a714610220575b600080fd5b6101236106be565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610163578082015181840152602081019050610148565b50505050905090810190601f1680156101905780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101ea600480360360408110156101b457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506107d0565b60405180821515815260200191505060405180910390f35b61020a61087a565b6040518082815260200191505060405180910390f35b61024c6004803603602081101561023657600080fd5b81019080803590602001909291905050506108f4565b005b6102906004803603602081101561026457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506109d6565b6040518082815260200191505060405180910390f35b610312600480360360608110156102bc57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506109ee565b60405180821515815260200191505060405180910390f35b610332610b32565b604051808260ff16815260200191505060405180910390f35b6103976004803603604081101561036157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610bb9565b60405180821515815260200191505060405180910390f35b6103fb600480360360408110156103c557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610d41565b60405180821515815260200191505060405180910390f35b61043f6004803603602081101561042957600080fd5b8101908080359060200190929190505050610e79565b005b6104836004803603602081101561045757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610f19565b6040518082815260200191505060405180910390f35b6104a1610ff5565b005b6104ab6110b6565b005b6104f9600480360360408110156104c357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506111e3565b005b610503611284565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610543578082015181840152602081019050610528565b50505050905090810190601f1680156105705780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6105ca6004803603604081101561059457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611396565b60405180821515815260200191505060405180910390f35b61062e600480360360408110156105f857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506114ce565b60405180821515815260200191505060405180910390f35b6106a86004803603604081101561065c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611578565b6040518082815260200191505060405180910390f35b606064f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100045260078054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107c65780601f1061079b576101008083540402835291602001916107c6565b820191906000526020600020905b8154815290600101906020018083116107a957829003601f168201915b5050505050905090565b600064f196e5000e7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e60015261087033848461194f565b6001905092915050565b600064f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000452600454905090565b64f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008600052806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555050565b60006020528060005260406000206000915090505481565b600064f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006600252610a8e848484611b41565b610b278433610b2285600360008a73ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054611da290919063ffffffff16565b61194f565b600190509392505050565b600064f196e500097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0009000452600960009054906101000a900460ff16905090565b600064f196e5000c7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c600152600082600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054031015610c9d57600080fd5b81600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600260008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055506001905092915050565b600064f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004600152610e6f3384610e6a85600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205461187990919063ffffffff16565b61194f565b6001905092915050565b64f196e5000a7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a600052610f163382611e78565b50565b600064f196e5000b7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b600052600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b64f196e5000d7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d0004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000652600a81039050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000075250565b64f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00030004526000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054421161117057600080fd5b6000600a9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000005523373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f193505050501580156111df573d6000803e3d6000fd5b5050565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002600152611280828261205f565b5050565b606064f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000045260088054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561138c5780601f106113615761010080835404028352916020019161138c565b820191906000526020600020905b81548152906001019060200180831161136f57829003601f168201915b5050505050905090565b600064f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00056001526114c433846114bf85600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054611da290919063ffffffff16565b61194f565b6001905092915050565b600064f196e5000f7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f60015261156e338484611b41565b6001905092915050565b600064f196e500107fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001000005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001000015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0010000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0010600152600360008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905092915050565b64f196e500127fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001200005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001200015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0012000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0012600152600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141561175f57600080fd5b6117748160045461187990919063ffffffff16565b6004819055506117cc81600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205461187990919063ffffffff16565b600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a35050565b600064f196e5001a7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001a60015260008284019050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000004528381101561194557600080fd5b8091505092915050565b64f196e500157fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001500005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001500015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0015000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0015600252600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611a1c57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415611a5657600080fd5b80600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925836040518082815260200191505060405180910390a3505050565b64f196e500117fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001100005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001100015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0011000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0011600252600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611c0e57600080fd5b611c6081600160008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054611da290919063ffffffff16565b600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550611cf581600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205461187990919063ffffffff16565b600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a3505050565b600064f196e500197fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001900005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001900015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0019000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001960015282821115611e4457600080fd5b60008284039050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000003528091505092915050565b64f196e500147fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001400005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001400015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0014000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0014600152600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611f4557600080fd5b611f5a81600454611da290919063ffffffff16565b600481905550611fb281600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054611da290919063ffffffff16565b600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a35050565b64f196e500137fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001300005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001300015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0013000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00136001526120fc8282611e78565b612195823361219084600360008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054611da290919063ffffffff16565b61194f565b505056fea2646970667358221220f1f30c79f88bde8e3d2689544c9d75289d2d07d262e1ce9fc70e0fb335082a7364736f6c63430007060033",
+                "constructorSrcmap": "22436:201:0:-:0;;;22492:143;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;22562:5;22569:7;22578:1;21114:4;21106:5;:12;;;;;;;;;;;;:::i;:::-;;21138:6;21128:7;:16;;;;;;;;;;;;:::i;:::-;;21166:8;21154:9;;:20;;;;;;;;;;;;;;;;;;21025:156;;;22591:39:::1;22603:10;22615:14;22591:11;;;;;:39;;:::i;:::-;22492:143:::0;;22436:201;;15933:603;16076:13;16008:66;16001:89;16166:1;16098:66;16091:77;16244:1;16176:66;16169:77;16322:5;16254:66;16247:81;16366:1;16347:21;;:7;:21;;;;16339:30;;;;;;16395:23;16412:5;16395:12;;:16;;;;;;:23;;;;:::i;:::-;16380:12;:38;;;;16449:29;16472:5;16449:9;:18;16459:7;16449:18;;;;;;;;;;;;;;;;:22;;;;;;:29;;;;:::i;:::-;16428:9;:18;16438:7;16428:18;;;;;;;;;;;;;;;:50;;;;16514:7;16493:36;;16510:1;16493:36;;;16523:5;16493:36;;;;;;;;;;;;;;;;;;15933:603;;:::o;3619:567::-;3677:7;3773:13;3705:66;3698:89;3863:1;3795:66;3788:77;3941:1;3873:66;3866:77;4019:1;3951:66;3944:77;4032:9;4048:1;4044;:5;4032:17;;4133:1;4066:66;4059:76;4158:1;4153;:6;;4145:15;;;;;;4178:1;4171:8;;;3619:567;;;;:::o;22436:201::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+                "extensionContracts": [],
+                "file": "buggy_23.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "symbol",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "memory",
+                                    "typeDesc": {
+                                        "type": "StringType"
+                                    }
+                                }
+                            ],
+                            "sighash": "95d89b41",
+                            "sourceBytes": {
+                                "begin": 12823,
+                                "size": 85
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "name",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "memory",
+                                    "typeDesc": {
+                                        "type": "StringType"
+                                    }
+                                }
+                            ],
+                            "sighash": "06fdde03",
+                            "sourceBytes": {
+                                "begin": 12680,
+                                "size": 81
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "burnFrom",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "from",
+                                "value"
+                            ],
+                            "returns": [],
+                            "sighash": "79cc6790",
+                            "sourceBytes": {
+                                "begin": 11958,
+                                "size": 93
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50003": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "withdraw_ovrflow1",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "76be3cd1",
+                            "sourceBytes": {
+                                "begin": 3620,
+                                "size": 214
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50004": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "increaseAllowance",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "spender",
+                                "addedValue"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "39509351",
+                            "sourceBytes": {
+                                "begin": 7665,
+                                "size": 200
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50005": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "decreaseAllowance",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "spender",
+                                "subtractedValue"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "a457c2d7",
+                            "sourceBytes": {
+                                "begin": 8384,
+                                "size": 210
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50006": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transferFrom",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "from",
+                                "to",
+                                "value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "23b872dd",
+                            "sourceBytes": {
+                                "begin": 6918,
+                                "size": 233
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50007": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "totalSupply",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "18160ddd",
+                            "sourceBytes": {
+                                "begin": 4358,
+                                "size": 98
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50008": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "increaseLockTime_intou1",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "_secondsToIncrease"
+                            ],
+                            "returns": [],
+                            "sighash": "1d3fb2a7",
+                            "sourceBytes": {
+                                "begin": 3476,
+                                "size": 143
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50009": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "decimals",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint8",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "313ce567",
+                            "sourceBytes": {
+                                "begin": 12982,
+                                "size": 81
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000a": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "burn",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "value"
+                            ],
+                            "returns": [],
+                            "sighash": "42966c68",
+                            "sourceBytes": {
+                                "begin": 11633,
+                                "size": 77
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000b": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "balanceOf",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "owner"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "70a08231",
+                            "sourceBytes": {
+                                "begin": 4668,
+                                "size": 113
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000c": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transfer_undrflow2",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "_to",
+                                "_value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "37ae6b73",
+                            "sourceBytes": {
+                                "begin": 3931,
+                                "size": 254
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000d": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_intou19",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "72f4f633",
+                            "sourceBytes": {
+                                "begin": 4782,
+                                "size": 100
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000e": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "approve",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "spender",
+                                "value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "095ea7b3",
+                            "sourceBytes": {
+                                "begin": 6301,
+                                "size": 154
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000f": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transfer",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "to",
+                                "value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "a9059cbb",
+                            "sourceBytes": {
+                                "begin": 5519,
+                                "size": 146
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50010": {
+                        "canonicalId": "buggy_23.sol|AGR",
+                        "declaringContract": "AGR",
+                        "method": {
+                            "contractName": "AGR",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "allowance",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "owner",
+                                "spender"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "dd62ed3e",
+                            "sourceBytes": {
+                                "begin": 5213,
+                                "size": 138
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50011": {
+                        "canonicalId": "buggy_23.sol|ERC20",
+                        "declaringContract": "ERC20",
+                        "method": {
+                            "contractName": "ERC20",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_transfer",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "from",
+                                "to",
+                                "value"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 8814,
+                                "size": 256
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50012": {
+                        "canonicalId": "buggy_23.sol|ERC20",
+                        "declaringContract": "ERC20",
+                        "method": {
+                            "contractName": "ERC20",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_mint",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "account",
+                                "value"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 9413,
+                                "size": 263
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50013": {
+                        "canonicalId": "buggy_23.sol|ERC20",
+                        "declaringContract": "ERC20",
+                        "method": {
+                            "contractName": "ERC20",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_burnFrom",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "account",
+                                "value"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 11153,
+                                "size": 179
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50014": {
+                        "canonicalId": "buggy_23.sol|ERC20",
+                        "declaringContract": "ERC20",
+                        "method": {
+                            "contractName": "ERC20",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_burn",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "account",
+                                "value"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 9945,
+                                "size": 263
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50015": {
+                        "canonicalId": "buggy_23.sol|ERC20",
+                        "declaringContract": "ERC20",
+                        "method": {
+                            "contractName": "ERC20",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_approve",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "owner",
+                                "spender",
+                                "value"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 10516,
+                                "size": 248
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50016": {
+                        "canonicalId": "buggy_23.sol|SafeMath",
+                        "declaringContract": "SafeMath",
+                        "method": {
+                            "contractName": "SafeMath",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": true,
+                            "name": "mul",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "a",
+                                "b"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 1145,
+                                "size": 421
+                            },
+                            "stateMutability": "pure",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50017": {
+                        "canonicalId": "buggy_23.sol|SafeMath",
+                        "declaringContract": "SafeMath",
+                        "method": {
+                            "contractName": "SafeMath",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": true,
+                            "name": "div",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "a",
+                                "b"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 1696,
+                                "size": 296
+                            },
+                            "stateMutability": "pure",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50018": {
+                        "canonicalId": "buggy_23.sol|SafeMath",
+                        "declaringContract": "SafeMath",
+                        "method": {
+                            "contractName": "SafeMath",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": true,
+                            "name": "mod",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "a",
+                                "b"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 2653,
+                                "size": 121
+                            },
+                            "stateMutability": "pure",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50019": {
+                        "canonicalId": "buggy_23.sol|SafeMath",
+                        "declaringContract": "SafeMath",
+                        "method": {
+                            "contractName": "SafeMath",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": true,
+                            "name": "sub",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "a",
+                                "b"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 2125,
+                                "size": 145
+                            },
+                            "stateMutability": "pure",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5001a": {
+                        "canonicalId": "buggy_23.sol|SafeMath",
+                        "declaringContract": "SafeMath",
+                        "method": {
+                            "contractName": "SafeMath",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": true,
+                            "name": "add",
+                            "notpayable": true,
+                            "originalFile": "buggy_23.sol",
+                            "paramNames": [
+                                "a",
+                                "b"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 2353,
+                                "size": 145
+                            },
+                            "stateMutability": "pure",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "c",
+                        "sourceLoc": {
+                            "begin": "1494",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "2": {
+                        "lhs": "c",
+                        "sourceLoc": {
+                            "begin": "1863",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "3": {
+                        "lhs": "c",
+                        "sourceLoc": {
+                            "begin": "2227",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "4": {
+                        "lhs": "c",
+                        "sourceLoc": {
+                            "begin": "2430",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "5": {
+                        "lhs": "transferValue_intou1",
+                        "sourceLoc": {
+                            "begin": "3730",
+                            "len": "30",
+                            "source": "0"
+                        }
+                    },
+                    "6": {
+                        "lhs": "vundflw",
+                        "sourceLoc": {
+                            "begin": "4817",
+                            "len": "16",
+                            "source": "0"
+                        }
+                    },
+                    "7": {
+                        "lhs": "vundflw",
+                        "sourceLoc": {
+                            "begin": "4839",
+                            "len": "21",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            },
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "_name",
+                            "_symbol"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 13157,
+                            "size": 143
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 12680,
+                            "size": 81
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "burnFrom",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "from",
+                            "value"
+                        ],
+                        "returns": [],
+                        "sighash": "79cc6790",
+                        "sourceBytes": {
+                            "begin": 11958,
+                            "size": 93
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "increaseLockTime_intou1",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "_secondsToIncrease"
+                        ],
+                        "returns": [],
+                        "sighash": "1d3fb2a7",
+                        "sourceBytes": {
+                            "begin": 3476,
+                            "size": 143
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "owner"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 4668,
+                            "size": 113
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_intou19",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "72f4f633",
+                        "sourceBytes": {
+                            "begin": 4782,
+                            "size": 100
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "spender",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 6301,
+                            "size": 154
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "to",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 5519,
+                            "size": 146
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "owner",
+                            "spender"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 5213,
+                            "size": 138
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 12823,
+                            "size": 85
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdraw_ovrflow1",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "76be3cd1",
+                        "sourceBytes": {
+                            "begin": 3620,
+                            "size": 214
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "increaseAllowance",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "spender",
+                            "addedValue"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "39509351",
+                        "sourceBytes": {
+                            "begin": 7665,
+                            "size": 200
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "lockTime_intou1",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "22e1ded3",
+                        "sourceBytes": {
+                            "begin": 5450,
+                            "size": 47
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "decreaseAllowance",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "spender",
+                            "subtractedValue"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a457c2d7",
+                        "sourceBytes": {
+                            "begin": 8384,
+                            "size": 210
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "from",
+                            "to",
+                            "value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 6918,
+                            "size": 233
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 4358,
+                            "size": 98
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 12982,
+                            "size": 81
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "burn",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "value"
+                        ],
+                        "returns": [],
+                        "sighash": "42966c68",
+                        "sourceBytes": {
+                            "begin": 11633,
+                            "size": 77
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "AGR",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer_undrflow2",
+                        "notpayable": true,
+                        "originalFile": "buggy_23.sol",
+                        "paramNames": [
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "37ae6b73",
+                        "sourceBytes": {
+                            "begin": 3931,
+                            "size": 254
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "AGR",
+                "original_file": "buggy_23.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 13101,
+                    "size": 201
+                },
+                "srcmap": "22436:201:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;21241:339;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;11104:494;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;7439:356;;;:::i;:::-;;;;;;;;;;;;;;;;;;;5500:496;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;5450:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;12061:574;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;22059:339;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;6671:595;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;13149:545;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;19514:417;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;8007:453;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;8461:542;;;:::i;:::-;;5997:577;;;:::i;:::-;;20179:433;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;21642:343;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;14213:560;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;9982:486;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;9334:480;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;21241:339;21278:13;21380;21312:66;21305:89;21470:1;21402:66;21395:77;21548:1;21480:66;21473:77;21568:5;21561:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;21241:339;:::o;11104:494::-;11178:4;11271:13;11203:66;11196:89;11361:1;11293:66;11286:77;11439:1;11371:66;11364:77;11517:5;11449:66;11442:81;11534:36;11543:10;11555:7;11564:5;11534:8;:36::i;:::-;11587:4;11580:11;;11104:494;;;;:::o;7439:356::-;7492:7;7588:13;7520:66;7513:89;7678:1;7610:66;7603:77;7756:1;7688:66;7681:77;7776:12;;7769:19;;7439:356;:::o;5500:496::-;5652:13;5584:66;5577:89;5742:1;5674:66;5667:77;5820:1;5752:66;5745:77;5898:18;5830:66;5823:94;5959:18;5928:15;:27;5944:10;5928:27;;;;;;;;;;;;;;;;:49;;;;;;;;;;;5500:496;:::o;5450:47::-;;;;;;;;;;;;;;;;;:::o;12061:574::-;12149:4;12242:13;12174:66;12167:89;12332:1;12264:66;12257:77;12410:2;12342:66;12335:78;12489:5;12421:66;12414:81;12506:26;12516:4;12522:2;12526:5;12506:9;:26::i;:::-;12542:65;12551:4;12557:10;12569:37;12600:5;12569:8;:14;12578:4;12569:14;;;;;;;;;;;;;;;:26;12584:10;12569:26;;;;;;;;;;;;;;;;:30;;:37;;;;:::i;:::-;12542:8;:65::i;:::-;12624:4;12617:11;;12061:574;;;;;:::o;22059:339::-;22100:5;22194:13;22126:66;22119:89;22284:1;22216:66;22209:77;22362:1;22294:66;22287:77;22382:9;;;;;;;;;;;22375:16;;22059:339;:::o;6671:595::-;6741:4;6834:13;6766:66;6759:89;6924:1;6856:66;6849:77;7002:1;6934:66;6927:77;7080:6;7012:66;7005:82;7142:1;7132:6;7102:15;:27;7118:10;7102:27;;;;;;;;;;;;;;;;:36;:41;;7094:50;;;;;;7188:6;7157:15;:27;7173:10;7157:27;;;;;;;;;;;;;;;;:37;;;;;;;;;;;7231:6;7207:15;:20;7223:3;7207:20;;;;;;;;;;;;;;;;:30;;;;;;;;;;;7257:4;7250:11;;6671:595;;;;:::o;13149:545::-;13229:4;13322:13;13254:66;13247:89;13412:1;13344:66;13337:77;13490:1;13422:66;13415:77;13568:10;13500:66;13493:86;13590:76;13599:10;13611:7;13620:45;13654:10;13620:8;:20;13629:10;13620:20;;;;;;;;;;;;;;;:29;13641:7;13620:29;;;;;;;;;;;;;;;;:33;;:45;;;;:::i;:::-;13590:8;:76::i;:::-;13683:4;13676:11;;13149:545;;;;:::o;19514:417::-;19637:13;19569:66;19562:89;19727:1;19659:66;19652:77;19805:1;19737:66;19730:77;19883:5;19815:66;19808:81;19900:24;19906:10;19918:5;19900;:24::i;:::-;19514:417;:::o;8007:453::-;8071:7;8167:13;8099:66;8092:89;8257:1;8189:66;8182:77;8335:1;8267:66;8260:77;8413:5;8345:66;8338:81;8437:9;:16;8447:5;8437:16;;;;;;;;;;;;;;;;8430:23;;8007:453;;;:::o;8461:542::-;8577:13;8509:66;8502:89;8667:1;8599:66;8592:77;8745:1;8677:66;8670:77;8754:13;8854:7;8787:66;8780:82;8887:2;8878:7;:11;8868:21;;8973:7;8906:66;8899:82;8898:84;:::o;5997:577::-;6120:13;6052:66;6045:89;6210:1;6142:66;6135:77;6288:1;6220:66;6213:77;6323:15;:27;6339:10;6323:27;;;;;;;;;;;;;;;;6305:15;:45;6297:54;;;;;;6365:25;6393:2;6365:30;;6479:20;6412:66;6405:95;6525:10;6517:28;;:50;6546:20;6517:50;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5997:577;:::o;20179:433::-;20320:13;20252:66;20245:89;20410:1;20342:66;20335:77;20488:1;20420:66;20413:77;20566:5;20498:66;20491:81;20583:22;20593:4;20599:5;20583:9;:22::i;:::-;20179:433;;:::o;21642:343::-;21681:13;21783;21715:66;21708:89;21873:1;21805:66;21798:77;21951:1;21883:66;21876:77;21971:7;21964:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;21642:343;:::o;14213:560::-;14298:4;14391:13;14323:66;14316:89;14481:1;14413:66;14406:77;14559:1;14491:66;14484:77;14637:15;14569:66;14562:91;14664:81;14673:10;14685:7;14694:50;14728:15;14694:8;:20;14703:10;14694:20;;;;;;;;;;;;;;;:29;14715:7;14694:29;;;;;;;;;;;;;;;;:33;;:50;;;;:::i;:::-;14664:8;:81::i;:::-;14762:4;14755:11;;14213:560;;;;:::o;9982:486::-;10052:4;10145:13;10077:66;10070:89;10235:1;10167:66;10160:77;10313:1;10245:66;10238:77;10391:5;10323:66;10316:81;10408:32;10418:10;10430:2;10434:5;10408:9;:32::i;:::-;10457:4;10450:11;;9982:486;;;;:::o;9334:480::-;9415:7;9511:13;9443:66;9436:89;9601:1;9533:66;9526:77;9679:1;9611:66;9604:77;9757:7;9689:66;9682:83;9783:8;:15;9792:5;9783:15;;;;;;;;;;;;;;;:24;9799:7;9783:24;;;;;;;;;;;;;;;;9776:31;;9334:480;;;;:::o;15933:603::-;16076:13;16008:66;16001:89;16166:1;16098:66;16091:77;16244:1;16176:66;16169:77;16322:5;16254:66;16247:81;16366:1;16347:21;;:7;:21;;;;16339:30;;;;;;16395:23;16412:5;16395:12;;:16;;:23;;;;:::i;:::-;16380:12;:38;;;;16449:29;16472:5;16449:9;:18;16459:7;16449:18;;;;;;;;;;;;;;;;:22;;:29;;;;:::i;:::-;16428:9;:18;16438:7;16428:18;;;;;;;;;;;;;;;:50;;;;16514:7;16493:36;;16510:1;16493:36;;;16523:5;16493:36;;;;;;;;;;;;;;;;;;15933:603;;:::o;3619:567::-;3677:7;3773:13;3705:66;3698:89;3863:1;3795:66;3788:77;3941:1;3873:66;3866:77;4019:1;3951:66;3944:77;4032:9;4048:1;4044;:5;4032:17;;4133:1;4066:66;4059:76;4158:1;4153;:6;;4145:15;;;;;;4178:1;4171:8;;;3619:567;;;;:::o;17716:589::-;17877:13;17809:66;17802:89;17967:1;17899:66;17892:77;18045:2;17977:66;17970:78;18124:5;18056:66;18049:81;18168:1;18149:21;;:7;:21;;;;18141:30;;;;;;18206:1;18189:19;;:5;:19;;;;18181:28;;;;;;18247:5;18220:8;:15;18229:5;18220:15;;;;;;;;;;;;;;;:24;18236:7;18220:24;;;;;;;;;;;;;;;:32;;;;18283:7;18267:31;;18276:5;18267:31;;;18292:5;18267:31;;;;;;;;;;;;;;;;;;17716:589;;;:::o;14993:597::-;15149:13;15081:66;15074:89;15239:1;15171:66;15164:77;15317:2;15249:66;15242:78;15396:5;15328:66;15321:81;15435:1;15421:16;;:2;:16;;;;15413:25;;;;;;15467:26;15487:5;15467:9;:15;15477:4;15467:15;;;;;;;;;;;;;;;;:19;;:26;;;;:::i;:::-;15449:9;:15;15459:4;15449:15;;;;;;;;;;;;;;;:44;;;;15519:24;15537:5;15519:9;:13;15529:2;15519:13;;;;;;;;;;;;;;;;:17;;:24;;;;:::i;:::-;15503:9;:13;15513:2;15503:13;;;;;;;;;;;;;;;:40;;;;15573:2;15558:25;;15567:4;15558:25;;;15577:5;15558:25;;;;;;;;;;;;;;;;;;14993:597;;;:::o;2969:567::-;3027:7;3123:13;3055:66;3048:89;3213:1;3145:66;3138:77;3291:1;3223:66;3216:77;3369:1;3301:66;3294:77;3395:1;3390;:6;;3382:15;;;;;;3407:9;3423:1;3419;:5;3407:17;;3508:1;3441:66;3434:76;3528:1;3521:8;;;2969:567;;;;:::o;16805:603::-;16948:13;16880:66;16873:89;17038:1;16970:66;16963:77;17116:1;17048:66;17041:77;17194:5;17126:66;17119:81;17238:1;17219:21;;:7;:21;;;;17211:30;;;;;;17267:23;17284:5;17267:12;;:16;;:23;;;;:::i;:::-;17252:12;:38;;;;17321:29;17344:5;17321:9;:18;17331:7;17321:18;;;;;;;;;;;;;;;;:22;;:29;;;;:::i;:::-;17300:9;:18;17310:7;17300:18;;;;;;;;;;;;;;;:50;;;;17391:1;17365:36;;17374:7;17365:36;;;17395:5;17365:36;;;;;;;;;;;;;;;;;;16805:603;;:::o;18694:519::-;18841:13;18773:66;18766:89;18931:1;18863:66;18856:77;19009:1;18941:66;18934:77;19087:5;19019:66;19012:81;19104:21;19110:7;19119:5;19104;:21::i;:::-;19135:71;19144:7;19153:10;19165:40;19199:5;19165:8;:17;19174:7;19165:17;;;;;;;;;;;;;;;:29;19183:10;19165:29;;;;;;;;;;;;;;;;:33;;:40;;;;:::i;:::-;19135:8;:71::i;:::-;18694:519;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 220,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_08_15_999583e27f/.certora_sources/buggy_23.sol:AGR",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "lockTime_intou1",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 267,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_08_15_999583e27f/.certora_sources/buggy_23.sol:AGR",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "_balances",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 271,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_08_15_999583e27f/.certora_sources/buggy_23.sol:AGR",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "balances_intou2",
+                            "offset": 0,
+                            "slot": "2",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 314,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_08_15_999583e27f/.certora_sources/buggy_23.sol:AGR",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "mappingKeyType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "20",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    },
+                                    "mappingValueType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "32",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    },
+                                    "type": "Mapping"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "_allowed",
+                            "offset": 0,
+                            "slot": "3",
+                            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+                        },
+                        {
+                            "astId": 316,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_08_15_999583e27f/.certora_sources/buggy_23.sol:AGR",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "_totalSupply",
+                            "offset": 0,
+                            "slot": "4",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 617,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_08_15_999583e27f/.certora_sources/buggy_23.sol:AGR",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "balances_intou14",
+                            "offset": 0,
+                            "slot": "5",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 667,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_08_15_999583e27f/.certora_sources/buggy_23.sol:AGR",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "balances_intou30",
+                            "offset": 0,
+                            "slot": "6",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 780,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_08_15_999583e27f/.certora_sources/buggy_23.sol:AGR",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "_name",
+                            "offset": 0,
+                            "slot": "7",
+                            "type": "t_string_storage"
+                        },
+                        {
+                            "astId": 782,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_08_15_999583e27f/.certora_sources/buggy_23.sol:AGR",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "_symbol",
+                            "offset": 0,
+                            "slot": "8",
+                            "type": "t_string_storage"
+                        },
+                        {
+                            "astId": 784,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_08_15_999583e27f/.certora_sources/buggy_23.sol:AGR",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "1",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint8",
+                                "type": "Primitive"
+                            },
+                            "label": "_decimals",
+                            "offset": 0,
+                            "slot": "9",
+                            "type": "t_uint8"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => mapping(address => uint256))",
+                            "numberOfBytes": "32",
+                            "value": "t_mapping(t_address,t_uint256)"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_string_storage": {
+                            "encoding": "bytes",
+                            "label": "string",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint8": {
+                            "encoding": "inplace",
+                            "label": "uint8",
+                            "numberOfBytes": "1"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "AGR",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000006",
+        "prototypeFor": [],
+        "sdc_name": "buggy_23.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "buggy_23.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

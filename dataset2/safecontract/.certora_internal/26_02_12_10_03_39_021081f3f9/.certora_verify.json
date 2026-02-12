@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Ballot",
+    "specfile": "certora_specification/Ballot.cvl",
+    "specfileOrigRelpath": "certora_specification/Ballot.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

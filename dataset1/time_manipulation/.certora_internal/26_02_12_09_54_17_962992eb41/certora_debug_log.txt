@@ -1,0 +1,63 @@
+Saving last configuration file to .certora_internal/26_02_12_09_54_17_962992eb41/run.conf
+contract name HotDollarsToken is the same as the file name and can be omitted from HotDollarsToken.sol:HotDollarsToken
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['HotDollarsToken.sol:HotDollarsToken'], 'package_version_for_build_cache': 'certora-cli 8.8.0', 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_config
+In /root/solc-verify-spec/experiments/dataset1/time_manipulation/certora_specification/HotDollarsToken.cvl, found the imports: []
+copying spec file /root/solc-verify-spec/experiments/dataset1/time_manipulation/certora_specification/HotDollarsToken.cvl to /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/.0_HotDollarsToken.cvl.spec
+writing /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_verify.json
+
+building file HotDollarsToken.sol
+Running cmd solc --version
+stdout, stderr = .certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/version_check_solc.stdout, .certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/version_check_solc.stderr
+Exitcode 0
+Solc run solc --version time: 0.0937
+Running cmd solc -o ".certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/HotDollarsToken.sol_0/" --overwrite --allow-paths ".",. --standard-json
+stdout, stderr = .certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/HotDollarsToken.sol_0.standard.stdout.json, .certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/HotDollarsToken.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/HotDollarsToken.sol_0/" --overwrite --allow-paths ".",. --standard-json time: 0.1203
+reading standard json data from .certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/HotDollarsToken.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset1/time_manipulation/HotDollarsToken.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset1/time_manipulation/HotDollarsToken.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset1/time_manipulation/HotDollarsToken.sol'])
+Contracts in HotDollarsToken.sol_0 (file HotDollarsToken.sol): ['EIP20Interface', 'HotDollarsToken']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/HotDollarsToken.sol:EIP20Interface'), (274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/HotDollarsToken.sol:HotDollarsToken')]
+Report source list={0: 'HotDollarsToken.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset1/time_manipulation/HotDollarsToken.sol relative to /root/solc-verify-spec/experiments/dataset1/time_manipulation
+Working on contract EIP20Interface
+Working on contract EIP20Interface
+Working on contract HotDollarsToken
+Working on contract HotDollarsToken
+For contracts of primary HotDollarsToken
+finding primary contract address of /root/solc-verify-spec/experiments/dataset1/time_manipulation/HotDollarsToken.sol:HotDollarsToken in [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/HotDollarsToken.sol:EIP20Interface'), (274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/HotDollarsToken.sol:HotDollarsToken')]
+Contracts in SDC HotDollarsToken.sol_0: ['EIP20Interface', 'HotDollarsToken']
+Building source tree
+Copying /root/solc-verify-spec/experiments/dataset1/time_manipulation/certora_specification/HotDollarsToken.cvl to .certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/certora_specification/HotDollarsToken.cvl
+Copying /root/solc-verify-spec/experiments/dataset1/time_manipulation/HotDollarsToken.sol to .certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/HotDollarsToken.sol
+Report source list={0: 'HotDollarsToken.sol'}
+Backing up current .certora_sources to .certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/.pre_autofinders.0
+Running cmd solc -o ".certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/HotDollarsToken.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources",. --standard-json
+stdout, stderr = .certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/HotDollarsToken.sol_0.standard.stdout.json, .certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/HotDollarsToken.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/HotDollarsToken.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources",. --standard-json time: 0.1205
+reading standard json data from .certora_internal/26_02_12_09_54_17_962992eb41/.certora_config/HotDollarsToken.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/HotDollarsToken.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/HotDollarsToken.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/HotDollarsToken.sol'])
+Contracts in HotDollarsToken.sol_0 (file .certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/HotDollarsToken.sol): ['EIP20Interface', 'HotDollarsToken']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587202, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/HotDollarsToken.sol:EIP20Interface'), (274184521717934524641157099916833587203, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/HotDollarsToken.sol:HotDollarsToken')]
+Report source list={0: 'HotDollarsToken.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/HotDollarsToken.sol relative to .certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources
+Working on contract EIP20Interface
+Working on contract EIP20Interface
+Working on contract HotDollarsToken
+Working on contract HotDollarsToken
+For contracts of primary HotDollarsToken
+finding primary contract address of /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/HotDollarsToken.sol:HotDollarsToken in [(274184521717934524641157099916833587202, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/HotDollarsToken.sol:EIP20Interface'), (274184521717934524641157099916833587203, '/root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/HotDollarsToken.sol:HotDollarsToken')]
+Contracts in SDC HotDollarsToken.sol_0: ['EIP20Interface', 'HotDollarsToken']
+Backing up instrumented .certora_sources to .certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/.post_autofinders.0
+Rolling back .certora_sources to .certora_internal/26_02_12_09_54_17_962992eb41/.certora_sources/.pre_autofinders.0 version
+Libraries to add = []
+writing file /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_build.json
+writing file /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_build_output_props.json
+writing /root/solc-verify-spec/experiments/dataset1/time_manipulation/.certora_internal/26_02_12_09_54_17_962992eb41/.certora_verify.json

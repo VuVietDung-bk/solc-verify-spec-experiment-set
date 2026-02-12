@@ -1,0 +1,58 @@
+Saving last configuration file to .certora_internal/26_02_12_09_59_03_5956921c78/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3'], 'package_version_for_build_cache': 'certora-cli 8.8.0', 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_config
+In /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/certora_specification/0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl, found the imports: []
+copying spec file /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/certora_specification/0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl to /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/.0_0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl.spec
+writing /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_verify.json
+
+building file 0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol
+Running cmd solc --version
+stdout, stderr = .certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/version_check_solc.stdout, .certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/version_check_solc.stderr
+Exitcode 0
+Solc run solc --version time: 0.106
+Running cmd solc -o ".certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0/" --overwrite --allow-paths ".",. --standard-json
+stdout, stderr = .certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0.standard.stdout.json, .certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0/" --overwrite --allow-paths ".",. --standard-json time: 0.1288
+reading standard json data from .certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol'])
+Contracts in 0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0 (file 0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol): ['MultiplicatorX3']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3')]
+Report source list={0: '0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol relative to /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls
+Working on contract MultiplicatorX3
+Working on contract MultiplicatorX3
+For contracts of primary MultiplicatorX3
+finding primary contract address of /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3 in [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3')]
+Contracts in SDC 0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0: ['MultiplicatorX3']
+Building source tree
+Copying /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol to .certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol
+Copying /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/certora_specification/0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl to .certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/certora_specification/0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl
+Report source list={0: '0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol'}
+Backing up current .certora_sources to .certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/.pre_autofinders.0
+Running cmd solc -o ".certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources",. --standard-json
+stdout, stderr = .certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0.standard.stdout.json, .certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources",. --standard-json time: 0.111
+reading standard json data from .certora_internal/26_02_12_09_59_03_5956921c78/.certora_config/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol'])
+Contracts in 0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0 (file .certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol): ['MultiplicatorX3']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3')]
+Report source list={0: '0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol relative to .certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources
+Working on contract MultiplicatorX3
+Working on contract MultiplicatorX3
+For contracts of primary MultiplicatorX3
+finding primary contract address of /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3 in [(274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3')]
+Contracts in SDC 0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol_0: ['MultiplicatorX3']
+Backing up instrumented .certora_sources to .certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/.post_autofinders.0
+Rolling back .certora_sources to .certora_internal/26_02_12_09_59_03_5956921c78/.certora_sources/.pre_autofinders.0 version
+Libraries to add = []
+writing file /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_build.json
+writing file /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_build_output_props.json
+writing /root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_12_09_59_03_5956921c78/.certora_verify.json

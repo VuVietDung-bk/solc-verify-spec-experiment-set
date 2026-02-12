@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Lottery",
+    "specfile": "certora_specification/lottery.cvl",
+    "specfileOrigRelpath": "certora_specification/lottery.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

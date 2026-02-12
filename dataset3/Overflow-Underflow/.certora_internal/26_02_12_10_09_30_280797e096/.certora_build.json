@@ -1,0 +1,1886 @@
+{
+    "digitalNotary_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_intou3",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "26160719",
+                        "sourceBytes": {
+                            "begin": 646,
+                            "size": 99
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bytes32",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "changeHashOwnership",
+                        "notpayable": false,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "hash",
+                            "newowner"
+                        ],
+                        "returns": [],
+                        "sighash": "3a1903d6",
+                        "sourceBytes": {
+                            "begin": 4293,
+                            "size": 682
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 1191,
+                            "size": 253
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bytes32",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "getHashDetails",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "hash",
+                            "indx"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "c7b70bb9",
+                        "sourceBytes": {
+                            "begin": 3409,
+                            "size": 304
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bytes32",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "getHashOwnersCount",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "hash"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "d4229044",
+                        "sourceBytes": {
+                            "begin": 3162,
+                            "size": 117
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getNumberofHashesRegistered",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "2ccf293d",
+                        "sourceBytes": {
+                            "begin": 3289,
+                            "size": 109
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getchangehashownerfee",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "2e3a4fb6",
+                        "sourceBytes": {
+                            "begin": 2089,
+                            "size": 107
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getcontractactive",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "fbbcedf3",
+                        "sourceBytes": {
+                            "begin": 2369,
+                            "size": 100
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getcontractbalance",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "f28bf146",
+                        "sourceBytes": {
+                            "begin": 2848,
+                            "size": 113
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "gethashfee",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "7e5fae01",
+                        "sourceBytes": {
+                            "begin": 1554,
+                            "size": 85
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getmanager",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "f52294c3",
+                        "sourceBytes": {
+                            "begin": 2603,
+                            "size": 88
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "increaseLockTime_intou17",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "_secondsToIncrease"
+                        ],
+                        "returns": [],
+                        "sighash": "b55c7520",
+                        "sourceBytes": {
+                            "begin": 216,
+                            "size": 145
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "lockTime_intou17",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "1d9bf886",
+                        "sourceBytes": {
+                            "begin": 165,
+                            "size": 48
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bytes32",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "registerHash",
+                        "notpayable": false,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "hash"
+                        ],
+                        "returns": [],
+                        "sighash": "8f1de16e",
+                        "sourceBytes": {
+                            "begin": 3718,
+                            "size": 570
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setchangehashownerfee",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "newfee"
+                        ],
+                        "returns": [],
+                        "sighash": "25f20363",
+                        "sourceBytes": {
+                            "begin": 2207,
+                            "size": 152
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setcontractactive",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "contactive"
+                        ],
+                        "returns": [],
+                        "sighash": "86040ee3",
+                        "sourceBytes": {
+                            "begin": 2479,
+                            "size": 113
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "sethashfee",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "newfee"
+                        ],
+                        "returns": [],
+                        "sighash": "9aae1af5",
+                        "sourceBytes": {
+                            "begin": 1949,
+                            "size": 130
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setmanager",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "newmngr"
+                        ],
+                        "returns": [],
+                        "sighash": "fa3ff5f1",
+                        "sourceBytes": {
+                            "begin": 2696,
+                            "size": 142
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer_intou26",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "46aa9243",
+                        "sourceBytes": {
+                            "begin": 1684,
+                            "size": 255
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "transfercontractbalance",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "ba312e9b",
+                        "sourceBytes": {
+                            "begin": 2971,
+                            "size": 181
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdraw_intou17",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "24243846",
+                        "sourceBytes": {
+                            "begin": 362,
+                            "size": 216
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "6080604052600436106101235760003560e01c80638f1de16e116100a0578063d422904411610064578063d4229044146104ab578063f28bf146146104fa578063f52294c314610525578063fa3ff5f114610566578063fbbcedf3146105b75761012a565b80638f1de16e1461037a5780639aae1af5146103a8578063b55c7520146103e3578063ba312e9b1461041e578063c7b70bb9146104355761012a565b80632e3a4fb6116100e75780632e3a4fb6146102285780633a1903d61461025357806346aa9243146102a15780637e5fae011461031257806386040ee31461033d5761012a565b80631d9bf8861461012f578063242438461461019457806325f20363146101ab57806326160719146101e65780632ccf293d146101fd5761012a565b3661012a57005b600080fd5b34801561013b57600080fd5b5061017e6004803603602081101561015257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105e4565b6040518082815260200191505060405180910390f35b3480156101a057600080fd5b506101a96105fc565b005b3480156101b757600080fd5b506101e4600480360360208110156101ce57600080fd5b810190808035906020019092919050505061072a565b005b3480156101f257600080fd5b506101fb61079a565b005b34801561020957600080fd5b5061021261085b565b6040518082815260200191505060405180910390f35b34801561023457600080fd5b5061023d610865565b6040518082815260200191505060405180910390f35b61029f6004803603604081101561026957600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061086f565b005b3480156102ad57600080fd5b506102fa600480360360408110156102c457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610b30565b60405180821515815260200191505060405180910390f35b34801561031e57600080fd5b50610327610cb8565b6040518082815260200191505060405180910390f35b34801561034957600080fd5b506103786004803603602081101561036057600080fd5b81019080803515159060200190929190505050610cc2565b005b6103a66004803603602081101561039057600080fd5b8101908080359060200190929190505050610d37565b005b3480156103b457600080fd5b506103e1600480360360208110156103cb57600080fd5b8101908080359060200190929190505050610f3f565b005b3480156103ef57600080fd5b5061041c6004803603602081101561040657600080fd5b8101908080359060200190929190505050610faf565b005b34801561042a57600080fd5b50610433611092565b005b34801561044157600080fd5b506104786004803603604081101561045857600080fd5b810190808035906020019092919080359060200190929190505050611189565b604051808373ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b3480156104b757600080fd5b506104e4600480360360208110156104ce57600080fd5b8101908080359060200190929190505050611261565b6040518082815260200191505060405180910390f35b34801561050657600080fd5b5061050f611314565b6040518082815260200191505060405180910390f35b34801561053157600080fd5b5061053a61138c565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561057257600080fd5b506105b56004803603602081101561058957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506113b5565b005b3480156105c357600080fd5b506105cc611474565b60405180821515815260200191505060405180910390f35b60016020528060005260406000206000915090505481565b64f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000452600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205442116106b757600080fd5b6000600a9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001523373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610726573d6000803e3d6000fd5b5050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461078257600080fd5b600081101561079057600080fd5b8060048190555050565b64f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00050004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000252600a81039050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000085250565b6000600654905090565b6000600454905090565b60011515600260009054906101000a900460ff1615151461088f57600080fd5b600061089a83611261565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000652600081116108cc57600080fd5b6005600084815260200190815260200160002060018203815481106108ed57fe5b906000526020600020906002020160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461095657600080fd5b600454341461096457600080fd5b61096c61148b565b60007fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000100075282816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff1681525050600081600001519050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000b5242826020018181525050600082602001519050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000c526005600087815260200190815260200160002083908060018154018082558091505060019003906000526020600020906002020160009091909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010155505085836000015173ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f22e7d2c89d8d0a517488f500e0d816d03a29699520fed6eb2479d9569cabada986602001516040518082815260200191505060405180910390a4505050505050565b600064f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001600152600082600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054031015610c1457600080fd5b81600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055506001905092915050565b6000600354905090565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610d1a57600080fd5b80600260006101000a81548160ff02191690831515021790555050565b60011515600260009054906101000a900460ff16151514610d5757600080fd5b6000610d6282611261565b14610d6c57600080fd5b6003543414610d7a57600080fd5b610d8261148b565b60007fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000100055233816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff1681525050600081600001519050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000095242826020018181525050600082602001519050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000a526005600085815260200190815260200160002083908060018154018082558091505060019003906000526020600020906002020160009091909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010155505060066000815480929190600101919050555083836000015173ffffffffffffffffffffffffffffffffffffffff167f532312bc5585e04b43c5234e91eb7cdae0a72d24a9a7d547923be5b7a9f7116685602001516040518082815260200191505060405180910390a350505050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610f9757600080fd5b6000811015610fa557600080fd5b8060038190555050565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000060005280600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146110ea57600080fd5b6000479050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000003526000811161111f57600080fd5b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015611185573d6000803e3d6000fd5b5050565b600080600061119785611261565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000452600081116111c957600080fd5b8084106111d557600080fd5b6005600086815260200190815260200160002084815481106111f357fe5b906000526020600020906002020160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1660056000878152602001908152602001600020858154811061124357fe5b90600052602060002090600202016001015492509250509250929050565b600064f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000260005260056000838152602001908152602001600020805490509050919050565b600064f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400045247905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461140d57600080fd5b60008173ffffffffffffffffffffffffffffffffffffffff16311161143157600080fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b6000600260009054906101000a900460ff16905090565b6040518060400160405280600073ffffffffffffffffffffffffffffffffffffffff16815260200160008152509056fea2646970667358221220f903b89bfe1a3deb92e0614c86926d4715513f759e2543bc25974309551548df64736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600260006101000a81548160ff0219169083151502179055506611c37937e080006003819055506658d15e1762800060048190555060006006819055506114f18061009f6000396000f3fe6080604052600436106101235760003560e01c80638f1de16e116100a0578063d422904411610064578063d4229044146104ab578063f28bf146146104fa578063f52294c314610525578063fa3ff5f114610566578063fbbcedf3146105b75761012a565b80638f1de16e1461037a5780639aae1af5146103a8578063b55c7520146103e3578063ba312e9b1461041e578063c7b70bb9146104355761012a565b80632e3a4fb6116100e75780632e3a4fb6146102285780633a1903d61461025357806346aa9243146102a15780637e5fae011461031257806386040ee31461033d5761012a565b80631d9bf8861461012f578063242438461461019457806325f20363146101ab57806326160719146101e65780632ccf293d146101fd5761012a565b3661012a57005b600080fd5b34801561013b57600080fd5b5061017e6004803603602081101561015257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105e4565b6040518082815260200191505060405180910390f35b3480156101a057600080fd5b506101a96105fc565b005b3480156101b757600080fd5b506101e4600480360360208110156101ce57600080fd5b810190808035906020019092919050505061072a565b005b3480156101f257600080fd5b506101fb61079a565b005b34801561020957600080fd5b5061021261085b565b6040518082815260200191505060405180910390f35b34801561023457600080fd5b5061023d610865565b6040518082815260200191505060405180910390f35b61029f6004803603604081101561026957600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061086f565b005b3480156102ad57600080fd5b506102fa600480360360408110156102c457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610b30565b60405180821515815260200191505060405180910390f35b34801561031e57600080fd5b50610327610cb8565b6040518082815260200191505060405180910390f35b34801561034957600080fd5b506103786004803603602081101561036057600080fd5b81019080803515159060200190929190505050610cc2565b005b6103a66004803603602081101561039057600080fd5b8101908080359060200190929190505050610d37565b005b3480156103b457600080fd5b506103e1600480360360208110156103cb57600080fd5b8101908080359060200190929190505050610f3f565b005b3480156103ef57600080fd5b5061041c6004803603602081101561040657600080fd5b8101908080359060200190929190505050610faf565b005b34801561042a57600080fd5b50610433611092565b005b34801561044157600080fd5b506104786004803603604081101561045857600080fd5b810190808035906020019092919080359060200190929190505050611189565b604051808373ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b3480156104b757600080fd5b506104e4600480360360208110156104ce57600080fd5b8101908080359060200190929190505050611261565b6040518082815260200191505060405180910390f35b34801561050657600080fd5b5061050f611314565b6040518082815260200191505060405180910390f35b34801561053157600080fd5b5061053a61138c565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561057257600080fd5b506105b56004803603602081101561058957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506113b5565b005b3480156105c357600080fd5b506105cc611474565b60405180821515815260200191505060405180910390f35b60016020528060005260406000206000915090505481565b64f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000452600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205442116106b757600080fd5b6000600a9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001523373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610726573d6000803e3d6000fd5b5050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461078257600080fd5b600081101561079057600080fd5b8060048190555050565b64f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00050004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000252600a81039050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000085250565b6000600654905090565b6000600454905090565b60011515600260009054906101000a900460ff1615151461088f57600080fd5b600061089a83611261565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000652600081116108cc57600080fd5b6005600084815260200190815260200160002060018203815481106108ed57fe5b906000526020600020906002020160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461095657600080fd5b600454341461096457600080fd5b61096c61148b565b60007fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000100075282816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff1681525050600081600001519050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000b5242826020018181525050600082602001519050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000c526005600087815260200190815260200160002083908060018154018082558091505060019003906000526020600020906002020160009091909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010155505085836000015173ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f22e7d2c89d8d0a517488f500e0d816d03a29699520fed6eb2479d9569cabada986602001516040518082815260200191505060405180910390a4505050505050565b600064f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001600152600082600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054031015610c1457600080fd5b81600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600760008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055506001905092915050565b6000600354905090565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610d1a57600080fd5b80600260006101000a81548160ff02191690831515021790555050565b60011515600260009054906101000a900460ff16151514610d5757600080fd5b6000610d6282611261565b14610d6c57600080fd5b6003543414610d7a57600080fd5b610d8261148b565b60007fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000100055233816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff1681525050600081600001519050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000095242826020018181525050600082602001519050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000a526005600085815260200190815260200160002083908060018154018082558091505060019003906000526020600020906002020160009091909190915060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160010155505060066000815480929190600101919050555083836000015173ffffffffffffffffffffffffffffffffffffffff167f532312bc5585e04b43c5234e91eb7cdae0a72d24a9a7d547923be5b7a9f7116685602001516040518082815260200191505060405180910390a350505050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610f9757600080fd5b6000811015610fa557600080fd5b8060038190555050565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000060005280600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146110ea57600080fd5b6000479050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000003526000811161111f57600080fd5b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015611185573d6000803e3d6000fd5b5050565b600080600061119785611261565b9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000452600081116111c957600080fd5b8084106111d557600080fd5b6005600086815260200190815260200160002084815481106111f357fe5b906000526020600020906002020160000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1660056000878152602001908152602001600020858154811061124357fe5b90600052602060002090600202016001015492509250509250929050565b600064f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000260005260056000838152602001908152602001600020805490509050919050565b600064f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400045247905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461140d57600080fd5b60008173ffffffffffffffffffffffffffffffffffffffff16311161143157600080fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b6000600260009054906101000a900460ff16905090565b6040518060400160405280600073ffffffffffffffffffffffffffffffffffffffff16815260200160008152509056fea2646970667358221220f903b89bfe1a3deb92e0614c86926d4715513f759e2543bc25974309551548df64736f6c63430007060033",
+                "constructorSrcmap": "93:8081:0:-:0;;;2350:253;;;;;;;;;;2397:10;2379:7;;:29;;;;;;;;;;;;;;;;;;2444:4;2427:14;;:21;;;;;;;;;;;;;;;;;;2477:16;2467:7;:26;;;;2533:17;2512:18;:38;;;;2586:1;2569:14;:18;;;;93:8081;;;;;;",
+                "extensionContracts": [],
+                "file": "buggy_50.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "buggy_50.sol|digitalNotary",
+                        "declaringContract": "digitalNotary",
+                        "method": {
+                            "contractName": "digitalNotary",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "increaseLockTime_intou17",
+                            "notpayable": true,
+                            "originalFile": "buggy_50.sol",
+                            "paramNames": [
+                                "_secondsToIncrease"
+                            ],
+                            "returns": [],
+                            "sighash": "b55c7520",
+                            "sourceBytes": {
+                                "begin": 216,
+                                "size": 145
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "buggy_50.sol|digitalNotary",
+                        "declaringContract": "digitalNotary",
+                        "method": {
+                            "contractName": "digitalNotary",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transfer_intou26",
+                            "notpayable": true,
+                            "originalFile": "buggy_50.sol",
+                            "paramNames": [
+                                "_to",
+                                "_value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "46aa9243",
+                            "sourceBytes": {
+                                "begin": 1684,
+                                "size": 255
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "buggy_50.sol|digitalNotary",
+                        "declaringContract": "digitalNotary",
+                        "method": {
+                            "contractName": "digitalNotary",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bytes32",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "getHashOwnersCount",
+                            "notpayable": true,
+                            "originalFile": "buggy_50.sol",
+                            "paramNames": [
+                                "hash"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "d4229044",
+                            "sourceBytes": {
+                                "begin": 3162,
+                                "size": 117
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50003": {
+                        "canonicalId": "buggy_50.sol|digitalNotary",
+                        "declaringContract": "digitalNotary",
+                        "method": {
+                            "contractName": "digitalNotary",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "withdraw_intou17",
+                            "notpayable": true,
+                            "originalFile": "buggy_50.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "24243846",
+                            "sourceBytes": {
+                                "begin": 362,
+                                "size": 216
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50004": {
+                        "canonicalId": "buggy_50.sol|digitalNotary",
+                        "declaringContract": "digitalNotary",
+                        "method": {
+                            "contractName": "digitalNotary",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "getcontractbalance",
+                            "notpayable": true,
+                            "originalFile": "buggy_50.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "f28bf146",
+                            "sourceBytes": {
+                                "begin": 2848,
+                                "size": 113
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50005": {
+                        "canonicalId": "buggy_50.sol|digitalNotary",
+                        "declaringContract": "digitalNotary",
+                        "method": {
+                            "contractName": "digitalNotary",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_intou3",
+                            "notpayable": true,
+                            "originalFile": "buggy_50.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "26160719",
+                            "sourceBytes": {
+                                "begin": 646,
+                                "size": 99
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "transferValue_intou17",
+                        "sourceLoc": {
+                            "begin": "472",
+                            "len": "31",
+                            "source": "0"
+                        }
+                    },
+                    "10": {
+                        "lhs": "thisregistration.registrationtime",
+                        "sourceLoc": {
+                            "begin": "4024",
+                            "len": "51",
+                            "source": "0"
+                        }
+                    },
+                    "11": {
+                        "lhs": "thisregistration.owner",
+                        "sourceLoc": {
+                            "begin": "4693",
+                            "len": "33",
+                            "source": "0"
+                        }
+                    },
+                    "12": {
+                        "lhs": "thisregistration.registrationtime",
+                        "sourceLoc": {
+                            "begin": "4736",
+                            "len": "51",
+                            "source": "0"
+                        }
+                    },
+                    "2": {
+                        "lhs": "vundflw",
+                        "sourceLoc": {
+                            "begin": "680",
+                            "len": "16",
+                            "source": "0"
+                        }
+                    },
+                    "3": {
+                        "lhs": "cb",
+                        "sourceLoc": {
+                            "begin": "3041",
+                            "len": "31",
+                            "source": "0"
+                        }
+                    },
+                    "4": {
+                        "lhs": "owncount",
+                        "sourceLoc": {
+                            "begin": "3509",
+                            "len": "40",
+                            "source": "0"
+                        }
+                    },
+                    "5": {
+                        "lhs": "thisregistration",
+                        "sourceLoc": {
+                            "begin": "3929",
+                            "len": "40",
+                            "source": "0"
+                        }
+                    },
+                    "6": {
+                        "lhs": "owncount",
+                        "sourceLoc": {
+                            "begin": "4435",
+                            "len": "40",
+                            "source": "0"
+                        }
+                    },
+                    "7": {
+                        "lhs": "thisregistration",
+                        "sourceLoc": {
+                            "begin": "4643",
+                            "len": "40",
+                            "source": "0"
+                        }
+                    },
+                    "8": {
+                        "lhs": "vundflw",
+                        "sourceLoc": {
+                            "begin": "702",
+                            "len": "21",
+                            "source": "0"
+                        }
+                    },
+                    "9": {
+                        "lhs": "thisregistration.owner",
+                        "sourceLoc": {
+                            "begin": "3979",
+                            "len": "35",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 1191,
+                            "size": 253
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "gethashfee",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "7e5fae01",
+                        "sourceBytes": {
+                            "begin": 1554,
+                            "size": 85
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "lockTime_intou17",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "1d9bf886",
+                        "sourceBytes": {
+                            "begin": 165,
+                            "size": 48
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_intou3",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "26160719",
+                        "sourceBytes": {
+                            "begin": 646,
+                            "size": 99
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "transfercontractbalance",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "ba312e9b",
+                        "sourceBytes": {
+                            "begin": 2971,
+                            "size": 181
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "increaseLockTime_intou17",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "_secondsToIncrease"
+                        ],
+                        "returns": [],
+                        "sighash": "b55c7520",
+                        "sourceBytes": {
+                            "begin": 216,
+                            "size": 145
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getchangehashownerfee",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "2e3a4fb6",
+                        "sourceBytes": {
+                            "begin": 2089,
+                            "size": 107
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bytes32",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "getHashDetails",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "hash",
+                            "indx"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "c7b70bb9",
+                        "sourceBytes": {
+                            "begin": 3409,
+                            "size": 304
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getNumberofHashesRegistered",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "2ccf293d",
+                        "sourceBytes": {
+                            "begin": 3289,
+                            "size": 109
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer_intou26",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "46aa9243",
+                        "sourceBytes": {
+                            "begin": 1684,
+                            "size": 255
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getmanager",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "f52294c3",
+                        "sourceBytes": {
+                            "begin": 2603,
+                            "size": 88
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bytes32",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "getHashOwnersCount",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "hash"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "d4229044",
+                        "sourceBytes": {
+                            "begin": 3162,
+                            "size": 117
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdraw_intou17",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "24243846",
+                        "sourceBytes": {
+                            "begin": 362,
+                            "size": 216
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getcontractbalance",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "f28bf146",
+                        "sourceBytes": {
+                            "begin": 2848,
+                            "size": 113
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bytes32",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "changeHashOwnership",
+                        "notpayable": false,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "hash",
+                            "newowner"
+                        ],
+                        "returns": [],
+                        "sighash": "3a1903d6",
+                        "sourceBytes": {
+                            "begin": 4293,
+                            "size": 682
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setchangehashownerfee",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "newfee"
+                        ],
+                        "returns": [],
+                        "sighash": "25f20363",
+                        "sourceBytes": {
+                            "begin": 2207,
+                            "size": 152
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setcontractactive",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "contactive"
+                        ],
+                        "returns": [],
+                        "sighash": "86040ee3",
+                        "sourceBytes": {
+                            "begin": 2479,
+                            "size": 113
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bytes32",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "registerHash",
+                        "notpayable": false,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "hash"
+                        ],
+                        "returns": [],
+                        "sighash": "8f1de16e",
+                        "sourceBytes": {
+                            "begin": 3718,
+                            "size": 570
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setmanager",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "newmngr"
+                        ],
+                        "returns": [],
+                        "sighash": "fa3ff5f1",
+                        "sourceBytes": {
+                            "begin": 2696,
+                            "size": 142
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getcontractactive",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "fbbcedf3",
+                        "sourceBytes": {
+                            "begin": 2369,
+                            "size": 100
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "digitalNotary",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "sethashfee",
+                        "notpayable": true,
+                        "originalFile": "buggy_50.sol",
+                        "paramNames": [
+                            "newfee"
+                        ],
+                        "returns": [],
+                        "sighash": "9aae1af5",
+                        "sourceBytes": {
+                            "begin": 1949,
+                            "size": 130
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "digitalNotary",
+                "original_file": "buggy_50.sol",
+                "solidityTypes": [
+                    {
+                        "astId": 78,
+                        "canonicalId": "buggy_50.sol|digitalNotary.HashRegistration",
+                        "containingContract": "digitalNotary",
+                        "structMembers": [
+                            {
+                                "name": "owner",
+                                "type": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "name": "registrationtime",
+                                "type": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "structName": "HashRegistration",
+                        "type": "UserDefinedStruct"
+                    }
+                ],
+                "sourceBytes": {
+                    "begin": 93,
+                    "size": 4923
+                },
+                "srcmap": "93:8081:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;165:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;715:580;;;;;;;;;;;;;:::i;:::-;;3707:152;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1363:541;;;;;;;;;;;;;:::i;:::-;;5473:109;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;3589:107;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;6963:1170;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;2843:596;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;2713:85;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;3979:113;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;5995:963;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;3449:130;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;216:498;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;4729:268;;;;;;;;;;;;;:::i;:::-;;5593:397;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;5007:456;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;4348:371;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;4103:88;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;4196:142;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;3869:100;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;165:48;;;;;;;;;;;;;;;;;:::o;715:580::-;837:13;769:66;762:89;927:1;859:66;852:77;1005:1;937:66;930:77;1040:16;:28;1057:10;1040:28;;;;;;;;;;;;;;;;1022:15;:46;1014:55;;;;;;1083:26;1112:2;1083:31;;1198:21;1131:66;1124:96;1245:10;1237:28;;:51;1266:21;1237:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;715:580;:::o;3707:152::-;2672:7;;;;;;;;;;2658:21;;:10;:21;;;2650:30;;;;;;3804:1:::1;3794:6;:11;;3786:20;;;::::0;::::1;;3846:6;3825:18;:27;;;;3707:152:::0;:::o;1363:541::-;1478:13;1410:66;1403:89;1568:1;1500:66;1493:77;1646:1;1578:66;1571:77;1655:13;1755:7;1688:66;1681:82;1788:2;1779:7;:11;1769:21;;1874:7;1807:66;1800:82;1799:84;:::o;5473:109::-;5534:4;5561:14;;5554:21;;5473:109;:::o;3589:107::-;3644:4;3671:18;;3664:25;;3589:107;:::o;6963:1170::-;7090:4;7072:22;;:14;;;;;;;;;;;:22;;;7064:31;;;;;;7105:13;7121:24;7140:4;7121:18;:24::i;:::-;7105:40;;7229:8;7162:66;7155:83;7267:1;7256:8;:12;7248:21;;;;;;7301:8;:14;7310:4;7301:14;;;;;;;;;;;7327:1;7316:8;:12;7301:28;;;;;;;;;;;;;;;;;;:34;;;;;;;;;;;;7287:48;;:10;:48;;;7279:57;;;;;;7368:18;;7355:9;:31;7347:40;;;;;;7406;;:::i;:::-;7530:1;7463:66;7456:76;7567:8;7542:16;:22;;:33;;;;;;;;;;;7576:23;7602:16;:22;;;7576:48;;7708:15;7641:66;7634:90;7770:15;7734:16;:33;;:51;;;;;7786:23;7812:16;:33;;;7786:59;;7929:15;7862:66;7855:90;7964:8;:14;7973:4;7964:14;;;;;;;;;;;7984:16;7964:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8086:4;8062:16;:22;;;8025:101;;8050:10;8025:101;;;8092:16;:33;;;8025:101;;;;;;;;;;;;;;;;;;6963:1170;;;;;;:::o;2843:596::-;2911:4;3004:13;2936:66;2929:89;3094:1;3026:66;3019:77;3172:1;3104:66;3097:77;3250:6;3182:66;3175:82;3313:1;3303:6;3272:16;:28;3289:10;3272:28;;;;;;;;;;;;;;;;:37;:42;;3264:51;;;;;;3360:6;3328:16;:28;3345:10;3328:28;;;;;;;;;;;;;;;;:38;;;;;;;;;;;3404:6;3379:16;:21;3396:3;3379:21;;;;;;;;;;;;;;;;:31;;;;;;;;;;;3430:4;3423:11;;2843:596;;;;:::o;2713:85::-;2757:4;2784:7;;2777:14;;2713:85;:::o;3979:113::-;2672:7;;;;;;;;;;2658:21;;:10;:21;;;2650:30;;;;;;4075:10:::1;4058:14;;:27;;;;;;;;;;;;;;;;;;3979:113:::0;:::o;5995:963::-;6095:4;6077:22;;:14;;;;;;;;;;;:22;;;6069:31;;;;;;6146:1;6118:24;6137:4;6118:18;:24::i;:::-;:29;6110:38;;;;;;6179:7;;6166:9;:20;6158:29;;;;;;6206:40;;:::i;:::-;6330:1;6263:66;6256:76;6367:10;6342:16;:22;;:35;;;;;;;;;;;6378:22;6403:16;:22;;;6378:47;;6509:14;6442:66;6435:89;6570:15;6534:16;:33;;:51;;;;;6586:23;6612:16;:33;;;6586:59;;6729:15;6662:66;6655:90;6764:8;:14;6773:4;6764:14;;;;;;;;;;;6784:16;6764:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6820:14;;:16;;;;;;;;;;;;;6902:4;6878:16;:22;;;6860:82;;;6908:16;:33;;;6860:82;;;;;;;;;;;;;;;;;;5995:963;;;;:::o;3449:130::-;2672:7;;;;;;;;;;2658:21;;:10;:21;;;2650:30;;;;;;3535:1:::1;3525:6;:11;;3517:20;;;::::0;::::1;;3566:6;3556:7;:16;;;;3449:130:::0;:::o;216:498::-;369:13;301:66;294:89;459:1;391:66;384:77;537:1;469:66;462:77;615:18;547:66;540:94;677:18;645:16;:28;662:10;645:28;;;;;;;;;;;;;;;;:50;;;;;;;;;;;216:498;:::o;4729:268::-;2672:7;;;;;;;;;;2658:21;;:10;:21;;;2650:30;;;;;;4799:7:::1;4809:21;4799:31;;4914:2;4847:66;4840:77;4949:1;4944:2;:6;4936:15;;;::::0;::::1;;4970:7;::::0;::::1;;;;;;;;:16;;:20;4987:2;4970:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;2690:1;4729:268::o:0;5593:397::-;5664:7;5672:4;5693:13;5709:24;5728:4;5709:18;:24::i;:::-;5693:40;;5817:8;5750:66;5743:83;5855:1;5844:8;:12;5836:21;;;;;;5882:8;5875:4;:15;5867:24;;;;;;5918:8;:14;5927:4;5918:14;;;;;;;;;;;5933:4;5918:20;;;;;;;;;;;;;;;;;;:26;;;;;;;;;;;;5945:8;:14;5954:4;5945:14;;;;;;;;;;;5960:4;5945:20;;;;;;;;;;;;;;;;;;:37;;;5910:73;;;;;5593:397;;;;;:::o;5007:456::-;5069:4;5166:13;5098:66;5091:89;5256:1;5188:66;5181:77;5334:1;5266:66;5259:77;5412:4;5344:66;5337:80;5435:8;:14;5444:4;5435:14;;;;;;;;;;;:21;;;;5428:28;;5007:456;;;:::o;4348:371::-;4398:4;4495:13;4427:66;4420:89;4585:1;4517:66;4510:77;4663:1;4595:66;4588:77;4691:21;4684:28;;4348:371;:::o;4103:88::-;4147:7;4177;;;;;;;;;;;4170:14;;4103:88;:::o;4196:142::-;2672:7;;;;;;;;;;2658:21;;:10;:21;;;2650:30;;;;;;4302:1:::1;4284:7;:15;;;:19;4276:28;;;::::0;::::1;;4324:7;4314;::::0;:17:::1;;;;;;;;;;;;;;;;;;4196:142:::0;:::o;3869:100::-;3921:4;3948:14;;;;;;;;;;;3941:21;;3869:100;:::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 3,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_09_30_280797e096/.certora_sources/buggy_50.sol:digitalNotary",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "manager",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_address_payable"
+                        },
+                        {
+                            "astId": 7,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_09_30_280797e096/.certora_sources/buggy_50.sol:digitalNotary",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "lockTime_intou17",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 52,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_09_30_280797e096/.certora_sources/buggy_50.sol:digitalNotary",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "1",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "bool",
+                                "type": "Primitive"
+                            },
+                            "label": "contractactive",
+                            "offset": 0,
+                            "slot": "2",
+                            "type": "t_bool"
+                        },
+                        {
+                            "astId": 54,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_09_30_280797e096/.certora_sources/buggy_50.sol:digitalNotary",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "hashfee",
+                            "offset": 0,
+                            "slot": "3",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 73,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_09_30_280797e096/.certora_sources/buggy_50.sol:digitalNotary",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "changehashownerfee",
+                            "offset": 0,
+                            "slot": "4",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 83,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_09_30_280797e096/.certora_sources/buggy_50.sol:digitalNotary",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "bytes32",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "dynamicArrayBaseType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "64",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "astId": 78,
+                                        "canonicalId": "buggy_50.sol|digitalNotary.HashRegistration",
+                                        "containingContract": "digitalNotary",
+                                        "structMembers": [
+                                            {
+                                                "name": "owner",
+                                                "type": {
+                                                    "annotations": [
+                                                        {
+                                                            "numberOfBytes": "20",
+                                                            "offset": 0,
+                                                            "slot": "0",
+                                                            "type": "StorageAnnotation"
+                                                        }
+                                                    ],
+                                                    "primitiveName": "address",
+                                                    "type": "Primitive"
+                                                }
+                                            },
+                                            {
+                                                "name": "registrationtime",
+                                                "type": {
+                                                    "annotations": [
+                                                        {
+                                                            "numberOfBytes": "32",
+                                                            "offset": 0,
+                                                            "slot": "1",
+                                                            "type": "StorageAnnotation"
+                                                        }
+                                                    ],
+                                                    "primitiveName": "uint256",
+                                                    "type": "Primitive"
+                                                }
+                                            }
+                                        ],
+                                        "structName": "HashRegistration",
+                                        "type": "UserDefinedStruct"
+                                    },
+                                    "type": "Array"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "HashList",
+                            "offset": 0,
+                            "slot": "5",
+                            "type": "t_mapping(t_bytes32,t_array(t_struct(HashRegistration)78_storage)dyn_storage)"
+                        },
+                        {
+                            "astId": 85,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_09_30_280797e096/.certora_sources/buggy_50.sol:digitalNotary",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "HashListLength",
+                            "offset": 0,
+                            "slot": "6",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 154,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_09_30_280797e096/.certora_sources/buggy_50.sol:digitalNotary",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "balances_intou26",
+                            "offset": 0,
+                            "slot": "7",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_address_payable": {
+                            "encoding": "inplace",
+                            "label": "address payable",
+                            "numberOfBytes": "20"
+                        },
+                        "t_array(t_struct(HashRegistration)78_storage)dyn_storage": {
+                            "base": "t_struct(HashRegistration)78_storage",
+                            "encoding": "dynamic_array",
+                            "label": "struct digitalNotary.HashRegistration[]",
+                            "numberOfBytes": "32"
+                        },
+                        "t_bool": {
+                            "encoding": "inplace",
+                            "label": "bool",
+                            "numberOfBytes": "1"
+                        },
+                        "t_bytes32": {
+                            "encoding": "inplace",
+                            "label": "bytes32",
+                            "numberOfBytes": "32"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_mapping(t_bytes32,t_array(t_struct(HashRegistration)78_storage)dyn_storage)": {
+                            "encoding": "mapping",
+                            "key": "t_bytes32",
+                            "label": "mapping(bytes32 => struct digitalNotary.HashRegistration[])",
+                            "numberOfBytes": "32",
+                            "value": "t_array(t_struct(HashRegistration)78_storage)dyn_storage"
+                        },
+                        "t_struct(HashRegistration)78_storage": {
+                            "encoding": "inplace",
+                            "label": "struct digitalNotary.HashRegistration",
+                            "members": [
+                                {
+                                    "astId": 75,
+                                    "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_09_30_280797e096/.certora_sources/buggy_50.sol:digitalNotary",
+                                    "label": "owner",
+                                    "offset": 0,
+                                    "slot": "0",
+                                    "type": "t_address"
+                                },
+                                {
+                                    "astId": 77,
+                                    "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_12_10_09_30_280797e096/.certora_sources/buggy_50.sol:digitalNotary",
+                                    "label": "registrationtime",
+                                    "offset": 0,
+                                    "slot": "1",
+                                    "type": "t_uint256"
+                                }
+                            ],
+                            "numberOfBytes": "64"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "digitalNotary",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "buggy_50.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "buggy_50.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "WrappedToken",
+    "specfile": "certora_specification/WrappedToken.cvl",
+    "specfileOrigRelpath": "certora_specification/WrappedToken.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

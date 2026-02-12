@@ -1,0 +1,313 @@
+{
+    "Refunder_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "Refunder",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "send_loop.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 344,
+                            "size": 169
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Refunder",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "refundAll",
+                        "notpayable": true,
+                        "originalFile": "send_loop.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "38e771ab",
+                        "sourceBytes": {
+                            "begin": 530,
+                            "size": 366
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Refunder",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "refunds",
+                        "notpayable": true,
+                        "originalFile": "send_loop.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "bc3da535",
+                        "sourceBytes": {
+                            "begin": 297,
+                            "size": 40
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561001057600080fd5b50600436106100365760003560e01c806338e771ab1461003b578063bc3da53514610045575b600080fd5b61004361009d565b005b6100876004803603602081101561005b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610217565b6040518082815260200191505060405180910390f35b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000045260005b600080549050811015610214576000818154811061012a57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc6001600080858154811061017e57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549081150290604051600060405180830381858888f1935050505061020757600080fd5b8080600101915050610110565b50565b6001602052806000526040600020600091509050548156fea26469706673582212204963bad1466f6e6d1d8131296c82b01e4e909bf3bd2c329f0ac3f7bdbb2228cb64736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "608060405234801561001057600080fd5b5060007379b483371e87d664cd39491b5f06250165e4b1849080600181540180825580915050600190039060005260206000200160009091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060007379b483371e87d664cd39491b5f06250165e4b1859080600181540180825580915050600190039060005260206000200160009091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102658061010e6000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806338e771ab1461003b578063bc3da53514610045575b600080fd5b61004361009d565b005b6100876004803603602081101561005b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610217565b6040518082815260200191505060405180910390f35b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000045260005b600080549050811015610214576000818154811061012a57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc6001600080858154811061017e57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549081150290604051600060405180830381858888f1935050505061020757600080fd5b8080600101915050610110565b50565b6001602052806000526040600020600091509050548156fea26469706673582212204963bad1466f6e6d1d8131296c82b01e4e909bf3bd2c329f0ac3f7bdbb2228cb64736f6c63430007060033",
+                "constructorSrcmap": "237:920:0:-:0;;;344:169;;;;;;;;;;368:15;389:42;368:64;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;442:15;463:42;442:64;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;237:920;;;;;;",
+                "extensionContracts": [],
+                "file": "send_loop.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "send_loop.sol|Refunder",
+                        "declaringContract": "Refunder",
+                        "method": {
+                            "contractName": "Refunder",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "refundAll",
+                            "notpayable": true,
+                            "originalFile": "send_loop.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "38e771ab",
+                            "sourceBytes": {
+                                "begin": 530,
+                                "size": 366
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {},
+                "methods": [
+                    {
+                        "contractName": "Refunder",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "send_loop.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 344,
+                            "size": 169
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Refunder",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "refundAll",
+                        "notpayable": true,
+                        "originalFile": "send_loop.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "38e771ab",
+                        "sourceBytes": {
+                            "begin": 530,
+                            "size": 366
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Refunder",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "refunds",
+                        "notpayable": true,
+                        "originalFile": "send_loop.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "bc3da535",
+                        "sourceBytes": {
+                            "begin": 297,
+                            "size": 40
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "Refunder",
+                "original_file": "send_loop.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 237,
+                    "size": 662
+                },
+                "srcmap": "237:920:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;530:624;;;:::i;:::-;;297:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;530:624;645:13;577:66;570:89;735:1;667:66;660:77;813:1;745:66;738:77;830:6;826:322;842:15;:22;;;;838:1;:26;826:322;;;1016:15;1032:1;1016:18;;;;;;;;;;;;;;;;;;;;;;;;;1008:32;;:61;1041:7;:27;1049:15;1065:1;1049:18;;;;;;;;;;;;;;;;;;;;;;;;;1041:27;;;;;;;;;;;;;;;;1008:61;;;;;;;;;;;;;;;;;;;;;;;1000:70;;;;;;866:3;;;;;;;826:322;;;;530:624::o;297:40::-;;;;;;;;;;;;;;;;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 4,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/denial_of_service/.certora_internal/26_02_12_09_45_15_446232a241/.certora_sources/send_loop.sol:Refunder",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "dynamicArrayBaseType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "type": "Array"
+                            },
+                            "label": "refundAddresses",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_array(t_address)dyn_storage"
+                        },
+                        {
+                            "astId": 8,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/denial_of_service/.certora_internal/26_02_12_09_45_15_446232a241/.certora_sources/send_loop.sol:Refunder",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "refunds",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_array(t_address)dyn_storage": {
+                            "base": "t_address",
+                            "encoding": "dynamic_array",
+                            "label": "address[]",
+                            "numberOfBytes": "32"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "Refunder",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "send_loop.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "send_loop.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

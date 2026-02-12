@@ -1,0 +1,2 @@
+certoraRun 0xf29ebe930a539a60279ace72c707cba851a57707.sol:B --verify B:certora_specification/0xf29ebe930a539a60279ace72c707cba851a57707.cvl
+certoraRun 0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.sol:WhaleGiveaway2 --verify WhaleGiveaway2:certora_specification/0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.cvl

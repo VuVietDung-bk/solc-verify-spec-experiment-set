@@ -1,4 +1,4 @@
-SOLC-VERIFY-SPEC Results Log
+SOLCSPEC Results Log
 Benchmark: dataset1/access_control
 Date: 2026-02-11
 Total spec files: 8

@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Wallet",
+    "specfile": "certora_specification/wallet_04_confused_sign.cvl",
+    "specfileOrigRelpath": "certora_specification/wallet_04_confused_sign.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

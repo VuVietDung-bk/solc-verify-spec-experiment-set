@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "ethBank",
+    "specfile": "certora_specification/buggy_19.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_19.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

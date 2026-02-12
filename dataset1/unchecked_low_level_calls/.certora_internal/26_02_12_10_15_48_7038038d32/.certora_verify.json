@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "WhaleGiveaway2",
+    "specfile": "certora_specification/0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.cvl",
+    "specfileOrigRelpath": "certora_specification/0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

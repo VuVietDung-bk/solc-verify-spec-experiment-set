@@ -1,0 +1,500 @@
+{
+    "TokenSaleChallenge_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "TokenSaleChallenge",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "tokensalechallenge.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 262,
+                            "size": 44
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TokenSaleChallenge",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "buy",
+                        "notpayable": false,
+                        "originalFile": "tokensalechallenge.sol",
+                        "paramNames": [
+                            "numTokens"
+                        ],
+                        "returns": [],
+                        "sighash": "d96a094a",
+                        "sourceBytes": {
+                            "begin": 567,
+                            "size": 231
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TokenSaleChallenge",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": false,
+                        "originalFile": "tokensalechallenge.sol",
+                        "paramNames": [
+                            "_player"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 361,
+                            "size": 90
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TokenSaleChallenge",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "isComplete",
+                        "notpayable": true,
+                        "originalFile": "tokensalechallenge.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "b2fa1c9e",
+                        "sourceBytes": {
+                            "begin": 457,
+                            "size": 104
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TokenSaleChallenge",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "sell",
+                        "notpayable": true,
+                        "originalFile": "tokensalechallenge.sol",
+                        "paramNames": [
+                            "numTokens"
+                        ],
+                        "returns": [],
+                        "sighash": "e4849b32",
+                        "sourceBytes": {
+                            "begin": 804,
+                            "size": 249
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "60806040526004361061003f5760003560e01c806370a0823114610044578063b2fa1c9e146100a9578063d96a094a146100d6578063e4849b3214610104575b600080fd5b34801561005057600080fd5b506100936004803603602081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061013f565b6040518082815260200191505060405180910390f35b3480156100b557600080fd5b506100be610157565b60405180821515815260200191505060405180910390f35b610102600480360360208110156100ec57600080fd5b81019080803590602001909291905050506101d9565b005b34801561011057600080fd5b5061013d6004803603602081101561012757600080fd5b81019080803590602001909291905050506102d1565b005b60006020528060005260406000206000915090505481565b600064f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000452670de0b6b3a76400004710905090565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600052670de0b6b3a76400008102341461028257600080fd5b806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555050565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001600052806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410156103af57600080fd5b806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055503373ffffffffffffffffffffffffffffffffffffffff166108fc670de0b6b3a764000083029081150290604051600060405180830381858888f1935050505015801561044b573d6000803e3d6000fd5b505056fea2646970667358221220372d38deb23ec37ec7bfd0ab91a455eaa048fee2d143a88de89f94fb52206fd364736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "60806040526040516104e03803806104e08339818101604052602081101561002657600080fd5b8101908080519060200190929190505050670de0b6b3a7640000341461004b57600080fd5b506104858061005b6000396000f3fe60806040526004361061003f5760003560e01c806370a0823114610044578063b2fa1c9e146100a9578063d96a094a146100d6578063e4849b3214610104575b600080fd5b34801561005057600080fd5b506100936004803603602081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061013f565b6040518082815260200191505060405180910390f35b3480156100b557600080fd5b506100be610157565b60405180821515815260200191505060405180910390f35b610102600480360360208110156100ec57600080fd5b81019080803590602001909291905050506101d9565b005b34801561011057600080fd5b5061013d6004803603602081101561012757600080fd5b81019080803590602001909291905050506102d1565b005b60006020528060005260406000206000915090505481565b600064f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000452670de0b6b3a76400004710905090565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600052670de0b6b3a76400008102341461028257600080fd5b806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555050565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001600052806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410156103af57600080fd5b806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055503373ffffffffffffffffffffffffffffffffffffffff166108fc670de0b6b3a764000083029081150290604051600060405180830381858888f1935050505015801561044b573d6000803e3d6000fd5b505056fea2646970667358221220372d38deb23ec37ec7bfd0ab91a455eaa048fee2d143a88de89f94fb52206fd364736f6c63430007060033",
+                "constructorSrcmap": "228:1773:0:-:0;;;361:90;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;436:7;423:9;:20;415:29;;;;;;361:90;228:1773;;;;;;",
+                "extensionContracts": [],
+                "file": "tokensalechallenge.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "tokensalechallenge.sol|TokenSaleChallenge",
+                        "declaringContract": "TokenSaleChallenge",
+                        "method": {
+                            "contractName": "TokenSaleChallenge",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "buy",
+                            "notpayable": false,
+                            "originalFile": "tokensalechallenge.sol",
+                            "paramNames": [
+                                "numTokens"
+                            ],
+                            "returns": [],
+                            "sighash": "d96a094a",
+                            "sourceBytes": {
+                                "begin": 567,
+                                "size": 231
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "tokensalechallenge.sol|TokenSaleChallenge",
+                        "declaringContract": "TokenSaleChallenge",
+                        "method": {
+                            "contractName": "TokenSaleChallenge",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "sell",
+                            "notpayable": true,
+                            "originalFile": "tokensalechallenge.sol",
+                            "paramNames": [
+                                "numTokens"
+                            ],
+                            "returns": [],
+                            "sighash": "e4849b32",
+                            "sourceBytes": {
+                                "begin": 804,
+                                "size": 249
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "tokensalechallenge.sol|TokenSaleChallenge",
+                        "declaringContract": "TokenSaleChallenge",
+                        "method": {
+                            "contractName": "TokenSaleChallenge",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "isComplete",
+                            "notpayable": true,
+                            "originalFile": "tokensalechallenge.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "b2fa1c9e",
+                            "sourceBytes": {
+                                "begin": 457,
+                                "size": 104
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {},
+                "methods": [
+                    {
+                        "contractName": "TokenSaleChallenge",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": false,
+                        "originalFile": "tokensalechallenge.sol",
+                        "paramNames": [
+                            "_player"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 361,
+                            "size": 90
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TokenSaleChallenge",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "buy",
+                        "notpayable": false,
+                        "originalFile": "tokensalechallenge.sol",
+                        "paramNames": [
+                            "numTokens"
+                        ],
+                        "returns": [],
+                        "sighash": "d96a094a",
+                        "sourceBytes": {
+                            "begin": 567,
+                            "size": 231
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TokenSaleChallenge",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "tokensalechallenge.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 262,
+                            "size": 44
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TokenSaleChallenge",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "sell",
+                        "notpayable": true,
+                        "originalFile": "tokensalechallenge.sol",
+                        "paramNames": [
+                            "numTokens"
+                        ],
+                        "returns": [],
+                        "sighash": "e4849b32",
+                        "sourceBytes": {
+                            "begin": 804,
+                            "size": 249
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TokenSaleChallenge",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "isComplete",
+                        "notpayable": true,
+                        "originalFile": "tokensalechallenge.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "b2fa1c9e",
+                        "sourceBytes": {
+                            "begin": 457,
+                            "size": 104
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "TokenSaleChallenge",
+                "original_file": "tokensalechallenge.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 228,
+                    "size": 827
+                },
+                "srcmap": "228:1773:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;262:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;457:362;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;825:575;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1406:593;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;262:44;;;;;;;;;;;;;;;;;:::o;457:362::-;500:4;593:13;525:66;518:89;683:1;615:66;608:77;761:1;693:66;686:77;805:7;781:21;:31;774:38;;457:362;:::o;825:575::-;959:13;891:66;884:89;1049:1;981:66;974:77;1127:1;1059:66;1052:77;1205:9;1137:66;1130:85;347:7;1284:9;:27;1271:9;:40;1263:49;;;;;;1384:9;1359;:21;1369:10;1359:21;;;;;;;;;;;;;;;;:34;;;;;;;;;;;825:575;:::o;1406:593::-;1533:13;1465:66;1458:89;1623:1;1555:66;1548:77;1701:1;1633:66;1626:77;1779:9;1711:66;1704:85;1833:9;1808;:21;1818:10;1808:21;;;;;;;;;;;;;;;;:34;;1800:43;;;;;;1879:9;1854;:21;1864:10;1854:21;;;;;;;;;;;;;;;;:34;;;;;;;;;;;1943:10;1935:28;;:57;347:7;1964:9;:27;1935:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1406:593;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 5,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/arithmetic/.certora_internal/26_02_12_09_42_16_4480869e65/.certora_sources/tokensalechallenge.sol:TokenSaleChallenge",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "balanceOf",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "TokenSaleChallenge",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "tokensalechallenge.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "tokensalechallenge.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

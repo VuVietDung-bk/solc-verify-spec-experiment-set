@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "keepMyEther",
+    "specfile": "certora_specification/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.cvl",
+    "specfileOrigRelpath": "certora_specification/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}
