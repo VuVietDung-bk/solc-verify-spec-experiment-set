@@ -1,0 +1,31 @@
+// Unhandled-Exceptions specification for RampInstantEthPool (buggy_20.sol)
+
+rule cash_unchk46_does_not_check_send_result(address winner) {
+    env e;
+    cash_unchk46@withrevert(e, 0, 0, winner);
+    assert lastReverted;
+}
+
+rule sendToWinner_unchk8_ignores_send_failure() {
+    env e;
+    require currentContract.payedOut_unchk8 == false;
+    sendToWinner_unchk8(e);
+    assert currentContract.payedOut_unchk8,
+        "payedOut flag is set even if send fails";
+}
+
+rule sendToWinner_unchk20_ignores_send_failure() {
+    env e;
+    require currentContract.payedOut_unchk20 == false;
+    sendToWinner_unchk20(e);
+    assert currentContract.payedOut_unchk20,
+        "payedOut flag is set even if send fails";
+}
+
+rule sendToWinner_unchk32_ignores_send_failure() {
+    env e;
+    require currentContract.payedOut_unchk32 == false;
+    sendToWinner_unchk32(e);
+    assert currentContract.payedOut_unchk32,
+        "payedOut flag is set even if send fails";
+}
