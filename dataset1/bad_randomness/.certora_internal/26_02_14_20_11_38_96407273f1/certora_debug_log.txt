@@ -1,0 +1,12 @@
+Saving last configuration file to .certora_internal/26_02_14_20_11_38_96407273f1/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['lottery.sol:Lottery'], 'package_version_for_build_cache': 'certora-cli 8.8.0', 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /root/solc-verify-spec/experiments/dataset1/bad_randomness/.certora_internal/26_02_14_20_11_38_96407273f1/.certora_config
+In /root/solc-verify-spec/experiments/dataset1/bad_randomness/certora_specification/lottery.cvl, found the imports: []
+copying spec file /root/solc-verify-spec/experiments/dataset1/bad_randomness/certora_specification/lottery.cvl to /root/solc-verify-spec/experiments/dataset1/bad_randomness/.certora_internal/26_02_14_20_11_38_96407273f1/.certora_sources/.0_lottery.cvl.spec
+writing /root/solc-verify-spec/experiments/dataset1/bad_randomness/.certora_internal/26_02_14_20_11_38_96407273f1/.certora_verify.json
+Failed to run Certora Prover typechecker locally.
+Please check the errors below for problems in the specifications (.spec files) or the prover_args defined in the .conf file.
+[main] ERROR ALWAYS - Found errors in certora_specification/lottery.cvl:
+[main] ERROR ALWAYS - Error in spec file (lottery.cvl:15:42): Syntax error: unexpected token near `(`
+build failed

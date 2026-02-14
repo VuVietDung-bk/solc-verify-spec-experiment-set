@@ -1,0 +1,95 @@
+CERTORA Results Log
+Benchmark: dataset1/other
+Date: 2026-02-12
+Total spec files: 8
+
+========================================
+Spec: certora_specification/Asignatura.cvl
+Contract: asignatura.sol:Asignatura
+Rules: 1
+  FAIL:
+    Rule automatricula_accepts_nonempty: VIOLATION
+      - Unwinding condition in a loop. We recommend to run with --loop_iter N
+Timing:
+  [TIME] Run time: 00:00:30
+Link: https://prover.certora.com/output/1696952/21aede2251b24422b21c60e2843a8d27
+
+========================================
+Spec: certora_specification/Class.cvl
+Contract: class.sol:Class
+Rules: 1
+  FAIL:
+    Rule create_student_adds_entry: VIOLATION
+      - Unwinding condition in a loop. We recommend to run with --loop_iter N
+Timing:
+  [TIME] Run time: 00:00:20
+Link: https://prover.certora.com/output/1696952/069710698db9489abf5f4a6dd8acf58a
+
+========================================
+Spec: certora_specification/Crowdfund.cvl
+Contract: Crowdfund.sol:Crowdfund
+Rules: 1
+  FAIL:
+    Rule stake_should_not_overflow: VIOLATION
+      - s2 > s1
+Timing:
+  [TIME] Run time: 00:00:21
+Link: https://prover.certora.com/output/1696952/bf8516fb9bfa4aca85fe5baf80dc8a98
+
+========================================
+Spec: certora_specification/EvilToken.cvl
+Contract: EvilToken.sol:EvilERC20Token
+Status: ERROR
+Note: Verification failed due to compilation or specification errors
+
+========================================
+Spec: certora_specification/Forwarder.cvl
+Contract: Forwarder.sol:Forwarder
+Rules: 1
+  PASS:
+    Rule non_owner_forward_reverts: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule non_owner_forward_reverts: OK
+Timing:
+  [TIME] Run time: 00:00:21
+Link: https://prover.certora.com/output/1696952/c1eda6a84cea479ab14cf6dc580e0a8c
+
+========================================
+Spec: certora_specification/NameRegistrar.cvl
+Contract: name_registrar.sol:NameRegistrar
+Rules: 1
+  PASS:
+    Rule register_should_revert_when_locked: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule register_should_revert_when_locked: OK
+Timing:
+  [TIME] Run time: 00:00:18
+Link: https://prover.certora.com/output/1696952/0d75946f63f04d74b3130a11954988b8
+
+========================================
+Spec: certora_specification/StakingWarmup.cvl
+Contract: StakingWarmup.sol:StakingWarmup
+Rules: 1
+  PASS:
+    Rule retrieve_from_non_staking_reverts: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule retrieve_from_non_staking_reverts: OK
+Timing:
+  [TIME] Run time: 00:00:19
+Link: https://prover.certora.com/output/1696952/2ffa061d0025481393b9338bce03f6ba
+
+========================================
+Spec: certora_specification/WETH.cvl
+Contract: WETH.sol:WETH
+Rules: 1
+  PASS:
+    Rule withdrawTo_cannot_exceed_balance: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule withdrawTo_cannot_exceed_balance: OK
+Timing:
+  [TIME] Run time: 00:00:24
+Link: https://prover.certora.com/output/1696952/67670659a2b04ef58a864afa72d9cb7f
+
+========================================
+SUMMARY: 8 spec files (1 ERROR, 7 verified)
+  Total run time: ~02:33

@@ -1,0 +1,14 @@
+# result_link_cvl.txt
+# Generated: 2026-02-12
+
+[1] CMD: certoraRun ERC20.sol:ERC20 --verify ERC20:certora_specification/ERC20.cvl
+[1] LINK: https://prover.certora.com/output/1696952/d58182a316f54da1b8bdd0c3caf5b02c
+
+[2] CMD: certoraRun eth_tx_order_dependence_minimal.sol:EthTxOrderDependenceMinimal --verify EthTxOrderDependenceMinimal:certora_specification/eth_tx_order_dependence_minimal.cvl
+[2] LINK: https://prover.certora.com/output/1696952/3fa7df82f5f7454fb1da3d9a370ee35d
+
+[3] CMD: certoraRun odds_and_evens.sol:OddsAndEvens --verify OddsAndEvens:certora_specification/odds_and_evens.cvl
+[3] LINK: https://prover.certora.com/output/1696952/d6030a2c7092440288ab292ad7d62a0b
+
+
+

@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Curve",
+    "specfile": "certora_specification/Curve.cvl",
+    "specfileOrigRelpath": "certora_specification/Curve.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

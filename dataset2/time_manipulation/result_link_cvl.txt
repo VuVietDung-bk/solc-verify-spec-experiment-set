@@ -1,0 +1,21 @@
+# result_link_cvl.txt
+# Generated: 2026-02-12
+
+[1] CMD: certoraRun HotDollarsToken.sol:HotDollarsToken --verify HotDollarsToken:certora_specification/HotDollarsToken.cvl
+[1] LINK: https://prover.certora.com/output/1696952/71c455489e354c24844fd916c7c52ffd
+
+[2] CMD: certoraRun TAMContract.sol:TAMCContract --verify TAMCContract:certora_specification/TAMCContract.cvl
+[2] LINK: https://prover.certora.com/output/1696952/3222b245337f42f790169dfb5df5cc46
+
+[3] CMD: certoraRun TTC.sol:TTC --verify TTC:certora_specification/TTC.cvl
+[3] LINK: https://prover.certora.com/output/1696952/7a1194cd576e44e8b0e5b67eea88e260
+
+[4] CMD: certoraRun lottopollo.sol:lottopollo --verify lottopollo:certora_specification/lottopollo.cvl
+[4] LINK: https://prover.certora.com/output/1696952/4dea5258dad04adca9df1336b4fa8121
+
+[5] CMD: certoraRun roulette.sol:Roulette --verify Roulette:certora_specification/roulette.cvl
+[5] ERROR: CVL typecheck failed - spin function not found in Roulette contract
+
+[6] CMD: certoraRun timed_crowdsale.sol:TimedCrowdsale --verify TimedCrowdsale:certora_specification/timed_crowdsale.cvl
+[6] LINK: https://prover.certora.com/output/1696952/adcd2f2b19ea48bbaf875d482b158bcc
+

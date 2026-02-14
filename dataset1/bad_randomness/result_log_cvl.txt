@@ -1,0 +1,48 @@
+CERTORA Results Log
+Benchmark: dataset1/arithmetic
+Date: 2026-02-12
+Total spec files: 14
+
+========================================
+Spec: certora_specification/insecure_transfer.cvl
+Contract: insecure_transfer.sol:IntegerOverflowAdd
+Rules: 1
+  FAIL:
+    Rule transfer_conserves: VIOLATION
+      - to_after == to_before + _value
+Timing:
+  [TIME] Run time: 00:00:18
+Link: https://prover.certora.com/output/1696952/941a834dc27d45979544c34ffe6587a5
+
+========================================
+Spec: certora_specification/integer_overflow_1.cvl
+Contract: integer_overflow_1.sol:Overflow
+Status: ERROR: Warning: Unnamed return variable
+Note: Verification failed due to compilation or specification errors
+
+========================================
+Spec: certora_specification/integer_overflow_add.cvl
+Contract: integer_overflow_add.sol:IntegerOverflowAdd
+Rules: 1
+  FAIL:
+    Rule add_no_overflow: VIOLATION
+      - afterCount == beforeCount + input
+Timing:
+  [TIME] Run time: 00:00:17
+Link: https://prover.certora.com/output/1696952/565d0592014c434e90abecc37ea5e352
+
+========================================
+Spec: certora_specification/integer_overflow_benign_1.cvl
+Contract: integer_overflow_benign_1.sol:IntegerOverflowBenign1
+Rules: 1
+  FAIL:
+    Rule winShouldDependOnBetterEntropy: VIOLATION
+      - currentContract.bets[lastIndex].won <=> expected
+
+Timing:
+  [TIME] Run time: 00:00:18
+Link: https://prover.certora.com/output/1696952/f2c0cc660f2a46e189aa46a65c26238b
+
+========================================
+SUMMARY: 14 spec files (1 ERROR, 13 verified)
+  Total run time: ~04:00

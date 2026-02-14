@@ -16,33 +16,6 @@ Timing:
   [TIME] End-to-end time: 6.11s
 
 ========================================
-Spec: specification/TAMCContract.spec
-Contract: TAMContract.sol:TAMCContract
-Rules: 1
-  FAIL:
-    Rule bug_tmstmp40_should_not_drain_balance: TAMCContract::bug_tmstmp40: ERROR
-      - Postcondition 'address(this).balance == old(address(this).balance) + msg.value' might not hold
-  PASS:
-    All other functions: OK
-Timing:
-  [TIME] TAMContract.bug_tmstmp40_should_not_drain_balance.sol: 3.45s
-  [TIME] Total rule verification time: 3.45s
-  [TIME] End-to-end time: 4.79s
-
-========================================
-Spec: specification/TTC.spec
-Contract: TTC.sol:Ownable
-Rules: 1
-  PASS: (none)
-  FAIL:
-    Rule bug_tmstmp32_should_not_drain_balance: Ownable::bug_tmstmp32: ERROR
-      - Postcondition 'address(this).balance == __verifier_old_uint(address(this).balance) + msg.value' might not hold at end of function.
-Timing:
-  [TIME] TTC.bug_tmstmp32_should_not_drain_balance.sol: 6.89s
-  [TIME] Total rule verification time: 6.89s
-  [TIME] End-to-end time: 8.36s
-
-========================================
 Spec: specification/lottopollo.spec
 Contract: lottopollo.sol:lottopollo
 Rules: 2

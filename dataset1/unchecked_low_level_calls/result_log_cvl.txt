@@ -1,0 +1,154 @@
+CERTORA Results Log
+Benchmark: dataset1/unchecked_low_level_calls
+Date: 2026-02-12
+Total spec files: 13
+
+========================================
+Spec: certora_specification/0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.cvl
+Contract: 0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.sol:Caller
+Rules: 1
+  FAIL:
+    Rule callAddress_should_succeed: VIOLATION
+      - lastReverted
+Timing:
+  [TIME] Run time: 00:00:17
+Link: https://prover.certora.com/output/1696952/92bdaff7451f4132ba4a9c0515aafa23
+
+========================================
+Spec: certora_specification/0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.cvl
+Contract: 0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.sol:MultiplicatorX4
+Rules: 1
+  FAIL:
+    Rule Command_unchecked: VIOLATION
+      - balAfter == balBefore - e.msg.value
+Timing:
+  [TIME] Run time: 00:00:19
+Link: https://prover.certora.com/output/1696952/2f1274eff3b045a4a80c82e0790bd63f
+
+========================================
+Spec: certora_specification/0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.cvl
+Contract: 0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.sol:WhaleGiveaway2
+Rules: 1
+  FAIL:
+    Rule Command_must_debit: VIOLATION
+      - balAfter == balBefore - e.msg.value
+Timing:
+  [TIME] Run time: 00:00:20
+Link: https://prover.certora.com/output/1696952/e58bc1d2baba49a8bcf53b1301bbcca5
+
+========================================
+Spec: certora_specification/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.cvl
+Contract: 0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.sol:EtherGet
+Rules: 1
+  FAIL:
+    Rule getTokens_should_succeed: VIOLATION
+      - Unwinding condition in a loop. We recommend to run with --loop_iter N
+Timing:
+  [TIME] Run time: 00:00:18
+Link: https://prover.certora.com/output/1696952/4fb389c709bb45cb928866395923b629
+
+========================================
+Spec: certora_specification/0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl
+Contract: 0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3
+Rules: 1
+  FAIL:
+    Rule Command_must_debit: VIOLATION
+      - balAfter == balBefore - e.msg.value
+Timing:
+  [TIME] Run time: 00:00:19
+Link: https://prover.certora.com/output/1696952/1475a27a4fa54ef5825aa19c680d7b81
+
+========================================
+Spec: certora_specification/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.cvl
+Contract: 0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol:HomeyJar
+Rules: 1
+  FAIL:
+    Rule Command_must_debit: VIOLATION
+      - balAfter == balBefore - e.msg.value
+Timing:
+  [TIME] Run time: 00:00:20
+Link: https://prover.certora.com/output/1696952/8fecc953d4574bc1a612103b27f3a474
+
+========================================
+Spec: certora_specification/0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.cvl
+Contract: 0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.sol:WedIndex
+Rules: 1
+  FAIL:
+    Rule execute_must_debit_balance: VIOLATION
+      - balAfter == balBefore - value
+Timing:
+  [TIME] Run time: 00:00:25
+Link: https://prover.certora.com/output/1696952/d18114bc80c643869bf67cf70ae4b400
+
+========================================
+Spec: certora_specification/0x958a8f594101d2c0485a52319f29b2647f2ebc06.cvl
+Contract: 0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol:Marriage
+Rules: 1
+  FAIL:
+    Rule execute_must_debit_balance: VIOLATION
+      - balAfter == balBefore - value
+Timing:
+  [TIME] Run time: 00:00:34
+Link: https://prover.certora.com/output/1696952/e28413b3fbe44c7e8c46e43e368f6375
+
+========================================
+Spec: certora_specification/0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.cvl
+Contract: 0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.sol:Splitter
+Rules: 1
+  FAIL:
+    Rule fundPuppets_must_spend_value: VIOLATION
+      - balAfter == balBefore - e.msg.value
+Timing:
+  [TIME] Run time: 00:00:23
+Link: https://prover.certora.com/output/1696952/96dc286be69441a9b516358e6f8b0dd8
+
+========================================
+Spec: certora_specification/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.cvl
+Contract: 0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.sol:keepMyEther
+Rules: 1
+  FAIL:
+    Rule withdraw_resets_balance: VIOLATION
+      - contractAfter == contractBefore - owner_balance
+Timing:
+  [TIME] Run time: 00:00:19
+Link: https://prover.certora.com/output/1696952/9a9829ce2bd44154b8b47e8654f81c5a
+
+========================================
+Spec: certora_specification/lotto.cvl
+Contract: lotto.sol:Lotto
+Rules: 2
+  FAIL:
+    Rule sendToWinner_must_transfer: VIOLATION
+      - balAfter == balBefore - winAmt
+    Rule withdrawLeftOver_must_transfer: VIOLATION
+      - balAfter == 0
+Timing:
+  [TIME] Run time: 00:00:19
+Link: https://prover.certora.com/output/1696952/59a25aca3bc64b1aace5ba7ec2000bb3
+
+========================================
+Spec: certora_specification/mishandled.cvl
+Contract: mishandled.sol:SendBack
+Rules: 1
+  FAIL:
+    Rule withdrawBalance_must_transfer: VIOLATION
+      - balAfter == balBefore - amount
+Timing:
+  [TIME] Run time: 00:00:18
+Link: https://prover.certora.com/output/1696952/5f902041dc6543e285253f29d435e00b
+
+========================================
+Spec: certora_specification/unchecked_return_value.cvl
+Contract: unchecked_return_value.sol:ReturnValue
+Rules: 1
+  FAIL:
+    Rule callnotchecked_should_revert_on_failure: VIOLATION
+      - lastReverted
+Timing:
+  [TIME] Run time: 00:00:17
+Link: https://prover.certora.com/output/1696952/70e19a6effc9405fbe9eaa9d46c321fe
+
+========================================
+SUMMARY: 13 spec files, 15 rules total
+  0/13 specs passed all rules
+  Total run time: ~04:08

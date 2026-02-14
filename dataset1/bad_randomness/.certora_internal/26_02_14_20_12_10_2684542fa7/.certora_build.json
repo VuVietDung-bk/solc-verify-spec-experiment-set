@@ -1,0 +1,403 @@
+{
+    "Lottery_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "Lottery",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "lottery.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 614,
+                            "size": 64
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Lottery",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getBets",
+                        "notpayable": true,
+                        "originalFile": "lottery.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "a6afd5fd",
+                        "sourceBytes": {
+                            "begin": 1487,
+                            "size": 226
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Lottery",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "makeBet",
+                        "notpayable": false,
+                        "originalFile": "lottery.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "561e91a1",
+                        "sourceBytes": {
+                            "begin": 798,
+                            "size": 641
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "60806040526004361061002d5760003560e01c8063561e91a114610040578063a6afd5fd1461004a5761002e565b5b34801561003a57600080fd5b50600080fd5b610048610061565b005b34801561005657600080fd5b5061005f6101cb565b005b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000452600080600243816100de57fe5b06149050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000152600160405180606001604052803481526020014381526020018315158152509080600181540180825580915050600190039060005260206000209060030201600090919091909150600082015181600001556020820151816001015560408201518160020160006101000a81548160ff021916908315150217905550505080156101c8573373ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050506101c757600080fd5b5b50565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100045260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461029357600080fd5b60005b600180549050811015610360577f963de4d21b88c245c33046460072c6286e7f96ba9d57b9a77b3d89ce01f09371600182815481106102d157fe5b906000526020600020906003020160000154600183815481106102f057fe5b9060005260206000209060030201600101546001848154811061030f57fe5b906000526020600020906003020160020160009054906101000a900460ff16604051808481526020018381526020018215158152602001935050505060405180910390a18080600101915050610296565b5056fea26469706673582212205ca40cd33297559d8e023175372b05612fc7317d81aec2ba4a2cc8053b1991e064736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610399806100606000396000f3fe60806040526004361061002d5760003560e01c8063561e91a114610040578063a6afd5fd1461004a5761002e565b5b34801561003a57600080fd5b50600080fd5b610048610061565b005b34801561005657600080fd5b5061005f6101cb565b005b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000452600080600243816100de57fe5b06149050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000152600160405180606001604052803481526020014381526020018315158152509080600181540180825580915050600190039060005260206000209060030201600090919091909150600082015181600001556020820151816001015560408201518160020160006101000a81548160ff021916908315150217905550505080156101c8573373ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050506101c757600080fd5b5b50565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100045260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461029357600080fd5b60005b600180549050811015610360577f963de4d21b88c245c33046460072c6286e7f96ba9d57b9a77b3d89ce01f09371600182815481106102d157fe5b906000526020600020906003020160000154600183815481106102f057fe5b9060005260206000209060030201600101546001848154811061030f57fe5b906000526020600020906003020160020160009054906101000a900460ff16604051808481526020018381526020018215158152602001935050505060405180910390a18080600101915050610296565b5056fea26469706673582212205ca40cd33297559d8e023175372b05612fc7317d81aec2ba4a2cc8053b1991e064736f6c63430007060033",
+                "constructorSrcmap": "303:2017:0:-:0;;;614:64;;;;;;;;;;659:10;639:9;;:31;;;;;;;;;;;;;;;;;;303:2017;;;;;;",
+                "extensionContracts": [],
+                "file": "lottery.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "lottery.sol|Lottery",
+                        "declaringContract": "Lottery",
+                        "method": {
+                            "contractName": "Lottery",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "makeBet",
+                            "notpayable": false,
+                            "originalFile": "lottery.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "561e91a1",
+                            "sourceBytes": {
+                                "begin": 798,
+                                "size": 641
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "lottery.sol|Lottery",
+                        "declaringContract": "Lottery",
+                        "method": {
+                            "contractName": "Lottery",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "getBets",
+                            "notpayable": true,
+                            "originalFile": "lottery.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "a6afd5fd",
+                            "sourceBytes": {
+                                "begin": 1487,
+                                "size": 226
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "won",
+                        "sourceLoc": {
+                            "begin": "1024",
+                            "len": "34",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "Lottery",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "lottery.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 614,
+                            "size": 64
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Lottery",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "makeBet",
+                        "notpayable": false,
+                        "originalFile": "lottery.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "561e91a1",
+                        "sourceBytes": {
+                            "begin": 798,
+                            "size": 641
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Lottery",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getBets",
+                        "notpayable": true,
+                        "originalFile": "lottery.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "a6afd5fd",
+                        "sourceBytes": {
+                            "begin": 1487,
+                            "size": 226
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "Lottery",
+                "original_file": "lottery.sol",
+                "solidityTypes": [
+                    {
+                        "astId": 16,
+                        "canonicalId": "lottery.sol|Lottery.Bet",
+                        "containingContract": "Lottery",
+                        "structMembers": [
+                            {
+                                "name": "betAmount",
+                                "type": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "name": "blockNumber",
+                                "type": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "name": "won",
+                                "type": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "structName": "Bet",
+                        "type": "UserDefinedStruct"
+                    }
+                ],
+                "sourceBytes": {
+                    "begin": 303,
+                    "size": 1413
+                },
+                "srcmap": "303:2017:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;756:8;;;798:987;;;:::i;:::-;;1833:484;;;;;;;;;;;;;:::i;:::-;;798:987;919:13;851:66;844:89;1009:1;941:66;934:77;1087:1;1019:66;1012:77;1282:8;1315:1;1309;1294:12;:16;;;;;;1293:23;1282:34;;1400:3;1333:66;1326:78;1499:4;1509:33;;;;;;;;1513:9;1509:33;;;;1524:12;1509:33;;;;1538:3;1509:33;;;;;1499:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1620:3;1617:161;;;1652:10;1644:24;;:35;1669:9;1644:35;;;;;;;;;;;;;;;;;;;;;;;1640:127;;1743:8;;;1640:127;1617:161;798:987;:::o;1833:484::-;1946:13;1878:66;1871:89;2036:1;1968:66;1961:77;2114:1;2046:66;2039:77;2145:9;;;;;;;;;;2131:23;;:10;:23;;;2128:41;;2158:8;;;2128:41;2185:6;2180:130;2201:4;:11;;;;2197:1;:15;2180:130;;;2239:59;2246:4;2251:1;2246:7;;;;;;;;;;;;;;;;;;:17;;;2265:4;2270:1;2265:7;;;;;;;;;;;;;;;;;;:19;;;2286:4;2291:1;2286:7;;;;;;;;;;;;;;;;;;:11;;;;;;;;;;;;2239:59;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2214:3;;;;;;;2180:130;;;;1833:484::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 18,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/bad_randomness/.certora_internal/26_02_14_20_12_10_2684542fa7/.certora_sources/lottery.sol:Lottery",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "organizer",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_address_payable"
+                        },
+                        {
+                            "astId": 21,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/bad_randomness/.certora_internal/26_02_14_20_12_10_2684542fa7/.certora_sources/lottery.sol:Lottery",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "dynamicArrayBaseType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "96",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "astId": 16,
+                                    "canonicalId": "lottery.sol|Lottery.Bet",
+                                    "containingContract": "Lottery",
+                                    "structMembers": [
+                                        {
+                                            "name": "betAmount",
+                                            "type": {
+                                                "annotations": [
+                                                    {
+                                                        "numberOfBytes": "32",
+                                                        "offset": 0,
+                                                        "slot": "0",
+                                                        "type": "StorageAnnotation"
+                                                    }
+                                                ],
+                                                "primitiveName": "uint256",
+                                                "type": "Primitive"
+                                            }
+                                        },
+                                        {
+                                            "name": "blockNumber",
+                                            "type": {
+                                                "annotations": [
+                                                    {
+                                                        "numberOfBytes": "32",
+                                                        "offset": 0,
+                                                        "slot": "1",
+                                                        "type": "StorageAnnotation"
+                                                    }
+                                                ],
+                                                "primitiveName": "uint256",
+                                                "type": "Primitive"
+                                            }
+                                        },
+                                        {
+                                            "name": "won",
+                                            "type": {
+                                                "annotations": [
+                                                    {
+                                                        "numberOfBytes": "1",
+                                                        "offset": 0,
+                                                        "slot": "2",
+                                                        "type": "StorageAnnotation"
+                                                    }
+                                                ],
+                                                "primitiveName": "bool",
+                                                "type": "Primitive"
+                                            }
+                                        }
+                                    ],
+                                    "structName": "Bet",
+                                    "type": "UserDefinedStruct"
+                                },
+                                "type": "Array"
+                            },
+                            "label": "bets",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_array(t_struct(Bet)16_storage)dyn_storage"
+                        }
+                    ],
+                    "types": {
+                        "t_address_payable": {
+                            "encoding": "inplace",
+                            "label": "address payable",
+                            "numberOfBytes": "20"
+                        },
+                        "t_array(t_struct(Bet)16_storage)dyn_storage": {
+                            "base": "t_struct(Bet)16_storage",
+                            "encoding": "dynamic_array",
+                            "label": "struct Lottery.Bet[]",
+                            "numberOfBytes": "32"
+                        },
+                        "t_bool": {
+                            "encoding": "inplace",
+                            "label": "bool",
+                            "numberOfBytes": "1"
+                        },
+                        "t_struct(Bet)16_storage": {
+                            "encoding": "inplace",
+                            "label": "struct Lottery.Bet",
+                            "members": [
+                                {
+                                    "astId": 11,
+                                    "contract": "/root/solc-verify-spec/experiments/dataset1/bad_randomness/.certora_internal/26_02_14_20_12_10_2684542fa7/.certora_sources/lottery.sol:Lottery",
+                                    "label": "betAmount",
+                                    "offset": 0,
+                                    "slot": "0",
+                                    "type": "t_uint256"
+                                },
+                                {
+                                    "astId": 13,
+                                    "contract": "/root/solc-verify-spec/experiments/dataset1/bad_randomness/.certora_internal/26_02_14_20_12_10_2684542fa7/.certora_sources/lottery.sol:Lottery",
+                                    "label": "blockNumber",
+                                    "offset": 0,
+                                    "slot": "1",
+                                    "type": "t_uint256"
+                                },
+                                {
+                                    "astId": 15,
+                                    "contract": "/root/solc-verify-spec/experiments/dataset1/bad_randomness/.certora_internal/26_02_14_20_12_10_2684542fa7/.certora_sources/lottery.sol:Lottery",
+                                    "label": "won",
+                                    "offset": 0,
+                                    "slot": "2",
+                                    "type": "t_bool"
+                                }
+                            ],
+                            "numberOfBytes": "96"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "Lottery",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "lottery.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "lottery.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

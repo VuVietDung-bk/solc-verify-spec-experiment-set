@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "EthTxOrderDependenceMinimal",
+    "specfile": "certora_specification/eth_tx_order_dependence_minimal.cvl",
+    "specfileOrigRelpath": "certora_specification/eth_tx_order_dependence_minimal.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

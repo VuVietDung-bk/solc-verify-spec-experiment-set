@@ -1,6 +1,4 @@
 certoraRun HotDollarsToken.sol:HotDollarsToken --verify HotDollarsToken:certora_specification/HotDollarsToken.cvl
-certoraRun TAMContract.sol:TAMCContract --verify TAMCContract:certora_specification/TAMCContract.cvl
-certoraRun TTC.sol:TTC --verify TTC:certora_specification/TTC.cvl
 certoraRun lottopollo.sol:lottopollo --verify lottopollo:certora_specification/lottopollo.cvl
 certoraRun roulette.sol:Roulette --verify Roulette:certora_specification/roulette.cvl
 certoraRun timed_crowdsale.sol:TimedCrowdsale --verify TimedCrowdsale:certora_specification/timed_crowdsale.cvl

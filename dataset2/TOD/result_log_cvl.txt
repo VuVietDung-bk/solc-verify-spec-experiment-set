@@ -1,0 +1,60 @@
+CERTORA Results Log
+Benchmark: dataset2/TOD
+Date: 2026-02-12
+Total spec files: 3
+
+========================================
+Spec: certora_specification/ERC20.cvl
+Contract: ERC20.sol:ERC20
+Rules: 1
+  PASS:
+    Rule balance_query_safe: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule balance_query_safe: OK
+Timing:
+  [TIME] Run time: 00:00:20
+Link: https://prover.certora.com/output/1696952/d58182a316f54da1b8bdd0c3caf5b02c
+
+========================================
+Spec: certora_specification/eth_tx_order_dependence_minimal.cvl
+Contract: eth_tx_order_dependence_minimal.sol:EthTxOrderDependenceMinimal
+Rules: 2
+  PASS:
+    Rule claim_marks_claimed: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule claim_marks_claimed: OK
+    Rule set_reward_keeps_unclaimed: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule set_reward_keeps_unclaimed: OK
+Timing:
+  [TIME] Run time: 00:00:20
+Link: https://prover.certora.com/output/1696952/3fa7df82f5f7454fb1da3d9a370ee35d
+
+========================================
+Spec: certora_specification/odds_and_evens.cvl
+Contract: odds_and_evens.sol:OddsAndEvens
+Rules: 4
+  PASS:
+    Rule play_increments_tot: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule play_increments_tot: OK
+    Rule tot_bound: OK
+      - Induction base: After the constructor
+        - rule_not_vacuous: OK
+        - sanity check for rule Induction base: After the constructor
+        - invariant_not_trivial_postcondition: OK
+        - assert weak invariant in post-state: OK
+      - Induction step: after external (non-view) methods
+        - Using general requirements
+  FAIL:
+    Rule attacker_guaranteed_win: VIOLATION
+      - attacker_balance_after == attacker_balance...
+    Rule opponent_can_force_loss: VIOLATION
+      - attacker_balance_after == attacker_balance...
+Timing:
+  [TIME] Run time: 00:00:23
+Link: https://prover.certora.com/output/1696952/d6030a2c7092440288ab292ad7d62a0b
+
+========================================
+SUMMARY: 3 spec files, 7 rules total
+  Total run time: ~01:03

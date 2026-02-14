@@ -1,0 +1,73 @@
+CERTORA Results Log
+Benchmark: dataset1/time_manipulation
+Date: 2026-02-12
+Total spec files: 6
+
+========================================
+Spec: certora_specification/HotDollarsToken.cvl
+Contract: HotDollarsToken.sol:HotDollarsToken
+Rules: 1
+  FAIL:
+    Rule bug_tmstmp36_should_not_drain_balance: VIOLATION
+      - balAfter == balBefore + e.msg.value
+Timing:
+  [TIME] Run time: 00:00:25
+Link: https://prover.certora.com/output/1696952/71c455489e354c24844fd916c7c52ffd
+
+========================================
+Spec: certora_specification/TAMCContract.cvl
+Contract: TAMContract.sol:TAMCContract
+Rules: 1
+  FAIL:
+    Rule bug_tmstmp40_should_not_drain_balance: VIOLATION
+      - balAfter == balBefore + e.msg.value
+Timing:
+  [TIME] Run time: 00:00:23
+Link: https://prover.certora.com/output/1696952/3222b245337f42f790169dfb5df5cc46
+
+========================================
+Spec: certora_specification/TTC.cvl
+Contract: TTC.sol:TTC
+Rules: 1
+  FAIL:
+    Rule bug_tmstmp32_should_not_drain_balance: VIOLATION
+      - balAfter == balBefore + e.msg.value
+Timing:
+  [TIME] Run time: 00:00:29
+Link: https://prover.certora.com/output/1696952/7a1194cd576e44e8b0e5b67eea88e260
+
+========================================
+Spec: certora_specification/lottopollo.cvl
+Contract: lottopollo.sol:lottopollo
+Rules: 2
+  PASS:
+    Rule draw_should_not_drain_on_timestamp: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule draw_should_not_drain_on_timestamp: OK
+  FAIL:
+    Rule randomGen_should_not_be_timestamp: VIOLATION
+      - r != e.block.timestamp
+Timing:
+  [TIME] Run time: 00:00:19
+Link: https://prover.certora.com/output/1696952/4dea5258dad04adca9df1336b4fa8121
+
+========================================
+Spec: certora_specification/roulette.cvl
+Contract: roulette.sol:Roulette
+Status: ERROR
+Note: CVL typecheck failed - spin function not found in Roulette contract
+
+========================================
+Spec: certora_specification/timed_crowdsale.cvl
+Contract: timed_crowdsale.sol:TimedCrowdsale
+Rules: 1
+  FAIL:
+    Rule sale_should_not_be_finished: VIOLATION
+      - finished == false
+Timing:
+  [TIME] Run time: 00:00:16
+Link: https://prover.certora.com/output/1696952/adcd2f2b19ea48bbaf875d482b158bcc
+
+========================================
+SUMMARY: 6 spec files (1 ERROR, 5 verified)
+  Total run time: ~01:52

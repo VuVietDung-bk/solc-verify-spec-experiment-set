@@ -5,7 +5,7 @@
 [1] LINK: https://prover.certora.com/output/1696952/941a834dc27d45979544c34ffe6587a5
 
 [2] CMD: certoraRun integer_overflow_1.sol:Overflow --verify Overflow:certora_specification/integer_overflow_1.cvl
-[2] ERROR
+[2] ERROR: Warning: Unnamed return variable
 
 [3] CMD: certoraRun integer_overflow_add.sol:IntegerOverflowAdd --verify IntegerOverflowAdd:certora_specification/integer_overflow_add.cvl
 [3] LINK: https://prover.certora.com/output/1696952/565d0592014c434e90abecc37ea5e352

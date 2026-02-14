@@ -1,0 +1,126 @@
+CERTORA Results Log
+Benchmark: dataset3/Overflow-Underflow
+Date: 2026-02-12
+Total spec files: 10
+
+========================================
+Spec: certora_specification/buggy_1.cvl
+Contract: buggy_1.sol:HotDollarsToken
+Rules: 2
+  FAIL:
+    Rule increaseLockTime_intou3_should_not_overflow: VIOLATION
+      - lock time must strictly increase after a transfer.
+    Rule transfer_intou14_should_not_underflow: VIOLATION
+      - transfer with zero balance and positive amount should not underflow.
+Timing:
+  [TIME] Run time: 00:00:23
+Link: https://prover.certora.com/output/1696952/86b3a8f682174d168a46d50cdf9e141c
+
+========================================
+Spec: certora_specification/buggy_5.cvl
+Contract: buggy_5.sol:TTC
+Rules: 2
+  FAIL:
+    Rule increaseLockTime_intou21_monotonic: VIOLATION
+      - lock time must strictly increase
+    Rule transfer_intou10_should_not_underflow: VIOLATION
+      - transfer with zero balance and positive amount should not underflow.
+Timing:
+  [TIME] Run time: 00:00:26
+Link: https://prover.certora.com/output/1696952/8f8f9143175b4b39aed3407e05c6a21b
+
+========================================
+Spec: certora_specification/buggy_19.cvl
+Contract: buggy_19.sol:ethBank
+Rules: 2
+  FAIL:
+    Rule increaseLockTime_intou1_monotonic: VIOLATION
+      - lock time must strictly increase
+    Rule transfer_undrflow2_should_not_underflow: VIOLATION
+      - transfer with zero balance and positive amount should not underflow.
+Timing:
+  [TIME] Run time: 00:00:26
+Link: https://prover.certora.com/output/1696952/da3ccb2442ae46abad72d881a4304452
+
+========================================
+Spec: certora_specification/buggy_20.cvl
+Contract: buggy_20.sol:RampInstantEthPool
+Rules: 2
+  FAIL:
+    Rule increaseLockTime_intou21_monotonic: VIOLATION
+      - lock time must strictly increase
+    Rule transfer_intou10_should_not_underflow: VIOLATION
+      - transfer with zero balance and positive amount should not underflow.
+Timing:
+  [TIME] Run time: 00:00:24
+Link: https://prover.certora.com/output/1696952/4a8c3723bac046f0b590a07336c9d919
+
+========================================
+Spec: certora_specification/buggy_23.cvl
+Contract: buggy_23.sol:AGR
+Rules: 2
+  FAIL:
+    Rule increaseLockTime_intou1_monotonic: VIOLATION
+      - lock time must strictly increase
+    Rule transfer_undrflow2_should_not_underflow: VIOLATION
+      - transfer with zero balance and positive amount should not underflow.
+Timing:
+  [TIME] Run time: 00:00:24
+Link: https://prover.certora.com/output/1696952/d21e048d60bf4e5a93a56bad3dc2983e
+
+========================================
+Spec: certora_specification/buggy_33.cvl
+Contract: buggy_33.sol:Staking
+Rules: 2
+  FAIL:
+    Rule increaseLockTime_intou33_monotonic: VIOLATION
+      - lock time must strictly increase
+    Rule transfer_undrflow2_should_not_underflow: VIOLATION
+      - transfer with zero balance and positive amount should not underflow.
+Timing:
+  [TIME] Run time: 00:00:23
+Link: https://prover.certora.com/output/1696952/1abe44fa337941b1994d1e6506e0cf4b
+
+========================================
+Spec: certora_specification/buggy_34.cvl
+Contract: buggy_34.sol:LollypopToken
+Rules: 1
+  FAIL:
+    Rule transfer_intou34_should_not_underflow: VIOLATION
+      - transfer with zero balance and positive amount should not underflow.
+Timing:
+  [TIME] Run time: 00:00:29
+Link: https://prover.certora.com/output/1696952/5286be07c0714973a3e99ba36c753664
+
+========================================
+Spec: certora_specification/buggy_45.cvl
+Contract: buggy_45.sol:StockBet
+Rules: 2
+  FAIL:
+    Rule increaseLockTime_intou17_monotonic: VIOLATION
+      - lock time must strictly increase
+    Rule transfer_intou26_should_not_underflow: VIOLATION
+      - transfer with zero balance and positive amount should not underflow.
+Timing:
+  [TIME] Run time: 00:00:22
+Link: https://prover.certora.com/output/1696952/9aa3c0405e33427a9de6befaae810f11
+
+========================================
+Spec: certora_specification/buggy_47.cvl
+Contract: buggy_47.sol:AcunarIEO
+Status: ERROR - Compiler warning - unnamed return variable
+
+========================================
+Spec: certora_specification/buggy_50.cvl
+Contract: buggy_50.sol:digitalNotary
+Rules: 1
+  FAIL:
+    Rule increaseLockTime_intou17_monotonic: VIOLATION
+      - lock time must strictly increase
+Timing:
+  [TIME] Run time: 00:00:22
+Link: https://prover.certora.com/output/1696952/5209de55dcc647d3b3fa5284a835c7a1
+
+========================================
+SUMMARY: 10 spec files (1 ERROR, 9 verified)
+  Total run time: ~03:59

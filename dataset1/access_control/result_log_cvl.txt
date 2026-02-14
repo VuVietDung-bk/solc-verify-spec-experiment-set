@@ -1,0 +1,144 @@
+CERTORA Results Log
+Benchmark: dataset1/access_control
+Date: 2026-02-12
+Total spec files: 8
+
+========================================
+Spec: certora_specification/incorrect_constructor_name1.cvl
+Contract: incorrect_constructor_name1.sol:Missing
+Rules: 3
+  PASS:
+    Rule constructor_is_only_callable_once: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule constructor_is_only_callable_once: OK
+    Rule withdraw_access_control: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule withdraw_access_control: OK
+  FAIL:
+    Rule owner_is_constant_after_init: VIOLATION
+Timing:
+  [TIME] Run time: 00:00:16
+Link: https://prover.certora.com/output/1696952/02b2b506fee543f181eac43fbb33e15f
+
+========================================
+Spec: certora_specification/incorrect_constructor_name2.cvl
+Contract: incorrect_constructor_name2.sol:Missing
+Rules: 3
+  PASS:
+    Rule constructor_is_only_callable_once: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule constructor_is_only_callable_once: OK
+    Rule withdraw_access_control: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule withdraw_access_control: OK
+  FAIL:
+    Rule owner_is_constant_after_init: VIOLATION
+Timing:
+  [TIME] Run time: 00:00:20
+Link: https://prover.certora.com/output/1696952/8e4daf7eaabf43108fc1300395fa19b7
+
+========================================
+Spec: certora_specification/incorrect_constructor_name3.cvl
+Contract: incorrect_constructor_name3.sol:Missing
+Rules: 3
+  PASS:
+    Rule constructor_is_only_callable_once: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule constructor_is_only_callable_once: OK
+    Rule withdraw_access_control: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule withdraw_access_control: OK
+  FAIL:
+    Rule owner_is_constant_after_init: VIOLATION
+Timing:
+  [TIME] Run time: 00:00:20
+Link: https://prover.certora.com/output/1696952/d1e779ba9b984248973c7bd23ba85fe8
+
+========================================
+Spec: certora_specification/multiowned_vulnerable.cvl
+Contract: multiowned_vulnerable.sol:MultiOwnable
+Rules: 2
+  PASS:
+    Rule anyone_can_become_owner: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule anyone_can_become_owner: OK
+    Rule root_is_constant: OK
+Timing:
+  [TIME] Run time: 00:00:22
+Link: https://prover.certora.com/output/1696952/ebbf1899b33843fab3fbf077deb26f39
+
+========================================
+Spec: certora_specification/unprotected0.cvl
+Contract: unprotected0.sol:Unprotected
+Rules: 1
+  FAIL:
+    Rule change_owner_requires_owner: VIOLATION
+      - Vulnerability: non-owner can change the owner
+Timing:
+  [TIME] Run time: 00:00:17
+Link: https://prover.certora.com/output/1696952/5063d404eacd432ca266d4328607b2bf
+
+========================================
+Spec: certora_specification/wallet_02_refund_nosub.cvl
+Contract: wallet_02_refund_nosub.sol:Wallet
+Rules: 4
+  PASS:
+    Rule balance_consistency_on_withdraw: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule balance_consistency_on_withdraw: OK
+    Rule only_creator_can_migrate: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule only_creator_can_migrate: OK
+  FAIL:
+    Rule integrity_of_refund: VIOLATION
+      - Vulnerability: balance not reset to 0 after refund
+    Rule refund_affects_contract_balance: VIOLATION
+      - contract_balance_after == contract_balance_before - user_balance
+Timing:
+  [TIME] Run time: 00:00:21
+Link: https://prover.certora.com/output/1696952/b30fbfeb6dec4831abd2abf1f616a85a
+
+========================================
+Spec: certora_specification/wallet_03_wrong_constructor.cvl
+Contract: wallet_03_wrong_constructor.sol:Wallet
+Rules: 4
+  PASS:
+    Rule owner_is_constant_on_other_functions: OK
+      - deposit(): OK
+      - withdraw(uint256): OK
+      - migrateTo(address): OK
+    Rule withdrawal_integrity: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule withdrawal_integrity: OK
+  FAIL:
+    Rule anyone_can_become_creator: VIOLATION
+      - Access Control failure: anyone can become creator
+    Rule unauthorized_migration: VIOLATION
+      - Security failure: non-original creator can migrate
+Timing:
+  [TIME] Run time: 00:00:23
+Link: https://prover.certora.com/output/1696952/447c514d8bd0404795663558e06456a4
+
+========================================
+Spec: certora_specification/wallet_04_confused_sign.cvl
+Contract: wallet_04_confused_sign.sol:Wallet
+Rules: 3
+  PASS:
+    Rule balance_decreases_on_withdraw: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule balance_decreases_on_withdraw: OK
+    Rule only_creator_can_migrate: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule only_creator_can_migrate: OK
+  FAIL:
+    Rule withdraw_integrity: VIOLATION
+      - Security failure: user can withdraw more than balance
+Timing:
+  [TIME] Run time: 00:00:21
+Link: https://prover.certora.com/output/1696952/bf292f9167f0451ca1b2c48a8301a117
+
+========================================
+SUMMARY: 8 spec files, 24 rules total
+  Total run time: ~02:40
+
+

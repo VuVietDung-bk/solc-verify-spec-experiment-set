@@ -1,0 +1,72 @@
+CERTORA Results Log
+Benchmark: dataset1/denial_of_service
+Date: 2026-02-12
+Total spec files: 4
+
+========================================
+Spec: certora_specification/auction.cvl
+Contract: auction.sol:DosAuction
+Rules: 2
+  PASS:
+    Rule bid_must_succeed_if_higher: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule bid_must_succeed_if_higher: OK
+  FAIL:
+    Rule bid_nonnegative: VIOLATION
+      - Induction base: After the constructor
+        - invariant_not_trivial_postcondition
+      - Induction step: after external (non-view) methods
+        - Using general requirements: bid()
+          - invariant_not_trivial_postcondition
+Timing:
+  [TIME] Run time: 00:00:20
+Link: https://prover.certora.com/output/1696952/c522dfb42d064828aba2d1d369bb683d
+
+========================================
+Spec: certora_specification/dos_address.cvl
+Contract: dos_address.sol:DosGas
+Rules: 2
+  PASS:
+    Rule add_increases_by_350: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule add_increases_by_350: OK
+  FAIL:
+    Rule empty_resets_when_large: VIOLATION
+      - Unwinding condition in a loop. We recommend to run with --loop_iter N
+Timing:
+  [TIME] Run time: 00:00:35
+Link: https://prover.certora.com/output/1696952/8c7c3861e516481584e329f06a1ad70c
+
+========================================
+Spec: certora_specification/list_dos.cvl
+Contract: list_dos.sol:Government
+Rules: 4
+  PASS:
+    Rule elite_inheritance_access_control: OK
+      - rule_not_vacuous: OK
+      - sanity check for rule elite_inheritance_access_control: OK
+  FAIL:
+    Rule creditor_addition_integrity: VIOLATION
+      - currentContract.creditorAddresses.length...
+    Rule reset_availability: VIOLATION
+      - Unwinding condition in a loop. We recommend to run with --loop_iter N
+    Rule reset_state_cleared: VIOLATION
+      - Unwinding condition in a loop. We recommend to run with --loop_iter N
+Timing:
+  [TIME] Run time: 00:00:32
+Link: https://prover.certora.com/output/1696952/6a90f8397ddf47c397e885df6505757f
+
+========================================
+Spec: certora_specification/send_loop.cvl
+Contract: send_loop.sol:Refunder
+Rules: 1
+  FAIL:
+    Rule refund_all_preserves_refunds: VIOLATION
+      - Unwinding condition in a loop. We recommend to run with --loop_iter N
+Timing:
+  [TIME] Run time: 00:00:19
+Link: https://prover.certora.com/output/1696952/0ff3fd235d1640d7a4acb36dce4858b2
+
+========================================
+SUMMARY: 4 spec files, 9 rules total
+  Total run time: ~01:46

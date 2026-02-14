@@ -2,7 +2,7 @@
 # Generated: 2026-02-12
 
 [1] CMD: certoraRun balancer.sol:Balancer --verify Balancer:certora_specification/Balancer.cvl
-[1] ERROR: CVL typecheck failed - mathint to uint256 overflow
+[1] LINK: https://prover.certora.com/output/1696952/5bf35c39d69b40ec92145cab6529a83a
 
 [2] CMD: certoraRun ballot.sol:Ballot --verify Ballot:certora_specification/Ballot.cvl
 [2] LINK: https://prover.certora.com/output/1696952/3c740cc3cc9148cf8ca167a6e7402968
@@ -11,13 +11,13 @@
 [3] LINK: https://prover.certora.com/output/1696952/f895300e73cb489c8695231d1ab1acfd
 
 [4] CMD: certoraRun curve.sol:Curve --verify Curve:certora_specification/Curve.cvl
-[4] ERROR: CVL typecheck failed - mathint to uint256 overflow
+[4] LINK: https://prover.certora.com/output/1696952/7bf08f9b3049426eae50478486b39555
 
 [5] CMD: certoraRun StableDEX.sol:Core --verify Core:certora_specification/StableDEX.cvl
 [5] LINK: https://prover.certora.com/output/1696952/742841ca5302439c911d91157997c9bd
 
 [6] CMD: certoraRun SushiSwap.sol:SushiSwap --verify SushiSwap:certora_specification/SushiSwap.cvl
-[6] ERROR: CVL typecheck failed - mathint to uint256 overflow
+[6] LINK: https://prover.certora.com/output/1696952/daf408b6a8a547458fe6422c220a9650
 
 [7] CMD: certoraRun Uniswap.sol:UniswapToken --verify UniswapToken:certora_specification/Uniswap.cvl
 [7] LINK: https://prover.certora.com/output/1696952/b3eed074ae6b49768e7d0a4c3a61cf1e

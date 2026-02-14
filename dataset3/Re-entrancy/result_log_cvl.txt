@@ -1,0 +1,185 @@
+CERTORA Results Log
+Benchmark: dataset3/Re-entrancy
+Date: 2026-02-12
+Total spec files: 10
+
+========================================
+Spec: certora_specification/buggy_1.cvl
+Contract: buggy_1.sol:HotDollarsToken
+Rules: 7
+  FAIL:
+    Rule bug_re_ent13_nonreentrant: VIOLATION
+      - contract must not send more than 1 ether
+    Rule buyTicket_re_ent23_nonreentrant: VIOLATION
+      - contract must send to previous player before current player
+    Rule callme_re_ent7_nonreentrant: VIOLATION
+      - contract must not send more than 10 ether
+    Rule claimReward_re_ent32_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawBalance_re_ent26_nonreentrant: VIOLATION
+      - contract must not send more than user balance
+    Rule withdrawFunds_re_ent31_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+    Rule withdraw_balances_re_ent8_nonreentrant: VIOLATION
+      - user balance must be zeroed after withdrawal
+Timing:
+  [TIME] Run time: 00:00:28
+Link: https://prover.certora.com/output/1696952/4c0433cd816240d0a5a2c8d7678ddb28
+
+========================================
+Spec: certora_specification/buggy_5.cvl
+Contract: buggy_5.sol:TTC
+Rules: 12
+  FAIL:
+    Rule bug_re_ent13_nonreentrant: VIOLATION
+      - contract must not send more than 1 ether
+    Rule bug_re_ent41_nonreentrant: VIOLATION
+      - contract must not send more than 1 ether
+    Rule buyTicket_re_ent2_nonreentrant: VIOLATION
+      - contract must send to previous player before current player
+    Rule buyTicket_re_ent9_nonreentrant: VIOLATION
+      - contract must send to previous player before current player
+    Rule callme_re_ent42_nonreentrant: VIOLATION
+      - contract must not send more than 10 ether
+    Rule claimReward_re_ent25_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawBalance_re_ent12_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawBalance_re_ent40_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawFunds_re_ent17_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+    Rule withdrawFunds_re_ent31_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+    Rule withdraw_balances_re_ent21_nonreentrant: VIOLATION
+      - stored balance must be cleared after withdrawal
+    Rule withdraw_balances_re_ent36_nonreentrant: VIOLATION
+      - stored balance must be cleared after withdrawal
+Timing:
+  [TIME] Run time: 00:00:35
+Link: https://prover.certora.com/output/1696952/d6777c3083d74f1eb533af0e5420bd88
+
+========================================
+Spec: certora_specification/buggy_19.cvl
+Contract: buggy_19.sol:ethBank
+Rules: 12
+  FAIL:
+    Rule bug_re_ent13_nonreentrant: VIOLATION
+      - contract must not send more than 1 ether
+    Rule bug_re_ent41_nonreentrant: VIOLATION
+      - contract must not send more than 1 ether
+    Rule buyTicket_re_ent2_nonreentrant: VIOLATION
+      - contract must send to previous player before current player
+    Rule buyTicket_re_ent9_nonreentrant: VIOLATION
+      - contract must send to previous player before current player
+    Rule callme_re_ent42_nonreentrant: VIOLATION
+      - contract must not send more than 10 ether
+    Rule claimReward_re_ent25_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawBalance_re_ent19_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawBalance_re_ent26_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawFunds_re_ent17_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+    Rule withdrawFunds_re_ent13_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+    Rule withdraw_balances_re_ent1_nonreentrant: VIOLATION
+      - stored balance must be cleared after withdrawal
+    Rule withdraw_balances_re_ent36_nonreentrant: VIOLATION
+      - stored balance must be cleared after withdrawal
+Timing:
+  [TIME] Run time: 00:00:35
+Link: https://prover.certora.com/output/1696952/ac087ad9b7c74605b286fc3b0226433e
+
+========================================
+Spec: certora_specification/buggy_20.cvl
+Contract: buggy_20.sol:RampInstantEthPool
+Status: ERROR - CVL typecheck failed - internal function and storage variable not accessible
+
+========================================
+Spec: certora_specification/buggy_23.cvl
+Contract: buggy_23.sol:AGR
+Rules: 2
+  FAIL:
+    Rule claimReward_re_ent25_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawFunds_re_ent17_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+Timing:
+  [TIME] Run time: 00:00:28
+Link: https://prover.certora.com/output/1696952/98ed19879ab54095b4b4d73b4fcfc929
+
+========================================
+Spec: certora_specification/buggy_33.cvl
+Contract: buggy_33.sol:Staking
+Rules: 3
+  FAIL:
+    Rule claimReward_re_ent32_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawFunds_re_ent17_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+    Rule withdrawFunds_re_ent38_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+Timing:
+  [TIME] Run time: 00:00:27
+Link: https://prover.certora.com/output/1696952/6446f24f9ce64278b71d50939050788b
+
+========================================
+Spec: certora_specification/buggy_34.cvl
+Contract: buggy_34.sol:LollypopToken
+Rules: 3
+  FAIL:
+    Rule claimReward_re_ent11_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawFunds_re_ent10_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+    Rule withdrawFunds_re_ent17_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+Timing:
+  [TIME] Run time: 00:00:37
+Link: https://prover.certora.com/output/1696952/16833162a7e44b94ba77dfd9c5ab670f
+
+========================================
+Spec: certora_specification/buggy_45.cvl
+Contract: buggy_45.sol:StockBet
+Rules: 5
+  FAIL:
+    Rule claimReward_re_ent25_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule claimReward_re_ent39_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawFunds_re_ent17_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+    Rule withdrawFunds_re_ent31_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+    Rule withdrawFunds_re_ent3_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+Timing:
+  [TIME] Run time: 00:00:29
+Link: https://prover.certora.com/output/1696952/026fd6c964ab4b07a1cc43716601fdd6
+
+========================================
+Spec: certora_specification/buggy_47.cvl
+Contract: buggy_47.sol:AcunarIEO
+Status: ERROR - Compiler warning - unnamed return variable
+
+========================================
+Spec: certora_specification/buggy_50.cvl
+Contract: buggy_50.sol:digitalNotary
+Rules: 3
+  FAIL:
+    Rule claimReward_re_ent25_nonreentrant: VIOLATION
+      - contract must not send more than recorded amount
+    Rule withdrawFunds_re_ent17_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+    Rule withdrawFunds_re_ent31_nonreentrant: VIOLATION
+      - contract must not send more than requested amount
+Timing:
+  [TIME] Run time: 00:00:26
+Link: https://prover.certora.com/output/1696952/1a4ff03515a94ad88514ad25e94dec99
+
+========================================
+SUMMARY: 10 spec files (2 ERROR, 8 verified)
+  0/8 specs passed all rules (all failed due to reentrancy vulnerabilities)
+  Total run time: ~04:05
