@@ -9,9 +9,19 @@ contract Owned {
   address public owner;
   mapping(address => uint) public lockTime_intou17;
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _secondsToIncrease >= 0
+    /// @notice postcondition lockTime_intou17[msg.sender] > __verifier_old_uint(lockTime_intou17[msg.sender])
 function increaseLockTime_intou17(uint _secondsToIncrease) public {
         lockTime_intou17[msg.sender] += _secondsToIncrease;  //overflow
     }
+    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdraw_intou17() public {
   require(block.timestamp > lockTime_intou17[msg.sender]);    
         uint transferValue_intou17 = 10;           
@@ -19,12 +29,20 @@ function withdraw_intou17() public {
     }
   address public newOwner;
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function bug_intou27() public{
     uint8 vundflw =0;
     vundflw = vundflw -10;   // underflow bug
 }
   event OwnershipTransferred(address indexed _from, address indexed _to);
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         owner = msg.sender;
     }
@@ -34,11 +52,20 @@ function withdraw_intou17() public {
         _;
     }
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function transferOwnership(address _newOwner) public onlyOwner {
         newOwner = _newOwner;
     }
 mapping(address => uint) balances_intou38;
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
 function transfer_intou38(address _to, uint _value) public returns (bool) {
     require(balances_intou38[msg.sender] - _value >= 0);  //bug
     balances_intou38[msg.sender] -= _value;  //bug
@@ -105,28 +132,11 @@ contract Staking is Owned{
   mapping(address => stake) staker;
     
     
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
-    /// @notice precondition minstakeTokens >= 0
-    /// @notice precondition basePercent >= 0
-    /// @notice precondition stakeTime >= 0
-    /// @notice precondition stakePercentage >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     constructor(address tokenContractAddress) {
         token = Token(tokenContractAddress);
         owner = msg.sender;
         minstakeTokens = 500 * 10 ** uint(10);
     }
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
-    /// @notice precondition minstakeTokens >= 0
-    /// @notice precondition basePercent >= 0
-    /// @notice precondition stakeTime >= 0
-    /// @notice precondition stakePercentage >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition stakeTokens >= 0
     function startStaking(uint256 stakeTokens) public{
         require(stakeTokens >= minstakeTokens);
         require(token.balanceOf(msg.sender) >= stakeTokens + findOnePercent(stakeTokens));
@@ -135,14 +145,6 @@ contract Staking is Owned{
         staker[msg.sender].tokens =  staker[msg.sender].tokens + stakeTokens;
         emit stakingstarted(msg.sender, staker[msg.sender].tokens, staker[msg.sender].time);
     }
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
-    /// @notice precondition minstakeTokens >= 0
-    /// @notice precondition basePercent >= 0
-    /// @notice precondition stakeTime >= 0
-    /// @notice precondition stakePercentage >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function redeem() public{
         require(!lock);
         require(!staker[msg.sender].redeem);
@@ -153,54 +155,19 @@ contract Staking is Owned{
         staker[msg.sender].redeem = true;
         staker[msg.sender].tokens = 0;
     }
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
-    /// @notice precondition minstakeTokens >= 0
-    /// @notice precondition basePercent >= 0
-    /// @notice precondition stakeTime >= 0
-    /// @notice precondition stakePercentage >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _NewTokensThreshold >= 0
     function changeStakeTokens(uint256 _NewTokensThreshold) public onlyOwner{
         minstakeTokens = _NewTokensThreshold * 10 ** uint(10);
     }
     
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
-    /// @notice precondition minstakeTokens >= 0
-    /// @notice precondition basePercent >= 0
-    /// @notice precondition stakeTime >= 0
-    /// @notice precondition stakePercentage >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _newStakeTime >= 0
     function changeStakeTime(uint256 _newStakeTime) public onlyOwner{
         stakeTime = _newStakeTime;
     }
     
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
-    /// @notice precondition minstakeTokens >= 0
-    /// @notice precondition basePercent >= 0
-    /// @notice precondition stakeTime >= 0
-    /// @notice precondition stakePercentage >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _newStakePercentage >= 0
     function changeStakingPercentage(uint _newStakePercentage) public onlyOwner{
         stakePercentage = _newStakePercentage;
         
     }
     
-    /// @notice precondition forall (address extraVar0) lockTime_intou17[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou38[extraVar0] >= 0
-    /// @notice precondition minstakeTokens >= 0
-    /// @notice precondition basePercent >= 0
-    /// @notice precondition stakeTime >= 0
-    /// @notice precondition stakePercentage >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function lockWithdrawals() public onlyOwner{
         lock = true;
     }

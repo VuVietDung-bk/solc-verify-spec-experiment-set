@@ -30,10 +30,6 @@ contract Ownable {
 address public owner;
 event OwnerChanged(address oldOwner, address newOwner);
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.sender != owner
-    /// @notice postcondition false
     constructor() {
         owner = msg.sender;
     }
@@ -42,10 +38,6 @@ modifier onlyOwner() {
         _;
     }
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.sender != owner
-    /// @notice postcondition false
     function changeOwner(address _newOwner) external onlyOwner {
         owner = _newOwner;
         emit OwnerChanged(msg.sender, _newOwner);

@@ -1,0 +1,90 @@
+# Contract-Spec Mapping
+# Format: spec_file ~ ContractName
+# Note: sol file usually matches spec filename
+#
+
+## access_control
+incorrect_constructor_name1.spec ~ Missing
+incorrect_constructor_name2.spec ~ Missing
+incorrect_constructor_name3.spec ~ Missing
+mapping_write.spec ~ Map
+multiowned_vulnerable.spec ~ TestContract
+unprotected0.spec ~ Unprotected
+wallet_02_refund_nosub.spec ~ Wallet
+wallet_03_wrong_constructor.spec ~ Wallet
+wallet_04_confused_sign.spec ~ Wallet
+
+## arithmetic
+insecure_transfer.spec ~ IntegerOverflowAdd
+integer_overflow_1.spec ~ Overflow
+integer_overflow_add.spec ~ IntegerOverflowAdd
+integer_overflow_benign_1.spec ~ IntegerOverflowBenign1
+integer_overflow_mapping_sym_1.spec ~ IntegerOverflowMappingSym1
+integer_overflow_minimal.spec ~ IntegerOverflowMinimal
+integer_overflow_mul.spec ~ IntegerOverflowMul
+integer_overflow_multitx_multifunc_feasible.spec ~ IntegerOverflowMultiTxMultiFuncFeasible
+integer_overflow_multitx_onefunc_feasible.spec ~ IntegerOverflowMultiTxOneFuncFeasible
+overflow_simple_add.spec ~ Overflow_Add
+overflow_single_tx.spec ~ IntegerOverflowSingleTransaction
+timelock.spec ~ TimeLock
+token.spec ~ Token
+tokensalechallenge.spec ~ TokenSaleChallenge
+
+## bad_randomness
+lottery.spec ~ Lottery
+
+## denial_of_service
+auction.spec ~ DosAuction
+dos_address.spec ~ DosGas
+dos_number.spec ~ DosNumber
+list_dos.spec ~ Government
+send_loop.spec ~ Refunder
+
+## front_running
+ERC20.spec ~ ERC20
+eth_tx_order_dependence_minimal.spec ~ EthTxOrderDependenceMinimal
+odds_and_evens.spec ~ OddsAndEvens
+
+## other
+asignatura.spec ~ Asignatura
+class.spec ~ Class
+Crowdfund.spec ~ Crowdfund
+EvilToken.spec ~ EvilERC20Token
+Forwarder.spec ~ Forwarder
+name_registrar.spec ~ NameRegistrar
+StakingWarmup.spec ~ StakingWarmup
+WETH.spec ~ WETH
+
+## time_manipulation
+HotDollarsToken.spec ~ HotDollarsToken
+lottopollo.spec ~ lottopollo
+roulette.spec ~ Roulette
+timed_crowdsale.spec ~ TimedCrowdsale
+# TAMContract.spec ~ EXCLUDED (TAMContract.sol deleted)
+# TTC.spec ~ EXCLUDED (TTC.sol deleted)
+
+## unchecked_low_level_calls
+0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.spec ~ Caller
+0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.spec ~ MultiplicatorX4
+0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.spec ~ WhaleGiveaway2
+0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.spec ~ EtherGet
+0x5aa88d2901c68fda244f1d0584400368d2c8e739.spec ~ MultiplicatorX3
+0x610495793564aed0f9c7fc48dc4c7c9151d34fd6.spec ~ SimpleWallet
+0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.spec ~ HomeyJar
+0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37.spec ~ WhaleGiveaway1
+0x7a4349a749e59a5736efb7826ee3496a2dfd5489.spec ~ WhaleGiveaway1
+0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.spec ~ Pie
+0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.spec ~ WedIndex
+0x958a8f594101d2c0485a52319f29b2647f2ebc06.spec ~ Marriage
+0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.spec ~ Splitter
+0xb37f18af15bafb869a065b61fc83cfc44ed9cc27.spec ~ SimpleWallet
+0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.spec ~ keepMyEther
+0xd2018bfaa266a9ec0a1a84b061640faa009def76.spec ~ Pie
+0xdb1c55f6926e7d847ddf8678905ad871a68199d2.spec ~ FreeEth
+0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf.spec ~ Honey
+0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87.spec ~ Freebie
+0xf29ebe930a539a60279ace72c707cba851a57707.spec ~ B
+0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.spec ~ WhaleGiveaway2
+lotto.spec ~ Lotto
+mishandled.spec ~ SendBack
+unchecked_return_value.spec ~ ReturnValue

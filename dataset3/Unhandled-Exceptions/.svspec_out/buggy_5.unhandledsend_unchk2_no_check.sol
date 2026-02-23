@@ -5,9 +5,6 @@
 pragma solidity >=0.7.0;
 
 contract Ownable {
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
 function bug_unchk42() public{
 uint receivers_unchk42;
 address payable addr_unchk42;
@@ -20,9 +17,6 @@ else
 
 bool public payedOut_unchk33 = false;
 
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
 function withdrawLeftOver_unchk33() public {
         require(payedOut_unchk33);
   payable(msg.sender).send(address(this).balance);
@@ -34,15 +28,9 @@ function withdrawLeftOver_unchk33() public {
    * @dev The Ownable constructor sets the original `owner` of the contract to the sender
    * account.
    */
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
   constructor () {
     owner = msg.sender;
   }
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
 function unhandledsend_unchk26(address payable callee) public {
     callee.send(5 ether);
   }
@@ -59,9 +47,6 @@ function unhandledsend_unchk26(address payable callee) public {
    * @dev Allows the current owner to transfer control of the contract to a newOwner.
    * @param newOwner The address to transfer ownership to.
    */
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
   function transferOwnership(address newOwner) public onlyOwner {
     require(newOwner != address(0));
     emit OwnershipTransferred(owner, newOwner);
@@ -71,9 +56,6 @@ bool public payedOut_unchk20 = false;
 address payable public winner_unchk20;
 uint public winAmount_unchk20;
 
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
 function sendToWinner_unchk20() public {
         require(!payedOut_unchk20);
         winner_unchk20.send(winAmount_unchk20);
@@ -84,31 +66,77 @@ function sendToWinner_unchk20() public {
 
 contract TokenERC20 {
     // Public variables of the token
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice postcondition true
   function unhandledsend_unchk2(address payable callee) public {
     callee.send(5 ether);
   }
   string public name;
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function bug_unchk43() public{
 address payable addr_unchk43;
 if (!addr_unchk43.send (10 ether) || 1==1)
 	{revert();}
 }
   string public symbol;
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
   function my_func_uncheck48(address payable dst) public payable{
       dst.call{value: msg.value}("");
     }
   uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function withdrawBal_unchk17 () public{
 	uint64 Balances_unchk17 = 0;
     payable(msg.sender).send(Balances_unchk17);}
   uint256 public totalSupply;
 
     // This creates an array with all balances
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function callnotchecked_unchk37(address payable callee) public {
     callee.call{value: 1 ether}("");
   }
   mapping (address => uint256) public balanceOf;
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function bug_unchk3(address payable addr) public
       {addr.send (42 ether); }
   mapping (address => mapping (address => uint256)) public allowance;
@@ -122,6 +150,13 @@ if (!addr_unchk43.send (10 ether) || 1==1)
     // This notifies clients about the amount burnt
   bool public payedOut_unchk45 = false;
 
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdrawLeftOver_unchk45() public {
         require(payedOut_unchk45);
   payable(msg.sender).send(address(this).balance);
@@ -133,6 +168,14 @@ function withdrawLeftOver_unchk45() public {
      *
      * Initializes contract with initial supply tokens to the creator of the contract
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition initialSupply >= 0
     constructor(
       uint256 initialSupply,
       string memory tokenName,
@@ -147,6 +190,13 @@ bool public payedOut_unchk32 = false;
 address payable public winner_unchk32;
 uint public winAmount_unchk32;
 
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function sendToWinner_unchk32() public {
         require(!payedOut_unchk32);
         winner_unchk32.send(winAmount_unchk32);
@@ -173,6 +223,13 @@ function sendToWinner_unchk32() public {
         // Asserts are used to use static analysis to find bugs in your code. They should never fail
         assert(balanceOf[_from] + balanceOf[_to] == previousBalances);
     }
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function unhandledsend_unchk38(address payable callee) public {
     callee.send(5 ether);
   }
@@ -185,10 +242,27 @@ function unhandledsend_unchk38(address payable callee) public {
      * @param _to The address of the recipient
      * @param _value the amount to send
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function transfer(address _to, uint256 _value) public returns (bool success) {
         _transfer(msg.sender, _to, _value);
         return true;
     }
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition roundIndex >= 0
+    /// @notice precondition subpotIndex >= 0
 function cash_unchk46(uint roundIndex, uint subpotIndex, address payable winner_unchk46) public{
         uint64 subpot_unchk46 = 3 ether;
         winner_unchk46.send(subpot_unchk46);  //bug
@@ -204,12 +278,27 @@ function cash_unchk46(uint roundIndex, uint subpotIndex, address payable winner_
      * @param _to The address of the recipient
      * @param _value the amount to send
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(_value <= allowance[_from][msg.sender]);     // Check allowance
         allowance[_from][msg.sender] -= _value;
         _transfer(_from, _to, _value);
         return true;
     }
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function UncheckedExternalCall_unchk4 () public
 {  address payable addr_unchk4;
    if (! addr_unchk4.send (42 ether))  
@@ -228,12 +317,27 @@ function UncheckedExternalCall_unchk4 () public
      * @param _spender The address authorized to spend
      * @param _value the max amount they can spend
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function approve(address _spender, uint256 _value) public
         returns (bool success) {
         allowance[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
         return true;
     }
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_unchk7() public{
 address payable addr_unchk7;
 if (!addr_unchk7.send (10 ether) || 1==1)
@@ -251,6 +355,14 @@ if (!addr_unchk7.send (10 ether) || 1==1)
      *
      * @param _value the amount of money to burn
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function burn(uint256 _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
@@ -258,6 +370,16 @@ if (!addr_unchk7.send (10 ether) || 1==1)
         emit Burn(msg.sender, _value);
         return true;
     }
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function my_func_unchk23(address payable dst) public payable{
         dst.send(msg.value);
     }
@@ -270,6 +392,14 @@ function my_func_unchk23(address payable dst) public payable{
      * @param _from the address of the sender
      * @param _value the amount of money to burn
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
         require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
         require(_value <= allowance[_from][msg.sender]);    // Check allowance
@@ -279,6 +409,13 @@ function my_func_unchk23(address payable dst) public payable{
         emit Burn(_from, _value);
         return true;
     }
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function unhandledsend_unchk14(address payable callee) public {
     callee.send(5 ether);
   }

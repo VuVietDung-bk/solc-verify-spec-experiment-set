@@ -1,93 +1,54 @@
-SOLC-VERIFY-SPEC Results Log
-Benchmark: dataset1/time_manipulation
-Date: 2026-02-11
-Total spec files: 6
+==============================================================================
+SOLC-VERIFY-SPEC Results Log — dataset2/time_manipulation
+Date: 2026-02-23
+==============================================================================
 
-========================================
-Spec: specification/HotDollarsToken.spec
-Contract: HotDollarsToken.sol:HotDollarsToken
-Rules: 1
-  PASS:
-    Rule bug_tmstmp36_should_not_drain_balance: ALL OK
-  FAIL: (none)
-Timing:
-  [TIME] HotDollarsToken.bug_tmstmp36_should_not_drain_balance.sol: 4.82s
-  [TIME] Total rule verification time: 4.82s
-  [TIME] End-to-end time: 6.11s
+SUMMARY TABLE
+==============================================================================
+#  | Spec File              | Contract        | Rules | Result
+---|------------------------|-----------------| ------|-------
+1  | HotDollarsToken.spec   | HotDollarsToken |   1   | PASS
+2  | TAMContract.spec       | TAMCContract    |   1   | FAIL
+3  | TTC.spec               | TTC             |   1   | PASS
+4  | lottopollo.spec        | lottopollo      |   2   | FAIL
+5  | roulette.spec          | Roulette        |   1   | FAIL
+6  | timed_crowdsale.spec   | TimedCrowdsale  |   1   | FAIL
+==============================================================================
 
-========================================
-Spec: specification/TAMCContract.spec
-Contract: TAMContract.sol:TAMCContract
-Rules: 1
-  FAIL:
-    Rule bug_tmstmp40_should_not_drain_balance: TAMCContract::bug_tmstmp40: ERROR
-      - Postcondition 'address(this).balance == old(address(this).balance) + msg.value' might not hold
-  PASS:
-    All other functions: OK
-Timing:
-  [TIME] TAMContract.bug_tmstmp40_should_not_drain_balance.sol: 3.45s
-  [TIME] Total rule verification time: 3.45s
-  [TIME] End-to-end time: 4.79s
+OVERALL STATISTICS
+==============================================================================
+Total specs:  6
+Total rules:  7
+PASS:         2  (33.33%)
+FAIL:         4  (66.67%)
+==============================================================================
 
-========================================
-Spec: specification/TTC.spec
-Contract: TTC.sol:Ownable
-Rules: 1
-  PASS: (none)
-  FAIL:
-    Rule bug_tmstmp32_should_not_drain_balance: Ownable::bug_tmstmp32: ERROR
-      - Postcondition 'address(this).balance == __verifier_old_uint(address(this).balance) + msg.value' might not hold at end of function.
-Timing:
-  [TIME] TTC.bug_tmstmp32_should_not_drain_balance.sol: 6.89s
-  [TIME] Total rule verification time: 6.89s
-  [TIME] End-to-end time: 8.36s
+DETAILED RESULTS
+==============================================================================
 
-========================================
-Spec: specification/lottopollo.spec
-Contract: lottopollo.sol:lottopollo
-Rules: 2
-  FAIL:
-    Rule randomGen_should_not_be_timestamp: lottopollo::randomGen: ERROR
-      - Postcondition 'randomNumber != block.timestamp' might not hold
-    Rule draw_should_not_drain_on_timestamp: lottopollo::draw: ERROR
-      - Postcondition 'address(this).balance >= 0' might not hold
-Timing:
-  [TIME] lottopollo.randomGen_should_not_be_timestamp.sol: 1.69s
-  [TIME] lottopollo.draw_should_not_drain_on_timestamp.sol: 1.73s
-  [TIME] Total rule verification time: 3.43s
-  [TIME] End-to-end time: 4.32s
+--- 1. HotDollarsToken.spec (HotDollarsToken) --- PASS
+  [OK]    bug_tmstmp36_should_not_drain_balance
+  Time: 5.59s / 6.77s
 
-========================================
-Spec: specification/roulette.spec
-Contract: roulette.sol:Roulette
-Rules: 1
-  FAIL:
-    Rule fallback_should_not_payout_on_timestamp: Roulette::[fallback]: ERROR
-      - Postcondition 'address(this).balance == old(address(this).balance) + msg.value' might not hold
-  PASS:
-    Roulette::[constructor]: OK
-    Roulette::[receive]: OK
-Timing:
-  [TIME] roulette.fallback_should_not_payout_on_timestamp.sol: 1.69s
-  [TIME] Total rule verification time: 1.69s
-  [TIME] End-to-end time: 2.60s
+--- 2. TAMContract.spec (TAMCContract) --- FAIL
+  [ERROR] bug_tmstmp40_should_not_drain_balance    (TAMCContract::bug_tmstmp40 postcondition)
+  Time: 3.06s / 4.09s
 
-========================================
-Spec: specification/timed_crowdsale.spec
-Contract: timed_crowdsale.sol:TimedCrowdsale
-Rules: 1
-  FAIL:
-    Rule sale_should_not_be_finished: TimedCrowdsale::isSaleFinished: ERROR
-      - Postcondition 'finish == false' might not hold
-  PASS:
-    TimedCrowdsale::[implicit_constructor]: OK
-Timing:
-  [TIME] timed_crowdsale.sale_should_not_be_finished.sol: 1.46s
-  [TIME] Total rule verification time: 1.46s
-  [TIME] End-to-end time: 2.34s
+--- 3. TTC.spec (TTC) --- PASS
+  [OK]    bug_tmstmp32_should_not_drain_balance
+  Time: 8.85s / 10.56s
 
-========================================
-SUMMARY: 6 spec files, 7 rules total
-  1/6 specs passed all rules (HotDollarsToken)
-  5/6 specs had errors
-  Total end-to-end time: ~30.25s
+--- 4. lottopollo.spec (lottopollo) --- FAIL
+  [ERROR] randomGen_should_not_be_timestamp        (lottopollo::randomGen postcondition)
+  [ERROR] draw_should_not_drain_on_timestamp       (lottopollo::draw postcondition)
+  Time: 3.57s / 4.53s
+
+--- 5. roulette.spec (Roulette) --- FAIL
+  [ERROR] fallback_should_not_payout_on_timestamp  (Roulette::fallback postcondition)
+  Time: 1.64s / 2.68s
+
+--- 6. timed_crowdsale.spec (TimedCrowdsale) --- FAIL
+  [ERROR] sale_should_not_be_finished              (TimedCrowdsale::isSaleFinished postcondition)
+  Time: 1.39s / 2.29s
+
+==============================================================================

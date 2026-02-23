@@ -30,10 +30,6 @@ contract Ownable {
 address public owner;
 event OwnerChanged(address oldOwner, address newOwner);
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.sender != owner
-    /// @notice postcondition false
     constructor() {
         owner = msg.sender;
     }
@@ -42,10 +38,6 @@ modifier onlyOwner() {
         _;
     }
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.sender != owner
-    /// @notice postcondition false
     function changeOwner(address _newOwner) external onlyOwner {
         owner = _newOwner;
         emit OwnerChanged(msg.sender, _newOwner);
@@ -255,6 +247,14 @@ receive() external payable virtual {
 contract RampInstantEthPool is RampInstantPool {
 uint16 internal constant ETH_TYPE_ID = 1;
 
+    /// @notice precondition ASSET_TYPE >= 0
+    /// @notice precondition minSwapAmount >= 0
+    /// @notice precondition maxSwapAmount >= 0
+    /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _minSwapAmount >= 0
+    /// @notice precondition _maxSwapAmount >= 0
     constructor(
         address payable _swapsContract,
         uint256 _minSwapAmount,
@@ -265,9 +265,24 @@ uint16 internal constant ETH_TYPE_ID = 1;
             _swapsContract, _minSwapAmount, _maxSwapAmount, _paymentDetailsHash, ETH_TYPE_ID
         )
     {}
+    /// @notice precondition ASSET_TYPE >= 0
+    /// @notice precondition minSwapAmount >= 0
+    /// @notice precondition maxSwapAmount >= 0
+    /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function availableFunds() public view override returns(uint256) {
         return address(this).balance;
     }
+    /// @notice precondition ASSET_TYPE >= 0
+    /// @notice precondition minSwapAmount >= 0
+    /// @notice precondition maxSwapAmount >= 0
+    /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _amount >= 0
+    /// @notice precondition msg.sender != owner
+    /// @notice postcondition false
 function withdrawFunds(
         address payable _to,
         uint256 _amount
@@ -275,6 +290,13 @@ function withdrawFunds(
         _to.transfer(_amount);  // always throws on failure
         return true;
     }
+    /// @notice precondition ASSET_TYPE >= 0
+    /// @notice precondition minSwapAmount >= 0
+    /// @notice precondition maxSwapAmount >= 0
+    /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _amount >= 0
 function sendFundsToSwap(
         uint256 _amount
     ) public override onlyActive onlySwapsContract isWithinLimits(_amount) returns(bool success) {
@@ -284,11 +306,29 @@ function sendFundsToSwap(
 /**
      * This adapter can receive eth payments, but no other use of the fallback function is allowed.
      */
+    /// @notice precondition ASSET_TYPE >= 0
+    /// @notice precondition minSwapAmount >= 0
+    /// @notice precondition maxSwapAmount >= 0
+    /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     receive() external payable override {
         if (msg.sender != swapsContract) {
             emit ReceivedFunds(msg.sender, msg.value);
         }
     }
+    /// @notice precondition ASSET_TYPE >= 0
+    /// @notice precondition minSwapAmount >= 0
+    /// @notice precondition maxSwapAmount >= 0
+    /// @notice precondition ETH_TYPE_ID >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function bug_unchk_send29() payable public{
       payable(msg.sender).transfer(1 ether);}
 

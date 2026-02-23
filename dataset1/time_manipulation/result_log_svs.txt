@@ -1,66 +1,45 @@
-SOLC-VERIFY-SPEC Results Log
-Benchmark: dataset1/time_manipulation
-Date: 2026-02-11
-Total spec files: 6
+==============================================================================
+SOLC-VERIFY-SPEC Results Log — dataset1/time_manipulation
+Date: 2026-02-23
+==============================================================================
 
-========================================
-Spec: specification/HotDollarsToken.spec
-Contract: HotDollarsToken.sol:HotDollarsToken
-Rules: 1
-  PASS:
-    Rule bug_tmstmp36_should_not_drain_balance: ALL OK
-  FAIL: (none)
-Timing:
-  [TIME] HotDollarsToken.bug_tmstmp36_should_not_drain_balance.sol: 4.82s
-  [TIME] Total rule verification time: 4.82s
-  [TIME] End-to-end time: 6.11s
+SUMMARY TABLE
+==============================================================================
+#  | Spec File              | Contract       | Rules | Result
+---|------------------------|----------------|-------|-------
+1  | HotDollarsToken.spec   | HotDollarsToken|   1   | PASS
+2  | lottopollo.spec        | lottopollo     |   2   | FAIL
+3  | roulette.spec          | Roulette       |   1   | FAIL
+4  | timed_crowdsale.spec   | TimedCrowdsale |   1   | FAIL
+==============================================================================
+Note: TAMContract.spec and TTC.spec excluded (sol files deleted)
 
-========================================
-Spec: specification/lottopollo.spec
-Contract: lottopollo.sol:lottopollo
-Rules: 2
-  FAIL:
-    Rule randomGen_should_not_be_timestamp: lottopollo::randomGen: ERROR
-      - Postcondition 'randomNumber != block.timestamp' might not hold
-    Rule draw_should_not_drain_on_timestamp: lottopollo::draw: ERROR
-      - Postcondition 'address(this).balance >= 0' might not hold
-Timing:
-  [TIME] lottopollo.randomGen_should_not_be_timestamp.sol: 1.69s
-  [TIME] lottopollo.draw_should_not_drain_on_timestamp.sol: 1.73s
-  [TIME] Total rule verification time: 3.43s
-  [TIME] End-to-end time: 4.32s
+OVERALL STATISTICS
+==============================================================================
+Total specs:  4
+Total rules:  5
+PASS:         1  (25.00%)
+FAIL:         3  (75.00%)
+==============================================================================
 
-========================================
-Spec: specification/roulette.spec
-Contract: roulette.sol:Roulette
-Rules: 1
-  FAIL:
-    Rule fallback_should_not_payout_on_timestamp: Roulette::[fallback]: ERROR
-      - Postcondition 'address(this).balance == old(address(this).balance) + msg.value' might not hold
-  PASS:
-    Roulette::[constructor]: OK
-    Roulette::[receive]: OK
-Timing:
-  [TIME] roulette.fallback_should_not_payout_on_timestamp.sol: 1.69s
-  [TIME] Total rule verification time: 1.69s
-  [TIME] End-to-end time: 2.60s
+DETAILED RESULTS
+==============================================================================
 
-========================================
-Spec: specification/timed_crowdsale.spec
-Contract: timed_crowdsale.sol:TimedCrowdsale
-Rules: 1
-  FAIL:
-    Rule sale_should_not_be_finished: TimedCrowdsale::isSaleFinished: ERROR
-      - Postcondition 'finish == false' might not hold
-  PASS:
-    TimedCrowdsale::[implicit_constructor]: OK
-Timing:
-  [TIME] timed_crowdsale.sale_should_not_be_finished.sol: 1.46s
-  [TIME] Total rule verification time: 1.46s
-  [TIME] End-to-end time: 2.34s
+--- 1. HotDollarsToken.spec (HotDollarsToken) --- PASS
+  [OK]    bug_tmstmp36_should_not_drain_balance
+  Time: 5.07s / 6.35s
 
-========================================
-SUMMARY: 6 spec files, 7 rules total
-  1/6 specs passed all rules (HotDollarsToken)
-  5/6 specs had errors
-  Total end-to-end time: ~30.25s
+--- 2. lottopollo.spec (lottopollo) --- FAIL
+  [ERROR] randomGen_should_not_be_timestamp        (lottopollo::randomGen postcondition)
+  [ERROR] draw_should_not_drain_on_timestamp        (lottopollo::draw postcondition)
+  Time: 3.57s / 4.54s
+
+--- 3. roulette.spec (Roulette) --- FAIL
+  [ERROR] fallback_should_not_payout_on_timestamp  (Roulette::[fallback] postcondition)
+  Time: 1.53s / 2.46s
+
+--- 4. timed_crowdsale.spec (TimedCrowdsale) --- FAIL
+  [ERROR] sale_should_not_be_finished              (TimedCrowdsale::isSaleFinished postcondition)
+  Time: 1.38s / 2.27s
+
+==============================================================================

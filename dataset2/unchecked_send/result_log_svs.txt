@@ -1,42 +1,55 @@
-SOLC-VERIFY-SPEC Results Log
-Benchmark: dataset2/unchecked_send
-Date: 2026-02-11
-Total spec files: 2
+==============================================================================
+SOLC-VERIFY-SPEC Results Log — dataset2/unchecked_send
+Date: 2026-02-23
+==============================================================================
 
-========================================
-Spec: specification/0xf29ebe930a539a60279ace72c707cba851a57707.spec
-Contract: 0xf29ebe930a539a60279ace72c707cba851a57707.sol:B
-Rules: 1
-  FAIL:
-    Rule go_unchecked: B::go: ERROR
-      - Postcondition 'owner.balance == old(owner.balance) + old(address(this).balance) - msg.value' might not hold
-      - Postcondition involving hardcoded address balance might not hold
-      - Postcondition 'address(this).balance == 0' might not hold
-  PASS:
-    B::[constructor]: OK
-    B::[receive]: OK
-    B::[fallback]: OK
-Timing:
-  [TIME] go_unchecked.sol: 1.85s
-  [TIME] End-to-end time: 2.79s
+SUMMARY TABLE
+==============================================================================
+#  | Spec File                                      | Contract        | Rules | Result
+---|------------------------------------------------|-----------------|-------|-------
+1  | 0xec329ffc97d75fe03428ae155fc7793431487f63.spec | TokenSender     |   1   | FAIL
+2  | 0xf29ebe930a539a60279ace72c707cba851a57707.spec | B               |   1   | FAIL
+3  | 0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.spec | WhaleGiveaway2 |   1   | FAIL
+4  | lotto.spec                                     | Lotto           |   2   | PASS
+5  | mishandled.spec                                | SendBack        |   1   | PASS
+6  | unchecked_return_value.spec                    | ReturnValue     |   2   | PASS
+==============================================================================
 
-========================================
-Spec: specification/0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.spec
-Contract: 0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.sol:WhaleGiveaway2
-Rules: 1
-  FAIL:
-    Rule Command_unchecked: WhaleGiveaway2::Command: ERROR
-      - Postcondition 'adr.balance == old(adr.balance) + msg.value' might not hold
-      - Postcondition 'address(this).balance == old(address(this).balance) - msg.value' might not hold
-  PASS:
-    WhaleGiveaway2::[constructor]: OK
-    WhaleGiveaway2::GetFreebie: OK
-    WhaleGiveaway2::withdraw: OK
-Timing:
-  [TIME] Command_unchecked.sol: 2.07s
-  [TIME] End-to-end time: 3.03s
+OVERALL STATISTICS
+==============================================================================
+Total specs:  6
+Total rules:  8
+PASS:         3  (50.00%)
+FAIL:         3  (50.00%)
+==============================================================================
 
-========================================
-SUMMARY: 2 spec files, 2 rules total
-  0/2 specs passed all rules
-  Total end-to-end time: ~5.82s
+DETAILED RESULTS
+==============================================================================
+
+--- 1. 0xec329ffc97d75fe03428ae155fc7793431487f63.spec (TokenSender) --- FAIL
+  [INTERNAL ERROR] changeOwner_changes_owner    (solc-verify internal exception: Push must take exactly one argument)
+  Time: 0.80s / 1.88s
+
+--- 2. 0xf29ebe930a539a60279ace72c707cba851a57707.spec (B) --- FAIL
+  [ERROR] go_unchecked    (B::go postcondition)
+  Time: 1.97s / 2.91s
+
+--- 3. 0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.spec (WhaleGiveaway2) --- FAIL
+  [ERROR] Command_unchecked    (WhaleGiveaway2::Command postcondition)
+  Time: 2.03s / 3.07s
+
+--- 4. lotto.spec (Lotto) --- PASS
+  [OK]    sendToWinner_sets_payedOut
+  [OK]    withdrawLeftOver_requires_payedOut
+  Time: 3.28s / 4.24s
+
+--- 5. mishandled.spec (SendBack) --- PASS
+  [OK]    withdrawBalance_sets_balance_zero
+  Time: 1.62s / 2.55s
+
+--- 6. unchecked_return_value.spec (ReturnValue) --- PASS
+  [OK]    callchecked_reachable
+  [OK]    callnotchecked_reachable
+  Time: 3.52s / 4.59s
+
+==============================================================================

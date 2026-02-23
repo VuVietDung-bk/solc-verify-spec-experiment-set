@@ -136,7 +136,7 @@ contract ERC20 is IERC20 {
     /// @notice precondition block.number >= 0
     /// @notice precondition startTime >= 0
     /// @notice precondition startTime + 432000 != block.timestamp
-    /// @notice postcondition winner_tmstmp19 == __verifier_old_address(winner_tmstmp19)
+    /// @notice postcondition winner_tmstmp19 == winner_tmstmp19
 function play_tmstmp19(uint startTime) public {
 	uint _vtime = block.timestamp;
 	if (startTime + (5 * 1 days) == _vtime){

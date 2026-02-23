@@ -9,10 +9,6 @@ address public owner;
 address public newOwner;
 event OwnershipTransferred(address indexed _from, address indexed _to);
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.sender == owner
-    /// @notice postcondition lock == true
     constructor() public {
         owner = msg.sender;
     }
@@ -21,10 +17,6 @@ modifier onlyOwner {
         _;
     }
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.sender == owner
-    /// @notice postcondition lock == true
     function transferOwnership(address _newOwner) public onlyOwner {
         newOwner = _newOwner;
     }
@@ -88,11 +80,24 @@ event tokensRedeemed(address staker, uint256 stakedTokens, uint256 reward);
 mapping(address => stake) staker;
     
     
+    /// @notice precondition minstakeTokens >= 0
+    /// @notice precondition basePercent >= 0
+    /// @notice precondition stakeTime >= 0
+    /// @notice precondition stakePercentage >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor(address tokenContractAddress) public{
         token = Token(tokenContractAddress);
         owner = msg.sender;
         minstakeTokens = 500 * 10 ** uint(10);
     }
+    /// @notice precondition minstakeTokens >= 0
+    /// @notice precondition basePercent >= 0
+    /// @notice precondition stakeTime >= 0
+    /// @notice precondition stakePercentage >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition stakeTokens >= 0
 function startStaking(uint256 stakeTokens) public{
         require(stakeTokens >= minstakeTokens);
         require(token.balanceOf(msg.sender) >= stakeTokens + findOnePercent(stakeTokens));
@@ -101,6 +106,12 @@ function startStaking(uint256 stakeTokens) public{
         staker[msg.sender].tokens =  staker[msg.sender].tokens + stakeTokens;
         emit stakingstarted(msg.sender, staker[msg.sender].tokens, staker[msg.sender].time);
     }
+    /// @notice precondition minstakeTokens >= 0
+    /// @notice precondition basePercent >= 0
+    /// @notice precondition stakeTime >= 0
+    /// @notice precondition stakePercentage >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function redeem() public{
         require(!lock);
         require(!staker[msg.sender].redeem);
@@ -111,16 +122,45 @@ function redeem() public{
         staker[msg.sender].redeem = true;
         staker[msg.sender].tokens = 0;
     }
+    /// @notice precondition minstakeTokens >= 0
+    /// @notice precondition basePercent >= 0
+    /// @notice precondition stakeTime >= 0
+    /// @notice precondition stakePercentage >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _NewTokensThreshold >= 0
 function changeStakeTokens(uint256 _NewTokensThreshold) public onlyOwner{
         minstakeTokens = _NewTokensThreshold * 10 ** uint(10);
     }
+    /// @notice precondition minstakeTokens >= 0
+    /// @notice precondition basePercent >= 0
+    /// @notice precondition stakeTime >= 0
+    /// @notice precondition stakePercentage >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _newStakeTime >= 0
 function changeStakeTime(uint256 _newStakeTime) public onlyOwner{
         stakeTime = _newStakeTime;
     }
+    /// @notice precondition minstakeTokens >= 0
+    /// @notice precondition basePercent >= 0
+    /// @notice precondition stakeTime >= 0
+    /// @notice precondition stakePercentage >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _newStakePercentage >= 0
 function changeStakingPercentage(uint _newStakePercentage) public onlyOwner{
         stakePercentage = _newStakePercentage;
         
     }
+    /// @notice precondition minstakeTokens >= 0
+    /// @notice precondition basePercent >= 0
+    /// @notice precondition stakeTime >= 0
+    /// @notice precondition stakePercentage >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.sender == owner
+    /// @notice postcondition lock == true
 function lockWithdrawals() public onlyOwner{
         lock = true;
     }
@@ -129,6 +169,15 @@ function findOnePercent(uint256 value) private view returns (uint256)  {
         uint256 onePercent = roundValue.mul(basePercent).div(10000);
         return onePercent;
     }
+    /// @notice precondition minstakeTokens >= 0
+    /// @notice precondition basePercent >= 0
+    /// @notice precondition stakeTime >= 0
+    /// @notice precondition stakePercentage >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function bug_unchk_send28() payable public{
     payable(msg.sender).transfer(1 ether);}
 

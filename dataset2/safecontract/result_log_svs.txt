@@ -1,162 +1,85 @@
-SOLC-VERIFY-SPEC Results Log
-Benchmark: dataset2/safecontract
-Date: 2026-02-11
-Total spec files: 9
+==============================================================================
+SOLC-VERIFY-SPEC Results Log — dataset2/safecontract
+Date: 2026-02-23
+==============================================================================
 
-========================================
-Spec: specification/Balancer.spec
-Contract: balancer.sol:Balancer
-Rules: 1
-  INCONCLUSIVE:
-    Rule swapUpdatesPoolConsistently: Balancer::swap: INCONCLUSIVE
-Timing:
-  [TIME] balancer.swapUpdatesPoolConsistently.sol: 10.73s
-  [TIME] End-to-end time: 11.82s
+SUMMARY TABLE
+==============================================================================
+#  | Spec File          | Contract        | Rules | Result
+---|--------------------|-----------------| ------|-------
+1  | CareerOnToken.spec | CareerOneToken  |   4   | PASS
+2  | StableDEX.spec     | Core            |   4   | PASS
+3  | SushiSwap.spec     | SushiSwap       |   2   | FAIL
+4  | Uniswap.spec       | UniswapToken    |   4   | FAIL
+5  | WETH9.spec         | WETH9           |   3   | FAIL
+6  | WrappedToken.spec  | WrappedToken    |   4   | PASS
+7  | balancer.spec      | Balancer        |   1   | FAIL
+8  | ballot.spec        | Ballot          |   3   | FAIL
+9  | curve.spec         | Curve           |   1   | FAIL
+==============================================================================
 
-========================================
-Spec: specification/Ballot.spec
-Contract: ballot.sol:Ballot
-Rules: 3
-  PASS:
-    Rule giveRightSetsUnitWeight: ALL OK
-  FAIL:
-    Rule delegateAddsWeight: Ballot::delegate: ERROR
-      - Postcondition 'voters[to].weight == voters[to].weight + voters[msg.sender].weight' might not hold
-      - Postcondition 'voters[msg.sender].delegate == to' might not hold
-    Rule voteAccumulatesWeight: Ballot::vote: ERROR
-      - Postcondition 'proposals[proposal].voteCount == proposals[proposal].voteCount + voters[msg.sender].weight' might not hold
-Timing:
-  [TIME] giveRightSetsUnitWeight.sol: 1.68s
-  [TIME] delegateAddsWeight.sol: 1.76s
-  [TIME] voteAccumulatesWeight.sol: 1.72s
-  [TIME] Total rule verification time: 5.16s
-  [TIME] End-to-end time: 6.28s
+OVERALL STATISTICS
+==============================================================================
+Total specs:  9
+Total rules:  26
+PASS:         3  (33.33%)
+FAIL:         6  (66.67%)
+==============================================================================
 
-========================================
-Spec: specification/CareerOneToken.spec
-Contract: CareerOnToken.sol:CareerOneToken
-Rules: 4
-  PASS:
-    Rule transferEffects: ALL OK
-    Rule transferFromEffects: ALL OK
-    Rule approveSetsExactValue: ALL OK
-    Rule totalSupplyUnchangedForERC20Ops: ALL OK
-  FAIL: (none)
-Timing:
-  [TIME] transferEffects.sol: 1.95s
-  [TIME] transferFromEffects.sol: 1.84s
-  [TIME] approveSetsExactValue.sol: 2.02s
-  [TIME] totalSupplyUnchangedForERC20Ops.sol: 1.89s
-  [TIME] Total rule verification time: 7.69s
-  [TIME] End-to-end time: 8.77s
+DETAILED RESULTS
+==============================================================================
 
-========================================
-Spec: specification/Curve.spec
-Contract: curve.sol:Curve
-Rules: 1
-  FAIL:
-    Rule swapMatchesPricing: Curve::swap: ERROR
-      - Postcondition 'pools[tokenIn].totalBalance == pools[tokenIn].totalBalance + amountIn' might not hold
-Timing:
-  [TIME] curve.swapMatchesPricing.sol: 1.79s
-  [TIME] End-to-end time: 2.85s
+--- 1. CareerOnToken.spec (CareerOneToken) --- PASS
+  [OK]    transferEffects
+  [OK]    transferFromEffects
+  [OK]    approveSetsExactValue
+  [OK]    totalSupplyUnchangedForERC20Ops
+  Time: 8.02s / 9.08s
 
-========================================
-Spec: specification/StableDEX.spec
-Contract: StableDEX.sol:Core
-Rules: 4
-  PASS:
-    Rule transferMovesBalances: ALL OK
-    Rule transferFromMovesBalances: ALL OK
-    Rule approveSetsAllowance: ALL OK
-    Rule onlyOwnerChangesTotalSupply: ALL OK
-  FAIL: (none)
-Timing:
-  [TIME] transferMovesBalances.sol: 4.38s
-  [TIME] transferFromMovesBalances.sol: 4.23s
-  [TIME] approveSetsAllowance.sol: 4.08s
-  [TIME] onlyOwnerChangesTotalSupply.sol: 4.37s
-  [TIME] Total rule verification time: 17.06s
-  [TIME] End-to-end time: 18.45s
+--- 2. StableDEX.spec (Core) --- PASS
+  [OK]    transferMovesBalances
+  [OK]    transferFromMovesBalances
+  [OK]    approveSetsAllowance
+  [OK]    onlyOwnerChangesTotalSupply
+  Time: 18.93s / 20.32s
 
-========================================
-Spec: specification/SushiSwap.spec
-Contract: SushiSwap.sol:SushiSwap
-Rules: 2
-  ERROR (annotation error):
-    Rule depositMintsExpectedShares: SOLC-VERIFY ERROR
-      - Undeclared identifier 'expectedShares'
-  FAIL:
-    Rule withdrawBurnsSharesForAmount: SushiSwap::withdraw: ERROR
-      - Postcondition involving pool share/balance adjustments might not hold
-Timing:
-  [TIME] depositMintsExpectedShares.sol: 0.63s
-  [TIME] withdrawBurnsSharesForAmount.sol: 2.01s
-  [TIME] Total rule verification time: 2.64s
-  [TIME] End-to-end time: 3.72s
+--- 3. SushiSwap.spec (SushiSwap) --- FAIL
+  [ANNOTATION ERROR] depositMintsExpectedShares    (Undeclared identifier: expectedShares)
+  [ERROR] withdrawBurnsSharesForAmount    (SushiSwap::withdraw postcondition)
+  Time: 2.97s / 4.08s
 
-========================================
-Spec: specification/Uniswap.spec
-Contract: Uniswap.sol:UniswapToken
-Rules: 4
-  FAIL:
-    Rule transferMovesBalances: UniswapToken::transfer ERROR, UniswapToken::transferFrom ERROR
-      - Invariant 'forall (address a) _balances[a] >= 0' might not hold
-    Rule transferFromAdjustsAllowance: UniswapToken::transfer ERROR, UniswapToken::transferFrom ERROR
-      - Invariant 'forall (address a) _balances[a] >= 0' might not hold
-    Rule approveSetsAllowance: UniswapToken::transfer ERROR, UniswapToken::transferFrom ERROR
-      - Invariant 'forall (address a) _balances[a] >= 0' might not hold
-    Rule totalSupplyInvariant: UniswapToken::[constructor] ERROR, transfer ERROR, transferFrom ERROR
-      - _totalSupply == old(_totalSupply) might not hold (constructor)
-      - Invariant '_balances[a] >= 0' might not hold (transfer/transferFrom)
-Timing:
-  [TIME] transferMovesBalances.sol: 4.03s
-  [TIME] transferFromAdjustsAllowance.sol: 3.79s
-  [TIME] approveSetsAllowance.sol: 3.93s
-  [TIME] totalSupplyInvariant.sol: 3.89s
-  [TIME] Total rule verification time: 15.65s
-  [TIME] End-to-end time: 16.80s
+--- 4. Uniswap.spec (UniswapToken) --- FAIL
+  [ERROR] transferMovesBalances         (invariant violation in transfer/transferFrom)
+  [ERROR] transferFromAdjustsAllowance  (invariant violation in transfer/transferFrom)
+  [ERROR] approveSetsAllowance          (invariant violation in transfer/transferFrom)
+  [ERROR] totalSupplyInvariant          (constructor postcondition + invariant violation)
+  Time: 16.92s / 18.07s
 
-========================================
-Spec: specification/WETH9.spec
-Contract: WETH9.sol:WETH9
-Rules: 3
-  FAIL:
-    Rule depositIncreasesBalance: WETH9::[receive] ERROR, withdraw ERROR, [implicit_constructor] ERROR, [receive_ether_selfdestruct] ERROR
-      - Invariant 'address(this).balance == __verifier_sum_uint(balanceOf)' might not hold
-    Rule withdrawDecreasesBalance: same invariant violations
-  ERROR (annotation error):
-    Rule transferFromRespectsAllowance: SOLC-VERIFY ERROR
-      - Undeclared identifier 'max_uint'
-Timing:
-  [TIME] depositIncreasesBalance.sol: 2.89s
-  [TIME] withdrawDecreasesBalance.sol: 2.80s
-  [TIME] transferFromRespectsAllowance.sol: 0.69s
-  [TIME] Total rule verification time: 6.38s
-  [TIME] End-to-end time: 7.45s
+--- 5. WETH9.spec (WETH9) --- FAIL
+  [ERROR] depositIncreasesBalance          (invariant violation in receive/withdraw/constructor)
+  [ERROR] withdrawDecreasesBalance         (invariant violation in receive/withdraw/constructor)
+  [ERROR] transferFromRespectsAllowance    (invariant violation in receive/withdraw/constructor)
+  Time: 9.71s / 10.81s
 
-========================================
-Spec: specification/WrappedToken.spec
-Contract: WrappedToken.sol:WrappedToken
-Rules: 4
-  PASS:
-    Rule wrapMintsTokens: ALL OK
-    Rule transferMovesBalances: ALL OK
-    Rule transferFromAdjustsAllowance: ALL OK
-    Rule approveSetsAllowance: ALL OK
-  FAIL: (none)
-Timing:
-  [TIME] wrapMintsTokens.sol: 4.52s
-  [TIME] transferMovesBalances.sol: 4.44s
-  [TIME] transferFromAdjustsAllowance.sol: 4.58s
-  [TIME] approveSetsAllowance.sol: 4.27s
-  [TIME] Total rule verification time: 17.81s
-  [TIME] End-to-end time: 19.06s
+--- 6. WrappedToken.spec (WrappedToken) --- PASS
+  [OK]    wrapMintsTokens
+  [OK]    transferMovesBalances
+  [OK]    transferFromAdjustsAllowance
+  [OK]    approveSetsAllowance
+  Time: 18.94s / 20.13s
 
-========================================
-SUMMARY: 9 spec files, 26 rules total
-  3/9 specs passed all rules (CareerOneToken, StableDEX, WrappedToken)
-  4/9 specs had verification errors (Ballot, Curve, Uniswap, WETH9)
-  1/9 specs INCONCLUSIVE (Balancer)
-  2/9 specs had annotation errors (SushiSwap, WETH9-transferFrom)
-  Total end-to-end time: ~95.20s
+--- 7. balancer.spec (Balancer) --- FAIL
+  [TIMEOUT] swapUpdatesPoolConsistently    (Balancer::swap TIMEOUT)
+  Time: 10.74s / 11.84s
+
+--- 8. ballot.spec (Ballot) --- FAIL
+  [OK]    giveRightSetsUnitWeight
+  [ERROR] delegateAddsWeight        (Ballot::delegate postcondition)
+  [ERROR] voteAccumulatesWeight     (Ballot::vote postcondition)
+  Time: 5.74s / 6.88s
+
+--- 9. curve.spec (Curve) --- FAIL
+  [ERROR] swapMatchesPricing    (Curve::swap postcondition)
+  Time: 1.98s / 3.04s
+
+==============================================================================

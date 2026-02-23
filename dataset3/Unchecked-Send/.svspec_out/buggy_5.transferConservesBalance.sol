@@ -12,10 +12,6 @@ event OwnershipTransferred(address indexed previousOwner, address indexed newOwn
    * @dev The Ownable constructor sets the original `owner` of the contract to the sender
    * account.
    */
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice postcondition forall (uint256 value) forall (address to) to == msg.sender || balanceOf[msg.sender] == __verifier_old_uint(balanceOf[msg.sender]) - value
-    /// @notice postcondition forall (uint256 value) forall (address to) to == msg.sender || balanceOf[to] == __verifier_old_uint(balanceOf[to]) + value
   constructor () {
     owner = msg.sender;
   }
@@ -31,10 +27,6 @@ event OwnershipTransferred(address indexed previousOwner, address indexed newOwn
    * @dev Allows the current owner to transfer control of the contract to a newOwner.
    * @param newOwner The address to transfer ownership to.
    */
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice postcondition forall (uint256 value) forall (address to) to == msg.sender || balanceOf[msg.sender] == __verifier_old_uint(balanceOf[msg.sender]) - value
-    /// @notice postcondition forall (uint256 value) forall (address to) to == msg.sender || balanceOf[to] == __verifier_old_uint(balanceOf[to]) + value
   function transferOwnership(address newOwner) public onlyOwner {
     require(newOwner != address(0));
     emit OwnershipTransferred(owner, newOwner);
@@ -68,6 +60,13 @@ event Burn(address indexed from, uint256 value);
      *
      * Initializes contract with initial supply tokens to the creator of the contract
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition initialSupply >= 0
     constructor(
       uint256 initialSupply,
       string memory tokenName,
@@ -106,6 +105,15 @@ event Burn(address indexed from, uint256 value);
      * @param _to The address of the recipient
      * @param _value the amount to send
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
+    /// @notice postcondition _to == msg.sender || balanceOf[msg.sender] == __verifier_old_uint(balanceOf[msg.sender]) - _value
+    /// @notice postcondition _to == msg.sender || balanceOf[_to] == __verifier_old_uint(balanceOf[_to]) + _value
     function transfer(address _to, uint256 _value) public returns (bool success) {
         _transfer(msg.sender, _to, _value);
         return true;
@@ -119,6 +127,13 @@ event Burn(address indexed from, uint256 value);
      * @param _to The address of the recipient
      * @param _value the amount to send
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(_value <= allowance[_from][msg.sender]);     // Check allowance
         allowance[_from][msg.sender] -= _value;
@@ -133,6 +148,13 @@ event Burn(address indexed from, uint256 value);
      * @param _spender The address authorized to spend
      * @param _value the max amount they can spend
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function approve(address _spender, uint256 _value) public
         returns (bool success) {
         allowance[msg.sender][_spender] = _value;
@@ -150,6 +172,13 @@ event Burn(address indexed from, uint256 value);
      *
      * @param _value the amount of money to burn
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function burn(uint256 _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
@@ -165,6 +194,13 @@ event Burn(address indexed from, uint256 value);
      * @param _from the address of the sender
      * @param _value the amount of money to burn
      */
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
         require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
         require(_value <= allowance[_from][msg.sender]);    // Check allowance

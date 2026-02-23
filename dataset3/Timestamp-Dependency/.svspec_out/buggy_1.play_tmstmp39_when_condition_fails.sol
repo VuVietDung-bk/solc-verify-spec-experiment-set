@@ -77,18 +77,6 @@ contract HotDollarsToken is EIP20Interface {
   uint8 public decimals;                //How many decimals to show.
   string public symbol;                 //An identifier: eg SBX
 
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition MAX_UINT256 >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     constructor() {
         totalSupply = 3 * 1e28;                        
         name = "HotDollars Token";                          
@@ -96,19 +84,6 @@ contract HotDollarsToken is EIP20Interface {
         symbol = "HDS";
         balances[msg.sender] = totalSupply; 
     }
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition MAX_UINT256 >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
     function transfer(address _to, uint256 _value) public override returns (bool success) {
         require(balances[msg.sender] >= _value);
         balances[msg.sender] -= _value;
@@ -117,19 +92,6 @@ contract HotDollarsToken is EIP20Interface {
         return true;
     }
 
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition MAX_UINT256 >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success) {
         uint256 allowance = allowed[_from][msg.sender];
         require(balances[_from] >= _value && allowance >= _value);
@@ -141,52 +103,15 @@ contract HotDollarsToken is EIP20Interface {
         emit Transfer(_from, _to, _value); //solhint-disable-line indent, no-unused-vars
         return true;
     }
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition MAX_UINT256 >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
 function bug_tmstmp13() view public returns (bool) {
     return block.timestamp >= 1546300800;
   }
 
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition MAX_UINT256 >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function balanceOf(address _owner) public view override returns (uint256 balance) {
         return balances[_owner];
     }
 uint256 bugv_tmstmp5 = block.timestamp;
 
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition MAX_UINT256 >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
     function approve(address _spender, uint256 _value) public override returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value); //solhint-disable-line indent, no-unused-vars
@@ -194,18 +119,6 @@ uint256 bugv_tmstmp5 = block.timestamp;
     }
 uint256 bugv_tmstmp1 = block.timestamp;
 
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition MAX_UINT256 >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function allowance(address _owner, address _spender) public view override returns (uint256 remaining) {
         return allowed[_owner][_spender];
     }

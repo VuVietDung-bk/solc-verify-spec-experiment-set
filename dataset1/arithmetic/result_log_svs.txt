@@ -1,218 +1,97 @@
-SOLC-VERIFY-SPEC Results Log
-Benchmark: dataset1/arithmetic
-Date: 2026-02-11
-Total spec files: 14
-Note: All runs use --arithmetic mod-overflow
+==============================================================================
+SOLC-VERIFY-SPEC Results Log — dataset1/arithmetic
+Date: 2026-02-23
+Flag: --arithmetic mod-overflow
+==============================================================================
 
-========================================
-Spec: specification/insecure_transfer.spec
-Contract: insecure_transfer.sol:IntegerOverflowAdd
-Rules: 1
-  FAIL:
-    Rule transfer_conserves: IntegerOverflowAdd::transfer: ERROR
-      - Function can terminate with overflow
-  PASS:
-    IntegerOverflowAdd::[implicit_constructor]: OK
-Timing:
-  [TIME] insecure_transfer.transfer_conserves.sol: 5.25s
-  [TIME] Total rule verification time: 5.25s
-  [TIME] End-to-end time: 6.14s
+SUMMARY TABLE
+==============================================================================
+#  | Spec File                                    | Contract                                  | Rules | Result
+---|----------------------------------------------|-------------------------------------------|-------|-------
+1  | insecure_transfer.spec                       | IntegerOverflowAdd                        |   1   | FAIL
+2  | integer_overflow_1.spec                      | Overflow                                  |   1   | FAIL
+3  | integer_overflow_add.spec                    | IntegerOverflowAdd                        |   1   | FAIL
+4  | integer_overflow_benign_1.spec               | IntegerOverflowBenign1                    |   1   | FAIL
+5  | integer_overflow_mapping_sym_1.spec          | IntegerOverflowMappingSym1                |   1   | FAIL
+6  | integer_overflow_minimal.spec                | IntegerOverflowMinimal                    |   1   | PASS
+7  | integer_overflow_mul.spec                    | IntegerOverflowMul                        |   1   | FAIL
+8  | integer_overflow_multitx_multifunc_feasible.spec | IntegerOverflowMultiTxMultiFuncFeasible |   1   | FAIL
+9  | integer_overflow_multitx_onefunc_feasible.spec  | IntegerOverflowMultiTxOneFuncFeasible  |   1   | FAIL
+10 | overflow_simple_add.spec                     | Overflow_Add                              |   1   | FAIL
+11 | overflow_single_tx.spec                      | IntegerOverflowSingleTransaction          |   3   | FAIL
+12 | timelock.spec                                | TimeLock                                  |   1   | FAIL
+13 | token.spec                                   | Token                                     |   1   | FAIL
+14 | tokensalechallenge.spec                      | TokenSaleChallenge                        |   2   | FAIL
+==============================================================================
 
-========================================
-Spec: specification/integer_overflow_1.spec
-Contract: integer_overflow_1.sol:Overflow
-Rules: 1
-  FAIL:
-    Rule add_no_overflow: Overflow::add: ERROR
-      - Function can terminate with overflow
-  PASS:
-    Overflow::[implicit_constructor]: OK
-Timing:
-  [TIME] integer_overflow_1.add_no_overflow.sol: 1.35s
-  [TIME] Total rule verification time: 1.35s
-  [TIME] End-to-end time: 2.22s
+OVERALL STATISTICS
+==============================================================================
+Total specs:  14
+Total rules:  17
+PASS:          1  ( 7.14%)
+FAIL:         13  (92.86%)
+==============================================================================
 
-========================================
-Spec: specification/integer_overflow_add.spec
-Contract: integer_overflow_add.sol:IntegerOverflowAdd
-Rules: 1
-  FAIL:
-    Rule add_no_overflow: IntegerOverflowAdd::run: ERROR
-      - Function can terminate with overflow
-  PASS:
-    IntegerOverflowAdd::[implicit_constructor]: OK
-Timing:
-  [TIME] integer_overflow_add.add_no_overflow.sol: 1.32s
-  [TIME] Total rule verification time: 1.32s
-  [TIME] End-to-end time: 2.20s
+DETAILED RESULTS
+==============================================================================
 
-========================================
-Spec: specification/integer_overflow_benign_1.spec
-Contract: integer_overflow_benign_1.sol:IntegerOverflowBenign1
-Rules: 1
-  FAIL:
-    Rule run_underflow_should_revert: IntegerOverflowBenign1::run: ERROR
-      - Function can terminate with overflow
-  PASS:
-    IntegerOverflowBenign1::[implicit_constructor]: OK
-Timing:
-  [TIME] integer_overflow_benign_1.run_underflow_should_revert.sol: 1.30s
-  [TIME] Total rule verification time: 1.30s
-  [TIME] End-to-end time: 2.18s
+--- 1. insecure_transfer.spec (IntegerOverflowAdd) --- FAIL
+  [ERROR] transfer_conserves  (IntegerOverflowAdd::transfer overflow)
+  Time: 4.26s / 5.20s
 
-========================================
-Spec: specification/integer_overflow_mapping_sym_1.spec
-Contract: integer_overflow_mapping_sym_1.sol:IntegerOverflowMappingSym1
-Rules: 1
-  FAIL:
-    Rule init_underflow_should_revert: IntegerOverflowMappingSym1::init: ERROR
-      - Function can terminate with overflow
-  PASS:
-    IntegerOverflowMappingSym1::[implicit_constructor]: OK
-Timing:
-  [TIME] integer_overflow_mapping_sym_1.init_underflow_should_revert.sol: 5.00s
-  [TIME] Total rule verification time: 5.00s
-  [TIME] End-to-end time: 5.87s
+--- 2. integer_overflow_1.spec (Overflow) --- FAIL
+  [ERROR] add_no_overflow  (Overflow::add overflow)
+  Time: 1.48s / 2.38s
 
-========================================
-Spec: specification/integer_overflow_minimal.spec
-Contract: integer_overflow_minimal.sol:IntegerOverflowMinimal
-Rules: 1
-  PASS:
-    Rule sub_no_underflow: ALL OK
-    IntegerOverflowMinimal::run: OK
-    IntegerOverflowMinimal::[implicit_constructor]: OK
-  FAIL: (none)
-Timing:
-  [TIME] integer_overflow_minimal.sub_no_underflow.sol: 1.46s
-  [TIME] Total rule verification time: 1.46s
-  [TIME] End-to-end time: 2.39s
+--- 3. integer_overflow_add.spec (IntegerOverflowAdd) --- FAIL
+  [ERROR] add_no_overflow  (IntegerOverflowAdd::run overflow)
+  Time: 1.43s / 2.43s
 
-========================================
-Spec: specification/integer_overflow_mul.spec
-Contract: integer_overflow_mul.sol:IntegerOverflowMul
-Rules: 1
-  FAIL:
-    Rule mul_no_overflow: IntegerOverflowMul::run: ERROR
-      - Function can terminate with overflow
-  PASS:
-    IntegerOverflowMul::[implicit_constructor]: OK
-Timing:
-  [TIME] integer_overflow_mul.mul_no_overflow.sol: 1.39s
-  [TIME] Total rule verification time: 1.39s
-  [TIME] End-to-end time: 2.25s
+--- 4. integer_overflow_benign_1.spec (IntegerOverflowBenign1) --- FAIL
+  [ERROR] run_underflow_should_revert  (IntegerOverflowBenign1::run overflow)
+  Time: 1.43s / 2.34s
 
-========================================
-Spec: specification/integer_overflow_multitx_multifunc_feasible.spec
-Contract: integer_overflow_multitx_multifunc_feasible.sol:IntegerOverflowMultiTxMultiFuncFeasible
-Rules: 1
-  FAIL:
-    Rule run_after_init: IntegerOverflowMultiTxMultiFuncFeasible::run: ERROR
-      - Function can terminate with overflow
-  PASS:
-    IntegerOverflowMultiTxMultiFuncFeasible::init: OK
-    IntegerOverflowMultiTxMultiFuncFeasible::[implicit_constructor]: OK
-Timing:
-  [TIME] integer_overflow_multitx_multifunc_feasible.run_after_init.sol: 1.42s
-  [TIME] Total rule verification time: 1.42s
-  [TIME] End-to-end time: 2.24s
+--- 5. integer_overflow_mapping_sym_1.spec (IntegerOverflowMappingSym1) --- FAIL
+  [ERROR] init_underflow_should_revert  (IntegerOverflowMappingSym1::init overflow)
+  Time: 4.00s / 4.91s
 
-========================================
-Spec: specification/integer_overflow_multitx_onefunc_feasible.spec
-Contract: integer_overflow_multitx_onefunc_feasible.sol:IntegerOverflowMultiTxOneFuncFeasible
-Rules: 1
-  FAIL:
-    Rule run_after_second_call: IntegerOverflowMultiTxOneFuncFeasible::run: ERROR
-      - Function can terminate with overflow
-  PASS:
-    IntegerOverflowMultiTxOneFuncFeasible::[implicit_constructor]: OK
-Timing:
-  [TIME] integer_overflow_multitx_onefunc_feasible.run_after_second_call.sol: 1.34s
-  [TIME] Total rule verification time: 1.34s
-  [TIME] End-to-end time: 2.15s
+--- 6. integer_overflow_minimal.spec (IntegerOverflowMinimal) --- PASS
+  [OK]    sub_no_underflow
+  Time: 1.38s / 2.24s
 
-========================================
-Spec: specification/overflow_simple_add.spec
-Contract: overflow_simple_add.sol:Overflow_Add
-Rules: 1
-  FAIL:
-    Rule add_no_overflow: Overflow_Add::add: ERROR
-      - Function can terminate with overflow
-  PASS:
-    Overflow_Add::[implicit_constructor]: OK
-Timing:
-  [TIME] overflow_simple_add.add_no_overflow.sol: 1.47s
-  [TIME] Total rule verification time: 1.47s
-  [TIME] End-to-end time: 2.28s
+--- 7. integer_overflow_mul.spec (IntegerOverflowMul) --- FAIL
+  [ERROR] mul_no_overflow  (IntegerOverflowMul::run overflow)
+  Time: 1.44s / 2.32s
 
-========================================
-Spec: specification/overflow_single_tx.spec
-Contract: overflow_single_tx.sol:IntegerOverflowSingleTransaction
-Rules: 3
-  FAIL:
-    Rule add_state_no_overflow: ALL 6 functions ERROR (can terminate with overflow)
-    Rule mul_state_no_overflow: ALL 6 functions ERROR (can terminate with overflow)
-    Rule sub_state_no_underflow: 5/6 functions ERROR (can terminate with overflow)
-      IntegerOverflowSingleTransaction::underflowtostate: OK (only in sub_state_no_underflow rule)
-  PASS:
-    IntegerOverflowSingleTransaction::[implicit_constructor]: OK (all rules)
-Timing:
-  [TIME] add_state_no_overflow.sol: 1.79s
-  [TIME] mul_state_no_overflow.sol: 1.71s
-  [TIME] sub_state_no_underflow.sol: 2.05s
-  [TIME] Total rule verification time: 5.55s
-  [TIME] End-to-end time: 6.40s
+--- 8. integer_overflow_multitx_multifunc_feasible.spec (IntegerOverflowMultiTxMultiFuncFeasible) --- FAIL
+  [ERROR] run_after_init  (IntegerOverflowMultiTxMultiFuncFeasible::run overflow)
+  Time: 1.56s / 2.45s
 
-========================================
-Spec: specification/timelock.spec
-Contract: timelock.sol:TimeLock
-Rules: 1
-  FAIL:
-    Rule locktime_monotone: TimeLock::deposit: ERROR, TimeLock::increaseLockTime: ERROR
-      - Function can terminate with overflow
-  PASS:
-    TimeLock::withdraw: OK
-    TimeLock::[implicit_constructor]: OK
-Timing:
-  [TIME] timelock.locktime_monotone.sol: 10.72s
-  [TIME] Total rule verification time: 10.72s
-  [TIME] End-to-end time: 11.60s
+--- 9. integer_overflow_multitx_onefunc_feasible.spec (IntegerOverflowMultiTxOneFuncFeasible) --- FAIL
+  [ERROR] run_after_second_call  (IntegerOverflowMultiTxOneFuncFeasible::run overflow)
+  Time: 1.48s / 2.37s
 
-========================================
-Spec: specification/token.spec
-Contract: token.sol:Token
-Rules: 1
-  FAIL:
-    Rule transfer_balance_conservation: Token::transfer: ERROR
-      - Function can terminate with overflow
-  PASS:
-    Token::[constructor]: OK
-    Token::balanceOf: OK
-Timing:
-  [TIME] token.transfer_balance_conservation.sol: 10.70s
-  [TIME] Total rule verification time: 10.70s
-  [TIME] End-to-end time: 11.61s
+--- 10. overflow_simple_add.spec (Overflow_Add) --- FAIL
+  [ERROR] add_no_overflow  (Overflow_Add::add overflow)
+  Time: 1.34s / 2.22s
 
-========================================
-Spec: specification/tokensalechallenge.spec
-Contract: tokensalechallenge.sol:TokenSaleChallenge
-Rules: 2
-  FAIL:
-    Rule buy_adds_balance: TokenSaleChallenge::buy: ERROR, TokenSaleChallenge::sell: ERROR
-      - Function can terminate with overflow
-    Rule sell_decreases_balance: TokenSaleChallenge::buy: ERROR, TokenSaleChallenge::sell: ERROR
-      - Function can terminate with overflow
-  PASS:
-    TokenSaleChallenge::[constructor]: OK (all rules)
-    TokenSaleChallenge::isComplete: OK (all rules)
-Timing:
-  [TIME] buy_adds_balance.sol: 10.75s
-  [TIME] sell_decreases_balance.sol: 10.72s
-  [TIME] Total rule verification time: 21.48s
-  [TIME] End-to-end time: 22.36s
+--- 11. overflow_single_tx.spec (IntegerOverflowSingleTransaction) --- FAIL
+  [ERROR] add_state_no_overflow   (multiple functions overflow)
+  [ERROR] mul_state_no_overflow   (multiple functions overflow)
+  [ERROR] sub_state_no_underflow  (5/6 functions overflow, underflowtostate OK)
+  Time: 5.73s / 6.70s
 
-========================================
-SUMMARY: 14 spec files, 17 rules total
-  13/14 specs found overflow errors (EXPECTED - these are arithmetic vulnerability benchmarks)
-  1/14 specs passed all rules (integer_overflow_minimal)
-  Total end-to-end time: ~81.89s
+--- 12. timelock.spec (TimeLock) --- FAIL
+  [ERROR] locktime_monotone  (TimeLock::deposit, increaseLockTime overflow)
+  Time: 7.26s / 8.20s
+
+--- 13. token.spec (Token) --- FAIL
+  [ERROR] transfer_balance_conservation  (Token::transfer overflow)
+  Time: 8.42s / 9.40s
+
+--- 14. tokensalechallenge.spec (TokenSaleChallenge) --- FAIL
+  [ERROR] buy_adds_balance       (TokenSaleChallenge::buy, sell overflow)
+  [ERROR] sell_decreases_balance (TokenSaleChallenge::buy, sell overflow)
+  Time: 21.83s / 23.41s
+
+==============================================================================

@@ -17,8 +17,6 @@ contract MultiOwnable {
   * @dev The Ownable constructor sets the original `owner` of the contract to the sender
   * account.
   */
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
   constructor() {
     root = msg.sender;
     owners[root] = root;
@@ -37,11 +35,6 @@ contract MultiOwnable {
   * Note that the "onlyOwner" modifier is missing here.
   */
   // <yes> <report> ACCESS_CONTROL
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition owners[_owner] == address(0)
-    /// @notice precondition _owner != address(0)
-    /// @notice postcondition owners[_owner] != address(0)
   function newOwner(address _owner) external returns (bool) {
     require(_owner != address(0));
     owners[_owner] = msg.sender;
@@ -51,8 +44,6 @@ contract MultiOwnable {
   /**
     * @dev Deleting owners
     */
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
   function deleteOwner(address _owner) onlyOwner external returns (bool) {
     require(owners[_owner] == msg.sender || (owners[_owner] != address(0) && msg.sender == root));
     owners[_owner] = address(0);
@@ -62,6 +53,8 @@ contract MultiOwnable {
 
 contract TestContract is MultiOwnable {
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function withdrawAll() public onlyOwner {
     payable(msg.sender).transfer(address(this).balance);
   }

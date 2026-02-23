@@ -74,6 +74,19 @@ function claimReward_re_ent25() public {
 contract TokenERC20 {
     // Public variables of the token
   mapping(address => uint) userBalance_re_ent12;
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition counter_re_ent42 >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition userBalance_re_ent12[msg.sender] > 0
+    /// @notice postcondition userBalance_re_ent12[msg.sender] == 0
+    /// @notice postcondition __verifier_old_uint(address(this).balance) >= address(this).balance && __verifier_old_uint(address(this).balance) - address(this).balance <= __verifier_old_uint(userBalance_re_ent12[msg.sender])
 function withdrawBalance_re_ent12() public{
         // send userBalance[msg.sender] ethers to msg.sender
         // if mgs.sender is a contract, it will call its fallback function
@@ -87,6 +100,16 @@ function withdrawBalance_re_ent12() public{
   uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
   bool not_called_re_ent41 = true;
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition counter_re_ent42 >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_re_ent41() public{
         require(not_called_re_ent41);
     if( ! (payable(msg.sender).send(1 ether) ) ){
@@ -98,6 +121,16 @@ function bug_re_ent41() public{
 
     // This creates an array with all balances
   uint256 counter_re_ent42 =0;
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition counter_re_ent42 >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function callme_re_ent42() public{
         require(counter_re_ent42<=5);
 	if( ! (payable(msg.sender).send(10 ether) ) ){
@@ -108,6 +141,16 @@ function callme_re_ent42() public{
   mapping (address => uint256) public balanceOf;
   address payable lastPlayer_re_ent2;
       uint jackpot_re_ent2;
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition counter_re_ent42 >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 	  function buyTicket_re_ent2() public{
 	    if (!(lastPlayer_re_ent2.send(jackpot_re_ent2)))
         revert();
@@ -124,6 +167,17 @@ function callme_re_ent42() public{
 
     // This notifies clients about the amount burnt
   mapping(address => uint) balances_re_ent31;
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition counter_re_ent42 >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _weiToWithdraw >= 0
 function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
         require(balances_re_ent31[msg.sender] >= _weiToWithdraw);
         // limit the withdrawal
@@ -137,6 +191,17 @@ function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
      *
      * Initializes contract with initial supply tokens to the creator of the contract
      */
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition counter_re_ent42 >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition initialSupply >= 0
     constructor(
         uint256 initialSupply,
         string memory tokenName,
@@ -177,6 +242,17 @@ function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
      * @param _to The address of the recipient
      * @param _value the amount to send
      */
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition counter_re_ent42 >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function transfer(address _to, uint256 _value) public returns (bool success) {
         _transfer(msg.sender, _to, _value);
         return true;
@@ -191,6 +267,17 @@ function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
      * @param _to The address of the recipient
      * @param _value the amount to send
      */
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition counter_re_ent42 >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(_value <= allowance[_from][msg.sender]);     // Check allowance
         allowance[_from][msg.sender] -= _value;
@@ -206,6 +293,17 @@ function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
      * @param _spender The address authorized to spend
      * @param _value the max amount they can spend
      */
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition counter_re_ent42 >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function approve(address _spender, uint256 _value) public
         returns (bool success) {
         allowance[msg.sender][_spender] = _value;
@@ -224,6 +322,17 @@ function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
      *
      * @param _value the amount of money to burn
      */
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition counter_re_ent42 >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function burn(uint256 _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
@@ -240,6 +349,17 @@ function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
      * @param _from the address of the sender
      * @param _value the amount of money to burn
      */
+    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition counter_re_ent42 >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition jackpot_re_ent2 >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _value >= 0
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
         require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
         require(_value <= allowance[_from][msg.sender]);    // Check allowance
@@ -258,25 +378,6 @@ function withdrawFunds_re_ent31 (uint256 _weiToWithdraw) public {
 contract TTC is Ownable, TokenERC20 {
 
   mapping(address => uint) balances_re_ent17;
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent9 >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _weiToWithdraw >= 0
 function withdrawFunds_re_ent17 (uint256 _weiToWithdraw) public {
         require(balances_re_ent17[msg.sender] >= _weiToWithdraw);
         // limit the withdrawal
@@ -291,24 +392,6 @@ function withdrawFunds_re_ent17 (uint256 _weiToWithdraw) public {
 
     /* This generates a public event on the blockchain that will notify clients */
   bool not_called_re_ent13 = true;
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent9 >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
 function bug_re_ent13() public{
         require(not_called_re_ent13);
         (bool success,)=payable(msg.sender).call{value: 1 ether}("");
@@ -320,25 +403,6 @@ function bug_re_ent13() public{
   event FrozenFunds(address target, bool frozen);
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent9 >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition initialSupply >= 0
     constructor(
         uint256 initialSupply,
         string memory tokenName,
@@ -360,25 +424,6 @@ function bug_re_ent13() public{
     /// @notice Create `mintedAmount` tokens and send it to `target`
     /// @param target Address to receive the tokens
     /// @param mintedAmount the amount of tokens it will receive
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent9 >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition mintedAmount >= 0
     function mintToken(address target, uint256 mintedAmount) onlyOwner public {
         balanceOf[target] += mintedAmount;
         totalSupply += mintedAmount;
@@ -389,24 +434,6 @@ function bug_re_ent13() public{
     /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent9 >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function freezeAccount(address target, bool freeze) onlyOwner public {
         frozenAccount[target] = freeze;
         emit FrozenFunds(target, freeze);
@@ -415,76 +442,17 @@ function bug_re_ent13() public{
     /// @notice Allow users to buy tokens for `newBuyPrice` eth and sell tokens for `newSellPrice` eth
     /// @param newSellPrice Price the users can sell to the contract
     /// @param newBuyPrice Price users can buy from the contract
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent9 >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition newSellPrice >= 0
-    /// @notice precondition newBuyPrice >= 0
     function setPrices(uint256 newSellPrice, uint256 newBuyPrice) onlyOwner public {
         sellPrice = newSellPrice;
         buyPrice = newBuyPrice;
     }
 
     /// @notice Buy tokens from contract by sending ether
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent9 >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition address(this).balance >= 0
-    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function buy() payable public {
         uint amount = msg.value / buyPrice;                 // calculates the amount
         _transfer(address(this), msg.sender, amount);       // makes the transfers
     }
 mapping(address => uint) balances_re_ent36;
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent9 >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function withdraw_balances_re_ent36 () public {
       if (payable(msg.sender).send(balances_re_ent36[msg.sender ]))
           balances_re_ent36[msg.sender] = 0;
@@ -492,25 +460,6 @@ mapping(address => uint) balances_re_ent36;
 
     /// @notice Sell `amount` tokens to contract
     /// @param amount amount of tokens to be sold
-    /// @notice precondition forall (address extraVar0) balances_re_ent21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent40[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent9 >= 0
-    /// @notice precondition forall (address extraVar0) redeemableEther_re_ent25[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) userBalance_re_ent12[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition counter_re_ent42 >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition jackpot_re_ent2 >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent31[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent17[extraVar0] >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition forall (address extraVar0) balances_re_ent36[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition amount >= 0
     function sell(uint256 amount) public {
         address myAddress = address(this);
         require(myAddress.balance >= amount * sellPrice);   // checks if the contract has enough ether to buy

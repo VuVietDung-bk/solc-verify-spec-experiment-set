@@ -54,12 +54,6 @@ contract AcunarToken is ERC20Interface{
     //allowed[0x1111....][0x22222...] = 100;
     
     
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     constructor(){
         supply = 200000000;
         founder = msg.sender;
@@ -67,25 +61,12 @@ contract AcunarToken is ERC20Interface{
     }
 
     
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function allowance(address tokenOwner, address spender) view public override returns(uint){
         return allowed[tokenOwner][spender];
     }
     
     
     //approve allowance
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition tokens >= 0
     function approve(address spender, uint tokens) public override returns(bool){
         require(balances[msg.sender] >= tokens);
         require(tokens > 0);
@@ -96,13 +77,6 @@ contract AcunarToken is ERC20Interface{
     }
     
     //transfer tokens from the  owner account to the account that calls the function
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition tokens >= 0
     function transferFrom(address from, address to, uint tokens) public virtual override returns(bool){
         require(allowed[from][to] >= tokens);
         require(balances[from] >= tokens);
@@ -116,34 +90,15 @@ contract AcunarToken is ERC20Interface{
         return true;
     }
     
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function totalSupply() public view override returns (uint){
         return supply;
     }
     
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function balanceOf(address tokenOwner) public view override returns (uint balance){
          return balances[tokenOwner];
      }
      
      
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition tokens >= 0
     function transfer(address to, uint tokens) public virtual override returns (bool success){
          require(balances[msg.sender] >= tokens && tokens > 0);
          

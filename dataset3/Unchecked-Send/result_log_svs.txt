@@ -1,0 +1,178 @@
+==============================================================================
+  SVSPEC RESULT LOG - dataset3/Unchecked-Send
+  Flag: (none)
+  Date: 2026-02-23
+==============================================================================
+
+Spec files: 13
+Total rules: 59
+Total rule verification time: ~219.95s
+Total end-to-end time: ~234.71s
+
+==============================================================================
+SUMMARY TABLE
+==============================================================================
+  # | Spec File                        | Contract            | Rules | Result
+----+----------------------------------+---------------------+-------+--------
+  1 | buggy_1.spec                     | HotDollarsToken     |   3   | PASS
+  2 | buggy_19_eth_bank.spec           | ethBank             |   4   | PASS
+  3 | buggy_19_owned.spec              | owned               |   2   | PASS
+  4 | buggy_20_ramp_instant_eth_pool.spec | RampInstantEthPool |   1   | PASS
+  5 | buggy_20_stoppable.spec          | RampInstantPool     |   5   | PASS
+  6 | buggy_23.spec                    | ERC20               |   5   | FAIL
+  7 | buggy_33.spec                    | Staking             |   7   | FAIL
+  8 | buggy_34.spec                    | LollypopToken       |   5   | FAIL
+  9 | buggy_45.spec                    | StockBet            |   7   | PASS
+ 10 | buggy_47.spec                    | AcunarIEO           |   6   | FAIL
+ 11 | buggy_50.spec                    | digitalNotary       |   9   | PASS
+ 12 | buggy_5_token_erc20.spec         | TokenERC20          |   2   | FAIL
+ 13 | buggy_5_ttc.spec                 | TTC                 |   3   | FAIL
+
+==============================================================================
+OVERALL STATISTICS
+==============================================================================
+  PASS: 7/13 (53.85%)
+  FAIL: 6/13 (46.15%)
+
+==============================================================================
+DETAILED RESULTS
+==============================================================================
+
+--- buggy_1.spec (HotDollarsToken) ---
+  Command: svspec buggy_1.sol:HotDollarsToken specification/buggy_1.spec
+  Rules: 3
+  [OK] transferConservesBalance
+  [OK] transferFromConservesBalance
+  [OK] approveUpdatesAllowance
+  Rule time: 6.42s | End-to-end: 7.43s
+  Result: PASS
+
+--- buggy_19_eth_bank.spec (ethBank) ---
+  Command: svspec buggy_19.sol:ethBank specification/buggy_19_eth_bank.spec
+  Rules: 4
+  [OK] onlyOwnerCanWithdrawForUser
+  [OK] onlyOwnerCanMoveBrick
+  [OK] onlyOwnerCanMoveBrickContracts
+  [OK] onlyOwnerCanJoinFlexible
+  Rule time: 21.78s | End-to-end: 22.94s
+  Result: PASS
+
+--- buggy_19_owned.spec (owned) ---
+  Command: svspec buggy_19.sol:owned specification/buggy_19_owned.spec
+  Rules: 2
+  [OK] onlyOwnerCanTransferOwnership
+  [OK] transferOwnershipUpdatesOwner
+  Rule time: 10.88s | End-to-end: 12.05s
+  Result: PASS
+
+--- buggy_20_ramp_instant_eth_pool.spec (RampInstantEthPool) ---
+  Command: svspec buggy_20.sol:RampInstantEthPool specification/buggy_20_ramp_instant_eth_pool.spec
+  Rules: 1
+  [OK] onlyOwnerCanWithdrawFunds
+  Rule time: 5.27s | End-to-end: 6.43s
+  Result: PASS
+
+--- buggy_20_stoppable.spec (RampInstantPool) ---
+  Command: svspec buggy_20.sol:RampInstantPool specification/buggy_20_stoppable.spec
+  Rules: 5
+  [OK] onlyOwnerCanWithdrawAllFunds
+  [OK] onlyOwnerCanSetLimits
+  [OK] setLimitsUpdatesAmounts
+  [OK] onlyOwnerCanSetSwapsContract
+  [OK] onlyOwnerCanSetIsActive
+  Rule time: 26.50s | End-to-end: 27.73s
+  Result: PASS
+
+--- buggy_23.spec (ERC20) ---
+  Command: svspec buggy_23.sol:ERC20 specification/buggy_23.spec
+  Rules: 5
+  [OK] transferConservesBalance
+  [OK] transferFromConservesBalance
+  [ERROR] burnDecreasesBalance (ERC20::totalSupply, ERC20::balanceOf, ERC20::allowance, ERC20::transfer, ERC20::approve, ERC20::transferFrom, ERC20::increaseAllowance, ERC20::decreaseAllowance)
+  [OK] approveUpdatesAllowance
+  [OK] increaseAllowanceUpdatesCorrectly
+  Rule time: 27.90s | End-to-end: 29.32s
+  Result: FAIL
+
+--- buggy_33.spec (Staking) ---
+  Command: svspec buggy_33.sol:Staking specification/buggy_33.spec
+  Rules: 7
+  [ERROR] onlyOwnerCanChangeStakeTokens (Staking::startStaking, Staking::changeStakeTokens)
+  [ERROR] changeStakeTokensUpdatesMin (Staking::startStaking)
+  [ERROR] onlyOwnerCanChangeStakeTime (Staking::startStaking, Staking::changeStakeTime)
+  [ERROR] changeStakeTimeUpdatesTime (Staking::startStaking)
+  [ERROR] onlyOwnerCanChangeStakingPercentage (Staking::startStaking, Staking::changeStakingPercentage)
+  [ERROR] onlyOwnerCanLockWithdrawals (Staking::startStaking, Staking::lockWithdrawals)
+  [ERROR] lockWithdrawalsSetsLock (Staking::startStaking)
+  Rule time: 36.31s | End-to-end: 37.50s
+  Result: FAIL
+
+--- buggy_34.spec (LollypopToken) ---
+  Command: svspec buggy_34.sol:LollypopToken specification/buggy_34.spec
+  Rules: 5
+  [ANNOTATION ERROR] transferUpdatesBalances
+  [ANNOTATION ERROR] transferFromUpdatesBalances
+  [ERROR] approveUpdatesAllowance (LollypopToken::transfer, LollypopToken::multiTransfer, LollypopToken::transferFrom)
+  [ERROR] increaseAllowanceUpdatesCorrectly (LollypopToken::transfer, LollypopToken::multiTransfer, LollypopToken::transferFrom)
+  [ERROR] decreaseAllowanceUpdatesCorrectly (LollypopToken::transfer, LollypopToken::multiTransfer, LollypopToken::transferFrom)
+  Rule time: 19.35s | End-to-end: 20.70s
+  Result: FAIL
+
+--- buggy_45.spec (StockBet) ---
+  Command: svspec buggy_45.sol:StockBet specification/buggy_45.spec
+  Rules: 7
+  [OK] onlyOwnerCanSetOracle
+  [OK] setOracleUpdatesOracle
+  [OK] onlyOracleCanSetInitialPrice
+  [OK] setInitialPriceUpdatesPrice
+  [OK] onlyOwnerCanCloseGame
+  [OK] onlyOracleCanSetFinalPrice
+  [OK] setFinalPriceUpdatesPrice
+  Rule time: 22.96s | End-to-end: 24.04s
+  Result: PASS
+
+--- buggy_47.spec (AcunarIEO) ---
+  Command: svspec buggy_47.sol:AcunarIEO specification/buggy_47.spec
+  Rules: 6
+  [ANNOTATION ERROR] transferConservesBalance (Undeclared identifier)
+  [ANNOTATION ERROR] transferFromConservesBalance (Undeclared identifier)
+  [ANNOTATION ERROR] onlyAdminCanHalt (Undeclared identifier)
+  [ANNOTATION ERROR] onlyAdminCanUnhalt (Undeclared identifier)
+  [ANNOTATION ERROR] onlyAdminCanChangeDepositAddress (Undeclared identifier)
+  [ANNOTATION ERROR] changeDepositAddressUpdatesDeposit (Undeclared identifier)
+  Rule time: 4.78s | End-to-end: 6.02s
+  Result: FAIL
+
+--- buggy_50.spec (digitalNotary) ---
+  Command: svspec buggy_50.sol:digitalNotary specification/buggy_50.spec
+  Rules: 9
+  [OK] onlyManagerCanSetHashFee
+  [OK] setHashFeeUpdatesFee
+  [OK] onlyManagerCanSetChangeHashOwnerFee
+  [OK] setChangeHashOwnerFeeUpdatesFee
+  [OK] onlyManagerCanSetContractActive
+  [OK] setContractActiveUpdatesState
+  [OK] onlyManagerCanSetManager
+  [OK] setManagerUpdatesManager
+  [OK] registerHashIncrementsLength
+  Rule time: 36.19s | End-to-end: 37.34s
+  Result: PASS
+
+--- buggy_5_token_erc20.spec (TokenERC20) ---
+  Command: svspec buggy_5.sol:TokenERC20 specification/buggy_5_token_erc20.spec
+  Rules: 2
+  [OK] transferConservesBalance
+  [ERROR] burnDecreasesBalance (TokenERC20::burn)
+  Rule time: 7.95s | End-to-end: 9.26s
+  Result: FAIL
+
+--- buggy_5_ttc.spec (TTC) ---
+  Command: svspec buggy_5.sol:TTC specification/buggy_5_ttc.spec
+  Rules: 3
+  [OK] onlyOwnerCanFreeze
+  [OK] onlyOwnerCanMint
+  [ERROR] mintTokenIncreasesBalance (TTC::mintToken)
+  Rule time: 12.19s | End-to-end: 13.44s
+  Result: FAIL
+
+==============================================================================

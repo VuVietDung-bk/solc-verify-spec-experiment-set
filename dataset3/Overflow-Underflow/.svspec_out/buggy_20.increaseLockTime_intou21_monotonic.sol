@@ -31,9 +31,17 @@ contract Ownable {
 
   mapping(address => uint) public lockTime_intou21;
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition _secondsToIncrease >= 0
+    /// @notice postcondition lockTime_intou21[msg.sender] > __verifier_old_uint(lockTime_intou21[msg.sender])
 function increaseLockTime_intou21(uint _secondsToIncrease) public {
         lockTime_intou21[msg.sender] += _secondsToIncrease;  //overflow
     }
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdraw_intou21() public {
         require(block.timestamp > lockTime_intou21[msg.sender]);    
         uint transferValue_intou21 = 10;           
@@ -41,12 +49,19 @@ function withdraw_intou21() public {
     }
   address public owner;
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition p_intou40 >= 0
   function bug_intou40(uint8 p_intou40) public{
     uint8 vundflw1=0;
     vundflw1 = vundflw1 + p_intou40;   // overflow bug
 }
   event OwnerChanged(address oldOwner, address newOwner);
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         owner = msg.sender;
     }
@@ -56,6 +71,9 @@ function withdraw_intou21() public {
         _;
     }
 
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function changeOwner(address _newOwner) external onlyOwner {
         owner = _newOwner;
         emit OwnerChanged(msg.sender, _newOwner);
@@ -291,16 +309,6 @@ abstract contract RampInstantPool is Ownable, Stoppable, RampInstantPoolInterfac
 contract RampInstantEthPool is RampInstantPool {
   uint16 internal constant ETH_TYPE_ID = 1;
 
-    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _minSwapAmount >= 0
-    /// @notice precondition _maxSwapAmount >= 0
     constructor(
         address payable _swapsContract,
         uint256 _minSwapAmount,
@@ -313,27 +321,10 @@ contract RampInstantEthPool is RampInstantPool {
         )
     {}
 
-    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function availableFunds() public view override returns(uint256) {
         return address(this).balance;
     }
 
-    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _amount >= 0
     function withdrawFunds(
         address payable _to,
         uint256 _amount
@@ -342,15 +333,6 @@ contract RampInstantEthPool is RampInstantPool {
         return true;
     }
 
-    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _amount >= 0
     function sendFundsToSwap(
         uint256 _amount
     ) public override onlyActive onlySwapsContract isWithinLimits(_amount) returns(bool success) {
@@ -361,34 +343,12 @@ contract RampInstantEthPool is RampInstantPool {
     /**
      * This adapter can receive eth payments, but no other use of the fallback function is allowed.
      */
-    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition address(this).balance >= 0
-    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     receive() external payable override {
         if (msg.sender != swapsContract) {
             emit ReceivedFunds(msg.sender, msg.value);
         }
     }
 
-    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition address(this).balance >= 0
-    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     fallback() external payable {
         revert("invalid pool function called");
     }

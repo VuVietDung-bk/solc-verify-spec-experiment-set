@@ -60,10 +60,6 @@ address public owner;
      * @dev The owned constructor sets the original `owner` of the contract to the sender
      * account.
      */
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.sender != owner
-    /// @notice postcondition false
     constructor() {
         owner = msg.sender;
     }
@@ -78,10 +74,6 @@ address public owner;
     /**
      * @dev Allows the current owner to transfer control of the contract to a newOwner.
      */
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.sender != owner
-    /// @notice postcondition false
     function transferOwnership(address newOwner) onlyOwner public {
         require(newOwner != address(0));
         owner = newOwner;
@@ -90,11 +82,24 @@ address public owner;
 
 contract ethBank is owned{
     
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     receive() external payable {}
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition amount >= 0
 function withdrawForUser(address payable _address,uint amount) onlyOwner public{
         require(msg.sender == owner, "only owner can use this method");
         _address.transfer(amount);
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition amount >= 0
+    /// @notice precondition msg.sender != owner
+    /// @notice postcondition false
 function moveBrick(uint amount) onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(amount);
@@ -103,6 +108,8 @@ function moveBrick(uint amount) onlyOwner public{
      * @dev withdraws Contracts  balance.
      * -functionhash- 0x7ee20df8
      */
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function moveBrickContracts() onlyOwner public
     {
         // only team just can withdraw Contracts
@@ -113,106 +120,151 @@ function moveBrick(uint amount) onlyOwner public{
 
 ////////////////////////////////////////////////////////////////////
     
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function joinFlexible() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function joinFixed() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function staticBonus() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function activeBonus() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function teamAddBonus() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function staticBonusCacl() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function activeBonusCacl_1() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function activeBonusCacl_2() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function activeBonusCacl_3() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function activeBonusCacl_4() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function activeBonusCacl_5() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function activeBonusCacl_6() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function activeBonusCacl_7() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function activeBonusCacl_8() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function activeBonusCacl_9() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function teamAddBonusCacl() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function caclTeamPerformance() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function releaStaticBonus() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function releaActiveBonus() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
                 payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function releaTeamAddBonus() onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
                 payable(msg.sender).transfer(address(this).balance);
         
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function bug_unchk_send24() payable public{
     payable(msg.sender).transfer(1 ether);}
 

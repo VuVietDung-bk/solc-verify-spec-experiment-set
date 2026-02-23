@@ -1,162 +1,164 @@
-SOLC-VERIFY-SPEC Results Log
-Benchmark: dataset1/unchecked_low_level_calls
-Date: 2026-02-11
-Total spec files: 13
+==============================================================================
+SOLC-VERIFY-SPEC Results Log — dataset1/unchecked_low_level_calls
+Date: 2026-02-23
+==============================================================================
 
-========================================
-Spec: specification/0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.spec
-Contract: 0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.sol:Caller
-Rules: 1
-  FAIL:
-    Rule callAddress_should_succeed: Caller::callAddress: ERROR
-      - Postcondition 'false' might not hold
-Timing:
-  [TIME] callAddress_should_succeed.sol: 1.54s
-  [TIME] End-to-end time: 2.43s
+SUMMARY TABLE
+==============================================================================
+#  | Spec File                    | Contract         | Rules | Result
+---|------------------------------|------------------|-------|-------
+1  | 0x0cbe...acc9.spec           | Caller           |   1   | FAIL
+2  | 0x3e01...c859.spec           | MultiplicatorX4  |   1   | FAIL
+3  | 0x3f2e...1de2.spec           | WhaleGiveaway2   |   1   | FAIL
+4  | 0x52d2...d984.spec           | EtherGet         |   1   | FAIL
+5  | 0x5aa8...e739.spec           | MultiplicatorX3  |   1   | FAIL
+6  | 0x6104...4fd6.spec           | SimpleWallet     |   3   | FAIL
+7  | 0x70f9...2db4.spec           | HomeyJar         |   1   | FAIL
+8  | 0x78c2...1c37.spec           | WhaleGiveaway1   |   3   | FAIL
+9  | 0x7a43...5489.spec           | WhaleGiveaway1   |   3   | FAIL
+10 | 0x806a...a707.spec           | Pie              |   3   | FAIL
+11 | 0x84d9...a4a8.spec           | WedIndex         |   1   | PASS
+12 | 0x958a...bc06.spec           | Marriage         |   1   | PASS
+13 | 0xb051...d1d6.spec           | Splitter         |   1   | FAIL
+14 | 0xb37f...cc27.spec           | SimpleWallet     |   3   | FAIL
+15 | 0xb7c5...04f7.spec           | keepMyEther      |   1   | FAIL
+16 | 0xd201...ef76.spec           | Pie              |   3   | FAIL
+17 | 0xdb1c...99d2.spec           | FreeEth          |   3   | FAIL
+18 | 0xe4ea...f3bf.spec           | Honey            |   3   | FAIL
+19 | 0xe82f...fb87.spec           | Freebie          |   3   | FAIL
+20 | 0xf29e...7707.spec           | B                |   1   | FAIL
+21 | 0xf70d...3b9e.spec           | WhaleGiveaway2   |   3   | FAIL
+22 | lotto.spec                   | Lotto            |   2   | FAIL
+23 | mishandled.spec              | SendBack         |   1   | FAIL
+24 | unchecked_return_value.spec  | ReturnValue      |   1   | FAIL
+==============================================================================
 
-========================================
-Spec: specification/0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.spec
-Contract: 0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.sol:MultiplicatorX4
-Rules: 1
-  FAIL:
-    Rule Command_unchecked: MultiplicatorX4::Command: ERROR
-      - Postcondition 'address(this).balance == old(address(this).balance) - msg.value' might not hold
-Timing:
-  [TIME] Command_unchecked.sol: 1.86s
-  [TIME] End-to-end time: 2.78s
+OVERALL STATISTICS
+==============================================================================
+Total specs:  24
+Total rules:  45
+PASS:          2  ( 8.33%)
+FAIL:         22  (91.67%)
+==============================================================================
 
-========================================
-Spec: specification/0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.spec
-Contract: 0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.sol:WhaleGiveaway2
-Rules: 1
-  FAIL:
-    Rule Command_must_debit: WhaleGiveaway2::Command: ERROR
-      - Postcondition 'address(this).balance == old(address(this).balance) - msg.value' might not hold
-Timing:
-  [TIME] Command_must_debit.sol: 1.79s
-  [TIME] End-to-end time: 2.72s
+DETAILED RESULTS
+==============================================================================
 
-========================================
-Spec: specification/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.spec
-Contract: 0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.sol:EtherGet
-Rules: 1
-  FAIL:
-    Rule getTokens_should_succeed: EtherGet::getTokens: ERROR
-      - Postcondition 'false' might not hold
-Timing:
-  [TIME] getTokens_should_succeed.sol: 1.98s
-  [TIME] End-to-end time: 2.87s
+--- 1. 0x0cbe...acc9.spec (Caller) --- FAIL
+  [ERROR] callAddress_should_succeed  (Caller::callAddress postcondition 'false')
+  Time: 1.46s / 2.33s
 
-========================================
-Spec: specification/0x5aa88d2901c68fda244f1d0584400368d2c8e739.spec
-Contract: 0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3
-Rules: 1
-  FAIL:
-    Rule Command_must_debit: MultiplicatorX3::Command: ERROR
-      - Postcondition 'address(this).balance == old(address(this).balance) - msg.value' might not hold
-Timing:
-  [TIME] Command_must_debit.sol: 1.78s
-  [TIME] End-to-end time: 2.66s
+--- 2. 0x3e01...c859.spec (MultiplicatorX4) --- FAIL
+  [ERROR] Command_unchecked  (MultiplicatorX4::Command postcondition)
+  Time: 1.92s / 2.84s
 
-========================================
-Spec: specification/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.spec
-Contract: 0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol:HomeyJar
-Rules: 1
-  FAIL:
-    Rule Command_must_debit: HomeyJar::Command: ERROR
-      - Postcondition 'address(this).balance == old(address(this).balance) - msg.value' might not hold
-Timing:
-  [TIME] Command_must_debit.sol: 1.78s
-  [TIME] End-to-end time: 2.67s
+--- 3. 0x3f2e...1de2.spec (WhaleGiveaway2) --- FAIL
+  [ERROR] Command_must_debit  (WhaleGiveaway2::Command postcondition)
+  Time: 1.88s / 2.85s
 
-========================================
-Spec: specification/0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.spec
-Contract: 0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.sol:WedIndex
-Rules: 1
-  PASS:
-    Rule execute_must_debit_balance: ALL OK
-  FAIL: (none)
-Timing:
-  [TIME] execute_must_debit_balance.sol: 2.06s
-  [TIME] End-to-end time: 2.98s
+--- 4. 0x52d2...d984.spec (EtherGet) --- FAIL
+  [ERROR] getTokens_should_succeed  (EtherGet::getTokens postcondition 'false')
+  Time: 2.44s / 3.69s
 
-========================================
-Spec: specification/0x958a8f594101d2c0485a52319f29b2647f2ebc06.spec
-Contract: 0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol:Marriage
-Rules: 1
-  PASS:
-    Rule execute_must_debit_balance: ALL OK
-  FAIL: (none)
-Timing:
-  [TIME] execute_must_debit_balance.sol: 3.00s
-  [TIME] End-to-end time: 4.11s
+--- 5. 0x5aa8...e739.spec (MultiplicatorX3) --- FAIL
+  [ERROR] Command_must_debit  (MultiplicatorX3::Command postcondition)
+  Time: 1.85s / 2.88s
 
-========================================
-Spec: specification/0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.spec
-Contract: 0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.sol:Splitter
-Rules: 1
-  PASS: (none)
-  FAIL:
-    Rule fundPuppets_must_spend_value: Splitter::fundPuppets: ERROR
-      - Postcondition 'address(this).balance == __verifier_old_uint(address(this).balance) - msg.value' might not hold at end of function.
-Timing:
-  [TIME] fundPuppets_must_spend_value.sol: 2.94s
-  [TIME] Total rule verification time: 2.94s
-  [TIME] End-to-end time: 4.07s
+--- 6. 0x6104...4fd6.spec (SimpleWallet) --- FAIL
+  [ERROR] sendMoney_unchecked       (SimpleWallet::sendMoney postcondition, withdrawAll precondition)
+  [ERROR] only_owner_can_withdraw   (SimpleWallet::withdrawAll preconditions)
+  [ERROR] only_owner_can_sendMoney  (SimpleWallet::withdrawAll precondition)
+  Time: 5.63s / 6.57s
 
-========================================
-Spec: specification/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.spec
-Contract: 0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.sol:keepMyEther
-Rules: 1
-  FAIL:
-    Rule withdraw_resets_balance: keepMyEther::withdraw: ERROR
-      - Postcondition 'address(this).balance == old(address(this).balance) - old(balances[msg.sender])' might not hold
-Timing:
-  [TIME] withdraw_resets_balance.sol: 1.65s
-  [TIME] End-to-end time: 2.60s
+--- 7. 0x70f9...2db4.spec (HomeyJar) --- FAIL
+  [ERROR] Command_must_debit  (HomeyJar::Command postcondition)
+  Time: 1.75s / 2.72s
 
-========================================
-Spec: specification/lotto.spec
-Contract: lotto.sol:Lotto
-Rules: 2
-  FAIL:
-    Rule sendToWinner_must_transfer: Lotto::sendToWinner: ERROR
-      - Postcondition 'address(this).balance == old(address(this).balance) - winAmount' might not hold
-    Rule withdrawLeftOver_must_transfer: Lotto::withdrawLeftOver: ERROR
-      - Postcondition 'address(this).balance == 0' might not hold
-Timing:
-  [TIME] sendToWinner_must_transfer.sol: 1.55s
-  [TIME] withdrawLeftOver_must_transfer.sol: 1.70s
-  [TIME] Total rule verification time: 3.25s
-  [TIME] End-to-end time: 4.16s
+--- 8. 0x78c2...1c37.spec (WhaleGiveaway1) --- FAIL
+  [ERROR] Command_unchecked       (WhaleGiveaway1::Command postcondition)
+  [OK]    only_owner_can_Command
+  [ERROR] only_owner_can_withdraw (WhaleGiveaway1::withdraw postcondition 'false')
+  Time: 6.16s / 7.11s
 
-========================================
-Spec: specification/mishandled.spec
-Contract: mishandled.sol:SendBack
-Rules: 1
-  FAIL:
-    Rule withdrawBalance_must_transfer: SendBack::withdrawBalance: ERROR
-      - Postcondition 'address(this).balance == old(address(this).balance) - old(userBalances[msg.sender])' might not hold
-Timing:
-  [TIME] withdrawBalance_must_transfer.sol: 1.57s
-  [TIME] End-to-end time: 2.64s
+--- 9. 0x7a43...5489.spec (WhaleGiveaway1) --- FAIL
+  [ERROR] Command_unchecked       (WhaleGiveaway1::Command postcondition)
+  [OK]    only_owner_can_Command
+  [ERROR] only_owner_can_withdraw (WhaleGiveaway1::withdraw postcondition 'false')
+  Time: 5.79s / 6.76s
 
-========================================
-Spec: specification/unchecked_return_value.spec
-Contract: unchecked_return_value.sol:ReturnValue
-Rules: 1
-  FAIL:
-    Rule callnotchecked_should_revert_on_failure: ReturnValue::callnotchecked: ERROR
-      - Postcondition 'false' might not hold
-  PASS:
-    ReturnValue::callchecked: OK
-Timing:
-  [TIME] callnotchecked_should_revert_on_failure.sol: 1.74s
-  [TIME] End-to-end time: 2.65s
+--- 10. 0x806a...a707.spec (Pie) --- FAIL
+  [ERROR] Command_unchecked       (Pie::Command postcondition)
+  [OK]    only_owner_can_Command
+  [ERROR] only_owner_can_withdraw (Pie::withdraw postcondition 'false')
+  Time: 5.89s / 6.85s
 
-========================================
-SUMMARY: 13 spec files, 14 rules total
-  2/13 specs passed all rules (WedIndex, Marriage)
-  10/13 specs had verification errors
-  1/13 specs had compilation/annotation errors (Puppet - undeclared 'owner')
-  Total end-to-end time: ~37.27s
+--- 11. 0x84d9...a4a8.spec (WedIndex) --- PASS
+  [OK]    execute_must_debit_balance
+  Time: 2.15s / 3.19s
+
+--- 12. 0x958a...bc06.spec (Marriage) --- PASS
+  [OK]    execute_must_debit_balance
+  Time: 3.70s / 4.83s
+
+--- 13. 0xb051...d1d6.spec (Splitter) --- FAIL
+  [ERROR] fundPuppets_must_spend_value  (Splitter::fundPuppets postcondition)
+  Time: 3.37s / 4.66s
+
+--- 14. 0xb37f...cc27.spec (SimpleWallet) --- FAIL
+  [ERROR] sendMoney_unchecked       (SimpleWallet::sendMoney postcondition, withdrawAll precondition)
+  [ERROR] only_owner_can_withdraw   (SimpleWallet::withdrawAll preconditions)
+  [ERROR] only_owner_can_sendMoney  (SimpleWallet::withdrawAll precondition)
+  Time: 5.88s / 6.84s
+
+--- 15. 0xb7c5...04f7.spec (keepMyEther) --- FAIL
+  [ERROR] withdraw_resets_balance  (keepMyEther::withdraw postcondition)
+  Time: 1.81s / 2.74s
+
+--- 16. 0xd201...ef76.spec (Pie) --- FAIL
+  [ERROR] Command_unchecked       (Pie::Command postcondition)
+  [OK]    only_owner_can_Command
+  [ERROR] only_owner_can_withdraw (Pie::withdraw postcondition 'false')
+  Time: 6.07s / 7.09s
+
+--- 17. 0xdb1c...99d2.spec (FreeEth) --- FAIL
+  [ERROR] Command_unchecked       (FreeEth::Command postcondition)
+  [OK]    only_owner_can_Command
+  [ERROR] only_owner_can_withdraw (FreeEth::withdraw postcondition 'false')
+  Time: 5.92s / 6.90s
+
+--- 18. 0xe4ea...f3bf.spec (Honey) --- FAIL
+  [ERROR] Command_unchecked       (Honey::Command postcondition)
+  [OK]    only_owner_can_Command
+  [ERROR] only_owner_can_withdraw (Honey::withdraw postcondition 'false')
+  Time: 5.67s / 6.64s
+
+--- 19. 0xe82f...fb87.spec (Freebie) --- FAIL
+  [ERROR] Command_unchecked       (Freebie::Command postcondition)
+  [OK]    only_owner_can_Command
+  [ERROR] only_owner_can_withdraw (Freebie::withdraw postcondition 'false')
+  Time: 5.95s / 6.97s
+
+--- 20. 0xf29e...7707.spec (B) --- FAIL
+  [ERROR] go_unchecked  (B::go postcondition)
+  Time: 1.88s / 2.82s
+
+--- 21. 0xf70d...3b9e.spec (WhaleGiveaway2) --- FAIL
+  [ERROR] Command_unchecked       (WhaleGiveaway2::Command postcondition)
+  [OK]    only_owner_can_Command
+  [ERROR] only_owner_can_withdraw (WhaleGiveaway2::withdraw postcondition 'false')
+  Time: 6.44s / 7.72s
+
+--- 22. lotto.spec (Lotto) --- FAIL
+  [ERROR] sendToWinner_must_transfer     (Lotto::sendToWinner postcondition)
+  [ERROR] withdrawLeftOver_must_transfer (Lotto::withdrawLeftOver postcondition)
+  Time: 3.26s / 4.21s
+
+--- 23. mishandled.spec (SendBack) --- FAIL
+  [ERROR] withdrawBalance_must_transfer  (SendBack::withdrawBalance postcondition)
+  Time: 1.54s / 2.45s
+
+--- 24. unchecked_return_value.spec (ReturnValue) --- FAIL
+  [ERROR] callnotchecked_should_revert_on_failure  (ReturnValue::callnotchecked postcondition 'false')
+  Time: 1.64s / 2.55s
+
+==============================================================================

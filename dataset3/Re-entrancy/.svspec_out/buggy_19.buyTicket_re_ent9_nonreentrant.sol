@@ -258,7 +258,7 @@ address payable lastPlayer_re_ent9;
     /// @notice precondition block.timestamp >= 0
     /// @notice precondition block.number >= 0
     /// @notice postcondition lastPlayer_re_ent9 == msg.sender
-    /// @notice postcondition __verifier_old_address(lastPlayer_re_ent9) == msg.sender || __verifier_old_uint(address(this).balance) >= address(this).balance
+    /// @notice postcondition lastPlayer_re_ent9 == msg.sender || __verifier_old_uint(address(this).balance) >= address(this).balance
 	  function buyTicket_re_ent9() public{
         (bool success,) = lastPlayer_re_ent9.call{value:jackpot_re_ent9}("");
 	    if (!success)

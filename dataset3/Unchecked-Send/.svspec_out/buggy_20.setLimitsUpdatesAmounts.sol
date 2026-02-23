@@ -30,11 +30,6 @@ contract Ownable {
 address public owner;
 event OwnerChanged(address oldOwner, address newOwner);
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.sender == owner
-    /// @notice postcondition forall (uint256 minAmount) forall (uint256 maxAmount) minAmount > maxAmount || minSwapAmount == minAmount
-    /// @notice postcondition forall (uint256 minAmount) forall (uint256 maxAmount) minAmount > maxAmount || maxSwapAmount == maxAmount
     constructor() {
         owner = msg.sender;
     }
@@ -43,11 +38,6 @@ modifier onlyOwner() {
         _;
     }
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.sender == owner
-    /// @notice postcondition forall (uint256 minAmount) forall (uint256 maxAmount) minAmount > maxAmount || minSwapAmount == minAmount
-    /// @notice postcondition forall (uint256 minAmount) forall (uint256 maxAmount) minAmount > maxAmount || maxSwapAmount == maxAmount
     function changeOwner(address _newOwner) external onlyOwner {
         owner = _newOwner;
         emit OwnerChanged(msg.sender, _newOwner);

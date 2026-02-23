@@ -117,11 +117,6 @@ pragma solidity >=0.7.0;
 contract ERC20 is IERC20 {
     using SafeMath for uint256;
 
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
   function bug_tmstmp9() view public returns (bool) {
     return block.timestamp >= 1546300800;
   }
@@ -129,12 +124,6 @@ contract ERC20 is IERC20 {
   mapping (address => mapping (address => uint256)) private _allowed;
 
   address winner_tmstmp19;
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition startTime >= 0
 function play_tmstmp19(uint startTime) public {
 	uint _vtime = block.timestamp;
 	if (startTime + (5 * 1 days) == _vtime){
@@ -144,11 +133,6 @@ function play_tmstmp19(uint startTime) public {
     /**
      * @dev Total number of tokens in existence.
      */
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function totalSupply() public view override returns (uint256) {
         return _totalSupply;
     }
@@ -158,11 +142,6 @@ function play_tmstmp19(uint startTime) public {
      * @param owner The address to query the balance of.
      * @return A uint256 representing the amount owned by the passed address.
      */
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function balanceOf(address owner) public view override returns (uint256) {
         return _balances[owner];
     }
@@ -173,11 +152,6 @@ function play_tmstmp19(uint startTime) public {
      * @param spender address The address which will spend the funds.
      * @return A uint256 specifying the amount of tokens still available for the spender.
      */
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function allowance(address owner, address spender) public view override returns (uint256) {
         return _allowed[owner][spender];
     }
@@ -187,12 +161,6 @@ function play_tmstmp19(uint startTime) public {
      * @param to The address to transfer to.
      * @param value The amount to be transferred.
      */
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition value >= 0
     function transfer(address to, uint256 value) public override returns (bool) {
         _transfer(msg.sender, to, value);
         return true;
@@ -207,12 +175,6 @@ function play_tmstmp19(uint startTime) public {
      * @param spender The address which will spend the funds.
      * @param value The amount of tokens to be spent.
      */
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition value >= 0
     function approve(address spender, uint256 value) public override returns (bool) {
         _approve(msg.sender, spender, value);
         return true;
@@ -226,12 +188,6 @@ function play_tmstmp19(uint startTime) public {
      * @param to address The address which you want to transfer to
      * @param value uint256 the amount of tokens to be transferred
      */
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition value >= 0
     function transferFrom(address from, address to, uint256 value) public override returns (bool) {
         _transfer(from, to, value);
         _approve(from, msg.sender, _allowed[from][msg.sender].sub(value));
@@ -248,12 +204,6 @@ function play_tmstmp19(uint startTime) public {
      * @param spender The address which will spend the funds.
      * @param addedValue The amount of tokens to increase the allowance by.
      */
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition addedValue >= 0
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowed[msg.sender][spender].add(addedValue));
         return true;
@@ -269,12 +219,6 @@ function play_tmstmp19(uint startTime) public {
      * @param spender The address which will spend the funds.
      * @param subtractedValue The amount of tokens to decrease the allowance by.
      */
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition subtractedValue >= 0
     function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowed[msg.sender][spender].sub(subtractedValue));
         return true;
@@ -365,6 +309,11 @@ contract ERC20Burnable is ERC20 {
      * @dev Burns a specific amount of tokens.
      * @param value The amount of token to be burned.
      */
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition value >= 0
+    /// @notice precondition value > 0
+    /// @notice postcondition true
     function burn(uint256 value) public {
         _burn(msg.sender, value);
     }
@@ -374,6 +323,9 @@ contract ERC20Burnable is ERC20 {
      * @param from address The account whose tokens will be burned.
      * @param value uint256 The amount of token to be burned.
      */
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition value >= 0
     function burnFrom(address from, uint256 value) public {
         _burnFrom(from, value);
     }

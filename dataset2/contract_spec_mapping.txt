@@ -1,0 +1,63 @@
+# Contract-Spec Mapping — dataset2
+# Format: spec_file ~ ContractName
+# Note: sol file usually matches spec filename
+#
+
+## TOD
+ERC20.spec ~ ERC20
+eth_tx_order_dependence_minimal.spec ~ EthTxOrderDependenceMinimal
+odds_and_evens.spec ~ OddsAndEvens
+
+## arithmetic
+insecure_transfer.spec ~ IntegerOverflowAdd
+integer_overflow_add.spec ~ IntegerOverflowAdd
+integer_overflow_benign_1.spec ~ IntegerOverflowBenign1
+integer_overflow_minimal.spec ~ IntegerOverflowMinimal
+integer_overflow_mul.spec ~ IntegerOverflowMul
+integer_overflow_multitx_multifunc_feasible.spec ~ IntegerOverflowMultiTxMultiFuncFeasible
+integer_overflow_multitx_onefunc_feasible.spec ~ IntegerOverflowMultiTxOneFuncFeasible
+overflow_single_tx.spec ~ IntegerOverflowSingleTransaction
+tokensalechallenge.spec ~ TokenSaleChallenge
+
+## bad_randomness
+lottery.spec ~ Lottery
+
+## gasless_send
+CreditDepositBank_Attack.spec ~ CreditDepositBank
+
+## reentrancy
+etherstore.spec ~ EtherStore
+reentrance.spec ~ Reentrance
+reentrancy_bonus.spec ~ Reentrancy_bonus
+reentrancy_cross_function.spec ~ Reentrancy_cross_function
+reentrancy_dao.spec ~ ReentrancyDAO
+reentrancy_insecure.spec ~ Reentrancy_insecure
+reentrancy_simple.spec ~ Reentrance
+simple_dao.spec ~ SimpleDAO
+
+## safecontract
+CareerOnToken.spec ~ CareerOneToken
+StableDEX.spec ~ Core
+SushiSwap.spec ~ SushiSwap
+Uniswap.spec ~ UniswapToken
+WETH9.spec ~ WETH9
+WrappedToken.spec ~ WrappedToken
+balancer.spec ~ Balancer
+ballot.spec ~ Ballot
+curve.spec ~ Curve
+
+## time_manipulation
+HotDollarsToken.spec ~ HotDollarsToken
+TAMContract.spec ~ TAMCContract
+TTC.spec ~ TTC
+lottopollo.spec ~ lottopollo
+roulette.spec ~ Roulette
+timed_crowdsale.spec ~ TimedCrowdsale
+
+## unchecked_send
+0xec329ffc97d75fe03428ae155fc7793431487f63.spec ~ TokenSender
+0xf29ebe930a539a60279ace72c707cba851a57707.spec ~ B
+0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.spec ~ WhaleGiveaway2
+lotto.spec ~ Lotto
+mishandled.spec ~ SendBack
+unchecked_return_value.spec ~ ReturnValue

@@ -1,159 +1,84 @@
-SOLCSPEC Results Log
-Benchmark: dataset1/access_control
-Date: 2026-02-11
-Total spec files: 8
+==============================================================================
+SOLC-VERIFY-SPEC Results Log — dataset1/access_control
+Date: 2026-02-23
+==============================================================================
 
-========================================
-Spec: specification/incorrect_constructor_name1.spec
-Contract: incorrect_constructor_name1.sol:Missing
-Rules: 3
-  PASS:
-    Missing::withdraw: OK (all rules)
-    Missing::[implicit_constructor]: OK (all rules)
-    Rule withdraw_access_control: ALL OK
-  FAIL:
-    Rule constructor_is_only_callable_once: Missing::IamMissing: ERROR
-      - Postcondition 'forall (address non_owner) non_owner == address(0) || owner == non_owner' might not hold
-      - Postcondition 'forall (address non_owner) non_owner == __verifier_old_address(owner) || owner == non_owner' might not hold
-    Rule owner_is_constant_after_init: Missing::IamMissing: ERROR
-      - Postcondition 'owner == __verifier_old_address(owner)' might not hold
-Timing:
-  [TIME] constructor_is_only_callable_once.sol: 1.52s
-  [TIME] owner_is_constant_after_init.sol: 1.47s
-  [TIME] withdraw_access_control.sol: 1.51s
-  [TIME] Total rule verification time: 4.51s
-  [TIME] End-to-end time: 5.43s
+SUMMARY TABLE
+==============================================================================
+#  | Spec File                        | Contract    | Rules | Result
+---|----------------------------------|-------------|-------|-------
+1  | incorrect_constructor_name1.spec | Missing     |   3   | FAIL
+2  | incorrect_constructor_name2.spec | Missing     |   3   | FAIL
+3  | incorrect_constructor_name3.spec | Missing     |   3   | FAIL
+4  | mapping_write.spec               | Map         |   2   | PASS
+5  | multiowned_vulnerable.spec       | TestContract|   2   | PASS
+6  | unprotected0.spec                | Unprotected |   1   | FAIL
+7  | wallet_02_refund_nosub.spec      | Wallet      |   4   | FAIL
+8  | wallet_03_wrong_constructor.spec | Wallet      |   4   | FAIL
+9  | wallet_04_confused_sign.spec     | Wallet      |   3   | FAIL
+==============================================================================
 
-========================================
-Spec: specification/incorrect_constructor_name2.spec
-Contract: incorrect_constructor_name2.sol:Missing
-Rules: 3
-  PASS:
-    Missing::withdraw: OK (all rules)
-    Missing::[implicit_constructor]: OK (all rules)
-    Rule withdraw_access_control: ALL OK
-  FAIL:
-    Rule constructor_is_only_callable_once: Missing::missing: ERROR
-      - Postcondition 'forall (address non_owner) non_owner == address(0) || owner == non_owner' might not hold
-      - Postcondition 'forall (address non_owner) non_owner == __verifier_old_address(owner) || owner == non_owner' might not hold
-    Rule owner_is_constant_after_init: Missing::missing: ERROR
-      - Postcondition 'owner == __verifier_old_address(owner)' might not hold
-Timing:
-  [TIME] constructor_is_only_callable_once.sol: 1.50s
-  [TIME] owner_is_constant_after_init.sol: 1.48s
-  [TIME] withdraw_access_control.sol: 1.62s
-  [TIME] Total rule verification time: 4.60s
-  [TIME] End-to-end time: 5.46s
+OVERALL STATISTICS
+==============================================================================
+Total specs:  9
+Total rules: 25
+PASS:         2  (22.22%)
+FAIL:         7  (77.78%)
+==============================================================================
 
-========================================
-Spec: specification/incorrect_constructor_name3.spec
-Contract: incorrect_constructor_name3.sol:Missing
-Rules: 3
-  PASS:
-    Missing::withdraw: OK (all rules)
-    Missing::[implicit_constructor]: OK (all rules)
-    Rule withdraw_access_control: ALL OK
-  FAIL:
-    Rule constructor_is_only_callable_once: Missing::Constructor: ERROR
-      - Postcondition 'forall (address non_owner) non_owner == address(0) || owner == non_owner' might not hold
-      - Postcondition 'forall (address non_owner) non_owner == __verifier_old_address(owner) || owner == non_owner' might not hold
-    Rule owner_is_constant_after_init: Missing::Constructor: ERROR
-      - Postcondition 'owner == __verifier_old_address(owner)' might not hold
-Timing:
-  [TIME] constructor_is_only_callable_once.sol: 1.53s
-  [TIME] owner_is_constant_after_init.sol: 1.48s
-  [TIME] withdraw_access_control.sol: 1.62s
-  [TIME] Total rule verification time: 4.63s
-  [TIME] End-to-end time: 5.55s
+DETAILED RESULTS
+==============================================================================
 
-========================================
-Spec: specification/multiowned_vulnerable.spec
-Contract: multiowned_vulnerable.sol (no contract filter)
-Rules: 3
-  PASS:
-    Rule anyone_can_become_owner: ALL OK
-    Rule only_owner_can_withdraw: ALL OK
-  FAIL:
-    Rule root_is_constant: MultiOwnable::[constructor]: ERROR
-      - Postcondition 'root == __verifier_old_address(root)' might not hold at end of function.
-Timing:
-  [TIME] anyone_can_become_owner.sol: 2.26s
-  [TIME] root_is_constant.sol: 1.67s
-  [TIME] Total rule verification time: 3.94s
-  [TIME] End-to-end time: 5.06s
+--- 1. incorrect_constructor_name1.spec (Missing) --- FAIL
+  [OK]    withdraw_access_control
+  [ERROR] constructor_is_only_callable_once  (Missing::IamMissing postcondition)
+  [ERROR] owner_is_constant_after_init       (Missing::IamMissing postcondition)
+  Time: 4.76s / 5.69s
 
-========================================
-Spec: specification/unprotected0.spec
-Contract: unprotected0.sol:Unprotected
-Rules: 1
-  PASS:
-    Unprotected::[constructor]: OK
-  FAIL:
-    Rule change_owner_requires_owner: Unprotected::changeOwner: ERROR
-      - Postcondition 'owner == __verifier_old_address(owner)' might not hold
-Timing:
-  [TIME] change_owner_requires_owner.sol: 1.36s
-  [TIME] Total rule verification time: 1.36s
-  [TIME] End-to-end time: 2.23s
+--- 2. incorrect_constructor_name2.spec (Missing) --- FAIL
+  [OK]    withdraw_access_control
+  [ERROR] constructor_is_only_callable_once  (Missing::missing postcondition)
+  [ERROR] owner_is_constant_after_init       (Missing::missing postcondition)
+  Time: 5.24s / 6.34s
 
-========================================
-Spec: specification/wallet_02_refund_nosub.spec
-Contract: wallet_02_refund_nosub.sol:Wallet
-Rules: 4
-  PASS:
-    Rule balance_consistency_on_withdraw: ALL OK
-    Rule only_creator_can_migrate: ALL OK
-  FAIL:
-    Rule integrity_of_refund: Wallet::refund: ERROR
-      - Postcondition 'balances[msg.sender] == 0' might not hold
-    Rule refund_affects_contract_balance: Wallet::refund: ERROR
-      - Postcondition 'address(this).balance == __verifier_old_uint(address(this).balance) - __verifier_old_uint(balances[msg.sender])' might not hold
-Timing:
-  [TIME] integrity_of_refund.sol: 1.74s
-  [TIME] balance_consistency_on_withdraw.sol: 1.83s
-  [TIME] only_creator_can_migrate.sol: 1.88s
-  [TIME] refund_affects_contract_balance.sol: 1.87s
-  [TIME] Total rule verification time: 7.32s
-  [TIME] End-to-end time: 8.25s
+--- 3. incorrect_constructor_name3.spec (Missing) --- FAIL
+  [OK]    withdraw_access_control
+  [ERROR] constructor_is_only_callable_once  (Missing::Constructor postcondition)
+  [ERROR] owner_is_constant_after_init       (Missing::Constructor postcondition)
+  Time: 4.85s / 5.75s
 
-========================================
-Spec: specification/wallet_03_wrong_constructor.spec
-Contract: wallet_03_wrong_constructor.sol:Wallet
-Rules: 4
-  PASS:
-    Rule withdrawal_integrity: ALL OK
-    Rule owner_is_constant_on_other_functions: ALL OK
-  FAIL:
-    Rule anyone_can_become_creator: Wallet::initWallet: ERROR
-      - Postcondition 'creator != msg.sender' might not hold
-    Rule unauthorized_migration: Wallet::migrateTo: ERROR
-      - Postcondition 'address(this).balance != 0' might not hold
-Timing:
-  [TIME] anyone_can_become_creator.sol: 1.81s
-  [TIME] unauthorized_migration.sol: 1.65s
-  [TIME] withdrawal_integrity.sol: 1.73s
-  [TIME] owner_is_constant_on_other_functions.sol: 1.71s
-  [TIME] Total rule verification time: 6.90s
-  [TIME] End-to-end time: 7.84s
+--- 4. mapping_write.spec (Map) --- PASS
+  [OK]    owner_unchanged_by_set
+  [OK]    only_owner_can_withdraw
+  Time: 3.37s / 4.30s
 
-========================================
-Spec: specification/wallet_04_confused_sign.spec
-Contract: wallet_04_confused_sign.sol:Wallet
-Rules: 3
-  PASS:
-    Rule balance_decreases_on_withdraw: ALL OK
-  FAIL:
-    Rule withdraw_integrity: Wallet::withdraw: ERROR
-      - Postcondition 'false' might not hold
-    Rule only_creator_can_migrate: Wallet::migrateTo: ERROR
-      - Postcondition 'false' might not hold
-Timing:
-  [TIME] withdraw_integrity.sol: 1.61s
-  [TIME] balance_decreases_on_withdraw.sol: 1.62s
-  [TIME] only_creator_can_migrate.sol: 1.58s
-  [TIME] Total rule verification time: 4.82s
-  [TIME] End-to-end time: 5.74s
+--- 5. multiowned_vulnerable.spec (TestContract) --- PASS
+  [OK]    anyone_can_become_owner
+  [OK]    root_is_constant
+  Time: 3.61s / 4.58s
 
-========================================
-SUMMARY: 8 spec files, 24 rules total
-  Total end-to-end time: ~46.45s
+--- 6. unprotected0.spec (Unprotected) --- FAIL
+  [ERROR] change_owner_requires_owner  (Unprotected::changeOwner postcondition)
+  Time: 1.41s / 2.31s
+
+--- 7. wallet_02_refund_nosub.spec (Wallet) --- FAIL
+  [ERROR] integrity_of_refund                (Wallet::refund postcondition)
+  [OK]    balance_consistency_on_withdraw
+  [OK]    only_creator_can_migrate
+  [ERROR] refund_affects_contract_balance     (Wallet::refund postcondition)
+  Time: 7.57s / 8.52s
+
+--- 8. wallet_03_wrong_constructor.spec (Wallet) --- FAIL
+  [ERROR] anyone_can_become_creator          (Wallet::initWallet postcondition)
+  [ERROR] unauthorized_migration             (Wallet::migrateTo postcondition)
+  [OK]    withdrawal_integrity
+  [OK]    owner_is_constant_on_other_functions
+  Time: 7.42s / 8.37s
+
+--- 9. wallet_04_confused_sign.spec (Wallet) --- FAIL
+  [ERROR] withdraw_integrity                 (Wallet::withdraw postcondition 'false')
+  [OK]    balance_decreases_on_withdraw
+  [ERROR] only_creator_can_migrate           (Wallet::migrateTo postcondition 'false')
+  Time: 5.43s / 6.53s
+
+==============================================================================

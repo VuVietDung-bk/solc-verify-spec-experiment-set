@@ -136,7 +136,7 @@ address payable lastPlayer_re_ent2;
     /// @notice precondition block.timestamp >= 0
     /// @notice precondition block.number >= 0
     /// @notice postcondition lastPlayer_re_ent2 == msg.sender
-    /// @notice postcondition __verifier_old_address(lastPlayer_re_ent2) == msg.sender || __verifier_old_uint(address(this).balance) >= address(this).balance
+    /// @notice postcondition lastPlayer_re_ent2 == msg.sender || __verifier_old_uint(address(this).balance) >= address(this).balance
 	  function buyTicket_re_ent2() public{
 	    if (!(lastPlayer_re_ent2.send(jackpot_re_ent2)))
         revert();

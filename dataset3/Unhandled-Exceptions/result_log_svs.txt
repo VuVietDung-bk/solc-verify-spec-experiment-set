@@ -1,0 +1,324 @@
+==============================================================================
+  SVSPEC RESULT LOG - dataset3/Unhandled-Exceptions
+  Flag: (none)
+  Date: 2026-02-23
+==============================================================================
+
+Spec files: 18
+Total rules: 186
+Total rule verification time: ~1632.77s
+Total end-to-end time: ~1661.49s
+
+==============================================================================
+SUMMARY TABLE
+==============================================================================
+  # | Spec File                        | Contract                         | Rules | Result
+----+----------------------------------+----------------------------------+-------+--------
+  1 | buggy_19_eth_bank.spec           | ethBank                          |  12   | PASS
+  2 | buggy_19_owned.spec              | owned                            |   3   | PASS
+  3 | buggy_1_hot_dollars_token.spec   | HotDollarsToken                  |   6   | PASS
+  4 | buggy_20_escrowspool.spec        | RampInstantEscrowsPoolInterface  |   1   | PASS
+  5 | buggy_20_ethpool.spec            | RampInstantPool                  |   3   | PASS
+  6 | buggy_23_agr.spec                | AGR                              |   1   | PASS
+  7 | buggy_23_erc20.spec              | ERC20                            |  16   | PASS
+  8 | buggy_23_erc20_burnable.spec     | ERC20Burnable                    |   6   | FAIL
+  9 | buggy_33.spec                    | Staking                          |   1   | FAIL
+ 10 | buggy_34_lollypop_token.spec     | LollypopToken                    |  30   | FAIL
+ 11 | buggy_34_ownable.spec            | Ownable                          |   4   | PASS
+ 12 | buggy_45.spec                    | StockBet                         |  23   | PASS
+ 13 | buggy_47_acunar_ieo.spec         | AcunarIEO                        |  18   | FAIL
+ 14 | buggy_47_acunar_token.spec       | AcunarToken                      |  14   | FAIL
+ 15 | buggy_50.spec                    | digitalNotary                    |  19   | PASS
+ 16 | buggy_5_ownable.spec             | Ownable                          |   4   | FAIL
+ 17 | buggy_5_token_erc20.spec         | TokenERC20                       |  14   | PASS
+ 18 | buggy_5_ttc.spec                 | TTC                              |  11   | FAIL
+
+==============================================================================
+OVERALL STATISTICS
+==============================================================================
+  PASS: 11/18 (61.11%)
+  FAIL: 7/18 (38.89%)
+
+==============================================================================
+DETAILED RESULTS
+==============================================================================
+
+--- buggy_19_eth_bank.spec (ethBank) ---
+  Command: svspec buggy_19.sol:ethBank specification/buggy_19_eth_bank.spec
+  Rules: 12
+  [OK] sendToWinner_unchk20_ignores_send_failure
+  [OK] sendToWinner_unchk32_ignores_send_failure
+  [OK] unhandledsend_unchk26_no_check
+  [OK] unhandledsend_unchk38_no_check
+  [OK] cash_unchk46_no_check
+  [OK] bug_unchk3_no_check
+  [OK] my_func_unchk23_no_check
+  [OK] withdrawLeftOver_unchk9_no_check
+  [OK] callnotchecked_unchk25_no_check
+  [OK] UncheckedExternalCall_unchk4_empty_handlers
+  [OK] bug_unchk7_always_reverts
+  [OK] bug_unchk19_always_reverts
+  Rule time: 72.05s | End-to-end: 73.28s
+  Result: PASS
+
+--- buggy_19_owned.spec (owned) ---
+  Command: svspec buggy_19.sol:owned specification/buggy_19_owned.spec
+  Rules: 3
+  [OK] withdrawBal_unchk17_no_check
+  [OK] callnotchecked_unchk37_no_check
+  [OK] my_func_uncheck48_no_check
+  Rule time: 17.60s | End-to-end: 18.70s
+  Result: PASS
+
+--- buggy_1_hot_dollars_token.spec (HotDollarsToken) ---
+  Command: svspec buggy_1.sol:HotDollarsToken specification/buggy_1_hot_dollars_token.spec
+  Rules: 6
+  [OK] unhandledsend_unchk38_no_check
+  [OK] cash_unchk46_no_check
+  [OK] UncheckedExternalCall_unchk4_empty_handlers
+  [OK] bug_unchk7_always_reverts
+  [OK] my_func_unchk23_no_check
+  [OK] my_func_unchk35_no_check
+  Rule time: 28.15s | End-to-end: 29.24s
+  Result: PASS
+
+--- buggy_20_escrowspool.spec (RampInstantEscrowsPoolInterface) ---
+  Command: svspec buggy_20.sol:RampInstantEscrowsPoolInterface specification/buggy_20_escrowspool.spec
+  Rules: 1
+  [OK] sendToWinner_unchk20_ignores_send_failure
+  Rule time: 9.77s | End-to-end: 11.33s
+  Result: PASS
+
+--- buggy_20_ethpool.spec (RampInstantPool) ---
+  Command: svspec buggy_20.sol:RampInstantPool specification/buggy_20_ethpool.spec
+  Rules: 3
+  [OK] cash_unchk46_does_not_check_send_result
+  [OK] sendToWinner_unchk8_ignores_send_failure
+  [OK] sendToWinner_unchk32_ignores_send_failure
+  Rule time: 29.53s | End-to-end: 31.06s
+  Result: PASS
+
+--- buggy_23_agr.spec (AGR) ---
+  Command: svspec buggy_23.sol:AGR specification/buggy_23_agr.spec
+  Rules: 1
+  [OK] callnotchecked_unchk13_ignores_call_failure
+  Rule time: 9.41s | End-to-end: 11.09s
+  Result: PASS
+
+--- buggy_23_erc20.spec (ERC20) ---
+  Command: svspec buggy_23.sol:ERC20 specification/buggy_23_erc20.spec
+  Rules: 16
+  [OK] callnotchecked_unchk37_ignores_call_failure
+  [OK] my_func_uncheck36_ignores_call_failure
+  [OK] bug_unchk3_ignores_send_failure
+  [OK] bug_unchk7_ignores_send_failure
+  [OK] bug_unchk30_ignores_send_failure
+  [OK] bug_unchk39_ignores_send_failure
+  [OK] my_func_unchk23_ignores_send_failure
+  [OK] my_func_unchk35_ignores_send_failure
+  [OK] unhandledsend_unchk14_ignores_send_failure
+  [OK] unhandledsend_unchk38_ignores_send_failure
+  [OK] withdrawLeftOver_unchk9_ignores_send_failure
+  [OK] UncheckedExternalCall_unchk4_does_not_handle_failure
+  [OK] cash_unchk46_ignores_send_failure
+  [OK] sendToWinner_unchk8_ignores_send_failure
+  [OK] sendToWinner_unchk20_ignores_send_failure
+  [OK] sendToWinner_unchk32_ignores_send_failure
+  Rule time: 148.49s | End-to-end: 150.20s
+  Result: PASS
+
+--- buggy_23_erc20_burnable.spec (ERC20Burnable) ---
+  Command: svspec buggy_23.sol:ERC20Burnable specification/buggy_23_erc20_burnable.spec
+  Rules: 6
+  [OK] callnotchecked_unchk25_ignores_call_failure
+  [OK] bug_unchk19_ignores_send_failure
+  [OK] unhandledsend_unchk26_ignores_send_failure
+  [ANNOTATION ERROR] withdrawLeftOver_unchk33_ignores_send_failure (Undeclared identifier: payedOut_unchk33)
+  [OK] UncheckedExternalCall_unchk40_does_not_handle_failure
+  [OK] sendToWinner_unchk44_ignores_send_failure
+  Rule time: 44.66s | End-to-end: 46.28s
+  Result: FAIL
+
+--- buggy_33.spec (Staking) ---
+  Command: svspec buggy_33.sol:Staking specification/buggy_33.spec
+  Rules: 1
+  [ERROR] cash_unchk46_reverts_without_balance (Staking::cash_unchk46)
+  Rule time: 8.29s | End-to-end: 9.60s
+  Result: FAIL
+
+--- buggy_34_lollypop_token.spec (LollypopToken) ---
+  Command: svspec buggy_34.sol:LollypopToken specification/buggy_34_lollypop_token.spec
+  Rules: 30
+  [ERROR] cash_unchk46_ignores_send_failure
+  [ERROR] my_func_unchk11_ignores_send_failure
+  [ERROR] bug_unchk19_ignores_send_failure
+  [ERROR] unhandledsend_unchk26_ignores_send_failure
+  [ERROR] unhandledsend_unchk38_ignores_send_failure
+  [ERROR] bug_unchk7_ignores_send_failure
+  [ERROR] my_func_unchk23_ignores_send_failure
+  [ERROR] unhandledsend_unchk14_ignores_send_failure
+  [ERROR] bug_unchk30_ignores_send_failure
+  [ERROR] withdrawBal_unchk41_ignores_send_failure
+  [ERROR] my_func_unchk35_ignores_send_failure
+  [ERROR] unhandledsend_unchk2_ignores_send_failure
+  [ERROR] bug_unchk42_ignores_send_failure
+  [ERROR] withdrawBal_unchk17_ignores_send_failure
+  [ERROR] bug_unchk43_ignores_send_failure
+  [ERROR] withdrawLeftOver_unchk45_ignores_send_failure
+  [ERROR] my_func_uncheck12_ignores_call_failure
+  [ERROR] callnotchecked_unchk1_ignores_call_failure
+  [ERROR] my_func_uncheck48_ignores_call_failure
+  [ERROR] callnotchecked_unchk37_ignores_call_failure
+  [ERROR] callnotchecked_unchk25_ignores_call_failure
+  [ERROR] callnotchecked_unchk13_ignores_call_failure
+  [ERROR] my_func_uncheck36_ignores_call_failure
+  [ERROR] UncheckedExternalCall_unchk4_does_not_handle_failure
+  [ERROR] UncheckedExternalCall_unchk40_does_not_handle_failure
+  [ERROR] sendToWinner_unchk8_ignores_send_failure
+  [ERROR] sendToWinner_unchk20_ignores_send_failure
+  [ERROR] sendToWinner_unchk32_ignores_send_failure
+  [ERROR] sendToWinner_unchk44_ignores_send_failure
+  [ERROR] withdrawLeftOver_unchk33_ignores_send_failure
+  Note: All errors due to LollypopToken::transfer, ::multiTransfer, ::transferFrom precondition failures
+  Rule time: 392.88s | End-to-end: 394.90s
+  Result: FAIL
+
+--- buggy_34_ownable.spec (Ownable) ---
+  Command: svspec buggy_34.sol:Ownable specification/buggy_34_ownable.spec
+  Rules: 4
+  [OK] cash_unchk22_ignores_send_failure
+  [OK] bug_unchk31_ignores_send_failure
+  [OK] bug_unchk3_ignores_send_failure
+  [OK] withdrawLeftOver_unchk9_ignores_send_failure
+  Rule time: 51.17s | End-to-end: 52.99s
+  Result: PASS
+
+--- buggy_45.spec (StockBet) ---
+  Command: svspec buggy_45.sol:StockBet specification/buggy_45.spec
+  Rules: 23
+  [OK] cash_unchk46_ignores_send_failure
+  [OK] bug_unchk3_ignores_send_failure
+  [OK] bug_unchk7_ignores_send_failure
+  [OK] bug_unchk19_ignores_send_failure
+  [OK] my_func_unchk23_ignores_send_failure
+  [OK] my_func_unchk35_ignores_send_failure
+  [OK] unhandledsend_unchk14_ignores_send_failure
+  [OK] unhandledsend_unchk26_ignores_send_failure
+  [OK] unhandledsend_unchk38_ignores_send_failure
+  [OK] withdrawLeftOver_unchk9_ignores_send_failure
+  [OK] withdrawLeftOver_unchk33_ignores_send_failure
+  [OK] withdrawLeftOver_unchk45_ignores_send_failure
+  [OK] withdrawBal_unchk17_ignores_send_failure
+  [OK] my_func_uncheck48_ignores_call_failure
+  [OK] callnotchecked_unchk37_ignores_call_failure
+  [OK] callnotchecked_unchk25_ignores_call_failure
+  [OK] callnotchecked_unchk13_ignores_call_failure
+  [OK] my_func_uncheck36_ignores_call_failure
+  [OK] UncheckedExternalCall_unchk4_does_not_handle_failure
+  [OK] UncheckedExternalCall_unchk40_does_not_handle_failure
+  [OK] sendToWinner_unchk20_ignores_send_failure
+  [OK] sendToWinner_unchk32_ignores_send_failure
+  [OK] sendToWinner_unchk44_ignores_send_failure
+  Rule time: 193.26s | End-to-end: 194.86s
+  Result: PASS
+
+--- buggy_47_acunar_ieo.spec (AcunarIEO) ---
+  Command: svspec buggy_47.sol:AcunarIEO specification/buggy_47_acunar_ieo.spec
+  Rules: 18
+  [ANNOTATION ERROR] All 18 rules fail with Undeclared identifier
+  Rule time: 18.53s | End-to-end: 20.61s
+  Result: FAIL
+
+--- buggy_47_acunar_token.spec (AcunarToken) ---
+  Command: svspec buggy_47.sol:AcunarToken specification/buggy_47_acunar_token.spec
+  Rules: 14
+  [ERROR] cash_unchk34_ignores_send_failure
+  [ERROR] cash_unchk10_ignores_send_failure
+  [ERROR] cash_unchk22_ignores_send_failure
+  [ERROR] cash_unchk46_ignores_send_failure
+  [ERROR] bug_unchk7_ignores_send_failure
+  [ERROR] bug_unchk30_ignores_send_failure
+  [ERROR] my_func_unchk11_ignores_send_failure
+  [ERROR] my_func_unchk23_ignores_send_failure
+  [ERROR] my_func_unchk47_ignores_send_failure
+  [ERROR] unhandledsend_unchk14_ignores_send_failure
+  [ERROR] unhandledsend_unchk38_ignores_send_failure
+  [ERROR] withdrawLeftOver_unchk21_ignores_send_failure
+  [ERROR] my_func_uncheck12_ignores_call_failure
+  [ERROR] UncheckedExternalCall_unchk4_does_not_handle_failure
+  Rule time: 171.76s | End-to-end: 173.47s
+  Result: FAIL
+
+--- buggy_50.spec (digitalNotary) ---
+  Command: svspec buggy_50.sol:digitalNotary specification/buggy_50.spec
+  Rules: 19
+  [OK] cash_unchk46_ignores_send_failure
+  [OK] bug_unchk3_ignores_send_failure
+  [OK] bug_unchk7_ignores_send_failure
+  [OK] bug_unchk19_ignores_send_failure
+  [OK] bug_unchk39_ignores_send_failure
+  [OK] my_func_unchk23_ignores_send_failure
+  [OK] my_func_unchk35_ignores_send_failure
+  [OK] unhandledsend_unchk14_ignores_send_failure
+  [OK] unhandledsend_unchk26_ignores_send_failure
+  [OK] unhandledsend_unchk38_ignores_send_failure
+  [OK] withdrawLeftOver_unchk9_ignores_send_failure
+  [OK] withdrawLeftOver_unchk45_ignores_send_failure
+  [OK] my_func_uncheck36_ignores_call_failure
+  [OK] callnotchecked_unchk13_ignores_call_failure
+  [OK] callnotchecked_unchk25_ignores_call_failure
+  [OK] UncheckedExternalCall_unchk4_does_not_handle_failure
+  [OK] UncheckedExternalCall_unchk40_does_not_handle_failure
+  [OK] sendToWinner_unchk20_ignores_send_failure
+  [OK] sendToWinner_unchk32_ignores_send_failure
+  Rule time: 156.45s | End-to-end: 158.11s
+  Result: PASS
+
+--- buggy_5_ownable.spec (Ownable) ---
+  Command: svspec buggy_5.sol:Ownable specification/buggy_5_ownable.spec
+  Rules: 4
+  [OK] sendToWinner_unchk20_ignores_send_failure
+  [OK] unhandledsend_unchk26_no_check
+  [OK] withdrawLeftOver_unchk33_no_check
+  [ERROR] bug_unchk42_inverted_logic (Ownable::bug_unchk42)
+  Rule time: 37.07s | End-to-end: 38.69s
+  Result: FAIL
+
+--- buggy_5_token_erc20.spec (TokenERC20) ---
+  Command: svspec buggy_5.sol:TokenERC20 specification/buggy_5_token_erc20.spec
+  Rules: 14
+  [OK] sendToWinner_unchk32_ignores_send_failure
+  [OK] unhandledsend_unchk2_no_check
+  [OK] unhandledsend_unchk14_no_check
+  [OK] unhandledsend_unchk38_no_check
+  [OK] cash_unchk46_no_check
+  [OK] bug_unchk3_no_check
+  [OK] my_func_unchk23_no_check
+  [OK] withdrawBal_unchk17_no_check
+  [OK] withdrawLeftOver_unchk45_no_check
+  [OK] callnotchecked_unchk37_no_check
+  [OK] my_func_uncheck48_no_check
+  [OK] UncheckedExternalCall_unchk4_empty_handlers
+  [OK] bug_unchk7_always_reverts
+  [OK] bug_unchk43_always_reverts
+  Rule time: 139.57s | End-to-end: 141.29s
+  Result: PASS
+
+--- buggy_5_ttc.spec (TTC) ---
+  Command: svspec buggy_5.sol:TTC specification/buggy_5_ttc.spec
+  Rules: 11
+  [OK] sendToWinner_unchk8_ignores_send_failure
+  [OK] sendToWinner_unchk44_ignores_send_failure
+  [OK] bug_unchk39_no_check
+  [OK] my_func_unchk35_no_check
+  [OK] withdrawLeftOver_unchk9_no_check
+  [OK] callnotchecked_unchk13_no_check
+  [OK] callnotchecked_unchk25_no_check
+  [OK] my_func_uncheck36_no_check
+  [OK] UncheckedExternalCall_unchk40_empty_handlers
+  [OK] bug_unchk19_always_reverts
+  [ERROR] bug_unchk30_inverted_logic (TTC::bug_unchk30)
+  Rule time: 104.13s | End-to-end: 105.79s
+  Result: FAIL
+
+==============================================================================

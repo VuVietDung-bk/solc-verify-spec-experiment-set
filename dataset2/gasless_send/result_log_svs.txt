@@ -1,0 +1,31 @@
+==============================================================================
+SOLC-VERIFY-SPEC Results Log — dataset2/gasless_send
+Date: 2026-02-23
+==============================================================================
+
+SUMMARY TABLE
+==============================================================================
+#  | Spec File                      | Contract          | Rules | Result
+---|--------------------------------|-------------------|-------|-------
+1  | CreditDepositBank_Attack.spec  | CreditDepositBank |   3   | FAIL
+==============================================================================
+
+OVERALL STATISTICS
+==============================================================================
+Total specs:  1
+Total rules:  3
+PASS:         0  (0.00%)
+FAIL:         1  (100.00%)
+==============================================================================
+
+DETAILED RESULTS
+==============================================================================
+
+--- 1. CreditDepositBank_Attack.spec (CreditDepositBank) --- FAIL
+  [ERROR] takeover_requires_balance     (Attack_CreditDepositBank::vultron_* precondition errors)
+  [ERROR] deposit_no_owner_change       (Attack_CreditDepositBank::vultron_* precondition errors)
+  [ERROR] deposit_no_manager_change     (Attack_CreditDepositBank::vultron_* precondition errors)
+  Note: CreditDepositBank functions all OK; errors from Attack_CreditDepositBank wrapper functions
+  Time: 15.10s / 16.30s
+
+==============================================================================

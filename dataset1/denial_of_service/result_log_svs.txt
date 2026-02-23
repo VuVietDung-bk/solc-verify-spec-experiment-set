@@ -1,73 +1,54 @@
-SOLC-VERIFY-SPEC Results Log
-Benchmark: dataset1/denial_of_service
-Date: 2026-02-11
-Total spec files: 4
+==============================================================================
+SOLC-VERIFY-SPEC Results Log — dataset1/denial_of_service
+Date: 2026-02-23
+==============================================================================
 
-========================================
-Spec: specification/auction.spec
-Contract: auction.sol:DosAuction
-Rules: 1
-  PASS:
-    Rule bid_must_succeed_if_higher: ALL OK
-  FAIL: (none)
-Timing:
-  [TIME] auction.bid_must_succeed_if_higher.sol: 1.52s
-  [TIME] Total rule verification time: 1.52s
-  [TIME] End-to-end time: 2.34s
+SUMMARY TABLE
+==============================================================================
+#  | Spec File          | Contract   | Rules | Result
+---|--------------------|------------|-------|-------
+1  | auction.spec       | DosAuction |   1   | PASS
+2  | dos_address.spec   | DosGas     |   2   | FAIL
+3  | dos_number.spec    | DosNumber  |   3   | FAIL
+4  | list_dos.spec      | Government |   4   | FAIL
+5  | send_loop.spec     | Refunder   |   1   | FAIL
+==============================================================================
 
-========================================
-Spec: specification/dos_address.spec
-Contract: dos_address.sol:DosGas
-Rules: 2
-  PASS:
-    Rule empty_resets_when_large: ALL OK
-  FAIL:
-    Rule add_increases_by_350: DosGas::addCreditors: ERROR
-      - Postcondition 'creditorAddresses.length == 350' might not hold
-Timing:
-  [TIME] dos_address.add_increases_by_350.sol: 1.59s
-  [TIME] dos_address.empty_resets_when_large.sol: 1.81s
-  [TIME] Total rule verification time: 3.40s
-  [TIME] End-to-end time: 4.24s
+OVERALL STATISTICS
+==============================================================================
+Total specs:  5
+Total rules: 11
+PASS:         1  (20.00%)
+FAIL:         4  (80.00%)
+==============================================================================
 
-========================================
-Spec: specification/list_dos.spec
-Contract: list_dos.sol:Government
-Rules: 4
-  PASS:
-    Rule elite_inheritance_access_control: ALL OK
-  FAIL:
-    Rule reset_availability: Government::[fallback]: ERROR
-      - Precondition 'creditorAddresses.length > 2000' might not hold
-      - Precondition 'block.timestamp > lastTimeOfNewCredit + 43200' might not hold
-    Rule reset_state_cleared: Government::[fallback]: ERROR
-      - Precondition 'creditorAddresses.length > 10' might not hold
-      - Precondition 'block.timestamp > lastTimeOfNewCredit + 43200' might not hold
-    Rule creditor_addition_integrity: Government::[fallback]: ERROR
-      - Precondition 'msg.value >= 1000000000000000000' might not hold
-      - Precondition 'block.timestamp <= lastTimeOfNewCredit + 43200' might not hold
-Timing:
-  [TIME] reset_availability.sol: 2.70s
-  [TIME] reset_state_cleared.sol: 2.50s
-  [TIME] elite_inheritance_access_control.sol: 2.68s
-  [TIME] creditor_addition_integrity.sol: 2.63s
-  [TIME] Total rule verification time: 10.52s
-  [TIME] End-to-end time: 11.56s
+DETAILED RESULTS
+==============================================================================
 
-========================================
-Spec: specification/send_loop.spec
-Contract: send_loop.sol:Refunder
-Rules: 1
-  PASS:
-    Refunder::[constructor]: OK
-  FAIL:
-    Rule refund_all_preserves_refunds: Refunder::refundAll: ERROR
-      - Postcondition involving refund balance preservation might not hold
-Timing:
-  [TIME] send_loop.refund_all_preserves_refunds.sol: 1.60s
-  [TIME] Total rule verification time: 1.60s
-  [TIME] End-to-end time: 2.59s
+--- 1. auction.spec (DosAuction) --- PASS
+  [OK]    bid_must_succeed_if_higher
+  Time: 1.69s / 2.60s
 
-========================================
-SUMMARY: 4 spec files, 8 rules total
-  Total end-to-end time: ~20.73s
+--- 2. dos_address.spec (DosGas) --- FAIL
+  [ERROR] add_increases_by_350       (DosGas::addCreditors postcondition)
+  [OK]    empty_resets_when_large
+  Time: 3.53s / 4.44s
+
+--- 3. dos_number.spec (DosNumber) --- FAIL
+  [ERROR] insertNnumbers_increases_count     (DosNumber::insertNnumbers postcondition)
+  [OK]    clear_requires_minimum_elements
+  [OK]    getLengthArray_returns_numElements
+  Time: 6.16s / 7.13s
+
+--- 4. list_dos.spec (Government) --- FAIL
+  [ERROR] reset_availability                 (Government::[fallback] preconditions)
+  [ERROR] reset_state_cleared                (Government::[fallback] preconditions)
+  [OK]    elite_inheritance_access_control
+  [ERROR] creditor_addition_integrity        (Government::[fallback] preconditions)
+  Time: 11.57s / 12.78s
+
+--- 5. send_loop.spec (Refunder) --- FAIL
+  [ERROR] refund_all_preserves_refunds       (Refunder::refundAll postcondition)
+  Time: 1.52s / 2.45s
+
+==============================================================================

@@ -29,10 +29,6 @@ pragma solidity >=0.7.0;
  */
 contract Ownable {
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition payedOut_unchk32 == false
-    /// @notice postcondition payedOut_unchk32
   function bug_unchk42() public{
 uint receivers_unchk42;
 address payable addr_unchk42;
@@ -45,29 +41,17 @@ else
 
   bool public payedOut_unchk33 = false;
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition payedOut_unchk32 == false
-    /// @notice postcondition payedOut_unchk32
 function withdrawLeftOver_unchk33() public {
         require(payedOut_unchk33);
     payable(msg.sender).send(address(this).balance);
     }
   event OwnerChanged(address oldOwner, address newOwner);
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition payedOut_unchk32 == false
-    /// @notice postcondition payedOut_unchk32
     constructor() {
         owner = msg.sender;
     }
 bool public payedOut_unchk9 = false;
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition payedOut_unchk32 == false
-    /// @notice postcondition payedOut_unchk32
 function withdrawLeftOver_unchk9() public {
         require(payedOut_unchk9);
     payable(msg.sender).send(address(this).balance);
@@ -78,18 +62,10 @@ function withdrawLeftOver_unchk9() public {
         _;
     }
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition payedOut_unchk32 == false
-    /// @notice postcondition payedOut_unchk32
     function changeOwner(address _newOwner) external onlyOwner {
         owner = _newOwner;
         emit OwnerChanged(msg.sender, _newOwner);
     }
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition payedOut_unchk32 == false
-    /// @notice postcondition payedOut_unchk32
 function callnotchecked_unchk25(address payable callee) public {
     callee.call{value: 1 ether}("");
   }

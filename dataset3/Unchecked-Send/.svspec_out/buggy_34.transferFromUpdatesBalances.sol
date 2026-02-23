@@ -4,15 +4,10 @@
 
 pragma solidity >=0.7.0;
 
-/// @notice invariant _totalSupply <= _maxTotalSupply
 contract Ownable {
    address payable public owner;
 event OwnershipTransferred(address indexed _from, address indexed _to);
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice postcondition forall (address sender) forall (address recipient) sender == recipient || _balances[sender] <= __verifier_old_uint(_balances[sender])
-    /// @notice postcondition forall (address sender) forall (address recipient) sender == recipient || _balances[recipient] >= __verifier_old_uint(_balances[recipient])
    constructor() public {
        owner = payable(msg.sender);
    }
@@ -21,10 +16,6 @@ modifier onlyOwner {
        _;
    }
 
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice postcondition forall (address sender) forall (address recipient) sender == recipient || _balances[sender] <= __verifier_old_uint(_balances[sender])
-    /// @notice postcondition forall (address sender) forall (address recipient) sender == recipient || _balances[recipient] >= __verifier_old_uint(_balances[recipient])
    function transferOwnership(address payable _newOwner) public onlyOwner {
        owner = _newOwner;
    }
@@ -123,6 +114,7 @@ library SafeMath {
     }
 }
 
+/// @notice invariant _totalSupply <= _maxTotalSupply
 contract LollypopToken is Ownable {
     using SafeMath for uint256;
 
@@ -145,6 +137,15 @@ uint256 public perDayBonus = 100; // Divisible 1/100 (0.1 %)
     }
     
     
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() public {
         _maxTotalSupply = 1000000000 * 10 ** 18;
         _totalSupply =  2000000 * 10 ** 18;
@@ -153,6 +154,17 @@ uint256 public perDayBonus = 100; // Divisible 1/100 (0.1 %)
         _balances[msg.sender].time = block.timestamp;
         
     }
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition timeElasped >= 0
+    /// @notice precondition amount >= 0
 function calculateBonus(uint256 timeElasped , uint256 amount) public view  returns(uint256){
         uint256 totalDays = timeElasped.div(minAgeOfToken);
         if(totalDays > maxAgeOfToken){
@@ -193,6 +205,15 @@ function _transfer(address sender, address recipient, uint256 amount) internal {
 /**
      * @dev Returns the name of the token.
      */
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function name() public view returns (string memory) {
         return _name;
     }
@@ -200,6 +221,15 @@ function _transfer(address sender, address recipient, uint256 amount) internal {
      * @dev Returns the symbol of the token, usually a shorter version of the
      * name.
      */
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function symbol() public view returns (string memory) {
         return _symbol;
     }
@@ -215,6 +245,15 @@ function _transfer(address sender, address recipient, uint256 amount) internal {
      * no way affects any of the arithmetic of the contract, including
      * `IERC20.balanceOf` and `IERC20.transfer`.
      */
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function decimals() public view returns (uint8) {
         return _decimals;
     }
@@ -259,15 +298,42 @@ event Approval(address indexed owner, address indexed spender, uint256 value);
 /**
      * @dev See `IERC20.totalSupply`.
      */
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function totalSupply() public view returns (uint256) {
         return _totalSupply;
     }
 /**
      * @dev See `IERC20.balanceOf`.
      */
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function balanceOf(address account) public view returns (uint256) {
         return _balances[account].amount;
     }
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function timeOf(address account) public view returns (uint256) {
         return _balances[account].time;
     }
@@ -279,10 +345,29 @@ function timeOf(address account) public view returns (uint256) {
      * - `recipient` cannot be the zero address.
      * - the caller must have a balance of at least `amount`.
      */
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition amount >= 0
     function transfer(address recipient, uint256 amount) public returns (bool) {
         _transfer(msg.sender, recipient, amount);
         return true;
     }
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function multiTransfer(address[] memory receivers, uint256[] memory amounts) public {
     require(receivers.length == amounts.length);
     for (uint256 i = 0; i < receivers.length; i++) {
@@ -292,6 +377,15 @@ function multiTransfer(address[] memory receivers, uint256[] memory amounts) pub
 /**
      * @dev See `IERC20.allowance`.
      */
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function allowance(address owner, address spender) public view returns (uint256) {
         return _allowances[owner][spender];
     }
@@ -302,6 +396,16 @@ function multiTransfer(address[] memory receivers, uint256[] memory amounts) pub
      *
      * - `spender` cannot be the zero address.
      */
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition value >= 0
     function approve(address spender, uint256 value) public returns (bool) {
         _approve(msg.sender, spender, value);
         return true;
@@ -318,6 +422,18 @@ function multiTransfer(address[] memory receivers, uint256[] memory amounts) pub
      * - the caller must have allowance for `sender`'s tokens of at least
      * `amount`.
      */
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition amount >= 0
+    /// @notice postcondition sender == recipient || _balances[sender] <= __verifier_old_uint(_balances[sender])
+    /// @notice postcondition sender == recipient || _balances[recipient] >= __verifier_old_uint(_balances[recipient])
     function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
         _transfer(sender, recipient, amount);
         _approve(sender, msg.sender, _allowances[sender][msg.sender].sub(amount));
@@ -335,6 +451,16 @@ function multiTransfer(address[] memory receivers, uint256[] memory amounts) pub
      *
      * - `spender` cannot be the zero address.
      */
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition addedValue >= 0
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowances[msg.sender][spender].add(addedValue));
         return true;
@@ -353,6 +479,16 @@ function multiTransfer(address[] memory receivers, uint256[] memory amounts) pub
      * - `spender` must have allowance for the caller of at least
      * `subtractedValue`.
      */
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition subtractedValue >= 0
     function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowances[msg.sender][spender].sub(subtractedValue));
         return true;
@@ -421,6 +557,18 @@ function multiTransfer(address[] memory receivers, uint256[] memory amounts) pub
         _burn(account, amount);
         _approve(account, msg.sender, _allowances[account][msg.sender].sub(amount));
     }
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
+    /// @notice precondition _totalSupply >= 0
+    /// @notice precondition _maxTotalSupply >= 0
+    /// @notice precondition _decimals >= 0
+    /// @notice precondition maxAgeOfToken >= 0
+    /// @notice precondition minAgeOfToken >= 0
+    /// @notice precondition perDayBonus >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function bug_unchk_send27() payable public{
     payable(msg.sender).transfer(1 ether);}
 
