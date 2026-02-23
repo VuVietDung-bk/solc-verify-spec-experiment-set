@@ -160,7 +160,7 @@ function play_tmstmp31(uint startTime) public {
         require(balances[_from] >= _value && allowance >= _value);
         balances[_to] += _value;
         balances[_from] -= _value;
-        if (allowance < MAX_UINT256) {
+        if (allowance < 115792089237316195423570985008687907853269984665640564039457584007913129639935) {
             allowed[_from][msg.sender] -= _value;
         }
         emit Transfer(_from, _to, _value); //solhint-disable-line indent, no-unused-vars

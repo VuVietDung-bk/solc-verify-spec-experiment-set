@@ -47,8 +47,8 @@ contract SushiSwap {
     /// @notice precondition shares > 0
     /// @notice precondition pools[token].totalBalance > 0
     /// @notice precondition pools[token].totalShares > 0
-    /// @notice postcondition pools[token].totalBalance == pools[token].totalBalance - shares * pools[token].totalBalance / pools[token].totalShares
-    /// @notice postcondition pools[token].balances[msg.sender] == pools[token].balances[msg.sender] - shares * pools[token].totalBalance / pools[token].totalShares
+    /// @notice postcondition pools[token].totalBalance == pools[token].totalBalance - (shares * pools[token].totalBalance) / pools[token].totalShares
+    /// @notice postcondition pools[token].balances[msg.sender] == pools[token].balances[msg.sender] - (shares * pools[token].totalBalance) / pools[token].totalShares
     /// @notice postcondition pools[token].totalShares == pools[token].totalShares - shares
     function withdraw(address token, uint256 shares) public {
         require(pools[token].totalBalance > 0, "Invalid pool");

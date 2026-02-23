@@ -54,6 +54,12 @@ contract AcunarToken is ERC20Interface{
     //allowed[0x1111....][0x22222...] = 100;
     
     
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor(){
         supply = 200000000;
         founder = msg.sender;
@@ -61,12 +67,25 @@ contract AcunarToken is ERC20Interface{
     }
 
     
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function allowance(address tokenOwner, address spender) view public override returns(uint){
         return allowed[tokenOwner][spender];
     }
     
     
     //approve allowance
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition tokens >= 0
     function approve(address spender, uint tokens) public override returns(bool){
         require(balances[msg.sender] >= tokens);
         require(tokens > 0);
@@ -77,6 +96,13 @@ contract AcunarToken is ERC20Interface{
     }
     
     //transfer tokens from the  owner account to the account that calls the function
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition tokens >= 0
     function transferFrom(address from, address to, uint tokens) public virtual override returns(bool){
         require(allowed[from][to] >= tokens);
         require(balances[from] >= tokens);
@@ -90,15 +116,34 @@ contract AcunarToken is ERC20Interface{
         return true;
     }
     
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function totalSupply() public view override returns (uint){
         return supply;
     }
     
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function balanceOf(address tokenOwner) public view override returns (uint balance){
          return balances[tokenOwner];
      }
      
      
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition tokens >= 0
     function transfer(address to, uint tokens) public virtual override returns (bool success){
          require(balances[msg.sender] >= tokens && tokens > 0);
          
@@ -148,25 +193,6 @@ uint256 bugv_tmstmp3 = block.timestamp;
     
     
     //in solidity version > 0.5.0 the deposit argument must be payable
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     constructor(address payable _deposit){
         deposit = _deposit;
         admin = msg.sender;
@@ -174,49 +200,11 @@ uint256 bugv_tmstmp3 = block.timestamp;
     }
     
     //emergency stop
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function halt() public onlyAdmin{
         ieoState = State.halted;
     }
     
     //restart 
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function unhalt() public onlyAdmin{
         ieoState = State.running;
     }
@@ -224,48 +212,10 @@ uint256 bugv_tmstmp3 = block.timestamp;
     
     //only the admin can change the deposit address
     //in solidity version > 0.5.0 the deposit argument must be payable
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function changeDepositAddress(address payable newDeposit) public onlyAdmin{
         deposit = newDeposit;
     }
     //returns ieo state
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function getCurrentState() public view returns(State){
         if(ieoState == State.halted){
             return State.halted;
@@ -279,28 +229,6 @@ uint256 bugv_tmstmp3 = block.timestamp;
     }
     
     
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition address(this).balance >= 0
-    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function invest() payable public returns(bool){
         //invest only in running
         ieoState = getCurrentState();
@@ -330,51 +258,10 @@ uint256 bugv_tmstmp3 = block.timestamp;
     }
     
     //the payable function must be declared external in solidity versions > 0.5.0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition address(this).balance >= 0
-    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     receive() external payable{
       invest();
     }
     
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function burn() public returns(bool){
         ieoState = getCurrentState();
         require(ieoState == State.afterEnd);
@@ -384,54 +271,12 @@ uint256 bugv_tmstmp3 = block.timestamp;
 uint256 bugv_tmstmp5 = block.timestamp;
     
     
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition tokens >= 0
-    /// @notice precondition value >= 0
     function transfer(address to, uint value) public override returns(bool){
         require(block.timestamp > coinTradeStart);
         super.transfer(to, value);
     }
 uint256 bugv_tmstmp1 = block.timestamp;
     
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition tokens >= 0
-    /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint _value) public override returns(bool){
         require(block.timestamp > coinTradeStart);
         super.transferFrom(_from, _to, _value);

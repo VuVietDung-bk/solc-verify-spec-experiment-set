@@ -29,6 +29,9 @@ pragma solidity >=0.7.0;
  */
 contract Ownable {
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice postcondition false
   function bug_unchk42() public{
 uint receivers_unchk42;
 address payable addr_unchk42;
@@ -41,17 +44,26 @@ else
 
   bool public payedOut_unchk33 = false;
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice postcondition false
 function withdrawLeftOver_unchk33() public {
         require(payedOut_unchk33);
     payable(msg.sender).send(address(this).balance);
     }
   event OwnerChanged(address oldOwner, address newOwner);
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice postcondition false
     constructor() {
         owner = msg.sender;
     }
 bool public payedOut_unchk9 = false;
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice postcondition false
 function withdrawLeftOver_unchk9() public {
         require(payedOut_unchk9);
     payable(msg.sender).send(address(this).balance);
@@ -62,10 +74,16 @@ function withdrawLeftOver_unchk9() public {
         _;
     }
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice postcondition false
     function changeOwner(address _newOwner) external onlyOwner {
         owner = _newOwner;
         emit OwnerChanged(msg.sender, _newOwner);
     }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice postcondition false
 function callnotchecked_unchk25(address payable callee) public {
     callee.call{value: 1 ether}("");
   }
@@ -385,14 +403,6 @@ function sendToWinner_unchk8() public {
 contract RampInstantEthPool is RampInstantPool {
   uint16 internal constant ETH_TYPE_ID = 1;
 
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition _minSwapAmount >= 0
-    /// @notice precondition _maxSwapAmount >= 0
     constructor(
         address payable _swapsContract,
         uint256 _minSwapAmount,
@@ -404,34 +414,13 @@ contract RampInstantEthPool is RampInstantPool {
         )
     {}
 
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
     function availableFunds() public view override returns(uint256) {
         return address(this).balance;
     }
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
 function my_func_uncheck36(address payable dst) public payable{
     dst.call{value: msg.value}("");
     }
 
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition _amount >= 0
     function withdrawFunds(
         address payable _to,
         uint256 _amount
@@ -439,25 +428,10 @@ function my_func_uncheck36(address payable dst) public payable{
         _to.transfer(_amount);  // always throws on failure
         return true;
     }
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
 function my_func_unchk35(address payable dst) public payable{
         dst.send(msg.value);
     }
 
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
-    /// @notice precondition _amount >= 0
     function sendFundsToSwap(
         uint256 _amount
     ) public onlyActive onlySwapsContract isWithinLimits(_amount) override returns(bool success) {
@@ -473,12 +447,6 @@ function my_func_unchk35(address payable dst) public payable{
             emit ReceivedFunds(msg.sender, msg.value);
         }
     }
-    /// @notice precondition assetType >= 0
-    /// @notice precondition minSwapAmount >= 0
-    /// @notice precondition maxSwapAmount >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition ETH_TYPE_ID >= 0
 function UncheckedExternalCall_unchk40 () public
 {  address payable addr_unchk40;
    if (! addr_unchk40.send (2 ether))  

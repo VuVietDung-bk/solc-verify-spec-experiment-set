@@ -5,6 +5,9 @@
 pragma solidity >=0.7.0;
 
 contract Ownable {
+    /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_tmstmp1() view public returns (bool) {
     return block.timestamp >= 1546300800;
   }
@@ -18,9 +21,18 @@ uint256 bugv_tmstmp5 = block.timestamp;
    * @dev The Ownable constructor sets the original `owner` of the contract to the sender
    * account.
    */
+    /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   constructor () {
     owner = msg.sender;
   }
+    /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function bug_tmstmp32 () public payable {
 	uint pastBlockTime_tmstmp32; // Forces one bet per block
 	require(msg.value == 10 ether); // must send 10 ether to play
@@ -43,12 +55,21 @@ function bug_tmstmp32 () public payable {
    * @dev Allows the current owner to transfer control of the contract to a newOwner.
    * @param newOwner The address to transfer ownership to.
    */
+    /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function transferOwnership(address newOwner) public onlyOwner {
     require(newOwner != address(0));
     emit OwnershipTransferred(owner, newOwner);
     owner = newOwner;
   }
 address winner_tmstmp38;
+    /// @notice precondition bugv_tmstmp5 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition startTime >= 0
+    /// @notice precondition startTime + 432000 == block.timestamp
+    /// @notice postcondition winner_tmstmp38 == msg.sender
 function play_tmstmp38(uint startTime) public {
 	if (startTime + (5 * 1 days) == block.timestamp){
 		winner_tmstmp38 = msg.sender;}}
@@ -211,20 +232,6 @@ contract TTC is Ownable, TokenERC20 {
   event FrozenFunds(address target, bool frozen);
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition initialSupply >= 0
     constructor(
       uint256 initialSupply,
       string memory tokenName,
@@ -246,20 +253,6 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice Create `mintedAmount` tokens and send it to `target`
     /// @param target Address to receive the tokens
     /// @param mintedAmount the amount of tokens it will receive
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition mintedAmount >= 0
     function mintToken(address target, uint256 mintedAmount) onlyOwner public {
         balanceOf[target] += mintedAmount;
         totalSupply += mintedAmount;
@@ -270,19 +263,6 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function freezeAccount(address target, bool freeze) onlyOwner public {
         frozenAccount[target] = freeze;
         emit FrozenFunds(target, freeze);
@@ -291,43 +271,12 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice Allow users to buy tokens for `newBuyPrice` eth and sell tokens for `newSellPrice` eth
     /// @param newSellPrice Price the users can sell to the contract
     /// @param newBuyPrice Price users can buy from the contract
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition newSellPrice >= 0
-    /// @notice precondition newBuyPrice >= 0
     function setPrices(uint256 newSellPrice, uint256 newBuyPrice) onlyOwner public {
         sellPrice = newSellPrice;
         buyPrice = newBuyPrice;
     }
 
     /// @notice Buy tokens from contract by sending ether
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition address(this).balance >= 0
-    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function buy() payable public {
         uint amount = msg.value / buyPrice;                 // calculates the amount
         _transfer(address(this), msg.sender, amount);       // makes the transfers
@@ -335,20 +284,6 @@ contract TTC is Ownable, TokenERC20 {
 
     /// @notice Sell `amount` tokens to contract
     /// @param amount amount of tokens to be sold
-    /// @notice precondition bugv_tmstmp5 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition bugv_tmstmp1 >= 0
-    /// @notice precondition bugv_tmstmp2 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition amount >= 0
     function sell(uint256 amount) public {
         address myAddress = address(this);
         require(myAddress.balance >= amount * sellPrice);   // checks if the contract has enough ether to buy

@@ -26,7 +26,7 @@
      }
 
      // Fallback function returns ether
-     fallback() external {
+     fallback() external payable {
          revert();
      }
 
@@ -42,16 +42,14 @@
          bets.push(Bet(msg.value, block.number, won));
          // Payout if the user won, otherwise take their money
          if(won) {
-             if(!payable(msg.sender).send(msg.value)) {
-                 // Return ether to sender
-                 revert();
-             }
+            bool success = payable(msg.sender).send(msg.value);
+            require(success, "Failed to send Ether");
          }
      }
 
      // Get all bets that have been made
      function getBets() public {
-         if(msg.sender != organizer) { revert(); }
+         require(msg.sender == organizer, "Only the organizer can view the bets");
 
          for (uint i = 0; i < bets.length; i++) {
              emit GetBet(bets[i].betAmount, bets[i].blockNumber, bets[i].won);

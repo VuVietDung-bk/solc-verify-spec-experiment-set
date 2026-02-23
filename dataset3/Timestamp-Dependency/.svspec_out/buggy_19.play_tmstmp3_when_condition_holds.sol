@@ -55,6 +55,9 @@ library SafeMath {
  *      control functions, this simplifies the implementation of "user permissions".
  */
 contract owned {
+    /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function bug_tmstmp17() view public returns (bool) {
     return block.timestamp >= 1546300800;
   }
@@ -63,6 +66,9 @@ contract owned {
      * @dev The owned constructor sets the original `owner` of the contract to the sender
      * account.
      */
+    /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         owner = msg.sender;
     }
@@ -79,11 +85,20 @@ uint256 bugv_tmstmp4 = block.timestamp;
     /**
      * @dev Allows the current owner to transfer control of the contract to a newOwner.
      */
+    /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function transferOwnership(address newOwner) onlyOwner public {
         require(newOwner != address(0));
         owner = newOwner;
     }
 address winner_tmstmp3;
+    /// @notice precondition bugv_tmstmp4 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition startTime >= 0
+    /// @notice precondition startTime + 432000 == block.timestamp
+    /// @notice postcondition winner_tmstmp3 == msg.sender
 function play_tmstmp3(uint startTime) public {
     uint _vtime = block.timestamp;
     if (startTime + (5 * 1 days) == _vtime){
@@ -92,29 +107,12 @@ function play_tmstmp3(uint startTime) public {
 
 contract ethBank is owned{
     
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition address(this).balance >= 0
-    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
   receive() external payable {}
     
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition amount >= 0
     function withdrawForUser(address payable _address,uint amount) onlyOwner public{
         require(msg.sender == owner, "only owner can use this method");
         _address.transfer(amount);
     }
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition amount >= 0
     function moveBrick(uint amount) onlyOwner public{
         require(msg.sender == owner, "only owner can use this method"); 
         payable(msg.sender).transfer(amount);
@@ -124,10 +122,6 @@ contract ethBank is owned{
      * @dev withdraws Contracts  balance.
      * -functionhash- 0x7ee20df8
      */
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function moveBrickContracts() onlyOwner public
     {
         // only team just can withdraw Contracts
@@ -140,13 +134,6 @@ contract ethBank is owned{
     
     ////////////////////////////////////////////////////////////////////
     
-    /// @notice precondition bugv_tmstmp4 >= 0
-    /// @notice precondition bugv_tmstmp3 >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition address(this).balance >= 0
-    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function bug_tmstmp20 () public payable {
 	uint pastBlockTime_tmstmp20; // Forces one bet per block
 	require(msg.value == 10 ether); // must send 10 ether to play

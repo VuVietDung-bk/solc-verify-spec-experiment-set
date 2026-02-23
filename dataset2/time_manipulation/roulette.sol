@@ -12,7 +12,7 @@ contract Roulette {
     constructor() payable {} // initially fund contract
 
     // fallback function used to make a bet
-    receive() external payable {
+    fallback() external payable {
         require(msg.value == 10 ether); // must send 10 ether to play
         // <yes> <report> TIME_MANIPULATION
         require(block.timestamp != pastBlockTime); // only 1 transaction per block
@@ -21,5 +21,9 @@ contract Roulette {
         if(block.timestamp % 15 == 0) { // winner
             payable(msg.sender).transfer(address(this).balance);
         }
+    }
+
+    receive() external payable {
+
     }
 }

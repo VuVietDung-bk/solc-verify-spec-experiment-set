@@ -53,7 +53,7 @@ pragma solidity >=0.7.0;
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     /// @notice postcondition bets.length == __verifier_old_uint(bets.length) + 1
-    /// @notice postcondition bets[bets.length - 1].won && block.timestamp % 2 == 0 || !bets[bets.length - 1].won && block.timestamp % 2 != 0
+    /// @notice postcondition bets[bets.length - 1].won && (block.timestamp % 2 == 0) || !bets[bets.length - 1].won && block.timestamp % 2 != 0
      function makeBet() public payable {
          // Won if block number is even
          // (note: this is a terrible source of randomness, please don't use this with real money)

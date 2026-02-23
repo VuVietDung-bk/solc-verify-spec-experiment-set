@@ -1,0 +1,58 @@
+// Unchecked-Send specification for Stoppable (buggy_20.sol)
+
+/// @title Only owner can withdraw all funds
+rule onlyOwnerCanWithdrawAllFunds(address to) {
+    env e;
+    
+    require e.msg.sender != owner();
+
+    withdrawAllFunds@withrevert(e, to);
+
+    assert lastReverted, "non-owner should not be able to withdraw all funds";
+}
+
+/// @title Only owner can set limits
+rule onlyOwnerCanSetLimits(uint256 minAmount, uint256 maxAmount) {
+    env e;
+    
+    require e.msg.sender != owner();
+
+    setLimits@withrevert(e, minAmount, maxAmount);
+
+    assert lastReverted, "non-owner should not be able to set limits";
+}
+
+/// @title SetLimits updates min and max amounts
+rule setLimitsUpdatesAmounts(uint256 minAmount, uint256 maxAmount) {
+    env e;
+    
+    require e.msg.sender == owner();
+    require minAmount <= maxAmount;
+
+    setLimits(e, minAmount, maxAmount);
+
+    assert minSwapAmount() == minAmount, "min swap amount must be updated";
+    assert maxSwapAmount() == maxAmount, "max swap amount must be updated";
+}
+
+/// @title Only owner can set swaps contract
+rule onlyOwnerCanSetSwapsContract(address newSwapsContract) {
+    env e;
+    
+    require e.msg.sender != owner();
+
+    setSwapsContract@withrevert(e, newSwapsContract);
+
+    assert lastReverted, "non-owner should not be able to set swaps contract";
+}
+
+/// @title Only owner can change active state
+rule onlyOwnerCanSetIsActive(bool active) {
+    env e;
+    
+    require e.msg.sender != owner();
+
+    setIsActive@withrevert(e, active);
+
+    assert lastReverted, "non-owner should not be able to change active state";
+}

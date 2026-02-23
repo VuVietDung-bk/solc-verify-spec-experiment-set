@@ -56,17 +56,6 @@ contract TokenERC20 {
     // Public variables of the token
   mapping(address => uint) balances_intou10;
 
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
-    /// @notice precondition _value > 0
-    /// @notice precondition balances_intou10[msg.sender] == 0
-    /// @notice postcondition false
 function transfer_intou10(address _to, uint _value) public returns (bool) {
     require(balances_intou10[msg.sender] - _value >= 0);  //bug
     balances_intou10[msg.sender] -= _value;  //bug
@@ -93,14 +82,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      *
      * Initializes contract with initial supply tokens to the creator of the contract
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition initialSupply >= 0
     constructor(
         uint256 initialSupply,
         string memory tokenName,
@@ -141,14 +122,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      * @param _to The address of the recipient
      * @param _value the amount to send
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
     function transfer(address _to, uint256 _value) public returns (bool success) {
         _transfer(msg.sender, _to, _value);
         return true;
@@ -163,14 +136,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      * @param _to The address of the recipient
      * @param _value the amount to send
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(_value <= allowance[_from][msg.sender]);     // Check allowance
         allowance[_from][msg.sender] -= _value;
@@ -186,14 +151,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      * @param _spender The address authorized to spend
      * @param _value the max amount they can spend
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
     function approve(address _spender, uint256 _value) public
         returns (bool success) {
         allowance[msg.sender][_spender] = _value;
@@ -212,14 +169,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      *
      * @param _value the amount of money to burn
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
     function burn(uint256 _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
@@ -236,14 +185,6 @@ function transfer_intou10(address _to, uint _value) public returns (bool) {
      * @param _from the address of the sender
      * @param _value the amount of money to burn
      */
-    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
         require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
         require(_value <= allowance[_from][msg.sender]);    // Check allowance
@@ -268,6 +209,17 @@ contract TTC is Ownable, TokenERC20 {
   event FrozenFunds(address target, bool frozen);
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition sellPrice >= 0
+    /// @notice precondition buyPrice >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition initialSupply >= 0
     constructor(
       uint256 initialSupply,
       string memory tokenName,
@@ -289,6 +241,17 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice Create `mintedAmount` tokens and send it to `target`
     /// @param target Address to receive the tokens
     /// @param mintedAmount the amount of tokens it will receive
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition sellPrice >= 0
+    /// @notice precondition buyPrice >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition mintedAmount >= 0
     function mintToken(address target, uint256 mintedAmount) onlyOwner public {
         balanceOf[target] += mintedAmount;
         totalSupply += mintedAmount;
@@ -299,10 +262,31 @@ contract TTC is Ownable, TokenERC20 {
     /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition sellPrice >= 0
+    /// @notice precondition buyPrice >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function freezeAccount(address target, bool freeze) onlyOwner public {
         frozenAccount[target] = freeze;
         emit FrozenFunds(target, freeze);
     }
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition sellPrice >= 0
+    /// @notice precondition buyPrice >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition p_intou8 >= 0
 function bug_intou8(uint8 p_intou8) public{
     uint8 vundflw1=0;
     vundflw1 = vundflw1 + p_intou8;   // overflow bug
@@ -311,22 +295,68 @@ function bug_intou8(uint8 p_intou8) public{
     /// @notice Allow users to buy tokens for `newBuyPrice` eth and sell tokens for `newSellPrice` eth
     /// @param newSellPrice Price the users can sell to the contract
     /// @param newBuyPrice Price users can buy from the contract
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition sellPrice >= 0
+    /// @notice precondition buyPrice >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition newSellPrice >= 0
+    /// @notice precondition newBuyPrice >= 0
     function setPrices(uint256 newSellPrice, uint256 newBuyPrice) onlyOwner public {
         sellPrice = newSellPrice;
         buyPrice = newBuyPrice;
     }
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition sellPrice >= 0
+    /// @notice precondition buyPrice >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_intou39() public{
     uint8 vundflw =0;
     vundflw = vundflw -10;   // underflow bug
 }
 
     /// @notice Buy tokens from contract by sending ether
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition sellPrice >= 0
+    /// @notice precondition buyPrice >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function buy() payable public {
         uint amount = msg.value / buyPrice;                 // calculates the amount
         _transfer(address(this), msg.sender, amount);       // makes the transfers
     }
     /// @notice Sell `amount` tokens to contract
     /// @param amount amount of tokens to be sold
+    /// @notice precondition forall (address extraVar0) lockTime_intou21[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou10[extraVar0] >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition totalSupply >= 0
+    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
+    /// @notice precondition sellPrice >= 0
+    /// @notice precondition buyPrice >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition amount >= 0
     function sell(uint256 amount) public {
         address myAddress = address(this);
         require(myAddress.balance >= amount * sellPrice);   // checks if the contract has enough ether to buy

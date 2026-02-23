@@ -85,6 +85,8 @@ contract HotDollarsToken is EIP20Interface {
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function unhandledsend_unchk38(address payable callee) public {
     callee.send(5 ether);
   }
@@ -95,6 +97,8 @@ contract HotDollarsToken is EIP20Interface {
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition roundIndex >= 0
     /// @notice precondition subpotIndex >= 0
     /// @notice postcondition true
@@ -116,6 +120,8 @@ contract HotDollarsToken is EIP20Interface {
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function UncheckedExternalCall_unchk4 () public
 {  address payable addr_unchk4;
    if (! addr_unchk4.send (42 ether))  
@@ -132,6 +138,8 @@ contract HotDollarsToken is EIP20Interface {
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function bug_unchk7() public{
 address payable addr_unchk7;
 if (!addr_unchk7.send (10 ether) || 1==1)
@@ -144,8 +152,11 @@ if (!addr_unchk7.send (10 ether) || 1==1)
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
   function my_func_unchk23(address payable dst) public payable{
         dst.send(msg.value);
     }
@@ -157,6 +168,8 @@ if (!addr_unchk7.send (10 ether) || 1==1)
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     constructor() {
         totalSupply = 3 * 1e28;                        
         name = "HotDollars Token";                          
@@ -170,8 +183,11 @@ if (!addr_unchk7.send (10 ether) || 1==1)
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function my_func_unchk35(address payable dst) public payable{
         dst.send(msg.value);
     }
@@ -182,6 +198,8 @@ function my_func_unchk35(address payable dst) public payable{
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function transfer(address _to, uint256 _value) public override returns (bool success) {
         require(balances[msg.sender] >= _value);
@@ -197,6 +215,8 @@ function my_func_unchk35(address payable dst) public payable{
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success) {
         uint256 currentAllowance = allowed[_from][msg.sender];
@@ -216,6 +236,8 @@ function my_func_unchk35(address payable dst) public payable{
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function balanceOf(address _owner) public view override returns (uint256 balance) {
         return balances[_owner];
     }
@@ -226,6 +248,8 @@ function my_func_unchk35(address payable dst) public payable{
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function approve(address _spender, uint256 _value) public override returns (bool success) {
         allowed[msg.sender][_spender] = _value;
@@ -239,6 +263,8 @@ function my_func_unchk35(address payable dst) public payable{
     /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
     /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
     /// @notice precondition decimals >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function allowance(address _owner, address _spender) public view override returns (uint256 remaining) {
         return allowed[_owner][_spender];
     }

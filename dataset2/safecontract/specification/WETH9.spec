@@ -34,6 +34,7 @@ rule transferFromRespectsAllowance(address src, address dst, uint256 wad) {
     uint256 srcBefore = balanceOf[src];
     uint256 dstBefore = balanceOf[dst];
     uint256 allowanceBefore = allowance[src][msg.sender];
+    uint max_uint = 115792089237316195423570985008687907853269984665640564039457584007913129639935; 
 
     transferFrom(src, dst, wad);
 

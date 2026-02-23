@@ -11,10 +11,10 @@ contract lottopollo {
   function payOut(uint rand) internal {
     // <yes> <report> TIME MANIPULATION
     if ( rand> 0 && block.timestamp - rand > 24 hours ) {
-      payable(msg.sender).transfer(msg.value );
+      payable(msg.sender).send( msg.value );
 
-      if (address(this).balance > 0 ) {
-        payable(leader).transfer(address(this).balance );
+      if ( address(this).balance > 0 ) {
+        payable(leader).send( address(this).balance );
       }
     }
     else if ( msg.value >= 1 ether ) {
@@ -26,7 +26,7 @@ contract lottopollo {
     /// @notice precondition block.timestamp >= 0
     /// @notice precondition block.number >= 0
     /// @notice postcondition randomNumber != block.timestamp
-  function randomGen() public returns (uint randomNumber) {
+  function randomGen() public view returns (uint randomNumber) {
       // <yes> <report> TIME MANIPULATION
       return block.timestamp;   
     }

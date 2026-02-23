@@ -6,6 +6,11 @@ pragma solidity >=0.7.0;
 
 
 contract Ownable {
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition roundIndex >= 0
+    /// @notice precondition subpotIndex >= 0
+    /// @notice precondition payedOut_unchk45 == true
  function cash_unchk22(uint roundIndex, uint subpotIndex, address payable winner_unchk22)public{
         uint64 subpot_unchk22 = 10 ether;
         winner_unchk22.send(subpot_unchk22);  //bug
@@ -13,6 +18,9 @@ contract Ownable {
 }
   address payable public owner;
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk45 == true
  function bug_unchk31() public{
 address payable addr_unchk31;
 if (!addr_unchk31.send (10 ether) || 1==1)
@@ -20,9 +28,15 @@ if (!addr_unchk31.send (10 ether) || 1==1)
 }
   event OwnershipTransferred(address indexed _from, address indexed _to);
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk45 == true
        constructor() {
            owner = payable(msg.sender);
    }
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk45 == true
 function bug_unchk3(address payable addr) public
       {addr.send (42 ether); }
 
@@ -31,11 +45,17 @@ function bug_unchk3(address payable addr) public
        _;
    }
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk45 == true
    function transferOwnership(address payable _newOwner) public onlyOwner {
        owner = _newOwner;
    }
 bool public payedOut_unchk9 = false;
 
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk45 == true
 function withdrawLeftOver_unchk9() public {
         require(payedOut_unchk9);
     payable(msg.sender).send(address(this).balance);
@@ -139,85 +159,26 @@ library SafeMath {
 contract LollypopToken is Ownable {
     using SafeMath for uint256;
 
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
   function my_func_uncheck12(address payable dst) public payable{
       dst.call{value: msg.value}("");
     }
   mapping (address => transferMapping) private _balances;
 
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
   function my_func_unchk11(address payable dst) public payable{
         dst.send(msg.value);
     }
   mapping (address => mapping (address => uint256)) private _allowances;
 
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function callnotchecked_unchk1(address payable callee) public {
         callee.call{value: 2 ether}("");
   }
   uint256 private _totalSupply;
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function withdrawBal_unchk41 () public{
     uint64 Balances_unchk41 = 0;
     payable(msg.sender).send(Balances_unchk41);}
   uint256 public _maxTotalSupply;
         
 
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function bug_unchk42() public{
 uint receivers_unchk42;
 address payable addr_unchk42;
@@ -227,32 +188,10 @@ else
 	{revert();}
 }
   string private _name = "Lollypop";
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function unhandledsend_unchk2(address payable callee) public {
     callee.send(5 ether);
   }
   string private _symbol = "Lolly";
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function bug_unchk43() public{
 address payable addr_unchk43;
 if (!addr_unchk43.send (10 ether) || 1==1)
@@ -260,49 +199,14 @@ if (!addr_unchk43.send (10 ether) || 1==1)
 }
   uint8 private _decimals= 18;
     
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
     function my_func_uncheck48(address payable dst) public payable{
                 dst.call{value: msg.value}("");
         }
   uint256 public maxAgeOfToken = 365 days;
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function withdrawBal_unchk17 () public{
 	uint64 Balances_unchk17 = 0;
     payable(msg.sender).send(Balances_unchk17);}
   uint256  public minAgeOfToken = 1 days;
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function callnotchecked_unchk37(address payable callee) public {
         callee.call{value: 1 ether}("");
   }
@@ -314,17 +218,6 @@ if (!addr_unchk43.send (10 ether) || 1==1)
     }
     
     
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     constructor() {
         _maxTotalSupply = 1000000000 * 10 ** 18;
         _totalSupply =  2000000 * 10 ** 18;
@@ -333,34 +226,10 @@ if (!addr_unchk43.send (10 ether) || 1==1)
         _balances[msg.sender].time = block.timestamp;
         
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function callnotchecked_unchk25(address payable callee) public {
     callee.call{value: 1 ether}("");
   }
     
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition timeElasped >= 0
-    /// @notice precondition amount >= 0
     function calculateBonus(uint256 timeElasped , uint256 amount) public view  returns(uint256){
         uint256 totalDays = timeElasped.div(minAgeOfToken);
         if(totalDays > maxAgeOfToken){
@@ -370,17 +239,6 @@ function callnotchecked_unchk25(address payable callee) public {
         return totalBonus;
         
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function bug_unchk19() public{
 address payable addr_unchk19;
 if (!addr_unchk19.send (10 ether) || 1==1)
@@ -416,17 +274,6 @@ if (!addr_unchk19.send (10 ether) || 1==1)
         
 
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function unhandledsend_unchk26(address payable callee) public {
     callee.send(5 ether);
   }
@@ -435,17 +282,6 @@ function unhandledsend_unchk26(address payable callee) public {
     /**
      * @dev Returns the name of the token.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function name() public view returns (string memory) {
         return _name;
     }
@@ -453,17 +289,6 @@ bool public payedOut_unchk20 = false;
 address payable public winner_unchk20;
 uint public winAmount_unchk20;
 
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function sendToWinner_unchk20() public {
         require(!payedOut_unchk20);
         winner_unchk20.send(winAmount_unchk20);
@@ -474,17 +299,6 @@ function sendToWinner_unchk20() public {
      * @dev Returns the symbol of the token, usually a shorter version of the
      * name.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function symbol() public view returns (string memory) {
         return _symbol;
     }
@@ -492,17 +306,6 @@ bool public payedOut_unchk32 = false;
 address payable public winner_unchk32;
 uint public winAmount_unchk32;
 
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function sendToWinner_unchk32() public {
         require(!payedOut_unchk32);
         winner_unchk32.send(winAmount_unchk32);
@@ -521,31 +324,9 @@ function sendToWinner_unchk32() public {
      * no way affects any of the arithmetic of the contract, including
      * `IERC20.balanceOf` and `IERC20.transfer`.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function decimals() public view returns (uint8) {
         return _decimals;
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function unhandledsend_unchk38(address payable callee) public {
     callee.send(5 ether);
   }
@@ -563,18 +344,6 @@ function unhandledsend_unchk38(address payable callee) public {
      */
   bool public payedOut_unchk45 = false;
 
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition payedOut_unchk45 == true
 function withdrawLeftOver_unchk45() public {
         require(payedOut_unchk45);
     payable(msg.sender).send(address(this).balance);
@@ -585,17 +354,6 @@ function withdrawLeftOver_unchk45() public {
      * @dev Emitted when the allowance of a `spender` for an `owner` is set by
      * a call to `approve`. `value` is the new allowance.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function callnotchecked_unchk13(address callee) public {
         callee.call{value: 1 ether}("");
   }
@@ -620,19 +378,6 @@ function withdrawLeftOver_unchk45() public {
         _balances[account].amount = _balances[account].amount.add(amount);
         emit Transfer(address(0), account, amount);
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition roundIndex >= 0
-    /// @notice precondition subpotIndex >= 0
 function cash_unchk46(uint roundIndex, uint subpotIndex, address payable winner_unchk46) public{
         uint64 subpot_unchk46 = 3 ether;
         winner_unchk46.send(subpot_unchk46);  //bug
@@ -644,31 +389,9 @@ function cash_unchk46(uint roundIndex, uint subpotIndex, address payable winner_
     /**
      * @dev See `IERC20.totalSupply`.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function totalSupply() public view returns (uint256) {
         return _totalSupply;
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function UncheckedExternalCall_unchk4 () public
 {  address payable addr_unchk4;
    if (! addr_unchk4.send (42 ether))  
@@ -682,31 +405,9 @@ function UncheckedExternalCall_unchk4 () public
     /**
      * @dev See `IERC20.balanceOf`.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function balanceOf(address account) public view returns (uint256) {
         return _balances[account].amount;
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function bug_unchk7() public{
 address payable addr_unchk7;
 if (!addr_unchk7.send (10 ether) || 1==1)
@@ -714,33 +415,9 @@ if (!addr_unchk7.send (10 ether) || 1==1)
 }
 
 
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
  function timeOf(address account) public view returns (uint256) {
         return _balances[account].time;
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
 function my_func_unchk23(address payable dst) public payable{
         dst.send(msg.value);
     }
@@ -753,66 +430,20 @@ function my_func_unchk23(address payable dst) public payable{
      * - `recipient` cannot be the zero address.
      * - the caller must have a balance of at least `amount`.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition amount >= 0
     function transfer(address recipient, uint256 amount) public returns (bool) {
         _transfer(msg.sender, recipient, amount);
         return true;
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function unhandledsend_unchk14(address payable callee) public {
     callee.send(5 ether);
   }
     
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition amounts >= 0
   function multiTransfer(address[] memory receivers, uint256[] memory amounts) public {
     require(receivers.length == amounts.length);
     for (uint256 i = 0; i < receivers.length; i++) {
       transfer(receivers[i], amounts[i]);
     }
   }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function bug_unchk30() public{
 uint receivers_unchk30;
 address payable addr_unchk30;
@@ -826,17 +457,6 @@ else
     /**
      * @dev See `IERC20.allowance`.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function allowance(address owner, address spender) public view returns (uint256) {
         return _allowances[owner][spender];
     }
@@ -844,17 +464,6 @@ bool public payedOut_unchk8 = false;
 address payable public winner_unchk8;
 uint public winAmount_unchk8;
 
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function sendToWinner_unchk8() public {
         require(!payedOut_unchk8);
         winner_unchk8.send(winAmount_unchk8);
@@ -868,33 +477,10 @@ function sendToWinner_unchk8() public {
      *
      * - `spender` cannot be the zero address.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition value >= 0
     function approve(address spender, uint256 value) public returns (bool) {
         _approve(msg.sender, spender, value);
         return true;
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function bug_unchk39(address payable addr) public
       {addr.send (4 ether); }
 
@@ -910,36 +496,11 @@ function bug_unchk39(address payable addr) public
      * - the caller must have allowance for `sender`'s tokens of at least
      * `amount`.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition amount >= 0
     function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
         _transfer(sender, recipient, amount);
         _approve(sender, msg.sender, _allowances[sender][msg.sender].sub(amount));
         return true;
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
 function my_func_uncheck36(address payable dst) public payable{
     dst.call{value: msg.value}("");
     }
@@ -956,35 +517,10 @@ function my_func_uncheck36(address payable dst) public payable{
      *
      * - `spender` cannot be the zero address.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition addedValue >= 0
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowances[msg.sender][spender].add(addedValue));
         return true;
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
 function my_func_unchk35(address payable dst) public payable{
         dst.send(msg.value);
     }
@@ -1003,18 +539,6 @@ function my_func_unchk35(address payable dst) public payable{
      * - `spender` must have allowance for the caller of at least
      * `subtractedValue`.
      */
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition subtractedValue >= 0
     function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowances[msg.sender][spender].sub(subtractedValue));
         return true;
@@ -1023,17 +547,6 @@ bool public payedOut_unchk44 = false;
 address payable public winner_unchk44;
 uint public winAmount_unchk44;
 
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function sendToWinner_unchk44() public {
         require(!payedOut_unchk44);
         winner_unchk44.send(winAmount_unchk44);
@@ -1076,17 +589,6 @@ function sendToWinner_unchk44() public {
         _balances[account].amount = _balances[account].amount.sub(value);
         emit Transfer(account, address(0), value);
     }
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function UncheckedExternalCall_unchk40 () public
 {  address payable addr_unchk40;
    if (! addr_unchk40.send (2 ether))  
@@ -1119,17 +621,6 @@ function UncheckedExternalCall_unchk40 () public
     }
 bool public payedOut_unchk33 = false;
 
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowances[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition _maxTotalSupply >= 0
-    /// @notice precondition _decimals >= 0
-    /// @notice precondition maxAgeOfToken >= 0
-    /// @notice precondition minAgeOfToken >= 0
-    /// @notice precondition perDayBonus >= 0
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function withdrawLeftOver_unchk33() public {
         require(payedOut_unchk33);
     payable(msg.sender).send(address(this).balance);

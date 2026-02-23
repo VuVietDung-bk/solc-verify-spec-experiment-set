@@ -98,8 +98,8 @@ contract WETH9 {
     /// @notice postcondition dst == src || balanceOf[dst] == __verifier_old_uint(balanceOf[dst]) + wad
     /// @notice postcondition dst != src || balanceOf[src] == __verifier_old_uint(balanceOf[src])
     /// @notice postcondition dst != src || balanceOf[dst] == __verifier_old_uint(balanceOf[dst])
-    /// @notice postcondition src == msg.sender || __verifier_old_uint(allowance[src][msg.sender]) == max_uint || allowance[src][msg.sender] == __verifier_old_uint(allowance[src][msg.sender]) - wad
-    /// @notice postcondition src != msg.sender && __verifier_old_uint(allowance[src][msg.sender]) != max_uint || allowance[src][msg.sender] == __verifier_old_uint(allowance[src][msg.sender])
+    /// @notice postcondition src == msg.sender || __verifier_old_uint(allowance[src][msg.sender]) == 115792089237316195423570985008687907853269984665640564039457584007913129639935 || (allowance[src][msg.sender] == __verifier_old_uint(allowance[src][msg.sender]) - wad)
+    /// @notice postcondition src != msg.sender && __verifier_old_uint(allowance[src][msg.sender]) != 115792089237316195423570985008687907853269984665640564039457584007913129639935 || (allowance[src][msg.sender] == __verifier_old_uint(allowance[src][msg.sender]))
     function transferFrom(address src, address dst, uint wad)
         public
         returns (bool)

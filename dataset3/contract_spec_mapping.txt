@@ -1,0 +1,89 @@
+# Contract-Spec Mapping
+# Format: spec_file ~ ContractName
+#
+
+## Overflow-Underflow
+buggy_1.spec ~ EIP20Interface
+buggy_19_eth_bank.spec ~ ethBank
+buggy_19_owned.spec ~ owned
+buggy_20_locktime.spec ~ Ownable
+buggy_20_transfer.spec ~ Stoppable
+buggy_23.spec ~ ERC20
+buggy_33.spec ~ Owned
+buggy_34.spec ~ LollypopToken
+buggy_45.spec ~ StockBet
+buggy_47_locktime.spec ~ ERC20Interface
+buggy_47_transfer.spec ~ AcunarToken
+buggy_50.spec ~ digitalNotary
+buggy_5_locktime.spec ~ Ownable
+buggy_5_transfer.spec ~ TokenERC20
+
+## Re-entrancy
+buggy_19_eth_bank.spec ~ ethBank
+buggy_19_owned.spec ~ owned
+buggy_1_hot_dollars_token.spec ~ HotDollarsToken
+buggy_20_ent11.spec ~ RampInstantPool
+buggy_20_ent17.spec ~ Ownable
+buggy_20_ent25.spec ~ RampInstantEscrowsPoolInterface
+buggy_20_ent3.spec ~ Stoppable
+buggy_23.spec ~ ERC20
+buggy_33.spec ~ Owned
+buggy_34_lollypop_token.spec ~ LollypopToken
+buggy_34_ownable.spec ~ Ownable
+buggy_45.spec ~ StockBet
+buggy_47_acunar_token.spec ~ AcunarToken
+buggy_50.spec ~ digitalNotary
+buggy_5_ownable.spec ~ Ownable
+buggy_5_token_erc20.spec ~ TokenERC20
+buggy_5_ttc.spec ~ TTC
+
+## Timestamp-Dependency
+buggy_1.spec ~ EIP20Interface
+buggy_19.spec ~ owned
+buggy_20_ethpool.spec ~ RampInstantEthPool
+buggy_20_ownable.spec ~ Ownable
+buggy_20_pool.spec ~ RampInstantPool
+buggy_20_stoppable.spec ~ Stoppable
+buggy_23_erc20.spec ~ ERC20
+buggy_23_erc20_burnable.spec ~ ERC20Burnable
+buggy_33.spec ~ Owned
+buggy_34.spec ~ Ownable
+buggy_45.spec ~ StockBet
+buggy_47.spec ~ ERC20Interface
+buggy_5.spec ~ Ownable
+buggy_50.spec ~ digitalNotary
+
+## Unchecked-Send
+buggy_1.spec ~ HotDollarsToken
+buggy_19_eth_bank.spec ~ ethBank
+buggy_19_owned.spec ~ owned
+buggy_20_ramp_instant_eth_pool.spec ~ RampInstantEthPool
+buggy_20_stoppable.spec ~ RampInstantPool
+buggy_23.spec ~ ERC20
+buggy_33.spec ~ Staking
+buggy_34.spec ~ LollypopToken
+buggy_45.spec ~ StockBet
+buggy_47.spec ~ AcunarIEO
+buggy_50.spec ~ digitalNotary
+buggy_5_token_erc20.spec ~ TokenERC20
+buggy_5_ttc.spec ~ TTC
+
+## Unhandled-Exceptions
+buggy_19_eth_bank.spec ~ ethBank
+buggy_19_owned.spec ~ owned
+buggy_1_hot_dollars_token.spec ~ HotDollarsToken
+buggy_20_escrowspool.spec ~ RampInstantEscrowsPoolInterface
+buggy_20_ethpool.spec ~ RampInstantPool
+buggy_23_agr.spec ~ AGR
+buggy_23_erc20.spec ~ ERC20
+buggy_23_erc20_burnable.spec ~ ERC20Burnable
+buggy_33.spec ~ Staking
+buggy_34_lollypop_token.spec ~ LollypopToken
+buggy_34_ownable.spec ~ Ownable
+buggy_45.spec ~ StockBet
+buggy_47_acunar_ieo.spec ~ AcunarIEO
+buggy_47_acunar_token.spec ~ AcunarToken
+buggy_50.spec ~ digitalNotary
+buggy_5_ownable.spec ~ Ownable
+buggy_5_token_erc20.spec ~ TokenERC20
+buggy_5_ttc.spec ~ TTC

@@ -27,9 +27,9 @@ contract Curve {
     /// @notice precondition block.number >= 0
     /// @notice precondition amountIn >= 0
     /// @notice postcondition pools[tokenIn].totalBalance == pools[tokenIn].totalBalance + amountIn
-    /// @notice postcondition pools[tokenOut].totalBalance == pools[tokenOut].totalBalance - amountIn * 1000 - pools[tokenIn].swapFee * pools[tokenOut].totalBalance * pools[tokenOut].totalWeight / pools[tokenIn].totalBalance * pools[tokenIn].totalWeight * 1000 + amountIn * 1000 - pools[tokenIn].swapFee * pools[tokenIn].totalWeight
+    /// @notice postcondition pools[tokenOut].totalBalance == pools[tokenOut].totalBalance - amountIn * (1000 - pools[tokenIn].swapFee) * pools[tokenOut].totalBalance * pools[tokenOut].totalWeight / pools[tokenIn].totalBalance * pools[tokenIn].totalWeight * 1000 + amountIn * (1000 - pools[tokenIn].swapFee) * pools[tokenIn].totalWeight
     /// @notice postcondition pools[tokenIn].balances[msg.sender] == pools[tokenIn].balances[msg.sender] + amountIn
-    /// @notice postcondition pools[tokenOut].balances[msg.sender] == pools[tokenOut].balances[msg.sender] - amountIn * 1000 - pools[tokenIn].swapFee * pools[tokenOut].totalBalance * pools[tokenOut].totalWeight / pools[tokenIn].totalBalance * pools[tokenIn].totalWeight * 1000 + amountIn * 1000 - pools[tokenIn].swapFee * pools[tokenIn].totalWeight
+    /// @notice postcondition pools[tokenOut].balances[msg.sender] == pools[tokenOut].balances[msg.sender] - amountIn * (1000 - pools[tokenIn].swapFee) * pools[tokenOut].totalBalance * pools[tokenOut].totalWeight / pools[tokenIn].totalBalance * pools[tokenIn].totalWeight * 1000 + amountIn * (1000 - pools[tokenIn].swapFee) * pools[tokenIn].totalWeight
     function swap(address tokenIn, address tokenOut, uint256 amountIn) public {
         require(pools[tokenIn].totalBalance > 0 && pools[tokenOut].totalBalance > 0, "Invalid pool");
         require(amountIn > 0, "Invalid amount");

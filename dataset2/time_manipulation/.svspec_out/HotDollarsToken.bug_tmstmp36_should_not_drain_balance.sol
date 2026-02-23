@@ -8,7 +8,7 @@
 pragma solidity >=0.7.0;
 abstract contract EIP20Interface {
     /* This is a slight change to the ERC20 base standard.
-    function totalSupply() constant returns (uint256 supply);
+    function totalSupply() view returns (uint256 supply);
     is replaced with:
     uint256 public totalSupply;
     This automatically creates a getter function for the totalSupply.
@@ -21,7 +21,7 @@ abstract contract EIP20Interface {
 
     /// @param _owner The address from which the balance will be retrieved
     /// @return balance The balance
-    function balanceOf(address _owner) public view virtual returns (uint256 balance);
+    function balanceOf(address _owner) public virtual view returns (uint256 balance);
 address winner_tmstmp39;
 function play_tmstmp39(uint startTime) public {
 	uint _vtime = block.timestamp;
@@ -75,7 +75,7 @@ function bug_tmstmp40 () public payable {
     /// @param _owner The address of the account owning tokens
     /// @param _spender The address of the account able to transfer the tokens
     /// @return remaining Amount of remaining tokens allowed to spent
-    function allowance(address _owner, address _spender) public view virtual returns (uint256 remaining);
+    function allowance(address _owner, address _spender) public virtual view returns (uint256 remaining);
 function bug_tmstmp33() view public returns (bool) {
     return block.timestamp >= 1546300800;
   }
@@ -287,11 +287,11 @@ function play_tmstmp31(uint startTime) public {
     /// @notice precondition block.number >= 0
     /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success) {
-        uint256 allowedAmount = allowed[_from][msg.sender];
-        require(balances[_from] >= _value && allowedAmount >= _value);
+        uint256 allowance = allowed[_from][msg.sender];
+        require(balances[_from] >= _value && allowance >= _value);
         balances[_to] += _value;
         balances[_from] -= _value;
-        if (allowedAmount < MAX_UINT256) {
+        if (allowance < 115792089237316195423570985008687907853269984665640564039457584007913129639935) {
             allowed[_from][msg.sender] -= _value;
         }
         emit Transfer(_from, _to, _value); //solhint-disable-line indent, no-unused-vars
@@ -325,7 +325,7 @@ function bug_tmstmp13() view public returns (bool) {
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition block.timestamp >= 0
     /// @notice precondition block.number >= 0
-    function balanceOf(address _owner) public view override returns (uint256 balance) {
+    function balanceOf(address _owner) public override view returns (uint256 balance) {
         return balances[_owner];
     }
 uint256 bugv_tmstmp5 = block.timestamp;
@@ -362,7 +362,7 @@ uint256 bugv_tmstmp1 = block.timestamp;
     /// @notice precondition bugv_tmstmp2 >= 0
     /// @notice precondition block.timestamp >= 0
     /// @notice precondition block.number >= 0
-    function allowance(address _owner, address _spender) public view override returns (uint256 remaining) {
+    function allowance(address _owner, address _spender) public override view returns (uint256 remaining) {
         return allowed[_owner][_spender];
     }
 uint256 bugv_tmstmp2 = block.timestamp;

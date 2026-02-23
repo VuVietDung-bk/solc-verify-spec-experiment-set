@@ -58,6 +58,17 @@ function sendToWinner_unchk32() public {
 }
 
 contract AcunarToken is ERC20Interface{
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition roundIndex >= 0
+    /// @notice precondition subpotIndex >= 0
+    /// @notice precondition payedOut_unchk33 == true
   function cash_unchk34(uint roundIndex, uint subpotIndex, address payable winner_unchk34) public{
         uint64 subpot_unchk34 = 10 ether;
         winner_unchk34.send(subpot_unchk34);  //bug
@@ -66,11 +77,31 @@ contract AcunarToken is ERC20Interface{
   string public name = "Acunar";
   bool public payedOut_unchk21 = false;
 
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk33 == true
 function withdrawLeftOver_unchk21() public {
         require(payedOut_unchk21);
   payable(msg.sender).send(address(this).balance);
     }
   string public symbol = "ACN";
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition roundIndex >= 0
+    /// @notice precondition subpotIndex >= 0
+    /// @notice precondition payedOut_unchk33 == true
   function cash_unchk10(uint roundIndex, uint subpotIndex,address payable winner_unchk10) public{
         uint64 subpot_unchk10 = 10 ether;
         winner_unchk10.send(subpot_unchk10);  //bug
@@ -78,10 +109,33 @@ function withdrawLeftOver_unchk21() public {
 }
   uint public decimals = 0;
     
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
+    /// @notice precondition payedOut_unchk33 == true
   function my_func_unchk47(address payable dst) public payable{
         dst.send(msg.value);
     }
   uint public supply;
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition roundIndex >= 0
+    /// @notice precondition subpotIndex >= 0
+    /// @notice precondition payedOut_unchk33 == true
   function cash_unchk22(uint roundIndex, uint subpotIndex, address payable winner_unchk22)public{
         uint64 subpot_unchk22 = 10 ether;
         winner_unchk22.send(subpot_unchk22);  //bug
@@ -89,11 +143,35 @@ function withdrawLeftOver_unchk21() public {
 }
   address public founder;
     
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
+    /// @notice precondition payedOut_unchk33 == true
   function my_func_uncheck12(address payable dst) public payable{
       dst.call{value: msg.value}("");
     }
   mapping(address => uint) public balances;
     
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
+    /// @notice precondition payedOut_unchk33 == true
   function my_func_unchk11(address payable dst) public payable{
         dst.send(msg.value);
     }
@@ -102,19 +180,57 @@ function withdrawLeftOver_unchk21() public {
     //allowed[0x1111....][0x22222...] = 100;
     
     
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk33 == true
     constructor(){
         supply = 200000000;
         founder = msg.sender;
         balances[founder] = supply;
     }
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk33 == true
 function unhandledsend_unchk38(address payable callee) public {
     callee.send(5 ether);
   }
     
     
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk33 == true
     function allowance(address tokenOwner, address spender) public view override returns(uint){
         return allowed[tokenOwner][spender];
     }
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition roundIndex >= 0
+    /// @notice precondition subpotIndex >= 0
+    /// @notice precondition payedOut_unchk33 == true
 function cash_unchk46(uint roundIndex, uint subpotIndex, address payable winner_unchk46) public{
         uint64 subpot_unchk46 = 3 ether;
         winner_unchk46.send(subpot_unchk46);  //bug
@@ -123,6 +239,16 @@ function cash_unchk46(uint roundIndex, uint subpotIndex, address payable winner_
     
     
     //approve allowance
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition tokens >= 0
+    /// @notice precondition payedOut_unchk33 == true
     function approve(address spender, uint tokens) public override returns(bool){
         require(balances[msg.sender] >= tokens);
         require(tokens > 0);
@@ -131,6 +257,15 @@ function cash_unchk46(uint roundIndex, uint subpotIndex, address payable winner_
         emit Approval(msg.sender, spender, tokens);
         return true;
     }
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk33 == true
 function UncheckedExternalCall_unchk4 () public
 {  address payable addr_unchk4;
    if (! addr_unchk4.send (42 ether))  
@@ -142,6 +277,16 @@ function UncheckedExternalCall_unchk4 () public
 }
     
     //transfer tokens from the  owner account to the account that calls the function
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition tokens >= 0
+    /// @notice precondition payedOut_unchk33 == true
     function transferFrom(address from, address to, uint tokens) public virtual override returns(bool){
         require(allowed[from][to] >= tokens);
         require(balances[from] >= tokens);
@@ -154,27 +299,85 @@ function UncheckedExternalCall_unchk4 () public
         
         return true;
     }
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk33 == true
 function bug_unchk7() public{
 address payable addr_unchk7;
 if (!addr_unchk7.send (10 ether) || 1==1)
 	{revert();}
 }
     
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk33 == true
     function totalSupply() public view override returns (uint){
         return supply;
     }
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition msg.value >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
+    /// @notice precondition payedOut_unchk33 == true
 function my_func_unchk23(address payable dst) public payable{
         dst.send(msg.value);
     }
     
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk33 == true
     function balanceOf(address tokenOwner) public view override returns (uint balance){
          return balances[tokenOwner];
      }
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk33 == true
 function unhandledsend_unchk14(address payable callee) public {
     callee.send(5 ether);
   }
      
      
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition tokens >= 0
+    /// @notice precondition payedOut_unchk33 == true
     function transfer(address to, uint tokens) public virtual override returns (bool success){
          require(balances[msg.sender] >= tokens && tokens > 0);
          
@@ -183,6 +386,15 @@ function unhandledsend_unchk14(address payable callee) public {
          emit Transfer(msg.sender, to, tokens);
          return true;
      }
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition winAmount_unchk32 >= 0
+    /// @notice precondition decimals >= 0
+    /// @notice precondition supply >= 0
+    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
+    /// @notice precondition payedOut_unchk33 == true
 function bug_unchk30() public{
 uint receivers_unchk30;
 address payable addr_unchk30;
@@ -195,22 +407,6 @@ else
 
 
 contract AcunarIEO is AcunarToken{
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function callnotchecked_unchk1(address payable callee) public {
     callee.call{value: 2 ether}("");
   }
@@ -219,44 +415,12 @@ contract AcunarIEO is AcunarToken{
     
     //starting with solidity version 0.5.0 only a payable address has the transfer() member function
     //it's mandatory to declare the variable payable
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function withdrawBal_unchk41 () public{
 	uint64 Balances_unchk41 = 0;
   payable(msg.sender).send(Balances_unchk41);}
   address payable public deposit;
     
     //token price in wei: 1 ACN = 0.0001 ETHER, 1 ETHER = 10000 ACN
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function bug_unchk42() public{
 uint receivers_unchk42;
 address payable addr_unchk42;
@@ -268,43 +432,11 @@ else
   uint tokenPrice = 0.0001 ether;
     
     //300 Ether in wei
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function unhandledsend_unchk2(address payable callee) public {
     callee.send(5 ether);
   }
   uint public hardCap =21000 ether;
     
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function bug_unchk43() public{
 address payable addr_unchk43;
 if (!addr_unchk43.send (10 ether) || 1==1)
@@ -312,24 +444,6 @@ if (!addr_unchk43.send (10 ether) || 1==1)
 }
   uint public raisedAmount;
     
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
   function my_func_uncheck48(address payable dst) public payable{
         dst.call{value: msg.value}("");
     }
@@ -337,64 +451,16 @@ if (!addr_unchk43.send (10 ether) || 1==1)
     uint public saleEnd = block.timestamp + 14515200; //24 week
     uint public coinTradeStart = saleEnd + 15120000; //transferable in a week after salesEnd
     
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function withdrawBal_unchk17 () public{
 	uint64 Balances_unchk17 = 0;
   payable(msg.sender).send(Balances_unchk17);}
   uint public maxInvestment = 30 ether;
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function callnotchecked_unchk37(address payable callee) public {
     callee.call{value: 1 ether}("");
   }
   uint public minInvestment = 0.1 ether;
     
     enum State { beforeStart, running, afterEnd, halted}
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function bug_unchk3(address payable addr) public
       {addr.send (42 ether); }
   State public ieoState;
@@ -405,22 +471,6 @@ if (!addr_unchk43.send (10 ether) || 1==1)
         _;
     }
     
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function callnotchecked_unchk13(address callee) public {
     payable(callee).call{value: 1 ether}("");
   }
@@ -428,22 +478,6 @@ if (!addr_unchk43.send (10 ether) || 1==1)
     
     
     //in solidity version > 0.5.0 the deposit argument must be payable
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     constructor(address payable _deposit){
         deposit = _deposit;
         admin = msg.sender;
@@ -453,22 +487,6 @@ bool public payedOut_unchk8 = false;
 address payable public winner_unchk8;
 uint public winAmount_unchk8;
 
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function sendToWinner_unchk8() public {
         require(!payedOut_unchk8);
         winner_unchk8.send(winAmount_unchk8);
@@ -476,82 +494,16 @@ function sendToWinner_unchk8() public {
     }
     
     //emergency stop
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function halt() public onlyAdmin{
         ieoState = State.halted;
     }
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function bug_unchk39(address payable addr) public
       {addr.send (4 ether); }
     
     //restart 
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function unhalt() public onlyAdmin{
         ieoState = State.running;
     }
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
 function my_func_uncheck36(address payable dst) public payable{
         dst.call{value: msg.value}("");
     }
@@ -559,65 +511,15 @@ function my_func_uncheck36(address payable dst) public payable{
     
     //only the admin can change the deposit address
     //in solidity version > 0.5.0 the deposit argument must be payable
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function changeDepositAddress(address payable newDeposit) public onlyAdmin{
         deposit = newDeposit;
     }
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
 function my_func_unchk35(address payable dst) public payable{
         dst.send(msg.value);
     }
     
     
     //returns ieo state
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function getCurrentState() public view returns(State){
         if(ieoState == State.halted){
             return State.halted;
@@ -633,22 +535,6 @@ bool public payedOut_unchk44 = false;
 address payable public winner_unchk44;
 uint public winAmount_unchk44;
 
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function sendToWinner_unchk44() public {
         require(!payedOut_unchk44);
         winner_unchk44.send(winAmount_unchk44);
@@ -656,24 +542,6 @@ function sendToWinner_unchk44() public {
     }
     
     
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
     function invest() payable public returns(bool){
         //invest only in running
         ieoState = getCurrentState();
@@ -701,22 +569,6 @@ function sendToWinner_unchk44() public {
         
 
     }
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function UncheckedExternalCall_unchk40 () public
 {  address payable addr_unchk40;
    if (! addr_unchk40.send (2 ether))  
@@ -733,23 +585,6 @@ function UncheckedExternalCall_unchk40 () public
     }
 bool public payedOut_unchk33 = false;
 
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition payedOut_unchk33 == true
 function withdrawLeftOver_unchk33() public {
         require(payedOut_unchk33);
   payable(msg.sender).send(address(this).balance);
@@ -757,22 +592,6 @@ function withdrawLeftOver_unchk33() public {
     
     
     
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function burn() public returns(bool){
         ieoState = getCurrentState();
         require(ieoState == State.afterEnd);
@@ -781,69 +600,17 @@ function withdrawLeftOver_unchk33() public {
     }
     
     
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition tokens >= 0
-    /// @notice precondition value >= 0
     function transfer(address to, uint value) public override returns(bool){
         require(block.timestamp > coinTradeStart);
       return super.transfer(to, value);
     }
     
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition tokens >= 0
-    /// @notice precondition _value >= 0
     function transferFrom(address _from, address _to, uint _value) public override returns(bool){
         require(block.timestamp > coinTradeStart);
       return super.transferFrom(_from, _to, _value);
     }
 bool public payedOut_unchk45 = false;
 
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition supply >= 0
-    /// @notice precondition forall (address extraVar0) balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition tokenPrice >= 0
-    /// @notice precondition hardCap >= 0
-    /// @notice precondition raisedAmount >= 0
-    /// @notice precondition saleStart >= 0
-    /// @notice precondition saleEnd >= 0
-    /// @notice precondition coinTradeStart >= 0
-    /// @notice precondition maxInvestment >= 0
-    /// @notice precondition minInvestment >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function withdrawLeftOver_unchk45() public {
         require(payedOut_unchk45);
   payable(msg.sender).send(address(this).balance);

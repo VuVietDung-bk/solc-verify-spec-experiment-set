@@ -16,8 +16,11 @@ contract StockBet {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
   function my_func_unchk35(address payable dst) public payable{
         dst.send(msg.value);
     }
@@ -36,6 +39,8 @@ uint public winAmount_unchk44;
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition payedOut_unchk44 == false
     /// @notice postcondition payedOut_unchk44
 function sendToWinner_unchk44() public {
@@ -54,6 +59,8 @@ function sendToWinner_unchk44() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function UncheckedExternalCall_unchk40 () public
 {  address payable addr_unchk40;
    if (! addr_unchk40.send (2 ether))  
@@ -76,6 +83,8 @@ function sendToWinner_unchk44() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdrawLeftOver_unchk33() public {
         require(payedOut_unchk33);
   payable(msg.sender).send(address(this).balance);
@@ -96,6 +105,8 @@ function withdrawLeftOver_unchk33() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdrawLeftOver_unchk45() public {
         require(payedOut_unchk45);
   payable(msg.sender).send(address(this).balance);
@@ -111,6 +122,8 @@ function withdrawLeftOver_unchk45() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function callnotchecked_unchk13(address callee) public {
     callee.call{value: 1 ether}("");
   }
@@ -141,8 +154,11 @@ function withdrawLeftOver_unchk45() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
   function my_func_uncheck48(address payable dst) public payable{
       dst.call{value: msg.value}("");
     }
@@ -157,6 +173,8 @@ function withdrawLeftOver_unchk45() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function withdrawBal_unchk17 () public{
 	uint64 Balances_unchk17 = 0;
   payable(msg.sender).send(Balances_unchk17);}
@@ -171,6 +189,8 @@ function withdrawLeftOver_unchk45() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function callnotchecked_unchk37(address payable callee) public {
     callee.call{value: 1 ether}("");
   }
@@ -186,6 +206,8 @@ function withdrawLeftOver_unchk45() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function bug_unchk3(address payable addr) public
       {addr.send (42 ether); }
   mapping (uint => Guess) public guesses;
@@ -202,6 +224,8 @@ function withdrawLeftOver_unchk45() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdrawLeftOver_unchk9() public {
         require(payedOut_unchk9);
   payable(msg.sender).send(address(this).balance);
@@ -218,6 +242,8 @@ function withdrawLeftOver_unchk9() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function callnotchecked_unchk25(address payable callee) public {
     callee.call{value: 1 ether}("");
   }
@@ -232,6 +258,8 @@ function withdrawLeftOver_unchk9() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function bug_unchk19() public{
 address payable addr_unchk19;
 if (!addr_unchk19.send (10 ether) || 1==1)
@@ -248,6 +276,8 @@ if (!addr_unchk19.send (10 ether) || 1==1)
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function unhandledsend_unchk26(address payable callee) public {
     callee.send(5 ether);
   }
@@ -267,6 +297,8 @@ uint public winAmount_unchk20;
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function sendToWinner_unchk20() public {
         require(!payedOut_unchk20);
         winner_unchk20.send(winAmount_unchk20);
@@ -287,6 +319,8 @@ uint public winAmount_unchk32;
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function sendToWinner_unchk32() public {
         require(!payedOut_unchk32);
         winner_unchk32.send(winAmount_unchk32);
@@ -328,6 +362,8 @@ function sendToWinner_unchk32() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition _bet >= 0
     constructor(uint256 _bet) public {
         require(_bet > 0);
@@ -348,6 +384,8 @@ function sendToWinner_unchk32() public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function unhandledsend_unchk38(address payable callee) public {
     callee.send(5 ether);
   }
@@ -362,8 +400,11 @@ function unhandledsend_unchk38(address payable callee) public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function setOracle(address _oracle) public payable byOwner inState(State.SETUP) {
         oracle = _oracle;
         
@@ -379,6 +420,8 @@ function unhandledsend_unchk38(address payable callee) public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition roundIndex >= 0
     /// @notice precondition subpotIndex >= 0
 function cash_unchk46(uint roundIndex, uint subpotIndex, address payable winner_unchk46) public{
@@ -397,8 +440,11 @@ function cash_unchk46(uint roundIndex, uint subpotIndex, address payable winner_
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     /// @notice precondition _value >= 0
     function setInitialPrice(uint256 _value) public payable byOracle inState(State.SETUP) {
         initialPrice = _value;
@@ -416,6 +462,8 @@ function cash_unchk46(uint roundIndex, uint subpotIndex, address payable winner_
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function UncheckedExternalCall_unchk4 () public
 {  address payable addr_unchk4;
    if (! addr_unchk4.send (42 ether))  
@@ -436,6 +484,8 @@ function UncheckedExternalCall_unchk4 () public
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function closeGame() public byOwner inState(State.OPEN){
         state = State.CLOSED;
 
@@ -451,6 +501,8 @@ function UncheckedExternalCall_unchk4 () public
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_unchk7() public{
 address payable addr_unchk7;
 if (!addr_unchk7.send (10 ether) || 1==1)
@@ -467,8 +519,11 @@ if (!addr_unchk7.send (10 ether) || 1==1)
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function betUp() public payable byPlayer inState(State.OPEN){
         require(msg.value == (bet*0.001 ether));
 
@@ -487,8 +542,11 @@ if (!addr_unchk7.send (10 ether) || 1==1)
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function my_func_unchk23(address payable dst) public payable{
         dst.send(msg.value);
     }
@@ -503,8 +561,11 @@ function my_func_unchk23(address payable dst) public payable{
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     function betDown() public payable byPlayer inState(State.OPEN){
         require(msg.value == (bet*0.001 ether));
 
@@ -523,6 +584,8 @@ function my_func_unchk23(address payable dst) public payable{
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function unhandledsend_unchk14(address payable callee) public {
     callee.send(5 ether);
   }
@@ -538,8 +601,11 @@ function unhandledsend_unchk14(address payable callee) public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     /// @notice precondition _value >= 0
     function setFinalPrice(uint256 _value) public payable byOracle inState(State.CLOSED) {
         // require(isValidNumber(_result));
@@ -574,6 +640,8 @@ function unhandledsend_unchk14(address payable callee) public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     function collectPlayerWinnings() public byPlayer inState(State.PLAYERS_WIN){
         if(guesses[result].players[msg.sender] == PaidStatus.NOT_PAID){
             guesses[result].players[msg.sender] = PaidStatus.PAID;
@@ -594,8 +662,11 @@ function unhandledsend_unchk14(address payable callee) public {
     /// @notice precondition UP >= 0
     /// @notice precondition winAmount_unchk32 >= 0
     /// @notice precondition DOWN >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
     /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
+    /// @notice precondition address(this).balance >= 0
+    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
 function my_func_uncheck36(address payable dst) public payable{
         dst.call{value: msg.value}("");
     }

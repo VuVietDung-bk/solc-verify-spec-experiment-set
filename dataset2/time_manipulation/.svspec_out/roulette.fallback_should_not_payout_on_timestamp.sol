@@ -43,7 +43,7 @@ contract Roulette {
     /// @notice precondition msg.value >= 0
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
-    receive() external payable{
-        
+    receive() external payable {
+
     }
 }

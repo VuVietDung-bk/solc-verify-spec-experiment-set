@@ -5,6 +5,9 @@
 pragma solidity >=0.7.0;
 
 contract Ownable {
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function bug_unchk42() public{
 uint receivers_unchk42;
 address payable addr_unchk42;
@@ -17,6 +20,9 @@ else
 
 bool public payedOut_unchk33 = false;
 
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function withdrawLeftOver_unchk33() public {
         require(payedOut_unchk33);
   payable(msg.sender).send(address(this).balance);
@@ -28,9 +34,15 @@ function withdrawLeftOver_unchk33() public {
    * @dev The Ownable constructor sets the original `owner` of the contract to the sender
    * account.
    */
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   constructor () {
     owner = msg.sender;
   }
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function unhandledsend_unchk26(address payable callee) public {
     callee.send(5 ether);
   }
@@ -47,6 +59,9 @@ function unhandledsend_unchk26(address payable callee) public {
    * @dev Allows the current owner to transfer control of the contract to a newOwner.
    * @param newOwner The address to transfer ownership to.
    */
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   function transferOwnership(address newOwner) public onlyOwner {
     require(newOwner != address(0));
     emit OwnershipTransferred(owner, newOwner);
@@ -56,6 +71,9 @@ bool public payedOut_unchk20 = false;
 address payable public winner_unchk20;
 uint public winAmount_unchk20;
 
+    /// @notice precondition winAmount_unchk20 >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
 function sendToWinner_unchk20() public {
         require(!payedOut_unchk20);
         winner_unchk20.send(winAmount_unchk20);
@@ -274,46 +292,16 @@ contract TTC is Ownable, TokenERC20 {
 
   bool public payedOut_unchk9 = false;
 
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function withdrawLeftOver_unchk9() public {
         require(payedOut_unchk9);
   payable(msg.sender).send(address(this).balance);
     }
   uint256 public sellPrice;
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function callnotchecked_unchk25(address payable callee) public {
     callee.call{value: 1 ether}("");
   }
   uint256 public buyPrice;
 
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
   function bug_unchk19() public{
 address payable addr_unchk19;
 if (!addr_unchk19.send (10 ether) || 1==1)
@@ -322,49 +310,17 @@ if (!addr_unchk19.send (10 ether) || 1==1)
   mapping (address => bool) public frozenAccount;
 
     /* This generates a public event on the blockchain that will notify clients */
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice postcondition true
   function callnotchecked_unchk13(address callee) public {
     callee.call{value: 1 ether}("");
   }
   event FrozenFunds(address target, bool frozen);
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition initialSupply >= 0
     constructor(
         uint256 initialSupply,
         string memory tokenName,
         string memory tokenSymbol
     ) TokenERC20(initialSupply, tokenName, tokenSymbol) public {}
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function bug_unchk30() public{
 uint receivers_unchk30;
 address payable addr_unchk30;
@@ -389,16 +345,6 @@ bool public payedOut_unchk8 = false;
 address payable public winner_unchk8;
 uint public winAmount_unchk8;
 
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function sendToWinner_unchk8() public {
         require(!payedOut_unchk8);
         winner_unchk8.send(winAmount_unchk8);
@@ -408,65 +354,22 @@ function sendToWinner_unchk8() public {
     /// @notice Create `mintedAmount` tokens and send it to `target`
     /// @param target Address to receive the tokens
     /// @param mintedAmount the amount of tokens it will receive
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition mintedAmount >= 0
     function mintToken(address target, uint256 mintedAmount) onlyOwner public {
         balanceOf[target] += mintedAmount;
         totalSupply += mintedAmount;
         emit Transfer(address(0), address(this), mintedAmount);
         emit Transfer(address(this), target, mintedAmount);
     }
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function bug_unchk39(address payable addr) public
       {addr.send (4 ether); }
 
     /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
     function freezeAccount(address target, bool freeze) onlyOwner public {
         frozenAccount[target] = freeze;
         emit FrozenFunds(target, freeze);
     }
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
 function my_func_uncheck36(address payable dst) public payable{
     dst.call{value: msg.value}("");
     }
@@ -474,51 +377,15 @@ function my_func_uncheck36(address payable dst) public payable{
     /// @notice Allow users to buy tokens for `newBuyPrice` eth and sell tokens for `newSellPrice` eth
     /// @param newSellPrice Price the users can sell to the contract
     /// @param newBuyPrice Price users can buy from the contract
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition newSellPrice >= 0
-    /// @notice precondition newBuyPrice >= 0
     function setPrices(uint256 newSellPrice, uint256 newBuyPrice) onlyOwner public {
         sellPrice = newSellPrice;
         buyPrice = newBuyPrice;
     }
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
 function my_func_unchk35(address payable dst) public payable{
         dst.send(msg.value);
     }
 
     /// @notice Buy tokens from contract by sending ether
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition contract.balance >= 0
     function buy() payable public {
         uint amount = msg.value / buyPrice;                 // calculates the amount
         _transfer(address(this), msg.sender, amount);       // makes the transfers
@@ -527,16 +394,6 @@ bool public payedOut_unchk44 = false;
 address payable public winner_unchk44;
 uint public winAmount_unchk44;
 
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function sendToWinner_unchk44() public {
         require(!payedOut_unchk44);
         winner_unchk44.send(winAmount_unchk44);
@@ -545,33 +402,12 @@ function sendToWinner_unchk44() public {
 
     /// @notice Sell `amount` tokens to contract
     /// @param amount amount of tokens to be sold
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
-    /// @notice precondition amount >= 0
     function sell(uint256 amount) public {
         address myAddress = address(this);
         require(myAddress.balance >= amount * sellPrice);   // checks if the contract has enough ether to buy
         _transfer(msg.sender, address(this), amount);       // makes the transfers
         payable(msg.sender).transfer(amount * sellPrice);   // sends ether to the seller. It's important to do this last to avoid recursion attacks
     }
-    /// @notice precondition winAmount_unchk20 >= 0
-    /// @notice precondition decimals >= 0
-    /// @notice precondition totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balanceOf[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) allowance[extraVar0][extraVar1] >= 0
-    /// @notice precondition winAmount_unchk32 >= 0
-    /// @notice precondition sellPrice >= 0
-    /// @notice precondition buyPrice >= 0
-    /// @notice precondition winAmount_unchk8 >= 0
-    /// @notice precondition winAmount_unchk44 >= 0
 function UncheckedExternalCall_unchk40 () public
 {  address payable addr_unchk40;
    if (! addr_unchk40.send (2 ether))  

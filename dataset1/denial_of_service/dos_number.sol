@@ -37,7 +37,7 @@ contract DosNumber {
         numElements = 0;
     }
 
-    function getLengthArray() public view returns(uint) {
+    function getLengthArray() public view returns(uint length) {
         return numElements;
     }
 

@@ -17,23 +17,14 @@ pragma solidity >=0.7.0;
          bool won;
      }
 
-     address private organizer;
+     address payable private organizer;
      Bet[] private bets;
 
      // Create a new lottery with numOfBets supported bets.
     /// @notice precondition block.timestamp >= 0
     /// @notice precondition block.number >= 0
      constructor() {
-         organizer = msg.sender;
-     }
-
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition msg.value >= 0
-    /// @notice precondition address(this).balance >= 0
-    /// @notice precondition forall (address addr2005) addr2005.balance >= 0
-     receive() external payable {
-        
+         organizer = payable(msg.sender);
      }
 
      // Fallback function returns ether
@@ -53,7 +44,7 @@ pragma solidity >=0.7.0;
     /// @notice precondition address(this).balance >= 0
     /// @notice precondition forall (address addr2005) addr2005.balance >= 0
     /// @notice postcondition bets.length == __verifier_old_uint(bets.length) + 1
-    /// @notice postcondition bets[bets.length - 1].won && block.timestamp % 2 == 0 || !bets[bets.length - 1].won && block.timestamp % 2 != 0
+    /// @notice postcondition bets[bets.length - 1].won && (block.timestamp % 2 == 0) || !bets[bets.length - 1].won && block.timestamp % 2 != 0
      function makeBet() public payable {
          // Won if block number is even
          // (note: this is a terrible source of randomness, please don't use this with real money)
@@ -63,11 +54,10 @@ pragma solidity >=0.7.0;
          // Record the bet with an event
          // <yes> <report> BAD_RANDOMNESS
          bets.push(Bet(msg.value, block.number, won));
-
          // Payout if the user won, otherwise take their money
          if(won) {
-             bool success = payable(msg.sender).send(msg.value);
-             require(success, "send failed");
+            bool success = payable(msg.sender).send(msg.value);
+            require(success, "Failed to send Ether");
          }
      }
 
@@ -75,7 +65,7 @@ pragma solidity >=0.7.0;
     /// @notice precondition block.timestamp >= 0
     /// @notice precondition block.number >= 0
      function getBets() public {
-         require(msg.sender == organizer, "not organizer");
+         require(msg.sender == organizer, "Only the organizer can view the bets");
 
          for (uint i = 0; i < bets.length; i++) {
              emit GetBet(bets[i].betAmount, bets[i].blockNumber, bets[i].won);

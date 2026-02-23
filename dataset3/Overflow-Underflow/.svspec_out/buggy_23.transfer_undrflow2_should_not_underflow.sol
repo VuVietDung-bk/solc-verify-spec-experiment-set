@@ -113,28 +113,9 @@ contract ERC20 is IERC20 {
 
   mapping(address => uint) public lockTime_intou1;
 
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _secondsToIncrease >= 0
 function increaseLockTime_intou1(uint _secondsToIncrease) public {
         lockTime_intou1[msg.sender] += _secondsToIncrease;  //overflow
     }
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
 function withdraw_ovrflow1() public {
     require(block.timestamp > lockTime_intou1[msg.sender]);    
         uint transferValue_intou1 = 10;           
@@ -144,19 +125,6 @@ function withdraw_ovrflow1() public {
 
   mapping(address => uint) balances_intou2;
 
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition _value >= 0
-    /// @notice precondition _value > 0
-    /// @notice precondition balances_intou2[msg.sender] == 0
-    /// @notice postcondition false
 function transfer_undrflow2(address _to, uint _value) public returns (bool) {
     require(balances_intou2[msg.sender] - _value >= 0);  //bug
     balances_intou2[msg.sender] -= _value;  //bug
@@ -169,15 +137,6 @@ function transfer_undrflow2(address _to, uint _value) public returns (bool) {
     /**
      * @dev Total number of tokens in existence.
      */
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function totalSupply() public view override returns (uint256) {
         return _totalSupply;
     }
@@ -187,27 +146,9 @@ function transfer_undrflow2(address _to, uint _value) public returns (bool) {
      * @param owner The address to query the balance of.
      * @return A uint256 representing the amount owned by the passed address.
      */
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function balanceOf(address owner) public view override returns (uint256) {
         return _balances[owner];
     }
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
 function bug_intou19() public{
     uint8 vundflw =0;
     vundflw = vundflw -10;   // underflow bug
@@ -219,15 +160,6 @@ function bug_intou19() public{
      * @param spender address The address which will spend the funds.
      * @return A uint256 specifying the amount of tokens still available for the spender.
      */
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
     function allowance(address owner, address spender) public view override returns (uint256) {
         return _allowed[owner][spender];
     }
@@ -237,16 +169,6 @@ function bug_intou19() public{
      * @param to The address to transfer to.
      * @param value The amount to be transferred.
      */
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition value >= 0
     function transfer(address to, uint256 value) public override returns (bool) {
         _transfer(msg.sender, to, value);
         return true;
@@ -261,16 +183,6 @@ function bug_intou19() public{
      * @param spender The address which will spend the funds.
      * @param value The amount of tokens to be spent.
      */
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition value >= 0
     function approve(address spender, uint256 value) public override returns (bool) {
         _approve(msg.sender, spender, value);
         return true;
@@ -284,16 +196,6 @@ function bug_intou19() public{
      * @param to address The address which you want to transfer to
      * @param value uint256 the amount of tokens to be transferred
      */
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition value >= 0
     function transferFrom(address from, address to, uint256 value) public override returns (bool) {
         _transfer(from, to, value);
         _approve(from, msg.sender, _allowed[from][msg.sender].sub(value));
@@ -310,16 +212,6 @@ function bug_intou19() public{
      * @param spender The address which will spend the funds.
      * @param addedValue The amount of tokens to increase the allowance by.
      */
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition addedValue >= 0
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowed[msg.sender][spender].add(addedValue));
         return true;
@@ -335,16 +227,6 @@ function bug_intou19() public{
      * @param spender The address which will spend the funds.
      * @param subtractedValue The amount of tokens to decrease the allowance by.
      */
-    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) _balances[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) forall (address extraVar1) _allowed[extraVar0][extraVar1] >= 0
-    /// @notice precondition _totalSupply >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
-    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
-    /// @notice precondition block.timestamp >= 0
-    /// @notice precondition block.number >= 0
-    /// @notice precondition subtractedValue >= 0
     function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
         _approve(msg.sender, spender, _allowed[msg.sender][spender].sub(subtractedValue));
         return true;
@@ -492,6 +374,12 @@ abstract contract ERC20Detailed is IERC20 {
 // File: contracts/token/AGR.sol
 
 contract AGR is ERC20, ERC20Detailed, ERC20Burnable {
+    /// @notice precondition forall (address extraVar0) lockTime_intou1[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou2[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou14[extraVar0] >= 0
+    /// @notice precondition forall (address extraVar0) balances_intou30[extraVar0] >= 0
+    /// @notice precondition block.timestamp >= 0
+    /// @notice precondition block.number >= 0
   constructor(string memory _name, string memory _symbol) ERC20Detailed(_name, _symbol, 4) {
         super._mint(msg.sender, 30000000000000);
   }

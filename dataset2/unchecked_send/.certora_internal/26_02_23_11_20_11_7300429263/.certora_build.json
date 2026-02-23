@@ -1,0 +1,185 @@
+{
+    "SendBack_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "SendBack",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdrawBalance",
+                        "notpayable": true,
+                        "originalFile": "mishandled.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "5fd8c710",
+                        "sourceBytes": {
+                            "begin": 246,
+                            "size": 215
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561001057600080fd5b506004361061002b5760003560e01c80635fd8c71014610030575b600080fd5b61003861003a565b005b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000045260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000015260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055503373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050505056fea26469706673582212202f50749714597a5836c963e262fa44b478796069f1a33b298a24858a7a54474864736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "6080604052348015600f57600080fd5b506101c38061001f6000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80635fd8c71014610030575b600080fd5b61003861003a565b005b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000045260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000015260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055503373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050505056fea26469706673582212202f50749714597a5836c963e262fa44b478796069f1a33b298a24858a7a54474864736f6c63430007060033",
+                "constructorSrcmap": "178:644:0:-:0;;;;;;;;;;;;;;;;;;;",
+                "extensionContracts": [],
+                "file": "mishandled.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "mishandled.sol|SendBack",
+                        "declaringContract": "SendBack",
+                        "method": {
+                            "contractName": "SendBack",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "withdrawBalance",
+                            "notpayable": true,
+                            "originalFile": "mishandled.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "5fd8c710",
+                            "sourceBytes": {
+                                "begin": 246,
+                                "size": 215
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "amountToWithdraw",
+                        "sourceLoc": {
+                            "begin": "286",
+                            "len": "48",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "SendBack",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdrawBalance",
+                        "notpayable": true,
+                        "originalFile": "mishandled.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "5fd8c710",
+                        "sourceBytes": {
+                            "begin": 246,
+                            "size": 215
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "SendBack",
+                "original_file": "mishandled.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 178,
+                    "size": 285
+                },
+                "srcmap": "178:644:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;246:574;;;:::i;:::-;;;367:13;299:66;292:89;457:1;389:66;382:77;535:1;467:66;460:77;544:21;568:12;:24;581:10;568:24;;;;;;;;;;;;;;;;544:48;;676:16;609:66;602:91;724:1;697:12;:24;710:10;697:24;;;;;;;;;;;;;;;:28;;;;782:10;774:24;;:42;799:16;774:42;;;;;;;;;;;;;;;;;;;;;;;;246:574;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 5,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/unchecked_send/.certora_internal/26_02_23_11_20_11_7300429263/.certora_sources/mishandled.sol:SendBack",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "userBalances",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "SendBack",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "mishandled.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "mishandled.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}
