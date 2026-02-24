@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "HotDollarsToken",
-    "specfile": "certora_specification/buggy_1.cvl",
-    "specfileOrigRelpath": "certora_specification/buggy_1.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Ownable",
-    "specfile": "certora_specification/buggy_20_ent17.cvl",
-    "specfileOrigRelpath": "certora_specification/buggy_20_ent17.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Pie",
-    "specfile": "certora_specification/0xd2018bfaa266a9ec0a1a84b061640faa009def76.cvl",
-    "specfileOrigRelpath": "certora_specification/0xd2018bfaa266a9ec0a1a84b061640faa009def76.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

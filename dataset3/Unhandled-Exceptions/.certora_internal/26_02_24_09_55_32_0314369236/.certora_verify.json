@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "RampInstantEscrowsPoolInterface",
-    "specfile": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/certora_specification/buggy_20_escrowspool.cvl",
-    "specfileOrigRelpath": "certora_specification/buggy_20_escrowspool.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

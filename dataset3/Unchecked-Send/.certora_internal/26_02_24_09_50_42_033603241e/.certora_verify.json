@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "AcunarIEO",
-    "specfile": "certora_specification/buggy_47.cvl",
-    "specfileOrigRelpath": "certora_specification/buggy_47.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

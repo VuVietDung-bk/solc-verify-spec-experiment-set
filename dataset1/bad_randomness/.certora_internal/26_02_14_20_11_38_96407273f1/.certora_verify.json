@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Lottery",
-    "specfile": "/root/solc-verify-spec/experiments/dataset1/bad_randomness/certora_specification/lottery.cvl",
-    "specfileOrigRelpath": "certora_specification/lottery.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

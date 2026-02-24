@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Asignatura",
-    "specfile": "certora_specification/Asignatura.cvl",
-    "specfileOrigRelpath": "certora_specification/Asignatura.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

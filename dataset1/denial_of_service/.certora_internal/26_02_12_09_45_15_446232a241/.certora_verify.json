@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Refunder",
-    "specfile": "certora_specification/send_loop.cvl",
-    "specfileOrigRelpath": "certora_specification/send_loop.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

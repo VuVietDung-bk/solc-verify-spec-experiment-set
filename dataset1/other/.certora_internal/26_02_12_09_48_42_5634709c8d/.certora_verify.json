@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Forwarder",
-    "specfile": "certora_specification/Forwarder.cvl",
-    "specfileOrigRelpath": "certora_specification/Forwarder.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "TokenSaleChallenge",
-    "specfile": "certora_specification/tokensalechallenge.cvl",
-    "specfileOrigRelpath": "certora_specification/tokensalechallenge.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

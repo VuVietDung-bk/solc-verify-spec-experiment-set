@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "SimpleDAO",
-    "specfile": "certora_specification/simple_dao.cvl",
-    "specfileOrigRelpath": "certora_specification/simple_dao.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

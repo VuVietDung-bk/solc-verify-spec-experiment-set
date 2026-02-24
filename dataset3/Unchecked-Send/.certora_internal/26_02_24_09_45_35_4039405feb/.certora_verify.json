@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "ERC20",
-    "specfile": "certora_specification/buggy_23.cvl",
-    "specfileOrigRelpath": "certora_specification/buggy_23.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Crowdfund",
-    "specfile": "certora_specification/Crowdfund.cvl",
-    "specfileOrigRelpath": "certora_specification/Crowdfund.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

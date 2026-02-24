@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "DosNumber",
-    "specfile": "certora_specification/dos_number.cvl",
-    "specfileOrigRelpath": "certora_specification/dos_number.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

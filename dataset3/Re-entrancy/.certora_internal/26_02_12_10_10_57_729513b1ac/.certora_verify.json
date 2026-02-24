@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "AGR",
-    "specfile": "certora_specification/buggy_23.cvl",
-    "specfileOrigRelpath": "certora_specification/buggy_23.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

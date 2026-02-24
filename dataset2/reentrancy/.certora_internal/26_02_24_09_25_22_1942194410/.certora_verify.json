@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "ReentrancyDAO",
-    "specfile": "certora_specification/reentrancy_dao.cvl",
-    "specfileOrigRelpath": "certora_specification/reentrancy_dao.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

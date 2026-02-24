@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "EvilERC20Token",
-    "specfile": "certora_specification/EvilToken.cvl",
-    "specfileOrigRelpath": "certora_specification/EvilToken.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

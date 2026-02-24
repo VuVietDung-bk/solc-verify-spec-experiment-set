@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "NameRegistrar",
-    "specfile": "certora_specification/NameRegistrar.cvl",
-    "specfileOrigRelpath": "certora_specification/NameRegistrar.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

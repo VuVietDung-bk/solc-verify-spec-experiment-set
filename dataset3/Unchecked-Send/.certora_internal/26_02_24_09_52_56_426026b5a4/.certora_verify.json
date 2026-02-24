@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "TTC",
-    "specfile": "certora_specification/buggy_5_ttc.cvl",
-    "specfileOrigRelpath": "certora_specification/buggy_5_ttc.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

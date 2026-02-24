@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Missing",
-    "specfile": "certora_specification/incorrect_constructor_name2.cvl",
-    "specfileOrigRelpath": "certora_specification/incorrect_constructor_name2.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

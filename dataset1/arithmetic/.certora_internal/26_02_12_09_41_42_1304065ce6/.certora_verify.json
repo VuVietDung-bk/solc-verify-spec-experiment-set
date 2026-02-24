@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "TimeLock",
-    "specfile": "certora_specification/timelock.cvl",
-    "specfileOrigRelpath": "certora_specification/timelock.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "FreeEth",
-    "specfile": "certora_specification/0xdb1c55f6926e7d847ddf8678905ad871a68199d2.cvl",
-    "specfileOrigRelpath": "certora_specification/0xdb1c55f6926e7d847ddf8678905ad871a68199d2.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

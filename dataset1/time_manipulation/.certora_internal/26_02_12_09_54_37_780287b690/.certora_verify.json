@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "TAMCContract",
-    "specfile": "certora_specification/TAMCContract.cvl",
-    "specfileOrigRelpath": "certora_specification/TAMCContract.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

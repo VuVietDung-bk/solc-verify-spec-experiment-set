@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Overflow_Add",
-    "specfile": "certora_specification/overflow_simple_add.cvl",
-    "specfileOrigRelpath": "certora_specification/overflow_simple_add.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

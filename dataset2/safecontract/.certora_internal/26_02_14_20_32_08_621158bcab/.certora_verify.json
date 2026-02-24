@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "SushiSwap",
-    "specfile": "certora_specification/SushiSwap.cvl",
-    "specfileOrigRelpath": "certora_specification/SushiSwap.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

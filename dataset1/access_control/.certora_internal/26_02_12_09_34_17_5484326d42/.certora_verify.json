@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Wallet",
-    "specfile": "certora_specification/wallet_02_refund_nosub.cvl",
-    "specfileOrigRelpath": "certora_specification/wallet_02_refund_nosub.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

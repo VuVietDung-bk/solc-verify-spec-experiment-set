@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Ownable",
-    "specfile": "certora_specification/buggy_20_locktime.cvl",
-    "specfileOrigRelpath": "certora_specification/buggy_20_locktime.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

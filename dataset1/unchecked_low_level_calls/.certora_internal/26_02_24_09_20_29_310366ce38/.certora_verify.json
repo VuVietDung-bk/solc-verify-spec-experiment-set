@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "SimpleWallet",
-    "specfile": "certora_specification/0xb37f18af15bafb869a065b61fc83cfc44ed9cc27.cvl",
-    "specfileOrigRelpath": "certora_specification/0xb37f18af15bafb869a065b61fc83cfc44ed9cc27.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

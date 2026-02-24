@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "IntegerOverflowMultiTxOneFuncFeasible",
-    "specfile": "certora_specification/integer_overflow_multitx_onefunc_feasible.cvl",
-    "specfileOrigRelpath": "certora_specification/integer_overflow_multitx_onefunc_feasible.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

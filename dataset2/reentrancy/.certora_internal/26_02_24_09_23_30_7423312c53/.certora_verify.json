@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "EtherStore",
-    "specfile": "certora_specification/etherstore.cvl",
-    "specfileOrigRelpath": "certora_specification/etherstore.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Roulette",
-    "specfile": "certora_specification/roulette.cvl",
-    "specfileOrigRelpath": "certora_specification/roulette.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

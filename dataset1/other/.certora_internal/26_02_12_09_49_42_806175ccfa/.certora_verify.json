@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "WETH",
-    "specfile": "certora_specification/WETH.cvl",
-    "specfileOrigRelpath": "certora_specification/WETH.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

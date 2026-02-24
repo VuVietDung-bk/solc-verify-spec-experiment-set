@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Balancer",
-    "specfile": "certora_specification/Balancer.cvl",
-    "specfileOrigRelpath": "certora_specification/Balancer.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

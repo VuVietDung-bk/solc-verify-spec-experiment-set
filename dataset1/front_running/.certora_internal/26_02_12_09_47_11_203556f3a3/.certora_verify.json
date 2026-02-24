@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "OddsAndEvens",
-    "specfile": "certora_specification/odds_and_evens.cvl",
-    "specfileOrigRelpath": "certora_specification/odds_and_evens.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

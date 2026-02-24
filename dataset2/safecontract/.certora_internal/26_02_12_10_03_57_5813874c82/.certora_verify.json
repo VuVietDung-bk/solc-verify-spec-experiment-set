@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "CareerOneToken",
-    "specfile": "certora_specification/CareerOneToken.cvl",
-    "specfileOrigRelpath": "certora_specification/CareerOneToken.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "UniswapToken",
-    "specfile": "certora_specification/Uniswap.cvl",
-    "specfileOrigRelpath": "certora_specification/Uniswap.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "TimedCrowdsale",
-    "specfile": "certora_specification/timed_crowdsale.cvl",
-    "specfileOrigRelpath": "certora_specification/timed_crowdsale.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

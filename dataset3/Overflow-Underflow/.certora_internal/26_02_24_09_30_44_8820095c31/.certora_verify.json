@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "AcunarToken",
-    "specfile": "certora_specification/buggy_47_locktime.cvl",
-    "specfileOrigRelpath": "certora_specification/buggy_47_locktime.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

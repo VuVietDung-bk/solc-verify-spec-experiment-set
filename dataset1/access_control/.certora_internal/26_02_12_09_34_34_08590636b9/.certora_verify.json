@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Wallet",
-    "specfile": "certora_specification/wallet_03_wrong_constructor.cvl",
-    "specfileOrigRelpath": "certora_specification/wallet_03_wrong_constructor.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

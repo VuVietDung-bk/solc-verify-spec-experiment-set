@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Stoppable",
-    "specfile": "certora_specification/buggy_20_transfer.cvl",
-    "specfileOrigRelpath": "certora_specification/buggy_20_transfer.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

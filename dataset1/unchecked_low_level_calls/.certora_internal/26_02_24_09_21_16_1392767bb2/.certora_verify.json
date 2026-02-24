@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "Freebie",
-    "specfile": "certora_specification/0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87.cvl",
-    "specfileOrigRelpath": "certora_specification/0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

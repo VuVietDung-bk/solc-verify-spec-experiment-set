@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "MultiOwnable",
-    "specfile": "certora_specification/multiowned_vulnerable.cvl",
-    "specfileOrigRelpath": "certora_specification/multiowned_vulnerable.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

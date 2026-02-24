@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "digitalNotary",
-    "specfile": "certora_specification/buggy_50.cvl",
-    "specfileOrigRelpath": "certora_specification/buggy_50.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}

@@ -1,8 +1,0 @@
-{
-    "importFilesToOrigRelpaths": {},
-    "primary_contract": "DosAuction",
-    "specfile": "certora_specification/auction.cvl",
-    "specfileOrigRelpath": "certora_specification/auction.cvl",
-    "specfilesToImportDecls": {},
-    "type": "spec"
-}
