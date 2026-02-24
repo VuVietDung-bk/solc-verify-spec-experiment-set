@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "TokenSender",
+    "specfile": "certora_specification/0xec329ffc97d75fe03428ae155fc7793431487f63.cvl",
+    "specfileOrigRelpath": "certora_specification/0xec329ffc97d75fe03428ae155fc7793431487f63.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

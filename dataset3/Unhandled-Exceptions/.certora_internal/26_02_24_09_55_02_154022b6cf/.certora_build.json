@@ -1,0 +1,2592 @@
+{
+    "HotDollarsToken_00000000ce4604a0000000000000000000000003": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000003",
+                "allMethods": [
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "UncheckedExternalCall_unchk4",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "eb46deb8",
+                        "sourceBytes": {
+                            "begin": 4166,
+                            "size": 182
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "_owner",
+                            "_spender"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 6405,
+                            "size": 151
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowed",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "5c658165",
+                        "sourceBytes": {
+                            "begin": 6763,
+                            "size": 64
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "_spender",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 6134,
+                            "size": 265
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "_owner"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 6006,
+                            "size": 122
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balances",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "27e235e3",
+                        "sourceBytes": {
+                            "begin": 5946,
+                            "size": 44
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_unchk30",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "9e5d7729",
+                        "sourceBytes": {
+                            "begin": 1267,
+                            "size": 164
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "bug_unchk39",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "addr"
+                        ],
+                        "returns": [],
+                        "sighash": "58dbb19c",
+                        "sourceBytes": {
+                            "begin": 2516,
+                            "size": 79
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_unchk7",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d43404dd",
+                        "sourceBytes": {
+                            "begin": 4420,
+                            "size": 115
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "callnotchecked_unchk13",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "callee"
+                        ],
+                        "returns": [],
+                        "sighash": "354fc923",
+                        "sourceBytes": {
+                            "begin": 3159,
+                            "size": 97
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "cash_unchk46",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "roundIndex",
+                            "subpotIndex",
+                            "winner_unchk46"
+                        ],
+                        "returns": [],
+                        "sighash": "434fa4aa",
+                        "sourceBytes": {
+                            "begin": 3590,
+                            "size": 218
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 4773,
+                            "size": 257
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 8178,
+                            "size": 21
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "my_func_uncheck36",
+                        "notpayable": false,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "dst"
+                        ],
+                        "returns": [],
+                        "sighash": "550c16d4",
+                        "sourceBytes": {
+                            "begin": 2915,
+                            "size": 103
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "my_func_unchk23",
+                        "notpayable": false,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "dst"
+                        ],
+                        "returns": [],
+                        "sighash": "3e153b71",
+                        "sourceBytes": {
+                            "begin": 4607,
+                            "size": 96
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "my_func_unchk35",
+                        "notpayable": false,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "dst"
+                        ],
+                        "returns": [],
+                        "sighash": "8bd3d0d7",
+                        "sourceBytes": {
+                            "begin": 5031,
+                            "size": 96
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 7647,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "payedOut_unchk8",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "6e71d3c5",
+                        "sourceBytes": {
+                            "begin": 2652,
+                            "size": 35
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "sendToWinner_unchk8",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "994c3bfd",
+                        "sourceBytes": {
+                            "begin": 1971,
+                            "size": 158
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 8684,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 618,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 5133,
+                            "size": 330
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "_from",
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 5469,
+                            "size": 531
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "unhandledsend_unchk14",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "callee"
+                        ],
+                        "returns": [],
+                        "sighash": "24ebdd34",
+                        "sourceBytes": {
+                            "begin": 844,
+                            "size": 93
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "unhandledsend_unchk38",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "callee"
+                        ],
+                        "returns": [],
+                        "sighash": "cf43199b",
+                        "sourceBytes": {
+                            "begin": 3446,
+                            "size": 93
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "winAmount_unchk8",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a858a350",
+                        "sourceBytes": {
+                            "begin": 2727,
+                            "size": 28
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "winner_unchk8",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "bc41ab32",
+                        "sourceBytes": {
+                            "begin": 2689,
+                            "size": 36
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "6080604052600436106101815760003560e01c80636e71d3c5116100d1578063a858a3501161008a578063cf43199b11610064578063cf43199b146108ac578063d43404dd146108fd578063dd62ed3e14610914578063eb46deb81461099957610181565b8063a858a350146107cf578063a9059cbb146107fa578063bc41ab321461086b57610181565b80636e71d3c51461063b57806370a08231146106685780638bd3d0d7146106cd57806395d89b4114610711578063994c3bfd146107a15780639e5d7729146107b857610181565b8063313ce5671161013e578063434fa4aa11610118578063434fa4aa146104bc578063550c16d41461052157806358dbb19c146105655780635c658165146105b657610181565b8063313ce567146103f9578063354fc923146104275780633e153b711461047857610181565b806306fdde0314610186578063095ea7b31461021657806318160ddd1461028757806323b872dd146102b257806324ebdd341461034357806327e235e314610394575b600080fd5b34801561019257600080fd5b5061019b6109b0565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101db5780820151818401526020810190506101c0565b50505050905090810190601f1680156102085780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561022257600080fd5b5061026f6004803603604081101561023957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610a4e565b60405180821515815260200191505060405180910390f35b34801561029357600080fd5b5061029c610bd3565b6040518082815260200191505060405180910390f35b3480156102be57600080fd5b5061032b600480360360608110156102d557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610bd9565b60405180821515815260200191505060405180910390f35b34801561034f57600080fd5b506103926004803603602081101561036657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610f28565b005b3480156103a057600080fd5b506103e3600480360360208110156103b757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610ffc565b6040518082815260200191505060405180910390f35b34801561040557600080fd5b5061040e611014565b604051808260ff16815260200191505060405180910390f35b34801561043357600080fd5b506104766004803603602081101561044a57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611027565b005b6104ba6004803603602081101561048e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061112b565b005b3480156104c857600080fd5b5061051f600480360360608110156104df57600080fd5b810190808035906020019092919080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506111f7565b005b6105636004803603602081101561053757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611327565b005b34801561057157600080fd5b506105b46004803603602081101561058857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611423565b005b3480156105c257600080fd5b50610625600480360360408110156105d957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506114f7565b6040518082815260200191505060405180910390f35b34801561064757600080fd5b5061065061151c565b60405180821515815260200191505060405180910390f35b34801561067457600080fd5b506106b76004803603602081101561068b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061152f565b6040518082815260200191505060405180910390f35b61070f600480360360208110156106e357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061160b565b005b34801561071d57600080fd5b506107266116d7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561076657808201518184015260208101905061074b565b50505050905090810190601f1680156107935780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156107ad57600080fd5b506107b6611775565b005b3480156107c457600080fd5b506107cd611873565b005b3480156107db57600080fd5b506107e4611983565b6040518082815260200191505060405180910390f35b34801561080657600080fd5b506108536004803603604081101561081d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611989565b60405180821515815260200191505060405180910390f35b34801561087757600080fd5b50610880611b73565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156108b857600080fd5b506108fb600480360360208110156108cf57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611b97565b005b34801561090957600080fd5b50610912611c6b565b005b34801561092057600080fd5b506109836004803603604081101561093757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611d56565b6040518082815260200191505060405180910390f35b3480156109a557600080fd5b506109ae611e70565b005b60058054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610a465780601f10610a1b57610100808354040283529160200191610a46565b820191906000526020600020905b815481529060010190602001808311610a2957829003601f168201915b505050505081565b600064f196e5000d7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d60015281600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b60005481565b600064f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00086002526000600460008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000065282600360008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410158015610d615750828110155b610d6a57600080fd5b82600360008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555082600360008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff811015610eb75782600460008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055505b8373ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef856040518082815260200191505060405180910390a360019150509392505050565b64f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00036000528073ffffffffffffffffffffffffffffffffffffffff166108fc674563918244f400009081150290604051600060405180830381858888f193505050505050565b60036020528060005260406000206000915090505481565b600660009054906101000a900460ff1681565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00006000528073ffffffffffffffffffffffffffffffffffffffff16670de0b6b3a764000060405180600001905060006040518083038185875af1925050503d8060008114611120576040519150601f19603f3d011682016040523d82523d6000602084013e611125565b606091505b50505050565b64f196e5000b7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b6000528073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050505050565b64f196e5000a7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a60025260006729a2241af62c00009050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000003528173ffffffffffffffffffffffffffffffffffffffff166108fc8267ffffffffffffffff169081150290604051600060405180830381858888f193505050505060009050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000075250505050565b64f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00046000528073ffffffffffffffffffffffffffffffffffffffff163460405180600001905060006040518083038185875af1925050503d8060008114611418576040519150601f19603f3d011682016040523d82523d6000602084013e61141d565b606091505b50505050565b64f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00056000528073ffffffffffffffffffffffffffffffffffffffff166108fc673782dace9d9000009081150290604051600060405180830381858888f193505050505050565b6004602052816000526040600020602052806000526040600020600091509150505481565b600160009054906101000a900460ff1681565b600064f196e5000c7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c600052600360008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b64f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00066000528073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050505050565b60078054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561176d5780601f106117425761010080835404028352916020019161176d565b820191906000526020600020905b81548152906001019060200180831161175057829003601f168201915b505050505081565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000452600160009054906101000a900460ff16156117ff57600080fd5b60018054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc6002549081150290604051600060405180830381858888f193505050505060018060006101000a81548160ff021916908315150217905550565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00010004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010002528073ffffffffffffffffffffffffffffffffffffffff166108fc680246ddf979766800009081150290604051600060405180830381858888f1935050505061197a5760018201915061197f565b600080fd5b5050565b60025481565b600064f196e5000f7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f60015281600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015611a6a57600080fd5b81600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a36001905092915050565b60018054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b64f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00076000528073ffffffffffffffffffffffffffffffffffffffff166108fc674563918244f400009081150290604051600060405180830381858888f193505050505050565b64f196e500097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00090004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010005528073ffffffffffffffffffffffffffffffffffffffff166108fc678ac7230489e800009081150290604051600060405180830381858888f193505050501580611d495750600180145b15611d5357600080fd5b50565b600064f196e500107fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001000005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001000015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0010000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0010600152600460008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905092915050565b64f196e5000e7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e00005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e00015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e0004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010004528073ffffffffffffffffffffffffffffffffffffffff166108fc680246ddf979766800009081150290604051600060405180830381858888f19350505050611f4c57611f4d565b5b5056fea2646970667358221220acac4f98f0de7e41eb6763236a9fc7412283f2d098d55f44dd6fc901b5b3080764736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "60806040526000600160006101000a81548160ff0219169083151502179055503480156200002c57600080fd5b506b60ef6b1aba6f0723300000006000819055506040518060400160405280601081526020017f486f74446f6c6c61727320546f6b656e00000000000000000000000000000000815250600590805190602001906200008d92919062000144565b506012600660006101000a81548160ff021916908360ff1602179055506040518060400160405280600381526020017f484453000000000000000000000000000000000000000000000000000000000081525060079080519060200190620000f792919062000144565b50600054600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550620001fa565b828054600181600116156101000203166002900490600052602060002090601f0160209004810192826200017c5760008555620001c8565b82601f106200019757805160ff1916838001178555620001c8565b82800160010185558215620001c8579182015b82811115620001c7578251825591602001919060010190620001aa565b5b509050620001d79190620001db565b5090565b5b80821115620001f6576000816000905550600101620001dc565b5090565b611f86806200020a6000396000f3fe6080604052600436106101815760003560e01c80636e71d3c5116100d1578063a858a3501161008a578063cf43199b11610064578063cf43199b146108ac578063d43404dd146108fd578063dd62ed3e14610914578063eb46deb81461099957610181565b8063a858a350146107cf578063a9059cbb146107fa578063bc41ab321461086b57610181565b80636e71d3c51461063b57806370a08231146106685780638bd3d0d7146106cd57806395d89b4114610711578063994c3bfd146107a15780639e5d7729146107b857610181565b8063313ce5671161013e578063434fa4aa11610118578063434fa4aa146104bc578063550c16d41461052157806358dbb19c146105655780635c658165146105b657610181565b8063313ce567146103f9578063354fc923146104275780633e153b711461047857610181565b806306fdde0314610186578063095ea7b31461021657806318160ddd1461028757806323b872dd146102b257806324ebdd341461034357806327e235e314610394575b600080fd5b34801561019257600080fd5b5061019b6109b0565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101db5780820151818401526020810190506101c0565b50505050905090810190601f1680156102085780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561022257600080fd5b5061026f6004803603604081101561023957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610a4e565b60405180821515815260200191505060405180910390f35b34801561029357600080fd5b5061029c610bd3565b6040518082815260200191505060405180910390f35b3480156102be57600080fd5b5061032b600480360360608110156102d557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610bd9565b60405180821515815260200191505060405180910390f35b34801561034f57600080fd5b506103926004803603602081101561036657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610f28565b005b3480156103a057600080fd5b506103e3600480360360208110156103b757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610ffc565b6040518082815260200191505060405180910390f35b34801561040557600080fd5b5061040e611014565b604051808260ff16815260200191505060405180910390f35b34801561043357600080fd5b506104766004803603602081101561044a57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611027565b005b6104ba6004803603602081101561048e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061112b565b005b3480156104c857600080fd5b5061051f600480360360608110156104df57600080fd5b810190808035906020019092919080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506111f7565b005b6105636004803603602081101561053757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611327565b005b34801561057157600080fd5b506105b46004803603602081101561058857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611423565b005b3480156105c257600080fd5b50610625600480360360408110156105d957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506114f7565b6040518082815260200191505060405180910390f35b34801561064757600080fd5b5061065061151c565b60405180821515815260200191505060405180910390f35b34801561067457600080fd5b506106b76004803603602081101561068b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061152f565b6040518082815260200191505060405180910390f35b61070f600480360360208110156106e357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061160b565b005b34801561071d57600080fd5b506107266116d7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561076657808201518184015260208101905061074b565b50505050905090810190601f1680156107935780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156107ad57600080fd5b506107b6611775565b005b3480156107c457600080fd5b506107cd611873565b005b3480156107db57600080fd5b506107e4611983565b6040518082815260200191505060405180910390f35b34801561080657600080fd5b506108536004803603604081101561081d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611989565b60405180821515815260200191505060405180910390f35b34801561087757600080fd5b50610880611b73565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156108b857600080fd5b506108fb600480360360208110156108cf57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611b97565b005b34801561090957600080fd5b50610912611c6b565b005b34801561092057600080fd5b506109836004803603604081101561093757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050611d56565b6040518082815260200191505060405180910390f35b3480156109a557600080fd5b506109ae611e70565b005b60058054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610a465780601f10610a1b57610100808354040283529160200191610a46565b820191906000526020600020905b815481529060010190602001808311610a2957829003601f168201915b505050505081565b600064f196e5000d7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d60015281600460003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b60005481565b600064f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00086002526000600460008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000065282600360008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205410158015610d615750828110155b610d6a57600080fd5b82600360008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555082600360008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff811015610eb75782600460008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055505b8373ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef856040518082815260200191505060405180910390a360019150509392505050565b64f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00036000528073ffffffffffffffffffffffffffffffffffffffff166108fc674563918244f400009081150290604051600060405180830381858888f193505050505050565b60036020528060005260406000206000915090505481565b600660009054906101000a900460ff1681565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00006000528073ffffffffffffffffffffffffffffffffffffffff16670de0b6b3a764000060405180600001905060006040518083038185875af1925050503d8060008114611120576040519150601f19603f3d011682016040523d82523d6000602084013e611125565b606091505b50505050565b64f196e5000b7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b6000528073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050505050565b64f196e5000a7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a60025260006729a2241af62c00009050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000003528173ffffffffffffffffffffffffffffffffffffffff166108fc8267ffffffffffffffff169081150290604051600060405180830381858888f193505050505060009050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000075250505050565b64f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00046000528073ffffffffffffffffffffffffffffffffffffffff163460405180600001905060006040518083038185875af1925050503d8060008114611418576040519150601f19603f3d011682016040523d82523d6000602084013e61141d565b606091505b50505050565b64f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00056000528073ffffffffffffffffffffffffffffffffffffffff166108fc673782dace9d9000009081150290604051600060405180830381858888f193505050505050565b6004602052816000526040600020602052806000526040600020600091509150505481565b600160009054906101000a900460ff1681565b600064f196e5000c7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c600052600360008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b64f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00066000528073ffffffffffffffffffffffffffffffffffffffff166108fc349081150290604051600060405180830381858888f193505050505050565b60078054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561176d5780601f106117425761010080835404028352916020019161176d565b820191906000526020600020905b81548152906001019060200180831161175057829003601f168201915b505050505081565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000452600160009054906101000a900460ff16156117ff57600080fd5b60018054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc6002549081150290604051600060405180830381858888f193505050505060018060006101000a81548160ff021916908315150217905550565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00010004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010002528073ffffffffffffffffffffffffffffffffffffffff166108fc680246ddf979766800009081150290604051600060405180830381858888f1935050505061197a5760018201915061197f565b600080fd5b5050565b60025481565b600064f196e5000f7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000f60015281600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015611a6a57600080fd5b81600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a36001905092915050565b60018054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b64f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00076000528073ffffffffffffffffffffffffffffffffffffffff166108fc674563918244f400009081150290604051600060405180830381858888f193505050505050565b64f196e500097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00090004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010005528073ffffffffffffffffffffffffffffffffffffffff166108fc678ac7230489e800009081150290604051600060405180830381858888f193505050501580611d495750600180145b15611d5357600080fd5b50565b600064f196e500107fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001000005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001000015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0010000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0010600152600460008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905092915050565b64f196e5000e7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e00005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e00015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000e0004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010004528073ffffffffffffffffffffffffffffffffffffffff166108fc680246ddf979766800009081150290604051600060405180830381858888f19350505050611f4c57611f4d565b5b5056fea2646970667358221220acac4f98f0de7e41eb6763236a9fc7412283f2d098d55f44dd6fc901b5b3080764736f6c63430007060033",
+                "constructorSrcmap": "5407:7276:0:-:0;;;2682:5;2652:35;;;;;;;;;;;;;;;;;;;;8751:257;;;;;;;;;;8789:8;8775:11;:22;;;;8831:25;;;;;;;;;;;;;;;;;:4;:25;;;;;;;;;;;;:::i;:::-;;8903:2;8892:8;;:13;;;;;;;;;;;;;;;;;;8942:14;;;;;;;;;;;;;;;;;:6;:14;;;;;;;;;;;;:::i;:::-;;8989:11;;8966:8;:20;8975:10;8966:20;;;;;;;;;;;;;;;:34;;;;5407:7276;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+                "extensionContracts": [],
+                "file": "buggy_1.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "buggy_1.sol|EIP20Interface",
+                        "declaringContract": "EIP20Interface",
+                        "method": {
+                            "contractName": "EIP20Interface",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "callnotchecked_unchk13",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "callee"
+                            ],
+                            "returns": [],
+                            "sighash": "354fc923",
+                            "sourceBytes": {
+                                "begin": 3159,
+                                "size": 97
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "buggy_1.sol|EIP20Interface",
+                        "declaringContract": "EIP20Interface",
+                        "method": {
+                            "contractName": "EIP20Interface",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_unchk30",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "9e5d7729",
+                            "sourceBytes": {
+                                "begin": 1267,
+                                "size": 164
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "buggy_1.sol|EIP20Interface",
+                        "declaringContract": "EIP20Interface",
+                        "method": {
+                            "contractName": "EIP20Interface",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "sendToWinner_unchk8",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "994c3bfd",
+                            "sourceBytes": {
+                                "begin": 1971,
+                                "size": 158
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50003": {
+                        "canonicalId": "buggy_1.sol|EIP20Interface",
+                        "declaringContract": "EIP20Interface",
+                        "method": {
+                            "contractName": "EIP20Interface",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "unhandledsend_unchk14",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "callee"
+                            ],
+                            "returns": [],
+                            "sighash": "24ebdd34",
+                            "sourceBytes": {
+                                "begin": 844,
+                                "size": 93
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50004": {
+                        "canonicalId": "buggy_1.sol|EIP20Interface",
+                        "declaringContract": "EIP20Interface",
+                        "method": {
+                            "contractName": "EIP20Interface",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "my_func_uncheck36",
+                            "notpayable": false,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "dst"
+                            ],
+                            "returns": [],
+                            "sighash": "550c16d4",
+                            "sourceBytes": {
+                                "begin": 2915,
+                                "size": 103
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50005": {
+                        "canonicalId": "buggy_1.sol|EIP20Interface",
+                        "declaringContract": "EIP20Interface",
+                        "method": {
+                            "contractName": "EIP20Interface",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "bug_unchk39",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "addr"
+                            ],
+                            "returns": [],
+                            "sighash": "58dbb19c",
+                            "sourceBytes": {
+                                "begin": 2516,
+                                "size": 79
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50006": {
+                        "canonicalId": "buggy_1.sol|HotDollarsToken",
+                        "declaringContract": "HotDollarsToken",
+                        "method": {
+                            "contractName": "HotDollarsToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "my_func_unchk35",
+                            "notpayable": false,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "dst"
+                            ],
+                            "returns": [],
+                            "sighash": "8bd3d0d7",
+                            "sourceBytes": {
+                                "begin": 5031,
+                                "size": 96
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50007": {
+                        "canonicalId": "buggy_1.sol|HotDollarsToken",
+                        "declaringContract": "HotDollarsToken",
+                        "method": {
+                            "contractName": "HotDollarsToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "unhandledsend_unchk38",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "callee"
+                            ],
+                            "returns": [],
+                            "sighash": "cf43199b",
+                            "sourceBytes": {
+                                "begin": 3446,
+                                "size": 93
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50008": {
+                        "canonicalId": "buggy_1.sol|HotDollarsToken",
+                        "declaringContract": "HotDollarsToken",
+                        "method": {
+                            "contractName": "HotDollarsToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transferFrom",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "_from",
+                                "_to",
+                                "_value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "23b872dd",
+                            "sourceBytes": {
+                                "begin": 5469,
+                                "size": 531
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50009": {
+                        "canonicalId": "buggy_1.sol|HotDollarsToken",
+                        "declaringContract": "HotDollarsToken",
+                        "method": {
+                            "contractName": "HotDollarsToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_unchk7",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "d43404dd",
+                            "sourceBytes": {
+                                "begin": 4420,
+                                "size": 115
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000a": {
+                        "canonicalId": "buggy_1.sol|HotDollarsToken",
+                        "declaringContract": "HotDollarsToken",
+                        "method": {
+                            "contractName": "HotDollarsToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "cash_unchk46",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "roundIndex",
+                                "subpotIndex",
+                                "winner_unchk46"
+                            ],
+                            "returns": [],
+                            "sighash": "434fa4aa",
+                            "sourceBytes": {
+                                "begin": 3590,
+                                "size": 218
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000b": {
+                        "canonicalId": "buggy_1.sol|HotDollarsToken",
+                        "declaringContract": "HotDollarsToken",
+                        "method": {
+                            "contractName": "HotDollarsToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "my_func_unchk23",
+                            "notpayable": false,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "dst"
+                            ],
+                            "returns": [],
+                            "sighash": "3e153b71",
+                            "sourceBytes": {
+                                "begin": 4607,
+                                "size": 96
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000c": {
+                        "canonicalId": "buggy_1.sol|HotDollarsToken",
+                        "declaringContract": "HotDollarsToken",
+                        "method": {
+                            "contractName": "HotDollarsToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "balanceOf",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "_owner"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "70a08231",
+                            "sourceBytes": {
+                                "begin": 6006,
+                                "size": 122
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000d": {
+                        "canonicalId": "buggy_1.sol|HotDollarsToken",
+                        "declaringContract": "HotDollarsToken",
+                        "method": {
+                            "contractName": "HotDollarsToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "approve",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "_spender",
+                                "_value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "095ea7b3",
+                            "sourceBytes": {
+                                "begin": 6134,
+                                "size": 265
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000e": {
+                        "canonicalId": "buggy_1.sol|HotDollarsToken",
+                        "declaringContract": "HotDollarsToken",
+                        "method": {
+                            "contractName": "HotDollarsToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "UncheckedExternalCall_unchk4",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "eb46deb8",
+                            "sourceBytes": {
+                                "begin": 4166,
+                                "size": 182
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000f": {
+                        "canonicalId": "buggy_1.sol|HotDollarsToken",
+                        "declaringContract": "HotDollarsToken",
+                        "method": {
+                            "contractName": "HotDollarsToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transfer",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "_to",
+                                "_value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "a9059cbb",
+                            "sourceBytes": {
+                                "begin": 5133,
+                                "size": 330
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50010": {
+                        "canonicalId": "buggy_1.sol|HotDollarsToken",
+                        "declaringContract": "HotDollarsToken",
+                        "method": {
+                            "contractName": "HotDollarsToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "allowance",
+                            "notpayable": true,
+                            "originalFile": "buggy_1.sol",
+                            "paramNames": [
+                                "_owner",
+                                "_spender"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "dd62ed3e",
+                            "sourceBytes": {
+                                "begin": 6405,
+                                "size": 151
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "receivers_unchk30",
+                        "sourceLoc": {
+                            "begin": "1298",
+                            "len": "22",
+                            "source": "0"
+                        }
+                    },
+                    "2": {
+                        "lhs": "addr_unchk30",
+                        "sourceLoc": {
+                            "begin": "1322",
+                            "len": "28",
+                            "source": "0"
+                        }
+                    },
+                    "3": {
+                        "lhs": "subpot_unchk46",
+                        "sourceLoc": {
+                            "begin": "3695",
+                            "len": "31",
+                            "source": "0"
+                        }
+                    },
+                    "4": {
+                        "lhs": "addr_unchk4",
+                        "sourceLoc": {
+                            "begin": "4217",
+                            "len": "27",
+                            "source": "0"
+                        }
+                    },
+                    "5": {
+                        "lhs": "addr_unchk7",
+                        "sourceLoc": {
+                            "begin": "4450",
+                            "len": "27",
+                            "source": "0"
+                        }
+                    },
+                    "6": {
+                        "lhs": "currentAllowance",
+                        "sourceLoc": {
+                            "begin": "5584",
+                            "len": "53",
+                            "source": "0"
+                        }
+                    },
+                    "7": {
+                        "lhs": "subpot_unchk46",
+                        "sourceLoc": {
+                            "begin": "3788",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 4773,
+                            "size": 257
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 7647,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "unhandledsend_unchk38",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "callee"
+                        ],
+                        "returns": [],
+                        "sighash": "cf43199b",
+                        "sourceBytes": {
+                            "begin": 3446,
+                            "size": 93
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "bug_unchk39",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "addr"
+                        ],
+                        "returns": [],
+                        "sighash": "58dbb19c",
+                        "sourceBytes": {
+                            "begin": 2516,
+                            "size": 79
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "callnotchecked_unchk13",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "callee"
+                        ],
+                        "returns": [],
+                        "sighash": "354fc923",
+                        "sourceBytes": {
+                            "begin": 3159,
+                            "size": 97
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_unchk30",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "9e5d7729",
+                        "sourceBytes": {
+                            "begin": 1267,
+                            "size": 164
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "cash_unchk46",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "roundIndex",
+                            "subpotIndex",
+                            "winner_unchk46"
+                        ],
+                        "returns": [],
+                        "sighash": "434fa4aa",
+                        "sourceBytes": {
+                            "begin": 3590,
+                            "size": 218
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "_owner"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 6006,
+                            "size": 122
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "winner_unchk8",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "bc41ab32",
+                        "sourceBytes": {
+                            "begin": 2689,
+                            "size": 36
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "_spender",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 6134,
+                            "size": 265
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "unhandledsend_unchk14",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "callee"
+                        ],
+                        "returns": [],
+                        "sighash": "24ebdd34",
+                        "sourceBytes": {
+                            "begin": 844,
+                            "size": 93
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "UncheckedExternalCall_unchk4",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "eb46deb8",
+                        "sourceBytes": {
+                            "begin": 4166,
+                            "size": 182
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 5133,
+                            "size": 330
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "_owner",
+                            "_spender"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 6405,
+                            "size": 151
+                        },
+                        "stateMutability": "view",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 8684,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "payedOut_unchk8",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "6e71d3c5",
+                        "sourceBytes": {
+                            "begin": 2652,
+                            "size": 35
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "winAmount_unchk8",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a858a350",
+                        "sourceBytes": {
+                            "begin": 2727,
+                            "size": 28
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "my_func_uncheck36",
+                        "notpayable": false,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "dst"
+                        ],
+                        "returns": [],
+                        "sighash": "550c16d4",
+                        "sourceBytes": {
+                            "begin": 2915,
+                            "size": 103
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "my_func_unchk35",
+                        "notpayable": false,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "dst"
+                        ],
+                        "returns": [],
+                        "sighash": "8bd3d0d7",
+                        "sourceBytes": {
+                            "begin": 5031,
+                            "size": 96
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "_from",
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 5469,
+                            "size": 531
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_unchk7",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d43404dd",
+                        "sourceBytes": {
+                            "begin": 4420,
+                            "size": 115
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 618,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balances",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "27e235e3",
+                        "sourceBytes": {
+                            "begin": 5946,
+                            "size": 44
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowed",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "5c658165",
+                        "sourceBytes": {
+                            "begin": 6763,
+                            "size": 64
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 8178,
+                            "size": 21
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "my_func_unchk23",
+                        "notpayable": false,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [
+                            "dst"
+                        ],
+                        "returns": [],
+                        "sighash": "3e153b71",
+                        "sourceBytes": {
+                            "begin": 4607,
+                            "size": 96
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "HotDollarsToken",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "sendToWinner_unchk8",
+                        "notpayable": true,
+                        "originalFile": "buggy_1.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "994c3bfd",
+                        "sourceBytes": {
+                            "begin": 1971,
+                            "size": 158
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "HotDollarsToken",
+                "original_file": "buggy_1.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 3344,
+                    "size": 3214
+                },
+                "srcmap": "5407:7276:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7647:18;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;11575:606;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;618:26;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;10126:974;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;844:434;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;5946:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;8178:21;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;4881:438;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;8247:434;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;5994:766;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;4299:441;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;3561:418;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;6763:64;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;2652:35;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;11106:463;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;9009:434;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;8684:20;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2758:416;;;;;;;;;;;;;:::i;:::-;;1608:610;;;;;;;;;;;;;:::i;:::-;;2727:28;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;9449:671;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;2689:36;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;5509:434;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;7716:459;;;;;;;;;;;;;:::i;:::-;;12187:494;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;7118:526;;;;;;;;;;;;;:::i;:::-;;7647:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;11575:606::-;11651:12;11752:13;11684:66;11677:89;11842:1;11774:66;11767:77;11920:1;11852:66;11845:77;11998:6;11930:66;11923:82;12048:6;12016:7;:19;12024:10;12016:19;;;;;;;;;;;;;;;:29;12036:8;12016:29;;;;;;;;;;;;;;;:38;;;;12090:8;12069:38;;12078:10;12069:38;;;12100:6;12069:38;;;;;;;;;;;;;;;;;;12170:4;12163:11;;11575:606;;;;:::o;618:26::-;;;;:::o;10126:974::-;10217:12;10318:13;10250:66;10243:89;10408:1;10340:66;10333:77;10486:2;10418:66;10411:78;10565:6;10497:66;10490:82;10583:24;10610:7;:14;10618:5;10610:14;;;;;;;;;;;;;;;:26;10625:10;10610:26;;;;;;;;;;;;;;;;10583:53;;10720:16;10653:66;10646:91;10774:6;10755:8;:15;10764:5;10755:15;;;;;;;;;;;;;;;;:25;;:55;;;;;10804:6;10784:16;:26;;10755:55;10747:64;;;;;;10838:6;10821:8;:13;10830:3;10821:13;;;;;;;;;;;;;;;;:23;;;;;;;;;;;10873:6;10854:8;:15;10863:5;10854:15;;;;;;;;;;;;;;;;:25;;;;;;;;;;;5495:10;10893:16;:30;10889:95;;;10967:6;10937:7;:14;10945:5;10937:14;;;;;;;;;;;;;;;:26;10952:10;10937:26;;;;;;;;;;;;;;;;:36;;;;;;;;;;;10889:95;11014:3;10998:28;;11007:5;10998:28;;;11019:6;10998:28;;;;;;;;;;;;;;;;;;11089:4;11082:11;;;10126:974;;;;;:::o;844:434::-;993:13;925:66;918:89;1083:1;1015:66;1008:77;1161:1;1093:66;1086:77;1239:6;1171:66;1164:82;1253:6;:11;;:20;1265:7;1253:20;;;;;;;;;;;;;;;;;;;;;;;;844:434;:::o;5946:44::-;;;;;;;;;;;;;;;;;:::o;8178:21::-;;;;;;;;;;;;;:::o;4881:438::-;5023:13;4955:66;4948:89;5113:1;5045:66;5038:77;5191:1;5123:66;5116:77;5269:6;5201:66;5194:82;5283:6;:11;;5302:7;5283:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4881:438;:::o;8247:434::-;8394:13;8326:66;8319:89;8484:1;8416:66;8409:77;8562:1;8494:66;8487:77;8640:3;8572:66;8565:79;8655:3;:8;;:19;8664:9;8655:19;;;;;;;;;;;;;;;;;;;;;;;;8247:434;:::o;5994:766::-;6176:13;6108:66;6101:89;6266:1;6198:66;6191:77;6344:2;6276:66;6269:78;6423:14;6355:66;6348:90;6449:21;6473:7;6449:31;;6564:14;6497:66;6490:89;6589:14;:19;;:35;6609:14;6589:35;;;;;;;;;;;;;;;;;;;;;;;;;;6657:1;6641:17;;6742:14;6675:66;6668:89;6667:91;;;;:::o;4299:441::-;4448:13;4380:66;4373:89;4538:1;4470:66;4463:77;4616:1;4548:66;4541:77;4694:3;4626:66;4619:79;4703:3;:8;;4719:9;4703:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4299:441;:::o;3561:418::-;3704:13;3636:66;3629:89;3794:1;3726:66;3719:77;3872:1;3804:66;3797:77;3950:4;3882:66;3875:80;3957:4;:9;;:19;3968:7;3957:19;;;;;;;;;;;;;;;;;;;;;;;;3561:418;:::o;6763:64::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;2652:35::-;;;;;;;;;;;;;:::o;11106:463::-;11171:15;11275:13;11207:66;11200:89;11365:1;11297:66;11290:77;11443:1;11375:66;11368:77;11521:6;11453:66;11446:82;11546:8;:16;11555:6;11546:16;;;;;;;;;;;;;;;;11539:23;;11106:463;;;:::o;9009:434::-;9156:13;9088:66;9081:89;9246:1;9178:66;9171:77;9324:1;9256:66;9249:77;9402:3;9334:66;9327:79;9417:3;:8;;:19;9426:9;9417:19;;;;;;;;;;;;;;;;;;;;;;;;9009:434;:::o;8684:20::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;2758:416::-;2883:13;2815:66;2808:89;2973:1;2905:66;2898:77;3051:1;2983:66;2976:77;3073:15;;;;;;;;;;;3072:16;3064:25;;;;;;3099:13;;;;;;;;;;:18;;:36;3118:16;;3099:36;;;;;;;;;;;;;;;;;;;;;;;;3163:4;3145:15;;:22;;;;;;;;;;;;;;;;;;2758:416::o;1608:610::-;1724:13;1656:66;1649:89;1814:1;1746:66;1739:77;1892:1;1824:66;1817:77;1897:22;2003:17;1936:66;1929:92;2023:28;2135:1;2068:66;2061:76;2144:12;:17;;:27;2162:8;2144:27;;;;;;;;;;;;;;;;;;;;;;;2139:77;;2195:1;2175:21;;;;2139:77;;;2206:8;;;2139:77;1608:610;;:::o;2727:28::-;;;;:::o;9449:671::-;9521:12;9622:13;9554:66;9547:89;9712:1;9644:66;9637:77;9790:1;9722:66;9715:77;9868:6;9800:66;9793:82;9918:6;9894:8;:20;9903:10;9894:20;;;;;;;;;;;;;;;;:30;;9886:39;;;;;;9959:6;9935:8;:20;9944:10;9935:20;;;;;;;;;;;;;;;;:30;;;;;;;;;;;9992:6;9975:8;:13;9984:3;9975:13;;;;;;;;;;;;;;;;:23;;;;;;;;;;;10034:3;10013:33;;10022:10;10013:33;;;10039:6;10013:33;;;;;;;;;;;;;;;;;;10109:4;10102:11;;9449:671;;;;:::o;2689:36::-;;;;;;;;;;;;:::o;5509:434::-;5658:13;5590:66;5583:89;5748:1;5680:66;5673:77;5826:1;5758:66;5751:77;5904:6;5836:66;5829:82;5918:6;:11;;:20;5930:7;5918:20;;;;;;;;;;;;;;;;;;;;;;;;5509:434;:::o;7716:459::-;7831:13;7763:66;7756:89;7921:1;7853:66;7846:77;7999:1;7931:66;7924:77;8004:27;8115:1;8048:66;8041:76;8124:11;:16;;:27;8142:8;8124:27;;;;;;;;;;;;;;;;;;;;;;;8123:28;:36;;;;8158:1;8155;:4;8123:36;8119:54;;;8163:8;;;8119:54;7716:459;:::o;12187:494::-;12270:17;12376:13;12308:66;12301:89;12466:1;12398:66;12391:77;12544:1;12476:66;12469:77;12622:8;12554:66;12547:84;12649:7;:15;12657:6;12649:15;;;;;;;;;;;;;;;:25;12665:8;12649:25;;;;;;;;;;;;;;;;12642:32;;12187:494;;;;:::o;7118:526::-;7253:13;7185:66;7178:89;7343:1;7275:66;7268:77;7421:1;7353:66;7346:77;7427:27;7538:1;7471:66;7464:76;7551:11;:16;;:27;7569:8;7551:27;;;;;;;;;;;;;;;;;;;;;;;7545:97;;;;;;7118:526;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 4,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_55_02_154022b6cf/.certora_sources/buggy_1.sol:HotDollarsToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "totalSupply",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 78,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_55_02_154022b6cf/.certora_sources/buggy_1.sol:HotDollarsToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "1",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "bool",
+                                "type": "Primitive"
+                            },
+                            "label": "payedOut_unchk8",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_bool"
+                        },
+                        {
+                            "astId": 80,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_55_02_154022b6cf/.certora_sources/buggy_1.sol:HotDollarsToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "winner_unchk8",
+                            "offset": 1,
+                            "slot": "1",
+                            "type": "t_address_payable"
+                        },
+                        {
+                            "astId": 82,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_55_02_154022b6cf/.certora_sources/buggy_1.sol:HotDollarsToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "winAmount_unchk8",
+                            "offset": 0,
+                            "slot": "2",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 209,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_55_02_154022b6cf/.certora_sources/buggy_1.sol:HotDollarsToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "balances",
+                            "offset": 0,
+                            "slot": "3",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 242,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_55_02_154022b6cf/.certora_sources/buggy_1.sol:HotDollarsToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "mappingKeyType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "20",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    },
+                                    "mappingValueType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "32",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    },
+                                    "type": "Mapping"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "allowed",
+                            "offset": 0,
+                            "slot": "4",
+                            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+                        },
+                        {
+                            "astId": 261,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_55_02_154022b6cf/.certora_sources/buggy_1.sol:HotDollarsToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "name",
+                            "offset": 0,
+                            "slot": "5",
+                            "type": "t_string_storage"
+                        },
+                        {
+                            "astId": 286,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_55_02_154022b6cf/.certora_sources/buggy_1.sol:HotDollarsToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "1",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint8",
+                                "type": "Primitive"
+                            },
+                            "label": "decimals",
+                            "offset": 0,
+                            "slot": "6",
+                            "type": "t_uint8"
+                        },
+                        {
+                            "astId": 302,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_55_02_154022b6cf/.certora_sources/buggy_1.sol:HotDollarsToken",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "symbol",
+                            "offset": 0,
+                            "slot": "7",
+                            "type": "t_string_storage"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_address_payable": {
+                            "encoding": "inplace",
+                            "label": "address payable",
+                            "numberOfBytes": "20"
+                        },
+                        "t_bool": {
+                            "encoding": "inplace",
+                            "label": "bool",
+                            "numberOfBytes": "1"
+                        },
+                        "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => mapping(address => uint256))",
+                            "numberOfBytes": "32",
+                            "value": "t_mapping(t_address,t_uint256)"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_string_storage": {
+                            "encoding": "bytes",
+                            "label": "string",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint8": {
+                            "encoding": "inplace",
+                            "label": "uint8",
+                            "numberOfBytes": "1"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "HotDollarsToken",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000003",
+        "prototypeFor": [],
+        "sdc_name": "buggy_1.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "buggy_1.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

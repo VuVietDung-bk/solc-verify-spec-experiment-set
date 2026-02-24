@@ -1,0 +1,1035 @@
+{
+    "Ownable_00000000ce4604a0000000000000000000000006": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000006",
+                "allMethods": [
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "bug_intou40",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [
+                            "p_intou40"
+                        ],
+                        "returns": [],
+                        "sighash": "a8e7ff97",
+                        "sourceBytes": {
+                            "begin": 1789,
+                            "size": 124
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "changeOwner",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [
+                            "_newOwner"
+                        ],
+                        "returns": [],
+                        "sighash": "a6f9dae1",
+                        "sourceBytes": {
+                            "begin": 2147,
+                            "size": 143
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 1977,
+                            "size": 49
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "increaseLockTime_intou21",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [
+                            "_secondsToIncrease"
+                        ],
+                        "returns": [],
+                        "sighash": "a3af6a70",
+                        "sourceBytes": {
+                            "begin": 1391,
+                            "size": 145
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "lockTime_intou21",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "6dbbb575",
+                        "sourceBytes": {
+                            "begin": 1340,
+                            "size": 48
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "owner",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8da5cb5b",
+                        "sourceBytes": {
+                            "begin": 2481,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdraw_intou21",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "81bb4758",
+                        "sourceBytes": {
+                            "begin": 1537,
+                            "size": 224
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561001057600080fd5b50600436106100625760003560e01c80636dbbb5751461006757806381bb4758146100bf5780638da5cb5b146100c9578063a3af6a70146100fd578063a6f9dae11461012b578063a8e7ff971461016f575b600080fd5b6100a96004803603602081101561007d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101a0565b6040518082815260200191505060405180910390f35b6100c76101b8565b005b6100d16102e5565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101296004803603602081101561011357600080fd5b810190808035906020019092919050505061030b565b005b61016d6004803603602081101561014157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103ed565b005b61019e6004803603602081101561018557600080fd5b81019080803560ff16906020019092919050505061055f565b005b60006020528060005260406000206000915090505481565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00010004526000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054421161027257600080fd5b6000600a9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001523373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f193505050501580156102e1573d6000803e3d6000fd5b5050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600052806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146104b0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f6f6e6c7920746865206f776e65722063616e2063616c6c20746869730000000081525060200191505060405180910390fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507fb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c3382604051808373ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a150565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00026000526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000002528181019050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000452505056fea2646970667358221220a20e4ff725b19ed1342b44735ef5188cce6f020780c50fdd8e2f6ea6923ed18c64736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "608060405234801561001057600080fd5b5033600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610679806100616000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c80636dbbb5751461006757806381bb4758146100bf5780638da5cb5b146100c9578063a3af6a70146100fd578063a6f9dae11461012b578063a8e7ff971461016f575b600080fd5b6100a96004803603602081101561007d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101a0565b6040518082815260200191505060405180910390f35b6100c76101b8565b005b6100d16102e5565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101296004803603602081101561011357600080fd5b810190808035906020019092919050505061030b565b005b61016d6004803603602081101561014157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103ed565b005b61019e6004803603602081101561018557600080fd5b81019080803560ff16906020019092919050505061055f565b005b60006020528060005260406000206000915090505481565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00010004526000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054421161027257600080fd5b6000600a9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001523373ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f193505050501580156102e1573d6000803e3d6000fd5b5050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600052806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146104b0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f6f6e6c7920746865206f776e65722063616e2063616c6c20746869730000000081525060200191505060405180910390fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507fb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c3382604051808373ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a150565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00026000526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000002528181019050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000452505056fea2646970667358221220a20e4ff725b19ed1342b44735ef5188cce6f020780c50fdd8e2f6ea6923ed18c64736f6c63430007060033",
+                "constructorSrcmap": "1318:2222:0:-:0;;;3224:49;;;;;;;;;;3256:10;3248:5;;:18;;;;;;;;;;;;;;;;;;1318:2222;;;;;;",
+                "extensionContracts": [],
+                "file": "buggy_20.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "buggy_20.sol|Ownable",
+                        "declaringContract": "Ownable",
+                        "method": {
+                            "contractName": "Ownable",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "increaseLockTime_intou21",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [
+                                "_secondsToIncrease"
+                            ],
+                            "returns": [],
+                            "sighash": "a3af6a70",
+                            "sourceBytes": {
+                                "begin": 1391,
+                                "size": 145
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "buggy_20.sol|Ownable",
+                        "declaringContract": "Ownable",
+                        "method": {
+                            "contractName": "Ownable",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "withdraw_intou21",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "81bb4758",
+                            "sourceBytes": {
+                                "begin": 1537,
+                                "size": 224
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "buggy_20.sol|Ownable",
+                        "declaringContract": "Ownable",
+                        "method": {
+                            "contractName": "Ownable",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint8",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "bug_intou40",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [
+                                "p_intou40"
+                            ],
+                            "returns": [],
+                            "sighash": "a8e7ff97",
+                            "sourceBytes": {
+                                "begin": 1789,
+                                "size": 124
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50003": {
+                        "canonicalId": "buggy_20.sol|RampInstantEthPool",
+                        "declaringContract": "RampInstantEthPool",
+                        "method": {
+                            "contractName": "RampInstantEthPool",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "setSwapsContract",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [
+                                "_swapsContract"
+                            ],
+                            "returns": [],
+                            "sighash": "d950f365",
+                            "sourceBytes": {
+                                "begin": 7046,
+                                "size": 304
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50004": {
+                        "canonicalId": "buggy_20.sol|RampInstantEthPool",
+                        "declaringContract": "RampInstantEthPool",
+                        "method": {
+                            "contractName": "RampInstantEthPool",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "withdrawFunds",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [
+                                "_to",
+                                "_amount"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "c1075329",
+                            "sourceBytes": {
+                                "begin": 10073,
+                                "size": 220
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50005": {
+                        "canonicalId": "buggy_20.sol|RampInstantEthPool",
+                        "declaringContract": "RampInstantEthPool",
+                        "method": {
+                            "contractName": "RampInstantEthPool",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "sendFundsToSwap",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [
+                                "_amount"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "81fd3f0b",
+                            "sourceBytes": {
+                                "begin": 10299,
+                                "size": 245
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50006": {
+                        "canonicalId": "buggy_20.sol|RampInstantEthPool",
+                        "declaringContract": "RampInstantEthPool",
+                        "method": {
+                            "contractName": "RampInstantEthPool",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "availableFunds",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "46fcff4c",
+                            "sourceBytes": {
+                                "begin": 9958,
+                                "size": 109
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50007": {
+                        "canonicalId": "buggy_20.sol|RampInstantEthPool",
+                        "declaringContract": "RampInstantEthPool",
+                        "method": {
+                            "contractName": "RampInstantEthPool",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "withdrawAllFunds",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [
+                                "_to"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "32dee40b",
+                            "sourceBytes": {
+                                "begin": 6619,
+                                "size": 147
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50008": {
+                        "canonicalId": "buggy_20.sol|RampInstantEthPool",
+                        "declaringContract": "RampInstantEthPool",
+                        "method": {
+                            "contractName": "RampInstantEthPool",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transfer_intou10",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [
+                                "_to",
+                                "_value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "c1762373",
+                            "sourceBytes": {
+                                "begin": 2441,
+                                "size": 255
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50009": {
+                        "canonicalId": "buggy_20.sol|RampInstantEthPool",
+                        "declaringContract": "RampInstantEthPool",
+                        "method": {
+                            "contractName": "RampInstantEthPool",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "ASSET_TYPE",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint16",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "8815eb39",
+                            "sourceBytes": {
+                                "begin": 5265,
+                                "size": 113
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000a": {
+                        "canonicalId": "buggy_20.sol|RampInstantEthPool",
+                        "declaringContract": "RampInstantEthPool",
+                        "method": {
+                            "contractName": "RampInstantEthPool",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "setLimits",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [
+                                "_minAmount",
+                                "_maxAmount"
+                            ],
+                            "returns": [],
+                            "sighash": "c4590d3f",
+                            "sourceBytes": {
+                                "begin": 6772,
+                                "size": 268
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000b": {
+                        "canonicalId": "buggy_20.sol|RampInstantPool",
+                        "declaringContract": "RampInstantPool",
+                        "method": {
+                            "contractName": "RampInstantPool",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "setSwapsContract",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [
+                                "_swapsContract"
+                            ],
+                            "returns": [],
+                            "sighash": "d950f365",
+                            "sourceBytes": {
+                                "begin": 7046,
+                                "size": 304
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000c": {
+                        "canonicalId": "buggy_20.sol|RampInstantPool",
+                        "declaringContract": "RampInstantPool",
+                        "method": {
+                            "contractName": "RampInstantPool",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "withdrawAllFunds",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [
+                                "_to"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "32dee40b",
+                            "sourceBytes": {
+                                "begin": 6619,
+                                "size": 147
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000d": {
+                        "canonicalId": "buggy_20.sol|RampInstantPool",
+                        "declaringContract": "RampInstantPool",
+                        "method": {
+                            "contractName": "RampInstantPool",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "setLimits",
+                            "notpayable": true,
+                            "originalFile": "buggy_20.sol",
+                            "paramNames": [
+                                "_minAmount",
+                                "_maxAmount"
+                            ],
+                            "returns": [],
+                            "sighash": "c4590d3f",
+                            "sourceBytes": {
+                                "begin": 6772,
+                                "size": 268
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "transferValue_intou21",
+                        "sourceLoc": {
+                            "begin": "1651",
+                            "len": "31",
+                            "source": "0"
+                        }
+                    },
+                    "2": {
+                        "lhs": "vundflw1",
+                        "sourceLoc": {
+                            "begin": "1839",
+                            "len": "16",
+                            "source": "0"
+                        }
+                    },
+                    "3": {
+                        "lhs": "oldSwapsContract",
+                        "sourceLoc": {
+                            "begin": "7194",
+                            "len": "40",
+                            "source": "0"
+                        }
+                    },
+                    "4": {
+                        "lhs": "vundflw1",
+                        "sourceLoc": {
+                            "begin": "1861",
+                            "len": "31",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 1977,
+                            "size": 49
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "changeOwner",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [
+                            "_newOwner"
+                        ],
+                        "returns": [],
+                        "sighash": "a6f9dae1",
+                        "sourceBytes": {
+                            "begin": 2147,
+                            "size": 143
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "increaseLockTime_intou21",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [
+                            "_secondsToIncrease"
+                        ],
+                        "returns": [],
+                        "sighash": "a3af6a70",
+                        "sourceBytes": {
+                            "begin": 1391,
+                            "size": 145
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "lockTime_intou21",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "6dbbb575",
+                        "sourceBytes": {
+                            "begin": 1340,
+                            "size": 48
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "bug_intou40",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [
+                            "p_intou40"
+                        ],
+                        "returns": [],
+                        "sighash": "a8e7ff97",
+                        "sourceBytes": {
+                            "begin": 1789,
+                            "size": 124
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdraw_intou21",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "81bb4758",
+                        "sourceBytes": {
+                            "begin": 1537,
+                            "size": 224
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "owner",
+                        "notpayable": true,
+                        "originalFile": "buggy_20.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8da5cb5b",
+                        "sourceBytes": {
+                            "begin": 2481,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "Ownable",
+                "original_file": "buggy_20.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 1318,
+                    "size": 975
+                },
+                "srcmap": "1318:2222:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1340:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1890:588;;;:::i;:::-;;2481:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;1391:498;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;3394:143;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;2506:654;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1340:48;;;;;;;;;;;;;;;;;:::o;1890:588::-;2012:13;1944:66;1937:89;2102:1;2034:66;2027:77;2180:1;2112:66;2105:77;2219:16;:28;2236:10;2219:28;;;;;;;;;;;;;;;;2201:15;:46;2193:55;;;;;;2262:26;2291:2;2262:31;;2377:21;2310:66;2303:96;2428:10;2420:28;;:51;2449:21;2420:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1890:588;:::o;2481:20::-;;;;;;;;;;;;;:::o;1391:498::-;1544:13;1476:66;1469:89;1634:1;1566:66;1559:77;1712:1;1644:66;1637:77;1790:18;1722:66;1715:94;1852:18;1820:16;:28;1837:10;1820:28;;;;;;;;;;;;;;;;:50;;;;;;;;;;;1391:498;:::o;3394:143::-;3332:5;;;;;;;;;;;3318:19;;:10;:19;;;3310:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3471:9:::1;3463:5;;:17;;;;;;;;;;;;;;;;;;3495:35;3508:10;3520:9;3495:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;3394:143:::0;:::o;2506:654::-;2637:13;2569:66;2562:89;2727:1;2659:66;2652:77;2805:1;2737:66;2730:77;2883:9;2815:66;2808:85;2900:14;3000:8;2933:66;2926:83;3037:9;3026:8;:20;3015:31;;3130:8;3063:66;3056:83;3055:85;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 6,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_24_09_29_32_869500d0ad/.certora_sources/buggy_20.sol:Ownable",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "lockTime_intou21",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 51,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/.certora_internal/26_02_24_09_29_32_869500d0ad/.certora_sources/buggy_20.sol:Ownable",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "owner",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_address"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "Ownable",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000006",
+        "prototypeFor": [],
+        "sdc_name": "buggy_20.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "buggy_20.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

@@ -30,3 +30,27 @@
 
 [10] CMD: certoraRun buggy_50.sol:digitalNotary --verify digitalNotary:certora_specification/buggy_50.cvl
 [10] LINK: https://prover.certora.com/output/1696952/5209de55dcc647d3b3fa5284a835c7a1
+
+[11] CMD: certoraRun buggy_19.sol:ethBank --verify ethBank:certora_specification/buggy_19_eth_bank.cvl
+[11] LINK: https://prover.certora.com/output/1696952/7e5f399e684d41e1aa7a7afefffac9f5
+
+[12] CMD: certoraRun buggy_19.sol:owned --verify owned:certora_specification/buggy_19_owned.cvl
+[12] LINK: https://prover.certora.com/output/1696952/e4cc1055272a41c8a491b2978d409be7
+
+[13] CMD: certoraRun buggy_20.sol:Ownable --verify Ownable:certora_specification/buggy_20_locktime.cvl
+[13] LINK: https://prover.certora.com/output/1696952/485a1d874371444aacdc71af32560f23
+
+[14] CMD: certoraRun buggy_20.sol:Stoppable --verify Stoppable:certora_specification/buggy_20_transfer.cvl
+[14] LINK: https://prover.certora.com/output/1696952/6a74046b11f143d1af438ff375158f27
+
+[15] CMD: certoraRun buggy_47.sol:ERC20Interface --verify ERC20Interface:certora_specification/buggy_47_locktime.cvl
+[15] ERROR: Severe compiler warning - Unnamed return variable can remain unassigned in burn() function. Certora Prover cannot handle this Solidity pattern.
+
+[16] CMD: certoraRun buggy_47.sol:AcunarToken --verify AcunarToken:certora_specification/buggy_47_transfer.cvl
+[16] ERROR: Severe compiler warning - Unnamed return variable can remain unassigned in burn() function. Certora Prover cannot handle this Solidity pattern.
+
+[17] CMD: certoraRun buggy_5.sol:Ownable --verify Ownable:certora_specification/buggy_5_locktime.cvl
+[17] LINK: https://prover.certora.com/output/1696952/a376b5cd8d9043b29ce68f61d1183823
+
+[18] CMD: certoraRun buggy_5.sol:TokenERC20 --verify TokenERC20:certora_specification/buggy_5_transfer.cvl
+[18] LINK: https://prover.certora.com/output/1696952/436a1357bb574bae80d4fc14aaa8255f

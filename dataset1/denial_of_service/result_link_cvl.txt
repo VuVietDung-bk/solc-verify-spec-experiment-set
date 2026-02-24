@@ -16,3 +16,6 @@
 
 
 
+
+[5] CMD: certoraRun dos_number.sol:DosNumber --verify DosNumber:certora_specification/dos_number.cvl
+[5] LINK: https://prover.certora.com/output/1696952/1684a15143714ecd8e0ee5ce92979b02

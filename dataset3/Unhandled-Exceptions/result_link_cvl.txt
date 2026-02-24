@@ -1,0 +1,56 @@
+# result_link_cvl.txt
+# Generated: 2026-02-23
+
+[1] CMD: certoraRun buggy_1.sol:HotDollarsToken --verify HotDollarsToken:certora_specification/buggy_1_hot_dollars_token.cvl
+[1] LINK: https://prover.certora.com/output/1696952/b0413a54e1c842f2b362c3e1e8ac9313
+
+[2] CMD: certoraRun buggy_19.sol:ethBank --verify ethBank:certora_specification/buggy_19_eth_bank.cvl
+[2] LINK: https://prover.certora.com/output/1696952/1450294e286e4d9abf879ceb5dbd0d8a
+
+[3] CMD: certoraRun buggy_19.sol:owned --verify owned:certora_specification/buggy_19_owned.cvl
+[3] LINK: https://prover.certora.com/output/1696952/15cd4eb29adb480f8feed57e772cef0a
+
+[4] CMD: certoraRun buggy_20.sol:RampInstantEscrowsPoolInterface --verify RampInstantEscrowsPoolInterface:certora_specification/buggy_20_escrowspool.cvl
+[4] ERROR: Contract RampInstantEscrowsPoolInterface has no bytecode - contract is abstract
+
+[5] CMD: certoraRun buggy_20.sol:RampInstantPool --verify RampInstantPool:certora_specification/buggy_20_ethpool.cvl
+[5] ERROR: Contract RampInstantPool has no bytecode - contract is abstract
+
+[6] CMD: certoraRun buggy_23.sol:AGR --verify AGR:certora_specification/buggy_23_agr.cvl
+[6] LINK: https://prover.certora.com/output/1696952/420804d4686c411a919ef6be79d4c237
+
+[7] CMD: certoraRun buggy_23.sol:ERC20 --verify ERC20:certora_specification/buggy_23_erc20.cvl
+[7] LINK: https://prover.certora.com/output/1696952/4168a8a79a5d4087a47a9fd51e6c03cb
+
+[8] CMD: certoraRun buggy_23.sol:ERC20Burnable --verify ERC20Burnable:certora_specification/buggy_23_erc20_burnable.cvl
+[8] LINK: https://prover.certora.com/output/1696952/152c947b6bdf4ed887cb4d28472042c7
+
+[9] CMD: certoraRun buggy_33.sol:Staking --verify Staking:certora_specification/buggy_33.cvl
+[9] LINK: https://prover.certora.com/output/1696952/d0cb0f15cd5246afb99deb0d26f83c87
+
+[10] CMD: certoraRun buggy_34.sol:LollypopToken --verify LollypopToken:certora_specification/buggy_34_lollypop_token.cvl
+[10] LINK: https://prover.certora.com/output/1696952/945d0828cd214ad5b212d5a7056e228e
+
+[11] CMD: certoraRun buggy_34.sol:Ownable --verify Ownable:certora_specification/buggy_34_ownable.cvl
+[11] LINK: https://prover.certora.com/output/1696952/623e6bc23af142d2ab1917093d68ce80
+
+[12] CMD: certoraRun buggy_45.sol:StockBet --verify StockBet:certora_specification/buggy_45.cvl
+[12] LINK: https://prover.certora.com/output/1696952/83803213d3554ea290bd2d69eed49719
+
+[13] CMD: certoraRun buggy_47.sol:AcunarIEO --verify AcunarIEO:certora_specification/buggy_47_acunar_ieo.cvl
+[13] ERROR: Severe compiler warning - Unnamed return variable in burn() function (buggy_47.sol:383:36)
+
+[14] CMD: certoraRun buggy_47.sol:AcunarToken --verify AcunarToken:certora_specification/buggy_47_acunar_token.cvl
+[14] ERROR: Severe compiler warning - Unnamed return variable in burn() function (buggy_47.sol:383:36)
+
+[15] CMD: certoraRun buggy_50.sol:digitalNotary --verify digitalNotary:certora_specification/buggy_50.cvl
+[15] LINK: https://prover.certora.com/output/1696952/4d982e5d9fd747778ac71d38dfcdfe78
+
+[16] CMD: certoraRun buggy_5.sol:Ownable --verify Ownable:certora_specification/buggy_5_ownable.cvl
+[16] LINK: https://prover.certora.com/output/1696952/6025ed3a392c4799af4dd2d959880db5
+
+[17] CMD: certoraRun buggy_5.sol:TokenERC20 --verify TokenERC20:certora_specification/buggy_5_token_erc20.cvl
+[17] LINK: https://prover.certora.com/output/1696952/3707ce39b7084954a3344f9870a3112e
+
+[18] CMD: certoraRun buggy_5.sol:TTC --verify TTC:certora_specification/buggy_5_ttc.cvl
+[18] LINK: https://prover.certora.com/output/1696952/e885e19a392f4f65bc71a56da1b72f68

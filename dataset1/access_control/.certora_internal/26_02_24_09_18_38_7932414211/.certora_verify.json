@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Map",
+    "specfile": "certora_specification/mapping_write.cvl",
+    "specfileOrigRelpath": "certora_specification/mapping_write.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

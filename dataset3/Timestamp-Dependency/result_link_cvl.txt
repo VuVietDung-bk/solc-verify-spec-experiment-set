@@ -30,3 +30,21 @@
 
 [10] CMD: certoraRun buggy_50.sol:digitalNotary --verify digitalNotary:certora_specification/buggy_50.cvl
 [10] LINK: https://prover.certora.com/output/1696952/8f38a7ba3db14973879dbd9048f05221
+
+[11] CMD: certoraRun buggy_20.sol:RampInstantEthPool --verify RampInstantEthPool:certora_specification/buggy_20_ethpool.cvl
+[11] LINK: https://prover.certora.com/output/1696952/83a567e3203942e290a5d8c20d8b469d
+
+[12] CMD: certoraRun buggy_20.sol:Ownable --verify Ownable:certora_specification/buggy_20_ownable.cvl
+[12] LINK: https://prover.certora.com/output/1696952/811eedac5cf94837884ae7af28fad50b
+
+[13] CMD: certoraRun buggy_20.sol:RampInstantPool --verify RampInstantPool:certora_specification/buggy_20_pool.cvl
+[13] ERROR: Contract RampInstantPool has no bytecode - contract is abstract. Certora Prover cannot handle abstract contracts.
+
+[14] CMD: certoraRun buggy_20.sol:Stoppable --verify Stoppable:certora_specification/buggy_20_stoppable.cvl
+[14] LINK: https://prover.certora.com/output/1696952/842b3160be104f9dade00ce732284bf2
+
+[15] CMD: certoraRun buggy_23.sol:ERC20 --verify ERC20:certora_specification/buggy_23_erc20.cvl
+[15] LINK: https://prover.certora.com/output/1696952/5b9de64ac6ef4a489ea3d397fa262c49
+
+[16] CMD: certoraRun buggy_23.sol:ERC20Burnable --verify ERC20Burnable:certora_specification/buggy_23_erc20_burnable.cvl
+[16] LINK: https://prover.certora.com/output/1696952/9bce2b58f9104c5387e032cc03b94889

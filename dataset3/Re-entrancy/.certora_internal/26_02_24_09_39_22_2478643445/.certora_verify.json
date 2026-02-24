@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "RampInstantPool",
+    "specfile": "/root/solc-verify-spec/experiments/dataset3/Re-entrancy/certora_specification/buggy_20_ent11.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_20_ent11.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "ERC20Burnable",
+    "specfile": "certora_specification/buggy_23_erc20_burnable.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_23_erc20_burnable.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

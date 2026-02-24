@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Reentrancy_cross_function",
+    "specfile": "certora_specification/reentrancy_cross_function.cvl",
+    "specfileOrigRelpath": "certora_specification/reentrancy_cross_function.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

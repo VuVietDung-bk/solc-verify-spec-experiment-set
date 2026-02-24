@@ -1,0 +1,58 @@
+Saving last configuration file to .certora_internal/26_02_24_09_26_54_0965975ae2/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['simple_dao.sol:SimpleDAO'], 'package_version_for_build_cache': 'certora-cli 8.8.0', 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config
+In /root/solc-verify-spec/experiments/dataset2/reentrancy/certora_specification/simple_dao.cvl, found the imports: []
+copying spec file /root/solc-verify-spec/experiments/dataset2/reentrancy/certora_specification/simple_dao.cvl to /root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/.0_simple_dao.cvl.spec
+writing /root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_verify.json
+
+building file simple_dao.sol
+Running cmd solc --version
+stdout, stderr = .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/version_check_solc.stdout, .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/version_check_solc.stderr
+Exitcode 0
+Solc run solc --version time: 0.0942
+Running cmd solc -o ".certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/simple_dao.sol_0/" --overwrite --allow-paths ".",. --standard-json
+stdout, stderr = .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/simple_dao.sol_0.standard.stdout.json, .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/simple_dao.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/simple_dao.sol_0/" --overwrite --allow-paths ".",. --standard-json time: 0.0974
+reading standard json data from .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/simple_dao.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset2/reentrancy/simple_dao.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset2/reentrancy/simple_dao.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset2/reentrancy/simple_dao.sol'])
+Contracts in simple_dao.sol_0 (file simple_dao.sol): ['SimpleDAO']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset2/reentrancy/simple_dao.sol:SimpleDAO')]
+Report source list={0: 'simple_dao.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset2/reentrancy/simple_dao.sol relative to /root/solc-verify-spec/experiments/dataset2/reentrancy
+Working on contract SimpleDAO
+Working on contract SimpleDAO
+For contracts of primary SimpleDAO
+finding primary contract address of /root/solc-verify-spec/experiments/dataset2/reentrancy/simple_dao.sol:SimpleDAO in [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset2/reentrancy/simple_dao.sol:SimpleDAO')]
+Contracts in SDC simple_dao.sol_0: ['SimpleDAO']
+Building source tree
+Copying /root/solc-verify-spec/experiments/dataset2/reentrancy/certora_specification/simple_dao.cvl to .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/certora_specification/simple_dao.cvl
+Copying /root/solc-verify-spec/experiments/dataset2/reentrancy/simple_dao.sol to .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/simple_dao.sol
+Report source list={0: 'simple_dao.sol'}
+Backing up current .certora_sources to .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/.pre_autofinders.0
+Running cmd solc -o ".certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/simple_dao.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources",. --standard-json
+stdout, stderr = .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/simple_dao.sol_0.standard.stdout.json, .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/simple_dao.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/simple_dao.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources",. --standard-json time: 0.099
+reading standard json data from .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_config/simple_dao.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/simple_dao.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/simple_dao.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/simple_dao.sol'])
+Contracts in simple_dao.sol_0 (file .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/simple_dao.sol): ['SimpleDAO']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/simple_dao.sol:SimpleDAO')]
+Report source list={0: 'simple_dao.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/simple_dao.sol relative to .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources
+Working on contract SimpleDAO
+Working on contract SimpleDAO
+For contracts of primary SimpleDAO
+finding primary contract address of /root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/simple_dao.sol:SimpleDAO in [(274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/simple_dao.sol:SimpleDAO')]
+Contracts in SDC simple_dao.sol_0: ['SimpleDAO']
+Backing up instrumented .certora_sources to .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/.post_autofinders.0
+Rolling back .certora_sources to .certora_internal/26_02_24_09_26_54_0965975ae2/.certora_sources/.pre_autofinders.0 version
+Libraries to add = []
+writing file /root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_build.json
+writing file /root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_build_output_props.json
+writing /root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_26_54_0965975ae2/.certora_verify.json

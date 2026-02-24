@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "RampInstantEthPool",
+    "specfile": "certora_specification/buggy_20_ethpool.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_20_ethpool.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

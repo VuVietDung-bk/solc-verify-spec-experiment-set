@@ -39,3 +39,35 @@
 
 [13] CMD: certoraRun unchecked_return_value.sol:ReturnValue --verify ReturnValue:certora_specification/unchecked_return_value.cvl
 [13] LINK: https://prover.certora.com/output/1696952/70e19a6effc9405fbe9eaa9d46c321fe
+[14] CMD: certoraRun 0x610495793564aed0f9c7fc48dc4c7c9151d34fd6.sol:SimpleWallet --verify SimpleWallet:certora_specification/0x610495793564aed0f9c7fc48dc4c7c9151d34fd6.cvl
+[14] LINK: https://prover.certora.com/output/1696952/44fd8707b78a44d7a7ae2f3b109e4e31
+
+[15] CMD: certoraRun 0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37.sol:WhaleGiveaway1 --verify WhaleGiveaway1:certora_specification/0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37.cvl
+[15] LINK: https://prover.certora.com/output/1696952/29abb3ce34e049bc8c0dd6c78ab384b1
+
+[16] CMD: certoraRun 0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol:WhaleGiveaway1 --verify WhaleGiveaway1:certora_specification/0x7a4349a749e59a5736efb7826ee3496a2dfd5489.cvl
+[16] LINK: https://prover.certora.com/output/1696952/946167b1663149d9b7275e935d0ce202
+
+[17] CMD: certoraRun 0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol:Pie --verify Pie:certora_specification/0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.cvl
+[17] LINK: https://prover.certora.com/output/1696952/d70d51a545164f83a86ee4607a1da034
+
+[18] CMD: certoraRun 0xb37f18af15bafb869a065b61fc83cfc44ed9cc27.sol:SimpleWallet --verify SimpleWallet:certora_specification/0xb37f18af15bafb869a065b61fc83cfc44ed9cc27.cvl
+[18] LINK: https://prover.certora.com/output/1696952/0ade6e0064e54e90a2a7ec42f4b90022
+
+[19] CMD: certoraRun 0xd2018bfaa266a9ec0a1a84b061640faa009def76.sol:Pie --verify Pie:certora_specification/0xd2018bfaa266a9ec0a1a84b061640faa009def76.cvl
+[19] LINK: https://prover.certora.com/output/1696952/67131346cdf64a04b9a43929c8613ebd
+
+[20] CMD: certoraRun 0xdb1c55f6926e7d847ddf8678905ad871a68199d2.sol:FreeEth --verify FreeEth:certora_specification/0xdb1c55f6926e7d847ddf8678905ad871a68199d2.cvl
+[20] LINK: https://prover.certora.com/output/1696952/4e4171274a4e414ba70f22873a3fc134
+
+[21] CMD: certoraRun 0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf.sol:Honey --verify Honey:certora_specification/0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf.cvl
+[21] LINK: https://prover.certora.com/output/1696952/188d75bfb1f64a2ab4c89e1605c3e59c
+
+[22] CMD: certoraRun 0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87.sol:Freebie --verify Freebie:certora_specification/0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87.cvl
+[22] LINK: https://prover.certora.com/output/1696952/2c9554b5f49f48dd96fc7891ff6d2fd9
+
+[23] CMD: certoraRun 0xf29ebe930a539a60279ace72c707cba851a57707.sol:B --verify B:certora_specification/0xf29ebe930a539a60279ace72c707cba851a57707.cvl
+[23] LINK: https://prover.certora.com/output/1696952/2ed3c329958c4a37a99fa8b3b2b91553
+
+[24] CMD: certoraRun 0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.sol:WhaleGiveaway2 --verify WhaleGiveaway2:certora_specification/0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.cvl
+[24] LINK: https://prover.certora.com/output/1696952/60bf220fc5484f399a38161914650c85

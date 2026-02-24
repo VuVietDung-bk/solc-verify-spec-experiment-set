@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Reentrancy_insecure",
+    "specfile": "certora_specification/reentrancy_insecure.cvl",
+    "specfileOrigRelpath": "certora_specification/reentrancy_insecure.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

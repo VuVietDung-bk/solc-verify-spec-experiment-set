@@ -6,3 +6,14 @@
 
 [2] CMD: certoraRun 0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.sol:WhaleGiveaway2 --verify WhaleGiveaway2:certora_specification/0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.cvl
 [2] LINK: https://prover.certora.com/output/1696952/66a389f2869348fcbefad46f0174dd85
+[3] CMD: certoraRun 0xec329ffc97d75fe03428ae155fc7793431487f63.sol:TokenSender --verify TokenSender:certora_specification/0xec329ffc97d75fe03428ae155fc7793431487f63.cvl
+[3] LINK: https://prover.certora.com/output/1696952/3198f23543aa4171afc4d083de2760b6
+
+[4] CMD: certoraRun lotto.sol:Lotto --verify Lotto:certora_specification/lotto.cvl
+[4] LINK: https://prover.certora.com/output/1696952/9c06db302f8d4e7b8c604e8daf787751
+
+[5] CMD: certoraRun mishandled.sol:SendBack --verify SendBack:certora_specification/mishandled.cvl
+[5] LINK: https://prover.certora.com/output/1696952/ffef1b924be74526b28c1dccba5632c9
+
+[6] CMD: certoraRun unchecked_return_value.sol:ReturnValue --verify ReturnValue:certora_specification/unchecked_return_value.cvl
+[6] LINK: https://prover.certora.com/output/1696952/c29906e8a8344cce899aacecfd1bad95

@@ -1,0 +1,58 @@
+Saving last configuration file to .certora_internal/26_02_24_09_59_06_8881155102/run.conf
+There is no TAC file. Going to script CertoraProver/certoraBuild.py to main_with_args()
+main build cache key computed based on {'files': ['buggy_45.sol:StockBet'], 'package_version_for_build_cache': 'certora-cli 8.8.0', 'packages_path': 'node_modules', 'solc': 'solc', 'solc_allow_path': '.', 'test_condition': 'True'}
+Creating dir /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_config
+In /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/certora_specification/buggy_45.cvl, found the imports: []
+copying spec file /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/certora_specification/buggy_45.cvl to /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/.0_buggy_45.cvl.spec
+writing /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_verify.json
+
+building file buggy_45.sol
+Running cmd solc --version
+stdout, stderr = .certora_internal/26_02_24_09_59_06_8881155102/.certora_config/version_check_solc.stdout, .certora_internal/26_02_24_09_59_06_8881155102/.certora_config/version_check_solc.stderr
+Exitcode 0
+Solc run solc --version time: 0.1087
+Running cmd solc -o ".certora_internal/26_02_24_09_59_06_8881155102/.certora_config/buggy_45.sol_0/" --overwrite --allow-paths ".",. --standard-json
+stdout, stderr = .certora_internal/26_02_24_09_59_06_8881155102/.certora_config/buggy_45.sol_0.standard.stdout.json, .certora_internal/26_02_24_09_59_06_8881155102/.certora_config/buggy_45.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_24_09_59_06_8881155102/.certora_config/buggy_45.sol_0/" --overwrite --allow-paths ".",. --standard-json time: 0.1366
+reading standard json data from .certora_internal/26_02_24_09_59_06_8881155102/.certora_config/buggy_45.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/buggy_45.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/buggy_45.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/buggy_45.sol'])
+Contracts in buggy_45.sol_0 (file buggy_45.sol): ['StockBet']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/buggy_45.sol:StockBet')]
+Report source list={0: 'buggy_45.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/buggy_45.sol relative to /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions
+Working on contract StockBet
+Working on contract StockBet
+For contracts of primary StockBet
+finding primary contract address of /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/buggy_45.sol:StockBet in [(274184521717934524641157099916833587200, '/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/buggy_45.sol:StockBet')]
+Contracts in SDC buggy_45.sol_0: ['StockBet']
+Building source tree
+Copying /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/certora_specification/buggy_45.cvl to .certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/certora_specification/buggy_45.cvl
+Copying /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/buggy_45.sol to .certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/buggy_45.sol
+Report source list={0: 'buggy_45.sol'}
+Backing up current .certora_sources to .certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/.pre_autofinders.0
+Running cmd solc -o ".certora_internal/26_02_24_09_59_06_8881155102/.certora_config/buggy_45.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_sources",. --standard-json
+stdout, stderr = .certora_internal/26_02_24_09_59_06_8881155102/.certora_config/buggy_45.sol_0.standard.stdout.json, .certora_internal/26_02_24_09_59_06_8881155102/.certora_config/buggy_45.sol_0.standard.stderr.json
+Exitcode 0
+Solc run solc -o ".certora_internal/26_02_24_09_59_06_8881155102/.certora_config/buggy_45.sol_0/" --overwrite --allow-paths "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_sources",. --standard-json time: 0.1569
+reading standard json data from .certora_internal/26_02_24_09_59_06_8881155102/.certora_config/buggy_45.sol_0.standard.stdout.json
+collecting worklist for /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/buggy_45.sol
+Processing dependencies from file /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/buggy_45.sol
+available keys: dict_keys(['/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/buggy_45.sol'])
+Contracts in buggy_45.sol_0 (file .certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/buggy_45.sol): ['StockBet']
+Contracts with their chosen addresses: [(274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/buggy_45.sol:StockBet')]
+Report source list={0: 'buggy_45.sol'}
+Finding report source file, abs path /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/buggy_45.sol relative to .certora_internal/26_02_24_09_59_06_8881155102/.certora_sources
+Working on contract StockBet
+Working on contract StockBet
+For contracts of primary StockBet
+finding primary contract address of /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/buggy_45.sol:StockBet in [(274184521717934524641157099916833587201, '/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/buggy_45.sol:StockBet')]
+Contracts in SDC buggy_45.sol_0: ['StockBet']
+Backing up instrumented .certora_sources to .certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/.post_autofinders.0
+Rolling back .certora_sources to .certora_internal/26_02_24_09_59_06_8881155102/.certora_sources/.pre_autofinders.0 version
+Libraries to add = []
+writing file /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_build.json
+writing file /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_build_output_props.json
+writing /root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_59_06_8881155102/.certora_verify.json

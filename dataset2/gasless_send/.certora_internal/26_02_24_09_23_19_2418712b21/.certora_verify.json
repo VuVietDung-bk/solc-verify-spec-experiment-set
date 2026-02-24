@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "CreditDepositBank",
+    "specfile": "certora_specification/CreditDepositBank_Attack.cvl",
+    "specfileOrigRelpath": "certora_specification/CreditDepositBank_Attack.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

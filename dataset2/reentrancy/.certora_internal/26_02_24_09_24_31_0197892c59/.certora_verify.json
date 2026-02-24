@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "Reentrancy_bonus",
+    "specfile": "certora_specification/reentrancy_bonus.cvl",
+    "specfileOrigRelpath": "certora_specification/reentrancy_bonus.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

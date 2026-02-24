@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "LollypopToken",
+    "specfile": "certora_specification/buggy_34_lollypop_token.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_34_lollypop_token.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

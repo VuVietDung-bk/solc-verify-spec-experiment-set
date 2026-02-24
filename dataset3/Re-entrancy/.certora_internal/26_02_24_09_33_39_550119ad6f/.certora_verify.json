@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "AcunarToken",
+    "specfile": "/root/solc-verify-spec/experiments/dataset3/Re-entrancy/certora_specification/buggy_47_acunar_token.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_47_acunar_token.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "AcunarIEO",
+    "specfile": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/certora_specification/buggy_47_acunar_ieo.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_47_acunar_ieo.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

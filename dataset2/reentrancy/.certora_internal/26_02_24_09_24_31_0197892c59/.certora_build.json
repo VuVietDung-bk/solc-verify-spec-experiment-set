@@ -1,0 +1,397 @@
+{
+    "Reentrancy_bonus_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "Reentrancy_bonus",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "getFirstWithdrawalBonus",
+                        "notpayable": true,
+                        "originalFile": "reentrancy_bonus.sol",
+                        "paramNames": [
+                            "recipient"
+                        ],
+                        "returns": [],
+                        "sighash": "7d1c54f8",
+                        "sourceBytes": {
+                            "begin": 626,
+                            "size": 407
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Reentrancy_bonus",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "withdrawReward",
+                        "notpayable": true,
+                        "originalFile": "reentrancy_bonus.sol",
+                        "paramNames": [
+                            "recipient"
+                        ],
+                        "returns": [],
+                        "sighash": "b86e321c",
+                        "sourceBytes": {
+                            "begin": 373,
+                            "size": 247
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561001057600080fd5b50600436106100365760003560e01c80637d1c54f81461003b578063b86e321c1461007f575b600080fd5b61007d6004803603602081101561005157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506100c3565b005b6100c16004803603602081101561009557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061025e565b005b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600052600160008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16156101ad57600080fd5b6064600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055506102048161025e565b60018060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555050565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00016000526000600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001526000600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060008273ffffffffffffffffffffffffffffffffffffffff168260405180600001905060006040518083038185875af1925050503d80600081146103fd576040519150601f19603f3d011682016040523d82523d6000602084013e610402565b606091505b5050905060007fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010002528061043457600080fd5b50505056fea26469706673582212200f18b67c2b8c8a5ee7d97b7ad33f532e11652f7ae6acc42926434bd5b984384764736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "608060405234801561001057600080fd5b5061046f806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80637d1c54f81461003b578063b86e321c1461007f575b600080fd5b61007d6004803603602081101561005157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506100c3565b005b6100c16004803603602081101561009557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061025e565b005b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000600052600160008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16156101ad57600080fd5b6064600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055506102048161025e565b60018060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555050565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00016000526000600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001526000600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060008273ffffffffffffffffffffffffffffffffffffffff168260405180600001905060006040518083038185875af1925050503d80600081146103fd576040519150601f19603f3d011682016040523d82523d6000602084013e610402565b606091505b5050905060007fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010002528061043457600080fd5b50505056fea26469706673582212200f18b67c2b8c8a5ee7d97b7ad33f532e11652f7ae6acc42926434bd5b984384764736f6c63430007060033",
+                "constructorSrcmap": "169:1741:0:-:0;;;;;;;;;;;;;;;;;;;",
+                "extensionContracts": [],
+                "file": "reentrancy_bonus.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "reentrancy_bonus.sol|Reentrancy_bonus",
+                        "declaringContract": "Reentrancy_bonus",
+                        "method": {
+                            "contractName": "Reentrancy_bonus",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "getFirstWithdrawalBonus",
+                            "notpayable": true,
+                            "originalFile": "reentrancy_bonus.sol",
+                            "paramNames": [
+                                "recipient"
+                            ],
+                            "returns": [],
+                            "sighash": "7d1c54f8",
+                            "sourceBytes": {
+                                "begin": 626,
+                                "size": 407
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "reentrancy_bonus.sol|Reentrancy_bonus",
+                        "declaringContract": "Reentrancy_bonus",
+                        "method": {
+                            "contractName": "Reentrancy_bonus",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "withdrawReward",
+                            "notpayable": true,
+                            "originalFile": "reentrancy_bonus.sol",
+                            "paramNames": [
+                                "recipient"
+                            ],
+                            "returns": [],
+                            "sighash": "b86e321c",
+                            "sourceBytes": {
+                                "begin": 373,
+                                "size": 247
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "amountToWithdraw",
+                        "sourceLoc": {
+                            "begin": "433",
+                            "len": "46",
+                            "source": "0"
+                        }
+                    },
+                    "2": {
+                        "lhs": "success,_",
+                        "sourceLoc": {
+                            "begin": "525",
+                            "len": "62",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "Reentrancy_bonus",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "getFirstWithdrawalBonus",
+                        "notpayable": true,
+                        "originalFile": "reentrancy_bonus.sol",
+                        "paramNames": [
+                            "recipient"
+                        ],
+                        "returns": [],
+                        "sighash": "7d1c54f8",
+                        "sourceBytes": {
+                            "begin": 626,
+                            "size": 407
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Reentrancy_bonus",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "withdrawReward",
+                        "notpayable": true,
+                        "originalFile": "reentrancy_bonus.sol",
+                        "paramNames": [
+                            "recipient"
+                        ],
+                        "returns": [],
+                        "sighash": "b86e321c",
+                        "sourceBytes": {
+                            "begin": 373,
+                            "size": 247
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "Reentrancy_bonus",
+                "original_file": "reentrancy_bonus.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 169,
+                    "size": 866
+                },
+                "srcmap": "169:1741:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1157:751;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;373:778;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1157:751;1303:13;1235:66;1228:89;1393:1;1325:66;1318:77;1471:1;1403:66;1396:77;1549:9;1481:66;1474:85;1579:12;:23;1592:9;1579:23;;;;;;;;;;;;;;;;;;;;;;;;;1578:24;1570:33;;;;;;1702:3;1676:11;:22;1688:9;1676:22;;;;;;;;;;;;;;;;:29;;;;;;;;;;;1752:25;1767:9;1752:14;:25::i;:::-;1897:4;1871:12;:23;1884:9;1871:23;;;;;;;;;;;;;;;;:30;;;;;;;;;;;;;;;;;;1157:751;:::o;373:778::-;510:13;442:66;435:89;600:1;532:66;525:77;678:1;610:66;603:77;756:9;688:66;681:85;777:21;801:11;:22;813:9;801:22;;;;;;;;;;;;;;;;777:46;;907:16;840:66;833:91;959:1;934:11;:22;946:9;934:22;;;;;;;;;;;;;;;:26;;;;971:12;989:9;:14;;1011:16;989:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;970:62;;;1116:1;1049:66;1042:76;1136:7;1128:16;;;;;;373:778;;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 5,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_24_31_0197892c59/.certora_sources/reentrancy_bonus.sol:Reentrancy_bonus",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "userBalances",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 9,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_24_31_0197892c59/.certora_sources/reentrancy_bonus.sol:Reentrancy_bonus",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "1",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "claimedBonus",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_mapping(t_address,t_bool)"
+                        },
+                        {
+                            "astId": 13,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_24_31_0197892c59/.certora_sources/reentrancy_bonus.sol:Reentrancy_bonus",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "rewardsForA",
+                            "offset": 0,
+                            "slot": "2",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_bool": {
+                            "encoding": "inplace",
+                            "label": "bool",
+                            "numberOfBytes": "1"
+                        },
+                        "t_mapping(t_address,t_bool)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => bool)",
+                            "numberOfBytes": "32",
+                            "value": "t_bool"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "Reentrancy_bonus",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "reentrancy_bonus.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "reentrancy_bonus.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

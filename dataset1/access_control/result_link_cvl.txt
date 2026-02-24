@@ -23,3 +23,6 @@
 
 [8] CMD: certoraRun wallet_04_confused_sign.sol:Wallet --verify Wallet:certora_specification/wallet_04_confused_sign.cvl
 [8] LINK: https://prover.certora.com/output/1696952/bf292f9167f0451ca1b2c48a8301a117
+
+[9] CMD: certoraRun mapping_write.sol:Map --verify Map:certora_specification/mapping_write.cvl
+[9] LINK: https://prover.certora.com/output/1696952/e3db45f8abff46aca4c45b0d1265594d

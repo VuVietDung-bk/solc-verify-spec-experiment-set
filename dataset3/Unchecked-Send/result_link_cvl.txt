@@ -1,0 +1,41 @@
+# result_link_cvl.txt
+# Generated: 2026-02-23
+
+[1] CMD: certoraRun buggy_1.sol:HotDollarsToken --verify HotDollarsToken:certora_specification/buggy_1.cvl
+[1] LINK: https://prover.certora.com/output/1696952/94505e56632e49d199a6853811f380ce
+
+[2] CMD: certoraRun buggy_19.sol:ethBank --verify ethBank:certora_specification/buggy_19_eth_bank.cvl
+[2] LINK: https://prover.certora.com/output/1696952/a22f257593444bf6b4ae426b19269b68
+
+[3] CMD: certoraRun buggy_19.sol:owned --verify owned:certora_specification/buggy_19_owned.cvl
+[3] LINK: https://prover.certora.com/output/1696952/147fbc45782641d4bbddb0619ea9d881
+
+[4] CMD: certoraRun buggy_20.sol:RampInstantEthPool --verify RampInstantEthPool:certora_specification/buggy_20_ramp_instant_eth_pool.cvl
+[4] LINK: https://prover.certora.com/output/1696952/16b96fac278b4af8a5d7f94905c67ad9
+
+[5] CMD: certoraRun buggy_20.sol:RampInstantPool --verify RampInstantPool:certora_specification/buggy_20_stoppable.cvl
+[5] ERROR: Contract RampInstantPool has no bytecode - contract is abstract
+
+[6] CMD: certoraRun buggy_23.sol:ERC20Burnable --verify ERC20Burnable:certora_specification/buggy_23.cvl
+[6] LINK: https://prover.certora.com/output/1696952/ebc5f91e20aa4596913caa29a445feb5
+
+[7] CMD: certoraRun buggy_33.sol:Staking --verify Staking:certora_specification/buggy_33.cvl
+[7] LINK: https://prover.certora.com/output/1696952/64f9d340ff004c2aa5eb347d38231cf6
+
+[8] CMD: certoraRun buggy_34.sol:LollypopToken --verify LollypopToken:certora_specification/buggy_34.cvl
+[8] LINK: https://prover.certora.com/output/1696952/cb51a422d71d45b7ad61973ef020924d
+
+[9] CMD: certoraRun buggy_45.sol:StockBet --verify StockBet:certora_specification/buggy_45.cvl
+[9] LINK: https://prover.certora.com/output/1696952/1aa1499bd6774a138225866d91643208
+
+[10] CMD: certoraRun buggy_47.sol:AcunarIEO --verify AcunarIEO:certora_specification/buggy_47.cvl
+[10] LINK: https://prover.certora.com/output/1696952/d70225e7ab964501976956d2fab1a229
+
+[11] CMD: certoraRun buggy_50.sol:digitalNotary --verify digitalNotary:certora_specification/buggy_50.cvl
+[11] LINK: https://prover.certora.com/output/1696952/53ae98a1bcec45d390fbb2488a2d87b9
+
+[12] CMD: certoraRun buggy_5.sol:TokenERC20 --verify TokenERC20:certora_specification/buggy_5_token_erc20.cvl
+[12] LINK: https://prover.certora.com/output/1696952/925dacf654a746599793a1087150fc9e
+
+[13] CMD: certoraRun buggy_5.sol:TTC --verify TTC:certora_specification/buggy_5_ttc.cvl
+[13] LINK: https://prover.certora.com/output/1696952/84f7bd7cb04c4e65af94a31726bbaad8

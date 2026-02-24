@@ -1,0 +1,364 @@
+{
+    "WhaleGiveaway1_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "WhaleGiveaway1",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "PackedBytes"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "Command",
+                        "notpayable": false,
+                        "originalFile": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                        "paramNames": [
+                            "adr",
+                            "data"
+                        ],
+                        "returns": [],
+                        "sighash": "ba21d62a",
+                        "sourceBytes": {
+                            "begin": 9199,
+                            "size": 207
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WhaleGiveaway1",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "GetFreebie",
+                        "notpayable": false,
+                        "originalFile": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "6ea3f1cb",
+                        "sourceBytes": {
+                            "begin": 227,
+                            "size": 5693
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WhaleGiveaway1",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "Owner",
+                        "notpayable": true,
+                        "originalFile": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "b4a99a4e",
+                        "sourceBytes": {
+                            "begin": 132,
+                            "size": 33
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WhaleGiveaway1",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdraw",
+                        "notpayable": false,
+                        "originalFile": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "3ccfd60b",
+                        "sourceBytes": {
+                            "begin": 5930,
+                            "size": 3259
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "6080604052600436106100435760003560e01c80633ccfd60b1461004f5780636ea3f1cb14610059578063b4a99a4e14610063578063ba21d62a146100a45761004a565b3661004a57005b600080fd5b61005761017f565b005b61006161034d565b005b34801561006f57600080fd5b5061007861047e565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61017d600480360360408110156100ba57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001906401000000008111156100f757600080fd5b82018360208201111561010957600080fd5b8035906020019184600183028401116401000000008311171561012b57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506104a2565b005b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000452737a617c2b05d2a74ff9babc9d81e5225c1e01004b73ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561028c57737a617c2b05d2a74ff9babc9d81e5225c1e01004b6000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146102e457600080fd5b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f1935050505015801561034a573d6000803e3d6000fd5b50565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000452670de0b6b3a764000034111561047c5760008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f19350505050158015610433573d6000803e3d6000fd5b503373ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f1935050505015801561047a573d6000803e3d6000fd5b505b565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000160015260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461058d57600080fd5b8173ffffffffffffffffffffffffffffffffffffffff1634826040518082805190602001908083835b602083106105d957805182526020820191506020810190506020830392506105b6565b6001836020036101000a03801982511681845116808217855250505050505090500191505060006040518083038185875af1925050503d806000811461063b576040519150601f19603f3d011682016040523d82523d6000602084013e610640565b606091505b505050505056fea264697066735822122067993302d87af590c4776760a61c15e0a4f6a5c644c5589f2081db67d46e71b564736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555034801561005057600080fd5b5061067d806100606000396000f3fe6080604052600436106100435760003560e01c80633ccfd60b1461004f5780636ea3f1cb14610059578063b4a99a4e14610063578063ba21d62a146100a45761004a565b3661004a57005b600080fd5b61005761017f565b005b61006161034d565b005b34801561006f57600080fd5b5061007861047e565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61017d600480360360408110156100ba57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001906401000000008111156100f757600080fd5b82018360208201111561010957600080fd5b8035906020019184600183028401116401000000008311171561012b57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506104a2565b005b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000452737a617c2b05d2a74ff9babc9d81e5225c1e01004b73ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561028c57737a617c2b05d2a74ff9babc9d81e5225c1e01004b6000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146102e457600080fd5b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f1935050505015801561034a573d6000803e3d6000fd5b50565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000452670de0b6b3a764000034111561047c5760008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f19350505050158015610433573d6000803e3d6000fd5b503373ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f1935050505015801561047a573d6000803e3d6000fd5b505b565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000160015260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461058d57600080fd5b8173ffffffffffffffffffffffffffffffffffffffff1634826040518082805190602001908083835b602083106105d957805182526020820191506020810190506020830392506105b6565b6001836020036101000a03801982511681845116808217855250505050505090500191505060006040518083038185875af1925050503d806000811461063b576040519150601f19603f3d011682016040523d82523d6000602084013e610640565b606091505b505050505056fea264697066735822122067993302d87af590c4776760a61c15e0a4f6a5c644c5589f2081db67d46e71b564736f6c63430007060033",
+                "constructorSrcmap": "102:10161:0:-:0;;;155:10;132:33;;;;;;;;;;;;;;;;;;;;102:10161;;;;;;;;;;;;;;;;",
+                "extensionContracts": [],
+                "file": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol|WhaleGiveaway1",
+                        "declaringContract": "WhaleGiveaway1",
+                        "method": {
+                            "contractName": "WhaleGiveaway1",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "withdraw",
+                            "notpayable": false,
+                            "originalFile": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "3ccfd60b",
+                            "sourceBytes": {
+                                "begin": 5930,
+                                "size": 3259
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol|WhaleGiveaway1",
+                        "declaringContract": "WhaleGiveaway1",
+                        "method": {
+                            "contractName": "WhaleGiveaway1",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "memory",
+                                    "typeDesc": {
+                                        "type": "PackedBytes"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "Command",
+                            "notpayable": false,
+                            "originalFile": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                            "paramNames": [
+                                "adr",
+                                "data"
+                            ],
+                            "returns": [],
+                            "sighash": "ba21d62a",
+                            "sourceBytes": {
+                                "begin": 9199,
+                                "size": 207
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol|WhaleGiveaway1",
+                        "declaringContract": "WhaleGiveaway1",
+                        "method": {
+                            "contractName": "WhaleGiveaway1",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "GetFreebie",
+                            "notpayable": false,
+                            "originalFile": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "6ea3f1cb",
+                            "sourceBytes": {
+                                "begin": 227,
+                                "size": 5693
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {},
+                "methods": [
+                    {
+                        "contractName": "WhaleGiveaway1",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdraw",
+                        "notpayable": false,
+                        "originalFile": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "3ccfd60b",
+                        "sourceBytes": {
+                            "begin": 5930,
+                            "size": 3259
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WhaleGiveaway1",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "PackedBytes"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "Command",
+                        "notpayable": false,
+                        "originalFile": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                        "paramNames": [
+                            "adr",
+                            "data"
+                        ],
+                        "returns": [],
+                        "sighash": "ba21d62a",
+                        "sourceBytes": {
+                            "begin": 9199,
+                            "size": 207
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WhaleGiveaway1",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "GetFreebie",
+                        "notpayable": false,
+                        "originalFile": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "6ea3f1cb",
+                        "sourceBytes": {
+                            "begin": 227,
+                            "size": 5693
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "WhaleGiveaway1",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "Owner",
+                        "notpayable": true,
+                        "originalFile": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "b4a99a4e",
+                        "sourceBytes": {
+                            "begin": 132,
+                            "size": 33
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "WhaleGiveaway1",
+                "original_file": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 102,
+                    "size": 9306
+                },
+                "srcmap": "102:10161:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6188:3517;;;:::i;:::-;;227:5951;;;:::i;:::-;;132:33;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;9715:546;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;6188:3517;6322:13;6254:66;6247:89;6412:1;6344:66;6337:77;6490:1;6422:66;6415:77;7701:42;7689:54;;:10;:54;;;7686:109;;;7751:42;7745:5;;:48;;;;;;;;;;;;;;;;;;7686:109;9636:5;;;;;;;;;;9622:19;;:10;:19;;;9614:28;;;;;;9660:5;;;;;;;;;;9652:23;;:46;9676:21;9652:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6188:3517::o;227:5951::-;363:13;295:66;288:89;453:1;385:66;378:77;531:1;463:66;456:77;625:7;615:9;:17;612:5448;;;4111:5;;;;;;;;;;4103:23;;:46;4127:21;4103:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6006:10;5998:28;;:51;6027:21;5998:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;612:5448;227:5951::o;132:33::-;;;;;;;;;;;;:::o;9715:546::-;9877:13;9809:66;9802:89;9967:1;9899:66;9892:77;10045:1;9977:66;9970:77;10123:4;10055:66;10048:80;10161:5;;;;;;;;;;10147:19;;:10;:19;;;10139:28;;;;;;10222:3;:8;;10238:9;10249:4;10222:32;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9715:546;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 5,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_24_09_20_02_968225306b/.certora_sources/0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol:WhaleGiveaway1",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "Owner",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_address"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "WhaleGiveaway1",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "AcunarToken",
+    "specfile": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/certora_specification/buggy_47_transfer.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_47_transfer.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

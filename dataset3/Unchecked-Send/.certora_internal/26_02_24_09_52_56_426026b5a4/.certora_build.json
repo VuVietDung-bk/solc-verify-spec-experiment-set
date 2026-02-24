@@ -1,0 +1,2606 @@
+{
+    "TTC_00000000ce4604a0000000000000000000000004": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000004",
+                "allMethods": [
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "_transfer",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [
+                            "_from",
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "nonpayable",
+                        "visibility": "internal",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 1627,
+                            "size": 66
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "_spender",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 4455,
+                            "size": 220
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 1580,
+                            "size": 45
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_unchk_send29",
+                        "notpayable": false,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "bc699b1f",
+                        "sourceBytes": {
+                            "begin": 9660,
+                            "size": 85
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "burn",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "42966c68",
+                        "sourceBytes": {
+                            "begin": 4901,
+                            "size": 368
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "burnFrom",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "_from",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "79cc6790",
+                        "sourceBytes": {
+                            "begin": 5517,
+                            "size": 603
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "buy",
+                        "notpayable": false,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "a6f2ae3a",
+                        "sourceBytes": {
+                            "begin": 8917,
+                            "size": 205
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "buyPrice",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8620410b",
+                        "sourceBytes": {
+                            "begin": 8885,
+                            "size": 23
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 364,
+                            "size": 44
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            },
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "initialSupply",
+                            "tokenName",
+                            "tokenSymbol"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 6623,
+                            "size": 163
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 1404,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "freezeAccount",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "target",
+                            "freeze"
+                        ],
+                        "returns": [],
+                        "sighash": "e724529c",
+                        "sourceBytes": {
+                            "begin": 8310,
+                            "size": 158
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "frozenAccount",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "b414d4b6",
+                        "sourceBytes": {
+                            "begin": 8910,
+                            "size": 46
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "mintToken",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "target",
+                            "mintedAmount"
+                        ],
+                        "returns": [],
+                        "sighash": "79c65068",
+                        "sourceBytes": {
+                            "begin": 7849,
+                            "size": 285
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 1362,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "owner",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8da5cb5b",
+                        "sourceBytes": {
+                            "begin": 138,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "sell",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "e4849b32",
+                        "sourceBytes": {
+                            "begin": 9222,
+                            "size": 437
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "sellPrice",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "4b750334",
+                        "sourceBytes": {
+                            "begin": 8859,
+                            "size": 24
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setPrices",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "newSellPrice",
+                            "newBuyPrice"
+                        ],
+                        "returns": [],
+                        "sighash": "05fefda7",
+                        "sourceBytes": {
+                            "begin": 8706,
+                            "size": 152
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 1382,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 1504,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 3497,
+                            "size": 149
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "_from",
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 3910,
+                            "size": 291
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferOwnership",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "newOwner"
+                        ],
+                        "returns": [],
+                        "sighash": "f2fde38b",
+                        "sourceBytes": {
+                            "begin": 713,
+                            "size": 174
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "6080604052600436106101355760003560e01c80638620410b116100ab578063b414d4b61161006f578063b414d4b61461068e578063bc699b1f146106f5578063dd62ed3e146106ff578063e4849b3214610784578063e724529c146107bf578063f2fde38b1461081c57610135565b80638620410b146105175780638da5cb5b1461054257806395d89b4114610583578063a6f2ae3a14610613578063a9059cbb1461061d57610135565b8063313ce567116100fd578063313ce5671461033c57806342966c681461036a5780634b750334146103bb57806370a08231146103e657806379c650681461044b57806379cc6790146104a657610135565b806305fefda71461013a57806306fdde031461017f578063095ea7b31461020f57806318160ddd1461028057806323b872dd146102ab575b600080fd5b34801561014657600080fd5b5061017d6004803603604081101561015d57600080fd5b81019080803590602001909291908035906020019092919050505061086d565b005b34801561018b57600080fd5b5061019461096c565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101d45780820151818401526020810190506101b9565b50505050905090810190601f1680156102015780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561021b57600080fd5b506102686004803603604081101561023257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610a0a565b60405180821515815260200191505060405180910390f35b34801561028c57600080fd5b50610295610b8f565b6040518082815260200191505060405180910390f35b3480156102b757600080fd5b50610324600480360360608110156102ce57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610b95565b60405180821515815260200191505060405180910390f35b34801561034857600080fd5b50610351610d53565b604051808260ff16815260200191505060405180910390f35b34801561037657600080fd5b506103a36004803603602081101561038d57600080fd5b8101908080359060200190929190505050610d66565b60405180821515815260200191505060405180910390f35b3480156103c757600080fd5b506103d0610efb565b6040518082815260200191505060405180910390f35b3480156103f257600080fd5b506104356004803603602081101561040957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610f01565b6040518082815260200191505060405180910390f35b34801561045757600080fd5b506104a46004803603604081101561046e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610f19565b005b3480156104b257600080fd5b506104ff600480360360408110156104c957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611132565b60405180821515815260200191505060405180910390f35b34801561052357600080fd5b5061052c6113db565b6040518082815260200191505060405180910390f35b34801561054e57600080fd5b506105576113e1565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561058f57600080fd5b50610598611405565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156105d85780820151818401526020810190506105bd565b50505050905090810190601f1680156106055780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61061b6114a3565b005b34801561062957600080fd5b506106766004803603604081101561064057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611554565b60405180821515815260200191505060405180910390f35b34801561069a57600080fd5b506106dd600480360360208110156106b157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506115fe565b60405180821515815260200191505060405180910390f35b6106fd61161e565b005b34801561070b57600080fd5b5061076e6004803603604081101561072257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506116df565b6040518082815260200191505060405180910390f35b34801561079057600080fd5b506107bd600480360360208110156107a757600080fd5b8101908080359060200190929190505050611704565b005b3480156107cb57600080fd5b5061081a600480360360408110156107e257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803515159060200190929190505050611841565b005b34801561082857600080fd5b5061086b6004803603602081101561083f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506119e0565b005b8064f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000260015260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461095957600080fd5b8260078190555081600881905550505050565b60018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610a025780601f106109d757610100808354040283529160200191610a02565b820191906000526020600020905b8154815290600101906020018083116109e557829003601f168201915b505050505081565b600064f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000860015281600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b60045481565b600064f196e5000c7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c600252600660008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054821115610cb357600080fd5b81600660008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550610d48848484611bc4565b600190509392505050565b600360009054906101000a900460ff1681565b600064f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000460005281600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610e4757600080fd5b81600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550816004600082825403925050819055503373ffffffffffffffffffffffffffffffffffffffff167fcc16f5dbb4873280815c1ee09dbd06736cffcc184412cf7a71a0fdb75d397ca5836040518082815260200191505060405180910390a260019050919050565b60075481565b60056020528060005260406000206000915090505481565b8064f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000360015260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461100557600080fd5b81600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550816004600082825401925050819055503073ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a38273ffffffffffffffffffffffffffffffffffffffff163073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3505050565b600064f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000660015281600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054101561121357600080fd5b600660008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205482111561129c57600080fd5b81600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600660008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550816004600082825403925050819055508273ffffffffffffffffffffffffffffffffffffffff167fcc16f5dbb4873280815c1ee09dbd06736cffcc184412cf7a71a0fdb75d397ca5836040518082815260200191505060405180910390a26001905092915050565b60085481565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60028054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561149b5780601f106114705761010080835404028352916020019161149b565b820191906000526020600020905b81548152906001019060200180831161147e57829003601f168201915b505050505081565b64f196e500097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00090004526000600854348161152057fe5b049050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000252611551303383611bc4565b50565b600064f196e5000a7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a6001526115f4338484611bc4565b6001905092915050565b60096020528060005260406000206000915054906101000a900460ff1681565b64f196e5000d7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d0004523373ffffffffffffffffffffffffffffffffffffffff166108fc670de0b6b3a76400009081150290604051600060405180830381858888f193505050501580156116dc573d6000803e3d6000fd5b50565b6006602052816000526040600020602052806000526040600020600091509150505481565b64f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00076000526000309050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000035260075482028173ffffffffffffffffffffffffffffffffffffffff163110156117e757600080fd5b6117f2333084611bc4565b3373ffffffffffffffffffffffffffffffffffffffff166108fc60075484029081150290604051600060405180830381858888f1935050505015801561183c573d6000803e3d6000fd5b505050565b8064f196e5000b7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b60015260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461192d57600080fd5b81600960008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507f48335238b4855f35377ed80f164e8c6f3c366e54ac00b96a6402d4a9814a03a58383604051808373ffffffffffffffffffffffffffffffffffffffff16815260200182151581526020019250505060405180910390a1505050565b8064f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000560005260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614611acc57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611b0657600080fd5b8173ffffffffffffffffffffffffffffffffffffffff1660008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001600252600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611c9157600080fd5b80600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015611cdd57600080fd5b600560008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205481600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054011015611d6a57600080fd5b600960008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1615611dc157600080fd5b600960008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1615611e1857600080fd5b80600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555080600560008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a350505056fea26469706673582212209e575ebb160818954d3602fbe5ea83c4f998988d5144c3c6cc1e4e32700da67d64736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "60806040526012600360006101000a81548160ff021916908360ff1602179055503480156200002d57600080fd5b50604051620022cb380380620022cb833981810160405260608110156200005357600080fd5b8101908080519060200190929190805160405193929190846401000000008211156200007e57600080fd5b838201915060208201858111156200009557600080fd5b8251866001820283011164010000000082111715620000b357600080fd5b8083526020830192505050908051906020019080838360005b83811015620000e9578082015181840152602081019050620000cc565b50505050905090810190601f168015620001175780820380516001836020036101000a031916815260200191505b50604052602001805160405193929190846401000000008211156200013b57600080fd5b838201915060208201858111156200015257600080fd5b82518660018202830111640100000000821117156200017057600080fd5b8083526020830192505050908051906020019080838360005b83811015620001a657808201518184015260208101905062000189565b50505050905090810190601f168015620001d45780820380516001836020036101000a031916815260200191505b50604052505050828282336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550670de0b6b3a76400008302600481905550600454600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555081600190805190602001906200028d929190620002b3565b508060029080519060200190620002a6929190620002b3565b5050505050505062000369565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282620002eb576000855562000337565b82601f106200030657805160ff191683800117855562000337565b8280016001018555821562000337579182015b828111156200033657825182559160200191906001019062000319565b5b5090506200034691906200034a565b5090565b5b80821115620003655760008160009055506001016200034b565b5090565b611f5280620003796000396000f3fe6080604052600436106101355760003560e01c80638620410b116100ab578063b414d4b61161006f578063b414d4b61461068e578063bc699b1f146106f5578063dd62ed3e146106ff578063e4849b3214610784578063e724529c146107bf578063f2fde38b1461081c57610135565b80638620410b146105175780638da5cb5b1461054257806395d89b4114610583578063a6f2ae3a14610613578063a9059cbb1461061d57610135565b8063313ce567116100fd578063313ce5671461033c57806342966c681461036a5780634b750334146103bb57806370a08231146103e657806379c650681461044b57806379cc6790146104a657610135565b806305fefda71461013a57806306fdde031461017f578063095ea7b31461020f57806318160ddd1461028057806323b872dd146102ab575b600080fd5b34801561014657600080fd5b5061017d6004803603604081101561015d57600080fd5b81019080803590602001909291908035906020019092919050505061086d565b005b34801561018b57600080fd5b5061019461096c565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101d45780820151818401526020810190506101b9565b50505050905090810190601f1680156102015780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561021b57600080fd5b506102686004803603604081101561023257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610a0a565b60405180821515815260200191505060405180910390f35b34801561028c57600080fd5b50610295610b8f565b6040518082815260200191505060405180910390f35b3480156102b757600080fd5b50610324600480360360608110156102ce57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610b95565b60405180821515815260200191505060405180910390f35b34801561034857600080fd5b50610351610d53565b604051808260ff16815260200191505060405180910390f35b34801561037657600080fd5b506103a36004803603602081101561038d57600080fd5b8101908080359060200190929190505050610d66565b60405180821515815260200191505060405180910390f35b3480156103c757600080fd5b506103d0610efb565b6040518082815260200191505060405180910390f35b3480156103f257600080fd5b506104356004803603602081101561040957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610f01565b6040518082815260200191505060405180910390f35b34801561045757600080fd5b506104a46004803603604081101561046e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610f19565b005b3480156104b257600080fd5b506104ff600480360360408110156104c957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611132565b60405180821515815260200191505060405180910390f35b34801561052357600080fd5b5061052c6113db565b6040518082815260200191505060405180910390f35b34801561054e57600080fd5b506105576113e1565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561058f57600080fd5b50610598611405565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156105d85780820151818401526020810190506105bd565b50505050905090810190601f1680156106055780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61061b6114a3565b005b34801561062957600080fd5b506106766004803603604081101561064057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050611554565b60405180821515815260200191505060405180910390f35b34801561069a57600080fd5b506106dd600480360360208110156106b157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506115fe565b60405180821515815260200191505060405180910390f35b6106fd61161e565b005b34801561070b57600080fd5b5061076e6004803603604081101561072257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506116df565b6040518082815260200191505060405180910390f35b34801561079057600080fd5b506107bd600480360360208110156107a757600080fd5b8101908080359060200190929190505050611704565b005b3480156107cb57600080fd5b5061081a600480360360408110156107e257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803515159060200190929190505050611841565b005b34801561082857600080fd5b5061086b6004803603602081101561083f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506119e0565b005b8064f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000260015260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461095957600080fd5b8260078190555081600881905550505050565b60018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610a025780601f106109d757610100808354040283529160200191610a02565b820191906000526020600020905b8154815290600101906020018083116109e557829003601f168201915b505050505081565b600064f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000860015281600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b60045481565b600064f196e5000c7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c00015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000c600252600660008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054821115610cb357600080fd5b81600660008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550610d48848484611bc4565b600190509392505050565b600360009054906101000a900460ff1681565b600064f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0004000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000460005281600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610e4757600080fd5b81600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550816004600082825403925050819055503373ffffffffffffffffffffffffffffffffffffffff167fcc16f5dbb4873280815c1ee09dbd06736cffcc184412cf7a71a0fdb75d397ca5836040518082815260200191505060405180910390a260019050919050565b60075481565b60056020528060005260406000206000915090505481565b8064f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0003000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000360015260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461100557600080fd5b81600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550816004600082825401925050819055503073ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a38273ffffffffffffffffffffffffffffffffffffffff163073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3505050565b600064f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000660015281600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054101561121357600080fd5b600660008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205482111561129c57600080fd5b81600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600660008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540392505081905550816004600082825403925050819055508273ffffffffffffffffffffffffffffffffffffffff167fcc16f5dbb4873280815c1ee09dbd06736cffcc184412cf7a71a0fdb75d397ca5836040518082815260200191505060405180910390a26001905092915050565b60085481565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60028054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561149b5780601f106114705761010080835404028352916020019161149b565b820191906000526020600020905b81548152906001019060200180831161147e57829003601f168201915b505050505081565b64f196e500097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000900015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00090004526000600854348161152057fe5b049050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff0000000252611551303383611bc4565b50565b600064f196e5000a7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a000552817fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000a6001526115f4338484611bc4565b6001905092915050565b60096020528060005260406000206000915054906101000a900460ff1681565b64f196e5000d7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d00015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000d0004523373ffffffffffffffffffffffffffffffffffffffff166108fc670de0b6b3a76400009081150290604051600060405180830381858888f193505050501580156116dc573d6000803e3d6000fd5b50565b6006602052816000526040600020602052806000526040600020600091509150505481565b64f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00076000526000309050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000035260075482028173ffffffffffffffffffffffffffffffffffffffff163110156117e757600080fd5b6117f2333084611bc4565b3373ffffffffffffffffffffffffffffffffffffffff166108fc60075484029081150290604051600060405180830381858888f1935050505015801561183c573d6000803e3d6000fd5b505050565b8064f196e5000b7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b60015260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461192d57600080fd5b81600960008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507f48335238b4855f35377ed80f164e8c6f3c366e54ac00b96a6402d4a9814a03a58383604051808373ffffffffffffffffffffffffffffffffffffffff16815260200182151581526020019250505060405180910390a1505050565b8064f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000560005260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614611acc57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611b0657600080fd5b8173ffffffffffffffffffffffffffffffffffffffff1660008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001600252600073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415611c9157600080fd5b80600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015611cdd57600080fd5b600560008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205481600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054011015611d6a57600080fd5b600960008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1615611dc157600080fd5b600960008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1615611e1857600080fd5b80600560008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555080600560008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055508173ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a350505056fea26469706673582212209e575ebb160818954d3602fbe5ea83c4f998988d5144c3c6cc1e4e32700da67d64736f6c63430007060033",
+                "constructorSrcmap": "8821:6122:0:-:0;;;1428:2;1404:26;;;;;;;;;;;;;;;;;;;;9184:163;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9306:13;9321:9;9332:11;393:10;385:5;;:18;;;;;;;;;;;;;;;;;;2410:19;2394:13;:35;2380:11;:49;;;;2511:11;;2487:9;:21;2497:10;2487:21;;;;;;;;;;;;;;;:35;;;;2597:9;2590:4;:16;;;;;;;;;;;;:::i;:::-;;2700:11;2691:6;:20;;;;;;;;;;;;:::i;:::-;;2259:532;;;9184:163;;;8821:6122;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+                "extensionContracts": [],
+                "file": "buggy_5.sol",
+                "immutables": [],
+                "internalFuncs": [
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "_transfer",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [
+                            "_from",
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "nonpayable",
+                        "visibility": "internal",
+                        "vyper_metadata": null
+                    }
+                ],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "buggy_5.sol|Ownable",
+                        "declaringContract": "Ownable",
+                        "method": {
+                            "contractName": "Ownable",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transferOwnership",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "newOwner"
+                            ],
+                            "returns": [],
+                            "sighash": "f2fde38b",
+                            "sourceBytes": {
+                                "begin": 713,
+                                "size": 174
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_transfer",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "_from",
+                                "_to",
+                                "_value"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 6852,
+                                "size": 810
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "setPrices",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "newSellPrice",
+                                "newBuyPrice"
+                            ],
+                            "returns": [],
+                            "sighash": "05fefda7",
+                            "sourceBytes": {
+                                "begin": 8706,
+                                "size": 152
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50003": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "mintToken",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "target",
+                                "mintedAmount"
+                            ],
+                            "returns": [],
+                            "sighash": "79c65068",
+                            "sourceBytes": {
+                                "begin": 7849,
+                                "size": 285
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50004": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "burn",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "_value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "42966c68",
+                            "sourceBytes": {
+                                "begin": 4901,
+                                "size": 368
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50005": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transferOwnership",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "newOwner"
+                            ],
+                            "returns": [],
+                            "sighash": "f2fde38b",
+                            "sourceBytes": {
+                                "begin": 713,
+                                "size": 174
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50006": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "burnFrom",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "_from",
+                                "_value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "79cc6790",
+                            "sourceBytes": {
+                                "begin": 5517,
+                                "size": 603
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50007": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "sell",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "amount"
+                            ],
+                            "returns": [],
+                            "sighash": "e4849b32",
+                            "sourceBytes": {
+                                "begin": 9222,
+                                "size": 437
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50008": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "approve",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "_spender",
+                                "_value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "095ea7b3",
+                            "sourceBytes": {
+                                "begin": 4455,
+                                "size": 220
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50009": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "buy",
+                            "notpayable": false,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "a6f2ae3a",
+                            "sourceBytes": {
+                                "begin": 8917,
+                                "size": 205
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000a": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transfer",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "_to",
+                                "_value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "a9059cbb",
+                            "sourceBytes": {
+                                "begin": 3497,
+                                "size": 149
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000b": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "freezeAccount",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "target",
+                                "freeze"
+                            ],
+                            "returns": [],
+                            "sighash": "e724529c",
+                            "sourceBytes": {
+                                "begin": 8310,
+                                "size": 158
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000c": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transferFrom",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "_from",
+                                "_to",
+                                "_value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "23b872dd",
+                            "sourceBytes": {
+                                "begin": 3910,
+                                "size": 291
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000d": {
+                        "canonicalId": "buggy_5.sol|TTC",
+                        "declaringContract": "TTC",
+                        "method": {
+                            "contractName": "TTC",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_unchk_send29",
+                            "notpayable": false,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "bc699b1f",
+                            "sourceBytes": {
+                                "begin": 9660,
+                                "size": 85
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000e": {
+                        "canonicalId": "buggy_5.sol|TokenERC20",
+                        "declaringContract": "TokenERC20",
+                        "method": {
+                            "contractName": "TokenERC20",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_transfer",
+                            "notpayable": true,
+                            "originalFile": "buggy_5.sol",
+                            "paramNames": [
+                                "_from",
+                                "_to",
+                                "_value"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 2458,
+                                "size": 843
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "previousBalances",
+                        "sourceLoc": {
+                            "begin": "2875",
+                            "len": "57",
+                            "source": "0"
+                        }
+                    },
+                    "2": {
+                        "lhs": "amount",
+                        "sourceLoc": {
+                            "begin": "8957",
+                            "len": "34",
+                            "source": "0"
+                        }
+                    },
+                    "3": {
+                        "lhs": "myAddress",
+                        "sourceLoc": {
+                            "begin": "9269",
+                            "len": "33",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            },
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "initialSupply",
+                            "tokenName",
+                            "tokenSymbol"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 6623,
+                            "size": 163
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 364,
+                            "size": 44
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "name",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "06fdde03",
+                        "sourceBytes": {
+                            "begin": 1362,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "buyPrice",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8620410b",
+                        "sourceBytes": {
+                            "begin": 8885,
+                            "size": 23
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferOwnership",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "newOwner"
+                        ],
+                        "returns": [],
+                        "sighash": "f2fde38b",
+                        "sourceBytes": {
+                            "begin": 713,
+                            "size": 174
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "burnFrom",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "_from",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "79cc6790",
+                        "sourceBytes": {
+                            "begin": 5517,
+                            "size": 603
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "freezeAccount",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "target",
+                            "freeze"
+                        ],
+                        "returns": [],
+                        "sighash": "e724529c",
+                        "sourceBytes": {
+                            "begin": 8310,
+                            "size": 158
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_unchk_send29",
+                        "notpayable": false,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "bc699b1f",
+                        "sourceBytes": {
+                            "begin": 9660,
+                            "size": 85
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setPrices",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "newSellPrice",
+                            "newBuyPrice"
+                        ],
+                        "returns": [],
+                        "sighash": "05fefda7",
+                        "sourceBytes": {
+                            "begin": 8706,
+                            "size": 152
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "balanceOf",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "70a08231",
+                        "sourceBytes": {
+                            "begin": 1580,
+                            "size": 45
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "sell",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "e4849b32",
+                        "sourceBytes": {
+                            "begin": 9222,
+                            "size": 437
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "approve",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "_spender",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "095ea7b3",
+                        "sourceBytes": {
+                            "begin": 4455,
+                            "size": 220
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "sellPrice",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "4b750334",
+                        "sourceBytes": {
+                            "begin": 8859,
+                            "size": 24
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "frozenAccount",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "b414d4b6",
+                        "sourceBytes": {
+                            "begin": 8910,
+                            "size": 46
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "buy",
+                        "notpayable": false,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "a6f2ae3a",
+                        "sourceBytes": {
+                            "begin": 8917,
+                            "size": 205
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 3497,
+                            "size": 149
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "allowance",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "dd62ed3e",
+                        "sourceBytes": {
+                            "begin": 1627,
+                            "size": 66
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "symbol",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "memory",
+                                "typeDesc": {
+                                    "type": "StringType"
+                                }
+                            }
+                        ],
+                        "sighash": "95d89b41",
+                        "sourceBytes": {
+                            "begin": 1382,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "owner",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8da5cb5b",
+                        "sourceBytes": {
+                            "begin": 138,
+                            "size": 20
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferFrom",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "_from",
+                            "_to",
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "23b872dd",
+                        "sourceBytes": {
+                            "begin": 3910,
+                            "size": 291
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "totalSupply",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "18160ddd",
+                        "sourceBytes": {
+                            "begin": 1504,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "decimals",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint8",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "313ce567",
+                        "sourceBytes": {
+                            "begin": 1404,
+                            "size": 26
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "mintToken",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "target",
+                            "mintedAmount"
+                        ],
+                        "returns": [],
+                        "sighash": "79c65068",
+                        "sourceBytes": {
+                            "begin": 7849,
+                            "size": 285
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "TTC",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "burn",
+                        "notpayable": true,
+                        "originalFile": "buggy_5.sol",
+                        "paramNames": [
+                            "_value"
+                        ],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "42966c68",
+                        "sourceBytes": {
+                            "begin": 4901,
+                            "size": 368
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "TTC",
+                "original_file": "buggy_5.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 6260,
+                    "size": 3488
+                },
+                "srcmap": "8821:6122:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12438:177;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1362:18;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5993:561;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;1504:26;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;5106:633;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;1404:26;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;6780:709;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;8859:24;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1580:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;10752:311;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;7737:944;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;8885:23;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;138:20;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;1382;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;13070:554;;;:::i;:::-;;4352:490;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;8910:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;14597:343;;;:::i;:::-;;1627:66;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;13724:872;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;11637:179;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;713:196;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;12438:177;12513:11;12746:13;12678:66;12671:89;12836:1;12768:66;12761:77;12914:1;12846:66;12839:77;12992:11;12924:66;12917:87;534:5:::1;::::0;::::1;;;;;;;;520:19;;:10;:19;;;512:28;;;::::0;::::1;;12564:12:::2;12552:9;:24;;;;12597:11;12586:8;:22;;;;12438:177:::0;;;:::o;1362:18::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;5993:561::-;6068:12;6169:13;6101:66;6094:89;6259:1;6191:66;6184:77;6337:1;6269:66;6262:77;6415:6;6347:66;6340:82;6467:6;6433:9;:21;6443:10;6433:21;;;;;;;;;;;;;;;:31;6455:8;6433:31;;;;;;;;;;;;;;;:40;;;;6509:8;6488:38;;6497:10;6488:38;;;6519:6;6488:38;;;;;;;;;;;;;;;;;;6543:4;6536:11;;5993:561;;;;:::o;1504:26::-;;;;:::o;5106:633::-;5188:12;5289:13;5221:66;5214:89;5379:1;5311:66;5304:77;5457:2;5389:66;5382:78;5536:6;5468:66;5461:82;5572:9;:16;5582:5;5572:16;;;;;;;;;;;;;;;:28;5589:10;5572:28;;;;;;;;;;;;;;;;5562:6;:38;;5554:47;;;;;;5666:6;5634:9;:16;5644:5;5634:16;;;;;;;;;;;;;;;:28;5651:10;5634:28;;;;;;;;;;;;;;;;:38;;;;;;;;;;;5682:29;5692:5;5699:3;5704:6;5682:9;:29::i;:::-;5728:4;5721:11;;5106:633;;;;;:::o;1404:26::-;;;;;;;;;;;;;:::o;6780:709::-;6826:12;6927:13;6859:66;6852:89;7017:1;6949:66;6942:77;7095:1;7027:66;7020:77;7173:6;7105:66;7098:82;7224:6;7199:9;:21;7209:10;7199:21;;;;;;;;;;;;;;;;:31;;7191:40;;;;;;7302:6;7277:9;:21;7287:10;7277:21;;;;;;;;;;;;;;;;:31;;;;;;;;;;;7372:6;7357:11;;:21;;;;;;;;;;;7442:10;7437:24;;;7454:6;7437:24;;;;;;;;;;;;;;;;;;7478:4;7471:11;;6780:709;;;:::o;8859:24::-;;;;:::o;1580:45::-;;;;;;;;;;;;;;;;;:::o;10752:311::-;10822:12;11195:13;11127:66;11120:89;11285:1;11217:66;11210:77;11363:1;11295:66;11288:77;11441:12;11373:66;11366:88;534:5:::1;::::0;::::1;;;;;;;;520:19;;:10;:19;;;512:28;;;::::0;::::1;;10883:12:::2;10862:9;:17;10872:6;10862:17;;;;;;;;;;;;;;;;:33;;;;;;;;;;;10920:12;10905:11;;:27;;;;;;;;;;;10976:4;10947:49;;10964:1;10947:49;;;10983:12;10947:49;;;;;;;;;;;;;;;;;;11035:6;11011:45;;11028:4;11011:45;;;11043:12;11011:45;;;;;;;;;;;;;;;;;;10752:311:::0;;;:::o;7737:944::-;7802:12;7903:13;7835:66;7828:89;7993:1;7925:66;7918:77;8071:1;8003:66;7996:77;8149:6;8081:66;8074:82;8195:6;8175:9;:16;8185:5;8175:16;;;;;;;;;;;;;;;;:26;;8167:35;;;;;;8288:9;:16;8298:5;8288:16;;;;;;;;;;;;;;;:28;8305:10;8288:28;;;;;;;;;;;;;;;;8278:6;:38;;8270:47;;;;;;8369:6;8349:9;:16;8359:5;8349:16;;;;;;;;;;;;;;;;:26;;;;;;;;;;;8479:6;8447:9;:16;8457:5;8447:16;;;;;;;;;;;;;;;:28;8464:10;8447:28;;;;;;;;;;;;;;;;:38;;;;;;;;;;;8562:6;8547:11;;:21;;;;;;;;;;;8639:5;8634:19;;;8646:6;8634:19;;;;;;;;;;;;;;;;;;8670:4;8663:11;;7737:944;;;;:::o;8885:23::-;;;;:::o;138:20::-;;;;;;;;;;;;:::o;1382:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;13070:554::-;13187:13;13119:66;13112:89;13277:1;13209:66;13202:77;13355:1;13287:66;13280:77;13368:11;13394:8;;13382:9;:20;;;;;;13368:34;;13486:6;13419:66;13412:81;13544:44;13562:4;13569:10;13581:6;13544:9;:44::i;:::-;13070:554;:::o;4352:490::-;4415:12;4516:13;4448:66;4441:89;4606:1;4538:66;4531:77;4684:1;4616:66;4609:77;4762:6;4694:66;4687:82;4780:34;4790:10;4802:3;4807:6;4780:9;:34::i;:::-;4831:4;4824:11;;4352:490;;;;:::o;8910:46::-;;;;;;;;;;;;;;;;;;;;;;:::o;14597:343::-;14726:13;14658:66;14651:89;14816:1;14748:66;14741:77;14894:1;14826:66;14819:77;14909:10;14901:28;;:37;14930:7;14901:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;14597:343::o;1627:66::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;13724:872::-;13848:13;13780:66;13773:89;13938:1;13870:66;13863:77;14016:1;13948:66;13941:77;14094:6;14026:66;14019:82;14112:17;14140:4;14112:33;;14229:9;14162:66;14155:84;14287:9;;14278:6;:18;14257:9;:17;;;:39;;14249:48;;;;;;14359:44;14369:10;14389:4;14396:6;14359:9;:44::i;:::-;14450:10;14442:28;;:48;14480:9;;14471:6;:18;14442:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;13724:872;;:::o;11637:179::-;11703:6;11940:13;11872:66;11865:89;12030:1;11962:66;11955:77;12108:1;12040:66;12033:77;12186:6;12118:66;12111:82;534:5:::1;::::0;::::1;;;;;;;;520:19;;:10;:19;;;512:28;;;::::0;::::1;;11761:6:::2;11737:13;:21;11751:6;11737:21;;;;;;;;;;;;;;;;:30;;;;;;;;;;;;;;;;;;11782:27;11794:6;11802;11782:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;11637:179:::0;;;:::o;713:196::-;778:8;1037:13;969:66;962:89;1127:1;1059:66;1052:77;1205:1;1137:66;1130:77;1283:8;1215:66;1208:84;534:5:::1;::::0;::::1;;;;;;;;520:19;;:10;:19;;;512:28;;;::::0;::::1;;831:1:::2;811:22;;:8;:22;;;;803:31;;;::::0;::::2;;873:8;845:37;;866:5;::::0;::::2;;;;;;;;845:37;;;;;;;;;;;;896:8;888:5;::::0;:16:::2;;;;;;;;;;;;;;;;;;713:196:::0;;:::o;9413:1152::-;9578:13;9510:66;9503:89;9668:1;9600:66;9593:77;9746:2;9678:66;9671:78;9825:6;9757:66;9750:82;9867:3;9852:19;;:3;:19;;;;9843:29;;;;;;9991:6;9971:9;:16;9981:5;9971:16;;;;;;;;;;;;;;;;:26;;9962:36;;;;;;10096:9;:14;10106:3;10096:14;;;;;;;;;;;;;;;;10086:6;10069:9;:14;10079:3;10069:14;;;;;;;;;;;;;;;;:23;:41;;10060:51;;;;;;10156:13;:20;10170:5;10156:20;;;;;;;;;;;;;;;;;;;;;;;;;10155:21;10147:30;;;;;;10249:13;:18;10263:3;10249:18;;;;;;;;;;;;;;;;;;;;;;;;;10248:19;10240:28;;;;;;10356:6;10336:9;:16;10346:5;10336:16;;;;;;;;;;;;;;;;:26;;;;;;;;;;;10446:6;10428:9;:14;10438:3;10428:14;;;;;;;;;;;;;;;;:24;;;;;;;;;;;10546:3;10530:28;;10539:5;10530:28;;;10551:6;10530:28;;;;;;;;;;;;;;;;;;9413:1152;;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 3,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_52_56_426026b5a4/.certora_sources/buggy_5.sol:TTC",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "owner",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_address"
+                        },
+                        {
+                            "astId": 71,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_52_56_426026b5a4/.certora_sources/buggy_5.sol:TTC",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "name",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_string_storage"
+                        },
+                        {
+                            "astId": 73,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_52_56_426026b5a4/.certora_sources/buggy_5.sol:TTC",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "type": "StringType"
+                            },
+                            "label": "symbol",
+                            "offset": 0,
+                            "slot": "2",
+                            "type": "t_string_storage"
+                        },
+                        {
+                            "astId": 76,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_52_56_426026b5a4/.certora_sources/buggy_5.sol:TTC",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "1",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint8",
+                                "type": "Primitive"
+                            },
+                            "label": "decimals",
+                            "offset": 0,
+                            "slot": "3",
+                            "type": "t_uint8"
+                        },
+                        {
+                            "astId": 78,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_52_56_426026b5a4/.certora_sources/buggy_5.sol:TTC",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "totalSupply",
+                            "offset": 0,
+                            "slot": "4",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 82,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_52_56_426026b5a4/.certora_sources/buggy_5.sol:TTC",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "balanceOf",
+                            "offset": 0,
+                            "slot": "5",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        },
+                        {
+                            "astId": 88,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_52_56_426026b5a4/.certora_sources/buggy_5.sol:TTC",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "mappingKeyType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "20",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    },
+                                    "mappingValueType": {
+                                        "annotations": [
+                                            {
+                                                "numberOfBytes": "32",
+                                                "type": "StorageAnnotation"
+                                            }
+                                        ],
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    },
+                                    "type": "Mapping"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "allowance",
+                            "offset": 0,
+                            "slot": "6",
+                            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+                        },
+                        {
+                            "astId": 419,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_52_56_426026b5a4/.certora_sources/buggy_5.sol:TTC",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "sellPrice",
+                            "offset": 0,
+                            "slot": "7",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 421,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_52_56_426026b5a4/.certora_sources/buggy_5.sol:TTC",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "buyPrice",
+                            "offset": 0,
+                            "slot": "8",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 425,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_52_56_426026b5a4/.certora_sources/buggy_5.sol:TTC",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "1",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "frozenAccount",
+                            "offset": 0,
+                            "slot": "9",
+                            "type": "t_mapping(t_address,t_bool)"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_bool": {
+                            "encoding": "inplace",
+                            "label": "bool",
+                            "numberOfBytes": "1"
+                        },
+                        "t_mapping(t_address,t_bool)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => bool)",
+                            "numberOfBytes": "32",
+                            "value": "t_bool"
+                        },
+                        "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => mapping(address => uint256))",
+                            "numberOfBytes": "32",
+                            "value": "t_mapping(t_address,t_uint256)"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_string_storage": {
+                            "encoding": "bytes",
+                            "label": "string",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        },
+                        "t_uint8": {
+                            "encoding": "inplace",
+                            "label": "uint8",
+                            "numberOfBytes": "1"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "TTC",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000004",
+        "prototypeFor": [],
+        "sdc_name": "buggy_5.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "buggy_5.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

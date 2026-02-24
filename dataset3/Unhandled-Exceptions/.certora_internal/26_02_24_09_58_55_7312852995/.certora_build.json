@@ -1,0 +1,2829 @@
+{
+    "Ownable_00000000ce4604a0000000000000000000000004": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000004",
+                "allMethods": [
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "bug_unchk3",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [
+                            "addr"
+                        ],
+                        "returns": [],
+                        "sighash": "acd2552d",
+                        "sourceBytes": {
+                            "begin": 629,
+                            "size": 79
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_unchk31",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "ef5c27b6",
+                        "sourceBytes": {
+                            "begin": 367,
+                            "size": 118
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "cash_unchk22",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [
+                            "roundIndex",
+                            "subpotIndex",
+                            "winner_unchk22"
+                        ],
+                        "returns": [],
+                        "sighash": "a33c8c8f",
+                        "sourceBytes": {
+                            "begin": 114,
+                            "size": 218
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 568,
+                            "size": 60
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "owner",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8da5cb5b",
+                        "sourceBytes": {
+                            "begin": 883,
+                            "size": 28
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "payedOut_unchk9",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "45bf84a8",
+                        "sourceBytes": {
+                            "begin": 2550,
+                            "size": 35
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferOwnership",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [
+                            "_newOwner"
+                        ],
+                        "returns": [],
+                        "sighash": "f2fde38b",
+                        "sourceBytes": {
+                            "begin": 790,
+                            "size": 103
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdrawLeftOver_unchk9",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d3573ba5",
+                        "sourceBytes": {
+                            "begin": 932,
+                            "size": 136
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561001057600080fd5b506004361061007d5760003560e01c8063acd2552d1161005b578063acd2552d1461012e578063d3573ba514610172578063ef5c27b61461017c578063f2fde38b146101865761007d565b806345bf84a8146100825780638da5cb5b146100a2578063a33c8c8f146100d6575b600080fd5b61008a6101ca565b60405180821515815260200191505060405180910390f35b6100aa6101dd565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61012c600480360360608110156100ec57600080fd5b810190808035906020019092919080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610201565b005b6101706004803603602081101561014457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610331565b005b61017a610406565b005b6101846104c7565b005b6101c86004803603602081101561019c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105b2565b005b600060149054906101000a900460ff1681565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b64f196e5000b7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b6002526000678ac7230489e800009050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001528173ffffffffffffffffffffffffffffffffffffffff166108fc8267ffffffffffffffff169081150290604051600060405180830381858888f193505050505060009050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000175250505050565b64f196e500197fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001900005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001900015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0019000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00196000528073ffffffffffffffffffffffffffffffffffffffff166108fc680246ddf979766800009081150290604051600060405180830381858888f193505050505050565b64f196e500137fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0013000452600060149054906101000a900460ff1661048f57600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f1935050505050565b64f196e5001e7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001e00005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001e00015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001e0004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010002528073ffffffffffffffffffffffffffffffffffffffff166108fc678ac7230489e800009081150290604051600060405180830381858888f1935050505015806105a55750600180145b156105af57600080fd5b50565b8064f196e500377fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff003700005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff003700015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0037000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff003760005260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461069e57600080fd5b816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505056fea2646970667358221220cb9d631048d9510246e16a3e6e01623ba7939034b341ca042b5c4116b70eb7b364736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "608060405260008060146101000a81548160ff02191690831515021790555034801561002a57600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506107188061007a6000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c8063acd2552d1161005b578063acd2552d1461012e578063d3573ba514610172578063ef5c27b61461017c578063f2fde38b146101865761007d565b806345bf84a8146100825780638da5cb5b146100a2578063a33c8c8f146100d6575b600080fd5b61008a6101ca565b60405180821515815260200191505060405180910390f35b6100aa6101dd565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61012c600480360360608110156100ec57600080fd5b810190808035906020019092919080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610201565b005b6101706004803603602081101561014457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610331565b005b61017a610406565b005b6101846104c7565b005b6101c86004803603602081101561019c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105b2565b005b600060149054906101000a900460ff1681565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b64f196e5000b7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00005260037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b00015260497fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000b6002526000678ac7230489e800009050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001528173ffffffffffffffffffffffffffffffffffffffff166108fc8267ffffffffffffffff169081150290604051600060405180830381858888f193505050505060009050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000175250505050565b64f196e500197fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001900005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001900015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0019000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00196000528073ffffffffffffffffffffffffffffffffffffffff166108fc680246ddf979766800009081150290604051600060405180830381858888f193505050505050565b64f196e500137fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0013000452600060149054906101000a900460ff1661048f57600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f1935050505050565b64f196e5001e7fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001e00005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001e00015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff001e0004526000807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010002528073ffffffffffffffffffffffffffffffffffffffff166108fc678ac7230489e800009081150290604051600060405180830381858888f1935050505015806105a55750600180145b156105af57600080fd5b50565b8064f196e500377fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff003700005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff003700015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0037000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff003760005260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461069e57600080fd5b816000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505056fea2646970667358221220cb9d631048d9510246e16a3e6e01623ba7939034b341ca042b5c4116b70eb7b364736f6c63430007060033",
+                "constructorSrcmap": "94:2890:0:-:0;;;2580:5;2550:35;;;;;;;;;;;;;;;;;;;;1460:60;;;;;;;;;;1503:10;1487:5;;:27;;;;;;;;;;;;;;;;;;94:2890;;;;;;",
+                "extensionContracts": [],
+                "file": "buggy_34.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_transfer",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "sender",
+                                "recipient",
+                                "amount"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 6669,
+                                "size": 1253
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "mint",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "account",
+                                "amount"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 10815,
+                                "size": 315
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_burnFrom",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "account",
+                                "amount"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 18764,
+                                "size": 185
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50003": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_burn",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "account",
+                                "value"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 17156,
+                                "size": 314
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50004": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "_approve",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "owner",
+                                "spender",
+                                "value"
+                            ],
+                            "returns": [],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 18080,
+                                "size": 329
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50005": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "name",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "memory",
+                                    "typeDesc": {
+                                        "type": "StringType"
+                                    }
+                                }
+                            ],
+                            "sighash": "06fdde03",
+                            "sourceBytes": {
+                                "begin": 8082,
+                                "size": 81
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50006": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_unchk19",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "06a3a385",
+                            "sourceBytes": {
+                                "begin": 6536,
+                                "size": 118
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50007": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "withdrawBal_unchk17",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "86d0a009",
+                            "sourceBytes": {
+                                "begin": 5400,
+                                "size": 118
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50008": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "timeOf",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "account"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "d0b48509",
+                            "sourceBytes": {
+                                "begin": 11984,
+                                "size": 110
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50009": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transferOwnership",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "_newOwner"
+                            ],
+                            "returns": [],
+                            "sighash": "f2fde38b",
+                            "sourceBytes": {
+                                "begin": 790,
+                                "size": 103
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000a": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "sendToWinner_unchk44",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "294e1b8e",
+                            "sourceBytes": {
+                                "begin": 16192,
+                                "size": 163
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000b": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "cash_unchk22",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "roundIndex",
+                                "subpotIndex",
+                                "winner_unchk22"
+                            ],
+                            "returns": [],
+                            "sighash": "a33c8c8f",
+                            "sourceBytes": {
+                                "begin": 114,
+                                "size": 218
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000c": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "withdrawLeftOver_unchk45",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "93459192",
+                            "sourceBytes": {
+                                "begin": 9974,
+                                "size": 138
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000d": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "unhandledsend_unchk38",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "callee"
+                            ],
+                            "returns": [],
+                            "sighash": "cf43199b",
+                            "sourceBytes": {
+                                "begin": 9544,
+                                "size": 93
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000e": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "bug_unchk39",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "addr"
+                            ],
+                            "returns": [],
+                            "sighash": "58dbb19c",
+                            "sourceBytes": {
+                                "begin": 13793,
+                                "size": 79
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5000f": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "unhandledsend_unchk2",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "callee"
+                            ],
+                            "returns": [],
+                            "sighash": "f0808d1e",
+                            "sourceBytes": {
+                                "begin": 4943,
+                                "size": 92
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50010": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "calculateBonus",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "timeElasped",
+                                "amount"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "6f72fd20",
+                            "sourceBytes": {
+                                "begin": 6184,
+                                "size": 351
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50011": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "UncheckedExternalCall_unchk40",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "216ea3a2",
+                            "sourceBytes": {
+                                "begin": 17471,
+                                "size": 184
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50012": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "callnotchecked_unchk13",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "callee"
+                            ],
+                            "returns": [],
+                            "sighash": "354fc923",
+                            "sourceBytes": {
+                                "begin": 10344,
+                                "size": 101
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50013": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "withdrawLeftOver_unchk9",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "d3573ba5",
+                            "sourceBytes": {
+                                "begin": 932,
+                                "size": 136
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50014": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_unchk43",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "9c30b1a7",
+                            "sourceBytes": {
+                                "begin": 5074,
+                                "size": 118
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50015": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "callnotchecked_unchk37",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "callee"
+                            ],
+                            "returns": [],
+                            "sighash": "85e9aca7",
+                            "sourceBytes": {
+                                "begin": 5563,
+                                "size": 109
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50016": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_unchk30",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "9e5d7729",
+                            "sourceBytes": {
+                                "begin": 12889,
+                                "size": 164
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50017": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "cash_unchk46",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "roundIndex",
+                                "subpotIndex",
+                                "winner_unchk46"
+                            ],
+                            "returns": [],
+                            "sighash": "434fa4aa",
+                            "sourceBytes": {
+                                "begin": 11131,
+                                "size": 218
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50018": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "withdrawBal_unchk41",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "240987ad",
+                            "sourceBytes": {
+                                "begin": 4571,
+                                "size": 121
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50019": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "bug_unchk3",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "addr"
+                            ],
+                            "returns": [],
+                            "sighash": "acd2552d",
+                            "sourceBytes": {
+                                "begin": 629,
+                                "size": 79
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5001a": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "balanceOf",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "account"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "70a08231",
+                            "sourceBytes": {
+                                "begin": 11749,
+                                "size": 115
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5001b": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "my_func_uncheck48",
+                            "notpayable": false,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "dst"
+                            ],
+                            "returns": [],
+                            "sighash": "55390eb3",
+                            "sourceBytes": {
+                                "begin": 5233,
+                                "size": 121
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5001c": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "unhandledsend_unchk14",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "callee"
+                            ],
+                            "returns": [],
+                            "sighash": "24ebdd34",
+                            "sourceBytes": {
+                                "begin": 12548,
+                                "size": 93
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5001d": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "approve",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "spender",
+                                "value"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "095ea7b3",
+                            "sourceBytes": {
+                                "begin": 13647,
+                                "size": 145
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5001e": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_unchk31",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "ef5c27b6",
+                            "sourceBytes": {
+                                "begin": 367,
+                                "size": 118
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5001f": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_unchk42",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "0e9a7a38",
+                            "sourceBytes": {
+                                "begin": 4739,
+                                "size": 164
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50020": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "UncheckedExternalCall_unchk4",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "eb46deb8",
+                            "sourceBytes": {
+                                "begin": 11509,
+                                "size": 182
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50021": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transfer",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "recipient",
+                                "amount"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "a9059cbb",
+                            "sourceBytes": {
+                                "begin": 12394,
+                                "size": 153
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50022": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "allowance",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "owner",
+                                "spender"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "dd62ed3e",
+                            "sourceBytes": {
+                                "begin": 13112,
+                                "size": 132
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50023": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "symbol",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "memory",
+                                    "typeDesc": {
+                                        "type": "StringType"
+                                    }
+                                }
+                            ],
+                            "sighash": "95d89b41",
+                            "sourceBytes": {
+                                "begin": 8549,
+                                "size": 85
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50024": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "memory",
+                                    "typeDesc": {
+                                        "dynamicArrayBaseType": {
+                                            "primitiveName": "address",
+                                            "type": "Primitive"
+                                        },
+                                        "type": "Array"
+                                    }
+                                },
+                                {
+                                    "location": "memory",
+                                    "typeDesc": {
+                                        "dynamicArrayBaseType": {
+                                            "primitiveName": "uint256",
+                                            "type": "Primitive"
+                                        },
+                                        "type": "Array"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "multiTransfer",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "receivers",
+                                "amounts"
+                            ],
+                            "returns": [],
+                            "sighash": "1e89d545",
+                            "sourceBytes": {
+                                "begin": 12649,
+                                "size": 239
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50025": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "my_func_unchk11",
+                            "notpayable": false,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "dst"
+                            ],
+                            "returns": [],
+                            "sighash": "c7b3ccc8",
+                            "sourceBytes": {
+                                "begin": 4253,
+                                "size": 96
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50026": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "increaseAllowance",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "spender",
+                                "addedValue"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "39509351",
+                            "sourceBytes": {
+                                "begin": 15082,
+                                "size": 203
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50027": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "sendToWinner_unchk20",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "279265d2",
+                            "sourceBytes": {
+                                "begin": 8273,
+                                "size": 163
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50028": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "my_func_uncheck36",
+                            "notpayable": false,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "dst"
+                            ],
+                            "returns": [],
+                            "sighash": "550c16d4",
+                            "sourceBytes": {
+                                "begin": 14582,
+                                "size": 105
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50029": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "my_func_unchk35",
+                            "notpayable": false,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "dst"
+                            ],
+                            "returns": [],
+                            "sighash": "8bd3d0d7",
+                            "sourceBytes": {
+                                "begin": 15286,
+                                "size": 96
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5002a": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "decreaseAllowance",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "spender",
+                                "subtractedValue"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "a457c2d7",
+                            "sourceBytes": {
+                                "begin": 15869,
+                                "size": 213
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5002b": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "totalSupply",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "18160ddd",
+                            "sourceBytes": {
+                                "begin": 11419,
+                                "size": 89
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5002c": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_unchk7",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "d43404dd",
+                            "sourceBytes": {
+                                "begin": 11865,
+                                "size": 115
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5002d": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transferFrom",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "sender",
+                                "recipient",
+                                "amount"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "bool",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "23b872dd",
+                            "sourceBytes": {
+                                "begin": 14329,
+                                "size": 252
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5002e": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "callnotchecked_unchk1",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "callee"
+                            ],
+                            "returns": [],
+                            "sighash": "d7cd3de1",
+                            "sourceBytes": {
+                                "begin": 4428,
+                                "size": 108
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5002f": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "my_func_uncheck12",
+                            "notpayable": false,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "dst"
+                            ],
+                            "returns": [],
+                            "sighash": "de7df662",
+                            "sourceBytes": {
+                                "begin": 4084,
+                                "size": 107
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50030": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "withdrawLeftOver_unchk33",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "071ceb64",
+                            "sourceBytes": {
+                                "begin": 18449,
+                                "size": 138
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50031": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "decimals",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint8",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "313ce567",
+                            "sourceBytes": {
+                                "begin": 9462,
+                                "size": 81
+                            },
+                            "stateMutability": "view",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50032": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "unhandledsend_unchk26",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "callee"
+                            ],
+                            "returns": [],
+                            "sighash": "be11fe6b",
+                            "sourceBytes": {
+                                "begin": 7923,
+                                "size": 93
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50033": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "my_func_unchk23",
+                            "notpayable": false,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "dst"
+                            ],
+                            "returns": [],
+                            "sighash": "3e153b71",
+                            "sourceBytes": {
+                                "begin": 12095,
+                                "size": 96
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50034": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "callnotchecked_unchk25",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "callee"
+                            ],
+                            "returns": [],
+                            "sighash": "5729ff74",
+                            "sourceBytes": {
+                                "begin": 6069,
+                                "size": 105
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50035": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "sendToWinner_unchk32",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "f5fbd77c",
+                            "sourceBytes": {
+                                "begin": 8744,
+                                "size": 163
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50036": {
+                        "canonicalId": "buggy_34.sol|LollypopToken",
+                        "declaringContract": "LollypopToken",
+                        "method": {
+                            "contractName": "LollypopToken",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "sendToWinner_unchk8",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "994c3bfd",
+                            "sourceBytes": {
+                                "begin": 13351,
+                                "size": 158
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50037": {
+                        "canonicalId": "buggy_34.sol|Ownable",
+                        "declaringContract": "Ownable",
+                        "method": {
+                            "contractName": "Ownable",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transferOwnership",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "_newOwner"
+                            ],
+                            "returns": [],
+                            "sighash": "f2fde38b",
+                            "sourceBytes": {
+                                "begin": 790,
+                                "size": 103
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50038": {
+                        "canonicalId": "buggy_34.sol|SafeMath",
+                        "declaringContract": "SafeMath",
+                        "method": {
+                            "contractName": "SafeMath",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": true,
+                            "name": "add",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "a",
+                                "b"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 1318,
+                                "size": 176
+                            },
+                            "stateMutability": "pure",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50039": {
+                        "canonicalId": "buggy_34.sol|SafeMath",
+                        "declaringContract": "SafeMath",
+                        "method": {
+                            "contractName": "SafeMath",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": true,
+                            "name": "sub",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "a",
+                                "b"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 1758,
+                                "size": 179
+                            },
+                            "stateMutability": "pure",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5003a": {
+                        "canonicalId": "buggy_34.sol|SafeMath",
+                        "declaringContract": "SafeMath",
+                        "method": {
+                            "contractName": "SafeMath",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": true,
+                            "name": "mod",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "a",
+                                "b"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 3860,
+                                "size": 149
+                            },
+                            "stateMutability": "pure",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5003b": {
+                        "canonicalId": "buggy_34.sol|SafeMath",
+                        "declaringContract": "SafeMath",
+                        "method": {
+                            "contractName": "SafeMath",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": true,
+                            "name": "mul",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "a",
+                                "b"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 2177,
+                                "size": 458
+                            },
+                            "stateMutability": "pure",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e5003c": {
+                        "canonicalId": "buggy_34.sol|SafeMath",
+                        "declaringContract": "SafeMath",
+                        "method": {
+                            "contractName": "SafeMath",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": true,
+                            "name": "div",
+                            "notpayable": true,
+                            "originalFile": "buggy_34.sol",
+                            "paramNames": [
+                                "a",
+                                "b"
+                            ],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 3090,
+                                "size": 326
+                            },
+                            "stateMutability": "pure",
+                            "visibility": "internal",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "subpot_unchk22",
+                        "sourceLoc": {
+                            "begin": "218",
+                            "len": "32",
+                            "source": "0"
+                        }
+                    },
+                    "10": {
+                        "lhs": "addr_unchk43",
+                        "sourceLoc": {
+                            "begin": "5105",
+                            "len": "28",
+                            "source": "0"
+                        }
+                    },
+                    "11": {
+                        "lhs": "Balances_unchk17",
+                        "sourceLoc": {
+                            "begin": "5441",
+                            "len": "27",
+                            "source": "0"
+                        }
+                    },
+                    "12": {
+                        "lhs": "totalDays",
+                        "sourceLoc": {
+                            "begin": "6285",
+                            "len": "50",
+                            "source": "0"
+                        }
+                    },
+                    "13": {
+                        "lhs": "totalBonus",
+                        "sourceLoc": {
+                            "begin": "6433",
+                            "len": "59",
+                            "source": "0"
+                        }
+                    },
+                    "14": {
+                        "lhs": "addr_unchk19",
+                        "sourceLoc": {
+                            "begin": "6567",
+                            "len": "28",
+                            "source": "0"
+                        }
+                    },
+                    "15": {
+                        "lhs": "senderTimeElasped",
+                        "sourceLoc": {
+                            "begin": "6928",
+                            "len": "70",
+                            "source": "0"
+                        }
+                    },
+                    "16": {
+                        "lhs": "recipientTimeElasped",
+                        "sourceLoc": {
+                            "begin": "7008",
+                            "len": "76",
+                            "source": "0"
+                        }
+                    },
+                    "17": {
+                        "lhs": "subpot_unchk46",
+                        "sourceLoc": {
+                            "begin": "11236",
+                            "len": "31",
+                            "source": "0"
+                        }
+                    },
+                    "18": {
+                        "lhs": "addr_unchk4",
+                        "sourceLoc": {
+                            "begin": "11560",
+                            "len": "27",
+                            "source": "0"
+                        }
+                    },
+                    "19": {
+                        "lhs": "addr_unchk7",
+                        "sourceLoc": {
+                            "begin": "11895",
+                            "len": "27",
+                            "source": "0"
+                        }
+                    },
+                    "2": {
+                        "lhs": "addr_unchk31",
+                        "sourceLoc": {
+                            "begin": "398",
+                            "len": "28",
+                            "source": "0"
+                        }
+                    },
+                    "20": {
+                        "lhs": "receivers_unchk30",
+                        "sourceLoc": {
+                            "begin": "12920",
+                            "len": "22",
+                            "source": "0"
+                        }
+                    },
+                    "21": {
+                        "lhs": "addr_unchk30",
+                        "sourceLoc": {
+                            "begin": "12944",
+                            "len": "28",
+                            "source": "0"
+                        }
+                    },
+                    "22": {
+                        "lhs": "addr_unchk40",
+                        "sourceLoc": {
+                            "begin": "17523",
+                            "len": "28",
+                            "source": "0"
+                        }
+                    },
+                    "23": {
+                        "lhs": "subpot_unchk22",
+                        "sourceLoc": {
+                            "begin": "312",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "24": {
+                        "lhs": "subpot_unchk46",
+                        "sourceLoc": {
+                            "begin": "11329",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "3": {
+                        "lhs": "c",
+                        "sourceLoc": {
+                            "begin": "1395",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "4": {
+                        "lhs": "c",
+                        "sourceLoc": {
+                            "begin": "1894",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "5": {
+                        "lhs": "c",
+                        "sourceLoc": {
+                            "begin": "2526",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "6": {
+                        "lhs": "c",
+                        "sourceLoc": {
+                            "begin": "3287",
+                            "len": "17",
+                            "source": "0"
+                        }
+                    },
+                    "7": {
+                        "lhs": "Balances_unchk41",
+                        "sourceLoc": {
+                            "begin": "4615",
+                            "len": "27",
+                            "source": "0"
+                        }
+                    },
+                    "8": {
+                        "lhs": "receivers_unchk42",
+                        "sourceLoc": {
+                            "begin": "4770",
+                            "len": "22",
+                            "source": "0"
+                        }
+                    },
+                    "9": {
+                        "lhs": "addr_unchk42",
+                        "sourceLoc": {
+                            "begin": "4794",
+                            "len": "28",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 568,
+                            "size": 60
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdrawLeftOver_unchk9",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d3573ba5",
+                        "sourceBytes": {
+                            "begin": 932,
+                            "size": 136
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "payedOut_unchk9",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "bool",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "45bf84a8",
+                        "sourceBytes": {
+                            "begin": 2550,
+                            "size": 35
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transferOwnership",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [
+                            "_newOwner"
+                        ],
+                        "returns": [],
+                        "sighash": "f2fde38b",
+                        "sourceBytes": {
+                            "begin": 790,
+                            "size": 103
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "bug_unchk3",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [
+                            "addr"
+                        ],
+                        "returns": [],
+                        "sighash": "acd2552d",
+                        "sourceBytes": {
+                            "begin": 629,
+                            "size": 79
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "cash_unchk22",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [
+                            "roundIndex",
+                            "subpotIndex",
+                            "winner_unchk22"
+                        ],
+                        "returns": [],
+                        "sighash": "a33c8c8f",
+                        "sourceBytes": {
+                            "begin": 114,
+                            "size": 218
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_unchk31",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "ef5c27b6",
+                        "sourceBytes": {
+                            "begin": 367,
+                            "size": 118
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Ownable",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "owner",
+                        "notpayable": true,
+                        "originalFile": "buggy_34.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8da5cb5b",
+                        "sourceBytes": {
+                            "begin": 883,
+                            "size": 28
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "Ownable",
+                "original_file": "buggy_34.sol",
+                "solidityTypes": [
+                    {
+                        "astId": 508,
+                        "canonicalId": "buggy_34.sol|LollypopToken.transferMapping",
+                        "containingContract": "LollypopToken",
+                        "structMembers": [
+                            {
+                                "name": "amount",
+                                "type": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "name": "time",
+                                "type": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "structName": "transferMapping",
+                        "type": "UserDefinedStruct"
+                    }
+                ],
+                "sourceBytes": {
+                    "begin": 94,
+                    "size": 976
+                },
+                "srcmap": "94:2890:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2550:35;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;883:28;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;114:766;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1521:418;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;2588:394;;;:::i;:::-;;915:462;;;:::i;:::-;;2021:127;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;2550:35;;;;;;;;;;;;;:::o;883:28::-;;;;;;;;;;;;:::o;114:766::-;295:13;227:66;220:89;385:1;317:66;310:77;463:2;395:66;388:78;542:14;474:66;467:90;568:21;592:8;568:32;;684:14;617:66;610:89;709:14;:19;;:35;729:14;709:35;;;;;;;;;;;;;;;;;;;;;;;;;;777:1;761:17;;862:14;795:66;788:89;787:91;;;;:::o;1521:418::-;1663:13;1595:66;1588:89;1753:1;1685:66;1678:77;1831:1;1763:66;1756:77;1909:4;1841:66;1834:80;1916:4;:9;;:20;1927:8;1916:20;;;;;;;;;;;;;;;;;;;;;;;;1521:418;:::o;2588:394::-;2717:13;2649:66;2642:89;2807:1;2739:66;2732:77;2885:1;2817:66;2810:77;2906:15;;;;;;;;;;;2898:24;;;;;;2936:10;2928:24;;:47;2953:21;2928:47;;;;;;;;;;;;;;;;;;;;;;;;2588:394::o;915:462::-;1031:13;963:66;956:89;1121:1;1053:66;1046:77;1199:1;1131:66;1124:77;1204:28;1316:1;1249:66;1242:76;1325:12;:17;;:28;1344:8;1325:28;;;;;;;;;;;;;;;;;;;;;;;1324:29;:37;;;;1360:1;1357;:4;1324:37;1320:55;;;1365:8;;;1320:55;915:462;:::o;2021:127::-;2096:9;2286:13;2218:66;2211:89;2376:1;2308:66;2301:77;2454:1;2386:66;2379:77;2532:9;2464:66;2457:85;1994:5:::1;::::0;::::1;;;;;;;;1980:19;;:10;:19;;;1972:28;;;::::0;::::1;;2133:9:::2;2125:5;::::0;:17:::2;;;;;;;;;;;;;;;;;;2021:127:::0;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 30,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_58_55_7312852995/.certora_sources/buggy_34.sol:Ownable",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "owner",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_address_payable"
+                        },
+                        {
+                            "astId": 120,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unhandled-Exceptions/.certora_internal/26_02_24_09_58_55_7312852995/.certora_sources/buggy_34.sol:Ownable",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "1",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "bool",
+                                "type": "Primitive"
+                            },
+                            "label": "payedOut_unchk9",
+                            "offset": 20,
+                            "slot": "0",
+                            "type": "t_bool"
+                        }
+                    ],
+                    "types": {
+                        "t_address_payable": {
+                            "encoding": "inplace",
+                            "label": "address payable",
+                            "numberOfBytes": "20"
+                        },
+                        "t_bool": {
+                            "encoding": "inplace",
+                            "label": "bool",
+                            "numberOfBytes": "1"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "Ownable",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000004",
+        "prototypeFor": [],
+        "sdc_name": "buggy_34.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "buggy_34.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

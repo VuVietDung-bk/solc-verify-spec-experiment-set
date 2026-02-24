@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "owned",
+    "specfile": "certora_specification/buggy_19_owned.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_19_owned.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

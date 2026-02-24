@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "ERC20Interface",
+    "specfile": "/root/solc-verify-spec/experiments/dataset3/Overflow-Underflow/certora_specification/buggy_47_locktime.cvl",
+    "specfileOrigRelpath": "certora_specification/buggy_47_locktime.cvl",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}

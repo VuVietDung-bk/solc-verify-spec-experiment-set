@@ -1,0 +1,305 @@
+{
+    "Reentrancy_cross_function_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "Reentrancy_cross_function",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "reentrancy_cross_function.sol",
+                        "paramNames": [
+                            "to",
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 280,
+                            "size": 205
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Reentrancy_cross_function",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdrawBalance",
+                        "notpayable": true,
+                        "originalFile": "reentrancy_cross_function.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "5fd8c710",
+                        "sourceBytes": {
+                            "begin": 491,
+                            "size": 346
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "608060405234801561001057600080fd5b50600436106100365760003560e01c80635fd8c7101461003b578063a9059cbb14610045575b600080fd5b610043610093565b005b6100916004803603604081101561005b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610248565b005b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000045260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000015260003373ffffffffffffffffffffffffffffffffffffffff168260405180600001905060006040518083038185875af1925050503d80600081146101c9576040519150601f19603f3d011682016040523d82523d6000602084013e6101ce565b606091505b5050905060007fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010002528061020057600080fd5b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505050565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001600152806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054106103b957806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055505b505056fea2646970667358221220401e651d30d7716460b72b8a06e94e72923a9cd0efede759326c87efdfe5ee8d64736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "608060405234801561001057600080fd5b506103f3806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80635fd8c7101461003b578063a9059cbb14610045575b600080fd5b610043610093565b005b6100916004803603604081101561005b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610248565b005b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000045260008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff000000015260003373ffffffffffffffffffffffffffffffffffffffff168260405180600001905060006040518083038185875af1925050503d80600081146101c9576040519150601f19603f3d011682016040523d82523d6000602084013e6101ce565b606091505b5050905060007fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00010002528061020057600080fd5b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505050565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260097fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001600152806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054106103b957806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008282540192505081905550806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825403925050819055505b505056fea2646970667358221220401e651d30d7716460b72b8a06e94e72923a9cd0efede759326c87efdfe5ee8d64736f6c63430007060033",
+                "constructorSrcmap": "169:1456:0:-:0;;;;;;;;;;;;;;;;;;;",
+                "extensionContracts": [],
+                "file": "reentrancy_cross_function.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "reentrancy_cross_function.sol|Reentrancy_cross_function",
+                        "declaringContract": "Reentrancy_cross_function",
+                        "method": {
+                            "contractName": "Reentrancy_cross_function",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "withdrawBalance",
+                            "notpayable": true,
+                            "originalFile": "reentrancy_cross_function.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "5fd8c710",
+                            "sourceBytes": {
+                                "begin": 491,
+                                "size": 346
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "reentrancy_cross_function.sol|Reentrancy_cross_function",
+                        "declaringContract": "Reentrancy_cross_function",
+                        "method": {
+                            "contractName": "Reentrancy_cross_function",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                },
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "transfer",
+                            "notpayable": true,
+                            "originalFile": "reentrancy_cross_function.sol",
+                            "paramNames": [
+                                "to",
+                                "amount"
+                            ],
+                            "returns": [],
+                            "sighash": "a9059cbb",
+                            "sourceBytes": {
+                                "begin": 280,
+                                "size": 205
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "amountToWithdraw",
+                        "sourceLoc": {
+                            "begin": "535",
+                            "len": "48",
+                            "source": "0"
+                        }
+                    },
+                    "2": {
+                        "lhs": "success,_",
+                        "sourceLoc": {
+                            "begin": "630",
+                            "len": "63",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "Reentrancy_cross_function",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "withdrawBalance",
+                        "notpayable": true,
+                        "originalFile": "reentrancy_cross_function.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "5fd8c710",
+                        "sourceBytes": {
+                            "begin": 491,
+                            "size": 346
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "Reentrancy_cross_function",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            },
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "transfer",
+                        "notpayable": true,
+                        "originalFile": "reentrancy_cross_function.sol",
+                        "paramNames": [
+                            "to",
+                            "amount"
+                        ],
+                        "returns": [],
+                        "sighash": "a9059cbb",
+                        "sourceBytes": {
+                            "begin": 280,
+                            "size": 205
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "Reentrancy_cross_function",
+                "original_file": "reentrancy_cross_function.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 169,
+                    "size": 670
+                },
+                "srcmap": "169:1456:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;832:791;;;:::i;:::-;;280:546;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;832:791;953:13;885:66;878:89;1043:1;975:66;968:77;1121:1;1053:66;1046:77;1134:21;1158:12;:24;1171:10;1158:24;;;;;;;;;;;;;;;;1134:48;;1266:16;1199:66;1192:91;1331:12;1349:10;:15;;1372:16;1349:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1330:63;;;1477:1;1410:66;1403:76;1570:7;1562:16;;;;;;1615:1;1588:12;:24;1601:10;1588:24;;;;;;;;;;;;;;;:28;;;;832:791;;:::o;280:546::-;417:13;349:66;342:89;507:1;439:66;432:77;585:1;517:66;510:77;663:6;595:66;588:82;713:6;685:12;:24;698:10;685:24;;;;;;;;;;;;;;;;:34;681:139;;755:6;735:12;:16;748:2;735:16;;;;;;;;;;;;;;;;:26;;;;;;;;;;;803:6;775:12;:24;788:10;775:24;;;;;;;;;;;;;;;;:34;;;;;;;;;;;681:139;280:546;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 5,
+                            "contract": "/root/solc-verify-spec/experiments/dataset2/reentrancy/.certora_internal/26_02_24_09_24_42_446549676e/.certora_sources/reentrancy_cross_function.sol:Reentrancy_cross_function",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "20",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "userBalances",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_mapping(t_address,t_uint256)"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_mapping(t_address,t_uint256)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => uint256)",
+                            "numberOfBytes": "32",
+                            "value": "t_uint256"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "Reentrancy_cross_function",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "reentrancy_cross_function.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "reentrancy_cross_function.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

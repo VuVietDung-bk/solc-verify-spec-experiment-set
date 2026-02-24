@@ -1,0 +1,206 @@
+{
+    "B_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "B",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "go",
+                        "notpayable": false,
+                        "originalFile": "0xf29ebe930a539a60279ace72c707cba851a57707.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0f59f83a",
+                        "sourceBytes": {
+                            "begin": 164,
+                            "size": 249
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "B",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "owner",
+                        "notpayable": true,
+                        "originalFile": "0xf29ebe930a539a60279ace72c707cba851a57707.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8da5cb5b",
+                        "sourceBytes": {
+                            "begin": 120,
+                            "size": 33
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "60806040526004361061002d5760003560e01c80630f59f83a146100395780638da5cb5b1461004357610034565b3661003457005b600080fd5b610041610084565b005b34801561004f57600080fd5b50610058610200565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000452600073c8a60c51967f4022bf9424c337e9c6f0bd220e1c9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001528073ffffffffffffffffffffffffffffffffffffffff163460405180600001905060006040518083038185875af1925050503d806000811461018e576040519150601f19603f3d011682016040523d82523d6000602084013e610193565b606091505b50505060008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f193505050501580156101fc573d6000803e3d6000fd5b5050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea2646970667358221220bb642bb9a36a7bfb6d24ff698cf1c00b0a62d38ffe316557bc8bea93d1c5d74c64736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555034801561005057600080fd5b5061025a806100606000396000f3fe60806040526004361061002d5760003560e01c80630f59f83a146100395780638da5cb5b1461004357610034565b3661003457005b600080fd5b610041610084565b005b34801561004f57600080fd5b50610058610200565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b64f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0000000452600073c8a60c51967f4022bf9424c337e9c6f0bd220e1c9050807fffffff6e4604afefe123321beef1b02fffffffffffffffffffffffff00000001528073ffffffffffffffffffffffffffffffffffffffff163460405180600001905060006040518083038185875af1925050503d806000811461018e576040519150601f19603f3d011682016040523d82523d6000602084013e610193565b606091505b50505060008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc479081150290604051600060405180830381858888f193505050501580156101fc573d6000803e3d6000fd5b5050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea2646970667358221220bb642bb9a36a7bfb6d24ff698cf1c00b0a62d38ffe316557bc8bea93d1c5d74c64736f6c63430007060033",
+                "constructorSrcmap": "103:705:0:-:0;;;143:10;120:33;;;;;;;;;;;;;;;;;;;;103:705;;;;;;;;;;;;;;;;",
+                "extensionContracts": [],
+                "file": "0xf29ebe930a539a60279ace72c707cba851a57707.sol",
+                "immutables": [],
+                "internalFuncs": [],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "0xf29ebe930a539a60279ace72c707cba851a57707.sol|B",
+                        "declaringContract": "B",
+                        "method": {
+                            "contractName": "B",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "go",
+                            "notpayable": false,
+                            "originalFile": "0xf29ebe930a539a60279ace72c707cba851a57707.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "0f59f83a",
+                            "sourceBytes": {
+                                "begin": 164,
+                                "size": 249
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {
+                    "1": {
+                        "lhs": "target",
+                        "sourceLoc": {
+                            "begin": "203",
+                            "len": "59",
+                            "source": "0"
+                        }
+                    }
+                },
+                "methods": [
+                    {
+                        "contractName": "B",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "go",
+                        "notpayable": false,
+                        "originalFile": "0xf29ebe930a539a60279ace72c707cba851a57707.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "0f59f83a",
+                        "sourceBytes": {
+                            "begin": 164,
+                            "size": 249
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "B",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "owner",
+                        "notpayable": true,
+                        "originalFile": "0xf29ebe930a539a60279ace72c707cba851a57707.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8da5cb5b",
+                        "sourceBytes": {
+                            "begin": 120,
+                            "size": 33
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "B",
+                "original_file": "0xf29ebe930a539a60279ace72c707cba851a57707.sol",
+                "solidityTypes": [],
+                "sourceBytes": {
+                    "begin": 103,
+                    "size": 356
+                },
+                "srcmap": "103:705:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;164:598;;;:::i;:::-;;120:33;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;164:598;280:13;212:66;205:89;370:1;302:66;295:77;448:1;380:66;373:77;461:14;478:42;461:59;;604:6;537:66;530:81;666:6;:11;;685:9;666:33;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;717:5;;;;;;;;;;709:23;;:46;733:21;709:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;164:598;:::o;120:33::-;;;;;;;;;;;;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 5,
+                            "contract": "/root/solc-verify-spec/experiments/dataset1/unchecked_low_level_calls/.certora_internal/26_02_24_09_21_27_208956f595/.certora_sources/0xf29ebe930a539a60279ace72c707cba851a57707.sol:B",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "owner",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_address"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "B",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "0xf29ebe930a539a60279ace72c707cba851a57707.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "0xf29ebe930a539a60279ace72c707cba851a57707.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

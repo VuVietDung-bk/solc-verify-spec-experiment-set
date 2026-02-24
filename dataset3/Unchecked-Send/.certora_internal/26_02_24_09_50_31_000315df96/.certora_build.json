@@ -1,0 +1,1653 @@
+{
+    "StockBet_00000000ce4604a0000000000000000000000001": {
+        "contracts": [
+            {
+                "address": "00000000ce4604a0000000000000000000000001",
+                "allMethods": [
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bet",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "11610c25",
+                        "sourceBytes": {
+                            "begin": 798,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "betDown",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "7782090b",
+                        "sourceBytes": {
+                            "begin": 2366,
+                            "size": 275
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "betUp",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "ad19f442",
+                        "sourceBytes": {
+                            "begin": 2106,
+                            "size": 259
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_unchk_send7",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "6aa6caa4",
+                        "sourceBytes": {
+                            "begin": 3718,
+                            "size": 88
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "closeGame",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "786b844b",
+                        "sourceBytes": {
+                            "begin": 1985,
+                            "size": 120
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "collectPlayerWinnings",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d97a4c41",
+                        "sourceBytes": {
+                            "begin": 3317,
+                            "size": 302
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [
+                            "_bet"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 1426,
+                            "size": 202
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "finalPrice",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a6b513ee",
+                        "sourceBytes": {
+                            "begin": 893,
+                            "size": 25
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getBalance",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "view",
+                        "visibility": "private",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "guesses",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "1f491389",
+                        "sourceBytes": {
+                            "begin": 758,
+                            "size": 38
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "initialPrice",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "1d0806ae",
+                        "sourceBytes": {
+                            "begin": 864,
+                            "size": 27
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "oracle",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "7dc0d1d0",
+                        "sourceBytes": {
+                            "begin": 715,
+                            "size": 21
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "owner",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8da5cb5b",
+                        "sourceBytes": {
+                            "begin": 685,
+                            "size": 28
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "result",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "65372147",
+                        "sourceBytes": {
+                            "begin": 844,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setFinalPrice",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [
+                            "_value"
+                        ],
+                        "returns": [],
+                        "sighash": "bb55f25c",
+                        "sourceBytes": {
+                            "begin": 2642,
+                            "size": 673
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setInitialPrice",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [
+                            "_value"
+                        ],
+                        "returns": [],
+                        "sighash": "9f4ba0ee",
+                        "sourceBytes": {
+                            "begin": 1784,
+                            "size": 200
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setOracle",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [
+                            "_oracle"
+                        ],
+                        "returns": [],
+                        "sighash": "7adbf973",
+                        "sourceBytes": {
+                            "begin": 1629,
+                            "size": 154
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "state",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "astId": 42,
+                                    "canonicalId": "buggy_45.sol|StockBet.State",
+                                    "containingContract": "StockBet",
+                                    "enumMembers": [
+                                        {
+                                            "name": "SETUP"
+                                        },
+                                        {
+                                            "name": "PRICE_SET"
+                                        },
+                                        {
+                                            "name": "OPEN"
+                                        },
+                                        {
+                                            "name": "CLOSED"
+                                        },
+                                        {
+                                            "name": "PLAYERS_WIN"
+                                        },
+                                        {
+                                            "name": "OWNER_WIN"
+                                        }
+                                    ],
+                                    "enumName": "State",
+                                    "type": "UserDefinedEnum"
+                                }
+                            }
+                        ],
+                        "sighash": "c19d93fb",
+                        "sourceBytes": {
+                            "begin": 738,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    }
+                ],
+                "bytecode": "6080604052600436106100f35760003560e01c80637dc0d1d01161008a578063ad19f44211610059578063ad19f44214610312578063bb55f25c1461031c578063c19d93fb1461034a578063d97a4c4114610380576100f3565b80637dc0d1d0146102375780638da5cb5b146102785780639f4ba0ee146102b9578063a6b513ee146102e7576100f3565b80636aa6caa4116100c65780636aa6caa4146101c85780637782090b146101d2578063786b844b146101dc5780637adbf973146101f3576100f3565b806311610c25146100f85780631d0806ae146101235780631f4913891461014e578063653721471461019d575b600080fd5b34801561010457600080fd5b5061010d610397565b6040518082815260200191505060405180910390f35b34801561012f57600080fd5b5061013861039d565b6040518082815260200191505060405180910390f35b34801561015a57600080fd5b506101876004803603602081101561017157600080fd5b81019080803590602001909291905050506103a3565b6040518082815260200191505060405180910390f35b3480156101a957600080fd5b506101b26103c1565b6040518082815260200191505060405180910390f35b6101d06103c7565b005b6101da610488565b005b3480156101e857600080fd5b506101f1610691565b005b6102356004803603602081101561020957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506107df565b005b34801561024357600080fd5b5061024c6109b3565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561028457600080fd5b5061028d6109d9565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102e5600480360360208110156102cf57600080fd5b81019080803590602001909291905050506109fd565b005b3480156102f357600080fd5b506102fc610b87565b6040518082815260200191505060405180910390f35b61031a610b8d565b005b6103486004803603602081101561033257600080fd5b8101908080359060200190929190505050610d98565b005b34801561035657600080fd5b5061035f61106e565b6040518082600581111561036f57fe5b815260200191505060405180910390f35b34801561038c57600080fd5b50610395611081565b005b60035481565b60065481565b60026020528060005260406000206000915090508060010154905081565b60055481565b64f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00030004523373ffffffffffffffffffffffffffffffffffffffff166108fc670de0b6b3a76400009081150290604051600060405180830381858888f19350505050158015610485573d6000803e3d6000fd5b50565b64f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000452600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561055357600080fd5b600280600581111561056157fe5b600160149054906101000a900460ff16600581111561057c57fe5b1461058657600080fd5b66038d7ea4c6800060035402341461059d57600080fd5b600260008081526020019081526020016000206001016000815480929190600101919050555060016002600080815260200190815260200160002060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083600281111561063357fe5b02179055507f9e17ef180bea2554f5c3fb7836e27cfee9ed413e79550adced153652e3141843336000604051808373ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a150565b64f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400045260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461075957600080fd5b600280600581111561076757fe5b600160149054906101000a900460ff16600581111561078257fe5b1461078c57600080fd5b6003600160146101000a81548160ff021916908360058111156107ab57fe5b02179055507f110c2c58fa523adf6e04cc3a248340fa015271e972e26ff8e8dcc7a308ba1a3d60405160405180910390a150565b8064f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000760005260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146108cb57600080fd5b60008060058111156108d957fe5b600160149054906101000a900460ff1660058111156108f457fe5b146108fe57600080fd5b82600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f3f32684a32a11dabdbb8c0177de80aa3ae36a004d75210335b49e544e48cd0aa600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a1505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b8064f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006600052600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610aeb57600080fd5b6000806005811115610af957fe5b600160149054906101000a900460ff166005811115610b1457fe5b14610b1e57600080fd5b826006819055506002600160146101000a81548160ff02191690836005811115610b4457fe5b02179055507fc882ef929f6977685bbc272ef610963c15fdbefb6e09e0cce9b34e809a3031e46006546040518082815260200191505060405180910390a1505050565b60075481565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000452600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610c5857600080fd5b6002806005811115610c6657fe5b600160149054906101000a900460ff166005811115610c8157fe5b14610c8b57600080fd5b66038d7ea4c68000600354023414610ca257600080fd5b6002600060018152602001908152602001600020600101600081548092919060010191905055506001600260006001815260200190815260200160002060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690836002811115610d3a57fe5b02179055507f9e17ef180bea2554f5c3fb7836e27cfee9ed413e79550adced153652e3141843336001604051808373ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a150565b8064f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008600052600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610e8657600080fd5b6003806005811115610e9457fe5b600160149054906101000a900460ff166005811115610eaf57fe5b14610eb957600080fd5b826007819055507f3ea19e46f588dc0b629b3a3632a1f13bdb12dc06e2f4bf3006f2325694ee38596007546040518082815260200191505060405180910390a16006546007541115610f12576001600581905550610f1b565b60006005819055505b6000600260006005548152602001908152602001600020600101541115610fd7576004600160146101000a81548160ff02191690836005811115610f5b57fe5b021790555060026000600554815260200190815260200160002060010154610f816112cc565b81610f8857fe5b046004819055507f1b1d7a3cceea9800960558bd09958580587d77822d91ea16a5748dc5299fa30f600554600454604051808381526020018281526020019250505060405180910390a1611069565b6005600160146101000a81548160ff02191690836005811115610ff657fe5b02179055507f2bf1feda0062dbf8b9631889ca35774ee61fa71a095e6af4939b2b15836101fd60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a15b505050565b600160149054906101000a900460ff1681565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000452600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561114c57600080fd5b600480600581111561115a57fe5b600160149054906101000a900460ff16600581111561117557fe5b1461117f57600080fd5b6001600281111561118c57fe5b60026000600554815260200190815260200160002060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1660028111156111fa57fe5b14156112c4576002806000600554815260200190815260200160002060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083600281111561127157fe5b02179055503373ffffffffffffffffffffffffffffffffffffffff166108fc6004549081150290604051600060405180830381858888f193505050501580156112be573d6000803e3d6000fd5b506112c9565b600080fd5b50565b600064f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00000004524790509056fea2646970667358221220f8f1d2155004e618df9f72140919997bec72518f0334faad8ca9304a317cca0964736f6c63430007060033",
+                "compilerName": "solc",
+                "compilerParameters": {
+                    "optimizerOn": false,
+                    "optimizerRuns": null,
+                    "type": "SolcParameters",
+                    "viaIR": false
+                },
+                "compilerVersion": "0.7.6",
+                "constructorBytecode": "608060405234801561001057600080fd5b5060405161147f38038061147f8339818101604052602081101561003357600080fd5b81019080805190602001909291905050506000811161005157600080fd5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000600160146101000a81548160ff021916908360058111156100b057fe5b0217905550806003819055507fbd19c47e9925eb6f7be8bb1c13a841e0240aaeaf17f217e90022e9c8eb66877f6003546040518082815260200191505060405180910390a15061137a806101056000396000f3fe6080604052600436106100f35760003560e01c80637dc0d1d01161008a578063ad19f44211610059578063ad19f44214610312578063bb55f25c1461031c578063c19d93fb1461034a578063d97a4c4114610380576100f3565b80637dc0d1d0146102375780638da5cb5b146102785780639f4ba0ee146102b9578063a6b513ee146102e7576100f3565b80636aa6caa4116100c65780636aa6caa4146101c85780637782090b146101d2578063786b844b146101dc5780637adbf973146101f3576100f3565b806311610c25146100f85780631d0806ae146101235780631f4913891461014e578063653721471461019d575b600080fd5b34801561010457600080fd5b5061010d610397565b6040518082815260200191505060405180910390f35b34801561012f57600080fd5b5061013861039d565b6040518082815260200191505060405180910390f35b34801561015a57600080fd5b506101876004803603602081101561017157600080fd5b81019080803590602001909291905050506103a3565b6040518082815260200191505060405180910390f35b3480156101a957600080fd5b506101b26103c1565b6040518082815260200191505060405180910390f35b6101d06103c7565b005b6101da610488565b005b3480156101e857600080fd5b506101f1610691565b005b6102356004803603602081101561020957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506107df565b005b34801561024357600080fd5b5061024c6109b3565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561028457600080fd5b5061028d6109d9565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102e5600480360360208110156102cf57600080fd5b81019080803590602001909291905050506109fd565b005b3480156102f357600080fd5b506102fc610b87565b6040518082815260200191505060405180910390f35b61031a610b8d565b005b6103486004803603602081101561033257600080fd5b8101908080359060200190929190505050610d98565b005b34801561035657600080fd5b5061035f61106e565b6040518082600581111561036f57fe5b815260200191505060405180910390f35b34801561038c57600080fd5b50610395611081565b005b60035481565b60065481565b60026020528060005260406000206000915090508060010154905081565b60055481565b64f196e500037fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000300015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00030004523373ffffffffffffffffffffffffffffffffffffffff166108fc670de0b6b3a76400009081150290604051600060405180830381858888f19350505050158015610485573d6000803e3d6000fd5b50565b64f196e500057fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000500015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0005000452600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561055357600080fd5b600280600581111561056157fe5b600160149054906101000a900460ff16600581111561057c57fe5b1461058657600080fd5b66038d7ea4c6800060035402341461059d57600080fd5b600260008081526020019081526020016000206001016000815480929190600101919050555060016002600080815260200190815260200160002060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083600281111561063357fe5b02179055507f9e17ef180bea2554f5c3fb7836e27cfee9ed413e79550adced153652e3141843336000604051808373ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a150565b64f196e500047fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000400045260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461075957600080fd5b600280600581111561076757fe5b600160149054906101000a900460ff16600581111561078257fe5b1461078c57600080fd5b6003600160146101000a81548160ff021916908360058111156107ab57fe5b02179055507f110c2c58fa523adf6e04cc3a248340fa015271e972e26ff8e8dcc7a308ba1a3d60405160405180910390a150565b8064f196e500077fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000700015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0007000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000760005260008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146108cb57600080fd5b60008060058111156108d957fe5b600160149054906101000a900460ff1660058111156108f457fe5b146108fe57600080fd5b82600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f3f32684a32a11dabdbb8c0177de80aa3ae36a004d75210335b49e544e48cd0aa600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a1505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b8064f196e500067fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000600015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0006600052600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610aeb57600080fd5b6000806005811115610af957fe5b600160149054906101000a900460ff166005811115610b1457fe5b14610b1e57600080fd5b826006819055506002600160146101000a81548160ff02191690836005811115610b4457fe5b02179055507fc882ef929f6977685bbc272ef610963c15fdbefb6e09e0cce9b34e809a3031e46006546040518082815260200191505060405180910390a1505050565b60075481565b64f196e500027fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000200015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0002000452600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610c5857600080fd5b6002806005811115610c6657fe5b600160149054906101000a900460ff166005811115610c8157fe5b14610c8b57600080fd5b66038d7ea4c68000600354023414610ca257600080fd5b6002600060018152602001908152602001600020600101600081548092919060010191905055506001600260006001815260200190815260200160002060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690836002811115610d3a57fe5b02179055507f9e17ef180bea2554f5c3fb7836e27cfee9ed413e79550adced153652e3141843336001604051808373ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390a150565b8064f196e500087fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800005260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000800015260017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008000552807fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0008600052600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610e8657600080fd5b6003806005811115610e9457fe5b600160149054906101000a900460ff166005811115610eaf57fe5b14610eb957600080fd5b826007819055507f3ea19e46f588dc0b629b3a3632a1f13bdb12dc06e2f4bf3006f2325694ee38596007546040518082815260200191505060405180910390a16006546007541115610f12576001600581905550610f1b565b60006005819055505b6000600260006005548152602001908152602001600020600101541115610fd7576004600160146101000a81548160ff02191690836005811115610f5b57fe5b021790555060026000600554815260200190815260200160002060010154610f816112cc565b81610f8857fe5b046004819055507f1b1d7a3cceea9800960558bd09958580587d77822d91ea16a5748dc5299fa30f600554600454604051808381526020018281526020019250505060405180910390a1611069565b6005600160146101000a81548160ff02191690836005811115610ff657fe5b02179055507f2bf1feda0062dbf8b9631889ca35774ee61fa71a095e6af4939b2b15836101fd60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a15b505050565b600160149054906101000a900460ff1681565b64f196e500017fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000100015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff0001000452600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561114c57600080fd5b600480600581111561115a57fe5b600160149054906101000a900460ff16600581111561117557fe5b1461117f57600080fd5b6001600281111561118c57fe5b60026000600554815260200190815260200160002060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1660028111156111fa57fe5b14156112c4576002806000600554815260200190815260200160002060000160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083600281111561127157fe5b02179055503373ffffffffffffffffffffffffffffffffffffffff166108fc6004549081150290604051600060405180830381858888f193505050501580156112be573d6000803e3d6000fd5b506112c9565b600080fd5b50565b600064f196e500007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000005260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff000000015260007fffffff6e4604afefe123321beef1b01fffffffffffffffffffffffff00000004524790509056fea2646970667358221220f8f1d2155004e618df9f72140919997bec72518f0334faad8ca9304a317cca0964736f6c63430007060033",
+                "constructorSrcmap": "94:6664:0:-:0;;;1426:202;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1484:1;1477:4;:8;1469:17;;;;;;1521:10;1505:5;;:27;;;;;;;;;;;;;;;;;;1550:11;1542:5;;:19;;;;;;;;;;;;;;;;;;;;;;;;1577:4;1571:3;:10;;;;1605:16;1617:3;;1605:16;;;;;;;;;;;;;;;;;;1426:202;94:6664;;;;;;",
+                "extensionContracts": [],
+                "file": "buggy_45.sol",
+                "immutables": [],
+                "internalFuncs": [
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "getBalance",
+                        "notpayable": true,
+                        "originalFile": null,
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "0",
+                        "sourceBytes": null,
+                        "stateMutability": "view",
+                        "visibility": "private",
+                        "vyper_metadata": null
+                    }
+                ],
+                "internalFunctionHarnesses": {},
+                "internalFunctionStarts": [],
+                "internalFunctions": {
+                    "0xf196e50000": {
+                        "canonicalId": "buggy_45.sol|StockBet",
+                        "declaringContract": "StockBet",
+                        "method": {
+                            "contractName": "StockBet",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "getBalance",
+                            "notpayable": true,
+                            "originalFile": "buggy_45.sol",
+                            "paramNames": [],
+                            "returns": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "sighash": "0",
+                            "sourceBytes": {
+                                "begin": 3620,
+                                "size": 97
+                            },
+                            "stateMutability": "view",
+                            "visibility": "private",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50001": {
+                        "canonicalId": "buggy_45.sol|StockBet",
+                        "declaringContract": "StockBet",
+                        "method": {
+                            "contractName": "StockBet",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "collectPlayerWinnings",
+                            "notpayable": true,
+                            "originalFile": "buggy_45.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "d97a4c41",
+                            "sourceBytes": {
+                                "begin": 3317,
+                                "size": 302
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50002": {
+                        "canonicalId": "buggy_45.sol|StockBet",
+                        "declaringContract": "StockBet",
+                        "method": {
+                            "contractName": "StockBet",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "betUp",
+                            "notpayable": false,
+                            "originalFile": "buggy_45.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "ad19f442",
+                            "sourceBytes": {
+                                "begin": 2106,
+                                "size": 259
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50003": {
+                        "canonicalId": "buggy_45.sol|StockBet",
+                        "declaringContract": "StockBet",
+                        "method": {
+                            "contractName": "StockBet",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "bug_unchk_send7",
+                            "notpayable": false,
+                            "originalFile": "buggy_45.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "6aa6caa4",
+                            "sourceBytes": {
+                                "begin": 3718,
+                                "size": 88
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50004": {
+                        "canonicalId": "buggy_45.sol|StockBet",
+                        "declaringContract": "StockBet",
+                        "method": {
+                            "contractName": "StockBet",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "closeGame",
+                            "notpayable": true,
+                            "originalFile": "buggy_45.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "786b844b",
+                            "sourceBytes": {
+                                "begin": 1985,
+                                "size": 120
+                            },
+                            "stateMutability": "nonpayable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50005": {
+                        "canonicalId": "buggy_45.sol|StockBet",
+                        "declaringContract": "StockBet",
+                        "method": {
+                            "contractName": "StockBet",
+                            "fullArgs": [],
+                            "isLibrary": false,
+                            "name": "betDown",
+                            "notpayable": false,
+                            "originalFile": "buggy_45.sol",
+                            "paramNames": [],
+                            "returns": [],
+                            "sighash": "7782090b",
+                            "sourceBytes": {
+                                "begin": 2366,
+                                "size": 275
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50006": {
+                        "canonicalId": "buggy_45.sol|StockBet",
+                        "declaringContract": "StockBet",
+                        "method": {
+                            "contractName": "StockBet",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "setInitialPrice",
+                            "notpayable": false,
+                            "originalFile": "buggy_45.sol",
+                            "paramNames": [
+                                "_value"
+                            ],
+                            "returns": [],
+                            "sighash": "9f4ba0ee",
+                            "sourceBytes": {
+                                "begin": 1784,
+                                "size": 200
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50007": {
+                        "canonicalId": "buggy_45.sol|StockBet",
+                        "declaringContract": "StockBet",
+                        "method": {
+                            "contractName": "StockBet",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "setOracle",
+                            "notpayable": false,
+                            "originalFile": "buggy_45.sol",
+                            "paramNames": [
+                                "_oracle"
+                            ],
+                            "returns": [],
+                            "sighash": "7adbf973",
+                            "sourceBytes": {
+                                "begin": 1629,
+                                "size": 154
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    },
+                    "0xf196e50008": {
+                        "canonicalId": "buggy_45.sol|StockBet",
+                        "declaringContract": "StockBet",
+                        "method": {
+                            "contractName": "StockBet",
+                            "fullArgs": [
+                                {
+                                    "location": "stack",
+                                    "typeDesc": {
+                                        "primitiveName": "uint256",
+                                        "type": "Primitive"
+                                    }
+                                }
+                            ],
+                            "isLibrary": false,
+                            "name": "setFinalPrice",
+                            "notpayable": false,
+                            "originalFile": "buggy_45.sol",
+                            "paramNames": [
+                                "_value"
+                            ],
+                            "returns": [],
+                            "sighash": "bb55f25c",
+                            "sourceBytes": {
+                                "begin": 2642,
+                                "size": 673
+                            },
+                            "stateMutability": "payable",
+                            "visibility": "public",
+                            "vyper_metadata": null
+                        }
+                    }
+                },
+                "is_static_address": false,
+                "lang": "Solidity",
+                "localAssignments": {},
+                "methods": [
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "constructor",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [
+                            "_bet"
+                        ],
+                        "returns": [],
+                        "sighash": "0",
+                        "sourceBytes": {
+                            "begin": 1426,
+                            "size": 202
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "collectPlayerWinnings",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "d97a4c41",
+                        "sourceBytes": {
+                            "begin": 3317,
+                            "size": 302
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "betUp",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "ad19f442",
+                        "sourceBytes": {
+                            "begin": 2106,
+                            "size": 259
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bug_unchk_send7",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "6aa6caa4",
+                        "sourceBytes": {
+                            "begin": 3718,
+                            "size": 88
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "bet",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "11610c25",
+                        "sourceBytes": {
+                            "begin": 798,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "state",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "astId": 42,
+                                    "canonicalId": "buggy_45.sol|StockBet.State",
+                                    "containingContract": "StockBet",
+                                    "enumMembers": [
+                                        {
+                                            "name": "SETUP"
+                                        },
+                                        {
+                                            "name": "PRICE_SET"
+                                        },
+                                        {
+                                            "name": "OPEN"
+                                        },
+                                        {
+                                            "name": "CLOSED"
+                                        },
+                                        {
+                                            "name": "PLAYERS_WIN"
+                                        },
+                                        {
+                                            "name": "OWNER_WIN"
+                                        }
+                                    ],
+                                    "enumName": "State",
+                                    "type": "UserDefinedEnum"
+                                }
+                            }
+                        ],
+                        "sighash": "c19d93fb",
+                        "sourceBytes": {
+                            "begin": 738,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "result",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "65372147",
+                        "sourceBytes": {
+                            "begin": 844,
+                            "size": 18
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "guesses",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "1f491389",
+                        "sourceBytes": {
+                            "begin": 758,
+                            "size": 38
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "closeGame",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "786b844b",
+                        "sourceBytes": {
+                            "begin": 1985,
+                            "size": 120
+                        },
+                        "stateMutability": "nonpayable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "betDown",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [],
+                        "sighash": "7782090b",
+                        "sourceBytes": {
+                            "begin": 2366,
+                            "size": 275
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setInitialPrice",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [
+                            "_value"
+                        ],
+                        "returns": [],
+                        "sighash": "9f4ba0ee",
+                        "sourceBytes": {
+                            "begin": 1784,
+                            "size": 200
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "initialPrice",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "1d0806ae",
+                        "sourceBytes": {
+                            "begin": 864,
+                            "size": 27
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "oracle",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "7dc0d1d0",
+                        "sourceBytes": {
+                            "begin": 715,
+                            "size": 21
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "finalPrice",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "a6b513ee",
+                        "sourceBytes": {
+                            "begin": 893,
+                            "size": 25
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setOracle",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [
+                            "_oracle"
+                        ],
+                        "returns": [],
+                        "sighash": "7adbf973",
+                        "sourceBytes": {
+                            "begin": 1629,
+                            "size": 154
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [],
+                        "isLibrary": false,
+                        "name": "owner",
+                        "notpayable": true,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [],
+                        "returns": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "address",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "sighash": "8da5cb5b",
+                        "sourceBytes": {
+                            "begin": 685,
+                            "size": 28
+                        },
+                        "stateMutability": "view",
+                        "visibility": "external",
+                        "vyper_metadata": null
+                    },
+                    {
+                        "contractName": "StockBet",
+                        "fullArgs": [
+                            {
+                                "location": "stack",
+                                "typeDesc": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "isLibrary": false,
+                        "name": "setFinalPrice",
+                        "notpayable": false,
+                        "originalFile": "buggy_45.sol",
+                        "paramNames": [
+                            "_value"
+                        ],
+                        "returns": [],
+                        "sighash": "bb55f25c",
+                        "sourceBytes": {
+                            "begin": 2642,
+                            "size": 673
+                        },
+                        "stateMutability": "payable",
+                        "visibility": "public",
+                        "vyper_metadata": null
+                    }
+                ],
+                "name": "StockBet",
+                "original_file": "buggy_45.sol",
+                "solidityTypes": [
+                    {
+                        "astId": 42,
+                        "canonicalId": "buggy_45.sol|StockBet.State",
+                        "containingContract": "StockBet",
+                        "enumMembers": [
+                            {
+                                "name": "SETUP"
+                            },
+                            {
+                                "name": "PRICE_SET"
+                            },
+                            {
+                                "name": "OPEN"
+                            },
+                            {
+                                "name": "CLOSED"
+                            },
+                            {
+                                "name": "PLAYERS_WIN"
+                            },
+                            {
+                                "name": "OWNER_WIN"
+                            }
+                        ],
+                        "enumName": "State",
+                        "type": "UserDefinedEnum"
+                    },
+                    {
+                        "astId": 46,
+                        "canonicalId": "buggy_45.sol|StockBet.PaidStatus",
+                        "containingContract": "StockBet",
+                        "enumMembers": [
+                            {
+                                "name": "UNDEFINED"
+                            },
+                            {
+                                "name": "NOT_PAID"
+                            },
+                            {
+                                "name": "PAID"
+                            }
+                        ],
+                        "enumName": "PaidStatus",
+                        "type": "UserDefinedEnum"
+                    },
+                    {
+                        "astId": 53,
+                        "canonicalId": "buggy_45.sol|StockBet.Guess",
+                        "containingContract": "StockBet",
+                        "structMembers": [
+                            {
+                                "name": "players",
+                                "type": {
+                                    "mappingKeyType": {
+                                        "primitiveName": "address",
+                                        "type": "Primitive"
+                                    },
+                                    "mappingValueType": {
+                                        "astId": 46,
+                                        "canonicalId": "buggy_45.sol|StockBet.PaidStatus",
+                                        "containingContract": "StockBet",
+                                        "enumMembers": [
+                                            {
+                                                "name": "UNDEFINED"
+                                            },
+                                            {
+                                                "name": "NOT_PAID"
+                                            },
+                                            {
+                                                "name": "PAID"
+                                            }
+                                        ],
+                                        "enumName": "PaidStatus",
+                                        "type": "UserDefinedEnum"
+                                    },
+                                    "type": "Mapping"
+                                }
+                            },
+                            {
+                                "name": "guesses_number",
+                                "type": {
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                }
+                            }
+                        ],
+                        "structName": "Guess",
+                        "type": "UserDefinedStruct"
+                    }
+                ],
+                "sourceBytes": {
+                    "begin": 94,
+                    "size": 3715
+                },
+                "srcmap": "94:6664:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;798:18;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;864:27;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;758:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;844:18;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;6409:346;;;:::i;:::-;;3787:289;;;:::i;:::-;;2800:134;;;;;;;;;;;;;:::i;:::-;;1629:175;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;715:21;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;685:28;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;2193:220;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;893:25;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;3224:273;;;:::i;:::-;;4366:693;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;738:18;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;5447:316;;;;;;;;;;;;;:::i;:::-;;798:18;;;;:::o;864:27::-;;;;:::o;758:38::-;;;;;;;;;;;;;;;;;;;;;;:::o;844:18::-;;;;:::o;6409:346::-;6537:13;6469:66;6462:89;6627:1;6559:66;6552:77;6705:1;6637:66;6630:77;6724:10;6716:28;;:37;6745:7;6716:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6409:346::o;3787:289::-;4188:13;4120:66;4113:89;4278:1;4210:66;4203:77;4356:1;4288:66;4281:77;1078:6:::1;;;;;;;;;;;1064:20;;:10;:20;;;;1056:29;;;::::0;::::1;;3852:10:::2;1343:8;1334:17;;;;;;;;:5;;;;;;;;;;;:17;;;;;;;;;1326:26;;;::::0;::::2;;3899:11:::3;3895:3;;:15;3881:9;:30;3873:39;;;::::0;::::3;;3923:7;:13;963:1:::0;3923:13:::3;;;;;;;;;;;:28;;;:30;;;;;;;;;;;;;3999:19;3963:7;:13;963:1:::0;3963:13:::3;;;;;;;;;;;:21;;:33;3985:10;3963:33;;;;;;;;;;;;;;;;:55;;;;;;;;;;;;;;;;;;;;;;;;4042:27;4052:10;963:1;4042:27;;;;;;;;;;;;;;;;;;;;;;;;;;1095:1:::2;3787:289::o:0;2800:134::-;3046:13;2978:66;2971:89;3136:1;3068:66;3061:77;3214:1;3146:66;3139:77;1163:5:::1;::::0;::::1;;;;;;;;1149:19;;:10;:19;;;1141:28;;;::::0;::::1;;2858:10:::2;1343:8;1334:17;;;;;;;;:5;;;;;;;;;;;:17;;;;;;;;;1326:26;;;::::0;::::2;;2887:12:::3;2879:5;;:20;;;;;;;;;;;;;;;;;;;;;;;;2915:12;;;;;;;;;;1179:1:::2;2800:134::o:0;1629:175::-;1693:7;1931:13;1863:66;1856:89;2021:1;1953:66;1946:77;2099:1;2031:66;2024:77;2177:7;2109:66;2102:83;1163:5:::1;::::0;::::1;;;;;;;;1149:19;;:10;:19;;;1141:28;;;::::0;::::1;;1717:11:::2;1343:8;1334:17;;;;;;;;:5;;;;;;;;;;;:17;;;;;;;;;1326:26;;;::::0;::::2;;1749:7:::3;1740:6;;:16;;;;;;;;;;;;;;;;;;1780:17;1790:6;;;;;;;;;;;1780:17;;;;;;;;;;;;;;;;;;;;1179:1:::2;1629:175:::0;;:::o;715:21::-;;;;;;;;;;;;;:::o;685:28::-;;;;;;;;;;;;:::o;2193:220::-;2262:6;2539:13;2471:66;2464:89;2629:1;2561:66;2554:77;2707:1;2639:66;2632:77;2785:6;2717:66;2710:82;1248:6:::1;;;;;;;;;;;1234:20;;:10;:20;;;1226:29;;;::::0;::::1;;2286:11:::2;1343:8;1334:17;;;;;;;;:5;;;;;;;;;;;:17;;;;;;;;;1326:26;;;::::0;::::2;;2324:6:::3;2309:12;:21;;;;2348:10;2340:5;;:18;;;;;;;;;;;;;;;;;;;;;;;;2382:24;2393:12;;2382:24;;;;;;;;;;;;;;;;;;1265:1:::2;2193:220:::0;;:::o;893:25::-;;;;:::o;3224:273::-;3609:13;3541:66;3534:89;3699:1;3631:66;3624:77;3777:1;3709:66;3702:77;1078:6:::1;;;;;;;;;;;1064:20;;:10;:20;;;;1056:29;;;::::0;::::1;;3287:10:::2;1343:8;1334:17;;;;;;;;:5;;;;;;;;;;;:17;;;;;;;;;1326:26;;;::::0;::::2;;3334:11:::3;3330:3;;:15;3316:9;:30;3308:39;;;::::0;::::3;;3358:7;:11;939:1;3358:11;;;;;;;;;;;:26;;;:28;;;;;;;;;;;;;3430:19;3396:7;:11;939:1;3396:11;;;;;;;;;;;:19;;:31;3416:10;3396:31;;;;;;;;;;;;;;;;:53;;;;;;;;;;;;;;;;;;;;;;;;3465:25;3475:10;939:1;3465:25;;;;;;;;;;;;;;;;;;;;;;;;;;1095:1:::2;3224:273::o:0;4366:693::-;4433:6;5185:13;5117:66;5110:89;5275:1;5207:66;5200:77;5353:1;5285:66;5278:77;5431:6;5363:66;5356:82;1248:6:::1;;;;;;;;;;;1234:20;;:10;:20;;;1226:29;;;::::0;::::1;;4457:12:::2;1343:8;1334:17;;;;;;;;:5;;;;;;;;;;;:17;;;;;;;;;1326:26;;;::::0;::::2;;4547:6:::3;4534:10;:19;;;;4577:25;4591:10;;4577:25;;;;;;;;;;;;;;;;;;4637:12;;4624:10;;:25;4621:107;;;939:1;4664:6;:11;;;;4621:107;;;963:1;4704:6;:13;;;;4621:107;4791:1;4758:7;:15;4766:6;;4758:15;;;;;;;;;;;:30;;;:34;4755:298;;;4815:17;4807:5;;:25;;;;;;;;;;;;;;;;;;;;;;;;4874:7;:15;4882:6;;4874:15;;;;;;;;;;;:30;;;4861:12;:10;:12::i;:::-;:43;;;;;;4846:12;:58;;;;4923:32;4934:6;;4942:12;;4923:32;;;;;;;;;;;;;;;;;;;;;;;;4755:298;;;4992:15;4984:5;;:23;;;;;;;;;;;;;;;;;;;;;;;;5026:16;5036:5;::::0;::::3;;;;;;;;5026:16;;;;;;;;;;;;;;;;;;;;4755:298;1265:1:::2;4366:693:::0;;:::o;738:18::-;;;;;;;;;;;;;:::o;5447:316::-;5875:13;5807:66;5800:89;5965:1;5897:66;5890:77;6043:1;5975:66;5968:77;1078:6:::1;;;;;;;;;;;1064:20;;:10;:20;;;;1056:29;;;::::0;::::1;;5518:17:::2;1343:8;1334:17;;;;;;;;:5;;;;;;;;;;;:17;;;;;;;;;1326:26;;;::::0;::::2;;5588:19:::3;5549:58;;;;;;;;:7;:15;5557:6;;5549:15;;;;;;;;;;;:23;;:35;5573:10;5549:35;;;;;;;;;;;;;;;;;;;;;;;;;:58;;;;;;;;;5546:210;;;5660:15;5622:7:::0;:15:::3;5630:6;;5622:15;;;;;;;;;;;:23;;:35;5646:10;5622:35;;;;;;;;;;;;;;;;:53;;;;;;;;;;;;;;;;;;;;;;;;5697:10;5689:28;;:42;5718:12;;5689:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;::::3;;;;;;5546:210;;;5748:8;::::0;::::3;5546:210;1095:1:::2;5447:316::o:0;6053:355::-;6097:7;6192:13;6124:66;6117:89;6282:1;6214:66;6207:77;6360:1;6292:66;6285:77;6380:21;6373:28;;6053:355;:::o",
+                "storageLayout": {
+                    "storage": [
+                        {
+                            "astId": 55,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_50_31_000315df96/.certora_sources/buggy_45.sol:StockBet",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "owner",
+                            "offset": 0,
+                            "slot": "0",
+                            "type": "t_address_payable"
+                        },
+                        {
+                            "astId": 57,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_50_31_000315df96/.certora_sources/buggy_45.sol:StockBet",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "20",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "address",
+                                "type": "Primitive"
+                            },
+                            "label": "oracle",
+                            "offset": 0,
+                            "slot": "1",
+                            "type": "t_address"
+                        },
+                        {
+                            "astId": 59,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_50_31_000315df96/.certora_sources/buggy_45.sol:StockBet",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "1",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "astId": 42,
+                                "canonicalId": "buggy_45.sol|StockBet.State",
+                                "containingContract": "StockBet",
+                                "enumMembers": [
+                                    {
+                                        "name": "SETUP"
+                                    },
+                                    {
+                                        "name": "PRICE_SET"
+                                    },
+                                    {
+                                        "name": "OPEN"
+                                    },
+                                    {
+                                        "name": "CLOSED"
+                                    },
+                                    {
+                                        "name": "PLAYERS_WIN"
+                                    },
+                                    {
+                                        "name": "OWNER_WIN"
+                                    }
+                                ],
+                                "enumName": "State",
+                                "type": "UserDefinedEnum"
+                            },
+                            "label": "state",
+                            "offset": 20,
+                            "slot": "1",
+                            "type": "t_enum(State)42"
+                        },
+                        {
+                            "astId": 63,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_50_31_000315df96/.certora_sources/buggy_45.sol:StockBet",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "mappingKeyType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "32",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "primitiveName": "uint256",
+                                    "type": "Primitive"
+                                },
+                                "mappingValueType": {
+                                    "annotations": [
+                                        {
+                                            "numberOfBytes": "64",
+                                            "type": "StorageAnnotation"
+                                        }
+                                    ],
+                                    "astId": 53,
+                                    "canonicalId": "buggy_45.sol|StockBet.Guess",
+                                    "containingContract": "StockBet",
+                                    "structMembers": [
+                                        {
+                                            "name": "players",
+                                            "type": {
+                                                "annotations": [
+                                                    {
+                                                        "numberOfBytes": "32",
+                                                        "offset": 0,
+                                                        "slot": "0",
+                                                        "type": "StorageAnnotation"
+                                                    }
+                                                ],
+                                                "mappingKeyType": {
+                                                    "annotations": [
+                                                        {
+                                                            "numberOfBytes": "20",
+                                                            "type": "StorageAnnotation"
+                                                        }
+                                                    ],
+                                                    "primitiveName": "address",
+                                                    "type": "Primitive"
+                                                },
+                                                "mappingValueType": {
+                                                    "annotations": [
+                                                        {
+                                                            "numberOfBytes": "1",
+                                                            "type": "StorageAnnotation"
+                                                        }
+                                                    ],
+                                                    "astId": 46,
+                                                    "canonicalId": "buggy_45.sol|StockBet.PaidStatus",
+                                                    "containingContract": "StockBet",
+                                                    "enumMembers": [
+                                                        {
+                                                            "name": "UNDEFINED"
+                                                        },
+                                                        {
+                                                            "name": "NOT_PAID"
+                                                        },
+                                                        {
+                                                            "name": "PAID"
+                                                        }
+                                                    ],
+                                                    "enumName": "PaidStatus",
+                                                    "type": "UserDefinedEnum"
+                                                },
+                                                "type": "Mapping"
+                                            }
+                                        },
+                                        {
+                                            "name": "guesses_number",
+                                            "type": {
+                                                "annotations": [
+                                                    {
+                                                        "numberOfBytes": "32",
+                                                        "offset": 0,
+                                                        "slot": "1",
+                                                        "type": "StorageAnnotation"
+                                                    }
+                                                ],
+                                                "primitiveName": "uint256",
+                                                "type": "Primitive"
+                                            }
+                                        }
+                                    ],
+                                    "structName": "Guess",
+                                    "type": "UserDefinedStruct"
+                                },
+                                "type": "Mapping"
+                            },
+                            "label": "guesses",
+                            "offset": 0,
+                            "slot": "2",
+                            "type": "t_mapping(t_uint256,t_struct(Guess)53_storage)"
+                        },
+                        {
+                            "astId": 65,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_50_31_000315df96/.certora_sources/buggy_45.sol:StockBet",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "bet",
+                            "offset": 0,
+                            "slot": "3",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 67,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_50_31_000315df96/.certora_sources/buggy_45.sol:StockBet",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "splitJackpot",
+                            "offset": 0,
+                            "slot": "4",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 69,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_50_31_000315df96/.certora_sources/buggy_45.sol:StockBet",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "result",
+                            "offset": 0,
+                            "slot": "5",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 71,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_50_31_000315df96/.certora_sources/buggy_45.sol:StockBet",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "initialPrice",
+                            "offset": 0,
+                            "slot": "6",
+                            "type": "t_uint256"
+                        },
+                        {
+                            "astId": 73,
+                            "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_50_31_000315df96/.certora_sources/buggy_45.sol:StockBet",
+                            "descriptor": {
+                                "annotations": [
+                                    {
+                                        "numberOfBytes": "32",
+                                        "type": "StorageAnnotation"
+                                    }
+                                ],
+                                "primitiveName": "uint256",
+                                "type": "Primitive"
+                            },
+                            "label": "finalPrice",
+                            "offset": 0,
+                            "slot": "7",
+                            "type": "t_uint256"
+                        }
+                    ],
+                    "types": {
+                        "t_address": {
+                            "encoding": "inplace",
+                            "label": "address",
+                            "numberOfBytes": "20"
+                        },
+                        "t_address_payable": {
+                            "encoding": "inplace",
+                            "label": "address payable",
+                            "numberOfBytes": "20"
+                        },
+                        "t_enum(PaidStatus)46": {
+                            "encoding": "inplace",
+                            "label": "enum StockBet.PaidStatus",
+                            "numberOfBytes": "1"
+                        },
+                        "t_enum(State)42": {
+                            "encoding": "inplace",
+                            "label": "enum StockBet.State",
+                            "numberOfBytes": "1"
+                        },
+                        "t_mapping(t_address,t_enum(PaidStatus)46)": {
+                            "encoding": "mapping",
+                            "key": "t_address",
+                            "label": "mapping(address => enum StockBet.PaidStatus)",
+                            "numberOfBytes": "32",
+                            "value": "t_enum(PaidStatus)46"
+                        },
+                        "t_mapping(t_uint256,t_struct(Guess)53_storage)": {
+                            "encoding": "mapping",
+                            "key": "t_uint256",
+                            "label": "mapping(uint256 => struct StockBet.Guess)",
+                            "numberOfBytes": "32",
+                            "value": "t_struct(Guess)53_storage"
+                        },
+                        "t_struct(Guess)53_storage": {
+                            "encoding": "inplace",
+                            "label": "struct StockBet.Guess",
+                            "members": [
+                                {
+                                    "astId": 50,
+                                    "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_50_31_000315df96/.certora_sources/buggy_45.sol:StockBet",
+                                    "label": "players",
+                                    "offset": 0,
+                                    "slot": "0",
+                                    "type": "t_mapping(t_address,t_enum(PaidStatus)46)"
+                                },
+                                {
+                                    "astId": 52,
+                                    "contract": "/root/solc-verify-spec/experiments/dataset3/Unchecked-Send/.certora_internal/26_02_24_09_50_31_000315df96/.certora_sources/buggy_45.sol:StockBet",
+                                    "label": "guesses_number",
+                                    "offset": 0,
+                                    "slot": "1",
+                                    "type": "t_uint256"
+                                }
+                            ],
+                            "numberOfBytes": "64"
+                        },
+                        "t_uint256": {
+                            "encoding": "inplace",
+                            "label": "uint256",
+                            "numberOfBytes": "32"
+                        }
+                    }
+                },
+                "transientStorageLayout": null,
+                "varmap": ""
+            }
+        ],
+        "legacyStructLinking": {},
+        "library_addresses": [],
+        "origSourceDir": ".pre_autofinders.0",
+        "primary_contract": "StockBet",
+        "primary_contract_address": "00000000ce4604a0000000000000000000000001",
+        "prototypeFor": [],
+        "sdc_name": "buggy_45.sol_0",
+        "sourceDir": ".post_autofinders.0",
+        "srclist": {
+            "0": "buggy_45.sol"
+        },
+        "state": {},
+        "structLinkingInfo": {}
+    }
+}

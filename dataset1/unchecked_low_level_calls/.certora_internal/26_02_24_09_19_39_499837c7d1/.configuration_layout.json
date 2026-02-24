@@ -1,0 +1,78 @@
+[
+    {
+        "card_title": "general",
+        "content_type": "COMPLEX",
+        "content": [
+            {
+                "inner_title": "CLI Version",
+                "content_type": "FLAG",
+                "content": "8.8.0",
+                "doc_link": "",
+                "tooltip": "",
+                "unsound": false
+            },
+            {
+                "inner_title": "branch",
+                "content_type": "FLAG",
+                "content": "main",
+                "doc_link": "",
+                "tooltip": "",
+                "unsound": false
+            },
+            {
+                "inner_title": "dirty",
+                "content_type": "FLAG",
+                "content": "true",
+                "doc_link": "",
+                "tooltip": "",
+                "unsound": false
+            },
+            {
+                "inner_title": "origin",
+                "content_type": "FLAG",
+                "content": "https://github.com/VuVietDung-bk/solc-verify-spec-experiment-set.git",
+                "doc_link": "",
+                "tooltip": "",
+                "unsound": false
+            },
+            {
+                "inner_title": "revision",
+                "content_type": "FLAG",
+                "content": "e34b72a60d68d4775c255d661ac757d1d11346bb",
+                "doc_link": "",
+                "tooltip": "",
+                "unsound": false
+            }
+        ]
+    },
+    {
+        "card_title": "files",
+        "content_type": "SIMPLE",
+        "content": [
+            {
+                "inner_title": "files",
+                "content_type": "SIMPLE",
+                "content": [
+                    "0x610495793564aed0f9c7fc48dc4c7c9151d34fd6.sol:SimpleWallet"
+                ],
+                "doc_link": "https://docs.certora.com/en/latest/docs/prover/cli/options.html#files",
+                "tooltip": "",
+                "unsound": false
+            }
+        ]
+    },
+    {
+        "card_title": "options",
+        "content_type": "COMPLEX",
+        "content": [
+            {
+                "inner_title": "verify",
+                "content_type": "FLAG",
+                "content": "SimpleWallet:certora_specification/0x610495793564aed0f9c7fc48dc4c7c9151d34fd6.cvl",
+                "doc_link": "https://docs.certora.com/en/latest/docs/prover/cli/options.html#verify",
+                "tooltip": "",
+                "unsound": false
+            }
+        ]
+    }
+]
