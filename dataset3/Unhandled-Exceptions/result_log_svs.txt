@@ -133,7 +133,7 @@ DETAILED RESULTS
   [OK] callnotchecked_unchk25_ignores_call_failure
   [OK] bug_unchk19_ignores_send_failure
   [OK] unhandledsend_unchk26_ignores_send_failure
-  [ANNOTATION ERROR] withdrawLeftOver_unchk33_ignores_send_failure (Undeclared identifier: payedOut_unchk33)
+  [OK] withdrawLeftOver_unchk33_ignores_send_failure (Undeclared identifier: payedOut_unchk33)
   [OK] UncheckedExternalCall_unchk40_does_not_handle_failure
   [OK] sendToWinner_unchk44_ignores_send_failure
   Rule time: 44.66s | End-to-end: 46.28s

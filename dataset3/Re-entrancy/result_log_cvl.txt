@@ -7,108 +7,51 @@ SUMMARY TABLE
 ==============================================================================
 #  | Spec File                  | Contract                        | Rules | Result
 ---|----------------------------|---------------------------------|-------|-------
-1  | buggy_1.cvl                | HotDollarsToken                 |   7   | FAIL
-2  | buggy_5.cvl                | TTC                             |  12   | FAIL
-3  | buggy_19.cvl               | ethBank                         |  12   | FAIL
-4  | buggy_20.cvl               | RampInstantEthPool              |   -   | ERROR
-5  | buggy_23.cvl               | AGR                             |   2   | FAIL
-6  | buggy_33.cvl               | Staking                         |   3   | FAIL
-7  | buggy_34.cvl               | LollypopToken                   |   3   | FAIL
-8  | buggy_45.cvl               | StockBet                        |   5   | FAIL
-9  | buggy_47.cvl               | AcunarIEO                       |   -   | ERROR
-10 | buggy_50.cvl               | digitalNotary                   |   3   | FAIL
-11 | buggy_1_hot_dollars_token.cvl | HotDollarsToken              |   2   | FAIL
-12 | buggy_19_eth_bank.cvl      | ethBank                         |   8   | FAIL
-13 | buggy_19_owned.cvl         | owned                           |   3   | FAIL
-14 | buggy_20_ent11.cvl         | RampInstantPool                 |   -   | ERROR
-15 | buggy_20_ent17.cvl         | Ownable                         |   1   | FAIL
-16 | buggy_20_ent25.cvl         | RampInstantEscrowsPoolInterface |   -   | ERROR
-17 | buggy_20_ent3.cvl          | Stoppable                       |   1   | FAIL
-18 | buggy_34_lollypop_token.cvl| LollypopToken                   |   2   | FAIL
-19 | buggy_34_ownable.cvl       | Ownable                         |   1   | FAIL
-20 | buggy_47_acunar_token.cvl  | AcunarToken                     |   -   | ERROR
-21 | buggy_5_ownable.cvl        | Ownable                         |   4   | FAIL
-22 | buggy_5_token_erc20.cvl    | TokenERC20                      |   5   | FAIL
-23 | buggy_5_ttc.cvl            | TTC                             |   3   | FAIL
+1  | buggy_23.cvl               | AGR                             |   2   | FAIL
+2  | buggy_33.cvl               | Staking                         |   3   | FAIL
+3  | buggy_45.cvl               | StockBet                        |   5   | FAIL
+4  | buggy_50.cvl               | digitalNotary                   |   3   | FAIL
+5  | buggy_1_hot_dollars_token.cvl | HotDollarsToken              |   2   | FAIL
+6  | buggy_19_eth_bank.cvl      | ethBank                         |   8   | FAIL
+7  | buggy_19_owned.cvl         | owned                           |   3   | FAIL
+8  | buggy_20_ent11.cvl         | RampInstantPool                 |   -   | ERROR
+9  | buggy_20_ent17.cvl         | Ownable                         |   1   | FAIL
+10 | buggy_20_ent25.cvl         | RampInstantEscrowsPoolInterface |   -   | ERROR
+11 | buggy_20_ent3.cvl          | Stoppable                       |   1   | FAIL
+12 | buggy_34_lollypop_token.cvl| LollypopToken                   |   2   | FAIL
+13 | buggy_34_ownable.cvl       | Ownable                         |   1   | FAIL
+14 | buggy_47_acunar_token.cvl  | AcunarToken                     |   -   | ERROR
+15 | buggy_5_ownable.cvl        | Ownable                         |   4   | FAIL
+16 | buggy_5_token_erc20.cvl    | TokenERC20                      |   5   | FAIL
+17 | buggy_5_ttc.cvl            | TTC                             |   3   | FAIL
 ==============================================================================
 
 OVERALL STATISTICS
 ==============================================================================
-Total specs: 23
-Total rules: 77
+Total specs: 17
+Total rules: 43
 PASS:         0  (0.00%)
-FAIL:        18  (78.26%)
-ERROR:        5  (21.74%)
+FAIL:        13  (76.47%)
+ERROR:        3  (17.65%)
 ==============================================================================
 
 DETAILED RESULTS
 ==============================================================================
 
---- 1. buggy_1.cvl (HotDollarsToken) --- FAIL
-  [ERROR] bug_re_ent13_nonreentrant              (contract must not send more than 1 ether)
-  [ERROR] buyTicket_re_ent23_nonreentrant        (contract must send to previous player before current player)
-  [ERROR] callme_re_ent7_nonreentrant            (contract must not send more than 10 ether)
-  [ERROR] claimReward_re_ent32_nonreentrant      (contract must not send more than recorded amount)
-  [ERROR] withdrawBalance_re_ent26_nonreentrant  (contract must not send more than user balance)
-  [ERROR] withdrawFunds_re_ent31_nonreentrant    (contract must not send more than requested amount)
-  [ERROR] withdraw_balances_re_ent8_nonreentrant (user balance must be zeroed after withdrawal)
-  Time: 28s
-  Link: https://prover.certora.com/output/1696952/4c0433cd816240d0a5a2c8d7678ddb28
 
---- 2. buggy_5.cvl (TTC) --- FAIL
-  [ERROR] bug_re_ent13_nonreentrant               (contract must not send more than 1 ether)
-  [ERROR] bug_re_ent41_nonreentrant               (contract must not send more than 1 ether)
-  [ERROR] buyTicket_re_ent2_nonreentrant          (contract must send to previous player before current player)
-  [ERROR] buyTicket_re_ent9_nonreentrant          (contract must send to previous player before current player)
-  [ERROR] callme_re_ent42_nonreentrant            (contract must not send more than 10 ether)
-  [ERROR] claimReward_re_ent25_nonreentrant       (contract must not send more than recorded amount)
-  [ERROR] withdrawBalance_re_ent12_nonreentrant   (contract must not send more than recorded amount)
-  [ERROR] withdrawBalance_re_ent40_nonreentrant   (contract must not send more than recorded amount)
-  [ERROR] withdrawFunds_re_ent17_nonreentrant     (contract must not send more than requested amount)
-  [ERROR] withdrawFunds_re_ent31_nonreentrant     (contract must not send more than requested amount)
-  [ERROR] withdraw_balances_re_ent21_nonreentrant (stored balance must be cleared after withdrawal)
-  [ERROR] withdraw_balances_re_ent36_nonreentrant (stored balance must be cleared after withdrawal)
-  Time: 35s
-  Link: https://prover.certora.com/output/1696952/d6777c3083d74f1eb533af0e5420bd88
-
---- 3. buggy_19.cvl (ethBank) --- FAIL
-  [ERROR] bug_re_ent13_nonreentrant               (contract must not send more than 1 ether)
-  [ERROR] bug_re_ent41_nonreentrant               (contract must not send more than 1 ether)
-  [ERROR] buyTicket_re_ent2_nonreentrant          (contract must send to previous player before current player)
-  [ERROR] buyTicket_re_ent9_nonreentrant          (contract must send to previous player before current player)
-  [ERROR] callme_re_ent42_nonreentrant            (contract must not send more than 10 ether)
-  [ERROR] claimReward_re_ent25_nonreentrant       (contract must not send more than recorded amount)
-  [ERROR] withdrawBalance_re_ent19_nonreentrant   (contract must not send more than recorded amount)
-  [ERROR] withdrawBalance_re_ent26_nonreentrant   (contract must not send more than recorded amount)
-  [ERROR] withdrawFunds_re_ent17_nonreentrant     (contract must not send more than requested amount)
-  [ERROR] withdrawFunds_re_ent13_nonreentrant     (contract must not send more than requested amount)
-  [ERROR] withdraw_balances_re_ent1_nonreentrant  (stored balance must be cleared after withdrawal)
-  [ERROR] withdraw_balances_re_ent36_nonreentrant (stored balance must be cleared after withdrawal)
-  Time: 35s
-  Link: https://prover.certora.com/output/1696952/ac087ad9b7c74605b286fc3b0226433e
-
---- 4. buggy_20.cvl (RampInstantEthPool) --- ERROR
-  [COMPILATION ERROR] CVL typecheck failed - internal function and storage variable not accessible
-
---- 5. buggy_23.cvl (AGR) --- FAIL
+--- 1. buggy_23.cvl (AGR) --- FAIL
   [ERROR] claimReward_re_ent25_nonreentrant   (contract must not send more than recorded amount)
   [ERROR] withdrawFunds_re_ent17_nonreentrant (contract must not send more than requested amount)
   Time: 28s
   Link: https://prover.certora.com/output/1696952/98ed19879ab54095b4b4d73b4fcfc929
 
---- 6. buggy_33.cvl (Staking) --- FAIL
+
+--- 2. buggy_33.cvl (Staking) --- FAIL
   [ERROR] claimReward_re_ent32_nonreentrant   (contract must not send more than recorded amount)
   [ERROR] withdrawFunds_re_ent17_nonreentrant (contract must not send more than requested amount)
   [ERROR] withdrawFunds_re_ent38_nonreentrant (contract must not send more than requested amount)
   Time: 27s
   Link: https://prover.certora.com/output/1696952/6446f24f9ce64278b71d50939050788b
-
---- 7. buggy_34.cvl (LollypopToken) --- FAIL
-  [ERROR] claimReward_re_ent11_nonreentrant   (contract must not send more than recorded amount)
-  [ERROR] withdrawFunds_re_ent10_nonreentrant (contract must not send more than requested amount)
-  [ERROR] withdrawFunds_re_ent17_nonreentrant (contract must not send more than requested amount)
-  Time: 37s
-  Link: https://prover.certora.com/output/1696952/16833162a7e44b94ba77dfd9c5ab670f
 
 --- 8. buggy_45.cvl (StockBet) --- FAIL
   [ERROR] claimReward_re_ent25_nonreentrant   (contract must not send more than recorded amount)
@@ -119,23 +62,20 @@ DETAILED RESULTS
   Time: 29s
   Link: https://prover.certora.com/output/1696952/026fd6c964ab4b07a1cc43716601fdd6
 
---- 9. buggy_47.cvl (AcunarIEO) --- ERROR
-  [COMPILATION ERROR] Compiler warning - unnamed return variable
-
---- 10. buggy_50.cvl (digitalNotary) --- FAIL
+--- 4. buggy_50.cvl (digitalNotary) --- FAIL
   [ERROR] claimReward_re_ent25_nonreentrant   (contract must not send more than recorded amount)
   [ERROR] withdrawFunds_re_ent17_nonreentrant (contract must not send more than requested amount)
   [ERROR] withdrawFunds_re_ent31_nonreentrant (contract must not send more than requested amount)
   Time: 26s
   Link: https://prover.certora.com/output/1696952/1a4ff03515a94ad88514ad25e94dec99
 
---- 11. buggy_1_hot_dollars_token.cvl (HotDollarsToken) --- FAIL
+--- 5. buggy_1_hot_dollars_token.cvl (HotDollarsToken) --- FAIL
   [ERROR] claimReward_re_ent32_nonreentrant   (contract must not send more than recorded amount)
   [ERROR] withdrawBalance_re_ent26_nonreentrant (contract must not send more than user balance)
   Time: 23s
   Link: https://prover.certora.com/output/1696952/989cf8eb632746329793eefecb76f405
 
---- 12. buggy_19_eth_bank.cvl (ethBank) --- FAIL
+--- 6. buggy_19_eth_bank.cvl (ethBank) --- FAIL
   [ERROR] bug_re_ent13_nonreentrant           (contract must not send more than 1 ether)
   [ERROR] buyTicket_re_ent2_nonreentrant      (contract must send to previous player before current player)
   [ERROR] buyTicket_re_ent9_nonreentrant      (contract must send to previous player before current player)
@@ -147,44 +87,44 @@ DETAILED RESULTS
   Time: 34s
   Link: https://prover.certora.com/output/1696952/8591b7acf5ba488aaff3c440c7dc9390
 
---- 13. buggy_19_owned.cvl (owned) --- FAIL
+--- 7. buggy_19_owned.cvl (owned) --- FAIL
   [ERROR] bug_re_ent41_nonreentrant           (contract must not send more than 1 ether)
   [ERROR] callme_re_ent42_nonreentrant        (contract must not send more than 10 ether)
   [ERROR] withdraw_balances_re_ent1_nonreentrant (stored balance must be cleared after withdrawal)
   Time: 17s
   Link: https://prover.certora.com/output/1696952/2f1dcf312c8444c59554cd4b2195a65a
 
---- 14. buggy_20_ent11.cvl (RampInstantPool) --- ERROR
+--- 8. buggy_20_ent11.cvl (RampInstantPool) --- ERROR
   [COMPILATION ERROR] Contract RampInstantPool has no bytecode - contract is abstract. Certora Prover cannot handle abstract contracts.
 
---- 15. buggy_20_ent17.cvl (Ownable) --- FAIL
+--- 9. buggy_20_ent17.cvl (Ownable) --- FAIL
   [ERROR] withdrawFunds_re_ent17_nonreentrant (contract must not send more than requested amount)
   Time: 18s
   Link: https://prover.certora.com/output/1696952/a3cfbfe909f84369927817baeea7ecba
 
---- 16. buggy_20_ent25.cvl (RampInstantEscrowsPoolInterface) --- ERROR
+--- 10. buggy_20_ent25.cvl (RampInstantEscrowsPoolInterface) --- ERROR
   [COMPILATION ERROR] Contract RampInstantEscrowsPoolInterface has no bytecode - contract is abstract. Certora Prover cannot handle abstract contracts.
 
---- 17. buggy_20_ent3.cvl (Stoppable) --- FAIL
+--- 11. buggy_20_ent3.cvl (Stoppable) --- FAIL
   [ERROR] withdrawFunds_re_ent3_nonreentrant (contract must not send more than requested amount)
   Time: 22s
   Link: https://prover.certora.com/output/1696952/e876a851d1524665abbc164101235e2e
 
---- 18. buggy_34_lollypop_token.cvl (LollypopToken) --- FAIL
+--- 12. buggy_34_lollypop_token.cvl (LollypopToken) --- FAIL
   [ERROR] claimReward_re_ent11_nonreentrant   (contract must not send more than recorded amount)
   [ERROR] withdrawFunds_re_ent10_nonreentrant (contract must not send more than requested amount)
   Time: 33s
   Link: https://prover.certora.com/output/1696952/0e92d7ff324b40a98a3e210115ac40cc
 
---- 19. buggy_34_ownable.cvl (Ownable) --- FAIL
+--- 13. buggy_34_ownable.cvl (Ownable) --- FAIL
   [ERROR] withdrawFunds_re_ent17_nonreentrant (contract must not send more than requested amount)
   Time: 17s
   Link: https://prover.certora.com/output/1696952/d0d0a4a54d70456fa07c749c2b1168b8
 
---- 20. buggy_47_acunar_token.cvl (AcunarToken) --- ERROR
+--- 14. buggy_47_acunar_token.cvl (AcunarToken) --- ERROR
   [COMPILATION ERROR] Severe compiler warning - Unnamed return variable in burn(), transfer(), transferFrom() functions. Certora Prover cannot handle this Solidity pattern.
 
---- 21. buggy_5_ownable.cvl (Ownable) --- FAIL
+--- 15. buggy_5_ownable.cvl (Ownable) --- FAIL
   [ERROR] buyTicket_re_ent9_nonreentrant         (contract must send to previous player before current player)
   [ERROR] claimReward_re_ent25_nonreentrant      (contract must not send more than recorded amount)
   [ERROR] withdrawBalance_re_ent40_nonreentrant  (contract must not send more than recorded amount)
@@ -192,7 +132,7 @@ DETAILED RESULTS
   Time: 21s
   Link: https://prover.certora.com/output/1696952/2fd41a94c70d4fffbe122443431fc15e
 
---- 22. buggy_5_token_erc20.cvl (TokenERC20) --- FAIL
+--- 16. buggy_5_token_erc20.cvl (TokenERC20) --- FAIL
   [ERROR] bug_re_ent41_nonreentrant          (contract must not send more than 1 ether)
   [ERROR] buyTicket_re_ent2_nonreentrant     (contract must send to previous player before current player)
   [ERROR] callme_re_ent42_nonreentrant       (contract must not send more than 10 ether)
@@ -201,7 +141,7 @@ DETAILED RESULTS
   Time: 27s
   Link: https://prover.certora.com/output/1696952/197c06f2016943c1a62d90918cd724af
 
---- 23. buggy_5_ttc.cvl (TTC) --- FAIL
+--- 17. buggy_5_ttc.cvl (TTC) --- FAIL
   [ERROR] bug_re_ent13_nonreentrant              (contract must not send more than 1 ether)
   [ERROR] withdrawFunds_re_ent17_nonreentrant    (contract must not send more than requested amount)
   [ERROR] withdraw_balances_re_ent36_nonreentrant (stored balance must be cleared after withdrawal)

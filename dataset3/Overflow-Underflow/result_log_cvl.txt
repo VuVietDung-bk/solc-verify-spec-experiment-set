@@ -28,8 +28,8 @@ OVERALL STATISTICS
 Total specs: 14
 Total rules: 18
 PASS:         0  (0.00%)
-FAIL:        18  (83.33%)
-ERROR:        2  (16.67%)
+FAIL:        12  (85.71%)
+ERROR:        2  (14.29%)
 ==============================================================================
 
 DETAILED RESULTS

@@ -95,6 +95,7 @@ DETAILED RESULTS
   [OK]    envfreeFuncsStaticCheck
   [OK]    increaseAllowanceUpdatesCorrectly
   [ERROR] totalSupplyBounded                   (total supply must be bounded)
+  [ERROR] transferUpdatesBalances          (transfer must not increase sender's balance)
   [ERROR] transferfromUpdatesBalances          (transferfrom must not increase sender balance)
   Time: 51s
   Link: https://prover.certora.com/output/1696952/cb51a422d71d45b7ad61973ef020924d

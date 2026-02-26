@@ -11,11 +11,9 @@ rule depositMintsExpectedShares(address token, uint256 amount) {
     uint256 userBalanceBefore = pools[token].balances[msg.sender];
 
     uint256 expectedShares;
-    if (totalSharesBefore == 0) {
-        expectedShares = amount;
-    } else {
-        expectedShares = (amount * totalSharesBefore) / totalBalanceBefore;
-    }
+
+    require totalSharesBefore > 0; 
+    expectedShares = (amount * totalSharesBefore) / totalBalanceBefore;
 
     deposit(token, amount);
 

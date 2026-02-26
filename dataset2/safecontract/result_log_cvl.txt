@@ -67,7 +67,7 @@ DETAILED RESULTS
   [ERROR] depositMintsExpectedShares    (totalBalanceAfter == totalBalanceBefore + amount)
   [ERROR] withdrawBurnsSharesForAmount  (totalBalanceAfter == totalBalanceBefore - expectedAmount)
   Time: 142s
-  Link: https://prover.certora.com/output/1696952/742841ca5302439c911d91157997c9bd
+  Link: https://prover.certora.com/output/1696952/daf408b6a8a547458fe6422c220a9650
 
 --- 7. Uniswap.cvl (UniswapToken) --- FAIL
   [OK]    approveSetsAllowance

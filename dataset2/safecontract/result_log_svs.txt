@@ -44,7 +44,7 @@ DETAILED RESULTS
   Time: 18.93s / 20.32s
 
 --- 3. SushiSwap.spec (SushiSwap) --- FAIL
-  [ANNOTATION ERROR] depositMintsExpectedShares    (Undeclared identifier: expectedShares)
+  [ERROR] depositMintsExpectedShares    (SushiSwap::deposit postcondition)
   [ERROR] withdrawBurnsSharesForAmount    (SushiSwap::withdraw postcondition)
   Time: 2.97s / 4.08s
 

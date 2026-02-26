@@ -110,8 +110,8 @@ DETAILED RESULTS
 --- buggy_34.spec (LollypopToken) ---
   Command: svspec buggy_34.sol:LollypopToken specification/buggy_34.spec
   Rules: 5
-  [ANNOTATION ERROR] transferUpdatesBalances
-  [ANNOTATION ERROR] transferFromUpdatesBalances
+  [ERROR] transferUpdatesBalances (LollypopToken::transfer)
+  [ERROR] transferFromUpdatesBalances (LollypopToken::transferFrom)
   [ERROR] approveUpdatesAllowance (LollypopToken::transfer, LollypopToken::multiTransfer, LollypopToken::transferFrom)
   [ERROR] increaseAllowanceUpdatesCorrectly (LollypopToken::transfer, LollypopToken::multiTransfer, LollypopToken::transferFrom)
   [ERROR] decreaseAllowanceUpdatesCorrectly (LollypopToken::transfer, LollypopToken::multiTransfer, LollypopToken::transferFrom)

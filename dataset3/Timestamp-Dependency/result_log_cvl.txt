@@ -10,28 +10,26 @@ SUMMARY TABLE
 1  | buggy_1.cvl                 | HotDollarsToken    |   2   | FAIL
 2  | buggy_5.cvl                 | TTC                |   2   | FAIL
 3  | buggy_19.cvl                | ethBank            |   2   | FAIL
-4  | buggy_20.cvl                | RampInstantEthPool |   6   | PASS
-5  | buggy_23.cvl                | AGR                |   5   | FAIL
-6  | buggy_33.cvl                | Staking            |   2   | FAIL
-7  | buggy_34.cvl                | LollypopToken      |   2   | PASS
-8  | buggy_45.cvl                | StockBet           |   4   | FAIL
-9  | buggy_47.cvl                | AcunarIEO          |   -   | ERROR
-10 | buggy_50.cvl                | digitalNotary      |   4   | FAIL
-11 | buggy_20_ethpool.cvl        | RampInstantEthPool |   2   | PASS
-12 | buggy_20_ownable.cvl        | Ownable            |   1   | PASS
-13 | buggy_20_pool.cvl           | RampInstantPool    |   -   | ERROR
-14 | buggy_20_stoppable.cvl      | Stoppable          |   1   | PASS
-15 | buggy_23_erc20.cvl          | ERC20              |   4   | FAIL
-16 | buggy_23_erc20_burnable.cvl | ERC20Burnable      |   1   | PASS
+4  | buggy_33.cvl                | Staking            |   2   | FAIL
+5  | buggy_34.cvl                | LollypopToken      |   2   | PASS
+6  | buggy_45.cvl                | StockBet           |   4   | FAIL
+7  | buggy_47.cvl                | AcunarIEO          |   -   | ERROR
+8  | buggy_50.cvl                | digitalNotary      |   4   | FAIL
+9  | buggy_20_ethpool.cvl        | RampInstantEthPool |   2   | PASS
+10 | buggy_20_ownable.cvl        | Ownable            |   1   | PASS
+11 | buggy_20_pool.cvl           | RampInstantPool    |   -   | ERROR
+12 | buggy_20_stoppable.cvl      | Stoppable          |   1   | PASS
+13 | buggy_23_erc20.cvl          | ERC20              |   4   | FAIL
+14 | buggy_23_erc20_burnable.cvl | ERC20Burnable      |   1   | PASS
 ==============================================================================
 
 OVERALL STATISTICS
 ==============================================================================
-Total specs: 16
-Total rules: 38
-PASS:         6  (37.50%)
-FAIL:         8  (50.00%)
-ERROR:        2  (12.50%)
+Total specs: 14
+Total rules: 27
+PASS:         5  (35.71%)
+FAIL:         7  (50.00%)
+ERROR:        2  (14.29%)
 ==============================================================================
 
 DETAILED RESULTS
@@ -55,38 +53,19 @@ DETAILED RESULTS
   Time: 22s
   Link: https://prover.certora.com/output/1696952/1278c0483eaa4563a5ffcc42fce7018a
 
---- 4. buggy_20.cvl (RampInstantEthPool) --- PASS
-  [OK]    changeOwner_no_timestamp_dependency
-  [OK]    sendFundsToSwap_respects_limits
-  [OK]    sendFundsToSwap_reverts_outside_limits
-  [OK]    setIsActive_no_timestamp_dependency
-  [OK]    setLimits_no_timestamp_dependency
-  [OK]    withdrawAllFunds_no_timestamp_dependency
-  Time: 29s
-  Link: https://prover.certora.com/output/1696952/13e24c25b35745af878cb2e3dd1a8962
-
---- 5. buggy_23.cvl (AGR) --- FAIL
-  [OK]    approve_no_timestamp_dependency
-  [OK]    burn_no_timestamp_dependency
-  [OK]    play_tmstmp19_sets_winner_at_exact_time
-  [OK]    transfer_no_timestamp_dependency
-  [ERROR] play_tmstmp19_no_change_when_time_mismatch  (winner must not change when time does not match)
-  Time: 28s
-  Link: https://prover.certora.com/output/1696952/290440c1d13b4700be07fe2f71fbf8b8
-
---- 6. buggy_33.cvl (Staking) --- FAIL
+--- 4. buggy_33.cvl (Staking) --- FAIL
   [OK]    play_tmstmp23_when_condition_holds
   [ERROR] play_tmstmp23_when_condition_fails  (winner must remain unchanged when condition not met)
   Time: 25s
   Link: https://prover.certora.com/output/1696952/8d6bc7151a7e43f18aab7a73ecce5e36
 
---- 7. buggy_34.cvl (LollypopToken) --- PASS
+--- 5. buggy_34.cvl (LollypopToken) --- PASS
   [OK]    bug_tmstmp28_accepts_same_block_calls
   [OK]    bug_tmstmp9_executes_timestamp_comparison
   Time: 31s
   Link: https://prover.certora.com/output/1696952/b991cacb199244b1ba30517ac2dca7a1
 
---- 8. buggy_45.cvl (StockBet) --- FAIL
+--- 6. buggy_45.cvl (StockBet) --- FAIL
   [OK]    bug_tmstmp13_executes_timestamp_comparison
   [OK]    bug_tmstmp8_accepts_same_block_calls
   [OK]    play_tmstmp27_when_condition_holds
@@ -94,10 +73,10 @@ DETAILED RESULTS
   Time: 25s
   Link: https://prover.certora.com/output/1696952/e32dd60004ff43aa902b8d81e0ca0000
 
---- 9. buggy_47.cvl (AcunarIEO) --- ERROR
+--- 7. buggy_47.cvl (AcunarIEO) --- ERROR
   [COMPILATION ERROR] Compiler warning - unnamed return variable
 
---- 10. buggy_50.cvl (digitalNotary) --- FAIL
+--- 8. buggy_50.cvl (digitalNotary) --- FAIL
   [OK]    bug_tmstmp20_accepts_same_block_calls
   [OK]    bug_tmstmp9_executes_timestamp_comparison
   [OK]    play_tmstmp19_when_condition_holds
@@ -105,26 +84,26 @@ DETAILED RESULTS
   Time: 26s
   Link: https://prover.certora.com/output/1696952/8f38a7ba3db14973879dbd9048f05221
 
---- 11. buggy_20_ethpool.cvl (RampInstantEthPool) --- PASS
+--- 9. buggy_20_ethpool.cvl (RampInstantEthPool) --- PASS
   [OK]    sendFundsToSwap_respects_limits
   [OK]    sendFundsToSwap_reverts_outside_limits
   Time: 27s
   Link: https://prover.certora.com/output/1696952/83a567e3203942e290a5d8c20d8b469d
 
---- 12. buggy_20_ownable.cvl (Ownable) --- PASS
+--- 10. buggy_20_ownable.cvl (Ownable) --- PASS
   [OK]    changeOwner_no_timestamp_dependency
   Time: 20s
   Link: https://prover.certora.com/output/1696952/811eedac5cf94837884ae7af28fad50b
 
---- 13. buggy_20_pool.cvl (RampInstantPool) --- ERROR
+--- 11. buggy_20_pool.cvl (RampInstantPool) --- ERROR
   [COMPILATION ERROR] Contract RampInstantPool has no bytecode - contract is abstract. Certora Prover cannot handle abstract contracts.
 
---- 14. buggy_20_stoppable.cvl (Stoppable) --- PASS
+--- 12. buggy_20_stoppable.cvl (Stoppable) --- PASS
   [OK]    setIsActive_no_timestamp_dependency
   Time: 20s
   Link: https://prover.certora.com/output/1696952/842b3160be104f9dade00ce732284bf2
 
---- 15. buggy_23_erc20.cvl (ERC20) --- FAIL
+--- 13. buggy_23_erc20.cvl (ERC20) --- FAIL
   [OK]    approve_no_timestamp_dependency
   [ERROR] play_tmstmp19_no_change_when_time_mismatch  (winner must not change when time does not match)
   [OK]    play_tmstmp19_sets_winner_at_exact_time
@@ -132,7 +111,7 @@ DETAILED RESULTS
   Time: 23s
   Link: https://prover.certora.com/output/1696952/5b9de64ac6ef4a489ea3d397fa262c49
 
---- 16. buggy_23_erc20_burnable.cvl (ERC20Burnable) --- PASS
+--- 14. buggy_23_erc20_burnable.cvl (ERC20Burnable) --- PASS
   [OK]    burn_no_timestamp_dependency
   Time: 22s
   Link: https://prover.certora.com/output/1696952/9bce2b58f9104c5387e032cc03b94889

@@ -30,11 +30,9 @@ contract SushiSwap {
     /// @notice precondition amount >= 0
     /// @notice precondition amount > 0
     /// @notice precondition pools[token].totalBalance > 0
-    /// @notice precondition (pools[token].totalShares == 0)
-    /// @notice precondition pools[token].totalShares != 0
+    /// @notice precondition pools[token].totalShares > 0
     /// @notice postcondition pools[token].totalBalance == pools[token].totalBalance + amount
     /// @notice postcondition pools[token].balances[msg.sender] == pools[token].balances[msg.sender] + amount
-    /// @notice postcondition pools[token].totalShares == pools[token].totalShares + expectedShares
     /// @notice postcondition pools[token].totalShares == pools[token].totalShares + (amount * pools[token].totalShares) / pools[token].totalBalance
     function deposit(address token, uint256 amount) public {
         require(pools[token].totalBalance > 0, "Invalid pool");
