@@ -1,19 +1,11 @@
 ==============================================================================
-  SVSPEC RESULT LOG - dataset3/Timestamp-Dependency
-  Flag: (none)
-  Date: 2026-02-23
+SOLC-VERIFY-SPEC Results Log — dataset3/Timestamp-Dependency
 ==============================================================================
 
-Spec files: 14
-Total rules: 32
-Total rule verification time: ~140.40s
-Total end-to-end time: ~154.96s
-
-==============================================================================
 SUMMARY TABLE
 ==============================================================================
   # | Spec File                  | Contract            | Rules | Result
-----+----------------------------+---------------------+-------+--------------
+----+----------------------------+---------------------+-------+--------
   1 | buggy_1.spec               | EIP20Interface      |   2   | PASS
   2 | buggy_5.spec               | Ownable             |   2   | PASS
   3 | buggy_19.spec              | owned               |   2   | PASS
@@ -33,125 +25,84 @@ SUMMARY TABLE
 DETAILED RESULTS
 ==============================================================================
 
---- [1] buggy_1.spec (EIP20Interface) ---
-Command: svspec buggy_1.sol:EIP20Interface specification/buggy_1.spec
-Rules: 2
-  1) play_tmstmp39_when_condition_holds -> OK
-  2) play_tmstmp39_when_condition_fails -> OK
-Rule time: 6.19s | End-to-end: 7.21s
+--- 1. buggy_1.spec (EIP20Interface) --- PASS
+  [OK]    play_tmstmp39_when_condition_holds
+  [OK]    play_tmstmp39_when_condition_fails
+  Time: 6.19s / 7.21s
 
---- [2] buggy_5.spec (Ownable) ---
-Command: svspec buggy_5.sol:Ownable specification/buggy_5.spec
-Rules: 2
-  1) play_tmstmp38_when_condition_holds -> OK
-  2) play_tmstmp38_when_condition_fails -> OK
-Rule time: 8.28s | End-to-end: 9.54s
+--- 2. buggy_5.spec (Ownable) --- PASS
+  [OK]    play_tmstmp38_when_condition_holds
+  [OK]    play_tmstmp38_when_condition_fails
+  Time: 8.28s / 9.54s
 
---- [3] buggy_19.spec (owned) ---
-Command: svspec buggy_19.sol:owned specification/buggy_19.spec
-Rules: 2
-  1) play_tmstmp3_when_condition_holds -> OK
-  2) play_tmstmp3_when_condition_fails -> OK
-Rule time: 5.72s | End-to-end: 6.69s
+--- 3. buggy_19.spec (owned) --- PASS
+  [OK]    play_tmstmp3_when_condition_holds
+  [OK]    play_tmstmp3_when_condition_fails
+  Time: 5.72s / 6.69s
 
---- [4] buggy_20_ownable.spec (Ownable) ---
-Command: svspec buggy_20.sol:Ownable specification/buggy_20_ownable.spec
-Rules: 1
-  1) changeOwner_no_timestamp_dependency -> OK
-Rule time: 5.38s | End-to-end: 6.57s
+--- 4. buggy_20_ownable.spec (Ownable) --- PASS
+  [OK]    changeOwner_no_timestamp_dependency
+  Time: 5.38s / 6.57s
 
---- [5] buggy_20_stoppable.spec (Stoppable) ---
-Command: svspec buggy_20.sol:Stoppable specification/buggy_20_stoppable.spec
-Rules: 1
-  1) setIsActive_no_timestamp_dependency -> OK
-Rule time: 5.32s | End-to-end: 6.53s
+--- 5. buggy_20_stoppable.spec (Stoppable) --- PASS
+  [OK]    setIsActive_no_timestamp_dependency
+  Time: 5.32s / 6.53s
 
---- [6] buggy_20_pool.spec (RampInstantPool) ---
-Command: svspec buggy_20.sol:RampInstantPool specification/buggy_20_pool.spec
-Rules: 2
-  1) withdrawAllFunds_no_timestamp_dependency -> OK
-  2) setLimits_no_timestamp_dependency -> OK
-Rule time: 10.69s | End-to-end: 11.95s
+--- 6. buggy_20_pool.spec (RampInstantPool) --- PASS
+  [OK]    withdrawAllFunds_no_timestamp_dependency
+  [OK]    setLimits_no_timestamp_dependency
+  Time: 10.69s / 11.95s
 
---- [7] buggy_20_ethpool.spec (RampInstantEthPool) ---
-Command: svspec buggy_20.sol:RampInstantEthPool specification/buggy_20_ethpool.spec
-Rules: 2
-  1) sendFundsToSwap_respects_limits -> OK
-  2) sendFundsToSwap_reverts_outside_limits -> OK
-Rule time: 10.95s | End-to-end: 12.23s
+--- 7. buggy_20_ethpool.spec (RampInstantEthPool) --- PASS
+  [OK]    sendFundsToSwap_respects_limits
+  [OK]    sendFundsToSwap_reverts_outside_limits
+  Time: 10.95s / 12.23s
 
---- [8] buggy_23_erc20.spec (ERC20) ---
-Command: svspec buggy_23.sol:ERC20 specification/buggy_23_erc20.spec
-Rules: 4
-  1) play_tmstmp19_sets_winner_at_exact_time -> OK
-  2) play_tmstmp19_no_change_when_time_mismatch -> OK
-  3) transfer_no_timestamp_dependency -> OK
-  4) approve_no_timestamp_dependency -> OK
-Rule time: 18.11s | End-to-end: 19.52s
+--- 8. buggy_23_erc20.spec (ERC20) --- PASS
+  [OK]    play_tmstmp19_sets_winner_at_exact_time
+  [OK]    play_tmstmp19_no_change_when_time_mismatch
+  [OK]    transfer_no_timestamp_dependency
+  [OK]    approve_no_timestamp_dependency
+  Time: 18.11s / 19.52s
 
---- [9] buggy_23_erc20_burnable.spec (ERC20Burnable) ---
-Command: svspec buggy_23.sol:ERC20Burnable specification/buggy_23_erc20_burnable.spec
-Rules: 1
-  1) burn_no_timestamp_dependency -> OK
-Rule time: 5.53s | End-to-end: 6.93s
+--- 9. buggy_23_erc20_burnable.spec (ERC20Burnable) --- PASS
+  [OK]    burn_no_timestamp_dependency
+  Time: 5.53s / 6.93s
 
---- [10] buggy_33.spec (Owned) ---
-Command: svspec buggy_33.sol:Owned specification/buggy_33.spec
-Rules: 2
-  1) play_tmstmp23_when_condition_holds -> OK
-  2) play_tmstmp23_when_condition_fails -> OK
-Rule time: 7.85s | End-to-end: 8.98s
+--- 10. buggy_33.spec (Owned) --- PASS
+  [OK]    play_tmstmp23_when_condition_holds
+  [OK]    play_tmstmp23_when_condition_fails
+  Time: 7.85s / 8.98s
 
---- [11] buggy_34.spec (Ownable) ---
-Command: svspec buggy_34.sol:Ownable specification/buggy_34.spec
-Rules: 2
-  1) bug_tmstmp28_accepts_same_block_calls -> OK
-  2) bug_tmstmp9_executes_timestamp_comparison -> OK
-Rule time: 10.71s | End-to-end: 12.07s
+--- 11. buggy_34.spec (Ownable) --- PASS
+  [OK]    bug_tmstmp28_accepts_same_block_calls
+  [OK]    bug_tmstmp9_executes_timestamp_comparison
+  Time: 10.71s / 12.07s
 
---- [12] buggy_45.spec (StockBet) ---
-Command: svspec buggy_45.sol:StockBet specification/buggy_45.spec
-Rules: 4
-  1) play_tmstmp27_when_condition_holds -> OK
-  2) play_tmstmp27_when_condition_fails -> OK
-  3) bug_tmstmp13_executes_timestamp_comparison -> OK
-  4) bug_tmstmp8_accepts_same_block_calls -> OK
-Rule time: 14.90s | End-to-end: 16.12s
+--- 12. buggy_45.spec (StockBet) --- PASS
+  [OK]    play_tmstmp27_when_condition_holds
+  [OK]    play_tmstmp27_when_condition_fails
+  [OK]    bug_tmstmp13_executes_timestamp_comparison
+  [OK]    bug_tmstmp8_accepts_same_block_calls
+  Time: 14.90s / 16.12s
 
---- [13] buggy_47.spec (ERC20Interface) ---
-Command: svspec buggy_47.sol:ERC20Interface specification/buggy_47.spec
-Rules: 4
-  1) play_tmstmp19_when_condition_holds -> OK
-  2) play_tmstmp19_when_condition_fails -> OK
-  3) bug_tmstmp25_executes_timestamp_comparison -> OK
-  4) bug_tmstmp20_accepts_same_block_calls -> OK
-Rule time: 19.34s | End-to-end: 20.60s
-Note: Previously had ANNOTATION ERROR when using AcunarIEO contract.
-Fixed by targeting ERC20Interface contract instead.
+--- 13. buggy_47.spec (ERC20Interface) --- PASS
+  [OK]    play_tmstmp19_when_condition_holds
+  [OK]    play_tmstmp19_when_condition_fails
+  [OK]    bug_tmstmp25_executes_timestamp_comparison
+  [OK]    bug_tmstmp20_accepts_same_block_calls
+  Time: 19.34s / 20.60s
 
---- [14] buggy_50.spec (digitalNotary) ---
-Command: svspec buggy_50.sol:digitalNotary specification/buggy_50.spec
-Rules: 4
-  1) play_tmstmp19_when_condition_holds -> OK
-  2) play_tmstmp19_when_condition_fails -> OK
-  3) bug_tmstmp9_executes_timestamp_comparison -> OK
-  4) bug_tmstmp20_accepts_same_block_calls -> OK
-Rule time: 16.92s | End-to-end: 18.05s
+--- 14. buggy_50.spec (digitalNotary) --- PASS
+  [OK]    play_tmstmp19_when_condition_holds
+  [OK]    play_tmstmp19_when_condition_fails
+  [OK]    bug_tmstmp9_executes_timestamp_comparison
+  [OK]    bug_tmstmp20_accepts_same_block_calls
+  Time: 16.92s / 18.05s
 
 ==============================================================================
 OVERALL STATISTICS
 ==============================================================================
-  Rule-level: 32 rules total
-    - OK:               32 rules (100%)
-    - FAIL:              0 rules (0%)
-    - ANNOTATION ERROR:  0 rules (0%)
-
-  Spec-level: 14 specs total
-    - PASS (all rules OK):   14/14 (100%)
-    - FAIL:                   0/14 (0%)
-    - ANNOTATION ERROR:       0/14 (0%)
-
-  Note: buggy_34 now PASS (was FAIL with LollypopToken due to precondition
-  errors). buggy_47 now PASS (was ANNOTATION ERROR with AcunarIEO, fixed by
-  targeting ERC20Interface). All timestamp-dependency specs pass successfully.
+  PASS: 14/14 (100.00%)
+  FAIL: 0/14 (0.00%)
 ==============================================================================
