@@ -1,31 +1,63 @@
-CERTORA Results Log
-Benchmark: dataset2/unchecked_send
+==============================================================================
+CERTORA Results Log — dataset2/unchecked_send
 Date: 2026-02-12
-Total spec files: 2
+==============================================================================
 
-========================================
-Spec: certora_specification/0xf29ebe930a539a60279ace72c707cba851a57707.cvl
-Contract: 0xf29ebe930a539a60279ace72c707cba851a57707.sol:B
-Rules: 1
-  FAIL:
-    Rule go_unchecked: VIOLATION
-      - nativeBalances[currentContract.owner()] == nativeBalances[currentContract.owner()]@1 + e.msg.value
-Timing:
-  [TIME] Run time: 00:00:18
-Link: https://prover.certora.com/output/1696952/566382aab11e4818be4e68a5a85b27b5
+SUMMARY TABLE
+==============================================================================
+#  | Spec File                                          | Contract        | Rules | Result
+---|----------------------------------------------------|-----------------|-------|-------
+1  | 0xf29ebe930a539a60279ace72c707cba851a57707.cvl    | B               |   1   | FAIL
+2  | 0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.cvl    | WhaleGiveaway2  |   1   | FAIL
+3  | 0xec329ffc97d75fe03428ae155fc7793431487f63.cvl    | TokenSender     |   2   | PASS
+4  | lotto.cvl                                          | Lotto           |   3   | PASS
+5  | mishandled.cvl                                     | SendBack        |   1   | FAIL
+6  | unchecked_return_value.cvl                         | ReturnValue     |   2   | PASS
+==============================================================================
 
-========================================
-Spec: certora_specification/0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.cvl
-Contract: 0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.sol:WhaleGiveaway2
-Rules: 1
-  FAIL:
-    Rule Command_unchecked: VIOLATION
-      - nativeBalances[currentContract] == nativeBalances[currentContract]@1 - e.msg.value
-Timing:
-  [TIME] Run time: 00:00:20
-Link: https://prover.certora.com/output/1696952/66a389f2869348fcbefad46f0174dd85
+OVERALL STATISTICS
+==============================================================================
+Total specs: 6
+Total rules: 10
+PASS:         3  (50.00%)
+FAIL:         3  (50.00%)
+==============================================================================
 
-========================================
-SUMMARY: 2 spec files, 2 rules total
-  0/2 specs passed all rules
-  Total run time: ~00:38
+DETAILED RESULTS
+==============================================================================
+
+--- 1. 0xf29ebe930a539a60279ace72c707cba851a57707.cvl (B) --- FAIL
+  [ERROR] go_unchecked  (nativeBalances[currentContract.owner()] == nativeBalances[currentContract.owner()]@1 + e.msg.value)
+  Time: 18s
+  Link: https://prover.certora.com/output/1696952/566382aab11e4818be4e68a5a85b27b5
+
+--- 2. 0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.cvl (WhaleGiveaway2) --- FAIL
+  [ERROR] Command_unchecked  (nativeBalances[currentContract] == nativeBalances[currentContract]@1 - e.msg.value)
+  Time: 20s
+  Link: https://prover.certora.com/output/1696952/66a389f2869348fcbefad46f0174dd85
+
+--- 3. 0xec329ffc97d75fe03428ae155fc7793431487f63.cvl (TokenSender) --- PASS
+  [OK]    changeOwner_changes_owner
+  [OK]    envfreeFuncsStaticCheck
+  Time: 28s
+  Link: https://prover.certora.com/output/1696952/3198f23543aa4171afc4d083de2760b6
+
+--- 4. lotto.cvl (Lotto) --- PASS
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    sendToWinner_sets_payedOut
+  [OK]    withdrawLeftOver_requires_payedOut
+  Time: 17s
+  Link: https://prover.certora.com/output/1696952/9c06db302f8d4e7b8c604e8daf787751
+
+--- 5. mishandled.cvl (SendBack) --- FAIL
+  [ERROR] withdrawBalance_no_revert  (!(lastReverted))
+  Time: 18s
+  Link: https://prover.certora.com/output/1696952/ffef1b924be74526b28c1dccba5632c9
+
+--- 6. unchecked_return_value.cvl (ReturnValue) --- PASS
+  [OK]    callchecked_reachable
+  [OK]    callnotchecked_reachable
+  Time: 19s
+  Link: https://prover.certora.com/output/1696952/c29906e8a8344cce899aacecfd1bad95
+
+==============================================================================

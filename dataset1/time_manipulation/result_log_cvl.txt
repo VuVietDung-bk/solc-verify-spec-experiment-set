@@ -1,51 +1,47 @@
-CERTORA Results Log
-Benchmark: dataset1/time_manipulation
+==============================================================================
+CERTORA Results Log — dataset1/time_manipulation
 Date: 2026-02-12
-Total spec files: 6
+==============================================================================
 
-========================================
-Spec: certora_specification/HotDollarsToken.cvl
-Contract: HotDollarsToken.sol:HotDollarsToken
-Rules: 1
-  FAIL:
-    Rule bug_tmstmp36_should_not_drain_balance: VIOLATION
-      - balAfter == balBefore + e.msg.value
-Timing:
-  [TIME] Run time: 00:00:25
-Link: https://prover.certora.com/output/1696952/71c455489e354c24844fd916c7c52ffd
+SUMMARY TABLE
+==============================================================================
+#  | Spec File              | Contract        | Rules | Result
+---|------------------------|-----------------|-------|-------
+1  | HotDollarsToken.cvl    | HotDollarsToken |   1   | FAIL
+2  | lottopollo.cvl         | lottopollo      |   2   | FAIL
+3  | roulette.cvl           | Roulette        |   -   | ERROR
+4  | timed_crowdsale.cvl    | TimedCrowdsale  |   1   | FAIL
+==============================================================================
 
-========================================
-Spec: certora_specification/lottopollo.cvl
-Contract: lottopollo.sol:lottopollo
-Rules: 2
-  PASS:
-    Rule draw_should_not_drain_on_timestamp: OK
-      - rule_not_vacuous: OK
-      - sanity check for rule draw_should_not_drain_on_timestamp: OK
-  FAIL:
-    Rule randomGen_should_not_be_timestamp: VIOLATION
-      - r != e.block.timestamp
-Timing:
-  [TIME] Run time: 00:00:19
-Link: https://prover.certora.com/output/1696952/4dea5258dad04adca9df1336b4fa8121
+OVERALL STATISTICS
+==============================================================================
+Total specs:  4
+Total rules:  4
+PASS:         0  (0.00%)
+FAIL:         3  (75.00%)
+ERROR:        1  (25.00%)
+==============================================================================
 
-========================================
-Spec: certora_specification/roulette.cvl
-Contract: roulette.sol:Roulette
-Status: ERROR
-Note: CVL typecheck failed - spin function not found in Roulette contract
+DETAILED RESULTS
+==============================================================================
 
-========================================
-Spec: certora_specification/timed_crowdsale.cvl
-Contract: timed_crowdsale.sol:TimedCrowdsale
-Rules: 1
-  FAIL:
-    Rule sale_should_not_be_finished: VIOLATION
-      - finished == false
-Timing:
-  [TIME] Run time: 00:00:16
-Link: https://prover.certora.com/output/1696952/adcd2f2b19ea48bbaf875d482b158bcc
+--- 1. HotDollarsToken.cvl (HotDollarsToken) --- FAIL
+  [ERROR] bug_tmstmp36_should_not_drain_balance  (balAfter == balBefore + e.msg.value)
+  Time: 25s
+  Link: https://prover.certora.com/output/1696952/71c455489e354c24844fd916c7c52ffd
 
-========================================
-SUMMARY: 6 spec files (1 ERROR, 5 verified)
-  Total run time: ~01:52
+--- 2. lottopollo.cvl (lottopollo) --- FAIL
+  [OK]    draw_should_not_drain_on_timestamp
+  [ERROR] randomGen_should_not_be_timestamp  (r != e.block.timestamp)
+  Time: 19s
+  Link: https://prover.certora.com/output/1696952/4dea5258dad04adca9df1336b4fa8121
+
+--- 3. roulette.cvl (Roulette) --- ERROR
+  [COMPILATION ERROR] CVL typecheck failed - spin function not found in Roulette contract
+
+--- 4. timed_crowdsale.cvl (TimedCrowdsale) --- FAIL
+  [ERROR] sale_should_not_be_finished  (finished == false)
+  Time: 16s
+  Link: https://prover.certora.com/output/1696952/adcd2f2b19ea48bbaf875d482b158bcc
+
+==============================================================================

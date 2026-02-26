@@ -1,5 +1,5 @@
 # result_link_cvl.txt
-# Generated: 2026-02-12
+# Generated: 2026-02-26
 
 [1] CMD: certoraRun lottery.sol:Lottery --verify Lottery:certora_specification/lottery.cvl
 [1] ERROR: CVL typecheck failed - mathint used as array index

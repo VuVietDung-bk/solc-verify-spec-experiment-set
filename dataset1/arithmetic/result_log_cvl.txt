@@ -1,169 +1,110 @@
-CERTORA Results Log
-Benchmark: dataset1/arithmetic
-Date: 2026-02-12
-Total spec files: 14
+==============================================================================
+CERTORA Results Log — dataset1/arithmetic
+Date: 2026-02-26
+==============================================================================
 
-========================================
-Spec: certora_specification/insecure_transfer.cvl
-Contract: insecure_transfer.sol:IntegerOverflowAdd
-Rules: 1
-  FAIL:
-    Rule transfer_conserves: VIOLATION
-      - to_after == to_before + _value
-Timing:
-  [TIME] Run time: 00:00:18
-Link: https://prover.certora.com/output/1696952/941a834dc27d45979544c34ffe6587a5
+SUMMARY TABLE
+==============================================================================
+#  | Spec File                                        | Contract                                | Rules | Result
+---|--------------------------------------------------|-----------------------------------------|-------|-------
+1  | insecure_transfer.cvl                            | IntegerOverflowAdd                      |   1   | FAIL
+2  | integer_overflow_1.cvl                           | Overflow                                |   -   | ERROR
+3  | integer_overflow_add.cvl                         | IntegerOverflowAdd                      |   1   | FAIL
+4  | integer_overflow_benign_1.cvl                    | IntegerOverflowBenign1                  |   1   | PASS
+5  | integer_overflow_mapping_sym_1.cvl               | IntegerOverflowMappingSym1              |   1   | FAIL
+6  | integer_overflow_minimal.cvl                     | IntegerOverflowMinimal                  |   1   | PASS
+7  | integer_overflow_mul.cvl                         | IntegerOverflowMul                      |   1   | FAIL
+8  | integer_overflow_multitx_multifunc_feasible.cvl  | IntegerOverflowMultiTxMultiFuncFeasible |   1   | FAIL
+9  | integer_overflow_multitx_onefunc_feasible.cvl    | IntegerOverflowMultiTxOneFuncFeasible   |   1   | FAIL
+10 | overflow_simple_add.cvl                          | Overflow_Add                            |   1   | FAIL
+11 | overflow_single_tx.cvl                           | IntegerOverflowSingleTransaction        |   3   | FAIL
+12 | timelock.cvl                                     | TimeLock                                |   1   | FAIL
+13 | token.cvl                                        | Token                                   |   1   | FAIL
+14 | tokensalechallenge.cvl                           | TokenSaleChallenge                      |   2   | FAIL
+==============================================================================
 
-========================================
-Spec: certora_specification/integer_overflow_1.cvl
-Contract: integer_overflow_1.sol:Overflow
-Status: ERROR: Warning: Unnamed return variable
-Note: Verification failed due to compilation or specification errors
+OVERALL STATISTICS
+==============================================================================
+Total specs:  14
+Total rules:  16
+PASS:          2  (14.29%)
+FAIL:         11  (78.57%)
+ERROR:         1  (7.14%)
+==============================================================================
 
-========================================
-Spec: certora_specification/integer_overflow_add.cvl
-Contract: integer_overflow_add.sol:IntegerOverflowAdd
-Rules: 1
-  FAIL:
-    Rule add_no_overflow: VIOLATION
-      - afterCount == beforeCount + input
-Timing:
-  [TIME] Run time: 00:00:17
-Link: https://prover.certora.com/output/1696952/565d0592014c434e90abecc37ea5e352
+DETAILED RESULTS
+==============================================================================
 
-========================================
-Spec: certora_specification/integer_overflow_benign_1.cvl
-Contract: integer_overflow_benign_1.sol:IntegerOverflowBenign1
-Rules: 1
-  PASS:
-    Rule run_underflow_should_revert: OK
-      - rule_not_vacuous: OK
-      - sanity check for rule run_underflow_should_revert: OK
-Timing:
-  [TIME] Run time: 00:00:18
-Link: https://prover.certora.com/output/1696952/13f7059224d84b12bb27ae526c851027
+--- 1. insecure_transfer.cvl (IntegerOverflowAdd) --- FAIL
+  [ERROR] transfer_conserves  (to_after == to_before + _value)
+  Time: 18s
+  Link: https://prover.certora.com/output/1696952/941a834dc27d45979544c34ffe6587a5
 
-========================================
-Spec: certora_specification/integer_overflow_mapping_sym_1.cvl
-Contract: integer_overflow_mapping_sym_1.sol:IntegerOverflowMappingSym1
-Rules: 1
-  FAIL:
-    Rule init_underflow_should_revert: VIOLATION
-      - afterVal == beforeVal - v
-Timing:
-  [TIME] Run time: 00:00:17
-Link: https://prover.certora.com/output/1696952/348992cc96ba4e579e54918eed44a3cb
+--- 2. integer_overflow_1.cvl (Overflow) --- ERROR
+  [COMPILATION ERROR] Warning: Unnamed return variable
+  Note: Verification failed due to compilation or specification errors
 
-========================================
-Spec: certora_specification/integer_overflow_minimal.cvl
-Contract: integer_overflow_minimal.sol:IntegerOverflowMinimal
-Rules: 1
-  PASS:
-    Rule sub_no_underflow: OK
-      - rule_not_vacuous: OK
-      - sanity check for rule sub_no_underflow: OK
-Timing:
-  [TIME] Run time: 00:00:18
-Link: https://prover.certora.com/output/1696952/2fc29956012840c9b00c75dbe4986e2e
+--- 3. integer_overflow_add.cvl (IntegerOverflowAdd) --- FAIL
+  [ERROR] add_no_overflow  (afterCount == beforeCount + input)
+  Time: 17s
+  Link: https://prover.certora.com/output/1696952/565d0592014c434e90abecc37ea5e352
 
-========================================
-Spec: certora_specification/integer_overflow_mul.cvl
-Contract: integer_overflow_mul.sol:IntegerOverflowMul
-Rules: 1
-  FAIL:
-    Rule mul_no_overflow: VIOLATION
-      - afterCount == beforeCount * input
-Timing:
-  [TIME] Run time: 00:00:17
-Link: https://prover.certora.com/output/1696952/e966855f5b8546eabe3bcab886f0b8e4
+--- 4. integer_overflow_benign_1.cvl (IntegerOverflowBenign1) --- PASS
+  [OK]    run_underflow_should_revert
+  Time: 18s
+  Link: https://prover.certora.com/output/1696952/13f7059224d84b12bb27ae526c851027
 
-========================================
-Spec: certora_specification/integer_overflow_multitx_multifunc_feasible.cvl
-Contract: integer_overflow_multitx_multifunc_feasible.sol:IntegerOverflowMultiTxMultiFuncFeasible
-Rules: 1
-  FAIL:
-    Rule run_after_init: VIOLATION
-      - afterCount == beforeCount - input
-Timing:
-  [TIME] Run time: 00:00:17
-Link: https://prover.certora.com/output/1696952/e7ffa7ff9187471ba74a5044cfce8ff3
+--- 5. integer_overflow_mapping_sym_1.cvl (IntegerOverflowMappingSym1) --- FAIL
+  [ERROR] init_underflow_should_revert  (afterVal == beforeVal - v)
+  Time: 17s
+  Link: https://prover.certora.com/output/1696952/348992cc96ba4e579e54918eed44a3cb
 
-========================================
-Spec: certora_specification/integer_overflow_multitx_onefunc_feasible.cvl
-Contract: integer_overflow_multitx_onefunc_feasible.sol:IntegerOverflowMultiTxOneFuncFeasible
-Rules: 1
-  FAIL:
-    Rule run_after_second_call: VIOLATION
-      - afterCount == beforeCount - input
-Timing:
-  [TIME] Run time: 00:00:17
-Link: https://prover.certora.com/output/1696952/0d19b76f1fc74a4e9115515783831f7c
+--- 6. integer_overflow_minimal.cvl (IntegerOverflowMinimal) --- PASS
+  [OK]    sub_no_underflow
+  Time: 18s
+  Link: https://prover.certora.com/output/1696952/2fc29956012840c9b00c75dbe4986e2e
 
-========================================
-Spec: certora_specification/overflow_simple_add.cvl
-Contract: overflow_simple_add.sol:Overflow_Add
-Rules: 1
-  FAIL:
-    Rule add_no_overflow: VIOLATION
-      - afterBal == beforeBal + deposit
-Timing:
-  [TIME] Run time: 00:00:17
-Link: https://prover.certora.com/output/1696952/b573a7e1d32e43c8aa3a76a476442234
+--- 7. integer_overflow_mul.cvl (IntegerOverflowMul) --- FAIL
+  [ERROR] mul_no_overflow  (afterCount == beforeCount * input)
+  Time: 17s
+  Link: https://prover.certora.com/output/1696952/e966855f5b8546eabe3bcab886f0b8e4
 
-========================================
-Spec: certora_specification/overflow_single_tx.cvl
-Contract: overflow_single_tx.sol:IntegerOverflowSingleTransaction
-Rules: 3
-  PASS:
-    Rule sub_state_no_underflow: OK
-      - rule_not_vacuous: OK
-      - sanity check for rule sub_state_no_underflow: OK
-  FAIL:
-    Rule add_state_no_overflow: VIOLATION
-      - afterCount == beforeCount + input
-    Rule mul_state_no_overflow: VIOLATION
-      - afterCount == beforeCount * input
-Timing:
-  [TIME] Run time: 00:00:19
-Link: https://prover.certora.com/output/1696952/c0e6d7c7244a49ccb69d69f0312d1b22
+--- 8. integer_overflow_multitx_multifunc_feasible.cvl (IntegerOverflowMultiTxMultiFuncFeasible) --- FAIL
+  [ERROR] run_after_init  (afterCount == beforeCount - input)
+  Time: 17s
+  Link: https://prover.certora.com/output/1696952/e7ffa7ff9187471ba74a5044cfce8ff3
 
-========================================
-Spec: certora_specification/timelock.cvl
-Contract: timelock.sol:TimeLock
-Rules: 1
-  FAIL:
-    Rule locktime_monotone: VIOLATION
-      - afterLock == beforeLock + inc
-Timing:
-  [TIME] Run time: 00:00:18
-Link: https://prover.certora.com/output/1696952/a60d672be24e43f7860533da82be6f96
+--- 9. integer_overflow_multitx_onefunc_feasible.cvl (IntegerOverflowMultiTxOneFuncFeasible) --- FAIL
+  [ERROR] run_after_second_call  (afterCount == beforeCount - input)
+  Time: 17s
+  Link: https://prover.certora.com/output/1696952/0d19b76f1fc74a4e9115515783831f7c
 
-========================================
-Spec: certora_specification/token.cvl
-Contract: token.sol:Token
-Rules: 1
-  FAIL:
-    Rule transfer_balance_conservation: VIOLATION
-      - sender_before >= _value
-Timing:
-  [TIME] Run time: 00:00:17
-Link: https://prover.certora.com/output/1696952/6d648e6cdad647f7a4f88a375b7bba6f
+--- 10. overflow_simple_add.cvl (Overflow_Add) --- FAIL
+  [ERROR] add_no_overflow  (afterBal == beforeBal + deposit)
+  Time: 17s
+  Link: https://prover.certora.com/output/1696952/b573a7e1d32e43c8aa3a76a476442234
 
-========================================
-Spec: certora_specification/tokensalechallenge.cvl
-Contract: tokensalechallenge.sol:TokenSaleChallenge
-Rules: 2
-  PASS:
-    Rule sell_decreases_balance: OK
-      - rule_not_vacuous: OK
-      - sanity check for rule sell_decreases_balance: OK
-  FAIL:
-    Rule buy_adds_balance: VIOLATION
-      - afterBal == beforeBal + numTokens
-Timing:
-  [TIME] Run time: 00:00:20
-Link: https://prover.certora.com/output/1696952/56a8f517a22c4184ba15054ec03271e8
+--- 11. overflow_single_tx.cvl (IntegerOverflowSingleTransaction) --- FAIL
+  [OK]    sub_state_no_underflow
+  [ERROR] add_state_no_overflow  (afterCount == beforeCount + input)
+  [ERROR] mul_state_no_overflow  (afterCount == beforeCount * input)
+  Time: 19s
+  Link: https://prover.certora.com/output/1696952/c0e6d7c7244a49ccb69d69f0312d1b22
 
-========================================
-SUMMARY: 14 spec files (1 ERROR, 13 verified)
-  Total run time: ~04:00
+--- 12. timelock.cvl (TimeLock) --- FAIL
+  [ERROR] locktime_monotone  (afterLock == beforeLock + inc)
+  Time: 18s
+  Link: https://prover.certora.com/output/1696952/a60d672be24e43f7860533da82be6f96
+
+--- 13. token.cvl (Token) --- FAIL
+  [ERROR] transfer_balance_conservation  (sender_before >= _value)
+  Time: 17s
+  Link: https://prover.certora.com/output/1696952/6d648e6cdad647f7a4f88a375b7bba6f
+
+--- 14. tokensalechallenge.cvl (TokenSaleChallenge) --- FAIL
+  [OK]    sell_decreases_balance
+  [ERROR] buy_adds_balance  (afterBal == beforeBal + numTokens)
+  Time: 20s
+  Link: https://prover.certora.com/output/1696952/56a8f517a22c4184ba15054ec03271e8
+
+==============================================================================

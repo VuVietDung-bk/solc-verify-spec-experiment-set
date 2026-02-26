@@ -1,154 +1,200 @@
-CERTORA Results Log
-Benchmark: dataset1/unchecked_low_level_calls
+==============================================================================
+CERTORA Results Log — dataset1/unchecked_low_level_calls
 Date: 2026-02-12
-Total spec files: 13
+==============================================================================
 
-========================================
-Spec: certora_specification/0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.cvl
-Contract: 0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.sol:Caller
-Rules: 1
-  FAIL:
-    Rule callAddress_should_succeed: VIOLATION
-      - lastReverted
-Timing:
-  [TIME] Run time: 00:00:17
-Link: https://prover.certora.com/output/1696952/92bdaff7451f4132ba4a9c0515aafa23
+SUMMARY TABLE
+==============================================================================
+#  | Spec File                                          | Contract        | Rules | Result
+---|----------------------------------------------------|-----------------|-------|-------
+1  | 0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.cvl    | Caller          |   1   | FAIL
+2  | 0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.cvl    | MultiplicatorX4 |   1   | FAIL
+3  | 0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.cvl    | WhaleGiveaway2  |   1   | FAIL
+4  | 0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.cvl    | EtherGet        |   1   | FAIL
+5  | 0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl    | MultiplicatorX3 |   1   | FAIL
+6  | 0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.cvl    | HomeyJar        |   1   | FAIL
+7  | 0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.cvl    | WedIndex        |   1   | FAIL
+8  | 0x958a8f594101d2c0485a52319f29b2647f2ebc06.cvl    | Marriage        |   1   | FAIL
+9  | 0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.cvl    | Splitter        |   1   | FAIL
+10 | 0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.cvl    | keepMyEther     |   1   | FAIL
+11 | lotto.cvl                                          | Lotto           |   2   | FAIL
+12 | mishandled.cvl                                     | SendBack        |   1   | FAIL
+13 | unchecked_return_value.cvl                         | ReturnValue     |   1   | FAIL
+14 | 0x610495793564aed0f9c7fc48dc4c7c9151d34fd6.cvl    | SimpleWallet    |   4   | FAIL
+15 | 0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37.cvl    | WhaleGiveaway1  |   4   | FAIL
+16 | 0x7a4349a749e59a5736efb7826ee3496a2dfd5489.cvl    | WhaleGiveaway1  |   4   | FAIL
+17 | 0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.cvl    | Pie             |   4   | FAIL
+18 | 0xb37f18af15bafb869a065b61fc83cfc44ed9cc27.cvl    | SimpleWallet    |   4   | FAIL
+19 | 0xd2018bfaa266a9ec0a1a84b061640faa009def76.cvl    | Pie             |   4   | FAIL
+20 | 0xdb1c55f6926e7d847ddf8678905ad871a68199d2.cvl    | FreeEth         |   4   | FAIL
+21 | 0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf.cvl    | Honey           |   4   | FAIL
+22 | 0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87.cvl    | Freebie         |   4   | FAIL
+23 | 0xf29ebe930a539a60279ace72c707cba851a57707.cvl    | B               |   3   | FAIL
+24 | 0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.cvl    | WhaleGiveaway2  |   4   | FAIL
+==============================================================================
 
-========================================
-Spec: certora_specification/0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.cvl
-Contract: 0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.sol:MultiplicatorX4
-Rules: 1
-  FAIL:
-    Rule Command_unchecked: VIOLATION
-      - balAfter == balBefore - e.msg.value
-Timing:
-  [TIME] Run time: 00:00:19
-Link: https://prover.certora.com/output/1696952/2f1274eff3b045a4a80c82e0790bd63f
+OVERALL STATISTICS
+==============================================================================
+Total specs: 24
+Total rules: 58
+PASS:         0  (0.00%)
+FAIL:        24  (100.00%)
+==============================================================================
 
-========================================
-Spec: certora_specification/0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.cvl
-Contract: 0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.sol:WhaleGiveaway2
-Rules: 1
-  FAIL:
-    Rule Command_must_debit: VIOLATION
-      - balAfter == balBefore - e.msg.value
-Timing:
-  [TIME] Run time: 00:00:20
-Link: https://prover.certora.com/output/1696952/e58bc1d2baba49a8bcf53b1301bbcca5
+DETAILED RESULTS
+==============================================================================
 
-========================================
-Spec: certora_specification/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.cvl
-Contract: 0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.sol:EtherGet
-Rules: 1
-  FAIL:
-    Rule getTokens_should_succeed: VIOLATION
-      - Unwinding condition in a loop. We recommend to run with --loop_iter N
-Timing:
-  [TIME] Run time: 00:00:18
-Link: https://prover.certora.com/output/1696952/4fb389c709bb45cb928866395923b629
+--- 1. 0x0cbe050f75bc8f8c2d6c0d249fea125fd6e1acc9.cvl (Caller) --- FAIL
+  [ERROR] callAddress_should_succeed  (lastReverted)
+  Time: 17s
+  Link: https://prover.certora.com/output/1696952/92bdaff7451f4132ba4a9c0515aafa23
 
-========================================
-Spec: certora_specification/0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl
-Contract: 0x5aa88d2901c68fda244f1d0584400368d2c8e739.sol:MultiplicatorX3
-Rules: 1
-  FAIL:
-    Rule Command_must_debit: VIOLATION
-      - balAfter == balBefore - e.msg.value
-Timing:
-  [TIME] Run time: 00:00:19
-Link: https://prover.certora.com/output/1696952/1475a27a4fa54ef5825aa19c680d7b81
+--- 2. 0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859.cvl (MultiplicatorX4) --- FAIL
+  [ERROR] Command_unchecked  (balAfter == balBefore - e.msg.value)
+  Time: 19s
+  Link: https://prover.certora.com/output/1696952/2f1274eff3b045a4a80c82e0790bd63f
 
-========================================
-Spec: certora_specification/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.cvl
-Contract: 0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol:HomeyJar
-Rules: 1
-  FAIL:
-    Rule Command_must_debit: VIOLATION
-      - balAfter == balBefore - e.msg.value
-Timing:
-  [TIME] Run time: 00:00:20
-Link: https://prover.certora.com/output/1696952/8fecc953d4574bc1a612103b27f3a474
+--- 3. 0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.cvl (WhaleGiveaway2) --- FAIL
+  [ERROR] Command_must_debit  (balAfter == balBefore - e.msg.value)
+  Time: 20s
+  Link: https://prover.certora.com/output/1696952/e58bc1d2baba49a8bcf53b1301bbcca5
 
-========================================
-Spec: certora_specification/0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.cvl
-Contract: 0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.sol:WedIndex
-Rules: 1
-  FAIL:
-    Rule execute_must_debit_balance: VIOLATION
-      - balAfter == balBefore - value
-Timing:
-  [TIME] Run time: 00:00:25
-Link: https://prover.certora.com/output/1696952/d18114bc80c643869bf67cf70ae4b400
+--- 4. 0x52d2e0f9b01101a59b38a3d05c80b7618aeed984.cvl (EtherGet) --- FAIL
+  [ERROR] getTokens_should_succeed  (Unwinding condition in a loop. We recommend to run with --loop_iter N)
+  Time: 18s
+  Link: https://prover.certora.com/output/1696952/4fb389c709bb45cb928866395923b629
 
-========================================
-Spec: certora_specification/0x958a8f594101d2c0485a52319f29b2647f2ebc06.cvl
-Contract: 0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol:Marriage
-Rules: 1
-  FAIL:
-    Rule execute_must_debit_balance: VIOLATION
-      - balAfter == balBefore - value
-Timing:
-  [TIME] Run time: 00:00:34
-Link: https://prover.certora.com/output/1696952/e28413b3fbe44c7e8c46e43e368f6375
+--- 5. 0x5aa88d2901c68fda244f1d0584400368d2c8e739.cvl (MultiplicatorX3) --- FAIL
+  [ERROR] Command_must_debit  (balAfter == balBefore - e.msg.value)
+  Time: 19s
+  Link: https://prover.certora.com/output/1696952/1475a27a4fa54ef5825aa19c680d7b81
 
-========================================
-Spec: certora_specification/0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.cvl
-Contract: 0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.sol:Splitter
-Rules: 1
-  FAIL:
-    Rule fundPuppets_must_spend_value: VIOLATION
-      - balAfter == balBefore - e.msg.value
-Timing:
-  [TIME] Run time: 00:00:23
-Link: https://prover.certora.com/output/1696952/96dc286be69441a9b516358e6f8b0dd8
+--- 6. 0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.cvl (HomeyJar) --- FAIL
+  [ERROR] Command_must_debit  (balAfter == balBefore - e.msg.value)
+  Time: 20s
+  Link: https://prover.certora.com/output/1696952/8fecc953d4574bc1a612103b27f3a474
 
-========================================
-Spec: certora_specification/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.cvl
-Contract: 0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.sol:keepMyEther
-Rules: 1
-  FAIL:
-    Rule withdraw_resets_balance: VIOLATION
-      - contractAfter == contractBefore - owner_balance
-Timing:
-  [TIME] Run time: 00:00:19
-Link: https://prover.certora.com/output/1696952/9a9829ce2bd44154b8b47e8654f81c5a
+--- 7. 0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8.cvl (WedIndex) --- FAIL
+  [ERROR] execute_must_debit_balance  (balAfter == balBefore - value)
+  Time: 25s
+  Link: https://prover.certora.com/output/1696952/d18114bc80c643869bf67cf70ae4b400
 
-========================================
-Spec: certora_specification/lotto.cvl
-Contract: lotto.sol:Lotto
-Rules: 2
-  FAIL:
-    Rule sendToWinner_must_transfer: VIOLATION
-      - balAfter == balBefore - winAmt
-    Rule withdrawLeftOver_must_transfer: VIOLATION
-      - balAfter == 0
-Timing:
-  [TIME] Run time: 00:00:19
-Link: https://prover.certora.com/output/1696952/59a25aca3bc64b1aace5ba7ec2000bb3
+--- 8. 0x958a8f594101d2c0485a52319f29b2647f2ebc06.cvl (Marriage) --- FAIL
+  [ERROR] execute_must_debit_balance  (balAfter == balBefore - value)
+  Time: 34s
+  Link: https://prover.certora.com/output/1696952/e28413b3fbe44c7e8c46e43e368f6375
 
-========================================
-Spec: certora_specification/mishandled.cvl
-Contract: mishandled.sol:SendBack
-Rules: 1
-  FAIL:
-    Rule withdrawBalance_must_transfer: VIOLATION
-      - balAfter == balBefore - amount
-Timing:
-  [TIME] Run time: 00:00:18
-Link: https://prover.certora.com/output/1696952/5f902041dc6543e285253f29d435e00b
+--- 9. 0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.cvl (Splitter) --- FAIL
+  [ERROR] fundPuppets_must_spend_value  (balAfter == balBefore - e.msg.value)
+  Time: 23s
+  Link: https://prover.certora.com/output/1696952/96dc286be69441a9b516358e6f8b0dd8
 
-========================================
-Spec: certora_specification/unchecked_return_value.cvl
-Contract: unchecked_return_value.sol:ReturnValue
-Rules: 1
-  FAIL:
-    Rule callnotchecked_should_revert_on_failure: VIOLATION
-      - lastReverted
-Timing:
-  [TIME] Run time: 00:00:17
-Link: https://prover.certora.com/output/1696952/70e19a6effc9405fbe9eaa9d46c321fe
+--- 10. 0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.cvl (keepMyEther) --- FAIL
+  [ERROR] withdraw_resets_balance  (contractAfter == contractBefore - owner_balance)
+  Time: 19s
+  Link: https://prover.certora.com/output/1696952/9a9829ce2bd44154b8b47e8654f81c5a
 
-========================================
-SUMMARY: 13 spec files, 15 rules total
-  0/13 specs passed all rules
-  Total run time: ~04:08
+--- 11. lotto.cvl (Lotto) --- FAIL
+  [ERROR] sendToWinner_must_transfer    (balAfter == balBefore - winAmt)
+  [ERROR] withdrawLeftOver_must_transfer  (balAfter == 0)
+  Time: 19s
+  Link: https://prover.certora.com/output/1696952/59a25aca3bc64b1aace5ba7ec2000bb3
+
+--- 12. mishandled.cvl (SendBack) --- FAIL
+  [ERROR] withdrawBalance_must_transfer  (balAfter == balBefore - amount)
+  Time: 18s
+  Link: https://prover.certora.com/output/1696952/5f902041dc6543e285253f29d435e00b
+
+--- 13. unchecked_return_value.cvl (ReturnValue) --- FAIL
+  [ERROR] callnotchecked_should_revert_on_failure  (lastReverted)
+  Time: 17s
+  Link: https://prover.certora.com/output/1696952/70e19a6effc9405fbe9eaa9d46c321fe
+
+--- 14. 0x610495793564aed0f9c7fc48dc4c7c9151d34fd6.cvl (SimpleWallet) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    only_owner_can_sendMoney
+  [OK]    only_owner_can_withdraw
+  [ERROR] sendMoney_unchecked  (balAfter == balBefore - _value)
+  Time: 23s
+  Link: https://prover.certora.com/output/1696952/44fd8707b78a44d7a7ae2f3b109e4e31
+
+--- 15. 0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37.cvl (WhaleGiveaway1) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    only_owner_can_Command
+  [ERROR] Command_unchecked          (balAfter == balBefore - e.msg.value)
+  [ERROR] only_owner_can_withdraw    (lastReverted)
+  Time: 23s
+  Link: https://prover.certora.com/output/1696952/29abb3ce34e049bc8c0dd6c78ab384b1
+
+--- 16. 0x7a4349a749e59a5736efb7826ee3496a2dfd5489.cvl (WhaleGiveaway1) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    only_owner_can_Command
+  [ERROR] Command_unchecked          (balAfter == balBefore - e.msg.value)
+  [ERROR] only_owner_can_withdraw    (lastReverted)
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/946167b1663149d9b7275e935d0ce202
+
+--- 17. 0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.cvl (Pie) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    only_owner_can_Command
+  [ERROR] Command_unchecked          (balAfter == balBefore - e.msg.value)
+  [ERROR] only_owner_can_withdraw    (lastReverted)
+  Time: 23s
+  Link: https://prover.certora.com/output/1696952/d70d51a545164f83a86ee4607a1da034
+
+--- 18. 0xb37f18af15bafb869a065b61fc83cfc44ed9cc27.cvl (SimpleWallet) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    only_owner_can_sendMoney
+  [OK]    only_owner_can_withdraw
+  [ERROR] sendMoney_unchecked  (balAfter == balBefore - _value)
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/0ade6e0064e54e90a2a7ec42f4b90022
+
+--- 19. 0xd2018bfaa266a9ec0a1a84b061640faa009def76.cvl (Pie) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    only_owner_can_Command
+  [ERROR] Command_unchecked          (balAfter == balBefore - e.msg.value)
+  [ERROR] only_owner_can_withdraw    (lastReverted)
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/67131346cdf64a04b9a43929c8613ebd
+
+--- 20. 0xdb1c55f6926e7d847ddf8678905ad871a68199d2.cvl (FreeEth) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    only_owner_can_Command
+  [ERROR] Command_unchecked          (balAfter == balBefore - e.msg.value)
+  [ERROR] only_owner_can_withdraw    (lastReverted)
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/4e4171274a4e414ba70f22873a3fc134
+
+--- 21. 0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf.cvl (Honey) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    only_owner_can_Command
+  [ERROR] Command_unchecked          (balAfter == balBefore - e.msg.value)
+  [ERROR] only_owner_can_withdraw    (lastReverted)
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/188d75bfb1f64a2ab4c89e1605c3e59c
+
+--- 22. 0xe82f0742a71a02b9e9ffc142fdcb6eb1ed06fb87.cvl (Freebie) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    only_owner_can_Command
+  [ERROR] Command_unchecked          (balAfter == balBefore - e.msg.value)
+  [ERROR] only_owner_can_withdraw    (lastReverted)
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/2c9554b5f49f48dd96fc7891ff6d2fd9
+
+--- 23. 0xf29ebe930a539a60279ace72c707cba851a57707.cvl (B) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [ERROR] go_call_should_check_return  (!(lastReverted) => nativeBalances[currentContract])
+  [ERROR] go_unchecked                 (balAfter == 0)
+  Time: 20s
+  Link: https://prover.certora.com/output/1696952/2ed3c329958c4a37a99fa8b3b2b91553
+
+--- 24. 0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.cvl (WhaleGiveaway2) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    only_owner_can_Command
+  [ERROR] Command_unchecked          (balAfter == balBefore - e.msg.value)
+  [ERROR] only_owner_can_withdraw    (lastReverted)
+  Time: 24s
+  Link: https://prover.certora.com/output/1696952/60bf220fc5484f399a38161914650c85
+
+==============================================================================

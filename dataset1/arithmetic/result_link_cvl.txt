@@ -1,5 +1,5 @@
 # result_link_cvl.txt
-# Generated: 2026-02-12
+# Generated: 2026-02-26
 
 [1] CMD: certoraRun insecure_transfer.sol:IntegerOverflowAdd --verify IntegerOverflowAdd:certora_specification/insecure_transfer.cvl
 [1] LINK: https://prover.certora.com/output/1696952/941a834dc27d45979544c34ffe6587a5
@@ -42,14 +42,3 @@
 
 [14] CMD: certoraRun tokensalechallenge.sol:TokenSaleChallenge --verify TokenSaleChallenge:certora_specification/tokensalechallenge.cvl
 [14] LINK: https://prover.certora.com/output/1696952/56a8f517a22c4184ba15054ec03271e8
-
-
-
-
-
-
-
-
-
-
-

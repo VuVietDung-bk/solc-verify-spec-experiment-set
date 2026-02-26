@@ -1,0 +1,206 @@
+==============================================================================
+CERTORA Results Log — dataset3/Unhandled-Exceptions
+Date: 2026-02-23
+==============================================================================
+
+SUMMARY TABLE
+==============================================================================
+#  | Spec File                      | Contract                        | Rules | Result
+---|--------------------------------|---------------------------------|-------|-------
+1  | buggy_1_hot_dollars_token.cvl  | HotDollarsToken                 |   6   | FAIL
+2  | buggy_19_eth_bank.cvl          | ethBank                         |  11   | FAIL
+3  | buggy_19_owned.cvl             | owned                           |   3   | PASS
+4  | buggy_20_escrowspool.cvl       | RampInstantEscrowsPoolInterface |   -   | ERROR
+5  | buggy_20_ethpool.cvl           | RampInstantPool                 |   -   | ERROR
+6  | buggy_23_agr.cvl               | AGR                             |   1   | PASS
+7  | buggy_23_erc20.cvl             | ERC20                           |  11   | FAIL
+8  | buggy_23_erc20_burnable.cvl    | ERC20Burnable                   |   2   | FAIL
+9  | buggy_33.cvl                   | Staking                         |   1   | FAIL
+10 | buggy_34_lollypop_token.cvl    | LollypopToken                   |  13   | FAIL
+11 | buggy_34_ownable.cvl           | Ownable                         |   4   | FAIL
+12 | buggy_45.cvl                   | StockBet                        |  11   | FAIL
+13 | buggy_47_acunar_ieo.cvl        | AcunarIEO                       |   -   | ERROR
+14 | buggy_47_acunar_token.cvl      | AcunarToken                     |   -   | ERROR
+15 | buggy_50.cvl                   | digitalNotary                   |  11   | FAIL
+16 | buggy_5_ownable.cvl            | Ownable                         |   4   | FAIL
+17 | buggy_5_token_erc20.cvl        | TokenERC20                      |  10   | FAIL
+18 | buggy_5_ttc.cvl                | TTC                             |  10   | FAIL
+==============================================================================
+
+OVERALL STATISTICS
+==============================================================================
+Total specs: 18
+Total rules: 98
+PASS:         2  (11.11%)
+FAIL:        12  (66.67%)
+ERROR:        4  (22.22%)
+==============================================================================
+
+DETAILED RESULTS
+==============================================================================
+
+--- 1. buggy_1_hot_dollars_token.cvl (HotDollarsToken) --- FAIL
+  [ERROR] UncheckedExternalCall_unchk4_empty_return
+  [ERROR] bug_unchk7_always_reverts
+  [OK]    cash_unchk46_no_check
+  [OK]    my_func_unchk23_no_check
+  [OK]    my_func_unchk35_no_check
+  [OK]    unhandledsend_unchk38_no_check
+  Time: 29s
+  Link: https://prover.certora.com/output/1696952/b0413a54e1c842f2b362c3e1e8ac9313
+
+--- 2. buggy_19_eth_bank.cvl (ethBank) --- FAIL
+  [ERROR] UncheckedExternalCall_unchk4_empty_return
+  [ERROR] bug_unchk18_always_reverts
+  [OK]    bug_unchk3_no_check
+  [ERROR] bug_unchk7_always_reverts
+  [OK]    callnotchecked_unchk25_no_check
+  [OK]    cash_unchk46_no_check
+  [OK]    my_func_unchk23_no_check
+  [OK]    sendToWinner_unchk20_ignores_send_failure
+  [OK]    sendToWinner_unchk32_ignores_send_failure
+  [OK]    unhandledsend_unchk26_no_check
+  Time: 33s
+  Link: https://prover.certora.com/output/1696952/1450294e286e4d9abf879ceb5dbd0d8a
+
+--- 3. buggy_19_owned.cvl (owned) --- PASS
+  [OK]    callnotchecked_unchk37_no_check
+  [OK]    my_func_unchk48_no_check
+  [OK]    withdrawBal_unchk17_no_check
+  Time: 21s
+  Link: https://prover.certora.com/output/1696952/15cd4eb29adb480f8feed57e772cef0a
+
+--- 4. buggy_20_escrowspool.cvl (RampInstantEscrowsPoolInterface) --- ERROR
+  [COMPILATION ERROR] Contract RampInstantEscrowsPoolInterface has no bytecode - contract is abstract. Certora Prover cannot handle abstract contracts.
+
+--- 5. buggy_20_ethpool.cvl (RampInstantPool) --- ERROR
+  [COMPILATION ERROR] Contract RampInstantPool has no bytecode - contract is abstract. Certora Prover cannot handle abstract contracts.
+
+--- 6. buggy_23_agr.cvl (AGR) --- PASS
+  [OK]    callnotchecked_unchk13_ignores_call_result
+  Time: 31s
+  Link: https://prover.certora.com/output/1696952/420804d4686c411a919ef6be79d4c237
+
+--- 7. buggy_23_erc20.cvl (ERC20) --- FAIL
+  [ERROR] UncheckedExternalCall_unchk4_does_not_handle_return_value
+  [ERROR] bug_unchk30_ignores_send_failure
+  [OK]    bug_unchk39_ignores_send_failure
+  [OK]    bug_unchk3_ignores_send_failure
+  [ERROR] bug_unchk7_ignores_send_failure
+  [OK]    callnotchecked_unchk37_ignores_call_result
+  [OK]    cash_unchk46_ignores_send_failure
+  [OK]    my_func_unchk36_ignores_call_failure
+  [OK]    my_func_unchk23_ignores_send_failure
+  [OK]    my_func_unchk35_ignores_send_failure
+  Time: 35s
+  Link: https://prover.certora.com/output/1696952/4168a8a79a5d4087a47a9fd51e6c03cb
+
+--- 8. buggy_23_erc20_burnable.cvl (ERC20Burnable) --- FAIL
+  [ERROR] UncheckedExternalCall_unchk40_does_not_handle_return_value
+  [OK]    sendToWinner_unchk44_ignores_send_failure
+  Time: 28s
+  Link: https://prover.certora.com/output/1696952/152c947b6bdf4ed887cb4d28472042c7
+
+--- 9. buggy_33.cvl (Staking) --- FAIL
+  [ERROR] cash_unchk46_reverts_without_balance_check
+  Time: 30s
+  Link: https://prover.certora.com/output/1696952/d0cb0f15cd5246afb99deb0d26f83c87
+
+--- 10. buggy_34_lollypop_token.cvl (LollypopToken) --- FAIL
+  [ERROR] UncheckedExternalCall_unchk40_does_not_handle_return_value
+  [ERROR] UncheckedExternalCall_unchk4_does_not_handle_return_value
+  [ERROR] bug_unchk19_ignores_send_failure
+  [ERROR] bug_unchk30_ignores_send_failure
+  [OK]    bug_unchk39_ignores_send_failure
+  [ERROR] bug_unchk42_ignores_send_failure
+  [ERROR] bug_unchk43_ignores_send_failure
+  [ERROR] bug_unchk7_ignores_send_failure
+  [OK]    callnotchecked_unchk13_ignores_call_result
+  [OK]    callnotchecked_unchk1_ignores_call_failure
+  [OK]    callnotchecked_unchk25_ignores_call_result
+  [OK]    callnotchecked_unchk37_ignores_call_result
+  [OK]    cash_unchk46_ignores_send_failure
+  Time: 58s
+  Link: https://prover.certora.com/output/1696952/945d0828cd214ad5b212d5a7056e228e
+
+--- 11. buggy_34_ownable.cvl (Ownable) --- FAIL
+  [ERROR] bug_unchk31_ignores_send_failure
+  [OK]    bug_unchk3_ignores_send_failure
+  [OK]    cash_unchk22_ignores_send_failure
+  [OK]    withdrawLeftOver_unchk9_ignores_send_failure
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/623e6bc23af142d2ab1917093d68ce80
+
+--- 12. buggy_45.cvl (StockBet) --- FAIL
+  [ERROR] UncheckedExternalCall_unchk40_does_not_handle_return_value
+  [ERROR] UncheckedExternalCall_unchk4_does_not_handle_return_value
+  [ERROR] bug_unchk19_ignores_send_failure
+  [OK]    bug_unchk3_ignores_send_failure
+  [ERROR] bug_unchk7_ignores_send_failure
+  [OK]    callnotchecked_unchk13_ignores_call_result
+  [OK]    callnotchecked_unchk25_ignores_call_result
+  [OK]    callnotchecked_unchk37_ignores_call_result
+  [OK]    cash_unchk46_ignores_send_failure
+  [OK]    my_func_unchk36_ignores_call_failure
+  [OK]    my_func_unchk48_ignores_call_failure
+  Time: 46s
+  Link: https://prover.certora.com/output/1696952/83803213d3554ea290bd2d69eed49719
+
+--- 13. buggy_47_acunar_ieo.cvl (AcunarIEO) --- ERROR
+  [COMPILATION ERROR] Severe compiler warning - Unnamed return variable in burn() function (buggy_47.sol:383:36)
+
+--- 14. buggy_47_acunar_token.cvl (AcunarToken) --- ERROR
+  [COMPILATION ERROR] Severe compiler warning - Unnamed return variable in burn() function (buggy_47.sol:383:36)
+
+--- 15. buggy_50.cvl (digitalNotary) --- FAIL
+  [ERROR] UncheckedExternalCall_unchk40_does_not_handle_return_value
+  [ERROR] UncheckedExternalCall_unchk4_does_not_handle_return_value
+  [ERROR] bug_unchk19_ignores_send_failure
+  [OK]    bug_unchk39_ignores_send_failure
+  [OK]    bug_unchk3_ignores_send_failure
+  [ERROR] bug_unchk7_ignores_send_failure
+  [OK]    callnotchecked_unchk13_ignores_call_result
+  [OK]    callnotchecked_unchk25_ignores_call_result
+  [OK]    cash_unchk46_ignores_send_failure
+  [OK]    my_func_unchk36_ignores_call_failure
+  [OK]    my_func_unchk23_ignores_send_failure
+  Time: 39s
+  Link: https://prover.certora.com/output/1696952/4d982e5d9fd747778ac71d38dfcdfe78
+
+--- 16. buggy_5_ownable.cvl (Ownable) --- FAIL
+  [ERROR] bug_unchk42_inverted_logic
+  [OK]    sendToWinner_unchk20_ignores_send_failure
+  [OK]    unhandledsend_unchk26_no_check
+  [OK]    withdrawLeftOver_unchk33_no_check
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/6025ed3a392c4799af4dd2d959880db5
+
+--- 17. buggy_5_token_erc20.cvl (TokenERC20) --- FAIL
+  [ERROR] UncheckedExternalCall_unchk4_empty_return
+  [OK]    bug_unchk3_no_check
+  [ERROR] bug_unchk43_always_reverts
+  [ERROR] bug_unchk7_always_reverts
+  [OK]    callnotchecked_unchk37_no_check
+  [OK]    cash_unchk46_no_check
+  [OK]    my_func_unchk48_no_check
+  [OK]    my_func_unchk23_no_check
+  [OK]    sendToWinner_unchk32_ignores_send_failure
+  [OK]    unhandledsend_unchk14_no_check
+  Time: 35s
+  Link: https://prover.certora.com/output/1696952/3707ce39b7084954a3344f9870a3112e
+
+--- 18. buggy_5_ttc.cvl (TTC) --- FAIL
+  [ERROR] UncheckedExternalCall_unchk40_empty_return
+  [ERROR] bug_unchk19_always_reverts
+  [ERROR] bug_unchk30_inverted_logic
+  [OK]    bug_unchk39_no_check
+  [OK]    callnotchecked_unchk13_no_check
+  [OK]    callnotchecked_unchk25_no_check
+  [OK]    my_func_unchk36_no_check
+  [OK]    my_func_unchk35_no_check
+  [OK]    sendToWinner_unchk44_ignores_send_failure
+  [OK]    sendToWinner_unchk8_ignores_send_failure
+  Time: 39s
+  Link: https://prover.certora.com/output/1696952/e885e19a392f4f65bc71a56da1b72f68
+
+==============================================================================

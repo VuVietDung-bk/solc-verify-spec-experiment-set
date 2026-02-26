@@ -1,19 +1,19 @@
 ==============================================================================
-CERTORA Results Log — dataset1/bad_randomness
+CERTORA Results Log — dataset2/gasless_send
 Date: 2026-02-12
 ==============================================================================
 
 SUMMARY TABLE
 ==============================================================================
-#  | Spec File    | Contract | Rules | Result
----|--------------|----------|-------|-------
-1  | lottery.cvl  | Lottery  |   1   | FAIL
+#  | Spec File                     | Contract          | Rules | Result
+---|-------------------------------|-------------------|-------|-------
+1  | CreditDepositBank_Attack.cvl  | CreditDepositBank |   5   | FAIL
 ==============================================================================
 
 OVERALL STATISTICS
 ==============================================================================
-Total specs:  1
-Total rules:  1
+Total specs: 1
+Total rules: 5
 PASS:         0  (0.00%)
 FAIL:         1  (100.00%)
 ==============================================================================
@@ -21,9 +21,13 @@ FAIL:         1  (100.00%)
 DETAILED RESULTS
 ==============================================================================
 
---- 1. lottery.cvl (Lottery) --- FAIL
-  [ERROR] winShouldDependOnBetterEntropy  (currentContract.bets[lastIndex].won <=> expected)
-  Time: 18s
-  Link: https://prover.certora.com/output/1696952/f2c0cc660f2a46e189aa46a65c26238b
+--- 1. CreditDepositBank_Attack.cvl (CreditDepositBank) --- FAIL
+  [OK]    deposit_no_owner_change
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    setManager_requires_balance
+  [OK]    takeover_requires_balance
+  [ERROR] deposit_increases_balance  (e.msg.value >= 10^15 => balanceAft...)
+  Time: 24s
+  Link: https://prover.certora.com/output/1696952/d67d2dcd92984453a19e4177774010c8
 
 ==============================================================================

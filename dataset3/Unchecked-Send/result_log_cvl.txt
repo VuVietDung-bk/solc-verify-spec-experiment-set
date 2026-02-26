@@ -1,0 +1,154 @@
+==============================================================================
+CERTORA Results Log — dataset3/Unchecked-Send
+Date: 2026-02-23
+==============================================================================
+
+SUMMARY TABLE
+==============================================================================
+#  | Spec File                         | Contract           | Rules | Result
+---|-----------------------------------|--------------------|-------|-------
+1  | buggy_1.cvl                       | HotDollarsToken    |   4   | FAIL
+2  | buggy_19_eth_bank.cvl             | ethBank            |   5   | PASS
+3  | buggy_19_owned.cvl                | owned              |   3   | PASS
+4  | buggy_20_ramp_instant_eth_pool.cvl| RampInstantEthPool |   2   | PASS
+5  | buggy_20_stoppable.cvl            | RampInstantPool    |   -   | ERROR
+6  | buggy_23.cvl                      | ERC20Burnable      |   6   | PASS
+7  | buggy_33.cvl                      | Staking            |   8   | FAIL
+8  | buggy_34.cvl                      | LollypopToken      |   6   | FAIL
+9  | buggy_45.cvl                      | StockBet           |   8   | PASS
+10 | buggy_47.cvl                      | AcunarIEO          |   8   | FAIL
+11 | buggy_50.cvl                      | digitalNotary      |   9   | FAIL
+12 | buggy_5_token_erc20.cvl           | TokenERC20         |   3   | FAIL
+13 | buggy_5_ttc.cvl                   | TTC                |   4   | FAIL
+==============================================================================
+
+OVERALL STATISTICS
+==============================================================================
+Total specs: 13
+Total rules: 66
+PASS:         6  (46.15%)
+FAIL:         6  (46.15%)
+ERROR:        1  (7.69%)
+==============================================================================
+
+DETAILED RESULTS
+==============================================================================
+
+--- 1. buggy_1.cvl (HotDollarsToken) --- FAIL
+  [OK]    approveUpdatesAllowance
+  [OK]    envfreeFuncsStaticCheck
+  [ERROR] transferConservesBalance         (transfer must increase recipient's balance)
+  [ERROR] transferFromConservesBalance     (transferfrom must increase destination balance)
+  Time: 25s
+  Link: https://prover.certora.com/output/1696952/94505e56632e49d199a6853811f380ce
+
+--- 2. buggy_19_eth_bank.cvl (ethBank) --- PASS
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    onlyOwnerCanJoinFlexible
+  [OK]    onlyOwnerCanMoveBrick
+  [OK]    onlyOwnerCanMoveBrickContracts
+  [OK]    onlyOwnerCanWithdrawForUser
+  Time: 32s
+  Link: https://prover.certora.com/output/1696952/a22f257593444bf6b4ae426b19269b68
+
+--- 3. buggy_19_owned.cvl (owned) --- PASS
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    onlyOwnerCanTransferOwnership
+  [OK]    transferOwnershipUpdatesOwner
+  Time: 21s
+  Link: https://prover.certora.com/output/1696952/147fbc45782641d4bbddb0619ea9d881
+
+--- 4. buggy_20_ramp_instant_eth_pool.cvl (RampInstantEthPool) --- PASS
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    onlyOwnerCanWithdrawFunds
+  Time: 27s
+  Link: https://prover.certora.com/output/1696952/16b96fac278b4af8a5d7f94905c67ad9
+
+--- 5. buggy_20_stoppable.cvl (RampInstantPool) --- ERROR
+  [COMPILATION ERROR] Contract RampInstantPool has no bytecode - contract is abstract. Certora Prover cannot handle abstract contracts.
+
+--- 6. buggy_23.cvl (ERC20Burnable) --- PASS
+  [OK]    approveUpdatesAllowance
+  [OK]    burnDecreasesBalance
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    increaseAllowanceUpdatesCorrectly
+  [OK]    transferConservesBalance
+  [OK]    transferfromConservesBalance
+  Time: 28s
+  Link: https://prover.certora.com/output/1696952/ebc5f91e20aa4596913caa29a445feb5
+
+--- 7. buggy_33.cvl (Staking) --- FAIL
+  [OK]    changeStakeTimeUpdatesTime
+  [ERROR] changeStakeTokensUpdatesMin          (minstakeTokens must be updated correctly)
+  [OK]    envfreeFuncsStaticCheck
+  [ERROR] lockWithdrawalsSucceedsForOwner      (owner should be able to lock withdrawals)
+  [ERROR] onlyOwnerCanChangeStakeTime          (non-owner should not be able to change stake time)
+  [ERROR] onlyOwnerCanChangeStakeTokens        (non-owner should not be able to change stake tokens)
+  [ERROR] onlyOwnerCanChangeStakingPercentage  (non-owner should not be able to change staking percentage)
+  [ERROR] onlyOwnerCanLockWithdrawals          (non-owner should not be able to lock withdrawals)
+  Time: 27s
+  Link: https://prover.certora.com/output/1696952/64f9d340ff004c2aa5eb347d38231cf6
+
+--- 8. buggy_34.cvl (LollypopToken) --- FAIL
+  [OK]    approveUpdatesAllowance
+  [OK]    decreaseAllowanceUpdatesCorrectly
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    increaseAllowanceUpdatesCorrectly
+  [ERROR] totalSupplyBounded                   (total supply must be bounded)
+  [ERROR] transferfromUpdatesBalances          (transferfrom must not increase sender balance)
+  Time: 51s
+  Link: https://prover.certora.com/output/1696952/cb51a422d71d45b7ad61973ef020924d
+
+--- 9. buggy_45.cvl (StockBet) --- PASS
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    onlyOracleCanSetFinalPrice
+  [OK]    onlyOracleCanSetInitialPrice
+  [OK]    onlyOwnerCanCloseGame
+  [OK]    onlyOwnerCanSetOracle
+  [OK]    setFinalPriceUpdatesPrice
+  [OK]    setinitialPriceUpdatesPrice
+  [OK]    setOracleUpdatesOracle
+  Time: 29s
+  Link: https://prover.certora.com/output/1696952/1aa1499bd6774a138225866d91643208
+
+--- 10. buggy_47.cvl (AcunarIEO) --- FAIL
+  [OK]    changeDepositAddressUpdatesDeposit
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    onlyAdminCanChangeDepositAddress
+  [OK]    onlyAdminCanHalt
+  [OK]    onlyAdminCanUnhalt
+  [OK]    raisedAmountBounded
+  [ERROR] transferConservesBalance             (transfer must increase recipient's balance)
+  [ERROR] transferfromConservesBalance         (transferfrom must increase destination balance)
+  Time: 50s
+  Link: https://prover.certora.com/output/1696952/d70225e7ab964501976956d2fab1a229
+
+--- 11. buggy_50.cvl (digitalNotary) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    onlyManagerCanSetChangeHashOwner
+  [OK]    onlyManagerCanSetContractActive
+  [OK]    onlyManagerCanSetHashFee
+  [OK]    onlyManagerCanSetManager
+  [ERROR] registerHashIncrementsLength        (hash list length must increment by 1)
+  [OK]    setChangeHashOwnerFeeUpdatesFee
+  [OK]    setContractActiveUpdatesState
+  [OK]    setiHashFeeUpdatesFee
+  Time: 30s
+  Link: https://prover.certora.com/output/1696952/53ae98a1bcec45d390fbb2488a2d87b9
+
+--- 12. buggy_5_token_erc20.cvl (TokenERC20) --- FAIL
+  [ERROR] burnDecreasesBalance     (burn must decrease total supply)
+  [OK]    envfreeFuncsStaticCheck
+  [OK]    transferConservesBalance
+  Time: 27s
+  Link: https://prover.certora.com/output/1696952/925dacf654a746599793a1087150fc9e
+
+--- 13. buggy_5_ttc.cvl (TTC) --- FAIL
+  [OK]    envfreeFuncsStaticCheck
+  [ERROR] mintTokenIncreasesBalance (mintToken must increase target balance)
+  [OK]    onlyOwnerCanFreeze
+  [OK]    onlyOwnerCanMint
+  Time: 30s
+  Link: https://prover.certora.com/output/1696952/84f7bd7cb04c4e65af94a31726bbaad8
+
+==============================================================================

@@ -1,5 +1,5 @@
 # result_link_cvl.txt
-# Generated: 2026-02-12
+# Generated: 2026-02-26
 
 [1] CMD: certoraRun buggy_1.sol:HotDollarsToken --verify HotDollarsToken:certora_specification/buggy_1.cvl
 [1] LINK: https://prover.certora.com/output/1696952/4255797ddd4d47b89d74bc8826099597

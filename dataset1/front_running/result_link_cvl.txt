@@ -1,5 +1,5 @@
 # result_link_cvl.txt
-# Generated: 2026-02-12
+# Generated: 2026-02-26
 
 [1] CMD: certoraRun ERC20.sol:ERC20 --verify ERC20:certora_specification/ERC20.cvl
 [1] LINK: https://prover.certora.com/output/1696952/d58182a316f54da1b8bdd0c3caf5b02c

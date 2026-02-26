@@ -1,5 +1,5 @@
 # result_link_cvl.txt
-# Generated: 2026-02-12
+# Generated: 2026-02-26
 
 [1] CMD: certoraRun HotDollarsToken.sol:HotDollarsToken --verify HotDollarsToken:certora_specification/HotDollarsToken.cvl
 [1] LINK: https://prover.certora.com/output/1696952/71c455489e354c24844fd916c7c52ffd

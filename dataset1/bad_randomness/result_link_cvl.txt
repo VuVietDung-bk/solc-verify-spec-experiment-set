@@ -1,5 +1,5 @@
 # result_link_cvl.txt
-# Generated: 2026-02-12
+# Generated: 2026-02-26
 
 [1] CMD: certoraRun lottery.sol:Lottery --verify Lottery:certora_specification/lottery.cvl
 [1] LINK: https://prover.certora.com/output/1696952/f2c0cc660f2a46e189aa46a65c26238b

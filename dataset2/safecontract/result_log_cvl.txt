@@ -1,153 +1,95 @@
-CERTORA Results Log
-Benchmark: dataset2/safecontract
+==============================================================================
+CERTORA Results Log — dataset2/safecontract
 Date: 2026-02-12
-Total spec files: 9
+==============================================================================
 
-========================================
-Spec: certora_specification/Balancer.cvl
-Contract: balancer.sol:Balancer
-Rules: 1
-  FAIL:
-    Rule swapUpdatesPoolConsistently: VIOLATION
-      - Division by zero
-Timing:
-  [TIME] Run time: 00:00:22
+SUMMARY TABLE
+==============================================================================
+#  | Spec File             | Contract        | Rules | Result
+---|-----------------------|-----------------|-------|-------
+1  | Balancer.cvl          | Balancer        |   1   | FAIL
+2  | Ballot.cvl            | Ballot          |   3   | FAIL
+3  | CareerOneToken.cvl    | CareerOneToken  |   4   | FAIL
+4  | curve.cvl             | Curve           |   1   | FAIL
+5  | StableDEX.cvl         | Core            |   5   | FAIL
+6  | SushiSwap.cvl         | SushiSwap       |   2   | FAIL
+7  | Uniswap.cvl           | UniswapToken    |   4   | FAIL
+8  | WETH9.cvl             | WETH9           |   3   | FAIL
+9  | WrappedToken.cvl      | WrappedToken    |   4   | FAIL
+==============================================================================
 
-Link: https://prover.certora.com/output/1696952/5bf35c39d69b40ec92145cab6529a83a
+OVERALL STATISTICS
+==============================================================================
+Total specs: 9
+Total rules: 27
+PASS:         0  (0.00%)
+FAIL:         9  (100.00%)
+==============================================================================
 
-========================================
-Spec: certora_specification/Ballot.cvl
-Contract: ballot.sol:Ballot
-Rules: 3
-  FAIL:
-    Rule delegateAddsWeight: VIOLATION
-      - Unwinding condition in a loop. We recommend to run with --loop_iter N
-    Rule voteAccumulatesWeight: VIOLATION
-      - currentContract.proposals[proposal].voteCount == old(currentContract.proposals[proposal].voteCount) + old(currentContract.voters[e.msg.sender].weight)
-  PASS:
-    Rule giveRightSetsUnitWeight: PASS
-      - rule_not_vacuous
-      - sanity check for rule giveRightSetsUnitWeight
-Timing:
-  [TIME] Run time: 00:00:22
-Link: https://prover.certora.com/output/1696952/3c740cc3cc9148cf8ca167a6e7402968
+DETAILED RESULTS
+==============================================================================
 
-========================================
+--- 1. Balancer.cvl (Balancer) --- FAIL
+  [ERROR] swapUpdatesPoolConsistently  (Division by zero)
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/5bf35c39d69b40ec92145cab6529a83a
 
-Spec: certora_specification/CareerOneToken.cvl
-Contract: CareerOnToken.sol:CareerOneToken
-Rules: 4
-  FAIL:
-    Rule transferEffects: VIOLATION
-      - to != e.msg.sender => receiverAfter == receiverBefore + amount
-    Rule transferFromEffects: VIOLATION
-      - to != from => toBalanceAfter == toBalanceBefore + amount
-  PASS:
-    Rule approveSetsExactValue: PASS
-      - rule_not_vacuous
-      - sanity check for rule approveSetsExactValue
-    Rule totalSupplyUnchangedForERC20Ops: PASS
-Timing:
-  [TIME] Run time: 00:00:24
-Link: https://prover.certora.com/output/1696952/f895300e73cb489c8695231d1ab1acfd\
+--- 2. Ballot.cvl (Ballot) --- FAIL
+  [OK]    giveRightSetsUnitWeight
+  [ERROR] delegateAddsWeight     (Unwinding condition in a loop)
+  [ERROR] voteAccumulatesWeight  (currentContract.proposals[proposal].voteCount == old(...) + old(...))
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/3c740cc3cc9148cf8ca167a6e7402968
 
-========================================
+--- 3. CareerOneToken.cvl (CareerOneToken) --- FAIL
+  [OK]    approveSetsExactValue
+  [OK]    totalSupplyUnchangedForERC20Ops
+  [ERROR] transferEffects      (to != e.msg.sender => receiverAfter == receiverBefore + amount)
+  [ERROR] transferFromEffects  (to != from => toBalanceAfter == toBalanceBefore + amount)
+  Time: 24s
+  Link: https://prover.certora.com/output/1696952/f895300e73cb489c8695231d1ab1acfd
 
-Spec: certora_specification/curve.cvl
-Contract: curve.sol:Curve
-Rules: 1
-  FAIL:
-    Rule swapMatchesPricing: VIOLATION
-      - Division by zero
-Timing:
-  [TIME] Run time: 00:02:51
+--- 4. curve.cvl (Curve) --- FAIL
+  [ERROR] swapMatchesPricing  (Division by zero)
+  Time: 171s
+  Link: https://prover.certora.com/output/1696952/5bf35c39d69b40ec92145cab6529a83a
 
-Link: https://prover.certora.com/output/1696952/5bf35c39d69b40ec92145cab6529a83a
+--- 5. StableDEX.cvl (Core) --- FAIL
+  [OK]    approveSetsAllowance
+  [OK]    transferFromMovesBalances
+  [OK]    transferMovesBalances
+  [ERROR] onlyOwnerChangesTotalSupply
+  [ERROR] multiTransfer  (Unwinding condition in a loop)
+  Time: 45s
+  Link: https://prover.certora.com/output/1696952/742841ca5302439c911d91157997c9bd
 
-========================================
-Spec: certora_specification/StableDEX.cvl
-Contract: StableDEX.sol:Core
-Rules: 5
-  FAIL:
-    Rule onlyOwnerChangesTotalSupply: VIOLATION
-    Rule multiTransfer: VIOLATION
-      - Unwinding condition in a loop. We recommend to run with `--optimistic_loop`, or with `--loop_iter N`
-  PASS:
-    Rule approveSetsAllowance: PASS
-      - rule_not_vacuous
-      - sanity check for rule approveSetsAllowance
-    Rule transferFromMovesBalances: PASS
-      - rule_not_vacuous
-      - sanity check for rule transferFromMovesBalances
-    Rule transferMovesBalances: PASS
-Timing:
-  [TIME] Run time: 00:00:45
-Link: https://prover.certora.com/output/1696952/742841ca5302439c911d91157997c9bd
+--- 6. SushiSwap.cvl (SushiSwap) --- FAIL
+  [ERROR] depositMintsExpectedShares    (totalBalanceAfter == totalBalanceBefore + amount)
+  [ERROR] withdrawBurnsSharesForAmount  (totalBalanceAfter == totalBalanceBefore - expectedAmount)
+  Time: 142s
+  Link: https://prover.certora.com/output/1696952/742841ca5302439c911d91157997c9bd
 
-========================================
-Spec: certora_specification/SushiSwap.cvl
-Contract: SushiSwap.sol:SushiSwap
-Rules: 2
-  FAIL:
-    Rule depositMintsExpectedShares: VIOLATION
-      - totalBalanceAfter == totalBalanceBefore + amount
-    Rule withdrawBurnsSharesForAmount: VIOLATION
-      - totalBalanceAfter == totalBalanceBefore - expectedAmount
-Timing:
-  [TIME] Run time: 00:02:22
-Link: https://prover.certora.com/output/1696952/742841ca5302439c911d91157997c9bd
+--- 7. Uniswap.cvl (UniswapToken) --- FAIL
+  [OK]    approveSetsAllowance
+  [ERROR] totalSupplyInvariant
+  [ERROR] transferFromAdjustsAllowance  (allowanceAfter == allowanceBefore - amount)
+  [ERROR] transferMovesBalances         (recipient != e.msg.sender => recipientAfter == recipientBefore + amount)
+  Time: 32s
+  Link: https://prover.certora.com/output/1696952/b3eed074ae6b49768e7d0a4c3a61cf1e
 
-========================================
-Spec: certora_specification/Uniswap.cvl
-Contract: Uniswap.sol:UniswapToken
-Rules: 4
-  FAIL:
-    Rule totalSupplyInvariant: VIOLATION
-    Rule transferFromAdjustsAllowance: VIOLATION
-      - allowanceAfter == allowanceBefore - amount
-    Rule transferMovesBalances: VIOLATION
-      - recipient != e.msg.sender => recipientAfter == recipientBefore + amount
-  PASS:
-    Rule approveSetsAllowance: PASS
-      - rule_not_vacuous
-Timing:
-  [TIME] Run time: 00:00:32
-Link: https://prover.certora.com/output/1696952/b3eed074ae6b49768e7d0a4c3a61cf1e
+--- 8. WETH9.cvl (WETH9) --- FAIL
+  [ERROR] depositIncreasesBalance        (contractAfter == contractBefore + value)
+  [ERROR] transferFromRespectsAllowance  (dst != src => dstAfter == dstBefore + amount)
+  [ERROR] withdrawDecreasesBalance       (contractAfter == contractBefore - wad)
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/ff153e58f83143748247ef6269182a2a
 
-========================================
-Spec: certora_specification/WETH9.cvl
-Contract: WETH9.sol:WETH9
-Rules: 3
-  FAIL:
-    Rule depositIncreasesBalance: VIOLATION
-      - contractAfter == contractBefore + value
-    Rule transferFromRespectsAllowance: VIOLATION
-      - dst != src => dstAfter == dstBefore + amount
-    Rule withdrawDecreasesBalance: VIOLATION
-      - contractAfter == contractBefore - wad
-Timing:
-  [TIME] Run time: 00:00:22
-Link: https://prover.certora.com/output/1696952/ff153e58f83143748247ef6269182a2a
+--- 9. WrappedToken.cvl (WrappedToken) --- FAIL
+  [OK]    approveSetsAllowance
+  [ERROR] transferFromAdjustsAllowance  (recipient != sender => senderBalanceAfter == senderBalanceBefore - amount)
+  [ERROR] transferMovesBalances         (recipient != e.msg.sender => recipientBalanceAfter == recipientBalanceBefore + amount)
+  [ERROR] wrapMintsTokens               (balanceAfter == balanceBefore + amount)
+  Time: 25s
+  Link: https://prover.certora.com/output/1696952/dc6bc72f7f7f4491a61bb535f714b6c0
 
-========================================
-Spec: certora_specification/WrappedToken.cvl
-Contract: WrappedToken.sol:WrappedToken
-Rules: 4
-  FAIL:
-    Rule transferFromAdjustsAllowance: VIOLATION
-      - recipient != sender => senderBalanceAfter == senderBalanceBefore - amount
-    Rule transferMovesBalances: VIOLATION
-      - recipient != e.msg.sender => recipientBalanceAfter == recipientBalanceBefore + amount
-    Rule wrapMintsTokens: VIOLATION
-      - balanceAfter == balanceBefore + amount
-  PASS:
-    Rule approveSetsAllowance: PASS
-      - rule_not_vacuous
-      - sanity check for rule approveSetsAllowance
-Timing:
-  [TIME] Run time: 00:00:25
-Link: https://prover.certora.com/output/1696952/dc6bc72f7f7f4491a61bb535f714b6c0
-
-========================================
-SUMMARY: 9 spec files (3 ERROR, 6 verified)
-  Total run time: ~02:25
+==============================================================================

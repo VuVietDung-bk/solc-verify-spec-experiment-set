@@ -1,182 +1,140 @@
-CERTORA Results Log
-Benchmark: dataset3/Timestamp-Dependency
+==============================================================================
+CERTORA Results Log — dataset3/Timestamp-Dependency
 Date: 2026-02-12
-Total spec files: 10
+==============================================================================
 
-========================================
-Spec: certora_specification/buggy_1.cvl
-Contract: buggy_1.sol:HotDollarsToken
-Rules: 2
-  FAIL:
-    Rule play_tmstmp39_when_condition_fails: VIOLATION
-      - winner must remain unchanged when condition not met
-  PASS:
-    Rule play_tmstmp39_when_condition_holds: PASS
-      - rule_not_vacuous
-      - sanity check for rule play_tmstmp39_when_condition_holds
-Timing:
-  [TIME] Run time: 00:00:26
-Link: https://prover.certora.com/output/1696952/4255797ddd4d47b89d74bc8826099597
+SUMMARY TABLE
+==============================================================================
+#  | Spec File                   | Contract           | Rules | Result
+---|-----------------------------|--------------------|-------|-------
+1  | buggy_1.cvl                 | HotDollarsToken    |   2   | FAIL
+2  | buggy_5.cvl                 | TTC                |   2   | FAIL
+3  | buggy_19.cvl                | ethBank            |   2   | FAIL
+4  | buggy_20.cvl                | RampInstantEthPool |   6   | PASS
+5  | buggy_23.cvl                | AGR                |   5   | FAIL
+6  | buggy_33.cvl                | Staking            |   2   | FAIL
+7  | buggy_34.cvl                | LollypopToken      |   2   | PASS
+8  | buggy_45.cvl                | StockBet           |   4   | FAIL
+9  | buggy_47.cvl                | AcunarIEO          |   -   | ERROR
+10 | buggy_50.cvl                | digitalNotary      |   4   | FAIL
+11 | buggy_20_ethpool.cvl        | RampInstantEthPool |   2   | PASS
+12 | buggy_20_ownable.cvl        | Ownable            |   1   | PASS
+13 | buggy_20_pool.cvl           | RampInstantPool    |   -   | ERROR
+14 | buggy_20_stoppable.cvl      | Stoppable          |   1   | PASS
+15 | buggy_23_erc20.cvl          | ERC20              |   4   | FAIL
+16 | buggy_23_erc20_burnable.cvl | ERC20Burnable      |   1   | PASS
+==============================================================================
 
-========================================
-Spec: certora_specification/buggy_5.cvl
-Contract: buggy_5.sol:TTC
-Rules: 2
-  FAIL:
-    Rule play_tmstmp38_when_condition_fails: VIOLATION
-      - winner must remain unchanged when condition not met
-  PASS:
-    Rule play_tmstmp38_when_condition_holds: PASS
-      - rule_not_vacuous
-      - sanity check for rule play_tmstmp38_when_condition_holds
-Timing:
-  [TIME] Run time: 00:00:28
-Link: https://prover.certora.com/output/1696952/42ef5cd6973d44b7a0a8acd2312908ee
+OVERALL STATISTICS
+==============================================================================
+Total specs: 16
+Total rules: 38
+PASS:         6  (37.50%)
+FAIL:         8  (50.00%)
+ERROR:        2  (12.50%)
+==============================================================================
 
-========================================
-Spec: certora_specification/buggy_19.cvl
-Contract: buggy_19.sol:ethBank
-Rules: 2
-  FAIL:
-    Rule play_tmstmp3_when_condition_fails: VIOLATION
-      - winner must remain unchanged when condition not met
-  PASS:
-    Rule play_tmstmp3_when_condition_holds: PASS
-      - rule_not_vacuous
-      - sanity check for rule play_tmstmp3_when_condition_holds
-Timing:
-  [TIME] Run time: 00:00:22
-Link: https://prover.certora.com/output/1696952/1278c0483eaa4563a5ffcc42fce7018a
+DETAILED RESULTS
+==============================================================================
 
-========================================
-Spec: certora_specification/buggy_20.cvl
-Contract: buggy_20.sol:RampInstantEthPool
-Rules: 6
-  PASS:
-    Rule changeOwner_no_timestamp_dependency: PASS
-      - rule_not_vacuous
-      - sanity check for rule changeOwner_no_timestamp_dependency
-    Rule sendFundsToSwap_respects_limits: PASS
-      - rule_not_vacuous
-      - sanity check for rule sendFundsToSwap_respects_limits
-    Rule sendFundsToSwap_reverts_outside_limits: PASS
-      - rule_not_vacuous
-      - sanity check for rule sendFundsToSwap_reverts_outside_limits
-    Rule setIsActive_no_timestamp_dependency: PASS
-      - rule_not_vacuous
-      - sanity check for rule setIsActive_no_timestamp_dependency
-    Rule setLimits_no_timestamp_dependency: PASS
-      - rule_not_vacuous
-      - sanity check for rule setLimits_no_timestamp_dependency
-    Rule withdrawAllFunds_no_timestamp_dependency: PASS
-      - rule_not_vacuous
-      - sanity check for rule withdrawAllFunds_no_timestamp_dependency
-Timing:
-  [TIME] Run time: 00:00:29
-Link: https://prover.certora.com/output/1696952/13e24c25b35745af878cb2e3dd1a8962
+--- 1. buggy_1.cvl (HotDollarsToken) --- FAIL
+  [OK]    play_tmstmp39_when_condition_holds
+  [ERROR] play_tmstmp39_when_condition_fails  (winner must remain unchanged when condition not met)
+  Time: 26s
+  Link: https://prover.certora.com/output/1696952/4255797ddd4d47b89d74bc8826099597
 
-========================================
-Spec: certora_specification/buggy_23.cvl
-Contract: buggy_23.sol:AGR
-Rules: 5
-  FAIL:
-    Rule play_tmstmp19_no_change_when_time_mismatch: VIOLATION
-      - winner must not change when time does not match
-  PASS:
-    Rule approve_no_timestamp_dependency: PASS
-      - rule_not_vacuous
-      - sanity check for rule approve_no_timestamp_dependency
-    Rule burn_no_timestamp_dependency: PASS
-      - rule_not_vacuous
-      - sanity check for rule burn_no_timestamp_dependency
-    Rule play_tmstmp19_sets_winner_at_exact_time: PASS
-      - rule_not_vacuous
-      - sanity check for rule play_tmstmp19_sets_winner_at_exact_time
-    Rule transfer_no_timestamp_dependency: PASS
-      - rule_not_vacuous
-      - sanity check for rule transfer_no_timestamp_dependency
-Timing:
-  [TIME] Run time: 00:00:28
-Link: https://prover.certora.com/output/1696952/290440c1d13b4700be07fe2f71fbf8b8
+--- 2. buggy_5.cvl (TTC) --- FAIL
+  [OK]    play_tmstmp38_when_condition_holds
+  [ERROR] play_tmstmp38_when_condition_fails  (winner must remain unchanged when condition not met)
+  Time: 28s
+  Link: https://prover.certora.com/output/1696952/42ef5cd6973d44b7a0a8acd2312908ee
 
-========================================
-Spec: certora_specification/buggy_33.cvl
-Contract: buggy_33.sol:Staking
-Rules: 2
-  FAIL:
-    Rule play_tmstmp23_when_condition_fails: VIOLATION
-      - winner must remain unchanged when condition not met
-  PASS:
-    Rule play_tmstmp23_when_condition_holds: PASS
-      - rule_not_vacuous
-      - sanity check for rule play_tmstmp23_when_condition_holds
-Timing:
-  [TIME] Run time: 00:00:25
-Link: https://prover.certora.com/output/1696952/8d6bc7151a7e43f18aab7a73ecce5e36
+--- 3. buggy_19.cvl (ethBank) --- FAIL
+  [OK]    play_tmstmp3_when_condition_holds
+  [ERROR] play_tmstmp3_when_condition_fails  (winner must remain unchanged when condition not met)
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/1278c0483eaa4563a5ffcc42fce7018a
 
-========================================
-Spec: certora_specification/buggy_34.cvl
-Contract: buggy_34.sol:LollypopToken
-Rules: 2
-  PASS:
-    Rule bug_tmstmp28_accepts_same_block_calls: PASS
-      - rule_not_vacuous
-      - sanity check for rule bug_tmstmp28_accepts_same_block_calls
-    Rule bug_tmstmp9_executes_timestamp_comparison: PASS
-      - rule_not_vacuous
-      - sanity check for rule bug_tmstmp9_executes_timestamp_comparison
-Timing:
-  [TIME] Run time: 00:00:31
-Link: https://prover.certora.com/output/1696952/b991cacb199244b1ba30517ac2dca7a1
+--- 4. buggy_20.cvl (RampInstantEthPool) --- PASS
+  [OK]    changeOwner_no_timestamp_dependency
+  [OK]    sendFundsToSwap_respects_limits
+  [OK]    sendFundsToSwap_reverts_outside_limits
+  [OK]    setIsActive_no_timestamp_dependency
+  [OK]    setLimits_no_timestamp_dependency
+  [OK]    withdrawAllFunds_no_timestamp_dependency
+  Time: 29s
+  Link: https://prover.certora.com/output/1696952/13e24c25b35745af878cb2e3dd1a8962
 
-========================================
-Spec: certora_specification/buggy_45.cvl
-Contract: buggy_45.sol:StockBet
-Rules: 4
-  FAIL:
-    Rule play_tmstmp27_when_condition_fails: VIOLATION
-      - winner must remain unchanged when condition not met
-  PASS:
-    Rule bug_tmstmp13_executes_timestamp_comparison: PASS
-      - rule_not_vacuous
-      - sanity check for rule bug_tmstmp13_executes_timestamp_comparison
-    Rule bug_tmstmp8_accepts_same_block_calls: PASS
-      - rule_not_vacuous
-      - sanity check for rule bug_tmstmp8_accepts_same_block_calls
-    Rule play_tmstmp27_when_condition_holds: PASS
-      - rule_not_vacuous
-      - sanity check for rule play_tmstmp27_when_condition_holds
-Timing:
-  [TIME] Run time: 00:00:25
-Link: https://prover.certora.com/output/1696952/e32dd60004ff43aa902b8d81e0ca0000
+--- 5. buggy_23.cvl (AGR) --- FAIL
+  [OK]    approve_no_timestamp_dependency
+  [OK]    burn_no_timestamp_dependency
+  [OK]    play_tmstmp19_sets_winner_at_exact_time
+  [OK]    transfer_no_timestamp_dependency
+  [ERROR] play_tmstmp19_no_change_when_time_mismatch  (winner must not change when time does not match)
+  Time: 28s
+  Link: https://prover.certora.com/output/1696952/290440c1d13b4700be07fe2f71fbf8b8
 
-========================================
-Spec: certora_specification/buggy_47.cvl
-Contract: buggy_47.sol:AcunarIEO
-Status: ERROR - Compiler warning - unnamed return variable
+--- 6. buggy_33.cvl (Staking) --- FAIL
+  [OK]    play_tmstmp23_when_condition_holds
+  [ERROR] play_tmstmp23_when_condition_fails  (winner must remain unchanged when condition not met)
+  Time: 25s
+  Link: https://prover.certora.com/output/1696952/8d6bc7151a7e43f18aab7a73ecce5e36
 
-========================================
-Spec: certora_specification/buggy_50.cvl
-Contract: buggy_50.sol:digitalNotary
-Rules: 4
-  FAIL:
-    Rule play_tmstmp19_when_condition_fails: VIOLATION
-      - winner must remain unchanged when condition not met
-  PASS:
-    Rule bug_tmstmp20_accepts_same_block_calls: PASS
-      - rule_not_vacuous
-      - sanity check for rule bug_tmstmp20_accepts_same_block_calls
-    Rule bug_tmstmp9_executes_timestamp_comparison: PASS
-      - rule_not_vacuous
-      - sanity check for rule bug_tmstmp9_executes_timestamp_comparison
-    Rule play_tmstmp19_when_condition_holds: PASS
-      - rule_not_vacuous
-      - sanity check for rule play_tmstmp19_when_condition_holds
-Timing:
-  [TIME] Run time: 00:00:26
-Link: https://prover.certora.com/output/1696952/8f38a7ba3db14973879dbd9048f05221
+--- 7. buggy_34.cvl (LollypopToken) --- PASS
+  [OK]    bug_tmstmp28_accepts_same_block_calls
+  [OK]    bug_tmstmp9_executes_timestamp_comparison
+  Time: 31s
+  Link: https://prover.certora.com/output/1696952/b991cacb199244b1ba30517ac2dca7a1
 
-========================================
-SUMMARY: 10 spec files (1 ERROR, 9 verified)
-  6/9 specs passed all rules
-  Total run time: ~04:00
+--- 8. buggy_45.cvl (StockBet) --- FAIL
+  [OK]    bug_tmstmp13_executes_timestamp_comparison
+  [OK]    bug_tmstmp8_accepts_same_block_calls
+  [OK]    play_tmstmp27_when_condition_holds
+  [ERROR] play_tmstmp27_when_condition_fails  (winner must remain unchanged when condition not met)
+  Time: 25s
+  Link: https://prover.certora.com/output/1696952/e32dd60004ff43aa902b8d81e0ca0000
+
+--- 9. buggy_47.cvl (AcunarIEO) --- ERROR
+  [COMPILATION ERROR] Compiler warning - unnamed return variable
+
+--- 10. buggy_50.cvl (digitalNotary) --- FAIL
+  [OK]    bug_tmstmp20_accepts_same_block_calls
+  [OK]    bug_tmstmp9_executes_timestamp_comparison
+  [OK]    play_tmstmp19_when_condition_holds
+  [ERROR] play_tmstmp19_when_condition_fails  (winner must remain unchanged when condition not met)
+  Time: 26s
+  Link: https://prover.certora.com/output/1696952/8f38a7ba3db14973879dbd9048f05221
+
+--- 11. buggy_20_ethpool.cvl (RampInstantEthPool) --- PASS
+  [OK]    sendFundsToSwap_respects_limits
+  [OK]    sendFundsToSwap_reverts_outside_limits
+  Time: 27s
+  Link: https://prover.certora.com/output/1696952/83a567e3203942e290a5d8c20d8b469d
+
+--- 12. buggy_20_ownable.cvl (Ownable) --- PASS
+  [OK]    changeOwner_no_timestamp_dependency
+  Time: 20s
+  Link: https://prover.certora.com/output/1696952/811eedac5cf94837884ae7af28fad50b
+
+--- 13. buggy_20_pool.cvl (RampInstantPool) --- ERROR
+  [COMPILATION ERROR] Contract RampInstantPool has no bytecode - contract is abstract. Certora Prover cannot handle abstract contracts.
+
+--- 14. buggy_20_stoppable.cvl (Stoppable) --- PASS
+  [OK]    setIsActive_no_timestamp_dependency
+  Time: 20s
+  Link: https://prover.certora.com/output/1696952/842b3160be104f9dade00ce732284bf2
+
+--- 15. buggy_23_erc20.cvl (ERC20) --- FAIL
+  [OK]    approve_no_timestamp_dependency
+  [ERROR] play_tmstmp19_no_change_when_time_mismatch  (winner must not change when time does not match)
+  [OK]    play_tmstmp19_sets_winner_at_exact_time
+  [OK]    transfer_no_timestamp_dependency
+  Time: 23s
+  Link: https://prover.certora.com/output/1696952/5b9de64ac6ef4a489ea3d397fa262c49
+
+--- 16. buggy_23_erc20_burnable.cvl (ERC20Burnable) --- PASS
+  [OK]    burn_no_timestamp_dependency
+  Time: 22s
+  Link: https://prover.certora.com/output/1696952/9bce2b58f9104c5387e032cc03b94889
+
+==============================================================================

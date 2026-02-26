@@ -1,5 +1,5 @@
 # result_link_cvl.txt
-# Generated: 2026-02-12
+# Generated: 2026-02-26
 
 [1] CMD: certoraRun asignatura.sol:Asignatura --verify Asignatura:certora_specification/Asignatura.cvl
 [1] LINK: https://prover.certora.com/output/1696952/21aede2251b24422b21c60e2843a8d27
