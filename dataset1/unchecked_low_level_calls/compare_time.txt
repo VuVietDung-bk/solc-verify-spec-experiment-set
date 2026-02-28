@@ -1,0 +1,52 @@
+==============================================================================
+TIME COMPARISON — dataset1/unchecked_low_level_calls
+==============================================================================
+
+Benchmark: unchecked_low_level_calls
+Contracts: 24
+Specs: 24 (SVS) / 24 (CVL)
+
+==============================================================================
+Per-Spec Timing
+==============================================================================
+
+#  | Spec / Contract          | SVS rule(s)| SVS e2e(s) | CVL (s) | Speedup
+---|--------------------------|-----------|------------|---------|--------
+1  | 0x0cbe Caller            |     1.46  |      2.33  |    17   |  7.30x
+2  | 0x3e01 MultiplicatorX4   |     1.92  |      2.84  |    19   |  6.69x
+3  | 0x3f2e WhaleGiveaway2    |     1.88  |      2.85  |    20   |  7.02x
+4  | 0x52d2 EtherGet          |     2.44  |      3.69  |    18   |  4.88x
+5  | 0x5aa8 MultiplicatorX3   |     1.85  |      2.88  |    19   |  6.60x
+6  | 0x6104 SimpleWallet      |     5.63  |      6.57  |    23   |  3.50x
+7  | 0x70f9 HomeyJar          |     1.75  |      2.72  |    20   |  7.35x
+8  | 0x78c2 WhaleGiveaway1    |     6.16  |      7.11  |    23   |  3.24x
+9  | 0x7a43 WhaleGiveaway1    |     5.79  |      6.76  |    22   |  3.25x
+10 | 0x806a Pie               |     5.89  |      6.85  |    23   |  3.36x
+11 | 0x84d9 WedIndex          |     2.15  |      3.19  |    25   |  7.84x
+12 | 0x958a Marriage           |     3.70  |      4.83  |    34   |  7.04x
+13 | 0xb051 Splitter          |     3.37  |      4.66  |    23   |  4.94x
+14 | 0xb37f SimpleWallet      |     5.88  |      6.84  |    22   |  3.22x
+15 | 0xb7c5 keepMyEther       |     1.81  |      2.74  |    19   |  6.93x
+16 | 0xd201 Pie               |     6.07  |      7.09  |    22   |  3.10x
+17 | 0xdb1c FreeEth           |     5.92  |      6.90  |    22   |  3.19x
+18 | 0xe4ea Honey             |     5.67  |      6.64  |    22   |  3.31x
+19 | 0xe82f Freebie           |     5.95  |      6.97  |    22   |  3.16x
+20 | 0xf29e B                 |     1.88  |      2.82  |    20   |  7.09x
+21 | 0xf70d WhaleGiveaway2    |     6.44  |      7.72  |    24   |  3.11x
+22 | lotto Lotto              |     3.26  |      4.21  |    19   |  4.51x
+23 | mishandled SendBack      |     1.54  |      2.45  |    18   |  7.35x
+24 | unchecked ReturnValue    |     1.64  |      2.55  |    17   |  6.67x
+==============================================================================
+
+SUMMARY
+==============================================================================
+SVS total rule time:       91.95s
+SVS total end-to-end:     115.21s
+CVL total time:           514.00s
+
+Average SVS rule time:      3.83s
+Average SVS e2e time:       4.80s
+Average CVL time:          21.42s
+
+Speedup (e2e vs CVL):      4.46x
+==============================================================================

@@ -1,0 +1,20 @@
+==============================================================================
+TIME COMPARISON — dataset2/arithmetic
+==============================================================================
+
+Spec                                    | SVS rule | SVS e2e | CVL
+----------------------------------------|----------|---------|------
+insecure_transfer.spec                  |   4.75s  |  5.73s  | 18s
+integer_overflow_add.spec               |   1.51s  |  2.56s  | 17s
+integer_overflow_benign_1.spec          |   1.60s  |  2.63s  | 18s
+integer_overflow_minimal.spec           |   1.53s  |  2.59s  | 18s
+integer_overflow_mul.spec               |   1.58s  |  2.59s  | 17s
+integer_overflow_multitx_multifunc.spec |   1.81s  |  2.76s  | 17s
+integer_overflow_multitx_onefunc.spec   |   1.70s  |  2.66s  | 17s
+overflow_single_tx.spec                 |   6.76s  |  7.77s  | 19s
+tokensalechallenge.spec                 |  21.75s  | 22.97s  | 20s
+----------------------------------------|----------|---------|------
+TOTAL                                   |  40.99s  | 52.26s  | 161s
+
+Speedup (e2e vs CVL): 3.08x
+==============================================================================

@@ -1,0 +1,77 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset2/time_manipulation
+==============================================================================
+Contracts: HotDollarsToken, TAMContract, TTC, lottopollo, roulette,
+  timed_crowdsale
+Vulnerability: Reliance on block.timestamp for critical logic
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- HotDollarsToken (1 SVS / 1 CVL) ---
+  bug_tmstmp36_should_not_drain_balance [OK/ERROR]
+    Contract: bug_tmstmp36() uses block.timestamp to decide payout.
+    If timestamp % 2 == 0, attacker wins and balance drains.
+    Spec: assert balAfter == balBefore + msg.value (no drain).
+    Property IS violated (drain when timestamp condition met).
+    SVS: FN (complex contract with EIP20Interface inheritance;
+         SVS fails to detect the timestamp-based drain)
+    CVL: TP
+
+--- TAMContract (1 SVS / 1 CVL) ---
+  bug_tmstmp40_should_not_drain_balance [ERROR/ERROR]
+    Same pattern: timestamp-based payout drains balance.
+    Property IS violated.
+    SVS: TP | CVL: TP
+
+--- TTC (1 SVS / 1 CVL) ---
+  bug_tmstmp32_should_not_drain_balance [OK/ERROR]
+    Same pattern. Property IS violated.
+    SVS: FN (complex contract — same issue as HotDollarsToken)
+    CVL: TP
+
+--- lottopollo (2 SVS / 2 CVL) ---
+  randomGen_should_not_be_timestamp [ERROR/ERROR]
+    randomGen() returns block.timestamp. Spec: r != block.timestamp.
+    Property IS violated (r IS block.timestamp).
+    SVS: TP | CVL: TP
+  draw_should_not_drain_on_timestamp [ERROR/OK]
+    Spec: assert balAfter >= 0. Since balAfter is uint, always >= 0.
+    Property is TRIVIALLY true.
+    SVS: FP (SVS has issues with draw function's balance/external
+         call modeling despite trivial assertion)
+    CVL: TN (correctly verifies trivial assertion)
+
+--- roulette (1 SVS / 0 CVL + 1 Error) ---
+  fallback_should_not_payout_on_timestamp [ERROR/COMPILATION ERROR]
+    Roulette fallback uses timestamp to determine winner. Property IS
+    violated (winner gets payout, draining balance).
+    SVS: TP
+    CVL: Error (COMPILATION ERROR — spec references nonexistent spin()
+         function in Roulette contract)
+
+--- timed_crowdsale (1 SVS / 1 CVL) ---
+  sale_should_not_be_finished [ERROR/ERROR]
+    isSaleFinished() returns block.timestamp >= sale_time. With
+    symbolic timestamp, sale CAN be finished. Property IS violated.
+    SVS: TP | CVL: TP
+
+==============================================================================
+SUMMARY
+==============================================================================
+          TP   TN   FP   FN   Error  Total
+SVS:       4    0    1    2    0       7
+CVL:       5    1    0    0    1       6+1e
+
+SVS Precision: 4/5 = 80.00%   Recall: 4/6 = 66.67%
+CVL Precision: 5/5 = 100.00%  Recall: 5/5 = 100.00%
+
+SVS False Negatives:
+  - HotDollarsToken: complex contract with inheritance, SVS can't
+    detect timestamp-based drain in bug_tmstmp36()
+  - TTC: same issue in bug_tmstmp32()
+
+CVL Compilation Error:
+  - roulette: spec references nonexistent function name
+==============================================================================

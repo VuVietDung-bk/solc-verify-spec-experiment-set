@@ -1,0 +1,25 @@
+==============================================================================
+TIME COMPARISON — dataset3/Unchecked-Send
+==============================================================================
+
+Spec                                 | SVS rule  | SVS e2e  | CVL
+-------------------------------------|-----------|----------|------
+buggy_1.spec                         |    6.42s  |   7.43s  |  25s
+buggy_19_eth_bank.spec               |   21.78s  |  22.94s  |  32s
+buggy_19_owned.spec                  |   10.88s  |  12.05s  |  21s
+buggy_20_ramp_instant_eth_pool.spec  |    5.27s  |   6.43s  |  27s
+buggy_20_stoppable.spec              |   26.50s  |  27.73s  |  ERR
+buggy_23.spec                        |   27.90s  |  29.32s  |  28s
+buggy_33.spec                        |   36.31s  |  37.50s  |  27s
+buggy_34.spec                        |   19.35s  |  20.70s  |  51s
+buggy_45.spec                        |   22.96s  |  24.04s  |  29s
+buggy_47.spec                        |    4.78s  |   6.02s  |  50s
+buggy_50.spec                        |   36.19s  |  37.34s  |  30s
+buggy_5_token_erc20.spec             |    7.95s  |   9.26s  |  27s
+buggy_5_ttc.spec                     |   12.19s  |  13.44s  |  30s
+-------------------------------------|-----------|----------|------
+TOTAL                                |  238.48s  | 254.20s  | 377s
+(CVL total excludes 1 compilation error)
+
+Speedup (SVS e2e vs CVL): 377 / 254.20 = 1.48x
+==============================================================================

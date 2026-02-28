@@ -1,0 +1,142 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset2/safecontract
+==============================================================================
+Contracts: CareerOnToken, StableDEX (Core), SushiSwap, Uniswap (UniswapToken),
+  WETH9, WrappedToken, Balancer, Ballot, Curve
+*** ALL contracts are SAFE — no known vulnerabilities ***
+PASS = TN (correct), FAIL = FP (false alarm)
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- CareerOnToken (4 SVS / 4 CVL) ---
+Safe ERC20 token. Standard transfer/approve/transferFrom.
+  transferEffects [OK/ERROR]
+    Transfer correctly moves balances. Property IS true.
+    SVS: TN | CVL: FP (CVL flags potential overflow in balanceOf += value)
+  transferFromEffects [OK/ERROR]
+    TransferFrom correctly moves balances. Property IS true.
+    SVS: TN | CVL: FP (same overflow concern)
+  approveSetsExactValue [OK/OK]
+    Approve sets exact allowance. Property IS true.
+    SVS: TN | CVL: TN
+  totalSupplyUnchangedForERC20Ops [OK/OK]
+    ERC20 ops don't change totalSupply. Property IS true.
+    SVS: TN | CVL: TN
+
+--- StableDEX / Core (4 SVS / 5 CVL) ---
+Safe ERC20 with owner-controlled mint.
+  transferMovesBalances [OK/OK]
+    SVS: TN | CVL: TN
+  transferFromMovesBalances [OK/OK]
+    SVS: TN | CVL: TN
+  approveSetsAllowance [OK/OK]
+    SVS: TN | CVL: TN
+  onlyOwnerChangesTotalSupply [OK/ERROR]
+    Only owner can change totalSupply. Property IS true.
+    SVS: TN | CVL: FP (CVL constructor/method quantification issue)
+  multiTransfer (CVL only) [—/ERROR]
+    Unwinding condition in a loop — CVL can't unroll.
+    CVL: FP
+
+--- SushiSwap (2 SVS / 2 CVL) ---
+Safe DEX with deposit/withdraw involving external IERC20.transferFrom.
+  depositMintsExpectedShares [ERROR/ERROR]
+    Spec: after deposit, totalBalance and totalShares increase correctly.
+    Property IS true. Both tools fail due to external IERC20.transferFrom
+    call modeling (havoc of external call affects proof).
+    SVS: FP | CVL: FP
+  withdrawBurnsSharesForAmount [ERROR/ERROR]
+    Same issue with external IERC20.transfer.
+    SVS: FP | CVL: FP
+
+--- Uniswap / UniswapToken (4 SVS / 4 CVL) ---
+Safe ERC20 implementing IERC20 interface.
+  transferMovesBalances [ERROR/ERROR]
+    Property IS true. SVS: invariant violation propagates from
+    balancesNonNegative invariant. CVL: potential overflow in
+    _balances[recipient] += amount.
+    SVS: FP | CVL: FP
+  transferFromAdjustsAllowance [ERROR/ERROR]
+    SVS: FP | CVL: FP
+  approveSetsAllowance [ERROR/OK]
+    SVS: FP (invariant interference) | CVL: TN
+  totalSupplyInvariant [ERROR/ERROR]
+    No function modifies _totalSupply. Property IS true.
+    SVS: FP (constructor issue) | CVL: FP
+
+--- WETH9 (3 SVS / 3 CVL) ---
+Safe Wrapped Ether contract.
+  depositIncreasesBalance [ERROR/ERROR]
+    Spec checks both balanceOf and contract.balance increase.
+    Property IS true. Both tools fail on contract.balance tracking
+    with receive()/withdraw() interactions.
+    SVS: FP | CVL: FP
+  withdrawDecreasesBalance [ERROR/ERROR]
+    withdraw() uses transfer() (external call). Balance tracking imprecise.
+    SVS: FP | CVL: FP
+  transferFromRespectsAllowance [ERROR/ERROR]
+    Property IS true. SVS: invariant violation. CVL: overflow concern.
+    SVS: FP | CVL: FP
+
+--- WrappedToken (4 SVS / 4 CVL) ---
+Safe wrapped token with wrap/unwrap.
+  wrapMintsTokens [OK/ERROR]
+    SVS: TN | CVL: FP (overflow in _balances += amount)
+  transferMovesBalances [OK/ERROR]
+    SVS: TN | CVL: FP (same)
+  transferFromAdjustsAllowance [OK/ERROR]
+    SVS: TN | CVL: FP (same)
+  approveSetsAllowance [OK/OK]
+    SVS: TN | CVL: TN
+
+--- Balancer (1 SVS / 1 CVL) ---
+Safe AMM with swap function involving division.
+  swapUpdatesPoolConsistently [TIMEOUT/ERROR]
+    Spec: pool balances update correctly after swap. Property IS true
+    for valid inputs. SVS times out (complex division). CVL: "Division
+    by zero" — pool weights could be zero.
+    SVS: FP (timeout) | CVL: FP (div-by-zero edge case)
+
+--- Ballot (3 SVS / 3 CVL) ---
+Safe voting contract.
+  giveRightSetsUnitWeight [OK/OK]
+    SVS: TN | CVL: TN
+  delegateAddsWeight [ERROR/ERROR]
+    delegate() has while loop for delegation chain. Both tools
+    can't handle the loop.
+    SVS: FP | CVL: FP (Unwinding condition in loop)
+  voteAccumulatesWeight [ERROR/ERROR]
+    Property IS true. SVS: postcondition issue. CVL: voteCount
+    assertion fails (possibly due to delegation chain modeling).
+    SVS: FP | CVL: FP
+
+--- Curve (1 SVS / 1 CVL) ---
+Safe AMM similar to Balancer.
+  swapMatchesPricing [ERROR/ERROR]
+    Same issues as Balancer (complex pricing formula, div-by-zero).
+    SVS: FP | CVL: FP (Division by zero)
+
+==============================================================================
+SUMMARY
+==============================================================================
+          TP   TN   FP   FN   Error  Total
+SVS:       0   13   13    0    0      26
+CVL:       0    8   19    0    0      27
+
+SVS Precision: N/A (no TP or FP count relevant since all safe)
+CVL Precision: N/A
+
+False Positive Rate:
+SVS: 13/26 = 50.00% of rules are false alarms
+CVL: 19/27 = 70.37% of rules are false alarms
+
+Key findings:
+- Safe contracts are the hardest for both tools to verify
+- SVS successfully verifies 13/26 rules (50%), CVL only 8/27 (30%)
+- External calls (IERC20, transfer), loops (Ballot delegate), and
+  complex math (Balancer, Curve) are the main FP sources
+- SVS handles simple ERC20 contracts better (CareerOnToken, StableDEX,
+  WrappedToken all pass). CVL fails on most transfer/transferFrom rules.
+==============================================================================

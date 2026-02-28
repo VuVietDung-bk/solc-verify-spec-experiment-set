@@ -1,0 +1,154 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset2/reentrancy
+==============================================================================
+Contracts: etherstore, reentrance, reentrancy_bonus, reentrancy_cross_function,
+  reentrancy_dao, reentrancy_insecure, reentrancy_simple, simple_dao
+Vulnerability: State updated AFTER external call (reentrancy)
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- etherstore (3 SVS / 4 CVL) ---
+Contract: withdrawFunds() sends ETH via call{value} THEN decrements balance.
+  withdraw_decreases_balance [ERROR/OK]
+    Reentrancy: during call{value}, attacker re-enters withdrawFunds,
+    withdrawing multiple times before balance decrement. After unwind,
+    balance = X - n*W ≠ X - W. Property IS violated.
+    SVS: TP (detects reentrancy-induced postcondition violation)
+    CVL: FN (single-transaction model misses reentrancy)
+  deposit_increases_balance [OK/ERROR]
+    No external calls in deposit. Property IS true.
+    SVS: TN | CVL: FP (modeling issue with simple addition)
+  deposit_no_lastWithdrawTime_change [OK/OK]
+    SVS: TN | CVL: TN
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- reentrance (2 SVS / 3 CVL) ---
+Contract: withdraw() sends via call{value} THEN decrements balance.
+  withdraw_decreases_balance [ERROR/OK]
+    Same reentrancy pattern as etherstore.
+    SVS: TP | CVL: FN
+  donate_increases_balance [OK/ERROR]
+    No external calls. Property IS true.
+    SVS: TN | CVL: FP
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- reentrancy_bonus (2 SVS / 2 CVL) ---
+Contract: getFirstWithdrawalBonus sets claimedBonus THEN calls withdrawReward
+which sends via call{value}. During callback, rewards can be manipulated.
+  getFirstWithdrawalBonus_sets_claimed [OK/—]
+    Property IS true (claimedBonus set before external call).
+    SVS: TN
+  bonus_cannot_be_claimed_twice (CVL) [—/OK]
+    CVL: TN
+  withdrawReward_clears_rewards [ERROR/—]
+    Reentrancy can re-set rewards after clearing. Property IS violated.
+    SVS: TP
+  withdrawReward_no_revert (CVL) [—/ERROR]
+    Function CAN revert on call failure. Property IS violated.
+    CVL: TP
+
+--- reentrancy_cross_function (2 SVS / 2 CVL) ---
+Contract: withdrawBalance() sends via call{value} THEN sets balance=0.
+  withdrawBalance_sets_zero [OK/—]
+    After all reentrancy unwinds, last assignment sets balance=0.
+    Property IS true (even with reentrancy, final state has balance=0).
+    SVS: TN
+  transfer_moves_balance [OK/—]
+    No external calls in transfer. Property IS true.
+    SVS: TN
+  transfer_no_revert (CVL) [—/OK]
+    Transfer uses if-check (not require), doesn't revert.
+    CVL: TN
+  withdrawBalance_no_revert (CVL) [—/ERROR]
+    Function CAN revert on call failure. Property IS violated.
+    CVL: TP
+
+--- reentrancy_dao (3 SVS / 2 CVL) ---
+Contract: withdrawAll() decrements balance THEN sends via call{value} THEN
+sets credit=0. Reentrancy possible between send and credit=0.
+  withdrawAll_sets_credit_zero [OK/—]
+    After unwind, credit[sender]=0. Property IS true.
+    SVS: TN
+  deposit_increases_credit [OK/—]
+    Simple addition, no external calls. Property IS true.
+    SVS: TN
+  deposit_increases_balance [OK/—]
+    Same. SVS: TN
+  deposit_no_revert (CVL) [—/ERROR]
+    deposit() can revert on arithmetic overflow with extreme values.
+    CVL: TP
+  withdrawAll_no_revert (CVL) [—/ERROR]
+    withdrawAll() can revert on call failure. Property IS violated.
+    CVL: TP
+
+--- reentrancy_insecure (1 SVS / 1 CVL) ---
+Contract: withdrawBalance() sends via call{value} THEN sets balance=0.
+  withdrawBalance_sets_zero [OK/—]
+    After unwind, balance=0. Property IS true.
+    SVS: TN
+  withdrawBalance_no_revert (CVL) [—/ERROR]
+    Function CAN revert. Property violated.
+    CVL: TP
+
+--- reentrancy_simple (2 SVS / 3 CVL) ---
+Contract: withdrawBalance() sends via call{value} THEN sets balance=0.
+  withdrawBalance_sets_zero [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+  addToBalance_increases [OK/ERROR]
+    Simple addition, no external calls. Property IS true.
+    SVS: TN | CVL: FP
+  envfreeFuncsStaticCheck (CVL) [—/OK]
+    CVL: TN
+
+--- simple_dao (2 SVS / 3 CVL) ---
+Contract: withdraw() sends via call{value} THEN decrements credit.
+  withdraw_decreases_credit [ERROR/OK]
+    Reentrancy: re-entrancy can withdraw multiple times before credit
+    decrement. credit = X - n*amount ≠ X - amount. Property IS violated.
+    SVS: TP | CVL: FN
+  donate_increases_credit [OK/ERROR]
+    Simple addition. Property IS true.
+    SVS: TN | CVL: FP
+  envfreeFuncsStaticCheck (CVL) [—/OK]
+    CVL: TN
+
+==============================================================================
+ANALYSIS: Reentrancy Detection Patterns
+==============================================================================
+
+SVS detects reentrancy through postcondition violations:
+  - etherstore/withdraw: TP (balance decrease violated by multi-withdraw)
+  - reentrance/withdraw: TP (same pattern)
+  - reentrancy_bonus/withdrawReward: TP (rewards re-set during callback)
+  - simple_dao/withdraw: TP (credit decrease violated by multi-withdraw)
+
+SVS does NOT detect reentrancy when the postcondition is trivially satisfied:
+  - cross_function/withdrawBalance_sets_zero: TN (balance=0 after unwind)
+  - reentrancy_dao/withdrawAll_sets_credit_zero: TN (credit=0 after unwind)
+  - reentrancy_insecure/withdrawBalance_sets_zero: TN (balance=0 after unwind)
+  These specs test "balance/credit is 0 after withdraw" which holds even
+  with reentrancy (last assignment to 0 executes).
+
+CVL detects issues through no_revert rules and addition overflow:
+  - CVL misses ACTUAL reentrancy in withdraw_decreases (3 FN)
+  - CVL catches function-can-revert (5 TP) — these are about call failure,
+    not specifically reentrancy
+
+==============================================================================
+SUMMARY
+==============================================================================
+          TP   TN   FP   FN   Error  Total
+SVS:       4   13    0    0    0      17
+CVL:       5    8    4    3    0      20
+
+SVS Precision: 4/4  = 100.00%  Recall: 4/4 = 100.00%
+CVL Precision: 5/9  = 55.56%   Recall: 5/8 = 62.50%
+
+Key finding: SVS correctly identifies reentrancy-induced postcondition
+violations. CVL's single-transaction model misses reentrancy (3 FN) and
+produces FP on simple deposit/donate rules.
+==============================================================================

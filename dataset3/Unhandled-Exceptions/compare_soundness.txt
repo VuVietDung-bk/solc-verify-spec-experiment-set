@@ -1,0 +1,640 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset3/Unhandled-Exceptions
+==============================================================================
+Contracts: buggy_1 (HotDollarsToken), buggy_5 (Ownable + TokenERC20 + TTC),
+  buggy_19 (ethBank + owned), buggy_20 (RampInstantEscrowsPoolInterface +
+  RampInstantPool), buggy_23 (AGR + ERC20 + ERC20Burnable),
+  buggy_33 (Staking), buggy_34 (Ownable + LollypopToken),
+  buggy_45 (StockBet), buggy_47 (AcunarIEO + AcunarToken),
+  buggy_50 (digitalNotary)
+Vulnerability: Unhandled exceptions — injected functions use send()/call()
+  without checking the return value, have empty error handlers, inverted
+  send-check logic, or always-revert conditions.
+
+Spec strategy: Specs test the INJECTED unchecked-send/call functions
+  directly using four main patterns:
+  (A) Comment-only / implicit completion: Rule calls function, no assertion.
+      Passes if function can complete without reverting. Documents that
+      unchecked send/call allows silent failure.
+  (B) assert true: Same as (A) but explicit. "Function completes."
+  (C) assert payedOut: Tests state corruption — sendToWinner sets payedOut
+      flag to true BEFORE calling send(), so flag is true regardless of
+      send result. Property IS true.
+  (D) assert_revert: Tests that function always reverts. Used for
+      always-revert (|| 1==1) and inverted-logic patterns.
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- buggy_19 / ethBank (12 SVS / ~11 CVL) ---
+Contract: ethBank with injected unchecked-send/call functions.
+  Pragma >=0.7.0 (compiled with 0.8.x).
+
+  sendToWinner_unchk20_ignores_send_failure [OK/OK]
+    Pattern C: require payedOut==false; call function; assert payedOut.
+    sendToWinner_unchk20: sets payedOut=true then calls send(). Flag is
+    set regardless of send result. Property IS true.
+    SVS: TN | CVL: TN
+
+  sendToWinner_unchk32_ignores_send_failure [OK/OK]
+    Same pattern C. Property IS true.
+    SVS: TN | CVL: TN
+
+  unhandledsend_unchk26_no_check [OK/OK]
+    Pattern B: call function; assert true. unhandledsend_unchk26 sends
+    5 ether via send() without checking return. Function completes
+    regardless. Property IS true.
+    SVS: TN | CVL: TN
+
+  unhandledsend_unchk38_no_check [OK/—]
+    Pattern B. Same unchecked send. Property IS true.
+    SVS: TN | CVL: (no matching rule)
+
+  cash_unchk46_no_check [OK/OK]
+    Pattern B. cash_unchk46: uint64 subpot=3 ether; winner.send(subpot).
+    No return check. Function completes. Property IS true.
+    SVS: TN | CVL: TN
+
+  bug_unchk3_no_check [OK/OK]
+    Pattern B. bug_unchk3: send() without check. Property IS true.
+    SVS: TN | CVL: TN
+
+  my_func_unchk23_no_check [OK/OK]
+    Pattern B. dst.send(msg.value) without check. Property IS true.
+    SVS: TN | CVL: TN
+
+  withdrawLeftOver_unchk9_no_check [OK/OK]
+    Pattern B. require payedOut==true; send() without check. Function
+    completes. Property IS true.
+    SVS: TN | CVL: TN
+
+  callnotchecked_unchk25_no_check [OK/OK]
+    Pattern B. callee.call{value:2 ether}("") without check.
+    Function completes. Property IS true.
+    SVS: TN | CVL: TN
+
+  UncheckedExternalCall_unchk4_empty_handlers [OK/ERROR]
+    Pattern B (SVS) / CVL equiv. Function:
+    if (!addr.send(42 ether)) {/*comment*/} else {/*comment*/}
+    Both branches empty — function completes regardless of send result.
+    Property "function completes" IS true.
+    SVS: TN | CVL: FP (CVL cannot verify completion of function with
+    empty exception handlers — models send to uninitialized address(0)
+    differently, causing rule failure)
+
+  bug_unchk7_always_reverts [OK/ERROR]
+    Pattern D (assert_revert). Function:
+    if (!addr.send(10 ether) || 1==1) { revert(); }
+    The || 1==1 makes condition always true → always reverts.
+    Property "always reverts" IS true.
+    SVS: TN | CVL: FP (CVL reports ERROR on always-reverting functions —
+    treats vacuously-true rules as violations instead of verified)
+
+  bug_unchk19_always_reverts [OK/—]
+    Pattern D. Same || 1==1 pattern. Property IS true.
+    SVS: TN
+    CVL has bug_unchk18_always_reverts [ERROR] (likely same pattern,
+    different unchk number): CVL FP
+
+--- buggy_19 / owned (3 SVS / 3 CVL) ---
+Contract: owned base contract with injected functions.
+
+  withdrawBal_unchk17_no_check [OK/OK]
+    Pattern B. withdrawBal_unchk17: sends 0 ether via send(), no check.
+    Function completes. Property IS true.
+    SVS: TN | CVL: TN
+
+  callnotchecked_unchk37_no_check [OK/OK]
+    Pattern B. callee.call{value:2 ether}("") without check. Completes.
+    SVS: TN | CVL: TN
+
+  my_func_uncheck48_no_check [OK/OK]
+    Pattern B. dst.call{value:msg.value}("") without check. Completes.
+    SVS: TN | CVL: TN
+
+--- buggy_1 / HotDollarsToken (6 SVS / 6 CVL) ---
+Contract: HotDollarsToken (EIP20Interface implementation).
+
+  unhandledsend_unchk38_no_check [OK/OK]
+    Pattern B. send(5 ether) without check. Property IS true.
+    SVS: TN | CVL: TN
+
+  cash_unchk46_no_check [OK/OK]
+    Pattern B. Property IS true. SVS: TN | CVL: TN
+
+  UncheckedExternalCall_unchk4_empty_handlers [OK/ERROR]
+    Pattern B. Empty if/else handlers. Property IS true.
+    SVS: TN | CVL: FP (same empty-handler modeling issue)
+
+  bug_unchk7_always_reverts [OK/ERROR]
+    Pattern D. ||1==1 → always reverts. Property IS true.
+    SVS: TN | CVL: FP (always-revert modeling issue)
+
+  my_func_unchk23_no_check [OK/OK]
+    Pattern B. Property IS true. SVS: TN | CVL: TN
+
+  my_func_unchk35_no_check [OK/OK]
+    Pattern B. Property IS true. SVS: TN | CVL: TN
+
+--- buggy_20 / RampInstantEscrowsPoolInterface (1 SVS / 0+err CVL) ---
+Contract: RampInstantEscrowsPoolInterface (abstract).
+
+  sendToWinner_unchk20_ignores_send_failure [OK/COMPILATION ERROR]
+    Pattern C. payedOut set before send. Property IS true.
+    SVS: TN
+    CVL: Error — COMPILATION ERROR (contract is abstract, CVL cannot
+    handle abstract contracts)
+
+--- buggy_20 / RampInstantPool (3 SVS / 0+err CVL) ---
+Contract: RampInstantPool (abstract).
+
+  cash_unchk46_does_not_check_send_result [OK/COMPILATION ERROR]
+    Pattern D (assert_revert). SVS reports OK — cash_unchk46 may revert
+    due to contract-specific state requirements in RampInstantPool context.
+    SVS: TN
+    CVL: Error — COMPILATION ERROR (abstract contract)
+
+  sendToWinner_unchk8_ignores_send_failure [OK/COMPILATION ERROR]
+    Pattern C. payedOut set before send. Property IS true.
+    SVS: TN | CVL: Error
+
+  sendToWinner_unchk32_ignores_send_failure [OK/COMPILATION ERROR]
+    Pattern C. Property IS true. SVS: TN | CVL: Error
+
+--- buggy_23 / AGR (1 SVS / 1 CVL) ---
+Contract: AGR (top-level contract inheriting ERC20Burnable).
+
+  callnotchecked_unchk13_ignores_call_failure [OK/OK]
+    Pattern A. callee.call{value:2 ether}("") without check. Completes.
+    Property IS true.
+    SVS: TN | CVL: TN
+
+--- buggy_23 / ERC20 (16 SVS / ~11 CVL) ---
+Contract: ERC20 using SafeMath, with many injected unchecked functions.
+
+  callnotchecked_unchk37_ignores_call_failure [OK/OK]
+    Pattern A. call without check. Property IS true.
+    SVS: TN | CVL: TN
+
+  my_func_uncheck36_ignores_call_failure [OK/OK]
+    Pattern A. call without check. SVS: TN | CVL: TN
+
+  bug_unchk3_ignores_send_failure [OK/OK]
+    Pattern A. send without check. SVS: TN | CVL: TN
+
+  bug_unchk7_ignores_send_failure [OK/ERROR]
+    Pattern A (comment-only). Function:
+    if (!addr.send(10 ether) || 1==1) { revert(); }
+    Always reverts due to ||1==1. SVS: postcondition vacuously true
+    since function always reverts → [OK] → TN.
+    CVL: [ERROR] → FP (CVL flags universal revert as violation)
+
+  bug_unchk30_ignores_send_failure [OK/ERROR]
+    Pattern A (comment-only). Function:
+    if (!addr.send(42 ether)) { receivers+=1; } else { revert(); }
+    Inverted logic: reverts on send success, completes on send failure.
+    Function CAN complete (when send fails due to insufficient balance).
+    SVS: finds completion path → [OK] → TN.
+    CVL: [ERROR] → FP (CVL models send to address(0) as always
+    succeeding, so function always goes to revert path. CVL cannot
+    find the completion path when send fails.)
+
+  bug_unchk39_ignores_send_failure [OK/OK]
+    Pattern A. send without check. SVS: TN | CVL: TN
+
+  my_func_unchk23_ignores_send_failure [OK/OK]
+    Pattern A. SVS: TN | CVL: TN
+
+  my_func_unchk35_ignores_send_failure [OK/OK]
+    Pattern A. SVS: TN | CVL: TN
+
+  unhandledsend_unchk14_ignores_send_failure [OK/—]
+    Pattern A. SVS: TN | CVL: (no matching rule or not reported)
+
+  unhandledsend_unchk38_ignores_send_failure [OK/—]
+    Pattern A. SVS: TN
+
+  withdrawLeftOver_unchk9_ignores_send_failure [OK/—]
+    Pattern A. SVS: TN
+
+  UncheckedExternalCall_unchk4_does_not_handle_failure [OK/ERROR]
+    Pattern A. Empty handlers. Function completes. Property IS true.
+    SVS: TN | CVL: FP (empty-handler modeling issue)
+
+  cash_unchk46_ignores_send_failure [OK/OK]
+    Pattern A. send without check. SVS: TN | CVL: TN
+
+  sendToWinner_unchk8_ignores_send_failure [OK/—]
+    Pattern C. payedOut set before send. Property IS true.
+    SVS: TN
+
+  sendToWinner_unchk20_ignores_send_failure [OK/—]
+    Pattern C. SVS: TN
+
+  sendToWinner_unchk32_ignores_send_failure [OK/—]
+    Pattern C. SVS: TN
+
+--- buggy_23 / ERC20Burnable (6 SVS / 2 CVL) ---
+Contract: ERC20Burnable inheriting from ERC20.
+  NOTE: SVS warns "Undeclared identifier: payedOut_unchk33" on one rule
+  but still reports [OK] — the require payedOut_unchk33==true is
+  unsatisfiable (variable doesn't exist in ERC20Burnable), so the
+  postcondition is vacuously true.
+
+  callnotchecked_unchk25_ignores_call_failure [OK/—]
+    Pattern A. call without check. SVS: TN
+
+  bug_unchk19_ignores_send_failure [OK/—]
+    Pattern A. Always reverts (||1==1). Postcondition vacuously true.
+    SVS: TN
+
+  unhandledsend_unchk26_ignores_send_failure [OK/—]
+    Pattern A. SVS: TN
+
+  withdrawLeftOver_unchk33_ignores_send_failure [OK/—]
+    Pattern A. SVS: TN (with undeclared identifier warning — require
+    payedOut_unchk33==true unsatisfiable → postcondition vacuous)
+
+  UncheckedExternalCall_unchk40_does_not_handle_failure [OK/ERROR]
+    Pattern A. Empty handlers. Function completes. Property IS true.
+    SVS: TN | CVL: FP (empty-handler modeling issue)
+
+  sendToWinner_unchk44_ignores_send_failure [OK/OK]
+    Pattern C. payedOut set before send. Property IS true.
+    SVS: TN | CVL: TN
+
+--- buggy_33 / Staking (1 SVS / 1 CVL) ---
+Contract: Staking from buggy_33.sol with onlyOwner modifier.
+
+  cash_unchk46_reverts_without_balance [ERROR/ERROR]
+    Pattern D (assert_revert). Function:
+    uint64 subpot=3 ether; winner.send(subpot); subpot=0;
+    The function does NOT always revert — send() returns false on failure
+    (doesn't revert), and the function continues. So there exist paths
+    where the function completes normally. Property "always reverts"
+    IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_34 / LollypopToken (30 SVS / 13 CVL) ---
+Contract: LollypopToken with complex _transfer that calls calculateBonus()
+  and mint() for both sender and recipient before performing the actual
+  balance transfer. This bonus minting causes SVS precondition failures
+  on ALL public functions because transfer/multiTransfer/transferFrom
+  can be called by anyone and their internal mint() calls create state
+  changes SVS cannot resolve.
+
+  ALL 30 SVS rules [ERROR]:
+    cash_unchk46, my_func_unchk11, bug_unchk19, unhandledsend_unchk26,
+    unhandledsend_unchk38, bug_unchk7, my_func_unchk23,
+    unhandledsend_unchk14, bug_unchk30, withdrawBal_unchk41,
+    my_func_unchk35, unhandledsend_unchk2, bug_unchk42,
+    withdrawBal_unchk17, bug_unchk43, withdrawLeftOver_unchk45,
+    my_func_uncheck12, callnotchecked_unchk1, my_func_uncheck48,
+    callnotchecked_unchk37, callnotchecked_unchk25,
+    callnotchecked_unchk13, my_func_uncheck36,
+    UncheckedExternalCall_unchk4, UncheckedExternalCall_unchk40,
+    sendToWinner_unchk8, sendToWinner_unchk20, sendToWinner_unchk32,
+    sendToWinner_unchk44, withdrawLeftOver_unchk33.
+    All are Pattern A (comment-only) or Pattern C (assert payedOut).
+    The underlying properties ARE true (unchecked-send functions complete
+    normally, sendToWinner sets payedOut regardless of send result).
+    SVS: 30 FP (all errors caused by LollypopToken's transfer/
+    multiTransfer/transferFrom precondition cascade — mint() calls in
+    _transfer interfere with contract-wide analysis)
+
+  CVL results for LollypopToken (13 rules):
+    [OK] bug_unchk39_ignores_send_failure → TN
+    [OK] callnotchecked_unchk13_ignores_call_result → TN
+    [OK] callnotchecked_unchk1_ignores_call_failure → TN
+    [OK] callnotchecked_unchk25_ignores_call_result → TN
+    [OK] callnotchecked_unchk37_ignores_call_result → TN
+    [OK] cash_unchk46_ignores_send_failure → TN
+
+    [ERROR] UncheckedExternalCall_unchk40 → FP (empty-handler issue)
+    [ERROR] UncheckedExternalCall_unchk4 → FP (empty-handler issue)
+    [ERROR] bug_unchk19_ignores_send_failure → FP (always reverts ||1==1)
+    [ERROR] bug_unchk30_ignores_send_failure → FP (inverted logic,
+      CVL can't find completion path)
+    [ERROR] bug_unchk42_ignores_send_failure → FP (inverted logic,
+      same modeling issue)
+    [ERROR] bug_unchk43_ignores_send_failure → FP (always reverts ||1==1)
+    [ERROR] bug_unchk7_ignores_send_failure → FP (always reverts ||1==1)
+
+    CVL: 6 TN, 7 FP
+
+--- buggy_34 / Ownable (4 SVS / 4 CVL) ---
+Contract: Ownable base contract from buggy_34.sol.
+
+  cash_unchk22_ignores_send_failure [OK/OK]
+    Pattern A. send without check. Property IS true.
+    SVS: TN | CVL: TN
+
+  bug_unchk31_ignores_send_failure [OK/ERROR]
+    Pattern A (comment-only). Function:
+    if (!addr.send(10 ether) || 1==1) { revert(); }
+    Always reverts (||1==1). Postcondition vacuously true.
+    SVS: TN
+    CVL: FP (always-revert modeling issue — CVL flags universal revert)
+
+  bug_unchk3_ignores_send_failure [OK/OK]
+    Pattern A. send without check. SVS: TN | CVL: TN
+
+  withdrawLeftOver_unchk9_ignores_send_failure [OK/OK]
+    Pattern A. require payedOut==true; send without check. SVS: TN | CVL: TN
+
+--- buggy_45 / StockBet (23 SVS / 11 CVL) ---
+Contract: StockBet with many injected unchecked-send/call functions.
+
+  Standard send/call rules (no assertion — Pattern A):
+  [OK] cash_unchk46 → TN  |  [OK] bug_unchk3 → TN
+  [OK] my_func_unchk23 → TN  |  [OK] my_func_unchk35 → TN
+  [OK] unhandledsend_unchk14 → TN  |  [OK] unhandledsend_unchk26 → TN
+  [OK] unhandledsend_unchk38 → TN  |  [OK] withdrawLeftOver_unchk9 → TN
+  [OK] withdrawLeftOver_unchk33 → TN  |  [OK] withdrawLeftOver_unchk45 → TN
+  [OK] withdrawBal_unchk17 → TN  |  [OK] my_func_uncheck48 → TN
+  [OK] callnotchecked_unchk37 → TN  |  [OK] callnotchecked_unchk25 → TN
+  [OK] callnotchecked_unchk13 → TN  |  [OK] my_func_uncheck36 → TN
+  All property IS true. SVS: 16 TN
+
+  CVL matching rules (all [OK]):
+  bug_unchk3, callnotchecked_unchk13, callnotchecked_unchk25,
+  callnotchecked_unchk37, cash_unchk46, my_func_unchk36,
+  my_func_unchk48 → 7 TN
+
+  Empty-handler rules:
+  UncheckedExternalCall_unchk4 [OK/ERROR]
+    Pattern A. Empty handlers. Function completes. Property IS true.
+    SVS: TN | CVL: FP
+  UncheckedExternalCall_unchk40 [OK/ERROR]
+    Same. SVS: TN | CVL: FP
+
+  Always-revert rules:
+  bug_unchk7_ignores_send_failure [OK/ERROR]
+    Pattern A. ||1==1 → always reverts. Vacuously true.
+    SVS: TN | CVL: FP
+  bug_unchk19_ignores_send_failure [OK/ERROR]
+    Same. SVS: TN | CVL: FP
+
+  sendToWinner rules (Pattern C):
+  sendToWinner_unchk20 [OK/—]  → SVS: TN
+  sendToWinner_unchk32 [OK/—]  → SVS: TN
+  sendToWinner_unchk44 [OK/—]  → SVS: TN
+
+  SVS total: 23 TN | CVL total: 7 TN, 4 FP
+
+--- buggy_47 / AcunarIEO (18 SVS / 0+err CVL) ---
+Contract: AcunarIEO inheriting from AcunarToken.
+  burn() function declares returns(bool) but never returns a value.
+
+  ALL 18 SVS rules [ANNOTATION ERROR]:
+    ANNOTATION ERROR — Undeclared identifier (caused by burn() function's
+    unnamed return variable creating compilation issues that propagate
+    to SVS annotation processing).
+    SVS: 18 Error
+
+  CVL: COMPILATION ERROR — "Severe compiler warning — Unnamed return
+    variable in burn() function (buggy_47.sol:383:36)"
+    CVL: Error
+
+--- buggy_47 / AcunarToken (14 SVS / 0+err CVL) ---
+Contract: AcunarToken (ERC20Interface implementation) from buggy_47.sol.
+
+  ALL 14 SVS rules [ERROR]:
+    cash_unchk34, cash_unchk10, cash_unchk22, cash_unchk46,
+    bug_unchk7, bug_unchk30, my_func_unchk11, my_func_unchk23,
+    my_func_unchk47, unhandledsend_unchk14, unhandledsend_unchk38,
+    withdrawLeftOver_unchk21, my_func_uncheck12,
+    UncheckedExternalCall_unchk4.
+    All are Pattern A (comment-only). The underlying properties ARE true
+    (unchecked-send functions complete normally). However, the burn()
+    function with unnamed return (in AcunarIEO, which inherits from
+    AcunarToken) causes file-level compilation issues that propagate to
+    SVS analysis of AcunarToken, making all rules fail even though
+    AcunarToken itself is not abstract.
+    SVS: 14 FP (tool limitation — burn() unnamed return in inheriting
+    contract causes cascading analysis failures)
+
+  CVL: COMPILATION ERROR — Same burn() issue.
+    CVL: Error
+
+--- buggy_50 / digitalNotary (19 SVS / 11 CVL) ---
+Contract: digitalNotary with injected unchecked-send/call functions.
+
+  Standard send/call rules (Pattern A):
+  [OK] cash_unchk46 → TN  |  [OK] bug_unchk3 → TN
+  [OK] bug_unchk39 → TN  |  [OK] my_func_unchk23 → TN
+  [OK] my_func_unchk35 → TN  |  [OK] unhandledsend_unchk14 → TN
+  [OK] unhandledsend_unchk26 → TN  |  [OK] unhandledsend_unchk38 → TN
+  [OK] withdrawLeftOver_unchk9 → TN  |  [OK] withdrawLeftOver_unchk45 → TN
+  [OK] my_func_uncheck36 → TN  |  [OK] callnotchecked_unchk13 → TN
+  [OK] callnotchecked_unchk25 → TN
+  SVS: 13 TN
+
+  CVL matching rules (all [OK]):
+  bug_unchk39, bug_unchk3, callnotchecked_unchk13,
+  callnotchecked_unchk25, cash_unchk46, my_func_unchk36,
+  my_func_unchk23 → 7 TN
+
+  Empty-handler rules:
+  UncheckedExternalCall_unchk4 [OK/ERROR]
+    SVS: TN | CVL: FP
+  UncheckedExternalCall_unchk40 [OK/ERROR]
+    SVS: TN | CVL: FP
+
+  Always-revert rules:
+  bug_unchk7 [OK/ERROR] → SVS: TN | CVL: FP (||1==1)
+  bug_unchk19 [OK/ERROR] → SVS: TN | CVL: FP (||1==1)
+
+  sendToWinner rules (Pattern C):
+  sendToWinner_unchk20 [OK/—] → SVS: TN
+  sendToWinner_unchk32 [OK/—] → SVS: TN
+
+  SVS total: 19 TN | CVL total: 7 TN, 4 FP
+
+--- buggy_5 / Ownable (4 SVS / 4 CVL) ---
+Contract: Ownable from buggy_5.sol.
+
+  sendToWinner_unchk20_ignores_send_failure [OK/OK]
+    Pattern C. payedOut set before send. Property IS true.
+    SVS: TN | CVL: TN
+
+  unhandledsend_unchk26_no_check [OK/OK]
+    Pattern B. send without check. Property IS true.
+    SVS: TN | CVL: TN
+
+  withdrawLeftOver_unchk33_no_check [OK/OK]
+    Pattern B. require payedOut==true; send without check. Property IS true.
+    SVS: TN | CVL: TN
+
+  bug_unchk42_inverted_logic [ERROR/ERROR]
+    Pattern D (assert_revert). Function:
+    if (!addr.send(42 ether)) { receivers+=1; } else { revert(); }
+    Inverted logic: reverts on send success, completes on send failure.
+    Function does NOT always revert (when send fails, function completes).
+    Property "always reverts" IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_5 / TokenERC20 (14 SVS / 10 CVL) ---
+Contract: TokenERC20 from buggy_5.sol.
+
+  sendToWinner_unchk32_ignores_send_failure [OK/OK]
+    Pattern C. payedOut set before send. Property IS true.
+    SVS: TN | CVL: TN
+
+  Standard rules (Pattern B — assert true):
+  [OK] unhandledsend_unchk2 → TN  |  [OK] unhandledsend_unchk14 → TN
+  [OK] unhandledsend_unchk38 → TN  |  [OK] cash_unchk46 → TN
+  [OK] bug_unchk3 → TN  |  [OK] my_func_unchk23 → TN
+  [OK] withdrawBal_unchk17 → TN  |  [OK] withdrawLeftOver_unchk45 → TN
+  [OK] callnotchecked_unchk37 → TN  |  [OK] my_func_uncheck48 → TN
+  SVS: 10 TN
+
+  CVL matching rules (all [OK]):
+  bug_unchk3, callnotchecked_unchk37, cash_unchk46,
+  my_func_unchk48, my_func_unchk23, unhandledsend_unchk14 → 6 TN
+
+  UncheckedExternalCall_unchk4_empty_handlers [OK/ERROR]
+    Pattern B. Empty handlers. Function completes. Property IS true.
+    SVS: TN | CVL: FP
+
+  bug_unchk7_always_reverts [OK/ERROR]
+    Pattern D (assert_revert). ||1==1 → always reverts. Property IS true.
+    SVS: TN | CVL: FP
+
+  bug_unchk43_always_reverts [OK/ERROR]
+    Pattern D. ||1==1 → always reverts. Property IS true.
+    SVS: TN | CVL: FP
+
+  SVS total: 14 TN | CVL total: 7 TN, 3 FP
+
+--- buggy_5 / TTC (11 SVS / 10 CVL) ---
+Contract: TTC from buggy_5.sol.
+
+  sendToWinner_unchk8_ignores_send_failure [OK/OK]
+    Pattern C. payedOut set before send. Property IS true.
+    SVS: TN | CVL: TN
+
+  sendToWinner_unchk44_ignores_send_failure [OK/OK]
+    Pattern C. Property IS true. SVS: TN | CVL: TN
+
+  Standard rules (Pattern B):
+  [OK] bug_unchk39 → TN  |  [OK] my_func_unchk35 → TN
+  [OK] withdrawLeftOver_unchk9 → TN  |  [OK] callnotchecked_unchk13 → TN
+  [OK] callnotchecked_unchk25 → TN  |  [OK] my_func_uncheck36 → TN
+  SVS: 6 TN
+
+  CVL matching rules (all [OK]):
+  bug_unchk39, callnotchecked_unchk13, callnotchecked_unchk25,
+  my_func_unchk36, my_func_unchk35 → 5 TN
+
+  UncheckedExternalCall_unchk40_empty_handlers [OK/ERROR]
+    Pattern B. Empty handlers. Function completes. Property IS true.
+    SVS: TN | CVL: FP
+
+  bug_unchk19_always_reverts [OK/ERROR]
+    Pattern D. ||1==1 → always reverts. Property IS true.
+    SVS: TN | CVL: FP
+
+  bug_unchk30_inverted_logic [ERROR/ERROR]
+    Pattern D (assert_revert). Function:
+    if (!addr.send(42 ether)) { receivers+=1; } else { revert(); }
+    Inverted logic — does NOT always revert (when send fails, function
+    completes). Property "always reverts" IS violated.
+    SVS: TP | CVL: TP
+
+  SVS total: 10 TN, 1 TP | CVL total: 7 TN, 2 FP, 1 TP
+
+==============================================================================
+SUMMARY
+==============================================================================
+                     SVS                          CVL
+             TP  TN  FP  FN  Err          TP  TN  FP  FN  Err
+buggy_19eb   0   12   0   0   0           0   ~8   3   0   0
+buggy_19ow   0    3   0   0   0           0    3   0   0   0
+buggy_1      0    6   0   0   0           0    4   2   0   0
+buggy_20es   0    1   0   0   0           0    0   0   0   1
+buggy_20ep   0    3   0   0   0           0    0   0   0   1
+buggy_23agr  0    1   0   0   0           0    1   0   0   0
+buggy_23er   0   16   0   0   0           0   ~8   3   0   0
+buggy_23bu   0    6   0   0   0           0    1   1   0   0
+buggy_33     1    0   0   0   0           1    0   0   0   0
+buggy_34lp   0    0  30   0   0           0    6   7   0   0
+buggy_34ow   0    4   0   0   0           0    3   1   0   0
+buggy_45     0   23   0   0   0           0    7   4   0   0
+buggy_47ieo  0    0   0   0  18           0    0   0   0   1
+buggy_47tok  0    0  14   0   0           0    0   0   0   1
+buggy_50     0   19   0   0   0           0    7   4   0   0
+buggy_5ow    1    3   0   0   0           1    3   0   0   0
+buggy_5te    0   14   0   0   0           0    7   3   0   0
+buggy_5ttc   1   10   0   0   0           1    7   2   0   0
+----------   --  --- --- --- ---          --  --- --- --- ---
+TOTAL        3  121  44   0  18           3  ~65 ~30   0   4
+
+SVS: 186 rules across 18 specs
+  - True Positives:  3 (correctly detected property violations)
+  - True Negatives:  121 (correctly verified properties)
+  - False Positives: 44 (30 LollypopToken precondition cascade +
+                         14 AcunarToken file-level compilation issue)
+  - False Negatives: 0
+  - Errors:          18 (AcunarIEO ANNOTATION ERROR — burn() unnamed return)
+  - Accuracy (excl errors): 124/168 = 73.8%
+
+CVL: ~98 rules across 14 specs (+ 4 COMPILATION ERRORs)
+  - True Positives:  3 (correctly detected property violations)
+  - True Negatives:  ~65 (correctly verified properties)
+  - False Positives: ~30
+      Breakdown:
+      - ~12 from always-revert functions (||1==1) — CVL treats
+        vacuously-true rules as violations
+      - ~8 from empty-handler functions (UncheckedExternalCall) —
+        CVL modeling issue with send to uninitialized address
+      - ~7 from LollypopToken (inverted logic + always-revert)
+      - ~3 from inverted-logic functions (comment-only spec pattern)
+  - False Negatives: 0
+  - Errors:          4 (2 abstract contracts, 2 burn() unnamed return)
+  - Accuracy (excl errors): ~68/~98 = ~69.4%
+
+==============================================================================
+KEY OBSERVATIONS
+==============================================================================
+
+1. ALWAYS-REVERT FUNCTIONS (bug_unchk7/19/31/43 with ||1==1):
+   SVS correctly verifies these via vacuous truth (function always reverts,
+   postcondition trivially holds) or explicit assert_revert.
+   CVL reports [ERROR] on ALL always-revert rules — CVL treats the universal
+   revert as a rule violation rather than a verified property. This is the
+   single largest source of CVL false positives (~12 rules).
+
+2. EMPTY EXCEPTION HANDLERS (UncheckedExternalCall_unchk4/40):
+   Functions with if/else that check send result but have empty bodies.
+   SVS correctly verifies that these functions complete normally.
+   CVL reports [ERROR] on ALL empty-handler rules (~8 rules) — CVL cannot
+   properly model send() to uninitialized address(0) with empty handlers.
+
+3. INVERTED-LOGIC FUNCTIONS (bug_unchk30/42):
+   These revert on send success, complete on send failure.
+   When tested with assert_revert (buggy_5): BOTH tools correctly detect
+   the property violation → TP. Agreement.
+   When tested with comment-only pattern (buggy_23, buggy_34): SVS finds
+   the completion path (send fails) → TN. CVL cannot find the completion
+   path → FP.
+
+4. LOLLYPOP TOKEN PRECONDITION CASCADE:
+   SVS: 30/30 FP — LollypopToken's _transfer calls calculateBonus() and
+   mint() causing precondition failures on ALL public functions.
+   CVL: 7/13 FP — CVL handles call()-based functions correctly but fails
+   on send()-based functions with special conditions (always-revert,
+   inverted logic, empty handlers).
+
+5. ACUNAR TOKEN/IEO:
+   Both tools fail on buggy_47: SVS gets ANNOTATION ERROR (AcunarIEO) and
+   ERROR (AcunarToken, 14 FP), CVL gets COMPILATION ERROR on both.
+   Root cause: burn() declares returns(bool) but never returns a value.
+
+6. COVERAGE DIFFERENCE:
+   SVS tests 186 rules across 18 specs. CVL tests ~98 rules across 14 specs
+   (4 specs fail with COMPILATION ERROR). SVS covers ~1.9x more rules,
+   primarily because SVS specs include more sendToWinner, withdrawLeftOver,
+   and unhandledsend rules per contract.
+==============================================================================

@@ -1,0 +1,26 @@
+==============================================================================
+TIME COMPARISON — dataset3/Overflow-Underflow
+==============================================================================
+
+Spec                       | SVS rule | SVS e2e  | CVL
+---------------------------|----------|----------|------
+buggy_1.spec               |   8.28s  |   9.51s  |  23s
+buggy_5_locktime.spec      |  10.81s  |  12.34s  |  16s
+buggy_5_transfer.spec      |  12.34s  |  13.64s  |  21s
+buggy_19_eth_bank.spec     |  22.75s  |  24.02s  |  28s
+buggy_19_owned.spec        |  10.27s  |  11.59s  |  19s
+buggy_20_locktime.spec     |  10.78s  |  12.14s  |  19s
+buggy_20_transfer.spec     |   6.92s  |   8.36s  |  20s
+buggy_23.spec              |  30.34s  |  31.85s  |  24s
+buggy_33.spec              |  21.67s  |  22.76s  |  23s
+buggy_34.spec              |  15.86s  |  17.25s  |  29s
+buggy_45.spec              |  26.82s  |  27.96s  |  22s
+buggy_47_locktime.spec     |   5.69s  |   6.98s  |  — (error)
+buggy_47_transfer.spec     |  15.07s  |  16.41s  |  — (error)
+buggy_50.spec              |  16.61s  |  17.74s  |  22s
+---------------------------|----------|----------|------
+TOTAL                      | 214.21s  | 232.55s  | 266s
+
+Speedup (e2e vs CVL): 1.14x (SVS faster)
+Note: CVL times exclude 2 compilation errors (buggy_47).
+==============================================================================

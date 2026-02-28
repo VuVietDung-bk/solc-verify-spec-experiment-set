@@ -1,0 +1,193 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset1/access_control
+==============================================================================
+
+Per-rule classification:
+  TP = Tool correctly reported violation  | TN = Tool correctly verified property
+  FP = Tool wrongly reported violation    | FN = Tool missed actual violation
+  Error = ANNOTATION ERROR (SVS) / COMPILATION ERROR (CVL)
+
+Ground truth determined by manual analysis of each contract + rule.
+
+--- 1. incorrect_constructor_name1 (Missing) ---
+Bug: IamMissing() is a public function (not a constructor).
+     Anyone can call it to set themselves as owner.
+
+  [SVS] 3 rules:
+    withdraw_access_control             Expected: PASS  Result: OK     → TN
+      (Non-owner calls withdraw; onlyowner modifier reverts correctly.)
+    constructor_is_only_callable_once   Expected: FAIL  Result: ERROR  → TP
+      (msg.sender is free; after IamMissing(), owner=msg.sender ≠ non_owner.)
+    owner_is_constant_after_init        Expected: FAIL  Result: ERROR  → TP
+      (IamMissing() changes owner; parametric method f finds it.)
+
+  [CVL] 3 rules:
+    constructor_is_only_callable_once   Expected: PASS  Result: OK     → TN
+      (CVL constrains e.msg.sender==non_owner; after IamMissing, owner==non_owner holds.
+       Assertion passing CONFIRMS vulnerability — non_owner became owner.)
+    withdraw_access_control             Expected: PASS  Result: OK     → TN
+      (Non-owner calls withdraw@withrevert; lastReverted holds.)
+    owner_is_constant_after_init        Expected: FAIL  Result: ERROR  → TP
+      (Parametric method f = IamMissing changes owner.)
+
+--- 2. incorrect_constructor_name2 (Missing) ---
+Bug: missing() is a public function (not a constructor). Same pattern as #1.
+
+  [SVS] 3 rules:
+    withdraw_access_control             Expected: PASS  Result: OK     → TN
+    constructor_is_only_callable_once   Expected: FAIL  Result: ERROR  → TP
+    owner_is_constant_after_init        Expected: FAIL  Result: ERROR  → TP
+
+  [CVL] 3 rules:
+    constructor_is_only_callable_once   Expected: PASS  Result: OK     → TN
+    withdraw_access_control             Expected: PASS  Result: OK     → TN
+    owner_is_constant_after_init        Expected: FAIL  Result: ERROR  → TP
+
+--- 3. incorrect_constructor_name3 (Missing) ---
+Bug: Constructor() is a public function (not a constructor). Same pattern as #1.
+
+  [SVS] 3 rules:
+    withdraw_access_control             Expected: PASS  Result: OK     → TN
+    constructor_is_only_callable_once   Expected: FAIL  Result: ERROR  → TP
+    owner_is_constant_after_init        Expected: FAIL  Result: ERROR  → TP
+
+  [CVL] 3 rules:
+    constructor_is_only_callable_once   Expected: PASS  Result: OK     → TN
+    withdraw_access_control             Expected: PASS  Result: OK     → TN
+    owner_is_constant_after_init        Expected: FAIL  Result: ERROR  → TP
+
+--- 4. mapping_write (Map) ---
+Bug: set() can overwrite arbitrary storage via dynamic array collision (EVM-level).
+     Note: This is an EVM storage layout vulnerability, not detectable at Solidity semantics.
+
+  [SVS] 2 rules:
+    owner_unchanged_by_set              Expected: PASS  Result: OK     → TN
+      (At Solidity semantics, set() only writes to map[], not owner.
+       Storage collision is EVM-level — not visible to SVS.)
+    only_owner_can_withdraw             Expected: PASS  Result: OK     → TN
+      (Non-owner calls withdraw(); require(msg.sender==owner) reverts;
+       assert false never reached.)
+
+  [CVL] 3 rules:
+    owner_unchanged_by_set              Expected: PASS  Result: ERROR  → FP
+      (Certora fails due to "Unwinding condition in a loop" from the while
+       loop in set(). This is a loop-handling false alarm, not real detection.)
+    only_owner_can_withdraw             Expected: PASS  Result: OK     → TN
+    envfreeFuncsStaticCheck             Expected: PASS  Result: OK     → TN
+      (Auto-generated Certora check for envfree declarations.)
+
+--- 5. multiowned_vulnerable (TestContract / MultiOwnable) ---
+Bug: newOwner() missing onlyOwner modifier. Anyone can grant themselves owner.
+
+  [SVS] 2 rules:
+    anyone_can_become_owner             Expected: PASS  Result: OK     → TN
+      (After newOwner(attacker), owners[attacker]=msg.sender ≠ 0.
+       Assertion holds — CONFIRMS the vulnerability by proving it works.)
+    root_is_constant                    Expected: PASS  Result: OK     → TN
+      (root is only set in constructor; no function modifies it.)
+
+  [CVL] 2 rules:
+    anyone_can_become_owner             Expected: PASS  Result: OK     → TN
+      (Same logic: newOwner sets the mapping, assertion confirms vulnerability.)
+    root_is_constant                    Expected: PASS  Result: OK     → TN
+
+--- 6. unprotected0 (Unprotected) ---
+Bug: changeOwner() has no access control. Anyone can change the owner.
+
+  [SVS] 1 rule:
+    change_owner_requires_owner         Expected: FAIL  Result: ERROR  → TP
+      (Attacker ≠ owner calls changeOwner(newOwner); owner changes to newOwner.
+       Assert owner==oldOwner fails.)
+
+  [CVL] 1 rule:
+    change_owner_requires_owner         Expected: FAIL  Result: ERROR  → TP
+      (Same: non-owner calls changeOwner, owner changes. Assertion fails.)
+
+--- 7. wallet_02_refund_nosub (Wallet) ---
+Bug: refund() sends ether but does NOT reset balances[msg.sender] to 0.
+
+  [SVS] 4 rules:
+    integrity_of_refund                 Expected: FAIL  Result: ERROR  → TP
+      (After refund(), balances[msg.sender] unchanged; assert ==0 fails.)
+    balance_consistency_on_withdraw     Expected: PASS  Result: OK     → TN
+      (withdraw() correctly does balances[msg.sender] -= amount.)
+    only_creator_can_migrate            Expected: PASS  Result: OK     → TN
+      (migrateTo requires creator==msg.sender; non-creator reverts.)
+    refund_affects_contract_balance     Expected: FAIL  Result: ERROR  → TP
+      (When msg.sender==contract address, transfer to self doesn't change
+       contract.balance, but assertion expects a decrease. Fails on edge case.)
+
+  [CVL] 4 rules:
+    integrity_of_refund                 Expected: FAIL  Result: ERROR  → TP
+    balance_consistency_on_withdraw     Expected: PASS  Result: OK     → TN
+    only_creator_can_migrate            Expected: PASS  Result: OK     → TN
+    refund_affects_contract_balance     Expected: FAIL  Result: ERROR  → TP
+      (Same edge case: msg.sender==currentContract causes assertion failure.)
+
+--- 8. wallet_03_wrong_constructor (Wallet) ---
+Bug: initWallet() is a public function (not constructor). Anyone can become creator.
+
+  [SVS] 4 rules:
+    anyone_can_become_creator           Expected: FAIL  Result: ERROR  → TP
+      (After initWallet(), creator=msg.sender; assert creator≠msg.sender fails.)
+    unauthorized_migration              Expected: FAIL  Result: ERROR  → TP
+      (Creator calls migrateTo; all balance transferred out;
+       assert contract.balance≠0 fails.)
+    withdrawal_integrity                Expected: PASS  Result: OK     → TN
+      (withdraw() correctly updates balances[msg.sender] -= amount.)
+    owner_is_constant_on_other_functions Expected: PASS  Result: OK    → TN
+      (Filtered to exclude initWallet; no other function changes creator.)
+
+  [CVL] 4 rules:
+    anyone_can_become_creator           Expected: FAIL  Result: ERROR  → TP
+    unauthorized_migration              Expected: FAIL  Result: ERROR  → TP
+    withdrawal_integrity                Expected: PASS  Result: OK     → TN
+    owner_is_constant_on_other_functions Expected: PASS  Result: OK    → TN
+
+--- 9. wallet_04_confused_sign (Wallet) ---
+Bug: withdraw() uses >= instead of <=: require(amount >= balances[msg.sender]).
+     Users can withdraw MORE than their balance.
+
+  [SVS] 3 rules:
+    withdraw_integrity                  Expected: FAIL  Result: ERROR  → TP
+      (amount > balance satisfies require(amount>=balance); function doesn't
+       revert; assert false triggers.)
+    balance_decreases_on_withdraw       Expected: PASS  Result: OK     → TN
+      (require amount<=balance AND amount>=balance → amount==balance;
+       balances becomes 0 < balance_before.)
+    only_creator_can_migrate            Expected: FAIL  Result: ERROR  → TP
+      (Spec uses uninitialized local var 'current_creator' not linked to
+       contract's 'creator' state. Verifier finds msg.sender==actual_creator
+       while msg.sender≠current_creator; migrateTo doesn't revert.
+       Note: This is a spec-writing issue, but assertion correctly doesn't hold.)
+
+  [CVL] 3 rules:
+    withdraw_integrity                  Expected: FAIL  Result: ERROR  → TP
+      (amount > balance, withdraw@withrevert doesn't revert due to >= bug;
+       assert lastReverted fails.)
+    balance_decreases_on_withdraw       Expected: PASS  Result: OK     → TN
+    only_creator_can_migrate            Expected: PASS  Result: OK     → TN
+      (CVL directly accesses currentContract.creator; non-creator correctly reverts.)
+
+==============================================================================
+SUMMARY — dataset1/access_control
+==============================================================================
+
+                     solc-verify-spec          Certora
+  TP:                      13                       9
+  TN:                      12                      16
+  FP:                       0                       1
+  FN:                       0                       0
+  Error:                    0                       0
+  ──────────────────────────────────────────────────────
+  Total rules:             25                      26
+
+  Detection metrics (SVS):
+    Precision: 13/(13+0) = 100.0%
+    Recall:    13/(13+0) = 100.0%
+
+  Detection metrics (CVL):
+    Precision: 9/(9+1) = 90.0%
+    Recall:    9/(9+0) = 100.0%
+
+==============================================================================

@@ -1,0 +1,169 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset1/other
+==============================================================================
+
+Benchmark: other (mixed vulnerability category)
+Contracts: 8 (Crowdfund, EvilToken, Forwarder, StakingWarmup, WETH,
+  asignatura, class, name_registrar)
+Specs: 8 (SVS) / 8 (CVL)
+
+==============================================================================
+1. Crowdfund.sol — Contract Crowdfund (BUGGY: uint8 overflow)
+==============================================================================
+
+Vulnerability: `stakes` is mapping(address => uint8) with max 255. Calling
+  stake() with 100 finney multiple times causes uint8 overflow (e.g.,
+  prevStake=200 + increasingStake=100 = 300 overflows to 44 in uint8).
+
+--- Rule: stake_should_not_overflow ---
+Description: Sends 100 finney, checks that stakes[sender] increases
+  monotonically (s2 > s1). With uint8 overflow, s2 can be LESS than s1.
+  Property IS violated by uint8 overflow.
+
+  SVS: [ERROR] → FAIL → TP (uint8 overflow correctly detected)
+  CVL: [ERROR] → FAIL → TP (uint8 overflow correctly detected)
+
+==============================================================================
+2. EvilToken.sol — Contract EvilERC20Token (BUGGY: hidden mint)
+==============================================================================
+
+Vulnerability: transferFrom() contains a hidden mint on first call:
+  `balanceOf[address(this)] += value` — inflates contract token holdings
+  without deducting from sender, violating balance conservation.
+
+--- Rule: transferFrom_should_not_mint_to_contract ---
+Description: Checks that sum of balanceOf[sender] + balanceOf[contract]
+  is conserved after transferFrom. The hidden `balanceOf[address(this)] += value`
+  inflates the sum. Property IS violated.
+
+  SVS: [ERROR] → FAIL → TP (hidden mint correctly detected)
+  CVL: [COMPILATION ERROR] → Error (tool failed to compile the contract,
+    likely due to interface iROUTER and external call complexity)
+
+==============================================================================
+3. Forwarder.sol — Contract Forwarder (access control)
+==============================================================================
+
+Contract restricts forward() to the owner via require(msg.sender == owner).
+
+--- Rule: non_owner_forward_reverts ---
+Description: Asserts that calling forward() as non-owner reverts.
+  The require(msg.sender == owner) ensures this. Property IS true.
+
+  SVS: [OK] → PASS → TN (correctly verified)
+  CVL: [OK] → PASS → TN (correctly verified)
+
+==============================================================================
+4. StakingWarmup.sol — Contract StakingWarmup (access control)
+==============================================================================
+
+Contract restricts retrieve() to the staking address via
+require(msg.sender == staking).
+
+--- Rule: retrieve_from_non_staking_reverts ---
+Description: Asserts that calling retrieve() as non-staking reverts.
+  Property IS true.
+
+  SVS: [OK] → PASS → TN (correctly verified)
+  CVL: [OK] → PASS → TN (correctly verified)
+
+==============================================================================
+5. WETH.sol — Contract WETH (potential reentrancy in withdraw)
+==============================================================================
+
+WETH (Wrapped ETH) contract. withdrawTo() updates balance before calling
+transfer(), a pattern with reentrancy risk. However, transfer() forwards
+only 2300 gas, limiting exploitation.
+
+--- Rule: withdrawTo_cannot_exceed_balance ---
+Description: Asserts balanceOf[sender] decreases by exactly wad after
+  withdrawTo(0xBEEF, wad). The function does:
+  require(balance >= wad), balance -= wad, transfer(wad).
+  If function completes, balance IS decreased by wad. Property IS true.
+
+  SVS: [ERROR] → FAIL → FP (external call in transfer() causes SVS to
+    overapproximate possible side effects; property IS true in practice)
+  CVL: [OK]   → PASS → TN (correctly verified)
+
+==============================================================================
+6. asignatura.sol — Contract Asignatura (BUGGY: contradictory modifiers)
+==============================================================================
+
+Bug: automatricula() has modifiers `noMatriculados` (requires stored name is
+  empty) AND `noVacio` (requires stored name is NOT empty). These are
+  CONTRADICTORY — the function ALWAYS reverts, making enrollment impossible.
+
+--- Rule: automatricula_accepts_nonempty ---
+Description: Asserts matriculas count increases by 1 after enrollment.
+  Because the function always reverts, the postcondition is VACUOUSLY true
+  (never reached). The spec does NOT detect the contradictory-modifier bug.
+
+  SVS: [OK]    → PASS → TN (postcondition is vacuously satisfied, tool
+    correctly reports no violation)
+  CVL: [ERROR] → FAIL → FP (function always reverts making postcondition
+    vacuously true; CVL fails due to string/loop handling in modifiers)
+
+==============================================================================
+7. class.sol — Contract Class (simple, no known vulnerability)
+==============================================================================
+
+Simple student management: createStudent pushes a Student struct to array.
+
+--- Rule: create_student_adds_entry ---
+Description: After createStudent("alice", 10), students.length > 0.
+  Property IS true (push adds one entry, length becomes >= 1).
+
+  SVS: [OK]    → PASS → TN (correctly verified)
+  CVL: [ERROR] → FAIL → FP (property IS true; CVL has string/loop handling
+    issues with struct containing string)
+
+==============================================================================
+8. name_registrar.sol — Contract NameRegistrar
+    (labeled BUGGY: uninitialized storage, but >=0.7.0 mitigates)
+==============================================================================
+
+Original vulnerability: In Solidity < 0.5, uninitialized local storage
+  variables could overwrite state. With pragma >=0.7.0 and explicit `memory`
+  keyword, the variable is properly zero-initialized. require(unlocked) at
+  the end reverts all state changes when locked.
+
+--- Rule: register_should_revert_when_locked ---
+Description: Asserts register() reverts when unlocked == false.
+  require(unlocked) at the end causes revert. Property IS true.
+
+  SVS: [OK] → PASS → TN (correctly verified)
+  CVL: [OK] → PASS → TN (correctly verified)
+
+==============================================================================
+SUMMARY — dataset1/other
+==============================================================================
+
+                    SVS         CVL
+True Positive:       2           1
+True Negative:       5           4
+False Positive:      1           2
+False Negative:      0           0
+Error:               0           1
+                  ----        ----
+Total rules:         8           7 (+1 error)
+
+SVS TP details: Crowdfund (uint8 overflow), EvilToken (hidden mint).
+
+SVS FP details: WETH (external call modeling limitation in withdrawTo).
+
+CVL TP details: Crowdfund (uint8 overflow).
+
+CVL FP details: Asignatura (string/loop handling), Class (string/loop handling).
+
+CVL Error: EvilToken (COMPILATION ERROR — interface/external call complexity).
+
+Note: SVS successfully verifies EvilToken's hidden mint vulnerability while
+CVL fails to compile. CVL successfully verifies WETH's withdrawTo while SVS
+cannot due to external call modeling.
+
+Precision SVS:  2/(2+1) = 66.67%
+Recall SVS:     2/(2+0) = 100.00%
+
+Precision CVL:  1/(1+2) = 33.33%
+Recall CVL:     1/(1+0) = 100.00%
+==============================================================================

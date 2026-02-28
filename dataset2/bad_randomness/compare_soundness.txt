@@ -1,0 +1,27 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset2/bad_randomness
+==============================================================================
+Contracts: lottery
+Vulnerability: Uses block.number for randomness (predictable)
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- lottery (1 SVS / 1 CVL) ---
+  winShouldDependOnBetterEntropy [ERROR/ERROR]
+    Contract: makeBet() uses `block.number % 2 == 0` to determine winner.
+    Spec: asserts win determined by `block.timestamp % 2 == 0`.
+    Since block.number != block.timestamp (different values), the
+    prediction doesn't match → property IS violated.
+    SVS: TP | CVL: TP
+
+==============================================================================
+SUMMARY
+==============================================================================
+          TP   TN   FP   FN   Error  Total
+SVS:       1    0    0    0    0       1
+CVL:       1    0    0    0    0       1
+
+Both tools correctly detect the bad randomness issue.
+==============================================================================

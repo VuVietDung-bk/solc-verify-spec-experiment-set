@@ -1,0 +1,196 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset1/unchecked_low_level_calls
+==============================================================================
+
+Benchmark: unchecked_low_level_calls (UNCHECKED_LL_CALLS vulnerability category)
+Contracts: 24
+Specs: 24 (SVS, 45 rules) / 24 (CVL, 58 rules)
+
+All contracts use low-level calls (.call, .send) without checking the return
+value, OR use transfer (which auto-reverts). The vulnerability is that
+unchecked .call/.send can fail silently — execution continues with ETH not
+actually sent.
+
+==============================================================================
+RULE PATTERN CLASSIFICATION
+==============================================================================
+
+Three main rule patterns:
+
+A. BALANCE ASSERTION AFTER UNCHECKED .call/.send
+   Rules like Command_unchecked, sendMoney_unchecked, go_unchecked,
+   Command_must_debit, withdraw_resets_balance, fundPuppets_must_spend_value.
+   Assert: contract balance decreases after the call.
+   VIOLATED: .call can fail silently → ETH not sent → balance unchanged.
+   FAIL = TP.
+
+B. ASSERT_REVERT FOR UNCHECKED CALL
+   Rules like callAddress_should_succeed, getTokens_should_succeed,
+   callnotchecked_should_revert_on_failure.
+   Assert: function reverts (implying the unchecked call is dangerous).
+   VIOLATED: Function doesn't revert when .call fails (no return check).
+   FAIL = TP.
+
+C. ACCESS CONTROL RULES
+   Rules like only_owner_can_Command, only_owner_can_withdraw,
+   only_owner_can_sendMoney.
+   Test whether only the owner can call privileged functions.
+   These uncover ADDITIONAL bugs beyond unchecked calls.
+
+D. BALANCE ASSERTION AFTER transfer()
+   Rules for Lotto, SendBack (mishandled).
+   These contracts use transfer() which DOES revert on failure.
+   If function completes, transfer succeeded → balance IS correct.
+   Property IS true → FAIL = FP (tool balance modeling limitation).
+
+==============================================================================
+PER-CONTRACT DETAILED ANALYSIS
+==============================================================================
+
+--- Contracts using UNCHECKED .call (Pattern A/B) ---
+
+1. Caller (0x0cbe) — callAddress uses unchecked call
+   SVS: [ERROR] callAddress_should_succeed (assert_revert) → TP
+   CVL: [ERROR] callAddress_should_succeed → TP
+
+2. MultiplicatorX4 (0x3e01) — Command uses unchecked call
+   SVS: [ERROR] Command_unchecked (balance) → TP
+   CVL: [ERROR] Command_unchecked → TP
+
+3. WhaleGiveaway2 (0x3f2e) — Command uses unchecked call
+   SVS: [ERROR] Command_must_debit (balance) → TP
+   CVL: [ERROR] Command_must_debit → TP
+
+4. EtherGet (0x52d2) — getTokens uses unchecked call
+   SVS: [ERROR] getTokens_should_succeed (assert_revert) → TP
+   CVL: [ERROR] getTokens_should_succeed (loop unwinding) → TP (binary)
+
+5. MultiplicatorX3 (0x5aa8) — Command uses unchecked call
+   SVS: [ERROR] Command_must_debit → TP
+   CVL: [ERROR] Command_must_debit → TP
+
+6. HomeyJar (0x70f9) — Command uses unchecked call
+   SVS: [ERROR] Command_must_debit → TP
+   CVL: [ERROR] Command_must_debit → TP
+
+7. Splitter (0xb051) — fundPuppets uses unchecked call
+   SVS: [ERROR] fundPuppets_must_spend_value → TP
+   CVL: [ERROR] fundPuppets_must_spend_value → TP
+
+8. keepMyEther (0xb7c5) — withdraw uses unchecked send/call
+   SVS: [ERROR] withdraw_resets_balance → TP
+   CVL: [ERROR] withdraw_resets_balance → TP
+
+9. B (0xf29e) — go uses unchecked call
+   SVS: [ERROR] go_unchecked → TP
+   CVL: [ERROR] go_unchecked → TP
+   CVL: [ERROR] go_call_should_check_return → TP
+   CVL: [OK] envfreeFuncsStaticCheck → TN
+
+10. ReturnValue — callnotchecked uses unchecked call
+    SVS: [ERROR] callnotchecked_should_revert_on_failure → TP
+    CVL: [ERROR] callnotchecked_should_revert_on_failure → TP
+
+--- Contracts with unchecked .call + access control rules ---
+
+Contracts: SimpleWallet (0x6104, 0xb37f), WhaleGiveaway1 (0x78c2, 0x7a43),
+  Pie (0x806a, 0xd201), FreeEth (0xdb1c), Honey (0xe4ea),
+  Freebie (0xe82f), WhaleGiveaway2 (0xf70d)
+
+For WhaleGiveaway1, Pie, FreeEth, Honey, Freebie, WhaleGiveaway2 (8 contracts):
+  Each has 3 SVS rules / 4 CVL rules:
+  - Command_unchecked: SVS ERROR → TP, CVL ERROR → TP
+  - only_owner_can_Command: SVS [OK] → TN, CVL [OK] → TN
+  - only_owner_can_withdraw: SVS [ERROR] → TP (withdraw NOT owner-restricted),
+    CVL [ERROR] → TP
+  - envfreeFuncsStaticCheck (CVL only): [OK] → TN
+
+For SimpleWallet (2 contracts: 0x6104, 0xb37f):
+  Each has 3 SVS rules / 4 CVL rules:
+  - sendMoney_unchecked: SVS ERROR → TP, CVL ERROR → TP
+  - only_owner_can_withdraw: SVS ERROR "withdrawAll precondition" → FP
+    (CVL [OK] confirms access control works; SVS has tool issue)
+  - only_owner_can_sendMoney: SVS ERROR → FP (CVL [OK] confirms)
+  - envfreeFuncsStaticCheck (CVL only): [OK] → TN
+
+--- Contracts using transfer() (checked, no unchecked vulnerability) ---
+
+11. Lotto — sendToWinner uses transfer(), withdrawLeftOver uses transfer()
+    transfer reverts on failure → property IS true when function completes.
+    SVS: [ERROR] sendToWinner_must_transfer → FP (balance modeling)
+    SVS: [ERROR] withdrawLeftOver_must_transfer → FP
+    CVL: [ERROR] sendToWinner_must_transfer → FP
+    CVL: [ERROR] withdrawLeftOver_must_transfer → FP
+
+12. SendBack (mishandled) — withdrawBalance uses transfer()
+    Property IS true when function completes.
+    SVS: [ERROR] withdrawBalance_must_transfer → FP
+    CVL: [ERROR] withdrawBalance_must_transfer → FP
+
+--- WedIndex (unchecked .call) and Marriage (checked .call) ---
+
+13. WedIndex (0x84d9) — execute uses UNCHECKED .call{value: _value}()
+    execute_must_debit_balance: Balance assertion violated (call can fail
+    silently). Property IS violated.
+    SVS: [OK] → FN (SVS misses the unchecked call; likely assumes
+      .call always succeeds for balance purposes)
+    CVL: [ERROR] → TP (correctly detects)
+
+14. Marriage (0x958a) — execute uses CHECKED .call WITH require(success)
+    execute_must_debit_balance: If function completes, call succeeded,
+    balance decreased. Property IS true in the standard case.
+    SVS: [OK] → TN (correctly verifies checked call)
+    CVL: [ERROR] → FP (CVL's external call model considers that called code
+      might send ETH back, violating exact balance assertion)
+
+==============================================================================
+SUMMARY — dataset1/unchecked_low_level_calls
+==============================================================================
+
+                    SVS         CVL
+True Positive:      28          30
+True Negative:       9          23
+False Positive:      7           4
+False Negative:      1           0
+Error:               0           0
+                  ----        ----
+Total rules:        45          57*
+
+(*CVL result log states 58 total rules; detailed count yields 57)
+
+SVS TP breakdown:
+  - 10 unchecked-call balance/revert assertions (single-rule specs)
+  - 8 Command_unchecked (multi-rule specs)
+  - 2 sendMoney_unchecked (SimpleWallet)
+  - 8 only_owner_can_withdraw (WhaleGiveaway1/Pie/FreeEth/Honey/Freebie/WhaleGiveaway2)
+  Total: 28
+
+SVS TN: 8 only_owner_can_Command + 1 Marriage execute = 9
+
+SVS FP: 4 SimpleWallet access control (tool issue with "withdrawAll") +
+  3 transfer-based balance assertions (Lotto × 2, SendBack) = 7
+
+SVS FN: 1 WedIndex execute_must_debit_balance (missed unchecked .call)
+
+CVL TP:
+  - 10 unchecked-call assertions (single-rule specs)
+  - 8 Command_unchecked + 8 only_owner_can_withdraw (multi-rule specs)
+  - 2 sendMoney_unchecked + 2 go-related rules
+  Total: 30
+
+CVL TN: 11 envfreeFuncsStaticCheck + 8 only_owner_can_Command +
+  2 only_owner_can_sendMoney + 2 only_owner_can_withdraw (SimpleWallet) = 23
+
+CVL FP: 2 Lotto + 1 SendBack + 1 Marriage = 4
+
+Precision SVS:  28/(28+7) = 80.00%
+Recall SVS:     28/(28+1) = 96.55%
+
+Precision CVL:  30/(30+4) = 88.24%
+Recall CVL:     30/(30+0) = 100.00%
+
+Note: Both tools excel at detecting unchecked .call/.send patterns but
+struggle with balance assertions after transfer() (which is actually checked).
+SVS uniquely misses WedIndex's unchecked .call (false negative). CVL has
+higher recall (100%) and slightly higher precision than SVS.
+==============================================================================

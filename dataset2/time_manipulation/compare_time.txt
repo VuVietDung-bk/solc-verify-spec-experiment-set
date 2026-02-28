@@ -1,0 +1,18 @@
+==============================================================================
+TIME COMPARISON — dataset2/time_manipulation
+==============================================================================
+
+Spec                   | SVS rule | SVS e2e | CVL
+-----------------------|----------|---------|------
+HotDollarsToken.spec   |   5.59s  |  6.77s  |  25s
+TAMContract.spec       |   3.06s  |  4.09s  |  23s
+TTC.spec               |   8.85s  | 10.56s  |  29s
+lottopollo.spec        |   3.57s  |  4.53s  |  19s
+roulette.spec          |   1.64s  |  2.68s  |  — (compilation error)
+timed_crowdsale.spec   |   1.39s  |  2.29s  |  16s
+-----------------------|----------|---------|------
+TOTAL                  |  24.10s  | 30.92s  | 112s
+
+Speedup (e2e vs CVL): 3.62x
+(CVL time excludes roulette compilation error)
+==============================================================================

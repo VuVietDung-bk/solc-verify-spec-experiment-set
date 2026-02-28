@@ -1,0 +1,31 @@
+==============================================================================
+TIME COMPARISON — dataset1/access_control
+==============================================================================
+
+SVS Time = Rule verification time / End-to-end time (seconds)
+CVL Time = Certora Prover cloud time (seconds)
+
+#  | Spec                           | SVS (rule/e2e)   | CVL       | Ratio
+---|--------------------------------|------------------|-----------|------
+1  | incorrect_constructor_name1    | 4.76s / 5.69s    | 16s       | 3.4x
+2  | incorrect_constructor_name2    | 5.24s / 6.34s    | 20s       | 3.8x
+3  | incorrect_constructor_name3    | 4.85s / 5.75s    | 20s       | 4.1x
+4  | mapping_write                  | 3.37s / 4.30s    | 20s       | 5.9x
+5  | multiowned_vulnerable          | 3.61s / 4.58s    | 22s       | 6.1x
+6  | unprotected0                   | 1.41s / 2.31s    | 17s       | 12.1x
+7  | wallet_02_refund_nosub         | 7.57s / 8.52s    | 21s       | 2.8x
+8  | wallet_03_wrong_constructor    | 7.42s / 8.37s    | 23s       | 3.1x
+9  | wallet_04_confused_sign        | 5.43s / 6.53s    | 21s       | 3.9x
+
+==============================================================================
+TOTALS
+==============================================================================
+
+                              solc-verify-spec          Certora
+Total rule/prover time:            43.66s                180s
+Total end-to-end time:             52.39s                  -
+Specs analyzed:                     9                      9
+Avg time per spec (rule):           4.85s                 20s
+Speedup (CVL / SVS rule):          4.12x                  -
+
+==============================================================================

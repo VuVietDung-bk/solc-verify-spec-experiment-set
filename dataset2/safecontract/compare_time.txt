@@ -1,0 +1,23 @@
+==============================================================================
+TIME COMPARISON — dataset2/safecontract
+==============================================================================
+
+Spec                | SVS rule | SVS e2e  | CVL
+--------------------|----------|----------|------
+CareerOnToken.spec  |   8.02s  |   9.08s  |  24s
+StableDEX.spec      |  18.93s  |  20.32s  |  45s
+SushiSwap.spec      |   2.97s  |   4.08s  | 142s
+Uniswap.spec        |  16.92s  |  18.07s  |  32s
+WETH9.spec          |   9.71s  |  10.81s  |  22s
+WrappedToken.spec   |  18.94s  |  20.13s  |  25s
+balancer.spec       |  10.74s  |  11.84s  |  22s
+ballot.spec         |   5.74s  |   6.88s  |  22s
+curve.spec          |   1.98s  |   3.04s  | 171s
+--------------------|----------|----------|------
+TOTAL               |  93.95s  | 104.25s  | 505s
+
+Speedup (e2e vs CVL): 4.85x
+
+Note: Curve takes 171s in CVL (complex pricing computation).
+SushiSwap takes 142s in CVL.
+==============================================================================

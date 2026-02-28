@@ -1,0 +1,45 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset1/bad_randomness
+==============================================================================
+
+Benchmark: bad_randomness (BAD_RANDOMNESS vulnerability category)
+Contracts: 1
+Specs: 1 (SVS) / 1 (CVL)
+
+==============================================================================
+1. lottery.sol — Contract Lottery (BUGGY: BAD_RANDOMNESS)
+==============================================================================
+
+Vulnerability: Uses `(block.number % 2) == 0` to determine lottery outcome.
+block.number is predictable and manipulable by miners — terrible randomness.
+
+--- Rule: winShouldDependOnBetterEntropy ---
+Description: After makeBet(), checks that the bet's `won` field matches
+  `(block.timestamp % 2 == 0)`. The contract actually uses block.number,
+  not block.timestamp, so the assertion is violated — the randomness source
+  does not match what the spec expects.
+
+  SVS: [ERROR] → FAIL (assertion violated)  → TP (detected bad randomness source)
+  CVL: [ERROR] → FAIL (assertion violated)  → TP (detected bad randomness source)
+
+==============================================================================
+SUMMARY — dataset1/bad_randomness
+==============================================================================
+
+                    SVS         CVL
+True Positive:       1           1
+True Negative:       0           0
+False Positive:      0           0
+False Negative:      0           0
+Error:               0           0
+                  ----        ----
+Total rules:         1           1
+
+Precision SVS:  1/(1+0) = 100.00%
+Recall SVS:     1/(1+0) = 100.00%
+
+Precision CVL:  1/(1+0) = 100.00%
+Recall CVL:     1/(1+0) = 100.00%
+
+Both tools correctly detected the bad randomness vulnerability.
+==============================================================================

@@ -1,0 +1,113 @@
+==============================================================================
+DATASET2 — AGGREGATE COMPARISON SUMMARY
+==============================================================================
+
+Dataset: dataset2
+Categories: 8 (TOD, arithmetic, bad_randomness, gasless_send,
+  reentrancy, safecontract, time_manipulation, unchecked_send)
+Total contracts: 52
+Total specs: 42 (SVS) / 42 (CVL, 1 compilation error)
+
+==============================================================================
+SOUNDNESS SUMMARY — ALL BENCHMARKS
+==============================================================================
+
+Category                | SVS                         | CVL
+                        | TP  TN  FP  FN  Err  Total | TP  TN  FP  FN  Err  Total
+------------------------|-----------------------------|-----------------------------
+TOD                     |  1   4   1   0   0     6   |  1   5   1   0   0     7
+arithmetic              |  8   1   3   0   0    12   |  8   4   0   0   0    12
+bad_randomness          |  1   0   0   0   0     1   |  1   0   0   0   0     1
+gasless_send            |  0   0   3   0   0     3   |  1   4   0   0   0     5
+reentrancy              |  4  13   0   0   0    17   |  5   8   4   3   0    20
+safecontract            |  0  13  13   0   0    26   |  0   8  19   0   0    27
+time_manipulation       |  4   0   1   2   0     7   |  5   1   0   0   1    6+1e
+unchecked_send          |  2   5   0   0   1    7+1e |  3   7   0   0   0    10
+------------------------|-----------------------------|-----------------------------
+TOTAL                   | 20  36  21   2   1   79+1e | 24  37  24   3   1   88+1e
+
+==============================================================================
+PRECISION AND RECALL
+==============================================================================
+
+              Precision              Recall                F1
+SVS:  20/(20+21) = 48.78%    20/(20+2)  = 90.91%        63.49%
+CVL:  24/(24+24) = 50.00%    24/(24+3)  = 88.89%        64.00%
+
+==============================================================================
+PRECISION AND RECALL — EXCLUDING SAFECONTRACT
+==============================================================================
+
+When excluding safecontract (safe contracts generate FP for both tools):
+
+SVS (excl safe): 20 TP, 23 TN, 8 FP, 2 FN = 53+1e rules
+CVL (excl safe): 24 TP, 29 TN, 5 FP, 3 FN = 61+1e rules
+
+              Precision              Recall                F1
+SVS:  20/(20+8)  = 71.43%    20/(20+2)  = 90.91%        80.00%
+CVL:  24/(24+5)  = 82.76%    24/(24+3)  = 88.89%        85.71%
+
+==============================================================================
+ERROR ANALYSIS
+==============================================================================
+
+SVS Errors (1):
+  - unchecked_send/TokenSender (0xec329): INTERNAL ERROR
+    "Push must take exactly one argument" — solc-verify crashes
+
+CVL Errors (1):
+  - time_manipulation/roulette: COMPILATION ERROR
+    Spec references nonexistent spin() function
+
+SVS False Negatives (2):
+  - time_manipulation/HotDollarsToken: complex contract with inheritance
+  - time_manipulation/TTC: same pattern, complex contract structure
+
+CVL False Negatives (3):
+  - reentrancy/etherstore: single-transaction model misses reentrancy
+  - reentrancy/reentrance: same
+  - reentrancy/simple_dao: same
+
+==============================================================================
+TIME SUMMARY — ALL BENCHMARKS
+==============================================================================
+
+Category                | SVS rule | SVS e2e  | CVL      | Speedup
+------------------------|----------|----------|----------|--------
+TOD                     |  13.40s  |  16.77s  |   63.00s |  3.76x
+arithmetic              |  40.99s  |  52.26s  |  161.00s |  3.08x
+bad_randomness          |   2.11s  |   3.15s  |   18.00s |  5.71x
+gasless_send            |  15.10s  |  16.30s  |   24.00s |  1.47x
+reentrancy              |  32.07s  |  40.32s  |  157.00s |  3.89x
+safecontract            |  93.95s  | 104.25s  |  505.00s |  4.85x
+time_manipulation       |  24.10s  |  30.92s  |  112.00s |  3.62x
+unchecked_send          |  13.22s  |  19.24s  |  120.00s |  6.24x
+------------------------|----------|----------|----------|--------
+TOTAL                   | 234.94s  | 283.21s  | 1160.00s |  4.10x
+
+==============================================================================
+KEY FINDINGS — DATASET2
+==============================================================================
+
+1. REENTRANCY DETECTION: SVS excels at detecting reentrancy through
+   postcondition violations (4/4 TP, 100% recall on vulnerable functions).
+   CVL misses reentrancy entirely (3 FN) due to single-transaction model,
+   but catches function-can-revert issues (5 TP of different nature).
+
+2. SAFE CONTRACT VERIFICATION: Both tools struggle with safe contracts.
+   SVS: 50% TN rate, CVL: 30% TN rate. External calls, loops, and
+   complex math are the main FP sources. This is the largest contributor
+   to low precision for both tools.
+
+3. TIME MANIPULATION: CVL has higher recall (5/5 = 100%) vs SVS (4/6 = 67%).
+   SVS misses timestamp-based drain in complex contracts with inheritance
+   (HotDollarsToken, TTC).
+
+4. PERFORMANCE: SVS is 4.10x faster overall. Speedup ranges from 1.47x
+   (gasless_send) to 6.24x (unchecked_send).
+
+5. NEW PATTERNS vs DATASET1:
+   - SVS INTERNAL ERROR on TokenSender (new error type)
+   - CVL FN on reentrancy (not seen in dataset1)
+   - safecontract benchmark reveals verification limitations for both tools
+==============================================================================

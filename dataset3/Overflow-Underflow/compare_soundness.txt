@@ -1,0 +1,169 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset3/Overflow-Underflow
+==============================================================================
+Contracts: buggy_1 (HotDollarsToken), buggy_5 (Ownable + TokenERC20 + TTC),
+  buggy_19 (owned + ethBank), buggy_20 (Ownable + Stoppable + RampInstantPool),
+  buggy_23 (ERC20 + ERC20Burnable + AGR), buggy_33 (Owned + Staking),
+  buggy_34 (Ownable + LollypopToken), buggy_45 (StockBet),
+  buggy_47 (ERC20Interface + AcunarToken + AcunarIEO),
+  buggy_50 (digitalNotary)
+Vulnerability: Integer overflow/underflow in injected helper functions
+
+Bug patterns:
+  Type A — Transfer underflow: require(balances[sender] - value >= 0); uint
+    subtraction wraps around (Solidity <0.8 semantics), so this require ALWAYS
+    passes even when balance is 0. Spec requires revert (assert_revert).
+  Type B — LockTime overflow: lockTime[sender] += delta; when delta is large
+    enough, the addition wraps around and lockTime DECREASES. Spec asserts
+    afterTime > before (monotonic increase).
+
+All rules test BUGGY functions. All properties ARE violated by the bugs.
+Every [ERROR] from either tool = TP.
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- buggy_1 / EIP20Interface (2 SVS / 2 CVL) ---
+Contract: HotDollarsToken with injected transfer_intou14 (Type A underflow)
+and increaseLockTime_intou13 (Type B overflow).
+
+  transfer_intou14_should_not_underflow [ERROR/ERROR]
+    balances_intou14[sender] - value wraps to large uint when balance=0,
+    value>0. require(... >= 0) always passes. Function does NOT revert.
+    Property IS violated (should revert but doesn't).
+    SVS: TP | CVL: TP
+
+  increaseLockTime_intou13_should_not_overflow [ERROR/ERROR]
+    lockTime_intou13[sender] += delta overflows when delta is near MAX_UINT.
+    afterTime wraps to value < before. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_5_locktime / Ownable (1 SVS / 1 CVL) ---
+Contract: Ownable with injected increaseLockTime_intou21 (Type B overflow).
+
+  increaseLockTime_intou21_monotonic [ERROR/ERROR]
+    lockTime_intou21[sender] += inc can overflow. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_5_transfer / TokenERC20 (1 SVS / 1 CVL) ---
+Contract: TokenERC20 with injected transfer_intou10 (Type A underflow).
+
+  transfer_intou10_should_not_underflow [ERROR/ERROR]
+    Same Type A pattern. require(balance - value >= 0) always passes.
+    Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_19_eth_bank / ethBank (1 SVS / 1 CVL) ---
+Contract: ethBank with injected transfer_undrflow2 (Type A underflow).
+
+  transfer_undrflow2_should_not_underflow [ERROR/ERROR]
+    Same Type A pattern. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_19_owned / owned (1 SVS / 1 CVL) ---
+Contract: owned with injected increaseLockTime_intou1 (Type B overflow).
+
+  increaseLockTime_intou1_monotonic [ERROR/ERROR]
+    Same Type B pattern. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_20_locktime / Ownable (1 SVS / 1 CVL) ---
+Contract: Ownable with injected increaseLockTime_intou21 (Type B overflow).
+
+  increaseLockTime_intou21_monotonic [ERROR/ERROR]
+    Same Type B pattern. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_20_transfer / Stoppable (1 SVS / 1 CVL) ---
+Contract: Stoppable with injected transfer_intou10 (Type A underflow).
+
+  transfer_intou10_should_not_underflow [ERROR/ERROR]
+    Same Type A pattern. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_23 / ERC20 (2 SVS / 2 CVL) ---
+Contract: ERC20 (OpenZeppelin-based with SafeMath) but with injected
+transfer_undrflow2 (Type A) and increaseLockTime_intou1 (Type B).
+
+  transfer_undrflow2_should_not_underflow [ERROR/ERROR]
+    Type A underflow in injected helper. Property IS violated.
+    SVS: TP | CVL: TP
+
+  increaseLockTime_intou1_monotonic [ERROR/ERROR]
+    Type B overflow in injected helper. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_33 / Owned+Staking (2 SVS / 2 CVL) ---
+Contract: Staking with injected transfer_intou38 (Type A) in Owned
+and increaseLockTime_intou17 (Type B) in Owned.
+
+  transfer_undrflow2_should_not_underflow [ERROR/ERROR]
+    Uses balances_intou38, transfer_intou38. Type A underflow.
+    Property IS violated.
+    SVS: TP | CVL: TP
+
+  increaseLockTime_intou33_monotonic [ERROR/ERROR]
+    Uses lockTime_intou17, increaseLockTime_intou17. Type B overflow.
+    Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_34 / LollypopToken (1 SVS / 1 CVL) ---
+Contract: LollypopToken with injected transfer_intou34 (Type A underflow).
+
+  transfer_intou34_should_not_underflow [ERROR/ERROR]
+    Type A underflow. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_45 / StockBet (2 SVS / 2 CVL) ---
+Contract: StockBet with injected increaseLockTime_intou33 (Type B)
+and transfer_undrflow2 (Type A).
+
+  increaseLockTime_intou17_monotonic [ERROR/ERROR]
+    Uses lockTime_intou33, increaseLockTime_intou33. Type B overflow.
+    Property IS violated.
+    SVS: TP | CVL: TP
+
+  transfer_intou26_should_not_underflow [ERROR/ERROR]
+    Uses balances_intou2, transfer_undrflow2. Type A underflow.
+    Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_47_locktime / ERC20Interface (1 SVS / 0 CVL — COMPILATION ERROR) ---
+Contract: ERC20Interface (abstract) → AcunarToken → AcunarIEO.
+AcunarIEO.burn() has unnamed return variable. CVL compilation fails.
+
+  increaseLockTime_intou17_monotonic [ERROR/—]
+    Type B overflow. Property IS violated.
+    SVS: TP | CVL: Error (COMPILATION ERROR — unnamed return in burn())
+
+--- buggy_47_transfer / AcunarToken (1 SVS / 0 CVL — COMPILATION ERROR) ---
+Same contract file as above. CVL compilation fails for same reason.
+
+  transfer_intou18_should_not_underflow [ERROR/—]
+    Type A underflow. Property IS violated.
+    SVS: TP | CVL: Error (COMPILATION ERROR — unnamed return in burn())
+
+--- buggy_50 / digitalNotary (1 SVS / 1 CVL) ---
+Contract: digitalNotary with injected increaseLockTime_intou17 (Type B).
+
+  increaseLockTime_intou17_monotonic [ERROR/ERROR]
+    Type B overflow. Property IS violated.
+    SVS: TP | CVL: TP
+
+==============================================================================
+SUMMARY
+==============================================================================
+
+            | TP  | TN  | FP  | FN  | Error | Total Rules
+------------|-----|-----|-----|-----|-------|------------
+SVS         | 18  |  0  |  0  |  0  |   0   |    18
+CVL         | 16  |  0  |  0  |  0  |   2   |  16 + 2e
+
+Notes:
+- All 18 rules test genuinely buggy overflow/underflow functions.
+- SVS detects all 18 (100%). CVL detects 16 (88.9%) with 2 compilation errors.
+- CVL errors are on buggy_47 (AcunarIEO) due to unnamed return variable in
+  burn() function — a Solidity compiler warning that Certora treats as fatal.
+- SVS handles buggy_47 correctly despite the unnamed return.
+==============================================================================

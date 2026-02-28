@@ -1,0 +1,431 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset3/Re-entrancy
+==============================================================================
+Contracts: buggy_1 (HotDollarsToken), buggy_5 (Ownable + TokenERC20 + TTC),
+  buggy_19 (owned + ethBank), buggy_20 (Stoppable + RampInstantPool +
+  Ownable + RampInstantEscrowsPoolInterface),
+  buggy_23 (ERC20 / AGR), buggy_33 (Owned / Staking),
+  buggy_34 (Ownable + LollypopToken), buggy_45 (StockBet),
+  buggy_47 (ERC20Interface + AcunarToken + AcunarIEO),
+  buggy_50 (digitalNotary)
+Vulnerability: Re-entrancy — state updated AFTER external ETH transfer
+
+Key analysis principle:
+  - Functions using call{value}: forwards unlimited gas → recipient can
+    re-enter the contract → attacker can exploit stale state → VULNERABLE.
+  - Functions using send()/transfer(): only 2300 gas forwarded → insufficient
+    gas for re-entering (SLOAD + SSTORE require more) → SAFE from reentrancy.
+  - However, send()-based functions that only update state on success
+    (if(send(...)) balance=0) have a different bug: when send fails, state
+    is NOT updated. The spec asserts "balance must be zeroed" which IS
+    violated on the send-failure path.
+  - Specs with literal integer bounds (e.g., <= 1, <= 10) for functions
+    that send "1 ether" or "10 ether" have a unit mismatch: 1 ether =
+    10^18 wei in Solidity, but spec uses raw integer 1. This makes the
+    property as-stated violated regardless of reentrancy.
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- buggy_1 / HotDollarsToken (2 SVS / 2 CVL) ---
+Contract: HotDollarsToken with 2 injected re_ent functions.
+  withdrawBalance_re_ent26: call{value} → VULNERABLE
+  claimReward_re_ent32: transfer() → SAFE (2300 gas limit)
+
+  withdrawBalance_re_ent26_nonreentrant [ERROR/ERROR]
+    Uses call{value} to send userBalance. During the external call,
+    attacker can re-enter and call withdrawBalance again before
+    userBalance_re_ent26[msg.sender] is set to 0. The state variable
+    is updated AFTER the call, so the reentrancy allows double-spending.
+    Property "user balance must be zeroed" IS violated.
+    SVS: TP | CVL: TP
+
+  claimReward_re_ent32_nonreentrant [OK/ERROR]
+    Uses transfer() which only forwards 2300 gas. No re-entrancy
+    possible. On success, redeemableEther_re_ent32[msg.sender] = 0.
+    On failure, transfer reverts the entire transaction. In either
+    case, the postcondition holds when the function returns normally.
+    Property IS true.
+    SVS: TN | CVL: FP (over-approximation of external call effects)
+
+--- buggy_5 / Ownable (4 SVS / 4 CVL) ---
+Contract: Ownable with 4 injected re_ent functions.
+  withdraw_balances_re_ent21: call{value}, silent continue → VULNERABLE
+  withdrawBalance_re_ent40: call{value}, revert on fail → VULNERABLE
+  buyTicket_re_ent9: call{value}, revert on fail → VULNERABLE
+  claimReward_re_ent25: transfer() → SAFE
+
+  withdraw_balances_re_ent21_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Balance only cleared on success:
+    if(success) balances=0. During the call, attacker re-enters;
+    balance is still nonzero, so attacker withdraws again.
+    Property "stored balance must be cleared" IS violated.
+    SVS: TP | CVL: TP
+
+  withdrawBalance_re_ent40_nonreentrant [ERROR/ERROR]
+    Uses call{value} with revert on failure. userBalance zeroed AFTER
+    call. Reentrancy drains funds before zeroing. Property IS violated.
+    SVS: TP | CVL: TP
+
+  buyTicket_re_ent9_nonreentrant [OK/ERROR]
+    Uses call{value}. Function sends jackpot to lastPlayer, then sets
+    lastPlayer = msg.sender. Spec checks: (1) player_after == msg.sender,
+    (2) player_before == msg.sender || contract_before >= contract_after.
+    Even with reentrancy, the OUTER call's final assignment sets
+    lastPlayer = msg.sender, and the contract balance strictly decreased.
+    These weak postconditions HOLD even under reentrancy.
+    Property IS true (postconditions are satisfied).
+    SVS: TN | CVL: FP (over-approximation fails to verify OR condition)
+
+  claimReward_re_ent25_nonreentrant [OK/ERROR]
+    Uses transfer() → 2300 gas, no reentrancy. Reward cleared on
+    success, transaction reverts on failure. Property IS true.
+    SVS: TN | CVL: FP
+
+--- buggy_5 / TokenERC20 (5 SVS / 5 CVL) ---
+Contract: TokenERC20 with 5 injected re_ent functions.
+  withdrawBalance_re_ent12: send(), revert on fail → SAFE
+  bug_re_ent41: send(), revert on fail → SAFE (but spec units wrong)
+  callme_re_ent42: send(), revert on fail → SAFE (but spec units wrong)
+  buyTicket_re_ent2: send(), revert on fail → SAFE
+  withdrawFunds_re_ent31: send(), require → SAFE
+
+  withdrawBalance_re_ent12_nonreentrant [OK/ERROR]
+    Uses send() with revert on failure. 2300 gas, no reentrancy.
+    On success: balance zeroed, ETH sent = owed. Property IS true.
+    SVS: TN | CVL: FP
+
+  bug_re_ent41_nonreentrant [ERROR/ERROR]
+    Uses send(1 ether). Spec asserts contract_before - contract_after <= 1.
+    In Solidity, 1 ether = 10^18 wei. The spec literal "1" = 1 wei.
+    Since 10^18 >> 1, the postcondition contract_before - contract_after
+    <= 1 is violated (sends 10^18, not 1). Property as stated IS violated
+    (unit mismatch in spec).
+    SVS: TP | CVL: TP
+
+  callme_re_ent42_nonreentrant [ERROR/ERROR]
+    Uses send(10 ether). Spec asserts contract_before - contract_after <= 10.
+    Same unit mismatch: 10 ether = 10^19 wei >> 10. Property IS violated.
+    SVS: TP | CVL: TP
+
+  buyTicket_re_ent2_nonreentrant [OK/ERROR]
+    Uses send() with revert on failure. Spec checks player and OR
+    condition. 2300 gas, no reentrancy. On success, lastPlayer set to
+    msg.sender and contract balance decreased. Property IS true.
+    SVS: TN | CVL: FP
+
+  withdrawFunds_re_ent31_nonreentrant [OK/ERROR]
+    Uses send() with require. On success, sends amount and decrements
+    balance by amount. On failure, reverts. Property IS true.
+    SVS: TN | CVL: FP
+
+--- buggy_5 / TTC (3 SVS / 3 CVL) ---
+Contract: TTC with 3 injected re_ent functions.
+  withdrawFunds_re_ent17: call{value}, require → VULNERABLE
+  bug_re_ent13: call{value}, revert → VULNERABLE
+  withdraw_balances_re_ent36: send(), silent continue → balance not zeroed on failure
+
+  withdrawFunds_re_ent17_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Sends amount, then decrements balance. Reentrancy
+    allows double-withdrawal before balance update. Property IS violated.
+    SVS: TP | CVL: TP
+
+  bug_re_ent13_nonreentrant [ERROR/ERROR]
+    Uses call{value}(1 ether). Reentrancy possible. Additionally,
+    spec checks <= 1 (unit mismatch: 1 ether = 10^18). Property IS
+    violated (both reentrancy and unit mismatch).
+    SVS: TP | CVL: TP
+
+  withdraw_balances_re_ent36_nonreentrant [ERROR/ERROR]
+    Uses send(). Pattern: if(send(balance)) balance=0. When send()
+    fails (receiver reverts), balance is NOT zeroed. Spec asserts
+    "stored balance must be cleared" → violated when send fails.
+    Property IS violated (not reentrancy, but send-failure path).
+    SVS: TP | CVL: TP
+
+--- buggy_19 / ethBank (9 SVS / 8 CVL) ---
+Contract: ethBank with 9 injected re_ent functions (SVS has 1 extra rule).
+  buyTicket_re_ent2: send(), revert → SAFE
+  withdrawFunds_re_ent17: send(), require → SAFE
+  withdrawFunds_re_ent3: call{value}, require → VULNERABLE
+  buyTicket_re_ent9: call{value}, revert → VULNERABLE (but weak spec)
+  claimReward_re_ent25: transfer() → SAFE
+  withdrawBalance_re_ent19: send(), revert → SAFE
+  withdrawBalance_re_ent26: call{value}, revert → VULNERABLE
+  withdraw_balances_re_ent36: send(), silent → balance not zeroed on failure
+  bug_re_ent13: call{value}, revert → VULNERABLE
+
+  buyTicket_re_ent2_nonreentrant [OK/ERROR]
+    Uses send(). 2300 gas, no reentrancy. Spec checks player and OR
+    condition. Property IS true.
+    SVS: TN | CVL: FP
+
+  withdrawFunds_re_ent17_nonreentrant [OK/ERROR]
+    Uses send() with require. On success, sends amount and decrements
+    balance. On failure, transaction reverts. Property IS true.
+    SVS: TN | CVL: FP
+
+  withdrawFunds_re_ent3_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Sends amount, then decrements balance. Reentrancy
+    allows double-withdrawal. Property IS violated.
+    SVS: TP | CVL: TP
+
+  buyTicket_re_ent9_nonreentrant [OK/ERROR]
+    Uses call{value} but spec checks weak postconditions (player ==
+    msg.sender AND OR condition). After reentrancy unwind, final
+    assignment still sets lastPlayer = msg.sender. Property IS true
+    (postconditions hold even under reentrancy).
+    SVS: TN | CVL: FP
+
+  claimReward_re_ent25_nonreentrant [OK/ERROR]
+    Uses transfer() → 2300 gas. Property IS true.
+    SVS: TN | CVL: FP
+
+  withdrawBalance_re_ent19_nonreentrant [OK/ERROR]
+    Uses send() with revert on failure. On success, balance zeroed.
+    Property IS true.
+    SVS: TN | CVL: FP
+
+  withdrawBalance_re_ent26_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Balance zeroed AFTER call. Reentrancy allows
+    double-spending before zeroing. Property IS violated.
+    SVS: TP | CVL: TP
+
+  withdraw_balances_re_ent36_nonreentrant [ERROR/—]
+    Uses send(). Pattern: if(send(balance)) balance=0. When send fails,
+    balance not zeroed. Spec asserts "stored balance must be cleared"
+    → violated on send-failure path. Property IS violated.
+    SVS: TP
+    CVL: rule not present in CVL spec (8 rules vs 9 SVS rules)
+
+  bug_re_ent13_nonreentrant [ERROR/ERROR]
+    Uses call{value}(1 ether). Reentrancy possible, plus spec checks
+    <= 1 (unit mismatch). Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_19 / owned (3 SVS / 3 CVL) ---
+Contract: owned with 3 injected re_ent functions.
+  withdraw_balances_re_ent1: call{value}, silent continue → VULNERABLE
+  bug_re_ent41: send(), revert → SAFE (but spec units wrong)
+  callme_re_ent42: send(), revert → SAFE (but spec units wrong)
+
+  withdraw_balances_re_ent1_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Balance cleared only on success. Reentrancy
+    possible: attacker re-enters, balance still nonzero. Property IS
+    violated.
+    SVS: TP | CVL: TP
+
+  bug_re_ent41_nonreentrant [ERROR/ERROR]
+    Uses send(1 ether). Spec checks <= 1 (1 wei). 10^18 >> 1.
+    Property IS violated (unit mismatch).
+    SVS: TP | CVL: TP
+
+  callme_re_ent42_nonreentrant [ERROR/ERROR]
+    Uses send(10 ether). Spec checks <= 10. 10^19 >> 10.
+    Property IS violated (unit mismatch).
+    SVS: TP | CVL: TP
+
+--- buggy_20 / Stoppable (1 SVS / 1 CVL) ---
+Contract: Stoppable with 1 injected re_ent function.
+  withdrawFunds_re_ent3: call{value}, require → VULNERABLE
+
+  withdrawFunds_re_ent3_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Sends amount, then decrements balance. Reentrancy
+    allows double-withdrawal. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_20 / RampInstantPool (1 SVS / 0+1err CVL) ---
+Contract: RampInstantPool with 1 injected re_ent function.
+  claimReward_re_ent11: transfer() → SAFE
+
+  claimReward_re_ent11_nonreentrant [OK/COMPILATION ERROR]
+    Uses transfer() → 2300 gas. Property IS true (reward cleared,
+    ETH sent <= owed). SVS: TN
+    CVL: Error — COMPILATION ERROR (RampInstantPool is abstract; Certora
+    cannot handle abstract contracts).
+
+--- buggy_20 / Ownable (1 SVS / 1 CVL) ---
+Contract: Ownable (from buggy_20.sol) with 1 injected re_ent function.
+  withdrawFunds_re_ent17: call{value}, require → VULNERABLE
+
+  withdrawFunds_re_ent17_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Same reentrancy pattern. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_20 / RampInstantEscrowsPoolInterface (1 SVS / 0+1err CVL) ---
+Contract: RampInstantEscrowsPoolInterface with 1 injected re_ent function.
+  claimReward_re_ent25: transfer() → SAFE
+
+  claimReward_re_ent25_nonreentrant [OK/COMPILATION ERROR]
+    Uses transfer() → 2300 gas. Property IS true.
+    SVS: TN
+    CVL: Error — COMPILATION ERROR (contract is abstract).
+
+--- buggy_23 / ERC20 (2 SVS / 2 CVL) ---
+Contract: ERC20 (AGR in CVL) with 2 injected re_ent functions.
+  withdrawFunds_re_ent17: call{value}, require → VULNERABLE
+  claimReward_re_ent25: transfer() → SAFE
+
+  withdrawFunds_re_ent17_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Reentrancy-vulnerable. Property IS violated.
+    SVS: TP | CVL: TP
+
+  claimReward_re_ent25_nonreentrant [OK/ERROR]
+    Uses transfer() → 2300 gas. Property IS true.
+    SVS: TN | CVL: FP
+
+--- buggy_33 / Owned (3 SVS / 3 CVL) ---
+Contract: Owned (Staking in CVL) with 3 injected re_ent functions.
+  withdrawFunds_re_ent17: call{value}, require → VULNERABLE
+  withdrawFunds_re_ent38: send(), require → SAFE
+  claimReward_re_ent32: transfer() → SAFE
+
+  withdrawFunds_re_ent17_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Reentrancy-vulnerable. Property IS violated.
+    SVS: TP | CVL: TP
+
+  withdrawFunds_re_ent38_nonreentrant [OK/ERROR]
+    Uses send() with require. 2300 gas, no reentrancy. On success,
+    balance decremented. On failure, transaction reverts. Property IS true.
+    SVS: TN | CVL: FP
+
+  claimReward_re_ent32_nonreentrant [OK/ERROR]
+    Uses transfer() → 2300 gas. Property IS true.
+    SVS: TN | CVL: FP
+
+--- buggy_34 / LollypopToken (2 SVS / 2 CVL) ---
+Contract: LollypopToken with 2 injected re_ent functions.
+  withdrawFunds_re_ent10: send(), require → SAFE
+  claimReward_re_ent11: transfer() → SAFE
+
+  withdrawFunds_re_ent10_nonreentrant [ERROR/ERROR]
+    Uses send() with require. 2300 gas, no reentrancy possible.
+    On success: balance decremented by amount, ETH sent = amount.
+    On failure: transaction reverts.
+    The reentrancy property IS true. However, SVS reports ERROR due to
+    precondition interference from LollypopToken's transfer() function
+    (internal _transfer calls calculateBonus and mint, causing cascading
+    precondition violations that affect the analysis of unrelated rules).
+    SVS: FP (precondition interference from unrelated code)
+    CVL: FP (over-approximation of external call effects)
+
+  claimReward_re_ent11_nonreentrant [ERROR/ERROR]
+    Uses transfer() → 2300 gas. Property IS true (reward cleared).
+    SVS reports ERROR due to same precondition interference from
+    LollypopToken's multiTransfer() function.
+    SVS: FP (precondition interference)
+    CVL: FP (over-approximation)
+
+--- buggy_34 / Ownable (1 SVS / 1 CVL) ---
+Contract: Ownable (from buggy_34.sol) with 1 injected re_ent function.
+  withdrawFunds_re_ent17: call{value}, require → VULNERABLE
+
+  withdrawFunds_re_ent17_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Reentrancy-vulnerable. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- buggy_45 / StockBet (5 SVS / 5 CVL) ---
+Contract: StockBet with 12 injected re_ent functions, 5 tested by specs.
+  claimReward_re_ent39: transfer() → SAFE
+  withdrawFunds_re_ent31: call{value}, require → VULNERABLE
+  withdrawFunds_re_ent17: call{value}, require → VULNERABLE
+  withdrawFunds_re_ent3: call{value}, require → VULNERABLE
+  claimReward_re_ent25: transfer() → SAFE
+
+  claimReward_re_ent39_nonreentrant [OK/ERROR]
+    Uses transfer() → 2300 gas. Property IS true.
+    SVS: TN | CVL: FP
+
+  withdrawFunds_re_ent31_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Reentrancy-vulnerable. Property IS violated.
+    SVS: TP | CVL: TP
+
+  withdrawFunds_re_ent17_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Reentrancy-vulnerable. Property IS violated.
+    SVS: TP | CVL: TP
+
+  withdrawFunds_re_ent3_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Reentrancy-vulnerable. Property IS violated.
+    SVS: TP | CVL: TP
+
+  claimReward_re_ent25_nonreentrant [OK/ERROR]
+    Uses transfer() → 2300 gas. Property IS true.
+    SVS: TN | CVL: FP
+
+--- buggy_47 / AcunarToken (1 SVS / 0+1err CVL) ---
+Contract: AcunarToken with injected re_ent functions (all call{value}).
+  withdrawFunds_re_ent24: call{value}, require → VULNERABLE
+
+  withdrawFunds_re_ent24_nonreentrant [ERROR/COMPILATION ERROR]
+    Uses call{value}. Reentrancy-vulnerable. Property IS violated.
+    SVS reports ERROR (noting precondition errors in transfer — may be
+    side effect of AcunarToken's transfer function, but the underlying
+    reentrancy vulnerability is real and the property IS violated).
+    SVS: TP
+    CVL: Error — COMPILATION ERROR (unnamed return variable in burn(),
+    transfer(), transferFrom()).
+
+--- buggy_50 / digitalNotary (3 SVS / 3 CVL) ---
+Contract: digitalNotary with 8 injected re_ent functions, 3 tested by specs.
+  withdrawFunds_re_ent17: call{value}, require → VULNERABLE
+  withdrawFunds_re_ent31: call{value}, require → VULNERABLE
+  claimReward_re_ent25: transfer() → SAFE
+
+  withdrawFunds_re_ent17_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Reentrancy-vulnerable. Property IS violated.
+    SVS: TP | CVL: TP
+
+  withdrawFunds_re_ent31_nonreentrant [ERROR/ERROR]
+    Uses call{value}. Reentrancy-vulnerable. Property IS violated.
+    SVS: TP | CVL: TP
+
+  claimReward_re_ent25_nonreentrant [OK/ERROR]
+    Uses transfer() → 2300 gas. Property IS true.
+    SVS: TN | CVL: FP
+
+==============================================================================
+ANALYSIS: Re-entrancy Detection Patterns
+==============================================================================
+
+SVS behavior:
+  - Correctly detects reentrancy on call{value} withdrawal functions
+    where postconditions check balance decrements (TP).
+  - Correctly passes transfer()/send()-based functions where postconditions
+    hold on all non-reverting paths (TN).
+  - Correctly flags send()-based "silent fail" patterns where balance is
+    not zeroed when send() fails (TP — not reentrancy but valid property
+    violation).
+  - Correctly flags spec unit mismatches where 1 ether ≠ 1 wei (TP).
+  - Correctly passes buyTicket functions with weak OR-postconditions that
+    hold even under reentrancy (TN).
+  - 2 FP on LollypopToken (buggy_34) due to precondition interference from
+    complex transfer/multiTransfer logic.
+
+CVL behavior:
+  - Reports ALL rules as [ERROR] (0 TN). CVL's over-approximation of
+    external call effects (havocing all state after any external call)
+    prevents it from proving ANY postcondition involving contract.balance
+    or state variables after transfers.
+  - This causes massive FP rate: 19/43 rules are false alarms.
+  - 3 COMPILATION ERRORs on abstract contracts and unnamed return variables.
+
+==============================================================================
+SUMMARY
+==============================================================================
+          TP   TN   FP   FN   Error  Total
+SVS:      26   19    2    0    0      47
+CVL:      24    0   19    0    3      43 + 3 err
+
+SVS Precision: 26/28 = 92.86%   Recall: 26/26 = 100.00%
+CVL Precision: 24/43 = 55.81%   Recall: 24/24 = 100.00%
+
+Note: SVS has 47 rules (1 extra rule withdraw_balances_re_ent36 in
+buggy_19_eth_bank not present in CVL spec). CVL has 43 rules + 3
+compilation errors (buggy_20_ent11, buggy_20_ent25, buggy_47_acunar_token).
+
+Key finding: SVS achieves 92.86% precision with 100% recall, correctly
+distinguishing vulnerable call{value} functions from safe send/transfer
+functions. CVL flags ALL functions as failing (100% recall but only 55.81%
+precision), producing 19 false positives due to over-approximation.
+==============================================================================

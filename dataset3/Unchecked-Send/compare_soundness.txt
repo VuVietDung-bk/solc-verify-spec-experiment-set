@@ -1,0 +1,399 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset3/Unchecked-Send
+==============================================================================
+Contracts: buggy_1 (HotDollarsToken), buggy_5 (TokenERC20 + TTC),
+  buggy_19 (owned + ethBank), buggy_20 (RampInstantPool + RampInstantEthPool),
+  buggy_23 (ERC20 + ERC20Burnable / AGR), buggy_33 (Owned + Staking),
+  buggy_34 (Ownable + LollypopToken), buggy_45 (StockBet),
+  buggy_47 (ERC20Interface + AcunarToken + AcunarIEO),
+  buggy_50 (digitalNotary)
+Vulnerability: Unchecked return value of send/call — injected functions
+  use send() without checking the boolean return value.
+
+Spec strategy: Specs test GENERAL contract properties (ERC20 balance
+  conservation, access control, state updates), not the unchecked-send
+  functions directly. The unchecked-send functions exist in the contracts
+  but are not the target of the specifications.
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- buggy_1 / HotDollarsToken (3 SVS / 4 CVL) ---
+Contract: EIP20Interface implementation with standard transfer/transferFrom.
+  transfer: require(balance >= value); balance[sender] -= value; balance[to] += value;
+  transferFrom: similar, with allowance check.
+  No SafeMath. Pragma >=0.7.0. Checked arithmetic in 0.8+.
+
+  transferConservesBalance [OK/ERROR]
+    On non-reverting paths: sender_after = sender_before - value,
+    recip_after = recip_before + value. Overflow in +=value reverts in 0.8+.
+    Property IS true (all non-reverting paths conserve balance).
+    SVS: TN | CVL: FP (CVL over-approximation or modeling issue)
+
+  transferFromConservesBalance [OK/ERROR]
+    Same analysis. Property IS true.
+    SVS: TN | CVL: FP
+
+  approveUpdatesAllowance [OK/OK]
+    Simple setter. Property IS true.
+    SVS: TN | CVL: TN
+
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- buggy_19 / ethBank (4 SVS / 5 CVL) ---
+Contract: ethBank with onlyOwner access control functions.
+  All tested functions: withdrawForUser, moveBrick, moveBrickContracts,
+  joinFlexible — all require msg.sender == owner.
+
+  onlyOwnerCanWithdrawForUser [OK/OK]
+    Non-owner call reverts (onlyOwner modifier). Property IS true.
+    SVS: TN | CVL: TN
+
+  onlyOwnerCanMoveBrick [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  onlyOwnerCanMoveBrickContracts [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  onlyOwnerCanJoinFlexible [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- buggy_19 / owned (2 SVS / 3 CVL) ---
+Contract: owned with transferOwnership (onlyOwner).
+
+  onlyOwnerCanTransferOwnership [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  transferOwnershipUpdatesOwner [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- buggy_20 / RampInstantEthPool (1 SVS / 2 CVL) ---
+Contract: RampInstantEthPool with onlyOwner withdrawal.
+
+  onlyOwnerCanWithdrawFunds [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- buggy_20 / RampInstantPool (5 SVS / 0+1err CVL) ---
+Contract: RampInstantPool with access control and state update functions.
+
+  onlyOwnerCanWithdrawAllFunds [OK/COMPILATION ERROR]
+    Property IS true. SVS: TN
+    CVL: Error — COMPILATION ERROR (RampInstantPool is abstract)
+
+  onlyOwnerCanSetLimits [OK/COMPILATION ERROR]
+    SVS: TN | CVL: Error
+
+  setLimitsUpdatesAmounts [OK/COMPILATION ERROR]
+    SVS: TN | CVL: Error
+
+  onlyOwnerCanSetSwapsContract [OK/COMPILATION ERROR]
+    SVS: TN | CVL: Error
+
+  onlyOwnerCanSetIsActive [OK/COMPILATION ERROR]
+    SVS: TN | CVL: Error
+
+--- buggy_23 / ERC20 (5 SVS / 6 CVL) ---
+Contract: ERC20 (AGR) using SafeMath for arithmetic.
+  transfer/transferFrom: use SafeMath.sub/add — revert on overflow/underflow.
+  burn: calls _burn which uses SafeMath.sub.
+
+  transferConservesBalance [OK/OK]
+    SafeMath prevents overflow. Property IS true.
+    SVS: TN | CVL: TN
+
+  transferFromConservesBalance [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  burnDecreasesBalance [ERROR/OK]
+    burn() uses SafeMath: _totalSupply.sub(value) and _balances[account]
+    .sub(value). Both revert on underflow. On successful execution:
+    balance_after = balance_before - value, supply_after = supply_before
+    - value. Property IS true.
+    SVS: FP (SVS cannot verify due to contract complexity — error message
+    lists many interfering functions in the ERC20 contract)
+    CVL: TN (correctly verifies with SafeMath)
+
+  approveUpdatesAllowance [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  increaseAllowanceUpdatesCorrectly [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- buggy_33 / Staking (7 SVS / 8 CVL) ---
+Contract: Staking with onlyOwner modifier that has a BACKDOOR:
+  modifier onlyOwner { require(msg.sender == owner || msg.sender == address(this)); }
+  The address(this) check allows the contract itself to bypass owner check.
+  startStaking() is public with NO access control and makes external call
+  to token.transferFrom(), introducing reentrancy risk.
+
+  onlyOwnerCanChangeStakeTokens [ERROR/ERROR]
+    onlyOwner allows msg.sender == address(this). If msg.sender is
+    address(this) but not owner, the function still executes. The spec
+    asserts non-owner cannot call it, but address(this) can. Property IS
+    violated (access control backdoor).
+    SVS: TP | CVL: TP
+
+  changeStakeTokensUpdatesMin [ERROR/ERROR]
+    require msg.sender == owner; changeStakeTokens(newThreshold).
+    Function: minstakeTokens = newThreshold * 10^10. On non-reverting
+    paths, the postcondition should hold. SVS reports ERROR due to
+    startStaking's external call interfering with contract-wide analysis.
+    Property IS true on direct execution paths.
+    SVS: FP (analysis interference from startStaking's external call)
+    CVL: FP (same issue — cannot verify simple setter)
+
+  onlyOwnerCanChangeStakeTime [ERROR/ERROR]
+    Same address(this) backdoor. Property IS violated.
+    SVS: TP | CVL: TP
+
+  changeStakeTimeUpdatesTime [ERROR/OK]
+    Simple setter: stakeTime = newStakeTime. Property IS true.
+    SVS: FP (analysis interference)
+    CVL: TN (correctly verifies)
+
+  onlyOwnerCanChangeStakingPercentage [ERROR/ERROR]
+    address(this) backdoor. Property IS violated.
+    SVS: TP | CVL: TP
+
+  onlyOwnerCanLockWithdrawals [ERROR/ERROR]
+    address(this) backdoor. Property IS violated.
+    SVS: TP | CVL: TP
+
+  lockWithdrawalsSetsLock [ERROR/ERROR]
+    Simple setter: lock = true. Property IS true.
+    SVS: FP (analysis interference)
+    CVL: FP (lockWithdrawalsSucceedsForOwner — same issue)
+
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- buggy_34 / LollypopToken (5 SVS / 7 CVL) ---
+Contract: LollypopToken with complex _transfer that calls calculateBonus()
+  and mint() for BOTH sender and recipient before performing the actual
+  balance transfer. This bonus minting violates standard ERC20 invariants.
+
+  transferUpdatesBalances [ERROR/ERROR]
+    _transfer calls mint(sender, bonus) and mint(recipient, bonus) before
+    the actual subtraction/addition. After mint, balances increase. Net
+    change: sender_after = sender_before + senderBonus - amount. If
+    senderBonus > 0 and amount is small, sender_after > sender_before.
+    Spec asserts sender_after <= sender_before. Property IS violated
+    (bonus minting breaks standard balance conservation).
+    SVS: TP | CVL: TP
+
+  transferFromUpdatesBalances [ERROR/ERROR]
+    Same bonus minting issue via _transfer. Property IS violated.
+    SVS: TP | CVL: TP
+
+  approveUpdatesAllowance [ERROR/OK]
+    approve() calls _approve() which is a simple setter:
+    _allowances[owner][spender] = value. No external calls.
+    Property IS true.
+    SVS: FP (precondition interference from transfer/multiTransfer)
+    CVL: TN
+
+  increaseAllowanceUpdatesCorrectly [ERROR/OK]
+    Simple allowance addition. Property IS true.
+    SVS: FP | CVL: TN
+
+  decreaseAllowanceUpdatesCorrectly [ERROR/OK]
+    Simple allowance subtraction. Property IS true.
+    SVS: FP | CVL: TN
+
+  totalSupplyBounded (CVL only) [—/ERROR]
+    Invariant: _totalSupply <= _maxTotalSupply. The _transfer function
+    calls mint() when elapsed time >= minAgeOfToken AND _totalSupply <
+    _maxTotalSupply. However, the bonus amount could push totalSupply
+    above _maxTotalSupply (check is < not <=, and bonus may be large).
+    Property IS violated.
+    CVL: TP
+
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- buggy_45 / StockBet (7 SVS / 8 CVL) ---
+Contract: StockBet with access control for owner and oracle.
+
+  onlyOwnerCanSetOracle [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+  setOracleUpdatesOracle [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+  onlyOracleCanSetInitialPrice [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+  setInitialPriceUpdatesPrice [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+  onlyOwnerCanCloseGame [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+  onlyOracleCanSetFinalPrice [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+  setFinalPriceUpdatesPrice [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- buggy_47 / AcunarIEO (6 SVS / 8 CVL) ---
+Contract: AcunarIEO extends AcunarToken. transfer/transferFrom have
+  time-lock: require(block.timestamp > coinTradeStart). Admin functions
+  have onlyAdmin modifier.
+
+  transferConservesBalance [ANNOTATION ERROR/ERROR]
+    SVS: Error — ANNOTATION ERROR (undeclared identifier in spec)
+    CVL: AcunarToken.transfer uses raw arithmetic (balances[to] += tokens
+    before balances[sender] -= tokens). On non-reverting paths, property
+    IS true (checked arithmetic in 0.8+).
+    CVL: FP (modeling issue with override chain or time-lock)
+
+  transferFromConservesBalance [ANNOTATION ERROR/ERROR]
+    SVS: Error | CVL: FP (same analysis)
+
+  onlyAdminCanHalt [ANNOTATION ERROR/OK]
+    SVS: Error | CVL: TN
+
+  onlyAdminCanUnhalt [ANNOTATION ERROR/OK]
+    SVS: Error | CVL: TN
+
+  onlyAdminCanChangeDepositAddress [ANNOTATION ERROR/OK]
+    SVS: Error | CVL: TN
+
+  changeDepositAddressUpdatesDeposit [ANNOTATION ERROR/OK]
+    SVS: Error | CVL: TN
+
+  raisedAmountBounded (CVL only) [—/OK]
+    CVL: TN
+
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- buggy_50 / digitalNotary (9 SVS / 9 CVL) ---
+Contract: digitalNotary with manager-only access control.
+  registerHash: payable function that pushes to struct array and increments
+  HashListLength. Requires contractactive, hash not registered, msg.value
+  == hashfee.
+
+  onlyManagerCanSetHashFee [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+  setHashFeeUpdatesFee [OK/OK]
+    SVS: TN | CVL: TN
+  onlyManagerCanSetChangeHashOwnerFee [OK/OK]
+    SVS: TN | CVL: TN
+  setChangeHashOwnerFeeUpdatesFee [OK/OK]
+    SVS: TN | CVL: TN
+  onlyManagerCanSetContractActive [OK/OK]
+    SVS: TN | CVL: TN
+  setContractActiveUpdatesState [OK/OK]
+    SVS: TN | CVL: TN
+  onlyManagerCanSetManager [OK/OK]
+    SVS: TN | CVL: TN
+  setManagerUpdatesManager [OK/OK]
+    SVS: TN | CVL: TN
+
+  registerHashIncrementsLength [OK/ERROR]
+    Function increments HashListLength by 1 on success. Property IS true.
+    SVS: TN
+    CVL: FP (modeling issue with payable function, struct array push,
+    or msg.value handling)
+
+--- buggy_5 / TokenERC20 (2 SVS / 3 CVL) ---
+Contract: TokenERC20 with raw arithmetic (no SafeMath).
+  burn: balanceOf[sender] -= value; totalSupply -= value;
+  transfer: standard ERC20 with balance check.
+
+  transferConservesBalance [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  burnDecreasesBalance [ERROR/ERROR]
+    burn() uses raw arithmetic: totalSupply -= _value. No SafeMath.
+    The require checks balanceOf[sender] >= _value but NOT totalSupply
+    >= _value. With unchecked arithmetic (0.7 semantics), if totalSupply
+    < _value, the subtraction wraps around. The postcondition
+    totalSupply == supply_before - value fails when totalSupply wraps.
+    Property IS violated (arithmetic vulnerability when totalSupply <
+    individual balance).
+    SVS: TP | CVL: TP
+
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- buggy_5 / TTC (3 SVS / 4 CVL) ---
+Contract: TTC extends TokenERC20 with mintToken (onlyOwner).
+  mintToken: balanceOf[target] += mintedAmount; totalSupply += mintedAmount;
+  Raw arithmetic, no SafeMath.
+
+  onlyOwnerCanFreeze [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  onlyOwnerCanMint [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  mintTokenIncreasesBalance [ERROR/ERROR]
+    mintToken uses raw arithmetic: balanceOf[target] += mintedAmount and
+    totalSupply += mintedAmount. With unchecked arithmetic, either
+    addition can overflow and wrap. Postcondition:
+    balanceOf[target] == balance_before + mintedAmount fails on wrap.
+    Property IS violated.
+    SVS: TP | CVL: TP
+
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+==============================================================================
+ANALYSIS: Unchecked-Send Benchmark Patterns
+==============================================================================
+
+The specs in this benchmark test GENERAL contract properties, not
+the injected unchecked-send functions directly. The main findings are:
+
+1. Access control bugs (buggy_33): The onlyOwner modifier has a backdoor
+   allowing address(this) to bypass the owner check. Both tools correctly
+   detect 4 access control violations.
+
+2. Bonus minting bugs (buggy_34): LollypopToken's _transfer calls
+   calculateBonus and mint before balance transfer, violating standard
+   ERC20 invariants. Both tools detect the balance conservation violation.
+
+3. Arithmetic bugs (buggy_5): TokenERC20's burn and TTC's mintToken use
+   raw arithmetic without SafeMath. Overflow/underflow wraps in 0.7
+   semantics. Both tools detect these violations.
+
+4. SVS interference issues: SVS struggles with contracts that have
+   external calls in unrelated functions (buggy_33's startStaking,
+   buggy_23's complex ERC20, buggy_34's LollypopToken), resulting in
+   FP on simple setter rules.
+
+5. CVL modeling issues: CVL produces FP on some transfer rules (buggy_1,
+   buggy_47) and on registerHash (buggy_50) due to modeling limitations.
+
+==============================================================================
+SUMMARY
+==============================================================================
+          TP   TN   FP   FN   Error  Total
+SVS:       8   38    7    0    6      53 + 6 err
+CVL:       9   51    7    0    1      67 + 1 err
+
+SVS Precision:  8/15  = 53.33%   Recall: 8/8  = 100.00%
+CVL Precision:  9/16  = 56.25%   Recall: 9/9  = 100.00%
+
+Note: SVS has 6 ANNOTATION ERRORs on buggy_47 (undeclared identifier).
+CVL has 1 COMPILATION ERROR on buggy_20_stoppable (abstract contract).
+CVL has more total rules due to envfreeFuncsStaticCheck and additional
+invariant rules (totalSupplyBounded, raisedAmountBounded).
+
+Key finding: Both tools achieve 100% recall but have similar precision
+(~53-56%). The FP sources differ: SVS struggles with external-call
+interference in complex contracts, while CVL has modeling issues with
+ERC20 transfers and payable functions.
+==============================================================================

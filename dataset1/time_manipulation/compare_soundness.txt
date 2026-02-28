@@ -1,0 +1,126 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset1/time_manipulation
+==============================================================================
+
+Benchmark: time_manipulation (TIME_MANIPULATION vulnerability category)
+Contracts: 4 (HotDollarsToken, lottopollo, roulette, timed_crowdsale)
+Specs: 4 (SVS) / 4 (CVL)
+Note: TAMContract.spec/TTC.spec and their CVLs excluded — sol files deleted.
+
+==============================================================================
+1. HotDollarsToken.sol — Contract HotDollarsToken (BUGGY: TIME_MANIPULATION)
+==============================================================================
+
+Vulnerability: Multiple bug functions use block.timestamp for gambling:
+  bug_tmstmp36/40/8 use `block.timestamp % 15 == 0` as winning condition,
+  draining entire contract balance to sender. play_tmstmpXX use
+  `block.timestamp == startTime + 5 days` to set winner.
+
+--- Rule: bug_tmstmp36_should_not_drain_balance ---
+Description: Calls bug_tmstmp36() with msg.value > 0, asserts contract
+  balance increases by msg.value. When block.timestamp % 15 == 0, the
+  function transfers ENTIRE contract balance to sender, making balAfter = 0.
+  Property IS violated (drain when winning condition met).
+
+  SVS: [OK]    → PASS → FN (missed the violation; likely due to complex
+    contract with inheritance from EIP20Interface and many interleaved
+    bug functions — SVS doesn't detect the winning-path drain)
+  CVL: [ERROR] → FAIL → TP (correctly detected timestamp-based drain)
+
+==============================================================================
+2. lottopollo.sol — Contract lottopollo (BUGGY: TIME_MANIPULATION)
+==============================================================================
+
+Vulnerability (lines 13, 27): randomGen() returns block.timestamp directly.
+  payOut() uses this "random" value for payout decisions. Miners can
+  manipulate block.timestamp to control lottery outcome.
+
+--- Rule: randomGen_should_not_be_timestamp ---
+Description: Calls randomGen(), asserts return value != block.timestamp.
+  The function literally `return block.timestamp;`. Property IS violated.
+
+  SVS: [ERROR] → FAIL → TP (correctly detected: return == block.timestamp)
+  CVL: [ERROR] → FAIL → TP (correctly detected)
+
+--- Rule: draw_should_not_drain_on_timestamp ---
+Description: Calls draw(seed), asserts balAfter >= 0. This is trivially
+  true for uint256 (always >= 0). Additionally, draw() calls randomGen()
+  which returns block.timestamp, then payOut(block.timestamp). In payOut,
+  the condition `block.timestamp - rand > 24 hours` becomes
+  `block.timestamp - block.timestamp > 86400` = `0 > 86400` = false.
+  The winning payout path is NEVER taken. Contract balance only changes
+  by msg.value (if any).
+
+  SVS: [ERROR] → FAIL → FP (assertion `balAfter >= 0` is trivially true
+    for uint; SVS has balance modeling issues causing spurious violation)
+  CVL: [OK]    → PASS → TN (correctly verifies; CVL properly inlines
+    randomGen and determines winning path is unreachable)
+
+==============================================================================
+3. roulette.sol — Contract Roulette (BUGGY: TIME_MANIPULATION)
+==============================================================================
+
+Vulnerability (lines 18, 20): Fallback function uses block.timestamp for
+  betting: `block.timestamp % 15 == 0` determines the winner. Miners can
+  influence block.timestamp to always win.
+
+--- Rule: fallback_should_not_payout_on_timestamp ---
+Description: Calls fallback() with msg.value > 0, asserts balance increases
+  by msg.value. When block.timestamp % 15 == 0, the function transfers
+  ENTIRE balance to sender. Property IS violated.
+
+  SVS: [ERROR] → FAIL → TP (correctly detected timestamp-based drain)
+  CVL: [COMPILATION ERROR] → Error (CVL spec references `spin()` function
+    which doesn't exist in the Roulette contract; should use fallback)
+
+==============================================================================
+4. timed_crowdsale.sol — Contract TimedCrowdsale (BUGGY: TIME_MANIPULATION)
+==============================================================================
+
+Vulnerability (line 13): `return block.timestamp >= 1546300800` — sale end
+  depends on block.timestamp which can be manipulated by miners.
+
+--- Rule: sale_should_not_be_finished ---
+Description: Calls isSaleFinished(), asserts finished == false. Since
+  block.timestamp is symbolic and CAN be >= 1546300800, the function CAN
+  return true. Property IS violated.
+
+  SVS: [ERROR] → FAIL → TP (correctly detected timestamp dependency)
+  CVL: [ERROR] → FAIL → TP (correctly detected timestamp dependency)
+
+==============================================================================
+SUMMARY — dataset1/time_manipulation
+==============================================================================
+
+                    SVS         CVL
+True Positive:       3           3
+True Negative:       0           1
+False Positive:      1           0
+False Negative:      1           0
+Error:               0           1
+                  ----        ----
+Total rules:         5           4 (+1 error)
+
+SVS TP details: lottopollo (randomGen_should_not_be_timestamp),
+  roulette (fallback_should_not_payout_on_timestamp),
+  timed_crowdsale (sale_should_not_be_finished).
+
+SVS FP details: lottopollo (draw_should_not_drain_on_timestamp — trivially
+  true assertion, SVS balance modeling issue).
+
+SVS FN details: HotDollarsToken (bug_tmstmp36_should_not_drain_balance —
+  same drain pattern as Roulette but SVS misses it in the complex contract
+  with EIP20Interface inheritance and many interleaved functions).
+
+CVL TP details: HotDollarsToken (bug_tmstmp36_should_not_drain_balance),
+  lottopollo (randomGen_should_not_be_timestamp),
+  timed_crowdsale (sale_should_not_be_finished).
+
+CVL Error: roulette (COMPILATION ERROR — spec refers to nonexistent function).
+
+Precision SVS:  3/(3+1) = 75.00%
+Recall SVS:     3/(3+1) = 75.00%
+
+Precision CVL:  3/(3+0) = 100.00%
+Recall CVL:     3/(3+0) = 100.00%
+==============================================================================

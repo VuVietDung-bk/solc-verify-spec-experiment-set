@@ -1,0 +1,210 @@
+==============================================================================
+GLOBAL COMPARISON SUMMARY — ALL DATASETS
+==============================================================================
+
+Scope: 3 datasets, 21 categories, ~126 contracts, 182 specs (SVS) /
+  182 specs (CVL, 16 compilation errors)
+
+Dataset1: 8 categories, 64 contracts, 68 specs
+  — Real-world vulnerable contracts from SmartBugs Curated
+  — One spec per contract, testing contract-specific properties
+Dataset2: 8 categories, 52 contracts, 42 specs
+  — Extracted vulnerable contracts with manually written specs
+  — Includes safecontract (intentionally safe contracts)
+Dataset3: 5 categories, 10 .sol files (multi-contract), 72 specs
+  — Smart-Bugs benchmark with injected vulnerability functions
+  — Same 10 files reused across 5 vulnerability categories
+  — Specs test injected bug functions and general contract properties
+
+==============================================================================
+AGGREGATE SOUNDNESS — ALL 3 DATASETS
+==============================================================================
+
+Dataset  | SVS                              | CVL
+         | TP   TN   FP  FN  Err    Total   | TP   TN   FP  FN  Err    Total
+---------|-----------------------------------|-----------------------------------
+D1       | 66   36   14   2   0     118      | 60   58   13   0   3     131+3e
+D2       | 20   36   21   2   1      79+1e   | 24   37   24   3   1      88+1e
+D3       | 55  211   53   0  24     319+24e  | 52  136   63   0  12     251+12e
+---------|-----------------------------------|-----------------------------------
+TOTAL    |141  283   88   4  25     516+25e  |136  231  100   3  16     470+16e
+
+==============================================================================
+OVERALL PRECISION, RECALL, AND ACCURACY
+==============================================================================
+
+              Precision              Recall                 F1
+SVS: 141/(141+88) = 61.57%   141/(141+4)  = 97.24%       75.40%
+CVL: 136/(136+100)= 57.63%   136/(136+3)  = 97.84%       72.53%
+
+Accuracy (TP+TN)/(TP+TN+FP+FN):
+  SVS: (141+283)/516 = 82.17%
+  CVL: (136+231)/470 = 78.09%
+
+F1 Score:
+  SVS: 75.40%
+  CVL: 72.53%
+
+==============================================================================
+RECALL COMPARISON
+==============================================================================
+
+SVS Recall: 97.24% (141/145 — missed 4 genuine violations)
+  False Negatives:
+  1. D1/time_manipulation/HotDollarsToken — complex contract with
+     EIP20Interface inheritance, timestamp-based drain not detected
+  2. D1/unchecked_low_level_calls/WedIndex — unchecked .call{value}()
+     not detected (SVS assumes call always succeeds)
+  3. D2/time_manipulation/HotDollarsToken — same pattern
+  4. D2/time_manipulation/TTC — same pattern, complex inheritance
+
+CVL Recall: 97.84% (136/139 — missed 3 genuine violations)
+  False Negatives:
+  1. D2/reentrancy/etherstore — single-transaction model misses reentrancy
+  2. D2/reentrancy/reentrance — same
+  3. D2/reentrancy/simple_dao — same
+
+Both tools miss different vulnerability types:
+  - SVS misses complex timestamp-based exploits in inherited contracts
+  - CVL misses reentrancy (single-transaction verification model)
+
+==============================================================================
+PRECISION COMPARISON
+==============================================================================
+
+SVS Precision: 61.57% (141 TP / 229 flagged)
+  Total FP: 88
+  By dataset: D1: 14, D2: 21, D3: 53
+  Top FP causes:
+  - LollypopToken precondition cascade: 32+ (D3)
+  - Safe contract false alarms: 13 (D2/safecontract)
+  - AcunarToken file-level issue: 14 (D3)
+  - External call interference: 8+ (D1+D2+D3)
+  - Balance modeling imprecision: 5+ (D1+D2)
+
+CVL Precision: 57.63% (136 TP / 236 flagged)
+  Total FP: 100
+  By dataset: D1: 13, D2: 24, D3: 63
+  Top FP causes:
+  - Re-entrancy over-approximation (state havoc): 19+ (D3)
+  - Safe contract false alarms: 19 (D2/safecontract)
+  - Always-revert/empty-handler modeling: ~23 (D3)
+  - Timestamp condition overapproximation: 7 (D3)
+  - Loop unwinding limitations: 7+ (D1)
+
+Both tools have ~60% precision. SVS's FPs are more concentrated (specific
+contracts like LollypopToken), while CVL's FPs are more systematic
+(re-entrancy havoc, always-revert modeling, loop unwinding).
+
+==============================================================================
+ERROR COMPARISON
+==============================================================================
+
+SVS Errors (25 rule-level errors across 3 specs):
+  - 24 ANNOTATION ERROR in D3 (buggy_47 burn() unnamed return)
+  - 1 INTERNAL ERROR in D2 (TokenSender "Push must take exactly one arg")
+
+CVL Errors (16 spec-level compilation failures):
+  - 6 abstract contract errors (D3/buggy_20)
+  - 6 burn() unnamed return (D3/buggy_47)
+  - 3 compilation errors (D1: integer_overflow_1, EvilToken, roulette)
+  - 1 compilation error (D2: roulette)
+
+SVS is more robust to compilation issues — it successfully analyzes
+all 182 spec files (errors occur at rule level, not spec level).
+CVL fails to compile 16 entire spec files (~8.8%).
+
+==============================================================================
+TIME SUMMARY — ALL 3 DATASETS
+==============================================================================
+
+Dataset  | SVS e2e   | CVL       | Speedup
+---------|-----------|-----------|--------
+D1       |   338.04s |  1344.00s |  3.98x
+D2       |   283.21s |  1160.00s |  4.10x
+D3       |  2660.52s |  1759.00s |  0.66x
+---------|-----------|-----------|--------
+TOTAL    |  3281.77s |  4263.00s |  1.30x
+
+Overall SVS is 1.30x faster than CVL across all datasets.
+
+D1+D2 (comparable rule counts): SVS 621.25s vs CVL 2504.00s → 4.03x
+D3 alone: SVS 2660.52s vs CVL 1759.00s → 0.66x (SVS slower)
+
+D3 anomaly explanation: SVS verifies 343 rules vs CVL's ~251 rules
+(1.37x more rules). Unhandled-Exceptions alone: SVS 186 rules in
+1661.49s vs CVL ~98 rules in 468s. SVS spends 568s on all-FP specs
+(LollypopToken + AcunarToken) that produce no useful verification.
+
+Excluding D3/Unhandled-Exceptions:
+  SVS: 1620.28s | CVL: 3795.00s | Speedup: 2.34x
+
+Per-rule cost:
+  SVS: 3281.77s / 541 total rules = 6.07s per rule
+  CVL: 4263.00s / ~470 total rules = 9.07s per rule
+  → SVS is ~1.5x cheaper per rule across all datasets.
+
+==============================================================================
+COMPARATIVE STRENGTHS AND WEAKNESSES
+==============================================================================
+
+SVS STRENGTHS:
+  1. Re-entrancy distinction: Correctly differentiates call{value}
+     (vulnerable, unlimited gas) from send/transfer (safe, 2300 gas).
+     D3 re-entrancy: 92.86% precision vs CVL 55.81%.
+  2. Always-revert/vacuous-truth handling: Correctly verifies functions
+     that always revert via vacuous truth or assert_revert.
+  3. Compilation robustness: Handles abstract contracts, analyzes all
+     spec files even when individual rules hit ANNOTATION ERROR.
+  4. Performance: ~4x faster on D1 and D2 (local execution vs cloud).
+  5. Higher accuracy: 82.17% vs 78.09% overall.
+
+SVS WEAKNESSES:
+  1. Complex contract interference: LollypopToken's _transfer with
+     calculateBonus/mint causes cascading FPs across all benchmarks.
+  2. Timestamp-based exploits: Misses drain patterns in contracts with
+     complex inheritance (HotDollarsToken, TTC) → 4 FN.
+  3. External call modeling: startStaking(), SafeMath delegation, and
+     other external calls can interfere with unrelated rule verification.
+  4. Scale penalty: Time grows superlinearly with rule count (UH benchmark).
+
+CVL STRENGTHS:
+  1. Zero FN on D1 and D3: Does not miss any genuine violation in
+     28 of 21 categories (100% recall on D1 and D3).
+  2. Better unchecked-send detection: Handles SafeMath delegation and
+     complex ERC20 patterns better for balance properties.
+  3. Cloud infrastructure: Parallel proving of multiple rules reduces
+     per-spec wall-clock time for large specs.
+  4. envfreeFuncsStaticCheck: Automated static analysis adds free TN.
+
+CVL WEAKNESSES:
+  1. Re-entrancy blindness: Single-transaction model misses actual
+     reentrancy in D2 (3 FN). In D3, havocs ALL state on external
+     calls → 19 FP (can't distinguish safe from unsafe calls).
+  2. Always-revert/empty-handler modeling: ~23 FP in UH benchmark.
+  3. Compilation fragility: 16 specs fail to compile across datasets
+     (abstract contracts, unnamed returns, missing functions).
+  4. Timestamp overapproximation: 7 FP on negative-case timestamp rules.
+
+==============================================================================
+OVERALL ASSESSMENT
+==============================================================================
+
+Both tools are complementary rather than dominant:
+
+  - SVS excels at LOCAL verification: fast, robust compilation, fine-
+    grained distinction of vulnerability patterns (especially reentrancy
+    and send/transfer semantics). Best for targeted per-function analysis.
+
+  - CVL excels at BROAD verification: better handling of complex math
+    (SafeMath), no false negatives on standard vulnerability patterns,
+    cloud-parallel execution. Best for comprehensive contract properties.
+
+  - For a COMBINED workflow: Use SVS for quick local iteration and
+    re-entrancy analysis, then CVL for final comprehensive verification.
+    This would capture the strengths of both and reduce total FP+FN.
+
+Combined performance (taking best result from each tool per rule):
+  Would yield ~141 TP, ~283 TN, <88 FP, 0 FN → significantly higher
+  precision and accuracy than either tool alone.
+==============================================================================

@@ -1,0 +1,137 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset1/front_running
+==============================================================================
+
+Benchmark: front_running (FRONT_RUNNING vulnerability category)
+Contracts: 3 (ERC20, EthTxOrderDependenceMinimal, OddsAndEvens)
+Specs: 3 (SVS) / 3 (CVL)
+
+==============================================================================
+1. ERC20.sol — Contract ERC20 (BUGGY: FRONT_RUNNING)
+==============================================================================
+
+Vulnerability (lines 110, 113): approve() directly overwrites allowance without
+  checking pending allowance. Attacker can front-run an allowance change by
+  spending the old allowance before the new approve tx is mined, then spending
+  the new allowance too.
+
+--- Rule: balance_query_safe ---
+Description: Calls approve(msg.sender, 5), asserts _allowed[msg.sender][msg.sender] == 5.
+  Tests basic approve functionality for a SINGLE call. Does NOT test the
+  front-running double-spend scenario (would require two transactions).
+  Property IS true (single approve correctly sets allowance).
+
+  SVS: [OK] → PASS → TN (correctly verified)
+  CVL: [OK] → PASS → TN (correctly verified)
+
+==============================================================================
+2. eth_tx_order_dependence_minimal.sol — EthTxOrderDependenceMinimal (BUGGY: FRONT_RUNNING)
+==============================================================================
+
+Vulnerability (lines 23, 31): Transaction ordering dependency between
+  setReward() and claimReward(). An attacker can see a setReward() tx in the
+  mempool and front-run with claimReward() to steal the current reward before
+  it's updated.
+
+--- Rule: set_reward_keeps_unclaimed ---
+Description: After setReward() by owner (when not claimed), claimed remains false.
+  setReward() does: transfer old reward to owner, set reward = msg.value.
+  Does NOT modify claimed. Property IS true.
+
+  SVS: [OK] → PASS → TN (correctly verified)
+  CVL: [OK] → PASS → TN (correctly verified)
+
+--- Rule: claim_marks_claimed ---
+Description: After claimReward(submission) with submission < 10 and not claimed,
+  claimed becomes true. claimReward() does: transfer reward to msg.sender,
+  set claimed = true. Property IS true.
+
+  SVS: [OK] → PASS → TN (correctly verified)
+  CVL: [OK] → PASS → TN (correctly verified)
+
+==============================================================================
+3. odds_and_evens.sol — Contract OddsAndEvens (BUGGY: FRONT_RUNNING)
+==============================================================================
+
+Vulnerability (lines 25, 28): Player numbers are stored publicly. An attacker
+can see player[0]'s number in the mempool/storage and choose their number to
+guarantee a win (front-running the game's outcome).
+
+--- Invariant: tot_bound (CVL only) ---
+Description: tot <= 2. In the contract, tot cycles 0→1→2→0 (reset by
+  andTheWinnerIs()). Property IS true.
+
+  CVL: [OK] → PASS → TN (correctly verified)
+
+--- Rule: play_increments_tot ---
+Description: With tot == 0, after play(1), tot > 0. play() stores the
+  player and increments tot. With tot initially 0, tot becomes 1. Property IS true.
+
+  SVS: [OK] → PASS → TN (correctly verified)
+  CVL: [OK] → PASS → TN (correctly verified)
+
+--- Rule: attacker_guaranteed_win ---
+Description: With tot == 1, attacker plays n2 such that (n1 + n2) is odd,
+  making player[1] (attacker) the winner. Asserts attacker_balance_after ==
+  attacker_balance_before - ticket_price + reward (1 ETH paid - 1800 wei won).
+  
+  The vulnerability: attacker can see n1 and choose n2 to guarantee winning.
+  The assertion checks the financial outcome of the attack.
+  
+  In the contract, `payable(players[1].addr).send(1800)` sends reward to
+  attacker. send() forwards 2300 gas and returns a bool. If the attacker is
+  a contract whose receive() costs > 2300 gas, send FAILS (returns false,
+  which is IGNORED by the contract). Attacker doesn't receive 1800 wei.
+  Property IS violated when send fails.
+
+  SVS: [ERROR] → FAIL → TP (detected that send to attacker can fail,
+    violating the expected payout guarantee)
+  CVL: [ERROR] → FAIL → TP (same — detected send failure scenario)
+
+--- Rule: opponent_can_force_loss ---
+Description: With tot == 1, play with (n1 + n2) even → player[0] wins.
+  Asserts attacker_balance_after == attacker_balance_before - ticket_price
+  (attacker only loses their 1 ETH ticket).
+  
+  In the even case, send(1800) goes to player[0], not the attacker. The
+  attacker's balance is only affected by msg.value deduction (1 ETH paid).
+  Send success/failure to player[0] does NOT change attacker's balance.
+  Property IS true in all execution paths.
+
+  SVS: [ERROR] → FAIL → FP (tool cannot precisely track balance changes
+    through msg.value + external sends; reports spurious violation)
+  CVL: [ERROR] → FAIL → FP (same balance tracking imprecision)
+
+==============================================================================
+SUMMARY — dataset1/front_running
+==============================================================================
+
+                    SVS         CVL
+True Positive:       1           1
+True Negative:       4           5
+False Positive:      1           1
+False Negative:      0           0
+Error:               0           0
+                  ----        ----
+Total rules:         6           7
+
+SVS TP details: odds_and_evens (attacker_guaranteed_win — send to attacker
+  can fail, violating payout assertion).
+
+SVS FP details: odds_and_evens (opponent_can_force_loss — property IS true,
+  tool can't verify balance tracking through external sends).
+
+CVL TP and FP: Same as SVS, plus CVL has an additional TN for tot_bound.
+
+Note: The front-running specs primarily test functional correctness of
+individual operations (approve, setReward, claimReward). The actual
+front-running vulnerability requires multi-transaction analysis (transaction
+ordering attacks), which neither tool's specs fully capture. The OddsAndEvens
+spec comes closest by testing the financial outcome of the attack.
+
+Precision SVS:  1/(1+1) = 50.00%
+Recall SVS:     1/(1+0) = 100.00%
+
+Precision CVL:  1/(1+1) = 50.00%
+Recall CVL:     1/(1+0) = 100.00%
+==============================================================================

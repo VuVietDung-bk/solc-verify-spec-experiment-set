@@ -1,0 +1,53 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset2/TOD (Transaction Order Dependence)
+==============================================================================
+Contracts: ERC20, eth_tx_order_dependence_minimal, odds_and_evens
+Vulnerability: Transaction ordering front-running
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- ERC20 (1 SVS rule / 1 CVL rule) ---
+Both tools: PASS
+  balance_query_safe [OK/OK]
+    Spec: approve sets expected allowance. Property IS true (basic ERC20).
+    SVS: TN | CVL: TN
+
+--- eth_tx_order_dependence_minimal (2 SVS / 2 CVL) ---
+Both tools: PASS
+  set_reward_keeps_unclaimed [OK/OK]
+    Spec: setReward doesn't change claimed flag. Property IS true.
+    SVS: TN | CVL: TN
+  claim_marks_claimed [OK/OK]
+    Spec: claimReward sets claimed=true. Property IS true.
+    SVS: TN | CVL: TN
+
+--- odds_and_evens (3 SVS / 4 CVL) ---
+Both tools: FAIL
+  play_increments_tot [OK/OK]
+    Spec: play increments tot counter. Property IS true.
+    SVS: TN | CVL: TN
+  tot_bound (CVL only) [—/OK]
+    Invariant: tot <= 2. Property IS true.
+    CVL: TN
+  attacker_guaranteed_win [ERROR/ERROR]
+    Spec: winning attacker gets exact reward. Contract uses .send() which
+    can fail silently → balance doesn't match expected. Property IS violated.
+    SVS: TP | CVL: TP
+  opponent_can_force_loss [ERROR/ERROR]
+    Spec: losing attacker's balance decreases by ticket_price. Property IS
+    true (loser just loses their bet). Both tools' errors are due to
+    imprecise balance modeling after .send() calls.
+    SVS: FP | CVL: FP
+
+==============================================================================
+SUMMARY
+==============================================================================
+          TP   TN   FP   FN   Error  Total
+SVS:       1    4    1    0    0       6
+CVL:       1    5    1    0    0       7
+
+SVS Precision: 1/2 = 50.00%   Recall: 1/1 = 100.00%
+CVL Precision: 1/2 = 50.00%   Recall: 1/1 = 100.00%
+==============================================================================

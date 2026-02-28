@@ -1,0 +1,168 @@
+==============================================================================
+DATASET3 — AGGREGATE COMPARISON SUMMARY
+==============================================================================
+
+Dataset: dataset3  (SB Curated — Smart-Bugs dataset with injected bugs)
+Categories: 5 (Overflow-Underflow, Re-entrancy, Timestamp-Dependency,
+  Unchecked-Send, Unhandled-Exceptions)
+Contracts: 10 .sol files (buggy_1, 5, 19, 20, 23, 33, 34, 45, 47, 50)
+  each containing multiple contracts, reused across all 5 categories.
+Total specs: 72 (SVS) / 72 (CVL, 12 compilation errors)
+Total rules: 343 (SVS) / ~251 (CVL)
+
+==============================================================================
+SOUNDNESS SUMMARY — ALL BENCHMARKS
+==============================================================================
+
+Category                | SVS                         | CVL
+                        | TP  TN  FP  FN  Err  Total | TP  TN  FP  FN  Err  Total
+------------------------|-----------------------------|-----------------------------
+Overflow-Underflow      | 18   0   0   0   0    18   | 16   0   0   0   2    16+2e
+Re-entrancy             | 26  19   2   0   0    47   | 24   0  19   0   3    43+3e
+Timestamp-Dependency    |  0  33   0   0   0    33   |  0  20   7   0   2    27+2e
+Unchecked-Send          |  8  38   7   0   6   53+6e |  9  51   7   0   1    67+1e
+Unhandled-Exceptions    |  3 121  44   0  18  168+18e|  3  65  30   0   4    98+4e
+------------------------|-----------------------------|-----------------------------
+TOTAL                   | 55 211  53   0  24  319+24e| 52 136  63   0  12   251+12e
+
+==============================================================================
+PRECISION AND RECALL
+==============================================================================
+
+              Precision              Recall                 F1
+SVS:  55/(55+53) = 50.93%    55/(55+0)  = 100.00%        67.48%
+CVL:  52/(52+63) = 45.22%    52/(52+0)  = 100.00%        62.28%
+
+Accuracy (TP+TN)/(TP+TN+FP+FN):
+  SVS: (55+211)/319 = 83.39%
+  CVL: (52+136)/251 = 74.90%
+
+Both tools achieve 100% recall (0 false negatives) — neither tool
+misses a genuine property violation in dataset3.
+
+==============================================================================
+ERROR ANALYSIS
+==============================================================================
+
+SVS Errors (24 rules across 2 specs):
+  - Unhandled-Exceptions/buggy_47_acunar_ieo: 18 ANNOTATION ERROR
+    (burn() unnamed return variable causes undeclared identifier)
+  - Unchecked-Send/buggy_47: 6 ANNOTATION ERROR (same root cause)
+
+CVL Errors (12 specs):
+  - 6× abstract contract COMPILATION ERROR (buggy_20 across 3 benchmarks)
+  - 4× burn() unnamed return (buggy_47 across 4 benchmarks)
+  - 2× other COMPILATION ERROR (buggy_20 in remaining benchmarks)
+
+Root cause: buggy_47.sol's burn() declares returns(bool) but never
+returns a value. buggy_20.sol contains abstract contracts. These same
+contractual issues cause errors across ALL benchmarks that use those files.
+
+==============================================================================
+FP ANALYSIS
+==============================================================================
+
+SVS False Positives (53 total):
+  Breakdown by cause:
+  - LollypopToken precondition cascade: 32 (Re-entrancy: 2 + UH: 30)
+    _transfer() calls calculateBonus() and mint() for both sender and
+    recipient, causing SVS to detect potential state interference with
+    ALL public functions. This is a tool limitation: SVS cannot determine
+    that the bonus minting doesn't affect the tested property.
+  - AcunarToken file-level issue: 14 (Unhandled-Exceptions)
+    burn() unnamed return in AcunarIEO (inheriting contract) causes
+    cascading analysis failures for AcunarToken.
+  - Staking external call interference: 4 (Unchecked-Send)
+    startStaking() is public with no access control and calls
+    token.transferFrom(), causing SVS to falsely flag all admin functions.
+  - SafeMath library delegation: 1 (Unchecked-Send/buggy_23)
+    SVS cannot fully resolve burn() through SafeMath .sub() delegation.
+  - Other: 2 (Unchecked-Send: buggy_34 LollypopToken and buggy_5_ttc)
+
+CVL False Positives (63 total):
+  Breakdown by cause:
+  - Re-entrancy over-approximation: 19 (Re-entrancy)
+    CVL havocs all state on external calls, flagging safe send()/
+    transfer() functions (2300 gas limit) as vulnerable.
+  - Always-revert modeling: ~12 (Unhandled-Exceptions)
+    CVL treats rules where function always reverts (|| 1==1) as
+    violations rather than vacuously-true properties.
+  - Empty-handler modeling: ~8 (Unhandled-Exceptions)
+    CVL cannot properly verify functions with empty if/else handlers
+    around send() to uninitialized address(0).
+  - Inverted-logic modeling: ~3 (Unhandled-Exceptions)
+    CVL models send() to address(0) as always succeeding, so inverted-
+    logic functions (revert on success) appear to always revert.
+  - Timestamp when_condition_fails: 7 (Timestamp-Dependency)
+    CVL overapproximates that game winner can change even when timestamp
+    condition is not met.
+  - Unchecked-Send specific: 7 (Unchecked-Send)
+    Mixed: ERC20 transfer modeling, payable function modeling.
+  - LollypopToken always-revert/inverted-logic: 7 (Unhandled-Exceptions)
+    Same patterns as above but in LollypopToken context.
+
+==============================================================================
+TIME SUMMARY — ALL BENCHMARKS
+==============================================================================
+
+Category                | SVS rule  | SVS e2e   | CVL      | Speedup
+------------------------|-----------|-----------|----------|--------
+Overflow-Underflow      |  214.21s  |  232.55s  |   266s   |  1.14x
+Re-entrancy             |  323.19s  |  349.29s  |   353s   |  1.01x
+Timestamp-Dependency    |  145.89s  |  162.99s  |   295s   |  1.81x
+Unchecked-Send          |  238.48s  |  254.20s  |   377s   |  1.48x
+Unhandled-Exceptions    | 1632.77s  | 1661.49s  |   468s   |  0.28x
+------------------------|-----------|-----------|----------|--------
+TOTAL                   | 2554.54s  | 2660.52s  |  1759s   |  0.66x
+
+NOTE: For Unhandled-Exceptions, SVS verifies 186 rules (1.9x more than
+CVL's ~98 rules), and spends 394.90s on the 30-rule LollypopToken spec
+(all FP) and 173.47s on the 14-rule AcunarToken spec (all FP). This
+drags SVS's total time significantly.
+
+Excluding Unhandled-Exceptions:
+  SVS e2e: 999.03s | CVL: 1291s | Speedup: 1.29x (SVS faster)
+
+Per-rule average time:
+  SVS: 2554.54 / 343 = 7.45s per rule
+  CVL: 1759 / ~251 = 7.01s per rule
+  → Comparable per-rule cost when rule counts differ.
+
+==============================================================================
+KEY FINDINGS — DATASET3
+==============================================================================
+
+1. RECALL: Both tools achieve 100% recall — no false negatives in dataset3.
+   Every genuine property violation is detected by both tools.
+
+2. PRECISION: SVS 50.93% vs CVL 45.22%. Both tools have low precision due
+   to different FP sources. SVS's FPs are concentrated in LollypopToken
+   (precondition cascade) and AcunarToken (file-level issue). CVL's FPs
+   are more distributed: reentrancy over-approximation, always-revert/
+   empty-handler modeling, and timestamp condition modeling.
+
+3. ACCURACY: SVS 83.39% vs CVL 74.90%. SVS achieves higher accuracy
+   because it correctly verifies more TN rules (211 vs 136), particularly
+   in Unhandled-Exceptions where SVS verifies 121 TN rules while CVL
+   only verifies 65 (with 30 FP from modeling issues).
+
+4. COMPILATION ROBUSTNESS: SVS handles all 72 spec files (24 rules get
+   ANNOTATION ERROR but the specs still run). CVL fails to compile 12
+   entire spec files across benchmarks.
+
+5. RE-ENTRANCY DISTINCTION: SVS's strongest result — correctly
+   distinguishes vulnerable call{value} (unlimited gas) from safe
+   send/transfer (2300 gas limit) with 92.86% precision. CVL flags ALL
+   external calls as potentially vulnerable → 55.81% precision.
+
+6. ALWAYS-REVERT & EMPTY-HANDLER RULES: CVL's weakest area in UH
+   benchmark. SVS correctly verifies these via vacuous truth or
+   assert_revert. CVL reports ERROR on ALL such rules (~23 FP).
+
+7. PERFORMANCE: SVS is ~1.3x faster on 4 of 5 benchmarks but 3.5x slower
+   on Unhandled-Exceptions due to verifying nearly 2x more rules (many
+   of which produce FP results on LollypopToken/AcunarToken).
+
+8. COMMON FAILURE: Both tools fail on buggy_47 (burn() unnamed return)
+   and both have FP issues with LollypopToken's complex _transfer().
+==============================================================================

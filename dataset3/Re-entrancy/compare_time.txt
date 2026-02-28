@@ -1,0 +1,34 @@
+==============================================================================
+TIME COMPARISON — dataset3/Re-entrancy
+==============================================================================
+
+Spec                              | SVS rule  | SVS e2e  | CVL
+----------------------------------|-----------|----------|------
+buggy_1_hot_dollars_token.spec    |    9.12s  |  10.40s  |  23s
+buggy_5_ownable.spec              |   27.24s  |  29.02s  |  21s
+buggy_5_token_erc20.spec          |   30.33s  |  31.94s  |  27s
+buggy_5_ttc.spec                  |   18.03s  |  19.72s  |  31s
+buggy_19_eth_bank.spec            |   79.16s  |  80.81s  |  34s
+buggy_19_owned.spec               |   23.20s  |  24.57s  |  17s
+buggy_20_ent3.spec                |    7.55s  |   9.10s  |  22s
+buggy_20_ent11.spec               |    7.49s  |   9.10s  |  ERR
+buggy_20_ent17.spec               |    7.34s  |   8.87s  |  18s
+buggy_20_ent25.spec               |    7.18s  |   8.71s  |  ERR
+buggy_23.spec                     |   15.72s  |  17.42s  |  28s
+buggy_33.spec                     |   16.62s  |  17.97s  |  27s
+buggy_34_lollypop_token.spec      |   18.34s  |  19.98s  |  33s
+buggy_34_ownable.spec             |    8.10s  |   9.75s  |  17s
+buggy_45.spec                     |   26.71s  |  28.11s  |  29s
+buggy_47_acunar_token.spec        |    6.04s  |   7.51s  |  ERR
+buggy_50.spec                     |   15.02s  |  16.31s  |  26s
+----------------------------------|-----------|----------|------
+TOTAL                             |  323.19s  | 349.29s  | 353s
+(CVL total excludes 3 compilation errors)
+
+Speedup (SVS e2e vs CVL): 353 / 349.29 = 1.01x
+
+Note: SVS and CVL are nearly equal in total time for this benchmark.
+SVS is faster per-spec on small contracts (buggy_20, buggy_47) but
+slower on large contracts with many rules (buggy_19_eth_bank: 80.81s
+vs 34s). CVL's cloud-based parallel proving helps with multi-rule specs.
+==============================================================================

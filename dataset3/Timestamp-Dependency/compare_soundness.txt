@@ -1,0 +1,258 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset3/Timestamp-Dependency
+==============================================================================
+Contracts: buggy_1 (EIP20Interface/HotDollarsToken),
+  buggy_5 (Ownable/TTC), buggy_19 (owned/ethBank),
+  buggy_20 (Ownable + Stoppable + RampInstantPool + RampInstantEthPool),
+  buggy_23 (ERC20 + ERC20Burnable), buggy_33 (Owned/Staking),
+  buggy_34 (Ownable/LollypopToken), buggy_45 (StockBet),
+  buggy_47 (ERC20Interface/AcunarIEO), buggy_50 (digitalNotary)
+Vulnerability: Timestamp dependency — contract logic depends on block.timestamp,
+  which miners can manipulate within ~15 second range.
+
+Bug patterns:
+  Type A — play_tmstmpN: Exact timestamp match required
+    (startTime + 432000 == block.timestamp). Winner set only on exact match.
+    Miners can manipulate timestamp to satisfy condition.
+  Type B — bug_tmstmpN: Local variable pastBlockTime (always 0) makes
+    same-block check ineffective, or uses block.timestamp for comparison.
+
+Spec strategy:
+  Specs test FUNCTIONAL CORRECTNESS of timestamp-dependent functions:
+  - "when_condition_holds": if time condition is met, winner updates ✓
+  - "when_condition_fails": if time condition not met, winner unchanged ✓
+  - "no_timestamp_dependency": regular functions work regardless of timestamp ✓
+  - "assert true" rules: function executes without revert ✓
+  All properties ARE true. The timestamp dependency vulnerability exists
+  (miners can manipulate block.timestamp) but the spec tests functional
+  behavior given specific conditions, not manipulability.
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- buggy_1 / EIP20Interface (2 SVS / 2 CVL) ---
+Contract: EIP20Interface with injected play_tmstmp39.
+  play_tmstmp39: if(startTime + 432000 == block.timestamp) winner = msg.sender
+
+  play_tmstmp39_when_condition_holds [OK/OK]
+    Precondition: startTime + 432000 == block.timestamp.
+    Function sets winner = msg.sender. Property IS true.
+    SVS: TN | CVL: TN
+
+  play_tmstmp39_when_condition_fails [OK/ERROR]
+    Precondition: startTime + 432000 != block.timestamp.
+    Function does not enter if-branch, winner unchanged. Property IS true.
+    SVS: TN
+    CVL: FP (CVL's conservative modeling of uint256 arithmetic and
+    block.timestamp prevents proving that winner is unchanged; may be
+    related to overflow edge cases in CVL's counterexample search)
+
+--- buggy_5 / Ownable (2 SVS / 2 CVL) ---
+Contract: Ownable with injected play_tmstmp38.
+  play_tmstmp38: if(startTime + 432000 == block.timestamp) winner = msg.sender
+
+  play_tmstmp38_when_condition_holds [OK/OK]
+    Precondition met → winner set. Property IS true.
+    SVS: TN | CVL: TN
+
+  play_tmstmp38_when_condition_fails [OK/ERROR]
+    Precondition not met → winner unchanged. Property IS true.
+    SVS: TN | CVL: FP (same modeling issue)
+
+--- buggy_19 / owned (2 SVS / 2 CVL) ---
+Contract: owned with injected play_tmstmp3.
+  play_tmstmp3: if(startTime + 432000 == block.timestamp) winner = msg.sender
+
+  play_tmstmp3_when_condition_holds [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  play_tmstmp3_when_condition_fails [OK/ERROR]
+    Property IS true. SVS: TN | CVL: FP
+
+--- buggy_20 / Ownable (1 SVS / 1 CVL) ---
+Contract: Ownable from buggy_20.sol with injected bugv_tmstmp5.
+  changeOwner: sets owner = newOwner (no timestamp dependency in logic)
+
+  changeOwner_no_timestamp_dependency [OK/OK]
+    Function sets owner = newOwner regardless of block.timestamp.
+    Injected bugv_tmstmp5 is an unused state variable. Property IS true.
+    SVS: TN | CVL: TN
+
+--- buggy_20 / Stoppable (1 SVS / 1 CVL) ---
+Contract: Stoppable with injected bugv_tmstmp1.
+  setIsActive: sets isActive = newIsActive (no timestamp dependency in logic)
+
+  setIsActive_no_timestamp_dependency [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+--- buggy_20 / RampInstantPool (2 SVS / 0+1err CVL) ---
+Contract: RampInstantPool with injected bugv_tmstmp2/3/4.
+  withdrawAllFunds: sends all funds to address (owner only)
+  setLimits: sets min/max swap amounts
+
+  withdrawAllFunds_no_timestamp_dependency [OK/COMPILATION ERROR]
+    Function succeeds regardless of timestamp. Property IS true.
+    SVS: TN
+    CVL: Error — COMPILATION ERROR (RampInstantPool is abstract)
+
+  setLimits_no_timestamp_dependency [OK/COMPILATION ERROR]
+    Property IS true.
+    SVS: TN
+    CVL: Error — same compilation error
+
+--- buggy_20 / RampInstantEthPool (2 SVS / 2 CVL) ---
+Contract: RampInstantEthPool with inherited timestamp bugs.
+  sendFundsToSwap: sends ETH with limit checks
+
+  sendFundsToSwap_respects_limits [OK/OK]
+    Within limits → function succeeds. Property IS true.
+    SVS: TN | CVL: TN
+
+  sendFundsToSwap_reverts_outside_limits [OK/OK]
+    Outside limits → function reverts. Property IS true (assert_revert).
+    SVS: TN | CVL: TN
+
+--- buggy_23 / ERC20 (4 SVS / 4 CVL) ---
+Contract: ERC20 with injected play_tmstmp19.
+  play_tmstmp19: if(startTime + 432000 == block.timestamp) winner = msg.sender
+  transfer: standard ERC20 transfer (no timestamp dependency)
+  approve: standard ERC20 approve (no timestamp dependency)
+
+  play_tmstmp19_sets_winner_at_exact_time [OK/OK]
+    Precondition met → winner = msg.sender. Property IS true.
+    SVS: TN | CVL: TN
+
+  play_tmstmp19_no_change_when_time_mismatch [OK/ERROR]
+    Precondition not met → winner unchanged. Property IS true.
+    SVS: TN | CVL: FP (same conservative modeling issue)
+
+  transfer_no_timestamp_dependency [OK/OK]
+    Standard transfer works regardless of timestamp. Property IS true.
+    SVS: TN | CVL: TN
+
+  approve_no_timestamp_dependency [OK/OK]
+    Standard approve works regardless of timestamp. Property IS true.
+    SVS: TN | CVL: TN
+
+--- buggy_23 / ERC20Burnable (1 SVS / 1 CVL) ---
+Contract: ERC20Burnable with inherited timestamp bugs.
+
+  burn_no_timestamp_dependency [OK/OK]
+    Burn works regardless of timestamp. Property IS true.
+    SVS: TN | CVL: TN
+
+--- buggy_33 / Owned (2 SVS / 2 CVL) ---
+Contract: Owned with injected play_tmstmp23.
+  play_tmstmp23: if(startTime + 432000 == block.timestamp) winner = msg.sender
+
+  play_tmstmp23_when_condition_holds [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  play_tmstmp23_when_condition_fails [OK/ERROR]
+    Property IS true. SVS: TN | CVL: FP
+
+--- buggy_34 / Ownable (2 SVS / 2 CVL) ---
+Contract: Ownable with injected bug_tmstmp28 and bug_tmstmp9.
+  bug_tmstmp28: uses local pastBlockTime (always 0), checks block.timestamp%15
+  bug_tmstmp9: returns block.timestamp >= 1546300800
+
+  bug_tmstmp28_accepts_same_block_calls [OK/OK]
+    Function executes (local variable always 0, require passes).
+    assert true → Property IS trivially true.
+    SVS: TN | CVL: TN
+
+  bug_tmstmp9_executes_timestamp_comparison [OK/OK]
+    Function executes timestamp comparison. assert true → IS true.
+    SVS: TN | CVL: TN
+
+--- buggy_45 / StockBet (4 SVS / 4 CVL) ---
+Contract: StockBet with injected play_tmstmp27, bug_tmstmp13, bug_tmstmp8.
+
+  play_tmstmp27_when_condition_holds [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  play_tmstmp27_when_condition_fails [OK/ERROR]
+    Property IS true. SVS: TN | CVL: FP
+
+  bug_tmstmp13_executes_timestamp_comparison [OK/OK]
+    assert true → IS true. SVS: TN | CVL: TN
+
+  bug_tmstmp8_accepts_same_block_calls [OK/OK]
+    assert true → IS true. SVS: TN | CVL: TN
+
+--- buggy_47 / ERC20Interface (4 SVS / 0+1err CVL) ---
+Contract: ERC20Interface with injected play_tmstmp19, bug_tmstmp25, bug_tmstmp20.
+
+  play_tmstmp19_when_condition_holds [OK/COMPILATION ERROR]
+    Property IS true. SVS: TN
+    CVL: Error — COMPILATION ERROR (unnamed return variable in burn())
+
+  play_tmstmp19_when_condition_fails [OK/COMPILATION ERROR]
+    Property IS true. SVS: TN
+    CVL: Error — same compilation error
+
+  bug_tmstmp25_executes_timestamp_comparison [OK/COMPILATION ERROR]
+    assert true → IS true. SVS: TN
+    CVL: Error — same compilation error
+
+  bug_tmstmp20_accepts_same_block_calls [OK/COMPILATION ERROR]
+    assert true → IS true. SVS: TN
+    CVL: Error — same compilation error
+
+--- buggy_50 / digitalNotary (4 SVS / 4 CVL) ---
+Contract: digitalNotary with injected play_tmstmp19, bug_tmstmp9, bug_tmstmp20.
+
+  play_tmstmp19_when_condition_holds [OK/OK]
+    Property IS true. SVS: TN | CVL: TN
+
+  play_tmstmp19_when_condition_fails [OK/ERROR]
+    Property IS true. SVS: TN | CVL: FP
+
+  bug_tmstmp9_executes_timestamp_comparison [OK/OK]
+    assert true → IS true. SVS: TN | CVL: TN
+
+  bug_tmstmp20_accepts_same_block_calls [OK/OK]
+    assert true → IS true. SVS: TN | CVL: TN
+
+==============================================================================
+ANALYSIS: Timestamp-Dependency Detection Patterns
+==============================================================================
+
+All 33 rules test FUNCTIONAL correctness of timestamp-dependent functions.
+The actual vulnerability (miner manipulation of block.timestamp) is not
+directly tested by these specs — specs verify that the function behaves
+correctly given specific timestamp conditions.
+
+SVS: Perfectly verifies all 33 rules as [OK]. All properties are true,
+so all 33 results are TN (no FP, no FN).
+
+CVL: Fails on 7 "when_condition_fails" rules, all with the same pattern:
+  - Spec requires startTime + 432000 != block.timestamp
+  - Function only changes winner when condition holds
+  - CVL cannot prove winner remains unchanged when condition fails
+  This is likely due to CVL's conservative modeling of uint256 arithmetic
+  and block environment variables. CVL successfully proves the positive
+  case ("when_condition_holds") but cannot prove the negative case.
+
+CVL also has 2 compilation errors (abstract contract, unnamed return).
+
+==============================================================================
+SUMMARY
+==============================================================================
+          TP   TN   FP   FN   Error  Total
+SVS:       0   33    0    0    0      33
+CVL:       0   20    7    0    2      27 + 2 err
+
+SVS Precision: N/A (no positives)  Recall: N/A
+CVL Precision: N/A (no TP)         Recall: N/A
+
+Note: All properties are true (the specs test functional correctness, not
+vulnerability presence). The correct tool behavior is to report all rules
+as PASS. SVS achieves this perfectly. CVL produces 7 FP on the negative-
+case timestamp rules and has 2 compilation errors.
+
+Key finding: SVS correctly verifies all 33 timestamp properties. CVL
+struggles with proving that state is unchanged when a condition is not met,
+producing 7 false positives.
+==============================================================================

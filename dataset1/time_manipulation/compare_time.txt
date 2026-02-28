@@ -1,0 +1,33 @@
+==============================================================================
+TIME COMPARISON — dataset1/time_manipulation
+==============================================================================
+
+Benchmark: time_manipulation
+Contracts: 4
+Specs: 4 (SVS) / 4 (CVL, 1 compilation error)
+
+==============================================================================
+Per-Spec Timing
+==============================================================================
+
+#  | Spec              | SVS rule(s)| SVS e2e(s) | CVL (s) | Speedup (e2e)
+---|-------------------|-----------|------------|---------|---------------
+1  | HotDollarsToken   |     5.07  |      6.35  |    25   |   3.94x
+2  | lottopollo        |     3.57  |      4.54  |    19   |   4.19x
+3  | roulette          |     1.53  |      2.46  |  ERROR  |     —
+4  | timed_crowdsale   |     1.38  |      2.27  |    16   |   7.05x
+==============================================================================
+
+SUMMARY
+==============================================================================
+SVS total rule time:      11.55s
+SVS total end-to-end:     15.62s
+CVL total time:           60.00s  (3 specs; roulette errored)
+
+Average SVS rule time:     2.89s  (4 specs)
+Average SVS e2e time:      3.91s  (4 specs)
+Average CVL time:         20.00s  (3 specs, excluding error)
+
+Speedup (e2e vs CVL, 3 comparable):
+  SVS 3-spec e2e: 13.16s vs CVL 3-spec: 60s → 4.56x
+==============================================================================

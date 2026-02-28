@@ -1,0 +1,26 @@
+==============================================================================
+TIME COMPARISON — dataset3/Timestamp-Dependency
+==============================================================================
+
+Spec                              | SVS rule  | SVS e2e  | CVL
+----------------------------------|-----------|----------|------
+buggy_1.spec                      |    6.19s  |   7.21s  |  26s
+buggy_5.spec                      |    8.28s  |   9.54s  |  28s
+buggy_19.spec                     |    5.72s  |   6.69s  |  22s
+buggy_20_ownable.spec             |    5.38s  |   6.57s  |  20s
+buggy_20_stoppable.spec           |    5.32s  |   6.53s  |  20s
+buggy_20_pool.spec                |   10.69s  |  11.95s  |  ERR
+buggy_20_ethpool.spec             |   10.95s  |  12.23s  |  27s
+buggy_23_erc20.spec               |   18.11s  |  19.52s  |  23s
+buggy_23_erc20_burnable.spec      |    5.53s  |   6.93s  |  22s
+buggy_33.spec                     |    7.85s  |   8.98s  |  25s
+buggy_34.spec                     |   10.71s  |  12.07s  |  31s
+buggy_45.spec                     |   14.90s  |  16.12s  |  25s
+buggy_47.spec                     |   19.34s  |  20.60s  |  ERR
+buggy_50.spec                     |   16.92s  |  18.05s  |  26s
+----------------------------------|-----------|----------|------
+TOTAL                             |  145.89s  | 162.99s  | 295s
+(CVL total excludes 2 compilation errors)
+
+Speedup (SVS e2e vs CVL): 295 / 162.99 = 1.81x
+==============================================================================

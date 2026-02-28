@@ -1,0 +1,98 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset2/arithmetic
+==============================================================================
+Contracts: insecure_transfer, integer_overflow_add, integer_overflow_benign_1,
+  integer_overflow_minimal, integer_overflow_mul,
+  integer_overflow_multitx_multifunc_feasible,
+  integer_overflow_multitx_onefunc_feasible,
+  overflow_single_tx, tokensalechallenge
+Vulnerability: Integer overflow/underflow (pre-0.8.0 unchecked arithmetic)
+SVS flag: --arithmetic mod-overflow
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- insecure_transfer (1/1) ---
+  transfer_conserves [ERROR/ERROR]
+    Spec: sender+receiver sum conserved after transfer. With overflow in
+    addition, receiver wraps → property IS violated.
+    SVS: TP | CVL: TP
+
+--- integer_overflow_add (1/1) ---
+  add_no_overflow [ERROR/ERROR]
+    Spec: afterCount == beforeCount + input. Overflow wraps → violated.
+    SVS: TP | CVL: TP
+
+--- integer_overflow_benign_1 (1/1) ---
+  run_underflow_should_revert [ERROR/OK]
+    Contract: run() computes `uint res = count - input` as LOCAL variable.
+    State variable `count` is NEVER modified. Postcondition `count ==
+    beforeCount` IS TRUE (count unchanged).
+    SVS: FP (flags overflow in local computation, but state is unchanged)
+    CVL: TN (correctly verifies count doesn't change)
+
+--- integer_overflow_minimal (1/1) ---
+  sub_no_underflow [OK/OK]
+    Spec: require input <= count; afterCount == beforeCount - input.
+    No underflow with precondition. Property IS true.
+    SVS: TN | CVL: TN
+
+--- integer_overflow_mul (1/1) ---
+  mul_no_overflow [ERROR/ERROR]
+    Spec: afterCount == beforeCount * input. Overflow wraps → violated.
+    SVS: TP | CVL: TP
+
+--- integer_overflow_multitx_multifunc_feasible (1/1) ---
+  run_after_init [ERROR/ERROR]
+    Spec: afterCount == beforeCount - input after init. Underflow wraps.
+    SVS: TP | CVL: TP
+
+--- integer_overflow_multitx_onefunc_feasible (1/1) ---
+  run_after_second_call [ERROR/ERROR]
+    Same pattern as multifunc. Underflow wraps.
+    SVS: TP | CVL: TP
+
+--- overflow_single_tx (3/3) ---
+  add_state_no_overflow [ERROR/ERROR]
+    overflowaddtostate: addition overflows state variable → violated.
+    SVS: TP | CVL: TP
+  mul_state_no_overflow [ERROR/ERROR]
+    overflowmultostate: multiplication overflows → violated.
+    SVS: TP | CVL: TP
+  sub_state_no_underflow [ERROR/OK]
+    underflowtostate: require input <= count prevents underflow.
+    Property IS true. SVS error due to overflow in other functions
+    of the same contract (overflowaddtostate, overflowmultostate)
+    interfering with verification.
+    SVS: FP (overflow in other functions interferes)
+    CVL: TN
+
+--- tokensalechallenge (2/2) ---
+  buy_adds_balance [ERROR/ERROR]
+    buy() has overflow in require(msg.value == numTokens * PRICE_PER_TOKEN).
+    With overflow, require passes with low msg.value, huge numTokens
+    added to balance. Property IS violated.
+    SVS: TP | CVL: TP
+  sell_decreases_balance [ERROR/OK]
+    sell() balance decrease: require(balance >= numTokens); balance -= numTokens.
+    No underflow. Postcondition `afterBal == beforeBal - numTokens` IS true.
+    SVS flags overflow in transfer amount calc (numTokens * PRICE_PER_TOKEN)
+    which is unrelated to the balance postcondition.
+    SVS: FP (postcondition true; overflow in unrelated expression)
+    CVL: TN
+
+==============================================================================
+SUMMARY
+==============================================================================
+          TP   TN   FP   FN   Error  Total
+SVS:       8    1    3    0    0      12
+CVL:       8    4    0    0    0      12
+
+SVS Precision: 8/11 = 72.73%   Recall: 8/8 = 100.00%
+CVL Precision: 8/8  = 100.00%  Recall: 8/8 = 100.00%
+
+Note: SVS's 3 FP come from --arithmetic mod-overflow flag detecting
+overflows in local variables (benign_1), unrelated functions (single_tx),
+or unrelated expressions (tokensale sell) that don't affect postconditions.
+==============================================================================

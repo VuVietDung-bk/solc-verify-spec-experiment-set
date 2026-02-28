@@ -1,0 +1,39 @@
+==============================================================================
+TIME COMPARISON — dataset1/arithmetic
+==============================================================================
+
+SVS Time = Rule verification time / End-to-end time (seconds)
+CVL Time = Certora Prover cloud time (seconds)
+SVS Flag: --arithmetic mod-overflow
+
+#  | Spec                                      | SVS (rule/e2e)   | CVL       | Ratio
+---|-------------------------------------------|------------------|-----------|------
+1  | insecure_transfer                         | 4.26s / 5.20s    | 18s       | 4.2x
+2  | integer_overflow_1                        | 1.48s / 2.38s    | N/A (err) |  -
+3  | integer_overflow_add                      | 1.43s / 2.43s    | 17s       | 11.9x
+4  | integer_overflow_benign_1                 | 1.43s / 2.34s    | 18s       | 12.6x
+5  | integer_overflow_mapping_sym_1            | 4.00s / 4.91s    | 17s       | 4.3x
+6  | integer_overflow_minimal                  | 1.38s / 2.24s    | 18s       | 13.0x
+7  | integer_overflow_mul                      | 1.44s / 2.32s    | 17s       | 11.8x
+8  | integer_overflow_multitx_multifunc        | 1.56s / 2.45s    | 17s       | 10.9x
+9  | integer_overflow_multitx_onefunc          | 1.48s / 2.37s    | 17s       | 11.5x
+10 | overflow_simple_add                       | 1.34s / 2.22s    | 17s       | 12.7x
+11 | overflow_single_tx                        | 5.73s / 6.70s    | 19s       | 3.3x
+12 | timelock                                  | 7.26s / 8.20s    | 18s       | 2.5x
+13 | token                                     | 8.42s / 9.40s    | 17s       | 2.0x
+14 | tokensalechallenge                        | 21.83s / 23.41s  | 20s       | 0.9x
+
+==============================================================================
+TOTALS
+==============================================================================
+
+                              solc-verify-spec          Certora
+Total rule/prover time:            62.44s                230s
+Total end-to-end time:             76.57s                  -
+Specs analyzed:                    14                     13 (1 error)
+Avg time per spec (rule):           4.46s                 17.7s
+Speedup (CVL / SVS rule):          3.68x                  -
+
+Note: tokensalechallenge is the only spec where SVS is slower than CVL.
+
+==============================================================================

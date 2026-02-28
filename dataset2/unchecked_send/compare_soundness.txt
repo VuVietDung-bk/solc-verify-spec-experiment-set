@@ -1,0 +1,79 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset2/unchecked_send
+==============================================================================
+Contracts: TokenSender (0xec329), B (0xf29e), WhaleGiveaway2 (0xf70d),
+  Lotto, SendBack (mishandled), ReturnValue (unchecked_return_value)
+Vulnerability: Unchecked return value of send/call
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- TokenSender / 0xec329 (1 SVS / 2 CVL) ---
+  changeOwner_changes_owner [INTERNAL ERROR / OK]
+    Spec: after changeOwner(), owner == _newOwner. Property IS true.
+    SVS: Error (INTERNAL ERROR: "Push must take exactly one argument"
+         — solc-verify crashes on this contract)
+    CVL: TN
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- B / 0xf29e (1 SVS / 1 CVL) ---
+  go_unchecked [ERROR/ERROR]
+    Contract: go() sends ETH via unchecked .call{value}. Balance
+    doesn't change if call fails. Property IS violated.
+    SVS: TP | CVL: TP
+
+--- WhaleGiveaway2 / 0xf70d (1 SVS / 1 CVL) ---
+  Command_unchecked [ERROR/ERROR]
+    Same pattern: unchecked call, balance assertion fails.
+    SVS: TP | CVL: TP
+
+--- Lotto (2 SVS / 3 CVL) ---
+  sendToWinner_sets_payedOut [OK/OK]
+    Spec: payedOut == true after sendToWinner. Contract sets payedOut
+    regardless of .send() result. Property IS true.
+    SVS: TN | CVL: TN
+  withdrawLeftOver_requires_payedOut [OK/OK]
+    Spec: withdrawLeftOver succeeds when payedOut is true.
+    Property IS true.
+    SVS: TN | CVL: TN
+  envfreeFuncsStaticCheck (CVL only) [—/OK]
+    CVL: TN
+
+--- SendBack / mishandled (1 SVS / 1 CVL) ---
+  withdrawBalance_sets_balance_zero [OK/—]
+    Contract: sets userBalances[sender] = 0 BEFORE send().
+    Property IS true.
+    SVS: TN
+  withdrawBalance_no_revert (CVL) [—/ERROR]
+    Function uses .call{value} which can fail, causing revert.
+    Property IS violated.
+    CVL: TP
+
+--- ReturnValue / unchecked_return_value (2 SVS / 2 CVL) ---
+  callchecked_reachable [OK/OK]
+    Reachability test — function with checked call. Property IS true.
+    SVS: TN | CVL: TN
+  callnotchecked_reachable [OK/OK]
+    Reachability test — function with unchecked call. Property IS true.
+    SVS: TN | CVL: TN
+
+==============================================================================
+SUMMARY
+==============================================================================
+          TP   TN   FP   FN   Error  Total
+SVS:       2    5    0    0    1      7+1e
+CVL:       3    7    0    0    0      10
+
+SVS Precision: 2/2 = 100.00%  Recall: 2/2 = 100.00%
+CVL Precision: 3/3 = 100.00%  Recall: 3/3 = 100.00%
+
+SVS Error:
+  - TokenSender (0xec329): INTERNAL ERROR — solc-verify crashes on this
+    contract ("Push must take exactly one argument")
+
+Note: Dataset2 unchecked_send specs focus on state changes (payedOut,
+userBalances, reachability) rather than balance assertions. Both tools
+handle these well when the properties are about state variables.
+==============================================================================

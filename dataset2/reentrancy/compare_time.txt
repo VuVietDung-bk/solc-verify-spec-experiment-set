@@ -1,0 +1,19 @@
+==============================================================================
+TIME COMPARISON — dataset2/reentrancy
+==============================================================================
+
+Spec                           | SVS rule | SVS e2e | CVL
+-------------------------------|----------|---------|------
+etherstore.spec                |   5.65s  |  6.68s  | 22s
+reentrance.spec                |   4.27s  |  5.37s  | 20s
+reentrancy_bonus.spec          |   3.91s  |  4.96s  | 21s
+reentrancy_cross_function.spec |   3.86s  |  5.11s  | 18s
+reentrancy_dao.spec            |   5.43s  |  6.39s  | 17s
+reentrancy_insecure.spec       |   1.58s  |  2.50s  | 18s
+reentrancy_simple.spec         |   3.71s  |  4.67s  | 20s
+simple_dao.spec                |   3.66s  |  4.64s  | 21s
+-------------------------------|----------|---------|------
+TOTAL                          |  32.07s  | 40.32s  | 157s
+
+Speedup (e2e vs CVL): 3.89x
+==============================================================================

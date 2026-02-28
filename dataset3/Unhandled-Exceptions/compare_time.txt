@@ -1,0 +1,64 @@
+==============================================================================
+TIME COMPARISON — dataset3/Unhandled-Exceptions
+==============================================================================
+
+Spec                                 | SVS rule   | SVS e2e   | CVL
+-------------------------------------|------------|-----------|------
+buggy_19_eth_bank.spec               |   72.05s   |  73.28s   |  33s
+buggy_19_owned.spec                  |   17.60s   |  18.70s   |  21s
+buggy_1_hot_dollars_token.spec       |   28.15s   |  29.24s   |  29s
+buggy_20_escrowspool.spec            |    9.77s   |  11.33s   |  ERR
+buggy_20_ethpool.spec                |   29.53s   |  31.06s   |  ERR
+buggy_23_agr.spec                    |    9.41s   |  11.09s   |  31s
+buggy_23_erc20.spec                  |  148.49s   | 150.20s   |  35s
+buggy_23_erc20_burnable.spec         |   44.66s   |  46.28s   |  28s
+buggy_33.spec                        |    8.29s   |   9.60s   |  30s
+buggy_34_lollypop_token.spec         |  392.88s   | 394.90s   |  58s
+buggy_34_ownable.spec                |   51.17s   |  52.99s   |  22s
+buggy_45.spec                        |  193.26s   | 194.86s   |  46s
+buggy_47_acunar_ieo.spec             |   18.53s   |  20.61s   |  ERR
+buggy_47_acunar_token.spec           |  171.76s   | 173.47s   |  ERR
+buggy_50.spec                        |  156.45s   | 158.11s   |  39s
+buggy_5_ownable.spec                 |   37.07s   |  38.69s   |  22s
+buggy_5_token_erc20.spec             |  139.57s   | 141.29s   |  35s
+buggy_5_ttc.spec                     |  104.13s   | 105.79s   |  39s
+-------------------------------------|------------|-----------|------
+TOTAL                                | 1632.77s   | 1661.49s  | 468s
+(CVL total excludes 4 compilation errors)
+
+Speedup (SVS e2e vs CVL): 468 / 1661.49 = 0.28x
+→ SVS is ~3.5x SLOWER than CVL on this benchmark.
+
+==============================================================================
+ANALYSIS
+==============================================================================
+
+This is the only dataset3 benchmark where CVL is significantly faster
+than SVS. The reason: SVS verifies 186 rules (nearly 2x more than CVL's
+~98 rules), and several SVS spec files with many rules take >100s each:
+  - buggy_34_lollypop_token: 30 rules, 394.90s (all errors due to
+    precondition cascade — SVS still spends time analyzing each rule)
+  - buggy_45: 23 rules, 194.86s
+  - buggy_47_acunar_token: 14 rules, 173.47s (all errors)
+  - buggy_50: 19 rules, 158.11s
+  - buggy_23_erc20: 16 rules, 150.20s
+  - buggy_5_token_erc20: 14 rules, 141.29s
+
+If we compare only the time spent on CORRECT results (excluding specs
+where SVS has all-FP or all-Error):
+  SVS correct specs: buggy_19eb (73.28) + buggy_19ow (18.70) +
+    buggy_1 (29.24) + buggy_20es (11.33) + buggy_20ep (31.06) +
+    buggy_23agr (11.09) + buggy_23erc20 (150.20) +
+    buggy_23burn (46.28) + buggy_33 (9.60) + buggy_34ow (52.99) +
+    buggy_45 (194.86) + buggy_50 (158.11) + buggy_5ow (38.69) +
+    buggy_5te (141.29) + buggy_5ttc (105.79) = 1072.51s
+  CVL matching specs (excluding errors): same 14 specs = 410s
+  Speedup on correct specs: 410 / 1072.51 = 0.38x (SVS ~2.6x slower)
+
+The per-rule cost explains the difference:
+  SVS: 1632.77s / 186 rules = 8.78s per rule
+  CVL: 468s / ~98 rules = 4.78s per rule
+
+NOTE: SVS runs locally while CVL runs on cloud infrastructure. Direct
+time comparison is influenced by hardware differences.
+==============================================================================

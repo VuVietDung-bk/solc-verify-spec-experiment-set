@@ -1,0 +1,58 @@
+==============================================================================
+SOUNDNESS COMPARISON — dataset2/gasless_send
+==============================================================================
+Contracts: CreditDepositBank (with Attack_CreditDepositBank wrapper)
+Vulnerability: Uses .send() without checking return value
+
+==============================================================================
+DETAILED CLASSIFICATION
+==============================================================================
+
+--- CreditDepositBank_Attack (3 SVS / 5 CVL) ---
+
+SVS rules (all ERROR):
+  takeover_requires_balance [ERROR]
+    Spec: only users with positive balance can take over ownership.
+    Property IS true (takeOver() checks balances[msg.sender] > 0).
+    SVS error from Attack_CreditDepositBank wrapper (vultron_*
+    precondition interference). Not a real violation.
+    SVS: FP
+
+  deposit_no_owner_change [ERROR]
+    Spec: deposit doesn't change owner. Property IS true
+    (deposit has no external calls, cannot trigger reentrancy).
+    SVS error from Attack wrapper interference.
+    SVS: FP
+
+  deposit_no_manager_change [ERROR]
+    Same as above — deposit doesn't modify manager. Property IS true.
+    SVS: FP
+
+CVL rules:
+  deposit_no_owner_change [OK]
+    Property IS true. CVL: TN
+  envfreeFuncsStaticCheck [OK]
+    Internal check. CVL: TN
+  setManager_requires_balance [OK]
+    setManager requires balance > 100 * 1e15. Property IS true. CVL: TN
+  takeover_requires_balance [OK]
+    Property IS true. CVL: TN
+  deposit_increases_balance [ERROR]
+    Spec: deposit with msg.value >= threshold increases balance.
+    Contract threshold is 10 * 1e15 = 1e16. CVL spec threshold may be
+    1e15. For values between 1e15 and 1e16, deposit reverts but spec
+    expects increase → property IS violated for that range.
+    CVL: TP
+
+==============================================================================
+SUMMARY
+==============================================================================
+          TP   TN   FP   FN   Error  Total
+SVS:       0    0    3    0    0       3
+CVL:       1    4    0    0    0       5
+
+Note: All SVS errors caused by Attack_CreditDepositBank wrapper contract's
+vultron_* functions interfering with the verification of CreditDepositBank's
+properties. The gasless_send vulnerability (in withdraw/credit) is not
+directly tested by the spec rules.
+==============================================================================
